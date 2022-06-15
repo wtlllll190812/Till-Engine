@@ -1,0 +1,11 @@
+﻿  start.cpp
+D:\TL\Vscode\VsCode_C\Learn_opengl\Learn_opengl\Shader.h(10,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+D:\TL\Vscode\VsCode_C\Learn_opengl\Learn_opengl\start.cpp(285,17): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+D:\TL\Vscode\VsCode_C\Learn_opengl\Learn_opengl\start.cpp(286,17): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+D:\TL\Vscode\VsCode_C\Learn_opengl\Learn_opengl\start.cpp(290,21): warning C4244: “初始化”: 从“double”转换到“GLfloat”，可能丢失数据
+D:\TL\Vscode\VsCode_C\Learn_opengl\Learn_opengl\start.cpp(291,21): warning C4244: “初始化”: 从“double”转换到“GLfloat”，可能丢失数据
+D:\TL\Vscode\VsCode_C\Learn_opengl\Learn_opengl\start.cpp(292,13): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+D:\TL\Vscode\VsCode_C\Learn_opengl\Learn_opengl\start.cpp(293,13): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+D:\TL\Vscode\VsCode_C\Learn_opengl\Learn_opengl\start.cpp(295,31): warning C4305: “初始化”: 从“double”到“GLfloat”截断
+D:\TL\Vscode\VsCode_C\Learn_opengl\Learn_opengl\start.cpp(318,16): warning C4244: “-=”: 从“double”转换到“GLfloat”，可能丢失数据
+  Learn_opengl.vcxproj -> D:\TL\Vscode\VsCode_C\Learn_opengl\x64\Debug\Learn_opengl.exe
