@@ -1,17 +1,13 @@
-#include<iostream>
-// GLEW
-#define GLEW_STATIC
-#include <GL/glew.h>
-// GLFW
-#include <GLFW/glfw3.h>
-using namespace std;
+
 #include <SOIL2/SOIL2.h>
 #include "Shader.h"
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-
-
+#include "Screen.h"
+#include "Camera.h"
+#include "GameObject.h"
+#include "Transform.h"
 
 const GLuint WIDTH = 800, HEIGHT = 600;
 
@@ -77,9 +73,16 @@ glm::vec3 cubePositions[] = {
 //};
 // 
 // Camera
-glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
-glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
-glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
+//glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+//glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+//glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
+Screen mainScreen(1920, 1080);
+GameObject C;
+Transform tr(&C);
+Camera camera(&mainScreen, &C);
+
+
+
 GLfloat yaw = -90.0f;	// Yaw is initialized to -90.0 degrees since a yaw of 0.0 results in a direction vector pointing to the right (due to how Eular angles work) so we initially rotate a bit to the left.
 GLfloat pitch = 0.0f;
 GLfloat lastX = WIDTH / 2.0;
@@ -92,50 +95,20 @@ GLfloat deltaTime = 0.0f;	// Time between current frame and last frame
 GLfloat lastFrame = 0.0f;  	// Time of last frame
 
 
-GLFWwindow* window;
-
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void do_movement();
 
-void OpenglInit()
-{
-    glfwInit();//初始化GLFW
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);//配置opengl版本
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);//配置opengl版本
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-
-    window = glfwCreateWindow(800, 600, "LearnOpenGL", nullptr, nullptr);//创建窗口
-    if (window == nullptr)
-    {
-        cout << "Failed to create GLFW window" << endl;
-        glfwTerminate();
-        return;
-    }
-    glfwMakeContextCurrent(window);//设定窗口
-
-    //初始化GLEW,用于管理opengl的函数指针
-    glewExperimental = GL_TRUE;
-    if (glewInit() != GLEW_OK)
-    {
-        cout << "Failed to initialize GLEW" << endl;
-        return;
-    }
-
-    //设置窗口
-    glViewport(0, 0, WIDTH, HEIGHT);
-    glEnable(GL_DEPTH_TEST);
-
-    glfwSetKeyCallback(window, key_callback);
-    glfwSetCursorPosCallback(window, mouse_callback);
-    glfwSetScrollCallback(window, scroll_callback);
-}
 
 int main()
 {
-    OpenglInit();
+    C.AddComponent(&tr);
+    C.AddComponent(&camera);
+    glfwSetKeyCallback(mainScreen.window, key_callback);
+    glfwSetCursorPosCallback(mainScreen.window, mouse_callback);
+    glfwSetScrollCallback(mainScreen.window, scroll_callback);
+    
     Shader myShader("vert.shader","frag.shader");
 
     GLuint texture;
@@ -189,17 +162,12 @@ int main()
     
 
     //显示窗口
-    while (!glfwWindowShouldClose(window))
+    while (mainScreen.isClosed())
     {
         // Check if any events have been activiated (key pressed, mouse moved etc.) and call corresponding response functions
-        glfwPollEvents();
         do_movement();
-        // Render
-        // Clear the colorbuffer
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        
+        mainScreen.Display();
 
         // Bind Texture
         glBindTexture(GL_TEXTURE_2D, texture);
@@ -209,7 +177,7 @@ int main()
        
         // Camera/View transformation
         glm::mat4 view;
-        view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);       
+        view = glm::lookAt(C.GetComponent<Transform>->position, cameraPos + cameraFront, cameraUp);       
         glm::mat4 projection;
         view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
         projection = glm::perspective(fov, (GLfloat)WIDTH / (GLfloat)HEIGHT, 0.1f, 100.0f);
@@ -238,7 +206,7 @@ int main()
         glBindVertexArray(0);
 
         // Swap the screen buffers
-        glfwSwapBuffers(window);
+        glfwSwapBuffers(mainScreen.window);
     }
 
     //释放资源
