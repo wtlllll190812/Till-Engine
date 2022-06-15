@@ -9,7 +9,6 @@
 #include "GameObject.h"
 #include "Transform.h"
 
-const GLuint WIDTH = 800, HEIGHT = 600;
 
 // Set up vertex data (and buffer(s)) and attribute pointers
 GLfloat vertices[] = {
@@ -71,23 +70,16 @@ glm::vec3 cubePositions[] = {
 //    0, 1, 3, // First Triangle
 //    1, 2, 3  // Second Triangle
 //};
-// 
-// Camera
-//glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
-//glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
-//glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
+
 Screen mainScreen(1920, 1080);
 GameObject C;
 Transform tr(&C);
 Camera camera(&mainScreen, &C);
 
+GLfloat lastX; 
+GLfloat lastY;
 
 
-GLfloat yaw = -90.0f;	// Yaw is initialized to -90.0 degrees since a yaw of 0.0 results in a direction vector pointing to the right (due to how Eular angles work) so we initially rotate a bit to the left.
-GLfloat pitch = 0.0f;
-GLfloat lastX = WIDTH / 2.0;
-GLfloat lastY = HEIGHT / 2.0;
-GLfloat fov = 45.0f;
 bool keys[1024];
 
 // Deltatime
@@ -110,6 +102,9 @@ int main()
     glfwSetScrollCallback(mainScreen.window, scroll_callback);
     
     Shader myShader("vert.shader","frag.shader");
+    C.transform->rotation.x = -90.0f;
+    C.transform->position.z = 3.0f;
+
 
     GLuint texture;
     glGenTextures(1, &texture);
@@ -177,10 +172,13 @@ int main()
        
         // Camera/View transformation
         glm::mat4 view;
-        view = glm::lookAt(C.GetComponent<Transform>->position, cameraPos + cameraFront, cameraUp);       
+        glm::vec3 cameraPos = C.GetComponent<Transform>()->position;
+        view = glm::lookAt(cameraPos, cameraPos + Transform::forward, Transform::up);
         glm::mat4 projection;
-        view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
-        projection = glm::perspective(fov, (GLfloat)WIDTH / (GLfloat)HEIGHT, 0.1f, 100.0f);
+
+        view = C.GetComponent<Camera>()->GetViewMatrix(); 
+        projection = C.GetComponent<Camera>()->GetProjMatrix(); 
+        
         // Get their uniform location
         GLint modelLoc = glGetUniformLocation(myShader.Program, "model");
         GLint viewLoc = glGetUniformLocation(myShader.Program, "view");
@@ -236,13 +234,13 @@ void do_movement()
     // Camera controls
     GLfloat cameraSpeed = 5.0f * deltaTime;
     if (keys[GLFW_KEY_W])
-        cameraPos += cameraSpeed * cameraFront;
+        C.transform->position.z -= 0.05f;
     if (keys[GLFW_KEY_S])
-        cameraPos -= cameraSpeed * cameraFront;
+        C.transform->position.z += 0.05f; 
     if (keys[GLFW_KEY_A])
-        cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+        C.transform->position.x -= 0.05f;
     if (keys[GLFW_KEY_D])
-        cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+        C.transform->position.x += 0.05f;
 }
 
 bool firstMouse = true;
@@ -264,28 +262,27 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
     xoffset *= sensitivity;
     yoffset *= sensitivity;
 
-    yaw += xoffset;
-    pitch += yoffset;
-
+    C.transform->rotation.x += xoffset;
+    C.transform->rotation.z += yoffset;
     // Make sure that when pitch is out of bounds, screen doesn't get flipped
-    if (pitch > 89.0f)
-        pitch = 89.0f;
-    if (pitch < -89.0f)
-        pitch = -89.0f;
+    if (C.transform->rotation.z > 89.0f)
+        C.transform->rotation.z = 89.0f;
+    if (C.transform->rotation.z < -89.0f)
+        C.transform->rotation.z = -89.0f;
 
-    glm::vec3 front;
+    /*glm::vec3 front;
     front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
     front.y = sin(glm::radians(pitch));
     front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-    cameraFront = glm::normalize(front);
+    cameraFront = glm::normalize(front);*/
 }
 
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 {
-    if (fov >= 1.0f && fov <= 45.0f)
-        fov -= yoffset;
-    if (fov <= 1.0f)
-        fov = 1.0f;
-    if (fov >= 45.0f)
-        fov = 45.0f;
+    if (camera.fov >= 1.0f && camera.fov <= 45.0f)
+        camera.fov -= yoffset;
+    if (camera.fov <= 1.0f)
+        camera.fov = 1.0f;
+    if (camera.fov >= 45.0f)
+        camera.fov = 45.0f;
 }

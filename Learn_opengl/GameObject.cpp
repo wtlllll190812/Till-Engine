@@ -7,10 +7,13 @@ GameObject::GameObject()
 
 GameObject::~GameObject()
 {
-	for (auto i = components.begin(); i != components.end(); i++)
-	{
-		delete *i;
-	}
+
+}
+
+void GameObject::AddComponent(Component* comp)
+{
+	components.push_back(comp);
+	if(transform==nullptr)transform=dynamic_cast<Transform*>(comp);
 }
 
 void GameObject::Update()
