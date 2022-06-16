@@ -29,5 +29,28 @@ public:
 	void OnAdd()override;
 	void OnRemove()override;
 
-	void Translate(glm::vec3);
+	/// <summary>
+	/// 获取向前方向
+	/// </summary>
+	glm::vec3 GetFront();
+
+	/// <summary>
+	/// 获取向右方向
+	/// </summary>
+	glm::vec3 GetRight();
+
+	/// <summary>
+	/// 获取向上方向
+	/// </summary>
+	glm::vec3 GetUp();
+	
+	/// <summary>
+	/// 向前移动
+	/// </summary>
+	void Translate(float);
+
+	/// <summary>
+	/// 向某个方向移动
+	/// </summary>
+	void Translate(glm::vec3,float);
 };

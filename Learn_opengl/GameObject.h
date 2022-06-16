@@ -12,9 +12,18 @@ public:
 
 	GameObject();
 	~GameObject();
+
+	/// <summary>
+	/// 添加组件
+	/// </summary>
+	/// <param name=""></param>
 	void AddComponent(Component*);
-    //template <class T>void RemoveComponent(std::string& name)
     
+    /// <summary>
+    /// 获取组件
+    /// </summary>
+    /// <typeparam name="T">组件类型</typeparam>
+    /// <returns>组件对象</returns>
     template <class T>
     T* GetComponent()
     {
@@ -30,6 +39,10 @@ public:
         return nullptr;
     }
     
+    /// <summary>
+    /// 移除组件
+    /// </summary>
+    /// <typeparam name="T">组件类型</typeparam>
     template <class T>
     void RemoveComponent()
     {

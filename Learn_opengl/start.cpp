@@ -1,5 +1,4 @@
 
-#include <SOIL2/SOIL2.h>
 #include "Shader.h"
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -8,7 +7,7 @@
 #include "Camera.h"
 #include "GameObject.h"
 #include "Transform.h"
-
+#include "Texture.h"
 
 // Set up vertex data (and buffer(s)) and attribute pointers
 GLfloat vertices[] = {
@@ -71,7 +70,7 @@ glm::vec3 cubePositions[] = {
 //    1, 2, 3  // Second Triangle
 //};
 
-Screen mainScreen(1920, 1080);
+Screen mainScreen(800, 600);
 GameObject C;
 Transform tr(&C);
 Camera camera(&mainScreen, &C);
@@ -104,30 +103,7 @@ int main()
     Shader myShader("vert.shader","frag.shader");
     C.transform->rotation.x = -90.0f;
     C.transform->position.z = 3.0f;
-
-
-    GLuint texture;
-    glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture);
-    
-    glGenTextures(1, &texture);//设定纹理数量,及存储数组
-    glBindTexture(GL_TEXTURE_2D, texture);//绑定纹理
-     // Set the texture wrapping parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// Set texture wrapping to GL_REPEAT (usually basic wrapping method)
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    // Set texture filtering parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-
-    int width, height;
-    unsigned char* image = SOIL_load_image("container.jpg", &width, &height, 0, SOIL_LOAD_RGB);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);//生成纹理(纹理目标,指定mipmap级别,存储格式,宽度,高度,0,原图格式,数据类型)
-    glGenerateMipmap(GL_TEXTURE_2D);//生成mipmap
-    SOIL_free_image_data(image);//释放内存
-    glBindTexture(GL_TEXTURE_2D, 0);//解绑
-
-    
+    Texture t("container.jpg");
     GLuint VBO;//顶点缓存
     glGenBuffers(1, &VBO);//设置缓存ID
     //GLuint EBO;
@@ -165,7 +141,7 @@ int main()
         mainScreen.Display();
 
         // Bind Texture
-        glBindTexture(GL_TEXTURE_2D, texture);
+        glBindTexture(GL_TEXTURE_2D, t.texture);
 
         // Activate shader
         myShader.Use();
@@ -234,13 +210,13 @@ void do_movement()
     // Camera controls
     GLfloat cameraSpeed = 5.0f * deltaTime;
     if (keys[GLFW_KEY_W])
-        C.transform->position.z -= 0.05f;
+        C.transform->Translate(0.05f);
     if (keys[GLFW_KEY_S])
-        C.transform->position.z += 0.05f; 
+        C.transform->Translate(-0.05f);
     if (keys[GLFW_KEY_A])
-        C.transform->position.x -= 0.05f;
+        C.transform->Translate(C.transform->GetRight(), -0.05f);
     if (keys[GLFW_KEY_D])
-        C.transform->position.x += 0.05f;
+        C.transform->Translate(C.transform->GetRight(), 0.05f);
 }
 
 bool firstMouse = true;
@@ -269,12 +245,6 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
         C.transform->rotation.z = 89.0f;
     if (C.transform->rotation.z < -89.0f)
         C.transform->rotation.z = -89.0f;
-
-    /*glm::vec3 front;
-    front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-    front.y = sin(glm::radians(pitch));
-    front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-    cameraFront = glm::normalize(front);*/
 }
 
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)

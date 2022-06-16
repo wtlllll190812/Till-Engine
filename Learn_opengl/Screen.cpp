@@ -35,6 +35,7 @@ Screen::Screen(const GLuint w, const GLuint h):width(w),heigth(h)
     //∆Ù”√…Ó∂»≤‚ ‘
     glEnable(GL_DEPTH_TEST);
 }
+
 void Screen::Display()
 {
     glfwPollEvents();
@@ -43,6 +44,7 @@ void Screen::Display()
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
+
 bool Screen::isClosed()
 {
     return !glfwWindowShouldClose(window);
