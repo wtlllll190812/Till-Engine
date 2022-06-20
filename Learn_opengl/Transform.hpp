@@ -23,6 +23,7 @@ public:
 	glm::vec3 scale;
 
 	Transform(GameObject*);
+	Transform(glm::vec3,GameObject*);
 	~Transform();
 
 	/// <summary>
@@ -63,6 +64,11 @@ Transform::Transform(GameObject* gameobject) :Component(gameobject)
 	position = glm::vec3(0, 0, 0);
 	rotation = glm::vec3(0, 0, 0);
 	scale = glm::vec3(0, 0, 0);
+}
+
+Transform::Transform(glm::vec3 pos, GameObject* gameobject) :Component(gameobject)
+{
+	position = pos;
 }
 
 Transform::~Transform()

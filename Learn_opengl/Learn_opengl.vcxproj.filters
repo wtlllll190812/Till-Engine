@@ -70,6 +70,15 @@
     <ClInclude Include="TLEngineCG.hpp">
       <Filter>源文件\Render</Filter>
     </ClInclude>
+    <ClInclude Include="Renderer.hpp">
+      <Filter>源文件\ECS\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.hpp">
+      <Filter>源文件\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.hpp">
+      <Filter>源文件\Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="test.png">
