@@ -140,28 +140,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="Material.cpp" />
-    <ClCompile Include="Screen.cpp" />
-    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="start.cpp" />
-    <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="frag.shader" />
     <None Include="vert.shader" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="Component.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="Material.h" />
-    <ClInclude Include="Screen.h" />
-    <ClInclude Include="Shader.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="Transform.h" />
+    <ClInclude Include="Camera.hpp" />
+    <ClInclude Include="Component.hpp" />
+    <ClInclude Include="GameObject.hpp" />
+    <ClInclude Include="Light.hpp" />
+    <ClInclude Include="Screen.hpp" />
+    <ClInclude Include="Shader.hpp" />
+    <ClInclude Include="Texture.hpp" />
+    <ClInclude Include="TLEngineCG.hpp" />
+    <ClInclude Include="Transform.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="test.png" />

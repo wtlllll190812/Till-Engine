@@ -1,7 +1,33 @@
-#include "Screen.h"
+#pragma once
+#include<iostream>
+// GLEW
+#define GLEW_STATIC
+#include <GL/glew.h>
+// GLFW
+#include <GLFW/glfw3.h>
+using namespace std;
 
+class Screen
+{
+public:
+	GLFWwindow* window;
+	const GLuint width;
+	const GLuint heigth;
 
-Screen::Screen(const GLuint w, const GLuint h):width(w),heigth(h)
+	Screen(GLuint,  GLuint);
+	/// <summary>
+	/// 显示窗口
+	/// </summary>
+	void Display();
+
+	/// <summary>
+	/// 窗口是否关闭
+	/// </summary>
+	/// <returns>是否关闭</returns>
+	bool isClosed();
+};
+
+Screen::Screen(const GLuint w, const GLuint h) :width(w), heigth(h)
 {
     glfwInit();//初始化GLFW
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);//配置opengl版本
@@ -10,7 +36,7 @@ Screen::Screen(const GLuint w, const GLuint h):width(w),heigth(h)
     glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);//禁止调整窗口大小
 
     window = glfwCreateWindow(width, heigth, "LearnOpenGL", nullptr, nullptr);//创建窗口并设置窗口大小
-    
+
     //创建失败时
     if (window == nullptr)
     {

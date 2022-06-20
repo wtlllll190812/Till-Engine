@@ -2,23 +2,23 @@
 #include<vector>
 #include<string>
 #include<iostream>
-#include "Component.h"
-#include "Transform.h"
+#include "Component.hpp"
+#include "Transform.hpp"
 
 class GameObject
 {
 public:
     Transform* transform;
 
-	GameObject();
-	~GameObject();
+    GameObject();
+    ~GameObject();
 
-	/// <summary>
-	/// 添加组件
-	/// </summary>
-	/// <param name=""></param>
-	void AddComponent(Component*);
-    
+    /// <summary>
+    /// 添加组件
+    /// </summary>
+    /// <param name=""></param>
+    void AddComponent(Component*);
+
     /// <summary>
     /// 获取组件
     /// </summary>
@@ -38,7 +38,7 @@ public:
         std::cout << "Component is not exist" << std::endl;
         return nullptr;
     }
-    
+
     /// <summary>
     /// 移除组件
     /// </summary>
@@ -53,11 +53,34 @@ public:
                 delete (*it);
             }
         }
-        std::cout<<"Component is not exist"<<std::endl;
+        std::cout << "Component is not exist" << std::endl;
         return nullptr;
     }
-	
+
     void Update();
 private:
     std::vector<Component*> components;
 };
+
+GameObject::GameObject()
+{
+}
+
+GameObject::~GameObject()
+{
+
+}
+
+void GameObject::AddComponent(Component* comp)
+{
+	components.push_back(comp);
+	if(transform==nullptr)transform=dynamic_cast<Transform*>(comp);
+}
+
+void GameObject::Update()
+{
+	for (auto i = components.begin(); i != components.end(); i++)
+	{
+		(*i)->OnUpdate();
+	}
+}

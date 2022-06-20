@@ -1,13 +1,16 @@
 
-#include "Shader.h"
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-#include "Screen.h"
-#include "Camera.h"
-#include "GameObject.h"
-#include "Transform.h"
-#include "Texture.h"
+
+
+#include "Screen.hpp"
+#include "Camera.hpp"
+#include "GameObject.hpp"
+#include "Transform.hpp"
+#include "Texture.hpp"
+#include "Shader.hpp"
+#include "Light.hpp"
 
 // Set up vertex data (and buffer(s)) and attribute pointers
 GLfloat vertices[] = {
@@ -71,20 +74,22 @@ glm::vec3 cubePositions[] = {
 //};
 
 Screen mainScreen(800, 600);
-GameObject C;
-Transform tr(&C);
-Camera camera(&mainScreen, &C);
+
+GameObject cameraObject;
+Transform tr(&cameraObject);
+Camera camera(&mainScreen, &cameraObject);
+GameObject lightObject;
+Transform tr2(&lightObject);
+Light light(0.1f,glm::vec3(1,1,1),&lightObject);
 
 GLfloat lastX; 
 GLfloat lastY;
-
 
 bool keys[1024];
 
 // Deltatime
 GLfloat deltaTime = 0.0f;	// Time between current frame and last frame
 GLfloat lastFrame = 0.0f;  	// Time of last frame
-
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
@@ -94,15 +99,15 @@ void do_movement();
 
 int main()
 {
-    C.AddComponent(&tr);
-    C.AddComponent(&camera);
+    cameraObject.AddComponent(&tr);
+    cameraObject.AddComponent(&camera);
     glfwSetKeyCallback(mainScreen.window, key_callback);
     glfwSetCursorPosCallback(mainScreen.window, mouse_callback);
     glfwSetScrollCallback(mainScreen.window, scroll_callback);
     
     Shader myShader("vert.shader","frag.shader");
-    C.transform->rotation.x = -90.0f;
-    C.transform->position.z = 3.0f;
+    cameraObject.transform->rotation.x = -90.0f;
+    cameraObject.transform->position.z = 3.0f;
     Texture t("container.jpg");
     GLuint VBO;//顶点缓存
     glGenBuffers(1, &VBO);//设置缓存ID
@@ -116,10 +121,8 @@ int main()
     glBindBuffer(GL_ARRAY_BUFFER, VBO);//绑定缓存对象
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);//复制数据到缓存
     
-    
     //glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     //glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-    
     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)0);//设置解析顶点数据的方式
     glEnableVertexAttribArray(0);//启用顶点属性
@@ -148,12 +151,12 @@ int main()
        
         // Camera/View transformation
         glm::mat4 view;
-        glm::vec3 cameraPos = C.GetComponent<Transform>()->position;
+        glm::vec3 cameraPos = cameraObject.GetComponent<Transform>()->position;
         view = glm::lookAt(cameraPos, cameraPos + Transform::forward, Transform::up);
         glm::mat4 projection;
 
-        view = C.GetComponent<Camera>()->GetViewMatrix(); 
-        projection = C.GetComponent<Camera>()->GetProjMatrix(); 
+        view = cameraObject.GetComponent<Camera>()->GetViewMatrix(); 
+        projection = cameraObject.GetComponent<Camera>()->GetProjMatrix(); 
         
         // Get their uniform location
         GLint modelLoc = glGetUniformLocation(myShader.Program, "model");
@@ -210,13 +213,13 @@ void do_movement()
     // Camera controls
     GLfloat cameraSpeed = 5.0f * deltaTime;
     if (keys[GLFW_KEY_W])
-        C.transform->Translate(0.05f);
+        cameraObject.transform->Translate(0.05f);
     if (keys[GLFW_KEY_S])
-        C.transform->Translate(-0.05f);
+        cameraObject.transform->Translate(-0.05f);
     if (keys[GLFW_KEY_A])
-        C.transform->Translate(C.transform->GetRight(), -0.05f);
+        cameraObject.transform->Translate(cameraObject.transform->GetRight(), -0.05f);
     if (keys[GLFW_KEY_D])
-        C.transform->Translate(C.transform->GetRight(), 0.05f);
+        cameraObject.transform->Translate(cameraObject.transform->GetRight(), 0.05f);
 }
 
 bool firstMouse = true;
@@ -238,13 +241,13 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
     xoffset *= sensitivity;
     yoffset *= sensitivity;
 
-    C.transform->rotation.x += xoffset;
-    C.transform->rotation.z += yoffset;
+    cameraObject.transform->rotation.x += xoffset;
+    cameraObject.transform->rotation.z += yoffset;
     // Make sure that when pitch is out of bounds, screen doesn't get flipped
-    if (C.transform->rotation.z > 89.0f)
-        C.transform->rotation.z = 89.0f;
-    if (C.transform->rotation.z < -89.0f)
-        C.transform->rotation.z = -89.0f;
+    if (cameraObject.transform->rotation.z > 89.0f)
+        cameraObject.transform->rotation.z = 89.0f;
+    if (cameraObject.transform->rotation.z < -89.0f)
+        cameraObject.transform->rotation.z = -89.0f;
 }
 
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
