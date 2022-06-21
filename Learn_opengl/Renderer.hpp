@@ -1,20 +1,32 @@
 #pragma once
 #include"Component.hpp"
+#include"Material.hpp"
+#include"Mesh.hpp"
 
-class Renderer
+class GameObject;
+class Renderer:public Component
 {
 public:
-	Renderer();
+	Mesh* mesh;
+	Material* material;
+
+	Renderer(Mesh* , Material* , GameObject*);
 	~Renderer();
-
-private:
-
+	void Render();
 };
 
-Renderer::Renderer()
+Renderer::Renderer(Mesh *m,Material *mater,GameObject* g):Component(g)
 {
+	mesh = m;
+	material = mater;
 }
 
 Renderer::~Renderer()
 {
+
+}
+
+void Renderer::Render()
+{
+	material->Render(mesh);
 }

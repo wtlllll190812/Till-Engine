@@ -11,7 +11,7 @@
 #include "Texture.hpp"
 #include "Shader.hpp"
 #include "Light.hpp"
-
+#include "Mesh.hpp"
 // Set up vertex data (and buffer(s)) and attribute pointers
 GLfloat vertices[] = {
        -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
@@ -110,35 +110,14 @@ int main()
     glfwSetCursorPosCallback(mainScreen.window, mouse_callback);
     glfwSetScrollCallback(mainScreen.window, scroll_callback);
     
-    Shader myShader("vert.shader","frag.shader");
+    //Shader myShader("vert.shader","frag.shader");
     cameraObject.transform->rotation.x = -90.0f;
     cameraObject.transform->position.z = 3.0f;
     Texture t("container.jpg");
-    GLuint VBO;//顶点缓存
-    glGenBuffers(1, &VBO);//设置缓存ID
-    //GLuint EBO;
-    //glGenBuffers(1, &EBO);
-    GLuint VAO;//顶点数组对象
-    glGenVertexArrays(1, &VAO);//设置缓存ID
-
-    glBindVertexArray(VAO);//绑定顶点数组对象
-
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);//绑定缓存对象
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);//复制数据到缓存
     
-    //glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    //glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-    
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)0);//设置解析顶点数据的方式
-    glEnableVertexAttribArray(0);//启用顶点属性
-    //glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));//设置解析颜色数据的方式
-    //glEnableVertexAttribArray(1);//启用顶点属性
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));
-    glEnableVertexAttribArray(1);
-    glBindVertexArray(0);//解绑VAO
 
 
-    
+    Mesh m(6, vector<int>()={3,3}, vertices, sizeof(vertices));
 
     //显示窗口
     while (mainScreen.isClosed())
@@ -153,7 +132,7 @@ int main()
 
         // Activate shader
         myShader.Use();
-       
+        
         // Camera/View transformation
         glm::mat4 view;
         glm::vec3 cameraPos = cameraObject.GetComponent<Transform>()->position;
@@ -172,7 +151,6 @@ int main()
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
         // Note: currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
         glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
-       
         
         
         GLint objectColorLoc = glGetUniformLocation(myShader.Program, "objectColor");
@@ -182,7 +160,7 @@ int main()
         GLint lightPosLoc = glGetUniformLocation(myShader.Program, "lightPos");
         glm::vec3 lightPos = l->gameobject->GetComponent<Transform>()->position;
         glUniform3f(lightPosLoc, lightPos.x, lightPos.y, lightPos.z);
-        glBindVertexArray(VAO);
+        glBindVertexArray(m.VAO);
         GLint viewPosLoc = glGetUniformLocation(myShader.Program, "viewPos");
         glUniform3f(viewPosLoc, tr.position.x, tr.position.y, tr.position.z);
 
@@ -203,11 +181,8 @@ int main()
         // Swap the screen buffers
         glfwSwapBuffers(mainScreen.window);
     }
-
     //释放资源
-    glDeleteVertexArrays(1, &VAO);
-    glDeleteBuffers(1, &VBO);
-    //glDeleteBuffers(1, &EBO);
+
     glfwTerminate();
     return 0;
 }
