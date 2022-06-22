@@ -12,6 +12,11 @@
 #include "Shader.hpp"
 #include "Light.hpp"
 #include "Mesh.hpp"
+#include "Renderer.hpp"
+#include "Material.hpp"
+#include "TLEngineCG.hpp"
+
+
 // Set up vertex data (and buffer(s)) and attribute pointers
 GLfloat vertices[] = {
        -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
@@ -86,6 +91,7 @@ Light light(0.1f,glm::vec3(1,0.5,0.5),&lightObject);
 
 GLfloat lastX; 
 GLfloat lastY;
+Texture t("container.jpg");
 
 bool keys[1024];
 
@@ -97,6 +103,7 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void do_movement();
+void renderCallback(Shader* shader, Material* mat);
 
 
 int main()
@@ -110,15 +117,15 @@ int main()
     glfwSetCursorPosCallback(mainScreen.window, mouse_callback);
     glfwSetScrollCallback(mainScreen.window, scroll_callback);
     
-    //Shader myShader("vert.shader","frag.shader");
     cameraObject.transform->rotation.x = -90.0f;
     cameraObject.transform->position.z = 3.0f;
-    Texture t("container.jpg");
     
-
-
-    Mesh m(6, vector<int>()={3,3}, vertices, sizeof(vertices));
-
+    //Shader myShader("vert.shader","frag.shader");
+    
+    Material mat("vert.shader", "frag.shader");
+    Mesh m(6, vector<int>() = { 3,3 }, vertices, sizeof(vertices));
+    Renderer r(&m,&mat,&cameraObject);
+    mat.SetRenderCallback(renderCallback);
     //ÏÔÊ¾´°¿Ú
     while (mainScreen.isClosed())
     {
@@ -126,57 +133,15 @@ int main()
         do_movement();
 
         mainScreen.Display();
-
-        // Bind Texture
-        glBindTexture(GL_TEXTURE_2D, t.texture);
-
-        // Activate shader
-        myShader.Use();
-        
-        // Camera/View transformation
-        glm::mat4 view;
-        glm::vec3 cameraPos = cameraObject.GetComponent<Transform>()->position;
-        view = glm::lookAt(cameraPos, cameraPos + Transform::forward, Transform::up);
-        glm::mat4 projection;
-
-        view = cameraObject.GetComponent<Camera>()->GetViewMatrix(); 
-        projection = cameraObject.GetComponent<Camera>()->GetProjMatrix(); 
-        
-        // Get their uniform location
-        GLint modelLoc = glGetUniformLocation(myShader.Program, "model");
-        GLint viewLoc = glGetUniformLocation(myShader.Program, "view");
-        GLint projLoc = glGetUniformLocation(myShader.Program, "projection");
-        GLint LightColorLoc = glGetUniformLocation(myShader.Program, "lightColor");
-        // Pass the matrices to the shader
-        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
-        // Note: currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
-        glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
-        
-        
-        GLint objectColorLoc = glGetUniformLocation(myShader.Program, "objectColor");
-        glUniform3f(objectColorLoc,1,0.5,1);
-        Light* l = TLEngineCG::lights[0];
-        glUniform3f(LightColorLoc,l->color.x,l->color.y,l->color.z);
-        GLint lightPosLoc = glGetUniformLocation(myShader.Program, "lightPos");
-        glm::vec3 lightPos = l->gameobject->GetComponent<Transform>()->position;
-        glUniform3f(lightPosLoc, lightPos.x, lightPos.y, lightPos.z);
-        glBindVertexArray(m.VAO);
-        GLint viewPosLoc = glGetUniformLocation(myShader.Program, "viewPos");
-        glUniform3f(viewPosLoc, tr.position.x, tr.position.y, tr.position.z);
-
-        for (GLuint i = 0; i < 10; i++)
+        while (!TLEngineCG::renderQueue.empty())
         {
-            // Calculate the model matrix for each object and pass it to shader before drawing
-            glm::mat4 model;
-            model = glm::translate(model, cubePositions[i]);
-            GLfloat angle = 20.0f * i;
-            model = glm::rotate(model, angle, glm::vec3(1.0f, 0.3f, 0.5f));
-            glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-
-            glDrawArrays(GL_TRIANGLES, 0, 36);
+            if (TLEngineCG::renderQueue.top() != nullptr)
+            {
+                TLEngineCG::renderQueue.top()->Render();
+                TLEngineCG::renderQueue.pop();
+            }
         }
         //glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-        glBindVertexArray(0);
 
         // Swap the screen buffers
         glfwSwapBuffers(mainScreen.window);
@@ -251,4 +216,56 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
         camera.fov = 1.0f;
     if (camera.fov >= 45.0f)
         camera.fov = 45.0f;
+}
+
+void renderCallback(Shader* shader,Material* mat)
+{
+    mat->renderQueueIndex = (int)RendererQueue::Background;
+    // Bind Texture
+    glBindTexture(GL_TEXTURE_2D, t.texture);
+
+    // Activate shader
+    shader->Use();
+
+    // Camera/View transformation
+    glm::mat4 view;
+    glm::vec3 cameraPos = cameraObject.GetComponent<Transform>()->position;
+    view = glm::lookAt(cameraPos, cameraPos + Transform::forward, Transform::up);
+    glm::mat4 projection;
+
+    view = cameraObject.GetComponent<Camera>()->GetViewMatrix();
+    projection = cameraObject.GetComponent<Camera>()->GetProjMatrix();
+
+    // Get their uniform location
+    GLint modelLoc = glGetUniformLocation(shader->Program, "model");
+    GLint viewLoc = glGetUniformLocation(shader->Program, "view");
+    GLint projLoc = glGetUniformLocation(shader->Program, "projection");
+    GLint LightColorLoc = glGetUniformLocation(shader->Program, "lightColor");
+    // Pass the matrices to the shader
+    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+    // Note: currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
+    glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
+
+
+    GLint objectColorLoc = glGetUniformLocation(shader->Program, "objectColor");
+    glUniform3f(objectColorLoc, 1, 0.5, 1);
+    Light* l = TLEngineCG::lights[0];
+    glUniform3f(LightColorLoc, l->color.x, l->color.y, l->color.z);
+    GLint lightPosLoc = glGetUniformLocation(shader->Program, "lightPos");
+    glm::vec3 lightPos = l->gameobject->GetComponent<Transform>()->position;
+    glUniform3f(lightPosLoc, lightPos.x, lightPos.y, lightPos.z);
+    GLint viewPosLoc = glGetUniformLocation(shader->Program, "viewPos");
+    glUniform3f(viewPosLoc, tr.position.x, tr.position.y, tr.position.z);
+
+    for (GLuint i = 0; i < 10; i++)
+    {
+        // Calculate the model matrix for each object and pass it to shader before drawing
+        glm::mat4 model;
+        model = glm::translate(model, cubePositions[i]);
+        GLfloat angle = 20.0f * i;
+        model = glm::rotate(model, angle, glm::vec3(1.0f, 0.3f, 0.5f));
+        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+    }
 }

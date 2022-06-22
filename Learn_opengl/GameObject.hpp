@@ -8,58 +8,58 @@
 class GameObject
 {
 public:
-    Transform* transform;
+	Transform* transform;
 
-    GameObject();
-    ~GameObject();
+	GameObject();
+	~GameObject();
 
-    /// <summary>
-    /// 添加组件
-    /// </summary>
-    /// <param name=""></param>
-    void AddComponent(Component*);
+	/// <summary>
+	/// 添加组件
+	/// </summary>
+	/// <param name=""></param>
+	void AddComponent(Component*);
 
-    /// <summary>
-    /// 获取组件
-    /// </summary>
-    /// <typeparam name="T">组件类型</typeparam>
-    /// <returns>组件对象</returns>
-    template <class T>
-    T* GetComponent()
-    {
-        for (auto it = components.begin(); it != components.end(); it++)
-        {
-            auto com = dynamic_cast<T*>(*it);
-            if (com)
-            {
-                return com;
-            }
-        }
-        std::cout << "Component is not exist" << std::endl;
-        return nullptr;
-    }
+	/// <summary>
+	/// 获取组件
+	/// </summary>
+	/// <typeparam name="T">组件类型</typeparam>
+	/// <returns>组件对象</returns>
+	template <class T>
+	T* GetComponent()
+	{
+		for (auto it = components.begin(); it != components.end(); it++)
+		{
+			auto com = dynamic_cast<T*>(*it);
+			if (com)
+			{
+				return com;
+			}
+		}
+		std::cout << "Component is not exist" << std::endl;
+		return nullptr;
+	}
 
-    /// <summary>
-    /// 移除组件
-    /// </summary>
-    /// <typeparam name="T">组件类型</typeparam>
-    template <class T>
-    void RemoveComponent()
-    {
-        for (auto it = components.begin(); it != components.end(); it++)
-        {
-            if (dynamic_cast<T*>(*it))
-            {
-                delete (*it);
-            }
-        }
-        std::cout << "Component is not exist" << std::endl;
-        return nullptr;
-    }
+	/// <summary>
+	/// 移除组件
+	/// </summary>
+	/// <typeparam name="T">组件类型</typeparam>
+	template <class T>
+	void RemoveComponent()
+	{
+		for (auto it = components.begin(); it != components.end(); it++)
+		{
+			if (dynamic_cast<T*>(*it))
+			{
+				delete (*it);
+			}
+		}
+		std::cout << "Component is not exist" << std::endl;
+		return nullptr;
+	}
 
-    void Update();
+	void Update();
 private:
-    std::vector<Component*> components;
+	std::vector<Component*> components;
 };
 
 GameObject::GameObject()
@@ -68,13 +68,12 @@ GameObject::GameObject()
 
 GameObject::~GameObject()
 {
-
 }
 
 void GameObject::AddComponent(Component* comp)
 {
 	components.push_back(comp);
-	if(transform==nullptr)transform=dynamic_cast<Transform*>(comp);
+	if (transform == nullptr)transform = dynamic_cast<Transform*>(comp);
 }
 
 void GameObject::Update()

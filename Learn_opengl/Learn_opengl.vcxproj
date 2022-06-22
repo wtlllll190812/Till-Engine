@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="Camera.hpp" />
     <ClInclude Include="Component.hpp" />
+    <ClInclude Include="GameLoop.hpp" />
     <ClInclude Include="GameObject.hpp" />
     <ClInclude Include="Light.hpp" />
     <ClInclude Include="Material.hpp" />

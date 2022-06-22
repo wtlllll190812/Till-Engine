@@ -17,13 +17,12 @@ public:
 	static const  glm::vec3 up;
 	static const  glm::vec3 down;
 
-
 	glm::vec3 position;
 	glm::vec3 rotation;
 	glm::vec3 scale;
 
 	Transform(GameObject*);
-	Transform(glm::vec3,GameObject*);
+	Transform(glm::vec3, GameObject*);
 	~Transform();
 
 	/// <summary>
@@ -86,7 +85,6 @@ glm::vec3 Transform::GetFront()
 
 glm::vec3 Transform::GetRight()
 {
-
 	return glm::normalize(glm::cross(GetFront(), Transform::up));
 }
 
@@ -97,7 +95,7 @@ glm::vec3 Transform::GetUp()
 
 void Transform::Translate(float dis)
 {
-	position += dis*GetFront();
+	position += dis * GetFront();
 }
 
 void Transform::Translate(glm::vec3 direct, float dis)

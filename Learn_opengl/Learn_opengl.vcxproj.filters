@@ -13,20 +13,20 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="源文件\Render">
-      <UniqueIdentifier>{7b8ec320-113a-4bc2-b8c1-5fe56bf28915}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\ECS">
-      <UniqueIdentifier>{fca332d3-bca1-494e-86f4-f576fd468048}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\Engine">
-      <UniqueIdentifier>{c96bb9e6-7456-4ce0-964a-98e708c088ed}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\ECS\Component">
-      <UniqueIdentifier>{d1774df7-14f8-499a-8258-47fbe96f3a38}</UniqueIdentifier>
-    </Filter>
     <Filter Include="资源文件\shader">
       <UniqueIdentifier>{7d9d1ebb-f480-4b3b-be3d-036abfe987cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ECS">
+      <UniqueIdentifier>{fca332d3-bca1-494e-86f4-f576fd468048}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ECS\Component">
+      <UniqueIdentifier>{d1774df7-14f8-499a-8258-47fbe96f3a38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Engine">
+      <UniqueIdentifier>{c96bb9e6-7456-4ce0-964a-98e708c088ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Render">
+      <UniqueIdentifier>{7b8ec320-113a-4bc2-b8c1-5fe56bf28915}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -44,40 +44,43 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.hpp">
-      <Filter>源文件\ECS</Filter>
-    </ClInclude>
-    <ClInclude Include="Shader.hpp">
-      <Filter>源文件\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="Texture.hpp">
-      <Filter>源文件\Render</Filter>
+      <Filter>头文件\ECS</Filter>
     </ClInclude>
     <ClInclude Include="Screen.hpp">
-      <Filter>源文件\Engine</Filter>
+      <Filter>头文件\Engine</Filter>
     </ClInclude>
     <ClInclude Include="Transform.hpp">
-      <Filter>源文件\ECS\Component</Filter>
+      <Filter>头文件\ECS\Component</Filter>
     </ClInclude>
     <ClInclude Include="Component.hpp">
-      <Filter>源文件\ECS\Component</Filter>
+      <Filter>头文件\ECS\Component</Filter>
     </ClInclude>
     <ClInclude Include="Camera.hpp">
-      <Filter>源文件\ECS\Component</Filter>
+      <Filter>头文件\ECS\Component</Filter>
     </ClInclude>
     <ClInclude Include="Light.hpp">
-      <Filter>源文件\ECS\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="TLEngineCG.hpp">
-      <Filter>源文件\Render</Filter>
+      <Filter>头文件\ECS\Component</Filter>
     </ClInclude>
     <ClInclude Include="Renderer.hpp">
-      <Filter>源文件\ECS\Component</Filter>
+      <Filter>头文件\ECS\Component</Filter>
     </ClInclude>
-    <ClInclude Include="Mesh.hpp">
-      <Filter>源文件\Render</Filter>
+    <ClInclude Include="GameLoop.hpp">
+      <Filter>头文件\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="TLEngineCG.hpp">
+      <Filter>头文件\Render</Filter>
     </ClInclude>
     <ClInclude Include="Material.hpp">
-      <Filter>源文件\Render</Filter>
+      <Filter>头文件\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.hpp">
+      <Filter>头文件\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.hpp">
+      <Filter>头文件\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.hpp">
+      <Filter>头文件\Render</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -4,18 +4,17 @@
 #include "TLEngineCG.hpp"
 
 class GameObject;
-class Light:public Component
+class Light :public Component
 {
 public:
-	Light(float, glm::vec3,GameObject*);
+	Light(float, glm::vec3, GameObject*);
 	~Light();
 	float intensity;
 	glm::vec3 color;
 private:
-	
 };
 
-Light::Light(float _intensity,glm::vec3 _color,GameObject* g):Component(g)
+Light::Light(float _intensity, glm::vec3 _color, GameObject* g) :Component(g)
 {
 	intensity = _intensity;
 	TLEngineCG::lights.push_back(this);

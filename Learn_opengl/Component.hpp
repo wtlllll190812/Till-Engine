@@ -1,6 +1,5 @@
 #pragma once
 
-
 class GameObject;
 class Component
 {
@@ -12,4 +11,3 @@ public:
 	virtual void OnAdd() {};
 	virtual void OnRemove() {};
 };
-
