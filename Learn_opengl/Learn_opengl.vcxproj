@@ -152,6 +152,7 @@
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="start.cpp" />
     <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Time.cpp" />
     <ClCompile Include="TLEngineCG.cpp" />
     <ClCompile Include="Transform.cpp" />
   </ItemGroup>
@@ -175,6 +176,7 @@
     <ClInclude Include="Singleton .h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="Time.h" />
     <ClInclude Include="TLEngineCG.h" />
     <ClInclude Include="Transform.h" />
   </ItemGroup>

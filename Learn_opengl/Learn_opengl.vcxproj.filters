@@ -90,6 +90,9 @@
     <ClCompile Include="TLEngineCG.cpp">
       <Filter>源文件\Render</Filter>
     </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>源文件\Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="frag.shader">
@@ -150,6 +153,9 @@
     </ClInclude>
     <ClInclude Include="RenderSystem.h">
       <Filter>头文件\ECS\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>头文件\Engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
