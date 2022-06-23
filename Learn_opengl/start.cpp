@@ -1,20 +1,26 @@
 
+// GLEW
+#define GLEW_STATIC
+#include <GL/glew.h>
+// GLFW
+#include <GLFW/glfw3.h>
+
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
 
-#include "Screen.hpp"
-#include "Camera.hpp"
-#include "GameObject.hpp"
-#include "Transform.hpp"
-#include "Texture.hpp"
-#include "Shader.hpp"
-#include "Light.hpp"
-#include "Mesh.hpp"
-#include "Renderer.hpp"
-#include "Material.hpp"
-#include "TLEngineCG.hpp"
+#include "Screen.h"
+#include "Camera.h"
+#include "GameObject.h"
+#include "Transform.h"
+#include "Texture.h"
+#include "Shader.h"
+#include "Light.h"
+#include "Mesh.h"
+#include "Renderer.h"
+#include "Material.h"
+#include "TLEngineCG.h"
 
 
 // Set up vertex data (and buffer(s)) and attribute pointers
@@ -133,14 +139,7 @@ int main()
         do_movement();
 
         mainScreen.Display();
-        while (!TLEngineCG::renderQueue.empty())
-        {
-            if (TLEngineCG::renderQueue.top() != nullptr)
-            {
-                TLEngineCG::renderQueue.top()->Render();
-                TLEngineCG::renderQueue.pop();
-            }
-        }
+        
         //glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
         // Swap the screen buffers

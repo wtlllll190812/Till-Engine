@@ -28,10 +28,67 @@
     <Filter Include="头文件\Render">
       <UniqueIdentifier>{7b8ec320-113a-4bc2-b8c1-5fe56bf28915}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\ECS\System">
+      <UniqueIdentifier>{cb18d771-9e77-429d-994b-08894a95a025}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ECS">
+      <UniqueIdentifier>{47d288f5-b424-4946-afa8-67df7ac287d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ECS\Component">
+      <UniqueIdentifier>{b4a15804-88d6-45d5-9b68-79c2eefdd364}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ECS\System">
+      <UniqueIdentifier>{48f6207b-8955-40cb-bf89-587e5d3717b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Engine">
+      <UniqueIdentifier>{a0e22d02-8851-472a-946f-886bad8318ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Render">
+      <UniqueIdentifier>{d246afa6-187c-46d9-b9b6-07cf0b3f3362}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="start.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>源文件\ECS\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>源文件\ECS\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>源文件\ECS\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>源文件\ECS\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderSystem.cpp">
+      <Filter>源文件\ECS\System</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>源文件\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLoop.cpp">
+      <Filter>源文件\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Screen.cpp">
+      <Filter>源文件\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Render.cpp">
+      <Filter>源文件\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>源文件\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>源文件\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>源文件\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="TLEngineCG.cpp">
+      <Filter>源文件\Render</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -43,44 +100,56 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameObject.hpp">
+    <ClInclude Include="GameObject.h">
       <Filter>头文件\ECS</Filter>
     </ClInclude>
-    <ClInclude Include="Screen.hpp">
+    <ClInclude Include="Screen.h">
       <Filter>头文件\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Transform.hpp">
+    <ClInclude Include="Transform.h">
       <Filter>头文件\ECS\Component</Filter>
     </ClInclude>
-    <ClInclude Include="Component.hpp">
+    <ClInclude Include="Component.h">
       <Filter>头文件\ECS\Component</Filter>
     </ClInclude>
-    <ClInclude Include="Camera.hpp">
+    <ClInclude Include="Camera.h">
       <Filter>头文件\ECS\Component</Filter>
     </ClInclude>
-    <ClInclude Include="Light.hpp">
+    <ClInclude Include="Light.h">
       <Filter>头文件\ECS\Component</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer.hpp">
+    <ClInclude Include="Renderer.h">
       <Filter>头文件\ECS\Component</Filter>
     </ClInclude>
-    <ClInclude Include="GameLoop.hpp">
+    <ClInclude Include="GameLoop.h">
       <Filter>头文件\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="TLEngineCG.hpp">
+    <ClInclude Include="TLEngineCG.h">
       <Filter>头文件\Render</Filter>
     </ClInclude>
-    <ClInclude Include="Material.hpp">
+    <ClInclude Include="Material.h">
       <Filter>头文件\Render</Filter>
     </ClInclude>
-    <ClInclude Include="Mesh.hpp">
+    <ClInclude Include="Mesh.h">
       <Filter>头文件\Render</Filter>
     </ClInclude>
-    <ClInclude Include="Shader.hpp">
+    <ClInclude Include="Shader.h">
       <Filter>头文件\Render</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.hpp">
+    <ClInclude Include="Texture.h">
       <Filter>头文件\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics.h">
+      <Filter>头文件\ECS\System</Filter>
+    </ClInclude>
+    <ClInclude Include="System.h">
+      <Filter>头文件\ECS\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton .h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderSystem.h">
+      <Filter>头文件\ECS\System</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,22 @@
+#pragma once
+#include <glm/glm.hpp>
+#include "TLEngineCG.h"
+#include "Component.h"
+
+class GameObject;
+class Light :public Component
+{
+public:
+	Light(float, glm::vec3, GameObject*);
+	~Light();
+
+	/// <summary>
+	/// 光的强度
+	/// </summary>
+	float intensity;
+
+	/// <summary>
+	/// 光的颜色
+	/// </summary>
+	glm::vec3 color;
+};

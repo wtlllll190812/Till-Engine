@@ -1,21 +1,5 @@
-#pragma once
-#include "Shader.hpp"
-#include "Mesh.hpp"
-#include "TLEngineCG.hpp"
+#include"Material.h"
 
-class Material
-{
-public:
-	Shader* shader;
-	int renderQueueIndex = (int)RendererQueue::Geometry;
-	void (*RenderCallback)(Shader*, Material*);
-
-	Material(const GLchar*, const GLchar*);
-	~Material();
-
-	void SetRenderCallback(void (*f)(Shader*, Material*));
-	void Render(Mesh*);
-};
 
 Material::Material(const GLchar* vertexPath, const GLchar* fragmentPath)
 {

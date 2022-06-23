@@ -2,8 +2,7 @@
 #include<vector>
 #include<string>
 #include<iostream>
-#include "Component.hpp"
-#include "Transform.hpp"
+#include "Transform.h"
 
 class GameObject
 {
@@ -61,25 +60,3 @@ public:
 private:
 	std::vector<Component*> components;
 };
-
-GameObject::GameObject()
-{
-}
-
-GameObject::~GameObject()
-{
-}
-
-void GameObject::AddComponent(Component* comp)
-{
-	components.push_back(comp);
-	if (transform == nullptr)transform = dynamic_cast<Transform*>(comp);
-}
-
-void GameObject::Update()
-{
-	for (auto i = components.begin(); i != components.end(); i++)
-	{
-		(*i)->OnUpdate();
-	}
-}

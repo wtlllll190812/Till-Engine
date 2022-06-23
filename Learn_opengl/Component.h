@@ -7,7 +7,25 @@ public:
 	GameObject* gameobject;
 
 	Component(GameObject* gameobject) :gameobject(gameobject) {}
+	
+	/*template <class T>
+	T* GetComponent()
+	{
+		return gameobject->GetComponent<T>();
+	}*/
+	
+	/// <summary>
+	/// 刷新时
+	/// </summary>
 	virtual void OnUpdate() {};
+	
+	/// <summary>
+	/// 添加时
+	/// </summary>
 	virtual void OnAdd() {};
+	
+	/// <summary>
+	/// 移除时
+	/// </summary>
 	virtual void OnRemove() {};
 };
