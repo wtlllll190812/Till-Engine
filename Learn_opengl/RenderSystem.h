@@ -10,7 +10,7 @@ class RenderSystem:public System,public Singleton<RenderSystem>
 public:
 	RenderSystem();
 	~RenderSystem();
-	static std::priority_queue < Renderer*, std::vector<Renderer*>> renderQueue;
+	//static std::priority_queue < Renderer*, std::vector<Renderer*>> renderQueue;
 
 	// Í¨¹ý System ¼Ì³Ð
 	virtual void Update() override;

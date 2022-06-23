@@ -21,7 +21,7 @@
 #include "Renderer.h"
 #include "Material.h"
 #include "TLEngineCG.h"
-
+#include "GameLoop.h"
 
 // Set up vertex data (and buffer(s)) and attribute pointers
 GLfloat vertices[] = {
@@ -114,6 +114,9 @@ void renderCallback(Shader* shader, Material* mat);
 
 int main()
 {
+    GameLoop loop(1);
+    loop.SetFixedUpdateCallback([]() {cout << "Test"; });
+    loop.StartLoop();
     cameraObject.AddComponent(&tr);
     cameraObject.AddComponent(&camera);
     lightObject.AddComponent(&tr2);

@@ -2,7 +2,7 @@
 #include"Renderer.h"
 
 
-std::priority_queue < Renderer*, std::vector<Renderer*>> RenderSystem::renderQueue = std::priority_queue < Renderer*, std::vector<Renderer*>>();
+std::priority_queue <Renderer*, std::vector<Renderer*>> renderQueue = std::priority_queue < Renderer*, std::vector<Renderer*>>();
 
 void RenderSystem::Update()
 {

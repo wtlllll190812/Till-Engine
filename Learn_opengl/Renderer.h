@@ -3,6 +3,8 @@
 #include "Material.h"
 #include "Mesh.h"
 
+extern std::priority_queue < Renderer*, std::vector<Renderer*>> renderQueue;
+
 class GameObject;
 class Renderer :public Component
 {

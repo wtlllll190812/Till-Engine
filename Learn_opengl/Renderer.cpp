@@ -17,5 +17,5 @@ void Renderer::Render()
 
 void Renderer::OnAdd()
 {
-	//RenderSystem::instance().RegisterComponent(this);
+	renderQueue.push(dynamic_cast<Renderer*>(this));
 }
