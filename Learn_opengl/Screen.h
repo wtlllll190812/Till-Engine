@@ -1,10 +1,8 @@
 #pragma once
-#include<iostream>
-// GLEW
-#define GLEW_STATIC
-#include <GL/glew.h>
-// GLFW
+#define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
+#include <GL/glew.h>
+#include<iostream>
 
 class Screen
 {

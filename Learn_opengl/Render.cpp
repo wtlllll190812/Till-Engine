@@ -1,6 +1,5 @@
 #include"Material.h"
 
-
 Material::Material(const GLchar* vertexPath, const GLchar* fragmentPath)
 {
 	RenderCallback = nullptr;

@@ -8,12 +8,6 @@ public:
 
 	Component(GameObject* gameobject) :gameobject(gameobject) {}
 	
-	/*template <class T>
-	T* GetComponent()
-	{
-		return gameobject->GetComponent<T>();
-	}*/
-	
 	/// <summary>
 	/// Ë¢ÐÂÊ±
 	/// </summary>
@@ -28,4 +22,5 @@ public:
 	/// ÒÆ³ýÊ±
 	/// </summary>
 	virtual void OnRemove() {};
+
 };

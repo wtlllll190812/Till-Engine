@@ -1,5 +1,7 @@
 #include "GameLoop.h"
 #include <ctime>
+#include "Time.h"
+#include <iostream>
 using namespace std;
 
 GameLoop::GameLoop(int _frame)
@@ -38,14 +40,20 @@ void GameLoop::SetLateUpdateCallback(void(*f)())
 
 void GameLoop::StartLoop()
 {
-	clock_t start = clock();
+	if (Awake != nullptr)Awake();
 	while (true)
 	{
-		if(Update!=nullptr)Update();
-		if ((double)(clock() - start) / CLOCKS_PER_SEC >= 1 / (double)frame)
+		Time::unscaledDeltaTime = (double)clock() / CLOCKS_PER_SEC - Time::unscaledTime;
+		Time::deltaTime = Time::unscaledDeltaTime * Time::timeScale;
+		Time::unscaledTime += Time::unscaledDeltaTime;
+		Time::time += Time::deltaTime;
+
+		if (Update != nullptr)Update();
+		if (Time::time - Time::fixedTime >= 1 / (double)frame)
 		{
 			if (FixedUpdate != nullptr)FixedUpdate();
-			start = clock();
+			Time::fixedTime = Time::time;
+			Time::frameCount++;
 		}
 		if (LateUpdate != nullptr)LateUpdate();
 	}

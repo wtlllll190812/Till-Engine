@@ -21,7 +21,7 @@ Screen::Screen(const GLuint w, const GLuint h) :width(w), heigth(h)
 	glfwMakeContextCurrent(window);//设定为当前窗口
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
-	//初始化GLEW,用于管理opengl的函数指针
+	////初始化GLEW,用于管理opengl的函数指针
 	glewExperimental = GL_TRUE;
 	//初始化失败时
 	if (glewInit() != GLEW_OK)
@@ -29,6 +29,12 @@ Screen::Screen(const GLuint w, const GLuint h) :width(w), heigth(h)
 		std::cout << "Failed to initialize GLEW" << std::endl;
 		return;
 	}
+	//初始化glad
+	/*if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+	{
+		std::cout << "Failed to initialize GLAD" << std::endl;
+		return ;
+	}*/
 
 	//设置窗口
 	glViewport(0, 0, width, heigth);//前两个参数控制左下角的位置

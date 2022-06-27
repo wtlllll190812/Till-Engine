@@ -101,6 +101,7 @@
     <None Include="vert.shader">
       <Filter>资源文件\shader</Filter>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h">
