@@ -53,4 +53,8 @@ public:
 	/// <param name="">移动方向</param>
 	/// <param name="">位移大小</param>
 	void Translate(glm::vec3, float);
+
+	// 通过 Component 继承
+	virtual TLxml* Serialize() override;
+
 };

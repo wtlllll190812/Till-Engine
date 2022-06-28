@@ -36,4 +36,9 @@ private:
 	/// 当前窗口
 	/// </summary>
 	Screen* currentScreen;
+
+	/// <summary>
+	/// 序列化
+	/// </summary>
+	virtual TLxml* Serialize() override;
 };

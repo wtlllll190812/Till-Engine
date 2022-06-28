@@ -51,3 +51,12 @@ void Transform::Translate(glm::vec3 direct, float dis)
 {
 	position += dis * direct;
 }
+
+TLxml* Transform::Serialize()
+{
+	auto xml = new TLxml("trasnsform");
+	xml->AddChild(TLxml::Serialize(position, "position")->pRoot);
+	xml->AddChild(TLxml::Serialize(rotation, "rotation")->pRoot);
+	xml->AddChild(TLxml::Serialize(scale, "scale")->pRoot);
+	return xml;
+}

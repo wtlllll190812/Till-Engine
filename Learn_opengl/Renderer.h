@@ -36,5 +36,8 @@ public:
 	{
 		return r.material->renderQueueIndex > material->renderQueueIndex;
 	}
+
+	// Í¨¹ý Component ¼Ì³Ð
+	virtual TLxml* Serialize() override;
 };
 

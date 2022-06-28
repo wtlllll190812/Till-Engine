@@ -1,5 +1,5 @@
 #include"Light.h"
-
+#include<string>
 Light::Light(float _intensity, glm::vec3 _color, GameObject* g) :Component(g)
 {
 	intensity = _intensity;
@@ -15,4 +15,12 @@ Light::~Light()
 		if (*i == this)
 			TLEngineCG::lights.erase(i);
 	}
+}
+
+TLxml* Light::Serialize()
+{
+	auto xml = new TLxml("camera");
+	xml->pRoot->SetAttribute("intensity", std::to_string(intensity));
+	xml->AddChild(TLxml::Serialize(color, "color")->pRoot);
+	return xml;
 }

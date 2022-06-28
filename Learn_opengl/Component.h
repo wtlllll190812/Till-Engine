@@ -1,4 +1,6 @@
 #pragma once
+#include "TLxml.h"
+#include <string>
 
 class GameObject;
 class Component
@@ -23,4 +25,8 @@ public:
 	/// </summary>
 	virtual void OnRemove() {};
 
+	/// <summary>
+	/// –Ú¡–ªØ
+	/// </summary>
+	virtual TLxml* Serialize() = 0;
 };

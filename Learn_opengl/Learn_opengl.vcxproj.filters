@@ -93,6 +93,12 @@
     <ClCompile Include="Time.cpp">
       <Filter>源文件\Engine</Filter>
     </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>源文件\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="TLxml.cpp">
+      <Filter>源文件\Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="frag.shader">
@@ -156,6 +162,12 @@
       <Filter>头文件\ECS\System</Filter>
     </ClInclude>
     <ClInclude Include="Time.h">
+      <Filter>头文件\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="TLxml.h">
+      <Filter>头文件\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
       <Filter>头文件\Engine</Filter>
     </ClInclude>
   </ItemGroup>

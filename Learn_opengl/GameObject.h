@@ -3,11 +3,14 @@
 #include<string>
 #include<iostream>
 #include "Transform.h"
+#include "TLxml.h"
 
 class GameObject
 {
 public:
 	Transform* transform;
+	std::string name;
+	int guid;
 
 	GameObject();
 	~GameObject();
@@ -57,6 +60,8 @@ public:
 	}
 
 	void Update();
+	
+	TLxml* Serialize();
 private:
 	std::vector<Component*> components;
 };

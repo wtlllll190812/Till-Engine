@@ -2,6 +2,7 @@
 
 GameObject::GameObject()
 {
+	name = "GameObject";
 }
 
 GameObject::~GameObject()
@@ -20,4 +21,14 @@ void GameObject::Update()
 	{
 		(*i)->OnUpdate();
 	}
+}
+
+TLxml* GameObject::Serialize()
+{
+	TLxml* xml=new TLxml(name);
+	for(auto i:components)
+	{
+		xml->AddChild(i->Serialize()->pRoot);
+	}
+	return xml;
 }

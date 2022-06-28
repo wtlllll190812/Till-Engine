@@ -1,4 +1,4 @@
-#include"Camera.h"
+#include "Camera.h"
 
 Camera::Camera(Screen* s, GameObject* gameobject) :Component(gameobject), currentScreen(s)
 {
@@ -20,4 +20,11 @@ glm::mat4 Camera::GetViewMatrix()
 glm::mat4 Camera::GetProjMatrix()
 {
 	return glm::perspective(fov, (float)currentScreen->width / (float)currentScreen->heigth, 0.1f, 100.0f);
+}
+
+TLxml* Camera::Serialize()
+{
+	auto xml = new TLxml("camera");
+	xml->pRoot->SetAttribute("fov", "sd");
+	return xml;
 }

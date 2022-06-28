@@ -19,4 +19,9 @@ public:
 	/// 光的颜色
 	/// </summary>
 	glm::vec3 color;
+
+	/// <summary>
+	/// 序列化
+	/// </summary>
+	virtual TLxml* Serialize() override;
 };

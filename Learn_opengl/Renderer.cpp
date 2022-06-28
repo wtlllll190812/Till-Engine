@@ -19,3 +19,9 @@ void Renderer::OnAdd()
 {
 	renderQueue.push(dynamic_cast<Renderer*>(this));
 }
+
+TLxml* Renderer::Serialize()
+{
+	auto xml = new TLxml("Renderer");
+	return xml;
+}
