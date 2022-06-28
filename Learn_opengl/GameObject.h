@@ -1,9 +1,10 @@
 #pragma once
-#include<vector>
-#include<string>
-#include<iostream>
+#include <vector>
+
+
 #include "Transform.h"
 #include "TLxml.h"
+#include"Reflection.h"
 
 class GameObject
 {
@@ -13,6 +14,7 @@ public:
 	int guid;
 
 	GameObject();
+	GameObject(TiXmlNode*);
 	~GameObject();
 
 	/// <summary>
@@ -62,6 +64,13 @@ public:
 	void Update();
 	
 	TLxml* Serialize();
+
+	int GetHash();
+
+	bool operator==(const GameObject& g)const {
+		return g.guid == this->guid;
+	}
 private:
 	std::vector<Component*> components;
 };
+

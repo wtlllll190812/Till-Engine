@@ -20,6 +20,7 @@ Light::~Light()
 TLxml* Light::Serialize()
 {
 	auto xml = new TLxml("camera");
+	xml->pRoot->SetAttribute("guid", std::to_string(guid));
 	xml->pRoot->SetAttribute("intensity", std::to_string(intensity));
 	xml->AddChild(TLxml::Serialize(color, "color")->pRoot);
 	return xml;

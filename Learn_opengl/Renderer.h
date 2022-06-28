@@ -30,7 +30,7 @@ public:
 	/// <summary>
 	/// ±»Ìí¼ÓÊ±
 	/// </summary>
-	void OnAdd() override;
+	void Awake() override;
 
 	bool operator>(const Renderer& r)
 	{

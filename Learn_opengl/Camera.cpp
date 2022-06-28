@@ -1,4 +1,5 @@
 #include "Camera.h"
+#include "GameObject.h"
 
 Camera::Camera(Screen* s, GameObject* gameobject) :Component(gameobject), currentScreen(s)
 {
@@ -25,6 +26,7 @@ glm::mat4 Camera::GetProjMatrix()
 TLxml* Camera::Serialize()
 {
 	auto xml = new TLxml("camera");
+	xml->pRoot->SetAttribute("guid", std::to_string(guid));
 	xml->pRoot->SetAttribute("fov", "sd");
 	return xml;
 }

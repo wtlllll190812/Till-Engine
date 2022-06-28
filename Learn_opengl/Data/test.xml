@@ -1,29 +1,19 @@
 <sdsd>
-    <GameObject>
-        <component />
-        <camera fov="sd" />
-    </GameObject>
-    <GameObject>
-        <component />
-        <camera intensity="0.100000">
-            <color x="1.000000" y="0.500000" z="0.500000" />
-        </camera>
-    </GameObject>
-    <GameObject>
-        <trasnsform>
+    <GameObject name="GameObject" guid="2107251394">
+        <trasnsform guid="1923426485">
             <position x="0.000000" y="0.000000" z="0.000000" />
             <rotation x="0.000000" y="0.000000" z="0.000000" />
             <scale x="0.000000" y="0.000000" z="0.000000" />
         </trasnsform>
-        <camera fov="sd" />
+        <camera guid="489482653" fov="sd" />
     </GameObject>
-    <GameObject>
-        <trasnsform>
+    <GameObject name="GameObject" guid="1656171938">
+        <trasnsform guid="333223285">
             <position x="0.000000" y="0.000000" z="0.000000" />
             <rotation x="0.000000" y="0.000000" z="0.000000" />
             <scale x="0.000000" y="0.000000" z="0.000000" />
         </trasnsform>
-        <camera intensity="0.100000">
+        <camera guid="1223497733" intensity="0.100000">
             <color x="1.000000" y="0.500000" z="0.500000" />
         </camera>
     </GameObject>

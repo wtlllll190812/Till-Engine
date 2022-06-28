@@ -19,8 +19,21 @@
 #include "TLEngineCG.h"
 #include "GameLoop.h"
 #include "TLxml.h"
+#include"RenderSystem.h"
+
 
 // Set up vertex data (and buffer(s)) and attribute pointers
+
+class TestClass
+{
+public:
+	void m_print()
+	{
+		cout << "hello TestClass" << endl;
+	};
+};
+REGISTER(TestClass);
+
 GLfloat vertices[] = {
 	   -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
 	 0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
@@ -109,20 +122,17 @@ void renderCallback(Shader* shader, Material* mat);
 
 int main()
 {
-	unique_ptr<TLxml> xml(new TLxml("test.xml", "sdsd"));
-	
-
-	/*GameLoop loop(1);
-	loop.SetFixedUpdateCallback([]() {cout << "Test"; });*/
-	//loop.StartLoop();
+	shared_ptr<TLxml> xml(new TLxml("Data/test.xml", "sdsd"));
 
 	cameraObject.AddComponent(&tr);
 	cameraObject.AddComponent(&camera);
 	lightObject.AddComponent(&tr2);
 	lightObject.AddComponent(&light);
 
-	xml->AddChild(cameraObject.Serialize()->pRoot);
-	xml->AddChild(lightObject.Serialize()->pRoot);
+
+	GameObject gdgd(xml->pRoot->FirstChild());
+	/*xml->AddChild(cameraObject.Serialize()->pRoot);
+	xml->AddChild(lightObject.Serialize()->pRoot);*/
 	
 	
 	glfwSetKeyCallback(mainScreen.window, key_callback);
@@ -133,7 +143,11 @@ int main()
 	Material mat("vert.shader", "frag.shader");
 	Mesh m(6, vector<int>() = { 3,3 }, vertices, sizeof(vertices));
 	Renderer r(&m, &mat, &cameraObject);
-	mat.SetRenderCallback(renderCallback);
+	mat.SetRenderCallback([](Shader* s,Material *m) {cout << "ed" << endl; });
+	GameObject sdsd;
+	sdsd.AddComponent(&r);
+
+	RenderSystem qs;
 	//ÏÔÊ¾´°¿Ú
 	while (mainScreen.isClosed())
 	{
@@ -141,7 +155,7 @@ int main()
 		do_movement();
 
 		mainScreen.Display();
-
+		qs.Update();
 		//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 		// Swap the screen buffers

@@ -55,6 +55,7 @@ void Transform::Translate(glm::vec3 direct, float dis)
 TLxml* Transform::Serialize()
 {
 	auto xml = new TLxml("trasnsform");
+	xml->pRoot->SetAttribute("guid",std::to_string(guid));
 	xml->AddChild(TLxml::Serialize(position, "position")->pRoot);
 	xml->AddChild(TLxml::Serialize(rotation, "rotation")->pRoot);
 	xml->AddChild(TLxml::Serialize(scale, "scale")->pRoot);

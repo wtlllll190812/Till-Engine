@@ -3,10 +3,10 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-
-#include "Screen.h"
 #include "Component.h"
-#include "GameObject.h"
+#include "Screen.h"
+
+
 
 class Camera :public Component
 {

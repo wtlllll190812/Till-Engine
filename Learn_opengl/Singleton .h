@@ -9,6 +9,5 @@ public:
         static T* instance = new T();
         return *instance;
     }
-private:
     Singleton() {}
 };

@@ -1,22 +1,35 @@
 #include"RenderSystem.h"
 #include"Renderer.h"
+#include<iostream>
 
-std::priority_queue <Renderer*, std::vector<Renderer*>> renderQueue = std::priority_queue < Renderer*, std::vector<Renderer*>>();
+typedef std::priority_queue <Renderer*, std::vector<Renderer*>> renderPriorityQueue;
+renderPriorityQueue renderQueue = renderPriorityQueue();
+
+RenderSystem::RenderSystem()
+{
+}
+
+RenderSystem::~RenderSystem()
+{
+}
 
 void RenderSystem::Update()
 {
+	renderPriorityQueue queue = renderQueue;
+	while (!queue.empty())
+	{
+		if (queue.top() != nullptr)
+		{
+			std::cout << queue.top()->guid << std::endl;
+			queue.top()->Render();
+			queue.pop();
+		}
+	}
 }
 
 void RenderSystem::FixedUpdate()
 {
-	while (!renderQueue.empty())
-	{
-		if (renderQueue.top() != nullptr)
-		{
-			renderQueue.top()->Render();
-			renderQueue.pop();
-		}
-	}
+	
 }
 
 void RenderSystem::RegisterComponent(Component* com)

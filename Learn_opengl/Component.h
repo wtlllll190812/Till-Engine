@@ -1,14 +1,17 @@
 #pragma once
 #include "TLxml.h"
 #include <string>
+#include <functional>
+
 
 class GameObject;
 class Component
 {
 public:
 	GameObject* gameobject;
+	int guid;
 
-	Component(GameObject* gameobject) :gameobject(gameobject) {}
+	Component(GameObject* gameobject) :gameobject(gameobject),guid(GetHash()) {}
 	
 	/// <summary>
 	/// 刷新时
@@ -18,7 +21,7 @@ public:
 	/// <summary>
 	/// 添加时
 	/// </summary>
-	virtual void OnAdd() {};
+	virtual void Awake() {};
 	
 	/// <summary>
 	/// 移除时
@@ -29,4 +32,14 @@ public:
 	/// 序列化
 	/// </summary>
 	virtual TLxml* Serialize() = 0;
+
+	/// <summary>
+	/// 获取哈希值
+	/// </summary>
+	int GetHash()
+	{
+		std::hash<Component*> h;
+		return (h(this));
+	}
 };
+
