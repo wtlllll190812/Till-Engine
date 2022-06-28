@@ -52,4 +52,14 @@ TLxml* TLxml::Serialize(glm::vec3& vector,std::string name)
     return xml;
 }
 
+glm::vec3 TLxml::DeSerialize(TiXmlNode* xml)
+{
+    auto element = xml->ToElement();
+    glm::vec3 res=glm::vec3();
+    res.x = std::stof(element->Attribute("x"));
+    res.y = std::stof(element->Attribute("y"));
+    res.z = std::stof(element->Attribute("z"));
+    return res;
+}
+
 

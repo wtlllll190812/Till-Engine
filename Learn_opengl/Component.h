@@ -11,8 +11,10 @@ public:
 	GameObject* gameobject;
 	int guid;
 
-	Component(GameObject* gameobject) :gameobject(gameobject),guid(GetHash()) {}
+	Component() :gameobject(nullptr),guid(GetHash()) {}
 	
+	virtual void Instantiate(TiXmlNode*)=0;
+
 	/// <summary>
 	/// 刷新时
 	/// </summary>
@@ -31,7 +33,7 @@ public:
 	/// <summary>
 	/// 序列化
 	/// </summary>
-	virtual TLxml* Serialize() = 0;
+	virtual TLxml* Serialize()=0;
 
 	/// <summary>
 	/// 获取哈希值
@@ -42,4 +44,3 @@ public:
 		return (h(this));
 	}
 };
-

@@ -19,7 +19,8 @@ public:
 	/// </summary>
 	Material* material;
 
-	Renderer(Mesh*, Material*, GameObject*);
+	Renderer(Mesh*, Material*);
+	Renderer();
 	~Renderer();
 
 	/// <summary>
@@ -39,5 +40,8 @@ public:
 
 	// 通过 Component 继承
 	virtual TLxml* Serialize() override;
+
+	// 通过 Component 继承
+	virtual void Instantiate(TiXmlNode*) override;
 };
 

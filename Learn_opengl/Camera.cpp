@@ -1,7 +1,12 @@
 #include "Camera.h"
 #include "GameObject.h"
+#include"Transform.h"
+REGISTER(Camera);
+Camera::Camera(Screen* s) :currentScreen(s)
+{
+}
 
-Camera::Camera(Screen* s, GameObject* gameobject) :Component(gameobject), currentScreen(s)
+Camera::Camera()
 {
 }
 
@@ -25,8 +30,15 @@ glm::mat4 Camera::GetProjMatrix()
 
 TLxml* Camera::Serialize()
 {
-	auto xml = new TLxml("camera");
+	auto xml = new TLxml("Camera");
 	xml->pRoot->SetAttribute("guid", std::to_string(guid));
-	xml->pRoot->SetAttribute("fov", "sd");
+	xml->pRoot->SetAttribute("fov", std::to_string(fov));
 	return xml;
+}
+
+void Camera::Instantiate(TiXmlNode* xml)
+{
+	auto element = xml->ToElement();
+	fov = std::stof(element->Attribute("fov"));
+	guid = std::stoi(element->Attribute("guid"));
 }

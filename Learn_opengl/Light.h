@@ -7,7 +7,8 @@ class GameObject;
 class Light :public Component
 {
 public:
-	Light(float, glm::vec3, GameObject*);
+	Light(float, glm::vec3);
+	Light();
 	~Light();
 
 	/// <summary>
@@ -24,4 +25,8 @@ public:
 	/// 序列化
 	/// </summary>
 	virtual TLxml* Serialize() override;
+
+	// 通过 Component 继承
+	virtual void Instantiate(TiXmlNode*) override;
+
 };

@@ -1,10 +1,15 @@
 #include "Renderer.h"
 #include<iostream>
+REGISTER(Renderer);
 
-Renderer::Renderer(Mesh* m, Material* mater, GameObject* g) :Component(g)
+Renderer::Renderer(Mesh* m, Material* mater) 
 {
 	mesh = m;
 	material = mater;
+}
+
+Renderer::Renderer()
+{
 }
 
 Renderer::~Renderer()
@@ -28,3 +33,9 @@ TLxml* Renderer::Serialize()
 	xml->pRoot->SetAttribute("guid", std::to_string(guid));
 	return xml;
 }
+
+void Renderer::Instantiate(TiXmlNode* xml)
+{
+	auto element = xml->ToElement();
+	guid = std::stoi(element->Attribute("guid"));
+}	

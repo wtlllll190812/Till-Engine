@@ -16,7 +16,8 @@ public:
 	/// </summary>
 	float fov = 120.0f;
 
-	Camera(Screen*, GameObject*);
+	Camera(Screen*);
+	Camera();
 	~Camera();
 
 	/// <summary>
@@ -41,4 +42,7 @@ private:
 	/// 序列化
 	/// </summary>
 	virtual TLxml* Serialize() override;
+
+	// 通过 Component 继承
+	virtual void Instantiate(TiXmlNode*) override;
 };

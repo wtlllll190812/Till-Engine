@@ -1,10 +1,17 @@
 #include"Light.h"
 #include<string>
-Light::Light(float _intensity, glm::vec3 _color, GameObject* g) :Component(g)
+REGISTER(Light);
+
+
+Light::Light(float _intensity, glm::vec3 _color) 
 {
 	intensity = _intensity;
 	TLEngineCG::lights.push_back(this);
 	color = _color;
+}
+
+Light::Light()
+{
 }
 
 Light::~Light()
@@ -19,9 +26,17 @@ Light::~Light()
 
 TLxml* Light::Serialize()
 {
-	auto xml = new TLxml("camera");
+	auto xml = new TLxml("Light");
 	xml->pRoot->SetAttribute("guid", std::to_string(guid));
 	xml->pRoot->SetAttribute("intensity", std::to_string(intensity));
 	xml->AddChild(TLxml::Serialize(color, "color")->pRoot);
 	return xml;
+}
+
+void Light::Instantiate(TiXmlNode* xml)
+{
+	auto element = xml->ToElement();
+	guid = std::stoi(element->Attribute("guid"));
+	intensity = std::stof(element->Attribute("intensity"));
+	color = TLxml::DeSerialize(xml->FirstChild());
 }

@@ -23,7 +23,7 @@ public:
 	glm::vec3 rotation;
 	glm::vec3 scale;
 
-	Transform(GameObject*);
+	Transform();
 	Transform(glm::vec3, GameObject*);
 	~Transform();
 
@@ -57,4 +57,7 @@ public:
 	// 通过 Component 继承
 	virtual TLxml* Serialize() override;
 
+
+	// 通过 Component 继承
+	virtual void Instantiate(TiXmlNode*) override;
 };

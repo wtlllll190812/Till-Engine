@@ -14,7 +14,9 @@ public:
 	~TLxml();
 
 	void AddChild(TiXmlElement*);
-	static TLxml* Serialize(glm::vec3&,std::string);
+	void Save() { pDoc->SaveFile(path); }
+	static TLxml* Serialize(glm::vec3&, std::string);
+	static glm::vec3 DeSerialize(TiXmlNode*);
 private:
 	std::string path;
 	TiXmlDocument* pDoc;

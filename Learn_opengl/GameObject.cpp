@@ -20,7 +20,18 @@ GameObject::GameObject(TiXmlNode* xml)
 	for (auto node = element->FirstChild(); node != 0; node = node->NextSibling())
 	{
 		auto element = node->ToElement();
-		//std::cout << element->Value() << std::endl;
+		if (strcmp(element->Value() , "Transform")!=0)
+		{
+			auto comp= (Component*)Reflection::instance().getClassByName(element->Value());
+			comp->Instantiate(element);
+			AddComponent(comp);
+		}
+		else
+		{
+			transform = new Transform();
+			transform->Instantiate(element);
+			AddComponent(transform);
+		}
 		/*switch (element->Value())
 		{
 		default:
@@ -36,6 +47,7 @@ GameObject::~GameObject()
 void GameObject::AddComponent(Component* comp)
 {
 	components.push_back(comp);
+	comp->gameobject = this;
 	comp->Awake();
 	if (transform == nullptr)transform = dynamic_cast<Transform*>(comp);
 }

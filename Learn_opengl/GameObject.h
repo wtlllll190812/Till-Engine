@@ -1,21 +1,35 @@
 #pragma once
 #include <vector>
-
-
-#include "Transform.h"
 #include "TLxml.h"
 #include"Reflection.h"
+#include"Transform.h"
+
 
 class GameObject
 {
 public:
 	Transform* transform;
-	std::string name;
-	int guid;
+	std::string name;//物体名称
+	int guid;//物体标识
 
 	GameObject();
 	GameObject(TiXmlNode*);
 	~GameObject();
+
+	/// <summary>
+	/// 物体刷新
+	/// </summary>
+	void Update();
+
+	/// <summary>
+	/// 序列化
+	/// </summary>
+	TLxml* Serialize();
+
+	/// <summary>
+	/// 获取hash值
+	/// </summary>
+	int GetHash();
 
 	/// <summary>
 	/// 添加组件
@@ -54,18 +68,13 @@ public:
 		{
 			if (dynamic_cast<T*>(*it))
 			{
+				(*it)->OnRemove();
 				delete (*it);
 			}
 		}
 		std::cout << "Component is not exist" << std::endl;
 		return nullptr;
 	}
-
-	void Update();
-	
-	TLxml* Serialize();
-
-	int GetHash();
 
 	bool operator==(const GameObject& g)const {
 		return g.guid == this->guid;
