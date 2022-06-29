@@ -6,7 +6,6 @@ REGISTER(Light);
 Light::Light(float _intensity, glm::vec3 _color) 
 {
 	intensity = _intensity;
-	TLEngineCG::lights.push_back(this);
 	color = _color;
 }
 
@@ -39,4 +38,9 @@ void Light::Instantiate(TiXmlNode* xml)
 	guid = std::stoi(element->Attribute("guid"));
 	intensity = std::stof(element->Attribute("intensity"));
 	color = TLxml::DeSerialize(xml->FirstChild());
+}
+
+void Light::Awake()
+{
+	TLEngineCG::lights.push_back(this);
 }

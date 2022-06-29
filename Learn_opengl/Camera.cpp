@@ -8,6 +8,7 @@ Camera::Camera(Screen* s) :currentScreen(s)
 
 Camera::Camera()
 {
+	currentScreen = &Screen::instance();
 }
 
 Camera::~Camera()

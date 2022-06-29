@@ -2,8 +2,9 @@
 #include "Component.h"
 #include "Material.h"
 #include "Mesh.h"
+#include<memory>
 
-extern std::priority_queue < Renderer*, std::vector<Renderer*>> renderQueue;
+//extern std::priority_queue < Renderer*, std::vector<Renderer*>> renderQueue;
 
 class GameObject;
 class Renderer :public Component
@@ -12,12 +13,12 @@ public:
 	/// <summary>
 	/// Ä£ÐÍMesh
 	/// </summary>
-	Mesh* mesh;
+	shared_ptr<Mesh> mesh;
 
 	/// <summary>
 	/// ²ÄÖÊ
 	/// </summary>
-	Material* material;
+	shared_ptr<Material> material;
 
 	Renderer(Mesh*, Material*);
 	Renderer();

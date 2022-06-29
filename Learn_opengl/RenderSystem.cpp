@@ -1,9 +1,9 @@
 #include"RenderSystem.h"
 #include"Renderer.h"
 #include<iostream>
-
 typedef std::priority_queue <Renderer*, std::vector<Renderer*>> renderPriorityQueue;
-renderPriorityQueue renderQueue = renderPriorityQueue();
+
+renderPriorityQueue RenderSystem::renderQueue = renderPriorityQueue();
 
 RenderSystem::RenderSystem()
 {
@@ -20,7 +20,6 @@ void RenderSystem::Update()
 	{
 		if (queue.top() != nullptr)
 		{
-			std::cout << queue.top()->guid << std::endl;
 			queue.top()->Render();
 			queue.pop();
 		}
@@ -39,4 +38,9 @@ void RenderSystem::RegisterComponent(Component* com)
 
 void RenderSystem::RemoveComponent(Component* com)
 {
+}
+
+void RenderSystem::Clear()
+{
+	renderQueue = renderPriorityQueue();
 }

@@ -10,6 +10,7 @@ public:
 	Scene(std::string);
 	~Scene();
 	void Save();
+	GameObject* Find(std::string);
 private:
 	std::string path;
 	std::vector<GameObject*> gameobjects;

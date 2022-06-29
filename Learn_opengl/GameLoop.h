@@ -14,6 +14,7 @@ public:
 	void SetFixedUpdateCallback(void (*FixedUpdate)());
 	void SetLateUpdateCallback(void (*LateUpdate)());
 	void StartLoop();
+	float GetFPS();
 
 private:
 	void (*Awake)();

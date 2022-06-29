@@ -2,6 +2,7 @@
 #include <ctime>
 #include "Time.h"
 #include <iostream>
+#include "Screen.h"
 using namespace std;
 
 GameLoop::GameLoop(int _frame)
@@ -41,7 +42,7 @@ void GameLoop::SetLateUpdateCallback(void(*f)())
 void GameLoop::StartLoop()
 {
 	if (Awake != nullptr)Awake();
-	while (true)
+	while (!Screen::instance().isClosed())
 	{
 		Time::unscaledDeltaTime = (double)clock() / CLOCKS_PER_SEC - Time::unscaledTime;
 		Time::deltaTime = Time::unscaledDeltaTime * Time::timeScale;
@@ -53,8 +54,14 @@ void GameLoop::StartLoop()
 		{
 			if (FixedUpdate != nullptr)FixedUpdate();
 			Time::fixedTime = Time::time;
-			Time::frameCount++;
 		}
 		if (LateUpdate != nullptr)LateUpdate();
+		//std::cout << GetFPS() << std::endl;
+		Time::frameCount++;
 	}
+}
+
+float GameLoop::GetFPS()
+{
+	return Time::frameCount/ Time::unscaledTime;
 }

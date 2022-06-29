@@ -3,8 +3,8 @@
 #include <GLFW/glfw3.h>
 #include <GL/glew.h>
 #include<iostream>
-
-class Screen
+#include"Singleton .h"
+class Screen:public Singleton<Screen>
 {
 public:
 	GLFWwindow* window;
@@ -12,6 +12,7 @@ public:
 	const GLuint heigth;
 
 	Screen(GLuint, GLuint);
+	Screen();
 	/// <summary>
 	/// 显示窗口
 	/// </summary>
@@ -22,5 +23,8 @@ public:
 	/// </summary>
 	/// <returns>是否关闭</returns>
 	bool isClosed();
+
+private:
+	void Init();
 };
 

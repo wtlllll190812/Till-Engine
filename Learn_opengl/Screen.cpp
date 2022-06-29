@@ -3,6 +3,30 @@
 
 Screen::Screen(const GLuint w, const GLuint h) :width(w), heigth(h)
 {
+	Init();
+}
+
+Screen::Screen() : width(800), heigth(600)
+{
+	Init();
+}
+
+void Screen::Display()
+{
+	glfwPollEvents();
+
+	//清空屏幕以及缓存区
+	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
+
+bool Screen::isClosed()
+{
+	return glfwWindowShouldClose(window);
+}
+
+void Screen::Init()
+{
 	glfwInit();//初始化GLFW
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);//配置opengl版本
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);//配置opengl版本
@@ -40,18 +64,4 @@ Screen::Screen(const GLuint w, const GLuint h) :width(w), heigth(h)
 	glViewport(0, 0, width, heigth);//前两个参数控制左下角的位置
 	//启用深度测试
 	glEnable(GL_DEPTH_TEST);
-}
-
-void Screen::Display()
-{
-	glfwPollEvents();
-
-	//清空屏幕以及缓存区
-	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-}
-
-bool Screen::isClosed()
-{
-	return !glfwWindowShouldClose(window);
 }

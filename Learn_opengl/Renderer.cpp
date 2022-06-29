@@ -1,15 +1,19 @@
 #include "Renderer.h"
+#include "RenderSystem.h"
 #include<iostream>
+#include<vector>
 REGISTER(Renderer);
 
 Renderer::Renderer(Mesh* m, Material* mater) 
 {
-	mesh = m;
-	material = mater;
+	mesh = shared_ptr<Mesh>(m);
+	material = shared_ptr<Material>(mater);
 }
 
 Renderer::Renderer()
 {
+	 mesh = shared_ptr<Mesh>(new Mesh());
+	 material = shared_ptr<Material>(new Material());
 }
 
 Renderer::~Renderer()
@@ -19,12 +23,12 @@ Renderer::~Renderer()
 void Renderer::Render()
 {
 	material->Render(mesh);
+	//RenderSystem::instance().RegisterComponent(this);
 }
 
 void Renderer::Awake()
 {
-	std::cout << "sdsd" << std::endl;
-	renderQueue.push(dynamic_cast<Renderer*>(this));
+	RenderSystem::instance().RegisterComponent(this);
 }
 
 TLxml* Renderer::Serialize()
