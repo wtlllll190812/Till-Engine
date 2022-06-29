@@ -23,6 +23,7 @@ GLfloat lastX;
 GLfloat lastY;
 Camera camera;
 GameObject cameraObject;
+GameObject* object;
 
 bool keys[1024];
 
@@ -42,8 +43,10 @@ int main()
 	cameraObject = *(s.Find("camera"));
 	camera = *(cameraObject.GetComponent<Camera>());
 
-	GameObject* object = s.Find("object");
+	object = s.Find("object");
 	shared_ptr<Material> m = object->GetComponent<Renderer>()->material;
+
+
 	m->SetRenderCallback([](Shader* shader, Material* mat)
 		{
 			/*glActiveTexture(GL_TEXTURE0);
@@ -53,15 +56,12 @@ int main()
 			Light* l = TLEngineCG::lights[0];
 
 			shader->Use();
-			glDrawArrays(GL_TRIANGLES, 0, 3);
+
 			glm::vec3 viewPos = cameraObject.GetComponent<Transform>()->position;
-			
 			glm::mat4 view = camera.GetViewMatrix();
 			glm::mat4 projection = camera.GetProjMatrix();
-			glm::mat4 model = glm::mat4(1.0f);
-			model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-			model = glm::rotate(model, 30.0f, glm::vec3(1.0f, 0.3f, 0.5f));
-			
+			glm::mat4 model = object->GetComponent<Transform>()->GetModel();
+
 			glm::vec3 lightPos = l->gameobject->GetComponent<Transform>()->position;
 			glm::vec3 lightColor = l->color;
 			glm::vec3 objectColor(1.0f, 0.5f, 0.31f);
@@ -93,13 +93,14 @@ int main()
 	glfwTerminate();
 	return 0;
 }
+
+
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
 {
 	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, GL_TRUE);
 	if (key >= 0 && key < 1024)
 	{
-		cout << key << endl;
 		if (action == GLFW_PRESS)
 			keys[key] = true;
 		else if (action == GLFW_RELEASE)
@@ -117,6 +118,14 @@ void do_movement()
 		cameraObject.transform->Translate(cameraObject.transform->GetRight(), -0.05f);
 	if (keys[GLFW_KEY_D])
 		cameraObject.transform->Translate(cameraObject.transform->GetRight(), 0.05f);
+	if (keys[GLFW_KEY_RIGHT])
+		object->transform->rotation.z += 0.05f;
+	if (keys[GLFW_KEY_LEFT])
+		object->transform->rotation.z -= 0.05f;	
+	if (keys[GLFW_KEY_UP])
+		object->transform->rotation.x += 0.05f;
+	if (keys[GLFW_KEY_DOWN])
+		object->transform->rotation.x -= 0.05f;
 }
 
 bool firstMouse = true;

@@ -54,6 +54,17 @@ void Transform::Translate(glm::vec3 direct, float dis)
 	position += dis * direct;
 }
 
+glm::mat4 Transform::GetModel()
+{
+	glm::mat4 model(1.0f);
+	model = glm::translate(model, position);
+	model = glm::rotate(model, rotation.x, right);
+	model = glm::rotate(model, rotation.y, up);
+	model = glm::rotate(model, rotation.z, back);
+	model = glm::scale(model,scale);
+	return model;
+}
+
 TLxml* Transform::Serialize()
 {
 	auto xml = new TLxml("Transform");

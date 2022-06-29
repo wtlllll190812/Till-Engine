@@ -72,7 +72,7 @@
     <ClCompile Include="Screen.cpp">
       <Filter>源文件\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Render.cpp">
+    <ClCompile Include="Material.cpp">
       <Filter>源文件\Render</Filter>
     </ClCompile>
     <ClCompile Include="Mesh.cpp">

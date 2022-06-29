@@ -53,6 +53,12 @@ public:
 	void Translate(glm::vec3, float);
 
 	/// <summary>
+	/// 获取model矩阵
+	/// </summary>
+	/// <returns></returns>
+	glm::mat4 GetModel();
+
+	/// <summary>
 	/// 序列化为xml
 	/// </summary>
 	/// <returns></returns>
