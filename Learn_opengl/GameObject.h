@@ -4,15 +4,17 @@
 #include"Reflection.h"
 #include"Transform.h"
 
+class Scene;
 class GameObject
 {
 public:
+	Scene* owner;
 	Transform* transform;
 	std::string name;//物体名称
 	int guid;//物体标识
 
 	GameObject();
-	GameObject(TiXmlNode*);
+	GameObject(TiXmlNode*,Scene*);
 	~GameObject();
 
 	/// <summary>

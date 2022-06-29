@@ -3,8 +3,13 @@
 #include <iostream>
 #include <memory>
 #include <functional>
+#include "Scene.h"
 
-RegiSterReflection(GameObject);
+
+
+#include "Camera.h"
+
+REFLECTION(GameObject);
 
 GameObject::GameObject()
 {
@@ -12,8 +17,9 @@ GameObject::GameObject()
 	guid = GetHash();
 }
 
-GameObject::GameObject(TiXmlNode* xml)
+GameObject::GameObject(TiXmlNode* xml,Scene* s)
 {
+	owner = s;
 	auto element = xml->ToElement();
 	guid = std::stoi(element->Attribute("guid"));
 	name = element->Attribute("name");
@@ -24,6 +30,11 @@ GameObject::GameObject(TiXmlNode* xml)
 		{
 			auto comp = (Component*)Reflection::instance().getClassByName(element->Value());
 			comp->Instantiate(element);
+			if (strcmp(element->Value(), "Camera") == 0)
+			{
+				s->camera = (Camera*)comp;
+				std::cout << s->camera->guid << std::endl;
+			}
 			AddComponent(comp);
 		}
 		else

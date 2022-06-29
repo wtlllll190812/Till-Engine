@@ -4,14 +4,16 @@
 #include <GL/glew.h>
 #include<iostream>
 #include"Singleton .h"
+
+
 class Screen :public Singleton<Screen>
 {
 public:
 	GLFWwindow* window;
-	const GLuint width;
-	const GLuint heigth;
+	int width;
+	int heigth;
 
-	Screen(GLuint, GLuint);
+	Screen(int, int);
 	Screen();
 	/// <summary>
 	/// ÏÔÊ¾´°¿Ú

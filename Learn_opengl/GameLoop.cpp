@@ -3,6 +3,10 @@
 #include "Time.h"
 #include <iostream>
 #include "Screen.h"
+#define GLFW_INCLUDE_NONE
+#include <GLFW/glfw3.h>
+
+
 using namespace std;
 
 GameLoop::GameLoop(int _frame)
@@ -44,11 +48,10 @@ void GameLoop::StartLoop()
 	if (Awake != nullptr)Awake();
 	while (!Screen::instance().isClosed())
 	{
-		Time::unscaledDeltaTime = (double)clock() / CLOCKS_PER_SEC - Time::unscaledTime;
+		Time::unscaledDeltaTime = glfwGetTime()-Time::unscaledTime;//(double)clock() / CLOCKS_PER_SEC;
 		Time::deltaTime = Time::unscaledDeltaTime * Time::timeScale;
 		Time::unscaledTime += Time::unscaledDeltaTime;
 		Time::time += Time::deltaTime;
-
 		if (Update != nullptr)Update();
 		if (Time::time - Time::fixedTime >= 1 / (double)frame)
 		{

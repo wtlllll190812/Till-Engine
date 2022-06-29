@@ -54,6 +54,6 @@ private:
 /// </summary>
 class Serializable
 {
-	virtual void Serialize()=0;
-	virtual void DeSerialize()=0;
+	virtual TLxml* Serialize()=0;
+	virtual void DeSerialize(TiXmlNode*)=0;
 };

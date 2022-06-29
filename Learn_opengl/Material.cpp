@@ -1,4 +1,5 @@
 #include"Material.h"
+#include"GameObject.h"
 
 Material::Material(const GLchar* vertexPath, const GLchar* fragmentPath)
 {
@@ -17,15 +18,16 @@ Material::~Material()
 	delete shader;
 }
 
-void Material::Render(shared_ptr<Mesh> m)
+void Material::Render(GameObject* object,shared_ptr<Mesh> m)
 {
 	glBindVertexArray(m->VAO);
+	shader->Use();
 	if (RenderCallback != nullptr)
-		RenderCallback(shader, this);
+		RenderCallback(object,shader, this);
 	glBindVertexArray(0);
 }
 
-void Material::SetRenderCallback(void (*f)(Shader*, Material*))
+void Material::SetRenderCallback(void (*f)(GameObject*,Shader*, Material*))
 {
 	RenderCallback = f;
 }

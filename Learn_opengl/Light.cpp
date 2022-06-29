@@ -2,7 +2,7 @@
 #include<string>
 #include "TLEngineCG.h"
 
-RegiSterReflection(Light);
+REFLECTION(Light);
 
 Light::Light(float _intensity, glm::vec3 _color)
 {

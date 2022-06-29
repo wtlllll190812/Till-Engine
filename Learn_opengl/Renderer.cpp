@@ -3,7 +3,7 @@
 #include<iostream>
 #include<vector>
 
-RegiSterReflection(Renderer);
+REFLECTION(Renderer);
 
 Renderer::Renderer(Mesh* m, Material* mater)
 {
@@ -23,7 +23,7 @@ Renderer::~Renderer()
 
 void Renderer::Render()
 {
-	material->Render(mesh);
+	material->Render(gameobject,mesh);
 	//RenderSystem::instance().RegisterComponent(this);
 }
 

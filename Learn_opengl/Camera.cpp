@@ -6,7 +6,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include "Screen.h"
 
-RegiSterReflection(Camera);
+REFLECTION(Camera);
 Camera::Camera(Screen* s) :currentScreen(s)
 {
 }

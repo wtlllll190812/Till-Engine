@@ -1,6 +1,10 @@
 #include"Screen.h"
+#include "imgui.h"
+#include "imgui_impl_glfw.h"
+#include "imgui_impl_opengl3.h"
 
-Screen::Screen(const GLuint w, const GLuint h) :width(w), heigth(h)
+
+Screen::Screen(int w, int h) :width(w), heigth(h)
 {
 	Init();
 }
@@ -17,6 +21,9 @@ void Screen::Display()
 	//清空屏幕以及缓存区
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	glfwGetFramebufferSize(Screen::instance().window, &width, &heigth);
+	glViewport(0, 0, width, heigth);
 }
 
 bool Screen::isClosed()
@@ -42,7 +49,7 @@ void Screen::Init()
 		return;
 	}
 	glfwMakeContextCurrent(window);//设定为当前窗口
-	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	//glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 	////初始化GLEW,用于管理opengl的函数指针
 	glewExperimental = GL_TRUE;
@@ -63,4 +70,20 @@ void Screen::Init()
 	glViewport(0, 0, width, heigth);//前两个参数控制左下角的位置
 	//启用深度测试
 	glEnable(GL_DEPTH_TEST);
+
+
+	// 初始化imgui上下文
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO(); (void)io;
+	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
+	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
+
+	// 设置imgui模式
+	ImGui::StyleColorsDark();
+	//ImGui::StyleColorsClassic();
+
+	// 配置ImGui
+	ImGui_ImplGlfw_InitForOpenGL(window, true);
+	ImGui_ImplOpenGL3_Init("#version 100");
 }

@@ -8,7 +8,7 @@
 typedef void* (*PTRCreateObject)(void);
 
 //·´Éä×¢²áºê
-#define RegiSterReflection(className)                           \
+#define REFLECTION(className)                           \
     className* Creator##className()								\
     {                                                           \
         return new className;                                   \

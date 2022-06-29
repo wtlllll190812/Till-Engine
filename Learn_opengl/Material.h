@@ -4,10 +4,10 @@
 #include "TLEngineCG.h"
 #include<memory>
 
+class GameObject;
 class Material
 {
 public:
-	
 	Shader* shader;
 	
 	/// <summary>
@@ -18,12 +18,12 @@ public:
 	/// <summary>
 	/// äÖÈ¾Ê±»Øµ÷
 	/// </summary>
-	void (*RenderCallback)(Shader*, Material*);
+	void (*RenderCallback)(GameObject* ,Shader*, Material*);
 
 	Material(const GLchar*, const GLchar*);
 	Material();
 	~Material();
 
-	void SetRenderCallback(void (*f)(Shader*, Material*));
-	void Render(shared_ptr<Mesh>);
+	void SetRenderCallback(void (*f)(GameObject* ,Shader*, Material*));
+	void Render(GameObject*,shared_ptr<Mesh>);
 };

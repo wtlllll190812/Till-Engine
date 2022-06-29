@@ -35,3 +35,13 @@ public:
 			GLint vecName##Loc = glGetUniformLocation(shaderName->Program, #vecName);		\
 			glUniform3f(vecName##Loc, vecName.x, vecName.y, vecName.z);
 #endif 
+
+
+#ifndef SetUniformTex(texName,shaderName)	
+#define SetUniformTex(texName,index,shaderName)												\
+			glActiveTexture(GL_TEXTURE##index);												\
+			glBindTexture(GL_TEXTURE_2D, texName.texture);									\
+			glUniform1i(glGetUniformLocation(shaderName->Program, #texName), index);
+#endif 
+
+

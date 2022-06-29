@@ -4,9 +4,13 @@
 #include <vector>
 #include "GameObject.h"
 
+class Camera;
 class Scene
 {
 public:
+	Camera* camera;
+
+
 	/// <summary>
 	/// 读取并初始化场景
 	/// </summary>

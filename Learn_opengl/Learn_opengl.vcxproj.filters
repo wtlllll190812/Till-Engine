@@ -102,6 +102,12 @@
     <ClCompile Include="Main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>源文件\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Behaviour.cpp">
+      <Filter>源文件\ECS\Component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="frag.shader">
@@ -175,6 +181,12 @@
     </ClInclude>
     <ClInclude Include="Reflection.h">
       <Filter>头文件\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>头文件\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Behaviour.h">
+      <Filter>头文件\ECS\Component</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
