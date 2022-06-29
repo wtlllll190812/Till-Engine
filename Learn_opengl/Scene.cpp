@@ -4,7 +4,7 @@
 #include<queue>
 #include<vector>
 
-Scene::Scene(std::string p):path(p),xml(TLxml(p,"scene"))
+Scene::Scene(std::string p) :path(p), xml(TLxml(p, "scene"))
 {
 	for (auto node = xml.pRoot->FirstChild(); node != 0; node = node->NextSibling())
 	{
@@ -27,7 +27,7 @@ void Scene::Save()
 
 GameObject* Scene::Find(std::string name)
 {
-	for (auto i:gameobjects)
+	for (auto i : gameobjects)
 	{
 		if (i->name == name)
 			return i;

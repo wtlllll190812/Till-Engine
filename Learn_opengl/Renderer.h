@@ -4,8 +4,6 @@
 #include "Mesh.h"
 #include<memory>
 
-//extern std::priority_queue < Renderer*, std::vector<Renderer*>> renderQueue;
-
 class GameObject;
 class Renderer :public Component
 {
@@ -34,15 +32,20 @@ public:
 	/// </summary>
 	void Awake() override;
 
+	/// <summary>
+	/// 序列化为xml
+	/// </summary>
+	/// <returns></returns>
+	virtual TLxml* Serialize() override;
+
+	/// <summary>
+	/// 通过xml实例化
+	/// </summary>
+	/// <param name=""></param>
+	virtual void Instantiate(TiXmlNode*) override;
+
 	bool operator>(const Renderer& r)
 	{
 		return r.material->renderQueueIndex > material->renderQueueIndex;
 	}
-
-	// 通过 Component 继承
-	virtual TLxml* Serialize() override;
-
-	// 通过 Component 继承
-	virtual void Instantiate(TiXmlNode*) override;
 };
-

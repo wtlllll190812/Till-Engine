@@ -4,48 +4,46 @@ class Time
 public:
 	friend class GameLoop;
 
-
 	/// <summary>
 	/// 时间流失的速度
 	/// </summary>
-	static float timeScale;
+	static double timeScale;
 	/// <summary>
 	/// 游戏开始运行后的时间
 	/// </summary>
-	static float GetTime() { return time; }
+	static double GetTime() { return time; }
 	/// <summary>
 	/// 游戏开始运行后的时间
 	/// </summary>
-	static float GetUnscaledTime() { return unscaledTime; }
+	static double GetUnscaledTime() { return unscaledTime; }
 	/// <summary>
 	/// 最近一次fixedTime的时间
 	/// </summary>
-	static float GetFixedTime() { return fixedTime; }
+	static double GetFixedTime() { return fixedTime; }
 	/// <summary>
 	/// 完成上一帧所用时间
 	/// </summary>
-	static float GetDeltaTime() { return deltaTime; }
+	static double GetDeltaTime() { return deltaTime; }
 	/// <summary>
 	/// 完成上一帧所用时间(不受timescale影响)
 	/// </summary>
-	static float GetUnscaledDeltaTime() { return unscaledDeltaTime; }
+	static double GetUnscaledDeltaTime() { return unscaledDeltaTime; }
 	/// <summary>
 	/// 游戏开始之后的帧数
 	/// </summary>
-	static float GetFrameCount() { return frameCount; }
+	static double GetFrameCount() { return frameCount; }
 
 private:
 
-	static float time;
+	static double time;
 
-	static float unscaledTime;
+	static double unscaledTime;
 
-	static float fixedTime;
+	static double fixedTime;
 
-	static float deltaTime;
+	static double deltaTime;
 
-	static float unscaledDeltaTime;
+	static double unscaledDeltaTime;
 
-	static float frameCount;
+	static double frameCount;
 };
-

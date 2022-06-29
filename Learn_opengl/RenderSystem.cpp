@@ -28,7 +28,6 @@ void RenderSystem::Update()
 
 void RenderSystem::FixedUpdate()
 {
-	
 }
 
 void RenderSystem::RegisterComponent(Component* com)

@@ -63,5 +63,5 @@ void GameLoop::StartLoop()
 
 float GameLoop::GetFPS()
 {
-	return Time::frameCount/ Time::unscaledTime;
+	return Time::frameCount / Time::unscaledTime;
 }

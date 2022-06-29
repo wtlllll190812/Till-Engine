@@ -1,7 +1,12 @@
 #include "Camera.h"
 #include "GameObject.h"
-#include"Transform.h"
-REGISTER(Camera);
+#include "Transform.h"
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+#include "Screen.h"
+
+RegiSterReflection(Camera);
 Camera::Camera(Screen* s) :currentScreen(s)
 {
 }

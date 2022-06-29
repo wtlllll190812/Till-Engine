@@ -99,9 +99,6 @@
     <ClCompile Include="Reflection.cpp">
       <Filter>源文件\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Component.cpp">
-      <Filter>源文件\ECS\Component</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>

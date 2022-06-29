@@ -1,6 +1,5 @@
 #pragma once
 #include <glm/glm.hpp>
-#include "TLEngineCG.h"
 #include "Component.h"
 
 class GameObject;
@@ -26,8 +25,13 @@ public:
 	/// </summary>
 	virtual TLxml* Serialize() override;
 
-	// 通过 Component 继承
+	/// <summary>
+	/// 通过xml实例化
+	/// </summary>
 	virtual void Instantiate(TiXmlNode*) override;
 
+	/// <summary>
+	/// 刚添加时
+	/// </summary>
 	virtual void Awake() override;
 };

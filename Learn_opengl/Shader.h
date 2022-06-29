@@ -1,13 +1,13 @@
 #pragma once
 #ifndef SHADER_H
 #define SHADER_H
+
 #include <GL/glew.h>; // 包含glew来获取所有的必须OpenGL头文件
 
 #include <string>
 #include <fstream>
 #include <sstream>
 #include <iostream>
-
 
 using namespace std;
 

@@ -1,6 +1,5 @@
 #include"Screen.h"
 
-
 Screen::Screen(const GLuint w, const GLuint h) :width(w), heigth(h)
 {
 	Init();

@@ -2,9 +2,10 @@
 #include "RenderSystem.h"
 #include<iostream>
 #include<vector>
-REGISTER(Renderer);
 
-Renderer::Renderer(Mesh* m, Material* mater) 
+RegiSterReflection(Renderer);
+
+Renderer::Renderer(Mesh* m, Material* mater)
 {
 	mesh = shared_ptr<Mesh>(m);
 	material = shared_ptr<Material>(mater);
@@ -12,8 +13,8 @@ Renderer::Renderer(Mesh* m, Material* mater)
 
 Renderer::Renderer()
 {
-	 mesh = shared_ptr<Mesh>(new Mesh());
-	 material = shared_ptr<Material>(new Material());
+	mesh = shared_ptr<Mesh>(new Mesh());
+	material = shared_ptr<Material>(new Material());
 }
 
 Renderer::~Renderer()
@@ -42,4 +43,4 @@ void Renderer::Instantiate(TiXmlNode* xml)
 {
 	auto element = xml->ToElement();
 	guid = std::stoi(element->Attribute("guid"));
-}	
+}

@@ -1,9 +1,10 @@
 #include"Light.h"
 #include<string>
-REGISTER(Light);
+#include "TLEngineCG.h"
 
+RegiSterReflection(Light);
 
-Light::Light(float _intensity, glm::vec3 _color) 
+Light::Light(float _intensity, glm::vec3 _color)
 {
 	intensity = _intensity;
 	color = _color;

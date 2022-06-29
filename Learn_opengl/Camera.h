@@ -1,13 +1,8 @@
 #pragma once
 #include <string>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
 #include "Component.h"
-#include "Screen.h"
 
-
-
+class Screen;
 class Camera :public Component
 {
 public:
@@ -43,6 +38,9 @@ private:
 	/// </summary>
 	virtual TLxml* Serialize() override;
 
-	// 通过 Component 继承
+	/// <summary>
+	/// 通过xml实例化
+	/// </summary>
+	/// <param name=""></param>
 	virtual void Instantiate(TiXmlNode*) override;
 };

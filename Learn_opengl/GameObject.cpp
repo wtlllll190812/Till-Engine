@@ -4,7 +4,7 @@
 #include <memory>
 #include <functional>
 
-REGISTER(GameObject);
+RegiSterReflection(GameObject);
 
 GameObject::GameObject()
 {
@@ -20,9 +20,9 @@ GameObject::GameObject(TiXmlNode* xml)
 	for (auto node = element->FirstChild(); node != 0; node = node->NextSibling())
 	{
 		auto element = node->ToElement();
-		if (strcmp(element->Value() , "Transform")!=0)
+		if (strcmp(element->Value(), "Transform") != 0)
 		{
-			auto comp= (Component*)Reflection::instance().getClassByName(element->Value());
+			auto comp = (Component*)Reflection::instance().getClassByName(element->Value());
 			comp->Instantiate(element);
 			AddComponent(comp);
 		}
@@ -62,11 +62,11 @@ void GameObject::Update()
 
 TLxml* GameObject::Serialize()
 {
-	TLxml* xml=new TLxml(name);
-	for(auto i:components)
+	TLxml* xml = new TLxml(name);
+	for (auto i : components)
 	{
 		xml->pRoot->SetAttribute("name", name);
-		xml->pRoot->SetAttribute("guid",std::to_string(guid));
+		xml->pRoot->SetAttribute("guid", std::to_string(guid));
 		xml->AddChild(i->Serialize()->pRoot);
 	}
 	return xml;

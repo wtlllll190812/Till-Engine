@@ -4,7 +4,7 @@
 #include <GL/glew.h>
 #include<iostream>
 #include"Singleton .h"
-class Screen:public Singleton<Screen>
+class Screen :public Singleton<Screen>
 {
 public:
 	GLFWwindow* window;
@@ -27,4 +27,3 @@ public:
 private:
 	void Init();
 };
-

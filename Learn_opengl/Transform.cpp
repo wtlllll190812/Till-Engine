@@ -1,5 +1,6 @@
 #include "Transform.h"
-
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 const glm::vec3 Transform::forward = glm::vec3(0.0f, 0.0f, -1.0f);
 const glm::vec3 Transform::back = glm::vec3(0.0f, 0.0f, 1.0f);
@@ -8,7 +9,7 @@ const glm::vec3 Transform::right = glm::vec3(1.0f, 0.0f, 0.0f);
 const glm::vec3 Transform::up = glm::vec3(0.0f, 1.0f, 0.0f);
 const glm::vec3 Transform::down = glm::vec3(0.0f, -1.0f, 0.0f);
 
-Transform::Transform() 
+Transform::Transform()
 {
 	position = glm::vec3(0, 0, 0);
 	rotation = glm::vec3(0, 0, 0);
@@ -56,7 +57,7 @@ void Transform::Translate(glm::vec3 direct, float dis)
 TLxml* Transform::Serialize()
 {
 	auto xml = new TLxml("Transform");
-	xml->pRoot->SetAttribute("guid",std::to_string(guid));
+	xml->pRoot->SetAttribute("guid", std::to_string(guid));
 	xml->AddChild(TLxml::Serialize(position, "position")->pRoot);
 	xml->AddChild(TLxml::Serialize(rotation, "rotation")->pRoot);
 	xml->AddChild(TLxml::Serialize(scale, "scale")->pRoot);

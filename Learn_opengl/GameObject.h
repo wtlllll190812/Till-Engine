@@ -4,7 +4,6 @@
 #include"Reflection.h"
 #include"Transform.h"
 
-
 class GameObject
 {
 public:
@@ -82,4 +81,3 @@ public:
 private:
 	std::vector<Component*> components;
 };
-

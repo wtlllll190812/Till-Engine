@@ -23,3 +23,15 @@ public:
 };
 
 
+#ifndef SetUniformMat4(matName,shaderName)	
+#define SetUniformMat4(matName,shaderName)													\
+			GLint matName##Loc = glGetUniformLocation(shaderName->Program, #matName);		\
+			glUniformMatrix4fv(matName##Loc, 1, GL_FALSE, glm::value_ptr(matName));
+#endif 
+
+
+#ifndef SetUniformVec3(vecName,shaderName)	
+#define SetUniformVec3(vecName,shaderName)													\
+			GLint vecName##Loc = glGetUniformLocation(shaderName->Program, #vecName);		\
+			glUniform3f(vecName##Loc, vecName.x, vecName.y, vecName.z);
+#endif 

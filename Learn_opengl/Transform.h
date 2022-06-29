@@ -1,17 +1,15 @@
 #pragma once
-
-#include <string>
 #include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
-
-
+#include <string>
 #include "Component.h"
 
 class GameObject;
 class Transform :public Component
 {
 public:
+	/// <summary>
+	/// 向各个方向的单位向量
+	/// </summary>
 	static const  glm::vec3 forward;
 	static const  glm::vec3 back;
 	static const  glm::vec3 left;
@@ -54,10 +52,15 @@ public:
 	/// <param name="">位移大小</param>
 	void Translate(glm::vec3, float);
 
-	// 通过 Component 继承
+	/// <summary>
+	/// 序列化为xml
+	/// </summary>
+	/// <returns></returns>
 	virtual TLxml* Serialize() override;
 
-
-	// 通过 Component 继承
+	/// <summary>
+	/// 通过xml实例化
+	/// </summary>
+	/// <param name=""></param>
 	virtual void Instantiate(TiXmlNode*) override;
 };
