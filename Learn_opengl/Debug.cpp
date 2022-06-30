@@ -6,7 +6,7 @@
 
 std::shared_ptr<spdlog::logger> Debug::engineLog=spdlog::stdout_color_mt("Till Engine");
 std::shared_ptr<spdlog::logger> Debug::appLog = spdlog::stdout_color_mt("App");;
-std::ostringstream Debug::appLogOss;
+std::stringstream Debug::appLogOss;
 
 void Debug::Init()
 {

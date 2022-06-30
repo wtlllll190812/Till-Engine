@@ -6,7 +6,7 @@
 class Debug
 {
 public:
-	static std::ostringstream appLogOss;
+	static std::stringstream appLogOss;
 	static void Init();
 
 	inline static std::shared_ptr<spdlog::logger>& GetEngineLogger() { return engineLog; }

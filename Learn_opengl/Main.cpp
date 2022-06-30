@@ -26,11 +26,11 @@
 
 
 Scene* currentScene;
-GameObject* currentObj;
+std::shared_ptr<GameObject> currentObj;
 
 Camera* camera;
-GameObject* cameraObject;
-GameObject* object;
+shared_ptr<GameObject> cameraObject;
+shared_ptr<GameObject> object;
 GameLoop loop(60);
 
 bool keys[1024];
@@ -49,7 +49,6 @@ void fixedupdate()
 
 void Init()
 {
-
 	//窗口注册
 	auto Editor = shared_ptr<GuiWindows>(new GuiWindows([]() {
 		if (ImGui::BeginMainMenuBar())
@@ -114,13 +113,18 @@ void Init()
 
 	auto Console = shared_ptr<GuiWindows>(new GuiWindows([]() {
 		static bool Console = true;
+		static vector<string> logBuffer;
 		if (Console)
 		{
 			ImGui::Begin("Console", &Console);
-			string s = Debug::appLogOss.str();
-			ImGui::BulletText(s.c_str());
-			ImGui::BulletText("bbb");
-			ImGui::BulletText("ccc");
+			string str;
+			while (getline(Debug::appLogOss,str))
+			{
+				logBuffer.push_back(str);
+			}
+
+			for(auto &s:logBuffer)
+				ImGui::BulletText(s.c_str());
 
 			ImGui::End();
 		}
@@ -143,6 +147,9 @@ int main()
 	Debug::GetEngineLogger()->info("Engine Inited");
 
 	Debug::GetAppLogger()->warn("sdsd");
+	Debug::GetAppLogger()->warn("2");
+	Debug::GetAppLogger()->warn("3");
+	Debug::GetAppLogger()->warn("4");
 
 	shared_ptr<Material> mat = object->GetComponent<Renderer>()->material;
 	// 绑定回调函数

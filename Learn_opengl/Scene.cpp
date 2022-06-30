@@ -12,30 +12,22 @@ Scene::Scene(std::string p) :path(p), xml(TLxml(p, "scene"))
 	for (auto node = xml.pRoot->FirstChild(); node != 0; node = node->NextSibling())
 	{
 		auto element = node->ToElement();
-		gameobjects.push_back(new GameObject(element, this));
+		gameobjects.push_back(std::shared_ptr<GameObject>(new GameObject(element, this)));
 	}
 	Debug::GetEngineLogger()->info("Scene Loaded");
 }
 
 Scene::~Scene()
 {
-	/*for (auto i : gameobjects)
-	{
-		delete i;
-	}*/
 	Save();
 }
 
 void Scene::Save()
 {
-	/*for (auto i : gameobjects)
-	{
-		xml.AddChild(i->Serialize()->pRoot);
-	}*/
 	xml.Save();
 }
 
-GameObject* Scene::Find(std::string name)
+std::shared_ptr<GameObject> Scene::Find(std::string name)
 {
 	for (auto i : gameobjects)
 	{

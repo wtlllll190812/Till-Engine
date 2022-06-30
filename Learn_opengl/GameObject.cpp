@@ -61,7 +61,7 @@ void GameObject::AddComponent(Component* comp)
 
 void GameObject::Update()
 {
-	for (auto i = components.begin(); i != components.end(); i++)
+	for (auto i = components.begin(); i != components.end(); ++i)
 	{
 		(*i)->OnUpdate();
 	}

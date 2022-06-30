@@ -18,3 +18,9 @@
 [2022-07-01 01:52:37.951] [Till Engine] [info] Scene Loading
 [2022-07-01 01:52:37.971] [Till Engine] [info] Scene Loaded
 [2022-07-01 01:52:37.972] [Till Engine] [info] Engine Inited
+[2022-07-01 02:10:17.888] [Till Engine] [info] Engine Init
+[2022-07-01 02:10:17.889] [Till Engine] [info] Screen Init
+[2022-07-01 02:10:18.067] [Till Engine] [info] Screen Inited
+[2022-07-01 02:10:18.068] [Till Engine] [info] Scene Loading
+[2022-07-01 02:10:18.088] [Till Engine] [info] Scene Loaded
+[2022-07-01 02:10:18.089] [Till Engine] [info] Engine Inited
