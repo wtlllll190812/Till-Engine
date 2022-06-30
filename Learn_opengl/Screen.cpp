@@ -7,18 +7,20 @@
 Screen::Screen(int w, int h) :width(w), heigth(h)
 {
 	Init();
+	GuiInit();
 }
 
 Screen::Screen() : width(800), heigth(600)
 {
 	Init();
+	GuiInit();
 }
 
 void Screen::Display()
 {
 	glfwPollEvents();
 
-	//Çå¿ÕÆÁÄ»ÒÔ¼°»º´æÇø
+	//æ¸…ç©ºå±å¹•ä»¥åŠç¼“å­˜åŒº
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -31,59 +33,83 @@ bool Screen::isClosed()
 	return glfwWindowShouldClose(window);
 }
 
-void Screen::Init()
+void Screen::GuiInit()
 {
-	glfwInit();//³õÊ¼»¯GLFW
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);//ÅäÖÃopengl°æ±¾
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);//ÅäÖÃopengl°æ±¾
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);//Ê¹ÓÃºËĞÄÄ£Ê½,Ê¹ÓÃ¾É°æº¯ÊıÊ±»á³ö´í
-	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);//½ûÖ¹µ÷Õû´°¿Ú´óĞ¡
-
-	window = glfwCreateWindow(width, heigth, "LearnOpenGL", nullptr, nullptr);//´´½¨´°¿Ú²¢ÉèÖÃ´°¿Ú´óĞ¡
-
-	//´´½¨Ê§°ÜÊ±
-	if (window == nullptr)
-	{
-		std::cout << "Failed to create GLFW window" << std::endl;
-		glfwTerminate();
-		return;
-	}
-	glfwMakeContextCurrent(window);//Éè¶¨Îªµ±Ç°´°¿Ú
-	//glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-
-	////³õÊ¼»¯GLEW,ÓÃÓÚ¹ÜÀíopenglµÄº¯ÊıÖ¸Õë
-	glewExperimental = GL_TRUE;
-	//³õÊ¼»¯Ê§°ÜÊ±
-	if (glewInit() != GLEW_OK)
-	{
-		std::cout << "Failed to initialize GLEW" << std::endl;
-		return;
-	}
-	//³õÊ¼»¯glad
-	/*if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-	{
-		std::cout << "Failed to initialize GLAD" << std::endl;
-		return ;
-	}*/
-
-	//ÉèÖÃ´°¿Ú
-	glViewport(0, 0, width, heigth);//Ç°Á½¸ö²ÎÊı¿ØÖÆ×óÏÂ½ÇµÄÎ»ÖÃ
-	//ÆôÓÃÉî¶È²âÊÔ
-	glEnable(GL_DEPTH_TEST);
-
-
-	// ³õÊ¼»¯imguiÉÏÏÂÎÄ
+	// åˆå§‹åŒ–imguiä¸Šä¸‹æ–‡
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
 	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
 	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
 
-	// ÉèÖÃimguiÄ£Ê½
+	// è®¾ç½®imguiæ¨¡å¼
 	ImGui::StyleColorsDark();
 	//ImGui::StyleColorsClassic();
 
-	// ÅäÖÃImGui
+	// é…ç½®ImGui
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
 	ImGui_ImplOpenGL3_Init("#version 100");
+}
+
+void Screen::GuiRender()
+{
+	// å¼€å§‹æ¸²æŸ“imgui
+	ImGui_ImplOpenGL3_NewFrame();
+	ImGui_ImplGlfw_NewFrame();
+	ImGui::NewFrame();
+
+	for (std::shared_ptr<GuiWindows> i : uiWindows)
+	{
+		i->Render();
+	}
+
+	// Rendering
+	ImGui::Render();
+	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+}
+
+void Screen::RegisterGuiWindows(std::shared_ptr<GuiWindows> guiwindows)
+{
+	uiWindows.push_back(guiwindows);
+}
+
+void Screen::Init()
+{
+	glfwInit();//åˆå§‹åŒ–GLFW
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);//é…ç½®openglç‰ˆæœ¬
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);//é…ç½®openglç‰ˆæœ¬
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);//ä½¿ç”¨æ ¸å¿ƒæ¨¡å¼,ä½¿ç”¨æ—§ç‰ˆå‡½æ•°æ—¶ä¼šå‡ºé”™
+	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);//ç¦æ­¢è°ƒæ•´çª—å£å¤§å°
+
+	window = glfwCreateWindow(width, heigth, "LearnOpenGL", nullptr, nullptr);//åˆ›å»ºçª—å£å¹¶è®¾ç½®çª—å£å¤§å°
+
+	//åˆ›å»ºå¤±è´¥æ—¶
+	if (window == nullptr)
+	{
+		std::cout << "Failed to create GLFW window" << std::endl;
+		glfwTerminate();
+		return;
+	}
+	glfwMakeContextCurrent(window);//è®¾å®šä¸ºå½“å‰çª—å£
+	//glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
+	////åˆå§‹åŒ–GLEW,ç”¨äºç®¡ç†openglçš„å‡½æ•°æŒ‡é’ˆ
+	glewExperimental = GL_TRUE;
+	//åˆå§‹åŒ–å¤±è´¥æ—¶
+	if (glewInit() != GLEW_OK)
+	{
+		std::cout << "Failed to initialize GLEW" << std::endl;
+		return;
+	}
+	//åˆå§‹åŒ–glad
+	/*if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+	{
+		std::cout << "Failed to initialize GLAD" << std::endl;
+		return ;
+	}*/
+
+	//è®¾ç½®çª—å£
+	glViewport(0, 0, width, heigth);//å‰ä¸¤ä¸ªå‚æ•°æ§åˆ¶å·¦ä¸‹è§’çš„ä½ç½®
+	//å¯ç”¨æ·±åº¦æµ‹è¯•
+	glEnable(GL_DEPTH_TEST);
 }

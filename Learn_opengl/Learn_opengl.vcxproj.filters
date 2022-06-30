@@ -108,6 +108,12 @@
     <ClCompile Include="Behaviour.cpp">
       <Filter>源文件\ECS\Component</Filter>
     </ClCompile>
+    <ClCompile Include="Debug.cpp">
+      <Filter>源文件\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiWindows.cpp">
+      <Filter>源文件\Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="frag.shader">
@@ -187,6 +193,12 @@
     </ClInclude>
     <ClInclude Include="Behaviour.h">
       <Filter>头文件\ECS\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug.h">
+      <Filter>头文件\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiWindows.h">
+      <Filter>头文件\Engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

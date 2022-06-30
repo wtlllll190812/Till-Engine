@@ -4,8 +4,9 @@
 #include <GL/glew.h>
 #include<iostream>
 #include"Singleton .h"
-
-
+#include<vector>
+#include"GuiWindows.h"
+#include<memory>
 class Screen :public Singleton<Screen>
 {
 public:
@@ -15,17 +16,35 @@ public:
 
 	Screen(int, int);
 	Screen();
+
 	/// <summary>
-	/// ÏÔÊ¾´°¿Ú
+	/// æ˜¾ç¤ºçª—å£
 	/// </summary>
 	void Display();
 
 	/// <summary>
-	/// ´°¿ÚÊÇ·ñ¹Ø±Õ
+	/// çª—å£æ˜¯å¦å…³é—­
 	/// </summary>
-	/// <returns>ÊÇ·ñ¹Ø±Õ</returns>
+	/// <returns>æ˜¯å¦å…³é—­</returns>
 	bool isClosed();
 
-private:
+	/// <summary>
+	/// imguiåˆå§‹åŒ–
+	/// </summary>
+	void GuiInit();
+
+	/// <summary>
+	/// æ¸²æŸ“Gui
+	/// </summary>
+	void GuiRender();
+
+	/// <summary>
+	/// æ³¨å†Œçª—å£
+	/// </summary>
+	void RegisterGuiWindows(std::shared_ptr<GuiWindows>);
+
 	void Init();
+private:
+
+	std::vector<std::shared_ptr<GuiWindows>> uiWindows;
 };

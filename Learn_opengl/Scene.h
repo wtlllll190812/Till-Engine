@@ -12,35 +12,35 @@ public:
 
 
 	/// <summary>
-	/// 读取并初始化场景
+	/// 璇诲彇骞跺垵濮嬪寲鍦烘櫙
 	/// </summary>
-	/// <param name="">场景文件路径</param>
+	/// <param name="">鍦烘櫙鏂囦欢璺緞</param>
 	Scene(std::string);
 	~Scene();
 
 	/// <summary>
-	/// 保存场景
+	/// 淇濆瓨鍦烘櫙
 	/// </summary>
 	void Save();
 	
 	/// <summary>
-	/// 在场景中寻找对象
+	/// 鍦ㄥ満鏅腑瀵绘壘瀵硅薄
 	/// </summary>
-	/// <param name="">对象名称</param>
+	/// <param name="">瀵硅薄鍚嶇О</param>
 	GameObject* Find(std::string);
 private:
 	/// <summary>
-	/// 场景文件路径
+	/// 鍦烘櫙鏂囦欢璺緞
 	/// </summary>
 	std::string path;
 
 	/// <summary>
-	/// 场景中物体的集合
+	/// 鍦烘櫙涓墿浣撶殑闆嗗悎
 	/// </summary>
 	std::vector<GameObject*> gameobjects;
 	
 	/// <summary>
-	/// 场景文件对象
+	/// 鍦烘櫙鏂囦欢瀵硅薄
 	/// </summary>
 	TLxml xml;
 };
