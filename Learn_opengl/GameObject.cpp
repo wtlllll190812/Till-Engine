@@ -4,9 +4,6 @@
 #include <memory>
 #include <functional>
 #include "Scene.h"
-
-
-
 #include "Camera.h"
 
 REFLECTION(GameObject);
@@ -33,7 +30,6 @@ GameObject::GameObject(TiXmlNode* xml,Scene* s)
 			if (strcmp(element->Value(), "Camera") == 0)
 			{
 				s->camera = (Camera*)comp;
-				std::cout << s->camera->guid << std::endl;
 			}
 			AddComponent(comp);
 		}

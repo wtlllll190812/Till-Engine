@@ -5,6 +5,8 @@
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 
+#include<sstream>
+
 #include "Screen.h"
 #include "Camera.h"
 #include "GameObject.h"
@@ -22,12 +24,16 @@
 #include "Debug.h"
 #include "GuiWindows.h"
 
+
+Scene* currentScene;
+GameObject* currentObj;
+
 Camera* camera;
 GameObject* cameraObject;
 GameObject* object;
+GameLoop loop(60);
 
 bool keys[1024];
-
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
@@ -41,20 +47,102 @@ void fixedupdate()
 	glfwSwapBuffers(Screen::instance().window);
 }
 
+void Init()
+{
+
+	//窗口注册
+	auto Editor = shared_ptr<GuiWindows>(new GuiWindows([]() {
+		if (ImGui::BeginMainMenuBar())
+		{
+			if (ImGui::BeginMenu("File"))
+			{
+				ImGui::EndMenu();
+			}
+			if (ImGui::BeginMenu("Edit"))
+			{
+				if (ImGui::MenuItem("TODO")) {
+					//do something
+				}
+				ImGui::EndMenu();
+			}
+			ImGui::EndMainMenuBar();
+		}
+		}, "Editor"));
+	Screen::instance().RegisterGuiWindows(Editor);
+
+	auto Hierarchy = shared_ptr<GuiWindows>(new GuiWindows([]() {
+		static bool hierarchy = true;
+		if (hierarchy)
+		{
+			ImGui::Begin("Hierarchy", &hierarchy);
+			if (currentScene != nullptr)
+			{
+				if (ImGui::CollapsingHeader("Window options"))
+				{
+					for (auto i : currentScene->gameobjects)
+					{
+						if (ImGui::Button(i->name.c_str())) {
+							currentObj = i;
+						}
+					}
+				}
+			}
+			ImGui::End();
+		}
+		}, "Hierarchy"));
+	Screen::instance().RegisterGuiWindows(Hierarchy);
+
+	auto Inspector = shared_ptr<GuiWindows>(new GuiWindows([]() {
+		static bool Inspector = true;
+		if (Inspector)
+		{
+			ImGui::Begin("Inspector", &Inspector);
+			if (currentObj != nullptr)
+			{
+				for (auto i : currentObj->components)
+				{
+					if (ImGui::CollapsingHeader(i->componentName.c_str()))
+					{
+
+					}
+				}
+			}
+			ImGui::End();
+		}
+		}, "Inspector"));
+	Screen::instance().RegisterGuiWindows(Inspector);
+
+	auto Console = shared_ptr<GuiWindows>(new GuiWindows([]() {
+		static bool Console = true;
+		if (Console)
+		{
+			ImGui::Begin("Console", &Console);
+			string s = Debug::appLogOss.str();
+			ImGui::BulletText(s.c_str());
+			ImGui::BulletText("bbb");
+			ImGui::BulletText("ccc");
+
+			ImGui::End();
+		}
+		}, "Console"));
+	Screen::instance().RegisterGuiWindows(Console);
+	
+
+	// 场景初始化
+	currentScene = new Scene("Data/test.xml");
+	cameraObject = currentScene->Find("camera");
+	object = currentScene->Find("object");
+	camera = cameraObject->GetComponent<Camera>();
+}
 
 int main()
 {
-	Screen::instance().RegisterGuiWindows(shared_ptr<GuiWindows>());
 	Debug::Init();
-	Debug::GetEngineLogger()->info("sdsd");
-	Debug::GetAppLogger()->warn("sdsd");
-	GameLoop loop(60);
+	Debug::GetEngineLogger()->info("Engine Init");
+	Init();
+	Debug::GetEngineLogger()->info("Engine Inited");
 
-	// 场景初始化
-	Scene s("Data/test.xml");
-	cameraObject = s.Find("camera");
-	object = s.Find("object");
-	camera = cameraObject->GetComponent<Camera>();
+	Debug::GetAppLogger()->warn("sdsd");
 
 	shared_ptr<Material> mat = object->GetComponent<Renderer>()->material;
 	// 绑定回调函数
@@ -97,13 +185,9 @@ int main()
 		{
 			do_movement();
 		});
+	
 	loop.StartLoop();
-
-	ImGui_ImplOpenGL3_Shutdown();
-	ImGui_ImplGlfw_Shutdown();
-	ImGui::DestroyContext();
-
-	glfwTerminate();
+	
 	return 0;
 }
 

@@ -27,17 +27,17 @@ public:
 	/// 在场景中寻找对象
 	/// </summary>
 	/// <param name="">对象名称</param>
-	GameObject* Find(std::string);
+	GameObject* Find(std::string);	
+	
+	/// <summary>
+	/// 场景中物体的集合
+	/// </summary>
+	std::vector<GameObject*> gameobjects;//临时,之后改为私有
 private:
 	/// <summary>
 	/// 场景文件路径
 	/// </summary>
 	std::string path;
-
-	/// <summary>
-	/// 场景中物体的集合
-	/// </summary>
-	std::vector<GameObject*> gameobjects;
 	
 	/// <summary>
 	/// 场景文件对象

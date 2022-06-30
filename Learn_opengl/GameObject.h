@@ -10,39 +10,39 @@ class GameObject
 public:
 	Scene* owner;
 	Transform* transform;
-	std::string name;//ÎïÌåÃû³Æ
-	int guid;//ÎïÌå±êÊ¶
+	std::string name;//ç‰©ä½“åç§°
+	int guid;//ç‰©ä½“æ ‡è¯†
 
 	GameObject();
 	GameObject(TiXmlNode*,Scene*);
 	~GameObject();
 
 	/// <summary>
-	/// ÎïÌåË¢ĞÂ
+	/// ç‰©ä½“åˆ·æ–°
 	/// </summary>
 	void Update();
 
 	/// <summary>
-	/// ĞòÁĞ»¯
+	/// åºåˆ—åŒ–
 	/// </summary>
 	TLxml* Serialize();
 
 	/// <summary>
-	/// »ñÈ¡hashÖµ
+	/// è·å–hashå€¼
 	/// </summary>
 	int GetHash();
 
 	/// <summary>
-	/// Ìí¼Ó×é¼ş
+	/// æ·»åŠ ç»„ä»¶
 	/// </summary>
 	/// <param name=""></param>
 	void AddComponent(Component*);
 
 	/// <summary>
-	/// »ñÈ¡×é¼ş
+	/// è·å–ç»„ä»¶
 	/// </summary>
-	/// <typeparam name="T">×é¼şÀàĞÍ</typeparam>
-	/// <returns>×é¼ş¶ÔÏó</returns>
+	/// <typeparam name="T">ç»„ä»¶ç±»å‹</typeparam>
+	/// <returns>ç»„ä»¶å¯¹è±¡</returns>
 	template <class T>
 	T* GetComponent()
 	{
@@ -59,9 +59,9 @@ public:
 	}
 
 	/// <summary>
-	/// ÒÆ³ı×é¼ş
+	/// ç§»é™¤ç»„ä»¶
 	/// </summary>
-	/// <typeparam name="T">×é¼şÀàĞÍ</typeparam>
+	/// <typeparam name="T">ç»„ä»¶ç±»å‹</typeparam>
 	template <class T>
 	void RemoveComponent()
 	{
@@ -80,6 +80,7 @@ public:
 	bool operator==(const GameObject& g)const {
 		return g.guid == this->guid;
 	}
+	std::vector<Component*> components;//ä¸´æ—¶,ä¹‹åæ”¹ä¸ºç§æœ‰
+
 private:
-	std::vector<Component*> components;
 };

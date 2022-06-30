@@ -2,18 +2,32 @@
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
-
+#include"GuiWindows.h"
+#include"Debug.h"
 
 Screen::Screen(int w, int h) :width(w), heigth(h)
 {
+	Debug::GetEngineLogger()->info("Screen Init");
 	Init();
 	GuiInit();
+	Debug::GetEngineLogger()->info("Screen Inited");
 }
 
 Screen::Screen() : width(800), heigth(600)
 {
+	Debug::GetEngineLogger()->info("Screen Init");
 	Init();
 	GuiInit();
+	Debug::GetEngineLogger()->info("Screen Inited");
+}
+
+Screen::~Screen()
+{
+	ImGui_ImplOpenGL3_Shutdown();
+	ImGui_ImplGlfw_Shutdown();
+	ImGui::DestroyContext();
+
+	glfwTerminate();
 }
 
 void Screen::Display()
@@ -63,7 +77,6 @@ void Screen::GuiRender()
 		i->Render();
 	}
 
-	// Rendering
 	ImGui::Render();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }

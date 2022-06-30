@@ -8,39 +8,40 @@ class GameObject;
 class Component
 {
 public:
+	std::string componentName;
 	GameObject* gameobject;
 	int guid;
 
-	Component() :gameobject(nullptr), guid(GetHash()) {}
+	Component() :gameobject(nullptr), guid(GetHash()),componentName("Component") {}
 
 	/// <summary>
-	/// Í¨¹ıxmlÊµÀı»¯
+	/// é€šè¿‡xmlå®ä¾‹åŒ–
 	/// </summary>
 	/// <param name=""></param>
 	virtual void Instantiate(TiXmlNode*) = 0;
 
 	/// <summary>
-	/// Ë¢ĞÂÊ±
+	/// åˆ·æ–°æ—¶
 	/// </summary>
 	virtual void OnUpdate() {};
 
 	/// <summary>
-	/// Ìí¼ÓÊ±
+	/// æ·»åŠ æ—¶
 	/// </summary>
 	virtual void Awake() {};
 
 	/// <summary>
-	/// ÒÆ³ıÊ±
+	/// ç§»é™¤æ—¶
 	/// </summary>
 	virtual void OnRemove() {};
 
 	/// <summary>
-	/// ĞòÁĞ»¯
+	/// åºåˆ—åŒ–
 	/// </summary>
 	virtual TLxml* Serialize() = 0;
 
 	/// <summary>
-	/// »ñÈ¡¹şÏ£Öµ
+	/// è·å–å“ˆå¸Œå€¼
 	/// </summary>
 	int GetHash()
 	{

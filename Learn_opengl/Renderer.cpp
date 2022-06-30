@@ -7,12 +7,14 @@ REFLECTION(Renderer);
 
 Renderer::Renderer(Mesh* m, Material* mater)
 {
+	componentName = "Renderer";
 	mesh = shared_ptr<Mesh>(m);
 	material = shared_ptr<Material>(mater);
 }
 
 Renderer::Renderer()
 {
+	componentName = "Renderer";
 	mesh = shared_ptr<Mesh>(new Mesh());
 	material = shared_ptr<Material>(new Material());
 }
@@ -34,7 +36,7 @@ void Renderer::Awake()
 
 TLxml* Renderer::Serialize()
 {
-	auto xml = new TLxml("Renderer");
+	auto xml = new TLxml(componentName);
 	xml->pRoot->SetAttribute("guid", std::to_string(guid));
 	return xml;
 }

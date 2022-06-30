@@ -11,6 +11,7 @@ const glm::vec3 Transform::down = glm::vec3(0.0f, -1.0f, 0.0f);
 
 Transform::Transform()
 {
+	componentName = "Transform";
 	position = glm::vec3(0, 0, 0);
 	rotation = glm::vec3(0, 0, 0);
 	scale = glm::vec3(0, 0, 0);
@@ -18,6 +19,7 @@ Transform::Transform()
 
 Transform::Transform(glm::vec3 pos, GameObject* gameobject)
 {
+	componentName = "Transform";
 	position = pos;
 }
 

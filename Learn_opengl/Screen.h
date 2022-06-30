@@ -5,8 +5,9 @@
 #include<iostream>
 #include"Singleton .h"
 #include<vector>
-#include"GuiWindows.h"
 #include<memory>
+
+class GuiWindows;
 class Screen :public Singleton<Screen>
 {
 public:
@@ -16,6 +17,7 @@ public:
 
 	Screen(int, int);
 	Screen();
+	~Screen();
 
 	/// <summary>
 	/// 显示窗口

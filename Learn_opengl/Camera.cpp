@@ -13,6 +13,7 @@ Camera::Camera(Screen* s) :currentScreen(s)
 
 Camera::Camera()
 {
+	componentName = "Camera";
 	currentScreen = &Screen::instance();
 }
 
@@ -36,7 +37,7 @@ glm::mat4 Camera::GetProjMatrix()
 
 TLxml* Camera::Serialize()
 {
-	auto xml = new TLxml("Camera");
+	auto xml = new TLxml(componentName);
 	xml->pRoot->SetAttribute("guid", std::to_string(guid));
 	xml->pRoot->SetAttribute("fov", std::to_string(fov));
 	return xml;

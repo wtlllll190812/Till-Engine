@@ -7,7 +7,7 @@ class Camera :public Component
 {
 public:
 	/// <summary>
-	/// ÊÓ½Ç´óĞ¡
+	/// è§†è§’å¤§å°
 	/// </summary>
 	float fov = 120.0f;
 
@@ -16,30 +16,30 @@ public:
 	~Camera();
 
 	/// <summary>
-	/// »ñÈ¡¹Û²ì¾ØÕó
+	/// è·å–è§‚å¯ŸçŸ©é˜µ
 	/// </summary>
-	/// <returns>¹Û²ì¾ØÕó</returns>
+	/// <returns>è§‚å¯ŸçŸ©é˜µ</returns>
 	glm::mat4 GetViewMatrix();
 
 	/// <summary>
-	/// »ñÈ¡Í¸ÊÓ¾ØÕó
+	/// è·å–é€è§†çŸ©é˜µ
 	/// </summary>
-	/// <returns>»ñÈ¡Í¸ÊÓ¾ØÕó</returns>
+	/// <returns>è·å–é€è§†çŸ©é˜µ</returns>
 	glm::mat4 GetProjMatrix();
 
 private:
 	/// <summary>
-	/// µ±Ç°´°¿Ú
+	/// å½“å‰çª—å£
 	/// </summary>
 	Screen* currentScreen;
 
 	/// <summary>
-	/// ĞòÁĞ»¯
+	/// åºåˆ—åŒ–
 	/// </summary>
 	virtual TLxml* Serialize() override;
 
 	/// <summary>
-	/// Í¨¹ıxmlÊµÀı»¯
+	/// é€šè¿‡xmlå®ä¾‹åŒ–
 	/// </summary>
 	/// <param name=""></param>
 	virtual void Instantiate(TiXmlNode*) override;
