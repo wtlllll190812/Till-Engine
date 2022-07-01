@@ -5,31 +5,31 @@ public:
 	friend class GameLoop;
 
 	/// <summary>
-	/// Ê±¼äÁ÷Ê§µÄËÙ¶È
+	/// æ—¶é—´æµå¤±çš„é€Ÿåº¦
 	/// </summary>
 	static double timeScale;
 	/// <summary>
-	/// ÓÎÏ·¿ªÊ¼ÔËĞĞºóµÄÊ±¼ä
+	/// æ¸¸æˆå¼€å§‹è¿è¡Œåçš„æ—¶é—´
 	/// </summary>
 	static double GetTime() { return time; }
 	/// <summary>
-	/// ÓÎÏ·¿ªÊ¼ÔËĞĞºóµÄÊ±¼ä
+	/// æ¸¸æˆå¼€å§‹è¿è¡Œåçš„æ—¶é—´
 	/// </summary>
 	static double GetUnscaledTime() { return unscaledTime; }
 	/// <summary>
-	/// ×î½üÒ»´ÎfixedTimeµÄÊ±¼ä
+	/// æœ€è¿‘ä¸€æ¬¡fixedTimeçš„æ—¶é—´
 	/// </summary>
 	static double GetFixedTime() { return fixedTime; }
 	/// <summary>
-	/// Íê³ÉÉÏÒ»Ö¡ËùÓÃÊ±¼ä
+	/// å®Œæˆä¸Šä¸€å¸§æ‰€ç”¨æ—¶é—´
 	/// </summary>
 	static double GetDeltaTime() { return deltaTime; }
 	/// <summary>
-	/// Íê³ÉÉÏÒ»Ö¡ËùÓÃÊ±¼ä(²»ÊÜtimescaleÓ°Ïì)
+	/// å®Œæˆä¸Šä¸€å¸§æ‰€ç”¨æ—¶é—´(ä¸å—timescaleå½±å“)
 	/// </summary>
 	static double GetUnscaledDeltaTime() { return unscaledDeltaTime; }
 	/// <summary>
-	/// ÓÎÏ·¿ªÊ¼Ö®ºóµÄÖ¡Êı
+	/// æ¸¸æˆå¼€å§‹ä¹‹åçš„å¸§æ•°
 	/// </summary>
 	static double GetFrameCount() { return frameCount; }
 

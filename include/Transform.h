@@ -4,69 +4,69 @@
 #include "Component.h"
 
 class GameObject;
-class Transform :public Component
+class Transform : public Component
 {
 public:
 	/// <summary>
-	/// Ïò¸÷¸ö·½ÏòµÄµ¥Î»ÏòÁ¿
+	/// å‘å„ä¸ªæ–¹å‘çš„å•ä½å‘é‡
 	/// </summary>
-	static const  glm::vec3 forward;
-	static const  glm::vec3 back;
-	static const  glm::vec3 left;
-	static const  glm::vec3 right;
-	static const  glm::vec3 up;
-	static const  glm::vec3 down;
+	static const glm::vec3 forward;
+	static const glm::vec3 back;
+	static const glm::vec3 left;
+	static const glm::vec3 right;
+	static const glm::vec3 up;
+	static const glm::vec3 down;
 
 	glm::vec3 position;
 	glm::vec3 rotation;
 	glm::vec3 scale;
 
 	Transform();
-	Transform(glm::vec3, GameObject*);
+	Transform(glm::vec3, GameObject *);
 	~Transform();
 
 	/// <summary>
-	/// »ñÈ¡ÏòÇ°·½Ïò
+	/// è·å–å‘å‰æ–¹å‘
 	/// </summary>
 	glm::vec3 GetFront();
 
 	/// <summary>
-	/// »ñÈ¡ÏòÓÒ·½Ïò
+	/// è·å–å‘å³æ–¹å‘
 	/// </summary>
 	glm::vec3 GetRight();
 
 	/// <summary>
-	/// »ñÈ¡ÏòÉÏ·½Ïò
+	/// è·å–å‘ä¸Šæ–¹å‘
 	/// </summary>
 	glm::vec3 GetUp();
 
 	/// <summary>
-	/// ÏòÇ°ÒÆ¶¯
+	/// å‘å‰ç§»åŠ¨
 	/// </summary>
 	void Translate(float);
 
 	/// <summary>
-	/// ÏòÄ³¸ö·½ÏòÒÆ¶¯
+	/// å‘æŸä¸ªæ–¹å‘ç§»åŠ¨
 	/// </summary>
-	/// <param name="">ÒÆ¶¯·½Ïò</param>
-	/// <param name="">Î»ÒÆ´óĞ¡</param>
+	/// <param name="">ç§»åŠ¨æ–¹å‘</param>
+	/// <param name="">ä½ç§»å¤§å°</param>
 	void Translate(glm::vec3, float);
 
 	/// <summary>
-	/// »ñÈ¡model¾ØÕó
+	/// è·å–modelçŸ©é˜µ
 	/// </summary>
 	/// <returns></returns>
 	glm::mat4 GetModel();
 
 	/// <summary>
-	/// ĞòÁĞ»¯Îªxml
+	/// åºåˆ—åŒ–ä¸ºxml
 	/// </summary>
 	/// <returns></returns>
-	virtual TLxml* Serialize() override;
+	virtual TLxml *Serialize() override;
 
 	/// <summary>
-	/// Í¨¹ıxmlÊµÀı»¯
+	/// é€šè¿‡xmlå®ä¾‹åŒ–
 	/// </summary>
 	/// <param name=""></param>
-	virtual void Instantiate(TiXmlNode*) override;
+	virtual void Instantiate(TiXmlNode *) override;
 };

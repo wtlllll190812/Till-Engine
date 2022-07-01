@@ -2,7 +2,7 @@
 #ifndef SHADER_H
 #define SHADER_H
 
-#include <GL/glew.h>; // °üº¬glewÀ´»ñÈ¡ËùÓĞµÄ±ØĞëOpenGLÍ·ÎÄ¼ş
+#include <GL/glew.h>; // åŒ…å«glewæ¥è·å–æ‰€æœ‰çš„å¿…é¡»OpenGLå¤´æ–‡ä»¶
 
 #include <string>
 #include <fstream>
@@ -14,11 +14,11 @@ using namespace std;
 class Shader
 {
 public:
-	// ³ÌĞòID
+	// ç¨‹åºID
 	GLuint Program;
-	// ¹¹ÔìÆ÷¶ÁÈ¡²¢¹¹½¨×ÅÉ«Æ÷
-	Shader(const GLchar* vertexPath, const GLchar* fragmentPath);
-	// Ê¹ÓÃ³ÌĞò
+	// æ„é€ å™¨è¯»å–å¹¶æ„å»ºç€è‰²å™¨
+	Shader(const GLchar *vertexPath, const GLchar *fragmentPath);
+	// ä½¿ç”¨ç¨‹åº
 	void Use();
 };
 

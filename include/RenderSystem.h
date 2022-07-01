@@ -1,43 +1,51 @@
 #pragma once
-#include<queue>
-#include<vector>
-#include"System.h"
+#include "Component.h"
+#include "Material.h"
+#include "Mesh.h"
+#include <memory>
 
-class Component;
-class Renderer;
-class RenderSystem :public System, public Singleton<RenderSystem>
+class GameObject;
+class Renderer : public Component
 {
 public:
-	RenderSystem();
-	~RenderSystem();
+	/// <summary>
+	/// æ¨¡å‹Mesh
+	/// </summary>
+	shared_ptr<Mesh> mesh;
 
 	/// <summary>
-	/// äÖÈ¾¶ÓÁĞ
+	/// æè´¨
 	/// </summary>
-	static std::priority_queue <Renderer*, std::vector<Renderer*>> renderQueue;
+	shared_ptr<Material> material;
+
+	Renderer(Mesh *, Material *);
+	Renderer();
+	~Renderer();
 
 	/// <summary>
-	/// Ã¿Ö¡Ë¢ĞÂ
+	/// è¿›è¡Œæ¸²æŸ“
 	/// </summary>
-	virtual void Update() override;
+	void Render();
 
 	/// <summary>
-	/// ¹Ì¶¨Ê±¼äË¢ĞÂ
+	/// è¢«æ·»åŠ æ—¶
 	/// </summary>
-	virtual void FixedUpdate() override;
+	void Awake() override;
 
 	/// <summary>
-	/// ×¢²á×é¼ş
+	/// åºåˆ—åŒ–ä¸ºxml
 	/// </summary>
-	virtual void RegisterComponent(Component*) override;
+	/// <returns></returns>
+	virtual TLxml *Serialize() override;
 
 	/// <summary>
-	/// ÒÆ³ı×é¼ş
+	/// é€šè¿‡xmlå®ä¾‹åŒ–
 	/// </summary>
-	virtual void RemoveComponent(Component*) override;
+	/// <param name=""></param>
+	virtual void Instantiate(TiXmlNode *) override;
 
-	/// <summary>
-	/// Çå¿Õ
-	/// </summary>
-	void Clear();
+	bool operator>(const Renderer &r)
+	{
+		return r.material->renderQueueIndex > material->renderQueueIndex;
+	}
 };

@@ -1,11 +1,11 @@
 #CMakeLists.txt
+cmake_minimum_required(VERSION 3.5)
 
-PROJECT (HELLO)
+#换成你的vcpkg路径
+set(VCPKG_ROOT "D:/TL/Vscode/vcpkg-master/scripts/buildsystems/vcpkg.cmake")
+set(CMAKE_TOOLCHAIN_FILE ${VCPKG_ROOT})
 
-SET(SRC_LIST main.cpp)
 
-MESSAGE(STATUS "This is BINARY dir " ${HELLO_BINARY_DIR})
-
-MESSAGE(STATUS "This is SOURCE dir "${HELLO_SOURCE_DIR})
-
-ADD_EXECUTABLE(hello ${SRC_LIST})
+PROJECT (Till_Engine)
+INCLUDE_DIRECTORIES(include)
+ADD_SUBDIRECTORY(src)

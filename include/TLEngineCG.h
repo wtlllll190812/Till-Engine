@@ -1,47 +1,60 @@
 #pragma once
-#include<glm/glm.hpp>
-#include<vector>
-#include<queue>
-#include"Reflection.h"
-enum class RendererQueue
-{
-	Background = 1000,
-	Geometry = 2000,
-	AlphaTest = 2450,
-	Transparent = 3000,
-	Overlay = 4000
-};
-class Light;
-class Renderer;
-class TLEngineCG
+#include <string>
+#include <tinyxml.h>
+#include <glm/glm.hpp>
+
+class TLxml
 {
 public:
-	TLEngineCG();
-	~TLEngineCG();
+	TiXmlElement *pRoot;
 
-	static std::vector<Light*> lights;
+	/// <summary>
+	/// 构造函数
+	/// </summary>
+	/// <param name="">路径</param>
+	/// <param name="">根元素名称</param>
+	TLxml(std::string, std::string);
+	/// <summary>
+	/// 构造非文件节点
+	/// </summary>
+	/// <param name="">根元素名称</param>
+	TLxml(std::string);
+	~TLxml();
+
+	/// <summary>
+	/// 添加子节点
+	/// </summary>
+	void AddChild(TiXmlElement *);
+
+	/// <summary>
+	/// 保存文件
+	/// </summary>
+	void Save() { pDoc->SaveFile(path); }
+
+	/// <summary>
+	/// 序列化向量
+	/// </summary>
+	/// <param name="">向量</param>
+	/// <param name="">节点名</param>
+	static TLxml *Serialize(glm::vec3 &, std::string);
+
+	/// <summary>
+	/// 反序列化向量
+	/// </summary>
+	/// <param name="">向量</param>
+	/// <returns>节点名</returns>
+	static glm::vec3 DeSerialize(TiXmlNode *);
+
+private:
+	std::string path;
+	TiXmlDocument *pDoc;
 };
 
-
-#ifndef SetUniformMat4(matName,shaderName)	
-#define SetUniformMat4(matName,shaderName)													\
-			GLint matName##Loc = glGetUniformLocation(shaderName->Program, #matName);		\
-			glUniformMatrix4fv(matName##Loc, 1, GL_FALSE, glm::value_ptr(matName));
-#endif 
-
-
-#ifndef SetUniformVec3(vecName,shaderName)	
-#define SetUniformVec3(vecName,shaderName)													\
-			GLint vecName##Loc = glGetUniformLocation(shaderName->Program, #vecName);		\
-			glUniform3f(vecName##Loc, vecName.x, vecName.y, vecName.z);
-#endif 
-
-
-#ifndef SetUniformTex(texName,shaderName)	
-#define SetUniformTex(texName,index,shaderName)												\
-			glActiveTexture(GL_TEXTURE##index);												\
-			glBindTexture(GL_TEXTURE_2D, texName.texture);									\
-			glUniform1i(glGetUniformLocation(shaderName->Program, #texName), index);
-#endif 
-
-
+/// <summary>
+/// 可序列化对象接口
+/// </summary>
+class Serializable
+{
+	virtual TLxml *Serialize() = 0;
+	virtual void DeSerialize(TiXmlNode *) = 0;
+};

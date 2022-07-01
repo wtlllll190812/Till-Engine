@@ -1,29 +1,37 @@
 #pragma once
-#include "Shader.h"
-#include "Mesh.h"
-#include "TLEngineCG.h"
-#include<memory>
+#include <glm/glm.hpp>
+#include "Component.h"
 
 class GameObject;
-class Material
+class Light : public Component
 {
 public:
-	Shader* shader;
-	
-	/// <summary>
-	/// ��Ⱦ���д���
-	/// </summary>
-	int renderQueueIndex = (int)RendererQueue::Geometry;
-	
-	/// <summary>
-	/// ��Ⱦʱ�ص�
-	/// </summary>
-	void (*RenderCallback)(GameObject* ,Shader*, Material*);
+	Light(float, glm::vec3);
+	Light();
+	~Light();
 
-	Material(const GLchar*, const GLchar*);
-	Material();
-	~Material();
+	/// <summary>
+	/// 光的强度
+	/// </summary>
+	float intensity;
 
-	void SetRenderCallback(void (*f)(GameObject* ,Shader*, Material*));
-	void Render(GameObject*,shared_ptr<Mesh>);
+	/// <summary>
+	/// 光的颜色
+	/// </summary>
+	glm::vec3 color;
+
+	/// <summary>
+	/// 序列化
+	/// </summary>
+	virtual TLxml *Serialize() override;
+
+	/// <summary>
+	/// 通过xml实例化
+	/// </summary>
+	virtual void Instantiate(TiXmlNode *) override;
+
+	/// <summary>
+	/// 刚添加时
+	/// </summary>
+	virtual void Awake() override;
 };

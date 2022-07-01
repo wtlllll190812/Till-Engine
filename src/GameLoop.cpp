@@ -1,5 +1,4 @@
 #include "GameLoop.h"
-#include <ctime>
 #include "Time.h"
 #include <iostream>
 #include "Screen.h"

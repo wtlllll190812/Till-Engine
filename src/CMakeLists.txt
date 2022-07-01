@@ -1,0 +1,3 @@
+file(GLOB_RECURSE SRC_DIR_LIST "*.cpp")
+
+ADD_EXECUTABLE(Till_Engine ${SRC_DIR_LIST})

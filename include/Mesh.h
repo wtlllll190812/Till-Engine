@@ -1,19 +1,29 @@
 #pragma once
-#define GLFW_INCLUDE_NONE
-#include <GLFW/glfw3.h>
-#include <GL/glew.h>
-#include <vector>
+#include "Shader.h"
+#include "Mesh.h"
+#include "TLEngineCG.h"
+#include <memory>
 
-class Mesh
+class GameObject;
+class Material
 {
 public:
-	GLuint VAO; //¶¥µãÊı×é¶ÔÏó
-	GLuint VBO; //¶¥µã»º³å¶ÔÏó
-	//GLuint EBO;
+	Shader *shader;
 
-	Mesh(int, std::vector<int>, GLfloat[], int);
-	Mesh();
-	~Mesh();
-private:
-	void Init(int, std::vector<int>, GLfloat[], int);
+	/// <summary>
+	/// æ¸²æŸ“é˜Ÿåˆ—æ¬¡åº
+	/// </summary>
+	int renderQueueIndex = (int)RendererQueue::Geometry;
+
+	/// <summary>
+	/// æ¸²æŸ“æ—¶å›è°ƒ
+	/// </summary>
+	void (*RenderCallback)(GameObject *, Shader *, Material *);
+
+	Material(const GLchar *, const GLchar *);
+	Material();
+	~Material();
+
+	void SetRenderCallback(void (*f)(GameObject *, Shader *, Material *));
+	void Render(GameObject *, shared_ptr<Mesh>);
 };

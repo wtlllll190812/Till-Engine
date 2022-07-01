@@ -1,59 +1,72 @@
 #pragma once
-#include <string>
-#include <tinyxml.h>
 #include <glm/glm.hpp>
+#include <string>
+#include "Component.h"
 
-class TLxml
+class GameObject;
+class Transform : public Component
 {
 public:
-	TiXmlElement* pRoot;
+	/// <summary>
+	/// å‘å„ä¸ªæ–¹å‘çš„å•ä½å‘é‡
+	/// </summary>
+	static const glm::vec3 forward;
+	static const glm::vec3 back;
+	static const glm::vec3 left;
+	static const glm::vec3 right;
+	static const glm::vec3 up;
+	static const glm::vec3 down;
+
+	glm::vec3 position;
+	glm::vec3 rotation;
+	glm::vec3 scale;
+
+	Transform();
+	Transform(glm::vec3, GameObject *);
+	~Transform();
 
 	/// <summary>
-	/// ¹¹Ôìº¯Êı
+	/// è·å–å‘å‰æ–¹å‘
 	/// </summary>
-	/// <param name="">Â·¾¶</param>
-	/// <param name="">¸ùÔªËØÃû³Æ</param>
-	TLxml(std::string, std::string);
-	/// <summary>
-	/// ¹¹Ôì·ÇÎÄ¼ş½Úµã
-	/// </summary>
-	/// <param name="">¸ùÔªËØÃû³Æ</param>
-	TLxml(std::string);
-	~TLxml();
+	glm::vec3 GetFront();
 
 	/// <summary>
-	/// Ìí¼Ó×Ó½Úµã
+	/// è·å–å‘å³æ–¹å‘
 	/// </summary>
-	void AddChild(TiXmlElement*);
-	
-	/// <summary>
-	/// ±£´æÎÄ¼ş
-	/// </summary>
-	void Save() { pDoc->SaveFile(path); }
-	
-	/// <summary>
-	/// ĞòÁĞ»¯ÏòÁ¿
-	/// </summary>
-	/// <param name="">ÏòÁ¿</param>
-	/// <param name="">½ÚµãÃû</param>
-	static TLxml* Serialize(glm::vec3&, std::string);
-	
-	/// <summary>
-	/// ·´ĞòÁĞ»¯ÏòÁ¿
-	/// </summary>
-	/// <param name="">ÏòÁ¿</param>
-	/// <returns>½ÚµãÃû</returns>
-	static glm::vec3 DeSerialize(TiXmlNode*);
-private:
-	std::string path;
-	TiXmlDocument* pDoc;
-};
+	glm::vec3 GetRight();
 
-/// <summary>
-/// ¿ÉĞòÁĞ»¯¶ÔÏó½Ó¿Ú
-/// </summary>
-class Serializable
-{
-	virtual TLxml* Serialize()=0;
-	virtual void DeSerialize(TiXmlNode*)=0;
+	/// <summary>
+	/// è·å–å‘ä¸Šæ–¹å‘
+	/// </summary>
+	glm::vec3 GetUp();
+
+	/// <summary>
+	/// å‘å‰ç§»åŠ¨
+	/// </summary>
+	void Translate(float);
+
+	/// <summary>
+	/// å‘æŸä¸ªæ–¹å‘ç§»åŠ¨
+	/// </summary>
+	/// <param name="">ç§»åŠ¨æ–¹å‘</param>
+	/// <param name="">ä½ç§»å¤§å°</param>
+	void Translate(glm::vec3, float);
+
+	/// <summary>
+	/// è·å–modelçŸ©é˜µ
+	/// </summary>
+	/// <returns></returns>
+	glm::mat4 GetModel();
+
+	/// <summary>
+	/// åºåˆ—åŒ–ä¸ºxml
+	/// </summary>
+	/// <returns></returns>
+	virtual TLxml *Serialize() override;
+
+	/// <summary>
+	/// é€šè¿‡xmlå®ä¾‹åŒ–
+	/// </summary>
+	/// <param name=""></param>
+	virtual void Instantiate(TiXmlNode *) override;
 };

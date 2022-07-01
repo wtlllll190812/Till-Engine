@@ -1,13 +1,13 @@
 #pragma once
-#include"Component.h"
+#include "Component.h"
 
-class Behaviour:public Component
+class Behaviour : public Component
 {
-	// Í¨¹ý Component ¼Ì³Ð
-	virtual void Instantiate(TiXmlNode*) override;
-	virtual TLxml* Serialize() override;
+	// é€šè¿‡ Component ç»§æ‰¿
+	virtual void Instantiate(TiXmlNode *) override;
+	virtual TLxml *Serialize() override;
 
-	virtual void Update() {};
-	virtual void FixedUpdate() {};
-	virtual void LateUpdate() {};
+	virtual void Update(){};
+	virtual void FixedUpdate(){};
+	virtual void LateUpdate(){};
 };

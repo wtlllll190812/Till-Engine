@@ -3,7 +3,7 @@
 #include "Component.h"
 
 class Screen;
-class Camera :public Component
+class Camera : public Component
 {
 public:
 	/// <summary>
@@ -11,7 +11,7 @@ public:
 	/// </summary>
 	float fov = 120.0f;
 
-	Camera(Screen*);
+	Camera(Screen *);
 	Camera();
 	~Camera();
 
@@ -31,16 +31,16 @@ private:
 	/// <summary>
 	/// 当前窗口
 	/// </summary>
-	Screen* currentScreen;
+	Screen *currentScreen;
 
 	/// <summary>
 	/// 序列化
 	/// </summary>
-	virtual TLxml* Serialize() override;
+	virtual TLxml *Serialize() override;
 
 	/// <summary>
 	/// 通过xml实例化
 	/// </summary>
 	/// <param name=""></param>
-	virtual void Instantiate(TiXmlNode*) override;
+	virtual void Instantiate(TiXmlNode *) override;
 };

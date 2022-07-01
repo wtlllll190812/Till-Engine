@@ -1,51 +1,51 @@
 #pragma once
-#include "Component.h"
-#include "Material.h"
-#include "Mesh.h"
-#include<memory>
+#include <string>
+#include <map>
+#include <utility>
+#include "Singleton .h"
 
-class GameObject;
-class Renderer :public Component
+typedef void *(*PTRCreateObject)(void);
+
+//åå°„æ³¨å†Œå®
+#define REFLECTION(className)                 \
+	className *Creator##className()           \
+	{                                         \
+		return new className;                 \
+	}                                         \
+	RegisterAction registerAction##className( \
+		#className, (PTRCreateObject)Creator##className)
+
+//åå°„ç±»
+class Reflection : public Singleton<Reflection>
+{
+private:
+	std::map<std::string, PTRCreateObject> m_classMap;
+
+public:
+	Reflection();
+	void *getClassByName(std::string className);
+	void registClass(std::string name, PTRCreateObject method);
+};
+
+//æ³¨å†ŒåŠ¨ä½œç±»
+class RegisterAction
 {
 public:
-	/// <summary>
-	/// Ä£ĞÍMesh
-	/// </summary>
-	shared_ptr<Mesh> mesh;
-
-	/// <summary>
-	/// ²ÄÖÊ
-	/// </summary>
-	shared_ptr<Material> material;
-
-	Renderer(Mesh*, Material*);
-	Renderer();
-	~Renderer();
-
-	/// <summary>
-	/// ½øĞĞäÖÈ¾
-	/// </summary>
-	void Render();
-
-	/// <summary>
-	/// ±»Ìí¼ÓÊ±
-	/// </summary>
-	void Awake() override;
-
-	/// <summary>
-	/// ĞòÁĞ»¯Îªxml
-	/// </summary>
-	/// <returns></returns>
-	virtual TLxml* Serialize() override;
-
-	/// <summary>
-	/// Í¨¹ıxmlÊµÀı»¯
-	/// </summary>
-	/// <param name=""></param>
-	virtual void Instantiate(TiXmlNode*) override;
-
-	bool operator>(const Renderer& r)
+	RegisterAction(std::string className, PTRCreateObject ptrCreateFn)
 	{
-		return r.material->renderQueueIndex > material->renderQueueIndex;
+		Reflection::instance().registClass(className, ptrCreateFn);
 	}
 };
+
+/// <summary>
+/// Í¨ï¿½ï¿½xmlÊµï¿½ï¿½ï¿½ï¿½
+/// </summary>
+/// <param name=""></param>
+virtual void Instantiate(TiXmlNode *) override;
+
+bool operator>(const Renderer &r)
+{
+	return r.material->renderQueueIndex > material->renderQueueIndex;
+}
+}
+;

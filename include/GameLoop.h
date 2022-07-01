@@ -9,50 +9,50 @@ public:
 	bool endLoop;
 
 	/// <summary>
-	/// ÉèÖÃ»Øµ÷
+	/// è®¾ç½®å›è°ƒ
 	/// </summary>
 	void SetAwakeCallback(void (*Awake)());
 
 	/// <summary>
-	/// ÉèÖÃ»Øµ÷
+	/// è®¾ç½®å›è°ƒ
 	/// </summary>
 	void SetUpdateCallback(void (*Update)());
-	
+
 	/// <summary>
-	/// ÉèÖÃ»Øµ÷
+	/// è®¾ç½®å›è°ƒ
 	/// </summary>
 	void SetFixedUpdateCallback(void (*FixedUpdate)());
-	
+
 	/// <summary>
-	/// ÉèÖÃ»Øµ÷
+	/// è®¾ç½®å›è°ƒ
 	/// </summary>
 	void SetLateUpdateCallback(void (*LateUpdate)());
 
 	/// <summary>
-	/// ¿ªÊ¼ÓÎÏ·Ñ­»·
+	/// å¼€å§‹æ¸¸æˆå¾ªç¯
 	/// </summary>
 	void StartLoop();
 	float GetFPS();
 
 private:
 	/// <summary>
-	/// ³õÊ¼»¯»Øµ÷
+	/// åˆå§‹åŒ–å›è°ƒ
 	/// </summary>
 	void (*Awake)();
 	/// <summary>
-	/// update»Øµ÷
+	/// updateå›è°ƒ
 	/// </summary>
 	void (*Update)();
 	/// <summary>
-	/// fixedupdate»Øµ÷
+	/// fixedupdateå›è°ƒ
 	/// </summary>
 	void (*FixedUpdate)();
 	/// <summary>
-	/// lateUpdate»Øµ÷
+	/// lateUpdateå›è°ƒ
 	/// </summary>
 	void (*LateUpdate)();
-	//void (*OnEnabled)();
-	//void (*OnDisabled)();
+	// void (*OnEnabled)();
+	// void (*OnDisabled)();
 
 	int frame;
 };

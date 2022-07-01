@@ -1,33 +1,33 @@
 #pragma once
-#include<string>
-#include<map>
-#include<utility>
-#include"Singleton .h"
+#include <string>
+#include <map>
+#include <utility>
+#include "Singleton .h"
 
+typedef void *(*PTRCreateObject)(void);
 
-typedef void* (*PTRCreateObject)(void);
+//ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½
+#define REFLECTION(className)                 \
+	className *Creator##className()           \
+	{                                         \
+		return new className;                 \
+	}                                         \
+	RegisterAction registerAction##className( \
+		#className, (PTRCreateObject)Creator##className)
 
-//·´Éä×¢²áºê
-#define REFLECTION(className)                           \
-    className* Creator##className()								\
-    {                                                           \
-        return new className;                                   \
-    }                                                           \
-    RegisterAction registerAction##className(					\
-        #className,(PTRCreateObject)Creator##className)
-
-//·´ÉäÀà
-class Reflection :public Singleton<Reflection>
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+class Reflection : public Singleton<Reflection>
 {
 private:
 	std::map<std::string, PTRCreateObject> m_classMap;
+
 public:
 	Reflection();
-	void* getClassByName(std::string className);
+	void *getClassByName(std::string className);
 	void registClass(std::string name, PTRCreateObject method);
 };
 
-//×¢²á¶¯×÷Àà
+//×¢ï¿½á¶¯ï¿½ï¿½ï¿½ï¿½
 class RegisterAction
 {
 public:

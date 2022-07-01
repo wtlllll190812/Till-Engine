@@ -3,7 +3,7 @@
 #include "Component.h"
 
 class GameObject;
-class Light :public Component
+class Light : public Component
 {
 public:
 	Light(float, glm::vec3);
@@ -11,27 +11,27 @@ public:
 	~Light();
 
 	/// <summary>
-	/// ¹âµÄÇ¿¶È
+	/// é”Ÿæ–¤æ‹·é”Ÿè§’åŒ¡æ‹·é”Ÿï¿½
 	/// </summary>
 	float intensity;
 
 	/// <summary>
-	/// ¹âµÄÑÕÉ«
+	/// é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿç¼´ï¿½
 	/// </summary>
 	glm::vec3 color;
 
 	/// <summary>
-	/// ĞòÁĞ»¯
+	/// é”Ÿæ–¤æ‹·é”Ÿå«ä¼™æ‹·
 	/// </summary>
-	virtual TLxml* Serialize() override;
+	virtual TLxml *Serialize() override;
 
 	/// <summary>
-	/// Í¨¹ıxmlÊµÀı»¯
+	/// é€šé”Ÿæ–¤æ‹·xmlå®é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·
 	/// </summary>
-	virtual void Instantiate(TiXmlNode*) override;
+	virtual void Instantiate(TiXmlNode *) override;
 
 	/// <summary>
-	/// ¸ÕÌí¼ÓÊ±
+	/// é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·æ—¶
 	/// </summary>
 	virtual void Awake() override;
 };
