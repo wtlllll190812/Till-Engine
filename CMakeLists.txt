@@ -1,6 +1,6 @@
-#CMakeLists.txt
 cmake_minimum_required(VERSION 3.5)
-set_property(GLOBAL PROPERTY USE_FOLDERS On)
+option(GROUP_BY_EXPLORER ON)    # 文件分组是否和资源管理器对应
+
 
 #vcpkg配置,改为自己的vcpkg位置
 set(VCPKG_ROOT "D:/TL/Vscode/vcpkg-master/scripts/buildsystems/vcpkg.cmake")
@@ -18,6 +18,7 @@ file(COPY ${PROJECT_SOURCE_DIR}/data/ DESTINATION data FOLLOW_SYMLINK_CHAIN)
 
 #源文件和头文件
 file(GLOB_RECURSE SRC_DIR_LIST "src/*.cpp" "src/*.h")
+file(GLOB_RECURSE source_list RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" "*.cpp" "*.hpp")
 
 #寻找依赖库
 find_package(tinyxml CONFIG REQUIRED)
@@ -32,7 +33,6 @@ find_package(glm CONFIG REQUIRED)
 #包含头文件
 INCLUDE_DIRECTORIES(src src/ECS src/Engine src/ECS/Components  src/ECS/System)
 INCLUDE_DIRECTORIES(src/Engine/Framework src/Engine/Render src/Engine/Tools)
-
 
 #子文件夹src
 ADD_SUBDIRECTORY(src)

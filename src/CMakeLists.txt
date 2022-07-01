@@ -1,5 +1,8 @@
 ADD_EXECUTABLE(${Proj_Name} ${SRC_DIR_LIST})
 
+
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SRC_DIR_LIST})
+
 target_link_libraries(${Proj_Name} 
     PRIVATE 
     glfw
