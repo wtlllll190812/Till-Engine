@@ -10,7 +10,7 @@ Material::Material(const GLchar* vertexPath, const GLchar* fragmentPath)
 Material::Material()
 {
 	RenderCallback = nullptr;
-	shader = new Shader("vert.shader", "frag.shader");
+	shader = new Shader("../shaders/vert.shader", "../shaders/frag.shader");
 }
 
 Material::~Material()

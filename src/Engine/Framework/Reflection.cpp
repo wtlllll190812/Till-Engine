@@ -1,11 +1,11 @@
-#include"Reflection.h"
+#include "Reflection.h"
 
 Reflection::Reflection()
 {
 }
 
-//Í¨¹ıÀàÃû³Æ×Ö·û´®»ñÈ¡ÀàµÄÊµÀı
-void* Reflection::getClassByName(std::string className)
+//é€šè¿‡ç±»åç§°å­—ç¬¦ä¸²è·å–ç±»çš„å®ä¾‹
+void *Reflection::getClassByName(std::string className)
 {
 	std::map<std::string, PTRCreateObject>::const_iterator iter;
 	iter = m_classMap.find(className);
@@ -19,7 +19,7 @@ void* Reflection::getClassByName(std::string className)
 	}
 }
 
-//½«¸ø¶¨µÄÀàÃû³Æ×Ö·û´®ºÍ¶ÔÓ¦µÄ´´½¨Àà¶ÔÏóµÄº¯Êı±£´æµ½mapÖĞ
+//å°†ç»™å®šçš„ç±»åç§°å­—ç¬¦ä¸²å’Œå¯¹åº”çš„åˆ›å»ºç±»å¯¹è±¡çš„å‡½æ•°ä¿å­˜åˆ°mapä¸­
 void Reflection::registClass(std::string name, PTRCreateObject method)
 {
 	m_classMap.insert(std::pair<std::string, PTRCreateObject>(name, method));

@@ -17,7 +17,7 @@ Transform::Transform()
 	scale = glm::vec3(0, 0, 0);
 }
 
-Transform::Transform(glm::vec3 pos, GameObject* gameobject)
+Transform::Transform(glm::vec3 pos, GameObject *gameobject)
 {
 	componentName = "Transform";
 	position = pos;
@@ -63,11 +63,11 @@ glm::mat4 Transform::GetModel()
 	model = glm::rotate(model, rotation.x, right);
 	model = glm::rotate(model, rotation.y, up);
 	model = glm::rotate(model, rotation.z, back);
-	model = glm::scale(model,scale);
+	model = glm::scale(model, scale);
 	return model;
 }
 
-TLxml* Transform::Serialize()
+TLxml *Transform::Serialize()
 {
 	auto xml = new TLxml("Transform");
 	xml->pRoot->SetAttribute("guid", std::to_string(guid));
@@ -77,7 +77,7 @@ TLxml* Transform::Serialize()
 	return xml;
 }
 
-void Transform::Instantiate(TiXmlNode* xml)
+void Transform::Instantiate(TiXmlNode *xml)
 {
 	auto element = xml->ToElement();
 	guid = std::stoi(element->Attribute("guid"));

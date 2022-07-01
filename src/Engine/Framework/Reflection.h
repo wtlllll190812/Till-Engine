@@ -36,16 +36,3 @@ public:
 		Reflection::instance().registClass(className, ptrCreateFn);
 	}
 };
-
-/// <summary>
-/// ͨ��xmlʵ����
-/// </summary>
-/// <param name=""></param>
-virtual void Instantiate(TiXmlNode *) override;
-
-bool operator>(const Renderer &r)
-{
-	return r.material->renderQueueIndex > material->renderQueueIndex;
-}
-}
-;

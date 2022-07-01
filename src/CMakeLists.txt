@@ -1,3 +1,11 @@
-file(GLOB_RECURSE SRC_DIR_LIST "*.cpp")
+ADD_EXECUTABLE(${Proj_Name} ${SRC_DIR_LIST})
 
-ADD_EXECUTABLE(Till_Engine ${SRC_DIR_LIST})
+target_link_libraries(${Proj_Name} 
+    PRIVATE 
+    ${tinyxml_LIBRARIES}
+    glfw
+    imgui::imgui
+    fmt::fmt
+    ${SOIL2_LIBRARIES}
+    ${GLEW_LIBRARIES}
+    ${spdlog_LIBRARIES})

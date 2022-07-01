@@ -5,7 +5,7 @@
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 
-#include<sstream>
+#include <sstream>
 
 #include "Screen.h"
 #include "Camera.h"
@@ -24,20 +24,23 @@
 #include "Debug.h"
 #include "GuiWindows.h"
 
+#define DATA_PATH "../data/"
+#define SHADER_PATH "../shaders/"
+#define IMAGE_PATH "../resource/"
 
-Scene* currentScene;
+Scene *currentScene;
 std::shared_ptr<GameObject> currentObj;
 
-Camera* camera;
+Camera *camera;
 shared_ptr<GameObject> cameraObject;
 shared_ptr<GameObject> object;
 GameLoop loop(60);
 
 bool keys[1024];
 
-void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
-void mouse_callback(GLFWwindow* window, double xpos, double ypos);
-void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
+void key_callback(GLFWwindow *window, int key, int scancode, int action, int mode);
+void mouse_callback(GLFWwindow *window, double xpos, double ypos);
+void scroll_callback(GLFWwindow *window, double xoffset, double yoffset);
 void do_movement();
 void fixedupdate()
 {
@@ -50,7 +53,8 @@ void fixedupdate()
 void Init()
 {
 	//窗口注册
-	auto Editor = shared_ptr<GuiWindows>(new GuiWindows([]() {
+	auto Editor = shared_ptr<GuiWindows>(new GuiWindows([]()
+														{
 		if (ImGui::BeginMainMenuBar())
 		{
 			if (ImGui::BeginMenu("File"))
@@ -65,11 +69,11 @@ void Init()
 				ImGui::EndMenu();
 			}
 			ImGui::EndMainMenuBar();
-		}
-		}, "Editor"));
+		} },"Editor"));
 	Screen::instance().RegisterGuiWindows(Editor);
 
-	auto Hierarchy = shared_ptr<GuiWindows>(new GuiWindows([]() {
+	auto Hierarchy = shared_ptr<GuiWindows>(new GuiWindows([]()
+														   {
 		static bool hierarchy = true;
 		if (hierarchy)
 		{
@@ -87,11 +91,11 @@ void Init()
 				}
 			}
 			ImGui::End();
-		}
-		}, "Hierarchy"));
+		} },"Hierarchy"));
 	Screen::instance().RegisterGuiWindows(Hierarchy);
 
-	auto Inspector = shared_ptr<GuiWindows>(new GuiWindows([]() {
+	auto Inspector = shared_ptr<GuiWindows>(new GuiWindows([]()
+														   {
 		static bool Inspector = true;
 		if (Inspector)
 		{
@@ -107,11 +111,11 @@ void Init()
 				}
 			}
 			ImGui::End();
-		}
-		}, "Inspector"));
+		} },"Inspector"));
 	Screen::instance().RegisterGuiWindows(Inspector);
 
-	auto Console = shared_ptr<GuiWindows>(new GuiWindows([]() {
+	auto Console = shared_ptr<GuiWindows>(new GuiWindows([]()
+														 {
 		static bool Console = true;
 		static vector<string> logBuffer;
 		if (Console)
@@ -127,22 +131,21 @@ void Init()
 				ImGui::BulletText(s.c_str());
 
 			ImGui::End();
-		}
-		}, "Console"));
+		} },
+														 "Console"));
 	Screen::instance().RegisterGuiWindows(Console);
-	
 
 	// 场景初始化
-	currentScene = new Scene("Data/test.xml");
+	currentScene = new Scene(DATA_PATH"test.xml");
 	cameraObject = currentScene->Find("camera");
 	object = currentScene->Find("object");
 	camera = cameraObject->GetComponent<Camera>();
 }
 
-int main()
+int main() 
 {
 	Debug::Init();
-	Debug::GetEngineLogger()->info("Engine Init");
+	Debug::GetEngineLogger()->info(__FUNCTION__"Engine Init");
 	Init();
 	Debug::GetEngineLogger()->info("Engine Inited");
 
@@ -153,12 +156,12 @@ int main()
 
 	shared_ptr<Material> mat = object->GetComponent<Renderer>()->material;
 	// 绑定回调函数
-	//glfwSetKeyCallback(Screen::instance().window, key_callback);
-	//glfwSetCursorPosCallback(Screen::instance().window, mouse_callback);
-	//glfwSetScrollCallback(Screen::instance().window, scroll_callback);
+	// glfwSetKeyCallback(Screen::instance().window, key_callback);
+	// glfwSetCursorPosCallback(Screen::instance().window, mouse_callback);
+	// glfwSetScrollCallback(Screen::instance().window, scroll_callback);
 
-	mat->SetRenderCallback([](GameObject* gameobject,Shader* shader, Material* mat)
-		{
+	mat->SetRenderCallback([](GameObject *gameobject, Shader *shader, Material *mat)
+						   {
 			mat->renderQueueIndex = (int)RendererQueue::Background;
 			glm::vec3 viewPos = cameraObject->transform->position;
 			
@@ -180,26 +183,22 @@ int main()
 			SetUniformVec3(lightColor, shader);
 			SetUniformVec3(viewPos, shader);
 
-			glDrawArrays(GL_TRIANGLES, 0, 36);
-		});
+			glDrawArrays(GL_TRIANGLES, 0, 36); });
 
-	loop.SetUpdateCallback(fixedupdate);/*[]()
-		{
-			
-		});*/
+	loop.SetUpdateCallback(fixedupdate); /*[]()
+		 {
+
+		 });*/
 
 	loop.SetFixedUpdateCallback([]()
-		{
-			do_movement();
-		});
-	
+								{ do_movement(); });
+
 	loop.StartLoop();
-	
+
 	return 0;
 }
 
-
-void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
+void key_callback(GLFWwindow *window, int key, int scancode, int action, int mode)
 {
 	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, GL_TRUE);
@@ -225,7 +224,7 @@ void do_movement()
 	if (keys[GLFW_KEY_RIGHT])
 		object->transform->rotation.z += 0.05f;
 	if (keys[GLFW_KEY_LEFT])
-		object->transform->rotation.z -= 0.05f;	
+		object->transform->rotation.z -= 0.05f;
 	if (keys[GLFW_KEY_UP])
 		object->transform->rotation.x += 0.05f;
 	if (keys[GLFW_KEY_DOWN])
@@ -235,7 +234,7 @@ void do_movement()
 GLfloat lastX;
 GLfloat lastY;
 bool firstMouse = true;
-void mouse_callback(GLFWwindow* window, double xpos, double ypos)
+void mouse_callback(GLFWwindow *window, double xpos, double ypos)
 {
 	if (firstMouse)
 	{
@@ -249,7 +248,7 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 	lastX = xpos;
 	lastY = ypos;
 
-	GLfloat sensitivity = 0.05;	// Change this value to your liking
+	GLfloat sensitivity = 0.05; // Change this value to your liking
 	xoffset *= sensitivity;
 	yoffset *= sensitivity;
 
@@ -262,7 +261,7 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 		cameraObject->transform->rotation.z = -89.0f;
 }
 
-void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+void scroll_callback(GLFWwindow *window, double xoffset, double yoffset)
 {
 	if (camera->fov >= 1.0f && camera->fov <= 45.0f)
 		camera->fov -= yoffset;

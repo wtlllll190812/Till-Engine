@@ -1,5 +1,5 @@
 #pragma once
-class Time
+class TLTime
 {
 public:
 	friend class GameLoop;
@@ -34,7 +34,6 @@ public:
 	static double GetFrameCount() { return frameCount; }
 
 private:
-
 	static double time;
 
 	static double unscaledTime;
