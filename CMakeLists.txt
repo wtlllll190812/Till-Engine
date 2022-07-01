@@ -17,19 +17,21 @@ file(COPY ${PROJECT_SOURCE_DIR}/shaders/ DESTINATION shaders FOLLOW_SYMLINK_CHAI
 file(COPY ${PROJECT_SOURCE_DIR}/data/ DESTINATION data FOLLOW_SYMLINK_CHAIN)
 
 #源文件和头文件
-file(GLOB_RECURSE SRC_DIR_LIST "src/*.cpp" "include/*.h")
+file(GLOB_RECURSE SRC_DIR_LIST "src/*.cpp" "src/*.h")
 
 #寻找依赖库
-find_package(tinyxml REQUIRED)
-find_package(imgui REQUIRED)
-find_package(glfw3 REQUIRED)
-find_package(SOIL2 REQUIRED)
-find_package(GLEW REQUIRED)
-find_package(spdlog REQUIRED)
-find_package(fmt REQUIRED)
+find_package(tinyxml CONFIG REQUIRED)
+find_package(imgui CONFIG REQUIRED)
+find_package(glfw3 3.3.7 CONFIG REQUIRED)
+find_package(SOIL2 CONFIG REQUIRED)
+find_package(GLEW CONFIG REQUIRED)
+find_package(spdlog CONFIG REQUIRED)
+find_package(fmt CONFIG REQUIRED)
 
 #包含头文件
-INCLUDE_DIRECTORIES(include)
+INCLUDE_DIRECTORIES(src src/ECS src/Engine src/ECS/Components  src/ECS/System)
+INCLUDE_DIRECTORIES(src/Engine/Framework src/Engine/Render src/Engine/Tools)
+
 
 #子文件夹src
 ADD_SUBDIRECTORY(src)

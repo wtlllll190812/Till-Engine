@@ -69,7 +69,8 @@ void Init()
 				ImGui::EndMenu();
 			}
 			ImGui::EndMainMenuBar();
-		} },"Editor"));
+		} },
+														"Editor"));
 	Screen::instance().RegisterGuiWindows(Editor);
 
 	auto Hierarchy = shared_ptr<GuiWindows>(new GuiWindows([]()
@@ -91,7 +92,8 @@ void Init()
 				}
 			}
 			ImGui::End();
-		} },"Hierarchy"));
+		} },
+														   "Hierarchy"));
 	Screen::instance().RegisterGuiWindows(Hierarchy);
 
 	auto Inspector = shared_ptr<GuiWindows>(new GuiWindows([]()
@@ -111,7 +113,8 @@ void Init()
 				}
 			}
 			ImGui::End();
-		} },"Inspector"));
+		} },
+														   "Inspector"));
 	Screen::instance().RegisterGuiWindows(Inspector);
 
 	auto Console = shared_ptr<GuiWindows>(new GuiWindows([]()
@@ -136,16 +139,16 @@ void Init()
 	Screen::instance().RegisterGuiWindows(Console);
 
 	// 场景初始化
-	currentScene = new Scene(DATA_PATH"test.xml");
+	currentScene = new Scene(DATA_PATH "test.xml");
 	cameraObject = currentScene->Find("camera");
 	object = currentScene->Find("object");
 	camera = cameraObject->GetComponent<Camera>();
 }
 
-int main() 
+int main()
 {
 	Debug::Init();
-	Debug::GetEngineLogger()->info(__FUNCTION__"Engine Init");
+	Debug::GetEngineLogger()->info(__FUNCTION__ "Engine Init");
 	Init();
 	Debug::GetEngineLogger()->info("Engine Inited");
 

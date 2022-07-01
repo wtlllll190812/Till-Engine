@@ -1,14 +1,13 @@
 {
-    "name": "learn-opengl",
+    "name": "till-engine",
     "version": "0.1.0",
     "dependencies": [
         "glfw3",
         "glew",
         "spdlog",
         "tinyxml",
-        "SOIL2",
+        "soil2",
         "glm",
-        "stb",
         {
             "name": "imgui",
             "features": [
