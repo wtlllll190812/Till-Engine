@@ -25,4 +25,5 @@ void Application::Run()
 
 void Application::OnEvent(EventBase& e)
 {
+	Debug::GetEngineLogger()->info(e.ToString());
 }

@@ -19,6 +19,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include "WindowsWindow.h"
 #include "TillPch.h"
+#include "Application.h"
 
 #define DATA_PATH "../data/"
 #define SHADER_PATH "../shaders/"
@@ -197,7 +198,9 @@ int Tmain()
 
 int main()
 {
-
+	Debug::Init();
+	Application app;
+	app.Run();
 }
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)

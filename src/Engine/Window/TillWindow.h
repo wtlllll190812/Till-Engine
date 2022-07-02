@@ -13,7 +13,6 @@ struct WindowProps
 		unsigned int height = 720)
 		:Title(title), Width(width), Height(height)
 	{
-
 	}
 };
 class TillWindow
