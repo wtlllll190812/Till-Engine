@@ -2,6 +2,9 @@
 #include"TillPch.h"
 #include "EventBase.h"
 
+/// <summary>
+/// 窗口属性
+/// </summary>
 struct WindowProps
 {
 	std::string Title;
@@ -15,13 +18,18 @@ struct WindowProps
 	{
 	}
 };
-class TillWindow
+
+/// <summary>
+/// 窗口基类
+/// </summary>
+class Window
 {
 public:
 	using EventCallbackFn = std::function<void(EventBase&)>;
 
-	virtual ~TillWindow() {};
-	virtual void OnUpdate() = 0;
+	virtual ~Window() {};
+	virtual void OnRender() = 0;
+	virtual void OnRenderEnd() = 0;
 	virtual unsigned int GetWidth() const = 0;
 	virtual unsigned int GetHeight() const = 0;
 
@@ -29,5 +37,5 @@ public:
 	virtual void SetVSync(bool enabled) = 0;
 	virtual bool IsVSync() const = 0;
 
-	static TillWindow* Create(const WindowProps& props = WindowProps());
+	static Window* Create(const WindowProps& props = WindowProps());
 };

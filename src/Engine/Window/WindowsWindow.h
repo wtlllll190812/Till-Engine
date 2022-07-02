@@ -2,20 +2,22 @@
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 #include <GL/glew.h>
-#include "TillWindow.h"
+#include "Window.h"
 
-
-class WindowsWindow :public TillWindow
+/// <summary>
+/// tillwindow在windows平台下的实现
+/// </summary>
+class WindowsWindow :public Window
 {
 public:
 	WindowsWindow(const WindowProps& props);
 	virtual ~WindowsWindow();
 
-	void OnUpdate() override;
-	
+	void OnRender() override;
+	void OnRenderEnd() override;
+
 	inline unsigned int GetWidth() const override { return mData.Width; }
 	inline unsigned int GetHeight() const override { return mData.Height; }
-
 	inline virtual void SetEventCallback(const EventCallbackFn& callback) override { mData.EventCallback = callback; }
 
 	void SetVSync(bool enabled) override;

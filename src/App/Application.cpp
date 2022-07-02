@@ -1,10 +1,17 @@
 #include "Application.h"
-#define BIND_EVENT_FN(x) std::bind(&Application::x,this,std::placeholders::_1)
+#include "GameLoop.h"
+#include "Scene.h"
+#include "TillPch.h"
+using namespace std;
+
 
 Application::Application()
 {
-	mWindows = std::unique_ptr<TillWindow>(TillWindow::Create());
-	mWindows->SetEventCallback(BIND_EVENT_FN(OnEvent));
+	mWindows = std::unique_ptr<Window>(Window::Create());
+	mWindows->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
+
+	guiLayer = new ImguiLayer();
+	PushOverlay(guiLayer);
 }
 
 Application::~Application()
@@ -17,13 +24,31 @@ void Application::Init()
 
 void Application::Run()
 {
-	while (mRunning)
+	mWindows->OnRender();
+	for (auto layer : mLayerStack)
 	{
-		mWindows->OnUpdate();
+		layer->OnUpdate();
 	}
+	mWindows->OnRenderEnd();
 }
 
 void Application::OnEvent(EventBase& e)
 {
-	Debug::GetEngineLogger()->info(e.ToString());
+	EventDispatcher dispatcher(e);
+	dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::OnWindowsClose));
+	//Debug::GetEngineLogger()->info(e.ToString());
+
+	for (auto it =mLayerStack.end();it!=mLayerStack.begin();)
+	{
+		(*--it)->OnEvent(e);
+		if (e.mHandled)
+			break;
+	}
 }
+
+bool Application::OnWindowsClose(WindowCloseEvent& e)
+{
+	mRunning = false;
+	return true;
+}
+

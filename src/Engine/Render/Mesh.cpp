@@ -41,6 +41,7 @@ GLfloat cube[] = {
 	0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f,
 	-0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f,
 	-0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f };
+
 Mesh::Mesh(int sum, std::vector<int> settings, GLfloat vertices[], int size)
 {
 	Init(sum, settings, vertices, size);

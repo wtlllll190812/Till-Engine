@@ -1,5 +1,9 @@
+#pragma once
 #include "EventBase.h"
 
+/// <summary>
+/// 鼠标移动事件
+/// </summary>
 class MouseMovedEvent :public EventBase
 {
 public:
@@ -22,6 +26,9 @@ private:
 	float mMouseY;
 }; 
 
+/// <summary>
+/// 鼠标滚轮事件
+/// </summary>
 class MouseScrolledEvent :public EventBase
 {
 public:
@@ -44,6 +51,9 @@ private:
 	float mYOffset;
 };
 
+/// <summary>
+/// 鼠标按键事件基类
+/// </summary>
 class MouseButtonEvent : public EventBase
 {
 public:
@@ -54,6 +64,9 @@ protected:
 	MouseButtonEvent(int button) :mMouseButton(button) {}
 };
 
+/// <summary>
+/// 鼠标按下事件
+/// </summary>
 class MouseButtonPressedEvent :public MouseButtonEvent
 {
 public:
@@ -68,6 +81,9 @@ public:
 private:
 };
 
+/// <summary>
+/// 鼠标抬起事件
+/// </summary>
 class MouseButtonReleasedEvent :public MouseButtonEvent
 {
 public:

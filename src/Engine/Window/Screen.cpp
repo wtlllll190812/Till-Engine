@@ -1,10 +1,10 @@
-#include"Screen.h"
-#include"GuiWindows.h"
-#include"Debug.h"
-
+#include "Screen.h"
+#include "GuiWindow.h"
+#include "Debug.h"
+#include "Application.h"
 Screen::Screen(int w, int h) :width(w), heigth(h)
 {
-	Init();
+	//Init();
 	GuiInit();
 	Debug::GetEngineLogger()->info("Screen Inited");
 }
@@ -12,7 +12,7 @@ Screen::Screen(int w, int h) :width(w), heigth(h)
 Screen::Screen() : width(800), heigth(600)
 {
 	Debug::GetEngineLogger()->info("Screen Init");
-	Init();
+	//Init();
 	GuiInit();
 	Debug::GetEngineLogger()->info("Screen Inited");
 }
@@ -57,7 +57,7 @@ void Screen::GuiInit()
 	//ImGui::StyleColorsClassic();
 
 	// 配置ImGui
-	ImGui_ImplGlfw_InitForOpenGL(window, true);
+	//ImGui_ImplGlfw_InitForOpenGL(Application::instance().mWindows, true);
 	ImGui_ImplOpenGL3_Init("#version 100");
 }
 
@@ -68,7 +68,7 @@ void Screen::GuiRender()
 	ImGui_ImplGlfw_NewFrame();
 	ImGui::NewFrame();
 
-	for (std::shared_ptr<GuiWindows> i : uiWindows)
+	for (std::shared_ptr<GuiWindow> i : uiWindows)
 	{
 		i->Render();
 	}
@@ -77,7 +77,7 @@ void Screen::GuiRender()
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
 
-void Screen::RegisterGuiWindows(std::shared_ptr<GuiWindows> guiwindows)
+void Screen::RegisterGuiWindow(std::shared_ptr<GuiWindow> guiwindows)
 {
 	uiWindows.push_back(guiwindows);
 }

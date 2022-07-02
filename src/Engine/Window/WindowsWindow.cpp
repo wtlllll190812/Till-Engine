@@ -2,11 +2,12 @@
 #include "KeyEvent.h"
 #include "MouseEvent.h"
 #include "ApplicationEvent.h"
+#include "RenderSystem.h"
 
 
 static bool glfwInitialized = false;
 
-TillWindow* TillWindow::Create(const WindowProps& props)
+Window* Window::Create(const WindowProps& props)
 {
     return new WindowsWindow(props);
 }
@@ -21,9 +22,19 @@ WindowsWindow::~WindowsWindow()
     ShutDown();
 }
 
-void WindowsWindow::OnUpdate()
+void WindowsWindow::OnRender()
 {
     glfwPollEvents();
+    //清空屏幕以及缓存区
+    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    //调用渲染系统
+    RenderSystem::instance().Update();
+}
+
+void WindowsWindow::OnRenderEnd()
+{
     glfwSwapBuffers(mWindow);
 }
 
@@ -74,7 +85,14 @@ void WindowsWindow::Init(const WindowProps& props)
     glViewport(0, 0, mData.Width, mData.Height);//前两个参数控制左下角的位置
     ////启用深度测试
     glEnable(GL_DEPTH_TEST);
-
+    ////初始化GLEW,用于管理opengl的函数指针
+    glewExperimental = GL_TRUE;
+    //初始化失败时
+    if (glewInit() != GLEW_OK)
+    {
+        std::cout << "Failed to initialize GLEW" << std::endl;
+        return;
+    }
     //Set FLFW Callback
     glfwSetWindowSizeCallback(mWindow, [](GLFWwindow* window, int width, int heigth) 
         {

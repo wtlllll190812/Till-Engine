@@ -3,14 +3,14 @@
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 
-class GuiWindows
+class GuiWindow
 {
 public:
-	GuiWindows(void (*f)(), const char*);
-	GuiWindows(const char*);
+	GuiWindow(void (*f)(), const char *);
+	GuiWindow(const char *);
 	void Render();
 
 private:
-	const char* name;
+	const char *name;
 	void (*RenderCallBack)();
 };

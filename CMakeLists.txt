@@ -33,7 +33,8 @@ find_package(glm CONFIG REQUIRED)
 #包含头文件
 INCLUDE_DIRECTORIES(src src/ECS src/Engine src/App)
 INCLUDE_DIRECTORIES( src/ECS/Components  src/ECS/System )
-INCLUDE_DIRECTORIES(src/Engine/Events src/Engine/Window src/Engine/Framework src/Engine/Render)
+INCLUDE_DIRECTORIES(src/Engine/Events src/Engine/Framework src/Engine/Render src/Engine/Layer)
+INCLUDE_DIRECTORIES(src/Engine/Window src/Engine/Window/GuiWindow)
 
 #子文件夹src
 ADD_SUBDIRECTORY(src)

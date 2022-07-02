@@ -2,13 +2,11 @@
 #include <string>
 #include "Component.h"
 
-class Screen;
 class Camera : public Component
 {
 public:
 	COMPONENTNAME(Camera)
 		
-	Camera(Screen*);
 	Camera();
 	~Camera();
 
@@ -30,11 +28,6 @@ public:
 	glm::mat4 GetProjMatrix();
 
 private:
-	/// <summary>
-	/// 当前窗口
-	/// </summary>
-	Screen* currentScreen;
-
 	/// <summary>
 	/// 序列化
 	/// </summary>

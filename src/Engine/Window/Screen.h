@@ -5,10 +5,9 @@
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
-
 #include "TillPch.h"
 
-class GuiWindows;
+class GuiWindow;
 class Screen : public Singleton<Screen>
 {
 public:
@@ -44,10 +43,10 @@ public:
 	/// <summary>
 	/// 注册窗口
 	/// </summary>
-	void RegisterGuiWindows(std::shared_ptr<GuiWindows>);
+	void RegisterGuiWindow(std::shared_ptr<GuiWindow>);
 
 	void Init();
 
 private:
-	std::vector<std::shared_ptr<GuiWindows>> uiWindows;
+	std::vector<std::shared_ptr<GuiWindow>> uiWindows;
 };

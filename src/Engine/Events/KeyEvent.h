@@ -1,6 +1,10 @@
 #pragma once
 #include "EventBase.h"
 
+
+/// <summary>
+/// 按键事件基类
+/// </summary>
 class KeyEvent : public EventBase
 {
 public:
@@ -11,6 +15,9 @@ protected:
 	KeyEvent(int keycode) :mKeyCode(keycode) {}
 };
 
+/// <summary>
+/// 按键按下事件
+/// </summary>
 class KeyPressedEvent :public KeyEvent
 {
 public:
@@ -28,6 +35,9 @@ private:
 	int mRepeatCount;
 }; 
 
+/// <summary>
+/// 按键抬起事件
+/// </summary>
 class KeyReleasedEvent :public KeyEvent
 {
 public:

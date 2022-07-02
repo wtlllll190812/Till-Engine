@@ -13,13 +13,14 @@
 #include "Scene.h"
 #include "TLEngineCG.h"
 #include "Debug.h"
-#include "GuiWindows.h"
+#include "GuiWindow.h"
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include "WindowsWindow.h"
 #include "TillPch.h"
 #include "Application.h"
+#include "ImguiLayer.h"
 
 #define DATA_PATH "../data/"
 #define SHADER_PATH "../shaders/"
@@ -49,91 +50,6 @@ void fixedupdate()
 
 void Init()
 {
-	//窗口注册
-	auto Editor = shared_ptr<GuiWindows>(new GuiWindows([]()
-		{
-			if (ImGui::BeginMainMenuBar())
-			{
-				if (ImGui::BeginMenu("File"))
-				{
-					ImGui::EndMenu();
-				}
-				if (ImGui::BeginMenu("Edit"))
-				{
-					if (ImGui::MenuItem("TODO")) {
-						//do something
-					}
-					ImGui::EndMenu();
-				}
-				ImGui::EndMainMenuBar();
-			} },
-		"Editor"));
-	Screen::instance().RegisterGuiWindows(Editor);
-
-	auto Hierarchy = shared_ptr<GuiWindows>(new GuiWindows([]()
-		{
-			static bool hierarchy = true;
-			if (hierarchy)
-			{
-				ImGui::Begin("Hierarchy", &hierarchy);
-				if (currentScene != nullptr)
-				{
-					if (ImGui::CollapsingHeader("Window options"))
-					{
-						for (auto i : currentScene->gameobjects)
-						{
-							if (ImGui::Button(i->name.c_str())) {
-								currentObj = i;
-							}
-						}
-					}
-				}
-				ImGui::End();
-			} },
-		"Hierarchy"));
-	Screen::instance().RegisterGuiWindows(Hierarchy);
-
-	auto Inspector = shared_ptr<GuiWindows>(new GuiWindows([]()
-		{
-			static bool Inspector = true;
-			if (Inspector)
-			{
-				ImGui::Begin("Inspector", &Inspector);
-				if (currentObj != nullptr)
-				{
-					for (auto i : currentObj->components)
-					{
-						if (ImGui::CollapsingHeader(i->GetName().c_str()))
-						{
-						}
-					}
-				}
-				ImGui::End();
-			} },
-		"Inspector"));
-	Screen::instance().RegisterGuiWindows(Inspector);
-
-	auto Console = shared_ptr<GuiWindows>(new GuiWindows([]()
-		{
-			static bool Console = true;
-			static vector<string> logBuffer;
-			if (Console)
-			{
-				ImGui::Begin("Console", &Console);
-				string str;
-				while (getline(Debug::appLogOss, str))
-				{
-					logBuffer.push_back(str);
-				}
-
-				for (auto& s : logBuffer)
-					ImGui::BulletText(s.c_str());
-
-				ImGui::End();
-			} },
-		"Console"));
-	Screen::instance().RegisterGuiWindows(Console);
-
 	// 场景初始化
 	currentScene = new Scene(DATA_PATH "test.xml");
 	cameraObject = currentScene->Find("camera");
@@ -141,7 +57,7 @@ void Init()
 	camera = cameraObject->GetComponent<Camera>();
 }
 
-int Tmain()
+int smain()
 {
 	Debug::Init();
 	Debug::GetEngineLogger()->info("Engine Init");
@@ -199,8 +115,131 @@ int Tmain()
 int main()
 {
 	Debug::Init();
-	Application app;
-	app.Run();
+	auto guiLayer = Application::instance().GetGuiLayer();
+	//窗口注册
+	auto Editor = shared_ptr<GuiWindow>(new GuiWindow([]()
+		{
+			if (ImGui::BeginMainMenuBar())
+			{
+				if (ImGui::BeginMenu("File"))
+				{
+					ImGui::EndMenu();
+				}
+				if (ImGui::BeginMenu("Edit"))
+				{
+					if (ImGui::MenuItem("TODO")) {
+						//do something
+					}
+					ImGui::EndMenu();
+				}
+				ImGui::EndMainMenuBar();
+			} },
+		"Editor"));
+	guiLayer->RegisterGuiWindow(Editor);
+
+	auto Hierarchy = shared_ptr<GuiWindow>(new GuiWindow([]()
+		{
+			static bool hierarchy = true;
+			if (hierarchy)
+			{
+				ImGui::Begin("Hierarchy", &hierarchy);
+				if (currentScene != nullptr)
+				{
+					if (ImGui::CollapsingHeader("Window options"))
+					{
+						for (auto i : currentScene->gameobjects)
+						{
+							if (ImGui::Button(i->name.c_str())) {
+								currentObj = i;
+							}
+						}
+					}
+				}
+				ImGui::End();
+			} },
+		"Hierarchy"));
+	guiLayer->RegisterGuiWindow(Hierarchy);
+
+	auto Inspector = shared_ptr<GuiWindow>(new GuiWindow([]()
+		{
+			static bool Inspector = true;
+			if (Inspector)
+			{
+				ImGui::Begin("Inspector", &Inspector);
+				if (currentObj != nullptr)
+				{
+					for (auto i : currentObj->components)
+					{
+						if (ImGui::CollapsingHeader(i->GetName().c_str()))
+						{
+						}
+					}
+				}
+				ImGui::End();
+			} },
+		"Inspector"));
+	guiLayer->RegisterGuiWindow(Inspector);
+
+	auto Console = shared_ptr<GuiWindow>(new GuiWindow([]()
+		{
+			static bool Console = true;
+			static vector<string> logBuffer;
+			if (Console)
+			{
+				ImGui::Begin("Console", &Console);
+				string str;
+				while (getline(Debug::appLogOss, str))
+				{
+					logBuffer.push_back(str);
+				}
+
+				for (auto& s : logBuffer)
+					ImGui::BulletText(s.c_str());
+
+				ImGui::End();
+			} },
+		"Console"));
+	guiLayer->RegisterGuiWindow(Console);
+
+
+	// 场景初始化
+	currentScene = new Scene(DATA_PATH "test.xml");
+	cameraObject = currentScene->Find("camera");
+	object = currentScene->Find("object");
+	camera = cameraObject->GetComponent<Camera>();
+	shared_ptr<Material> mat = object->GetComponent<Renderer>()->material;
+	mat->SetRenderCallback([](GameObject* gameobject, Shader* shader, Material* mat)
+		{
+			mat->renderQueueIndex = (int)RendererQueue::Background;
+			glm::vec3 viewPos = cameraObject->transform->position;
+
+			glm::mat4 view = gameobject->owner->camera->GetViewMatrix();
+			glm::mat4 projection = gameobject->owner->camera->GetProjMatrix();
+			glm::mat4 model = object->transform->GetModel();
+
+			Light* light = TLEngineCG::lights[0];
+			glm::vec3 lightPos = light->gameobject->GetComponent<Transform>()->position;
+			glm::vec3 lightColor = light->color;
+			glm::vec3 objectColor(1.0f, 0.5f, 0.31f);
+
+			SetUniformMat4(view, shader);
+			SetUniformMat4(projection, shader);
+			SetUniformMat4(model, shader);
+
+			SetUniformVec3(lightPos, shader);
+			SetUniformVec3(objectColor, shader);
+			SetUniformVec3(lightColor, shader);
+			SetUniformVec3(viewPos, shader);
+
+			glDrawArrays(GL_TRIANGLES, 0, 36); });
+
+	GameLoop loop(60);
+	loop.SetUpdateCallback([]()
+		{
+			Application::instance().Run();
+		});
+	loop.StartLoop(); 
+	return 0;
 }
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)

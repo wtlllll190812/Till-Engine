@@ -20,6 +20,7 @@ GameObject::GameObject(TiXmlNode* xml, Scene* s)
 	for (auto node = element->FirstChild(); node != 0; node = node->NextSibling())
 	{
 		auto element = node->ToElement();
+		Debug::GetEngineLogger()->info("Scene Load {0}", element->Value());
 		if (strcmp(element->Value(), "Transform") != 0)
 		{
 			auto comp = (Component*)Reflection::instance().getClassByName(element->Value());

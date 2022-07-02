@@ -2,16 +2,13 @@
 #include "GameObject.h"
 #include "Transform.h"
 #include "Screen.h"
+#include "Application.h"
+
 
 REFLECTION(Camera);
 
-Camera::Camera(Screen* s) :currentScreen(s)
-{
-}
-
 Camera::Camera()
 {
-	currentScreen = &Screen::instance();
 }
 
 Camera::~Camera()
@@ -29,7 +26,8 @@ glm::mat4 Camera::GetViewMatrix()
 
 glm::mat4 Camera::GetProjMatrix()
 {
-	return glm::perspective(fov, (float)currentScreen->width / (float)currentScreen->heigth, 0.1f, 100.0f);
+	float b = (float)Application::instance().mWindows->GetWidth() / Application::instance().mWindows->GetHeight();
+	return glm::perspective(fov, b, 0.1f, 100.0f);
 }
 
 TLxml* Camera::Serialize()

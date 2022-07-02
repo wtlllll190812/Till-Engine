@@ -3,6 +3,7 @@
 #include "Screen.h"
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
+#include "Application.h"
 
 using namespace std;
 
@@ -44,7 +45,7 @@ void GameLoop::StartLoop()
 {
 	if (Awake != nullptr)
 		Awake();
-	while (!Screen::instance().isClosed())
+	while (Application::instance().mRunning)
 	{
 		TLTime::unscaledDeltaTime = glfwGetTime() - TLTime::unscaledTime; //(double)clock() / CLOCKS_PER_SEC;
 		TLTime::deltaTime = TLTime::unscaledDeltaTime * TLTime::timeScale;

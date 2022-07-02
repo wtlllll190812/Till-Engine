@@ -1,5 +1,9 @@
+#pragma once
 #include "EventBase.h"
 
+/// <summary>
+/// 窗口关闭事件
+/// </summary>
 class WindowCloseEvent : public EventBase
 {
 public:
@@ -8,6 +12,9 @@ public:
 	EVENT_CLASS_CATEGORY(EventCategoryApplication)
 };
 
+/// <summary>
+/// 窗口调整事件
+/// </summary>
 class WindowResizeEvent : public EventBase
 {
 public:
