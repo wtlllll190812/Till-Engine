@@ -1,19 +1,16 @@
 #include "Camera.h"
 #include "GameObject.h"
 #include "Transform.h"
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
 #include "Screen.h"
 
 REFLECTION(Camera);
+
 Camera::Camera(Screen* s) :currentScreen(s)
 {
 }
 
 Camera::Camera()
 {
-	componentName = "Camera";
 	currentScreen = &Screen::instance();
 }
 
@@ -37,7 +34,7 @@ glm::mat4 Camera::GetProjMatrix()
 
 TLxml* Camera::Serialize()
 {
-	auto xml = new TLxml(componentName);
+	auto xml = new TLxml(GetName());
 	xml->pRoot->SetAttribute("guid", std::to_string(guid));
 	xml->pRoot->SetAttribute("fov", std::to_string(fov));
 	return xml;

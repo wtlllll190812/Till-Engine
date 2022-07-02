@@ -1,6 +1,5 @@
 #include"RenderSystem.h"
 #include"Renderer.h"
-#include<iostream>
 typedef std::priority_queue <Renderer*, std::vector<Renderer*>> renderPriorityQueue;
 
 renderPriorityQueue RenderSystem::renderQueue = renderPriorityQueue();

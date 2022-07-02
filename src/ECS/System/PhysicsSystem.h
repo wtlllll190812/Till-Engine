@@ -1,10 +1,10 @@
 class Physics
 {
 private:
-    /* data */
+	/* data */
 public:
-    Physics(/* args */);
-    ~Physics();
+	Physics(/* args */);
+	~Physics();
 };
 
 Physics::Physics(/* args */)

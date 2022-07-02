@@ -6,11 +6,11 @@
 class GuiWindows
 {
 public:
-    GuiWindows(void (*f)(), const char *);
-    GuiWindows(const char *);
-    void Render();
+	GuiWindows(void (*f)(), const char*);
+	GuiWindows(const char*);
+	void Render();
 
 private:
-    const char *name;
-    void (*RenderCallBack)();
+	const char* name;
+	void (*RenderCallBack)();
 };

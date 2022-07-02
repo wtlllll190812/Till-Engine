@@ -6,5 +6,5 @@ void Behaviour::Instantiate(TiXmlNode*)
 
 TLxml* Behaviour::Serialize()
 {
-    return nullptr;
+	return nullptr;
 }

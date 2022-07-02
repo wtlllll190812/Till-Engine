@@ -40,7 +40,7 @@ GLfloat cube[] = {
 	0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f,
 	0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f,
 	-0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f,
-	-0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f};
+	-0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f };
 Mesh::Mesh(int sum, std::vector<int> settings, GLfloat vertices[], int size)
 {
 	Init(sum, settings, vertices, size);
@@ -48,7 +48,7 @@ Mesh::Mesh(int sum, std::vector<int> settings, GLfloat vertices[], int size)
 
 Mesh::Mesh()
 {
-	Init(6, std::vector<int>() = {3, 3}, cube, sizeof(cube));
+	Init(6, std::vector<int>() = { 3, 3 }, cube, sizeof(cube));
 }
 
 Mesh::~Mesh()
@@ -76,7 +76,7 @@ void Mesh::Init(int sum, std::vector<int> settings, GLfloat vertices[], int size
 	int offset = 0;
 	for (size_t i = 0; i < settings.size(); i++)
 	{
-		glVertexAttribPointer(i, settings[i], GL_FLOAT, GL_FALSE, sum * sizeof(GLfloat), (GLvoid *)(offset * sizeof(GLfloat))); //设置解析顶点数据的方式
+		glVertexAttribPointer(i, settings[i], GL_FLOAT, GL_FALSE, sum * sizeof(GLfloat), (GLvoid*)(offset * sizeof(GLfloat))); //设置解析顶点数据的方式
 		glEnableVertexAttribArray(i);																							//启用顶点属性
 		offset += settings[i];
 	}

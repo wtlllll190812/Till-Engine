@@ -2,12 +2,12 @@
 #include "Component.h"
 #include "Material.h"
 #include "Mesh.h"
-#include <memory>
 
 class GameObject;
 class Renderer : public Component
 {
 public:
+	COMPONENTNAME(Renderer)
 	/// <summary>
 	/// 模型Mesh
 	/// </summary>
@@ -18,7 +18,7 @@ public:
 	/// </summary>
 	shared_ptr<Material> material;
 
-	Renderer(Mesh *, Material *);
+	Renderer(Mesh*, Material*);
 	Renderer();
 	~Renderer();
 
@@ -36,15 +36,15 @@ public:
 	/// 序列化为xml
 	/// </summary>
 	/// <returns></returns>
-	virtual TLxml *Serialize() override;
+	virtual TLxml* Serialize() override;
 
 	/// <summary>
 	/// 通过xml实例化
 	/// </summary>
 	/// <param name=""></param>
-	virtual void Instantiate(TiXmlNode *) override;
+	virtual void Instantiate(TiXmlNode*) override;
 
-	bool operator>(const Renderer &r)
+	bool operator>(const Renderer& r)
 	{
 		return r.material->renderQueueIndex > material->renderQueueIndex;
 	}

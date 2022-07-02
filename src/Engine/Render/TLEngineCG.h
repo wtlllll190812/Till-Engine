@@ -19,7 +19,7 @@ public:
 	TLEngineCG();
 	~TLEngineCG();
 
-	static std::vector<Light *> lights;
+	static std::vector<Light*> lights;
 };
 
 #ifndef SetUniformMat4

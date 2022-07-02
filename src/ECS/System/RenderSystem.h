@@ -1,6 +1,4 @@
 #pragma once
-#include <queue>
-#include <vector>
 #include "System.h"
 
 class Component;
@@ -14,7 +12,7 @@ public:
 	/// <summary>
 	/// 渲染队列
 	/// </summary>
-	static std::priority_queue<Renderer *, std::vector<Renderer *>> renderQueue;
+	static std::priority_queue<Renderer*, std::vector<Renderer*>> renderQueue;
 
 	/// <summary>
 	/// 每帧刷新
@@ -29,12 +27,12 @@ public:
 	/// <summary>
 	/// 注册组件
 	/// </summary>
-	virtual void RegisterComponent(Component *) override;
+	virtual void RegisterComponent(Component*) override;
 
 	/// <summary>
 	/// 移除组件
 	/// </summary>
-	virtual void RemoveComponent(Component *) override;
+	virtual void RemoveComponent(Component*) override;
 
 	/// <summary>
 	/// 清空

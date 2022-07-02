@@ -2,19 +2,17 @@
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 #include <GL/glew.h>
-#include <iostream>
-#include "Singleton .h"
-#include <vector>
-#include <memory>
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
+
+#include "TillPch.h"
 
 class GuiWindows;
 class Screen : public Singleton<Screen>
 {
 public:
-	GLFWwindow *window;
+	GLFWwindow* window;
 	int width;
 	int heigth;
 

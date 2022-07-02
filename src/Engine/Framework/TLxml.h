@@ -6,7 +6,7 @@
 class TLxml
 {
 public:
-	TiXmlElement *pRoot;
+	TiXmlElement* pRoot;
 
 	/// <summary>
 	/// 构造函数
@@ -24,7 +24,7 @@ public:
 	/// <summary>
 	/// 添加子节点
 	/// </summary>
-	void AddChild(TiXmlElement *);
+	void AddChild(TiXmlElement*);
 
 	/// <summary>
 	/// 保存文件
@@ -36,18 +36,18 @@ public:
 	/// </summary>
 	/// <param name="">向量</param>
 	/// <param name="">节点名</param>
-	static TLxml *Serialize(glm::vec3 &, std::string);
+	static TLxml* Serialize(glm::vec3&, std::string);
 
 	/// <summary>
 	/// 反序列化向量
 	/// </summary>
 	/// <param name="">向量</param>
 	/// <returns>节点名</returns>
-	static glm::vec3 DeSerialize(TiXmlNode *);
+	static glm::vec3 DeSerialize(TiXmlNode*);
 
 private:
 	std::string path;
-	TiXmlDocument *pDoc;
+	TiXmlDocument* pDoc;
 };
 
 /// <summary>
@@ -55,6 +55,6 @@ private:
 /// </summary>
 class Serializable
 {
-	virtual TLxml *Serialize() = 0;
-	virtual void DeSerialize(TiXmlNode *) = 0;
+	virtual TLxml* Serialize() = 0;
+	virtual void DeSerialize(TiXmlNode*) = 0;
 };

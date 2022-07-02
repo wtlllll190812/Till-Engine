@@ -1,6 +1,5 @@
 #include "GameLoop.h"
 #include "TLTime.h"
-#include <iostream>
 #include "Screen.h"
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>

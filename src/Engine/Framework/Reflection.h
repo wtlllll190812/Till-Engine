@@ -1,10 +1,8 @@
 #pragma once
-#include <string>
-#include <map>
-#include <utility>
 #include "Singleton .h"
+#include "TillPch.h"
 
-typedef void *(*PTRCreateObject)(void);
+typedef void* (*PTRCreateObject)(void);
 
 //反射注册宏
 #define REFLECTION(className)                 \
@@ -23,7 +21,7 @@ private:
 
 public:
 	Reflection();
-	void *getClassByName(std::string className);
+	void* getClassByName(std::string className);
 	void registClass(std::string name, PTRCreateObject method);
 };
 

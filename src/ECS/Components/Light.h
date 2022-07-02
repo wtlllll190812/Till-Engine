@@ -10,6 +10,7 @@ public:
 	Light();
 	~Light();
 
+	COMPONENTNAME(Light)
 	/// <summary>
 	/// 光的强度
 	/// </summary>
@@ -23,12 +24,12 @@ public:
 	/// <summary>
 	/// 序列化
 	/// </summary>
-	virtual TLxml *Serialize() override;
+	virtual TLxml* Serialize() override;
 
 	/// <summary>
 	/// 通过xml实例化
 	/// </summary>
-	virtual void Instantiate(TiXmlNode *) override;
+	virtual void Instantiate(TiXmlNode*) override;
 
 	/// <summary>
 	/// 刚添加时

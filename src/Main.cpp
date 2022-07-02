@@ -1,7 +1,3 @@
-
-
-#include <sstream>
-
 #include "Screen.h"
 #include "Camera.h"
 #include "GameObject.h"
@@ -21,23 +17,26 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include "WindowsWindow.h"
+#include "TillPch.h"
+
 #define DATA_PATH "../data/"
 #define SHADER_PATH "../shaders/"
 #define IMAGE_PATH "../resource/"
 
-Scene *currentScene;
+Scene* currentScene;
 std::shared_ptr<GameObject> currentObj;
 
-Camera *camera;
+Camera* camera;
 shared_ptr<GameObject> cameraObject;
 shared_ptr<GameObject> object;
 GameLoop loop(60);
 
 bool keys[1024];
 
-void key_callback(GLFWwindow *window, int key, int scancode, int action, int mode);
-void mouse_callback(GLFWwindow *window, double xpos, double ypos);
-void scroll_callback(GLFWwindow *window, double xoffset, double yoffset);
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
+void mouse_callback(GLFWwindow* window, double xpos, double ypos);
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void do_movement();
 void fixedupdate()
 {
@@ -51,88 +50,87 @@ void Init()
 {
 	//窗口注册
 	auto Editor = shared_ptr<GuiWindows>(new GuiWindows([]()
-														{
-		if (ImGui::BeginMainMenuBar())
 		{
-			if (ImGui::BeginMenu("File"))
+			if (ImGui::BeginMainMenuBar())
 			{
-				ImGui::EndMenu();
-			}
-			if (ImGui::BeginMenu("Edit"))
-			{
-				if (ImGui::MenuItem("TODO")) {
-					//do something
+				if (ImGui::BeginMenu("File"))
+				{
+					ImGui::EndMenu();
 				}
-				ImGui::EndMenu();
-			}
-			ImGui::EndMainMenuBar();
-		} },
-														"Editor"));
+				if (ImGui::BeginMenu("Edit"))
+				{
+					if (ImGui::MenuItem("TODO")) {
+						//do something
+					}
+					ImGui::EndMenu();
+				}
+				ImGui::EndMainMenuBar();
+			} },
+		"Editor"));
 	Screen::instance().RegisterGuiWindows(Editor);
 
 	auto Hierarchy = shared_ptr<GuiWindows>(new GuiWindows([]()
-														   {
-		static bool hierarchy = true;
-		if (hierarchy)
 		{
-			ImGui::Begin("Hierarchy", &hierarchy);
-			if (currentScene != nullptr)
+			static bool hierarchy = true;
+			if (hierarchy)
 			{
-				if (ImGui::CollapsingHeader("Window options"))
+				ImGui::Begin("Hierarchy", &hierarchy);
+				if (currentScene != nullptr)
 				{
-					for (auto i : currentScene->gameobjects)
+					if (ImGui::CollapsingHeader("Window options"))
 					{
-						if (ImGui::Button(i->name.c_str())) {
-							currentObj = i;
+						for (auto i : currentScene->gameobjects)
+						{
+							if (ImGui::Button(i->name.c_str())) {
+								currentObj = i;
+							}
 						}
 					}
 				}
-			}
-			ImGui::End();
-		} },
-														   "Hierarchy"));
+				ImGui::End();
+			} },
+		"Hierarchy"));
 	Screen::instance().RegisterGuiWindows(Hierarchy);
 
 	auto Inspector = shared_ptr<GuiWindows>(new GuiWindows([]()
-														   {
-		static bool Inspector = true;
-		if (Inspector)
 		{
-			ImGui::Begin("Inspector", &Inspector);
-			if (currentObj != nullptr)
+			static bool Inspector = true;
+			if (Inspector)
 			{
-				for (auto i : currentObj->components)
+				ImGui::Begin("Inspector", &Inspector);
+				if (currentObj != nullptr)
 				{
-					if (ImGui::CollapsingHeader(i->componentName.c_str()))
+					for (auto i : currentObj->components)
 					{
-
+						if (ImGui::CollapsingHeader(i->GetName().c_str()))
+						{
+						}
 					}
 				}
-			}
-			ImGui::End();
-		} },
-														   "Inspector"));
+				ImGui::End();
+			} },
+		"Inspector"));
 	Screen::instance().RegisterGuiWindows(Inspector);
 
 	auto Console = shared_ptr<GuiWindows>(new GuiWindows([]()
-														 {
-		static bool Console = true;
-		static vector<string> logBuffer;
-		if (Console)
 		{
-			ImGui::Begin("Console", &Console);
-			string str;
-			while (getline(Debug::appLogOss,str))
+			static bool Console = true;
+			static vector<string> logBuffer;
+			if (Console)
 			{
-				logBuffer.push_back(str);
-			}
+				ImGui::Begin("Console", &Console);
+				string str;
+				while (getline(Debug::appLogOss, str))
+				{
+					logBuffer.push_back(str);
+				}
 
-			for(auto &s:logBuffer)
-				ImGui::BulletText(s.c_str());
+				for (auto& s : logBuffer)
+					ImGui::BulletText(s.c_str());
 
-			ImGui::End();
-		} },
-														 "Console"));
+				ImGui::End();
+			} },
+		"Console"));
 	Screen::instance().RegisterGuiWindows(Console);
 
 	// 场景初始化
@@ -142,7 +140,7 @@ void Init()
 	camera = cameraObject->GetComponent<Camera>();
 }
 
-int main()
+int Tmain()
 {
 	Debug::Init();
 	Debug::GetEngineLogger()->info("Engine Init");
@@ -160,11 +158,11 @@ int main()
 	// glfwSetCursorPosCallback(Screen::instance().window, mouse_callback);
 	// glfwSetScrollCallback(Screen::instance().window, scroll_callback);
 
-	mat->SetRenderCallback([](GameObject *gameobject, Shader *shader, Material *mat)
-						   {
+	mat->SetRenderCallback([](GameObject* gameobject, Shader* shader, Material* mat)
+		{
 			mat->renderQueueIndex = (int)RendererQueue::Background;
 			glm::vec3 viewPos = cameraObject->transform->position;
-			
+
 			glm::mat4 view = gameobject->owner->camera->GetViewMatrix();
 			glm::mat4 projection = gameobject->owner->camera->GetProjMatrix();
 			glm::mat4 model = object->transform->GetModel();
@@ -187,18 +185,22 @@ int main()
 
 	loop.SetUpdateCallback(fixedupdate); /*[]()
 		 {
-
 		 });*/
 
 	loop.SetFixedUpdateCallback([]()
-								{ do_movement(); });
+		{ do_movement(); });
 
 	loop.StartLoop();
 
 	return 0;
 }
 
-void key_callback(GLFWwindow *window, int key, int scancode, int action, int mode)
+int main()
+{
+
+}
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
 {
 	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, GL_TRUE);
@@ -234,7 +236,7 @@ void do_movement()
 GLfloat lastX;
 GLfloat lastY;
 bool firstMouse = true;
-void mouse_callback(GLFWwindow *window, double xpos, double ypos)
+void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 {
 	if (firstMouse)
 	{
@@ -261,7 +263,7 @@ void mouse_callback(GLFWwindow *window, double xpos, double ypos)
 		cameraObject->transform->rotation.z = -89.0f;
 }
 
-void scroll_callback(GLFWwindow *window, double xoffset, double yoffset)
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 {
 	if (camera->fov >= 1.0f && camera->fov <= 45.0f)
 		camera->fov -= yoffset;

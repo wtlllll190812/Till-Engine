@@ -1,5 +1,4 @@
 #include"Light.h"
-#include<string>
 #include "TLEngineCG.h"
 
 REFLECTION(Light);
@@ -8,12 +7,10 @@ Light::Light(float _intensity, glm::vec3 _color)
 {
 	intensity = _intensity;
 	color = _color;
-	componentName = "Light";
 }
 
 Light::Light()
 {
-	componentName = "Light";
 }
 
 Light::~Light()
@@ -28,7 +25,7 @@ Light::~Light()
 
 TLxml* Light::Serialize()
 {
-	auto xml = new TLxml(componentName);
+	auto xml = new TLxml(GetName());
 	xml->pRoot->SetAttribute("guid", std::to_string(guid));
 	xml->pRoot->SetAttribute("intensity", std::to_string(intensity));
 	xml->AddChild(TLxml::Serialize(color, "color")->pRoot);

@@ -5,7 +5,7 @@ Reflection::Reflection()
 }
 
 //通过类名称字符串获取类的实例
-void *Reflection::getClassByName(std::string className)
+void* Reflection::getClassByName(std::string className)
 {
 	std::map<std::string, PTRCreateObject>::const_iterator iter;
 	iter = m_classMap.find(className);

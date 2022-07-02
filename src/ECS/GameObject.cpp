@@ -1,10 +1,7 @@
 #include"GameObject.h"
-#include <string>
-#include <iostream>
-#include <memory>
-#include <functional>
 #include "Scene.h"
 #include "Camera.h"
+#include "TillPch.h"
 
 REFLECTION(GameObject);
 
@@ -14,7 +11,7 @@ GameObject::GameObject()
 	guid = GetHash();
 }
 
-GameObject::GameObject(TiXmlNode* xml,Scene* s)
+GameObject::GameObject(TiXmlNode* xml, Scene* s)
 {
 	owner = s;
 	auto element = xml->ToElement();

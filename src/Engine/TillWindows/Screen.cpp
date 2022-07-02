@@ -1,11 +1,9 @@
 #include"Screen.h"
-
 #include"GuiWindows.h"
 #include"Debug.h"
 
 Screen::Screen(int w, int h) :width(w), heigth(h)
 {
-	Debug::GetEngineLogger()->info("Screen Init");
 	Init();
 	GuiInit();
 	Debug::GetEngineLogger()->info("Screen Inited");

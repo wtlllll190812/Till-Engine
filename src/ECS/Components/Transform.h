@@ -1,12 +1,11 @@
 #pragma once
-#include <glm/glm.hpp>
-#include <string>
 #include "Component.h"
 
 class GameObject;
 class Transform : public Component
 {
 public:
+	COMPONENTNAME(Transform)
 	/// <summary>
 	/// 向各个方向的单位向量
 	/// </summary>
@@ -22,7 +21,7 @@ public:
 	glm::vec3 scale;
 
 	Transform();
-	Transform(glm::vec3, GameObject *);
+	Transform(glm::vec3, GameObject*);
 	~Transform();
 
 	/// <summary>
@@ -62,11 +61,11 @@ public:
 	/// 序列化为xml
 	/// </summary>
 	/// <returns></returns>
-	virtual TLxml *Serialize() override;
+	virtual TLxml* Serialize() override;
 
 	/// <summary>
 	/// 通过xml实例化
 	/// </summary>
 	/// <param name=""></param>
-	virtual void Instantiate(TiXmlNode *) override;
+	virtual void Instantiate(TiXmlNode*) override;
 };

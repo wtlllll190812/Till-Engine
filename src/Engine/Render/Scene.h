@@ -9,7 +9,7 @@ class Camera;
 class Scene
 {
 public:
-	Camera *camera;
+	Camera* camera;
 
 	/// <summary>
 	/// 读取并初始化场景

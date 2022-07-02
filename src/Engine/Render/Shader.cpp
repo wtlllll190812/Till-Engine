@@ -1,6 +1,6 @@
 #include "Shader.h"
 
-Shader::Shader(const GLchar *vertexPath, const GLchar *fragmentPath)
+Shader::Shader(const GLchar* vertexPath, const GLchar* fragmentPath)
 {
 	string vertexCode;
 	string fragmentCode;
@@ -29,8 +29,8 @@ Shader::Shader(const GLchar *vertexPath, const GLchar *fragmentPath)
 	{
 		cout << "ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ" << endl;
 	}
-	const GLchar *vShaderCode = vertexCode.c_str();
-	const GLchar *fShaderCode = fragmentCode.c_str();
+	const GLchar* vShaderCode = vertexCode.c_str();
+	const GLchar* fShaderCode = fragmentCode.c_str();
 	// 编译shader
 	GLuint vertex, fragment;
 	GLint success;
@@ -45,7 +45,7 @@ Shader::Shader(const GLchar *vertexPath, const GLchar *fragmentPath)
 	{
 		glGetShaderInfoLog(vertex, 512, NULL, infoLog);
 		cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n"
-			 << infoLog << endl;
+			<< infoLog << endl;
 	}
 	// 片元着色器
 	fragment = glCreateShader(GL_FRAGMENT_SHADER);
@@ -57,7 +57,7 @@ Shader::Shader(const GLchar *vertexPath, const GLchar *fragmentPath)
 	{
 		glGetShaderInfoLog(fragment, 512, NULL, infoLog);
 		cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n"
-			 << infoLog << endl;
+			<< infoLog << endl;
 	}
 	// 创建Shader Program
 	this->Program = glCreateProgram();
@@ -70,7 +70,7 @@ Shader::Shader(const GLchar *vertexPath, const GLchar *fragmentPath)
 	{
 		glGetProgramInfoLog(this->Program, 512, NULL, infoLog);
 		cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n"
-			 << infoLog << endl;
+			<< infoLog << endl;
 	}
 	// Delete the shaders as they're linked into our program now and no longer necessery
 	glDeleteShader(vertex);

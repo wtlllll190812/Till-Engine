@@ -5,7 +5,6 @@
 #include <vector>
 #include "Debug.h"
 
-
 Scene::Scene(std::string p) :path(p), xml(TLxml(p, "scene"))
 {
 	Debug::GetEngineLogger()->info("Scene Loading");

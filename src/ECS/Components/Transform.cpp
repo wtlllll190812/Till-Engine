@@ -1,6 +1,4 @@
 #include "Transform.h"
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
 
 const glm::vec3 Transform::forward = glm::vec3(0.0f, 0.0f, -1.0f);
 const glm::vec3 Transform::back = glm::vec3(0.0f, 0.0f, 1.0f);
@@ -11,15 +9,13 @@ const glm::vec3 Transform::down = glm::vec3(0.0f, -1.0f, 0.0f);
 
 Transform::Transform()
 {
-	componentName = "Transform";
 	position = glm::vec3(0, 0, 0);
 	rotation = glm::vec3(0, 0, 0);
 	scale = glm::vec3(0, 0, 0);
 }
 
-Transform::Transform(glm::vec3 pos, GameObject *gameobject)
+Transform::Transform(glm::vec3 pos, GameObject* gameobject)
 {
-	componentName = "Transform";
 	position = pos;
 }
 
@@ -67,7 +63,7 @@ glm::mat4 Transform::GetModel()
 	return model;
 }
 
-TLxml *Transform::Serialize()
+TLxml* Transform::Serialize()
 {
 	auto xml = new TLxml("Transform");
 	xml->pRoot->SetAttribute("guid", std::to_string(guid));
@@ -77,7 +73,7 @@ TLxml *Transform::Serialize()
 	return xml;
 }
 
-void Transform::Instantiate(TiXmlNode *xml)
+void Transform::Instantiate(TiXmlNode* xml)
 {
 	auto element = xml->ToElement();
 	guid = std::stoi(element->Attribute("guid"));
