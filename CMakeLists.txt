@@ -23,7 +23,7 @@ file(GLOB_RECURSE source_list RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" "*.cpp" "*.
 #寻找依赖库
 find_package(tinyxml CONFIG REQUIRED)
 find_package(imgui CONFIG REQUIRED)
-find_package(glfw3 3.3.7 CONFIG REQUIRED)
+find_package(glfw3 REQUIRED)
 find_package(SOIL2 CONFIG REQUIRED)
 find_package(GLEW CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
@@ -31,8 +31,9 @@ find_package(fmt CONFIG REQUIRED)
 find_package(glm CONFIG REQUIRED)
 
 #包含头文件
-INCLUDE_DIRECTORIES(src src/ECS src/Engine src/ECS/Components  src/ECS/System)
-INCLUDE_DIRECTORIES(src/Engine/Framework src/Engine/Render src/Engine/Tools)
+INCLUDE_DIRECTORIES(src src/ECS src/Engine src/App)
+INCLUDE_DIRECTORIES( src/ECS/Components  src/ECS/System )
+INCLUDE_DIRECTORIES(src/Engine/Events src/Engine/TillWindows src/Engine/Framework src/Engine/Render src/Engine/Tools)
 
 #子文件夹src
 ADD_SUBDIRECTORY(src)

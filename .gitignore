@@ -1,12 +1,23 @@
-# Xmake cache
 .xmake/
 build/
+logs/
+*.log
 
-# MacOS Cache
+
 .DS_Store
 
 
 CMakeFiles/
-logs/
-build/
+/cmake_install.cmake
+src/cmake_install.cmake
+/CmakeCache.txt
+vcpkg_installed/
+
+*.vcx*
 .vscode/
+.vs/
+/Till_Engine.sln
+x64/
+out/
+Debug/
+Till_Engine.dir/

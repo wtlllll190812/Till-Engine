@@ -6,6 +6,9 @@
 #include "Singleton .h"
 #include <vector>
 #include <memory>
+#include "imgui.h"
+#include "imgui_impl_glfw.h"
+#include "imgui_impl_opengl3.h"
 
 class GuiWindows;
 class Screen : public Singleton<Screen>
