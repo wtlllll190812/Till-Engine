@@ -2,7 +2,7 @@
 build/
 logs/
 *.log
-
+doc/
 
 .DS_Store
 

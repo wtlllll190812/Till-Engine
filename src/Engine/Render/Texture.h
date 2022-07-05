@@ -13,7 +13,9 @@ public:
 	GLuint texture;
 	int width, height;
 	Texture(std::string);
+	Texture();
 	~Texture();
 
 private:
+	void TextureInit();
 };

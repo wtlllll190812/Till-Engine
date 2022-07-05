@@ -5,7 +5,7 @@
 Screen::Screen(int w, int h) :width(w), heigth(h)
 {
 	//Init();
-	GuiInit();
+	//GuiInit();
 	Debug::GetEngineLogger()->info("Screen Inited");
 }
 
@@ -13,7 +13,7 @@ Screen::Screen() : width(800), heigth(600)
 {
 	Debug::GetEngineLogger()->info("Screen Init");
 	//Init();
-	GuiInit();
+	//GuiInit();
 	Debug::GetEngineLogger()->info("Screen Inited");
 }
 
@@ -57,7 +57,7 @@ void Screen::GuiInit()
 	//ImGui::StyleColorsClassic();
 
 	// 配置ImGui
-	//ImGui_ImplGlfw_InitForOpenGL(Application::instance().mWindows, true);
+	ImGui_ImplGlfw_InitForOpenGL(window, true);
 	ImGui_ImplOpenGL3_Init("#version 100");
 }
 

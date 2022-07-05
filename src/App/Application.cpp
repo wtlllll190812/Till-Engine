@@ -9,9 +9,7 @@ Application::Application()
 {
 	mWindows = std::unique_ptr<Window>(Window::Create());
 	mWindows->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
-
 	guiLayer = new ImguiLayer();
-	PushOverlay(guiLayer);
 }
 
 Application::~Application()
@@ -20,6 +18,7 @@ Application::~Application()
 
 void Application::Init()
 {
+	PushOverlay(guiLayer);
 }
 
 void Application::Run()

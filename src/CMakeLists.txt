@@ -7,7 +7,6 @@ target_link_libraries(${Proj_Name}
     PRIVATE 
     glfw
     ${tinyxml_LIBRARIES}
-    imgui::imgui
     fmt::fmt
     ${SOIL2_LIBRARIES}
     ${GLEW_LIBRARIES}

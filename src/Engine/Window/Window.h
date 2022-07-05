@@ -30,8 +30,17 @@ public:
 	virtual ~Window() {};
 	virtual void OnRender() = 0;
 	virtual void OnRenderEnd() = 0;
+
 	virtual unsigned int GetWidth() const = 0;
 	virtual unsigned int GetHeight() const = 0;
+	virtual void* GetWindow() const 
+	{
+		Debug::GetEngineLogger()->warn("sdsd");
+		return nullptr;
+	}
+	virtual void* GetFrameBuffer(int index=0) = 0;
+	virtual void SetFrameBuffer(int index=0)=0;
+	virtual void AddFrameBuffer()=0;
 
 	virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
 	virtual void SetVSync(bool enabled) = 0;

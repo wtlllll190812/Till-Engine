@@ -64,10 +64,7 @@ int smain()
 	Init();
 	Debug::GetEngineLogger()->info("Engine Inited");
 
-	Debug::GetAppLogger()->warn("sdsd");
-	Debug::GetAppLogger()->warn("2");
-	Debug::GetAppLogger()->warn("3");
-	Debug::GetAppLogger()->warn("4");
+
 
 	shared_ptr<Material> mat = object->GetComponent<Renderer>()->material;
 	// 绑定回调函数
@@ -115,8 +112,72 @@ int smain()
 int main()
 {
 	Debug::Init();
+	Application::instance().Init();
+
+	//临时
+
 	auto guiLayer = Application::instance().GetGuiLayer();
-	//窗口注册
+	
+	auto Docking = shared_ptr<GuiWindow>(new GuiWindow([]()
+		{
+			bool p_open = true;
+			static ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None | ImGuiDockNodeFlags_PassthruCentralNode;
+
+			ImGuiWindowFlags window_flags = ImGuiWindowFlags_MenuBar;
+
+			const ImGuiViewport* viewport = ImGui::GetMainViewport();
+			ImGui::SetNextWindowPos(viewport->WorkPos);
+			ImGui::SetNextWindowSize(viewport->WorkSize);
+			ImGui::SetNextWindowViewport(viewport->ID);
+			ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
+			ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
+			window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove;
+			window_flags |= ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
+			window_flags |= ImGuiWindowFlags_NoBackground;
+
+			ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
+			ImGui::Begin("DockSpace Demo", &p_open, window_flags);
+			ImGui::PopStyleVar();
+
+			ImGui::PopStyleVar(2);
+
+			// Submit the DockSpace
+			ImGuiIO& io = ImGui::GetIO();
+			if (io.ConfigFlags & ImGuiConfigFlags_DockingEnable)
+			{
+				ImGuiID dockspace_id = ImGui::GetID("MyDockSpace");
+				ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);
+			}
+
+			//if (ImGui::BeginMenuBar())
+			//{
+			//	if (ImGui::BeginMenu("Options"))
+			//	{
+			//		// Disabling fullscreen would allow the window to be moved to the front of other windows,
+			//		// which we can't undo at the moment without finer window depth/z control.
+			//		ImGui::MenuItem("Fullscreen", NULL, &opt_fullscreen);
+			//		ImGui::MenuItem("Padding", NULL, &opt_padding);
+			//		ImGui::Separator();
+
+			//		if (ImGui::MenuItem("Flag: NoSplit", "", (dockspace_flags & ImGuiDockNodeFlags_NoSplit) != 0)) { dockspace_flags ^= ImGuiDockNodeFlags_NoSplit; }
+			//		if (ImGui::MenuItem("Flag: NoResize", "", (dockspace_flags & ImGuiDockNodeFlags_NoResize) != 0)) { dockspace_flags ^= ImGuiDockNodeFlags_NoResize; }
+			//		if (ImGui::MenuItem("Flag: NoDockingInCentralNode", "", (dockspace_flags & ImGuiDockNodeFlags_NoDockingInCentralNode) != 0)) { dockspace_flags ^= ImGuiDockNodeFlags_NoDockingInCentralNode; }
+			//		if (ImGui::MenuItem("Flag: AutoHideTabBar", "", (dockspace_flags & ImGuiDockNodeFlags_AutoHideTabBar) != 0)) { dockspace_flags ^= ImGuiDockNodeFlags_AutoHideTabBar; }
+			//		if (ImGui::MenuItem("Flag: PassthruCentralNode", "", (dockspace_flags & ImGuiDockNodeFlags_PassthruCentralNode) != 0, opt_fullscreen)) { dockspace_flags ^= ImGuiDockNodeFlags_PassthruCentralNode; }
+			//		ImGui::Separator();
+
+			//		if (ImGui::MenuItem("Close", NULL, false, p_open != NULL))
+			//			p_open = false;
+			//		ImGui::EndMenu();
+			//	}
+
+			//	ImGui::EndMenuBar();
+			//}
+
+			ImGui::End(); },
+		"sdsd"));
+	guiLayer->RegisterGuiWindow(Docking);
+
 	auto Editor = shared_ptr<GuiWindow>(new GuiWindow([]()
 		{
 			if (ImGui::BeginMainMenuBar())
@@ -199,8 +260,32 @@ int main()
 				ImGui::End();
 			} },
 		"Console"));
-	guiLayer->RegisterGuiWindow(Console);
+	guiLayer->RegisterGuiWindow(Console);	
+	
+	auto SceneView = shared_ptr<GuiWindow>(new GuiWindow([]()
+		{
+			ImGui::Begin("Scene");
+			{
+				// Using a Child allow to fill all the space of the window.
+				// It also alows customization
+				ImGui::BeginChild("GameRender");
+				// Get the size of the child (i.e. the whole draw size of the windows).
+				ImVec2 wsize = ImGui::GetWindowSize();
+				// Because I use the texture from OpenGL, I need to invert the V from the UV.
+				GLuint* x = (GLuint*)Application::instance().mWindows->GetFrameBuffer();
+				Debug::GetAppLogger()->info(*x);
+				ImGui::Image((ImTextureID)(*x), wsize, ImVec2(0, 1), ImVec2(1, 0));
+				ImGui::EndChild();
+			}
+			ImGui::End();
+		},
+		"SceneView"));
+	guiLayer->RegisterGuiWindow(SceneView);
 
+	Application::instance().mWindows->SetFrameBuffer();
+	Texture* tex = new Texture();
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, tex->texture, 0);
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 	// 场景初始化
 	currentScene = new Scene(DATA_PATH "test.xml");
@@ -210,6 +295,7 @@ int main()
 	shared_ptr<Material> mat = object->GetComponent<Renderer>()->material;
 	mat->SetRenderCallback([](GameObject* gameobject, Shader* shader, Material* mat)
 		{
+			Application::instance().mWindows->SetFrameBuffer();
 			mat->renderQueueIndex = (int)RendererQueue::Background;
 			glm::vec3 viewPos = cameraObject->transform->position;
 
@@ -231,14 +317,17 @@ int main()
 			SetUniformVec3(lightColor, shader);
 			SetUniformVec3(viewPos, shader);
 
-			glDrawArrays(GL_TRIANGLES, 0, 36); });
+			glDrawArrays(GL_TRIANGLES, 0, 36); 
+			glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		});
 
 	GameLoop loop(60);
 	loop.SetUpdateCallback([]()
 		{
 			Application::instance().Run();
 		});
-	loop.StartLoop(); 
+	Debug::GetAppLogger()->info("start loop");
+	loop.StartLoop();
 	return 0;
 }
 

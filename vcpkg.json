@@ -7,13 +7,6 @@
         "spdlog",
         "tinyxml",
         "soil2",
-        "glm",
-        {
-            "name": "imgui",
-            "features": [
-                "glfw-binding",
-                "opengl3-binding"
-            ]
-        }
+        "glm"
     ]
 }
