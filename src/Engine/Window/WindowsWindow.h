@@ -4,6 +4,8 @@
 #include <GL/glew.h>
 #include "Window.h"
 #include "Application.h"
+#include "FrameBuffer.h"
+
 /// <summary>
 /// tillwindow在windows平台下的实现
 /// </summary>
@@ -20,14 +22,15 @@ public:
 	inline unsigned int GetHeight() const override { return mData.Height; }
 	inline virtual void SetEventCallback(const EventCallbackFn& callback) override { mData.EventCallback = callback; }
 	
-	inline virtual void* GetWindow()const
+	inline void* GetWindow()const
 	{
 		return mWindow; 
 	}
-	inline virtual void* GetFrameBuffer(int index = 0)override { return &framebuffer[index]; }
-	inline virtual void SetFrameBuffer(int index = 0)override { glBindFramebuffer(GL_FRAMEBUFFER, framebuffer[index]); }
+	inline FrameBuffer* GetFrameBuffer(int index = 0)override {  return framebuffer[index]; }
+	inline void AddFrameBuffer() override { framebuffer.push_back(new FrameBuffer()); }
+	inline void SetFrameBuffer(int index = 0)override { glBindFramebuffer(GL_FRAMEBUFFER, index==-1?0:framebuffer[index]->GetFBO()); }
+
 	
-	void AddFrameBuffer() override;
 	void SetVSync(bool enabled) override;
 	bool IsVSync() const override;
 private:
@@ -35,7 +38,7 @@ private:
 	virtual void ShutDown();
 	void SetCallback();
 private:
-	std::vector<GLuint> framebuffer;
+	std::vector<FrameBuffer*> framebuffer;
 	GLFWwindow* mWindow;
 	
 	struct WindowData
@@ -47,7 +50,4 @@ private:
 		EventCallbackFn EventCallback;
 	};
 	WindowData mData;
-
-	// 通过 Window 继承
-
 };

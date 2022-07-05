@@ -35,7 +35,7 @@ INCLUDE_DIRECTORIES( src/ECS/Components  src/ECS/System )
 INCLUDE_DIRECTORIES(src/Engine/Events src/Engine/Framework src/Engine/Render src/Engine/Layer)
 INCLUDE_DIRECTORIES(src/Engine/Window src/Engine/Window/GuiWindow)
 
-INCLUDE_DIRECTORIES(vendor/imgui)
+INCLUDE_DIRECTORIES(src/imgui)
 
 #子文件夹src
 ADD_SUBDIRECTORY(src)

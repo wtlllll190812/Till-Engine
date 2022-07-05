@@ -15,7 +15,7 @@ public:
 	Texture(std::string);
 	Texture();
 	~Texture();
-
+	void Resize(int, int);
 private:
 	void TextureInit();
 };

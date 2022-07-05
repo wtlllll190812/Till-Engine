@@ -22,6 +22,7 @@ struct WindowProps
 /// <summary>
 /// 窗口基类
 /// </summary>
+class FrameBuffer;
 class Window
 {
 public:
@@ -35,10 +36,9 @@ public:
 	virtual unsigned int GetHeight() const = 0;
 	virtual void* GetWindow() const 
 	{
-		Debug::GetEngineLogger()->warn("sdsd");
 		return nullptr;
 	}
-	virtual void* GetFrameBuffer(int index=0) = 0;
+	virtual FrameBuffer* GetFrameBuffer(int index=0) = 0;
 	virtual void SetFrameBuffer(int index=0)=0;
 	virtual void AddFrameBuffer()=0;
 

@@ -23,7 +23,9 @@ void Application::Init()
 
 void Application::Run()
 {
+	Application::instance().mWindows->SetFrameBuffer();
 	mWindows->OnRender();
+	Application::instance().mWindows->SetFrameBuffer(-1);
 	for (auto layer : mLayerStack)
 	{
 		layer->OnUpdate();

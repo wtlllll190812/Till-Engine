@@ -38,15 +38,6 @@ void WindowsWindow::OnRenderEnd()
     glfwSwapBuffers(mWindow);
 }
 
-void WindowsWindow::AddFrameBuffer()
-{
-    GLuint newFrameBuffer;
-    framebuffer.push_back(newFrameBuffer);
-    glGenFramebuffers(2, &framebuffer.back());
-
-
-}
-
 void WindowsWindow::SetVSync(bool enabled)
 {
     if (enabled)
@@ -103,8 +94,9 @@ void WindowsWindow::Init(const WindowProps& props)
         return;
     }
     
-    AddFrameBuffer();
     SetCallback();
+
+    AddFrameBuffer();
 }
 
 void WindowsWindow::ShutDown()

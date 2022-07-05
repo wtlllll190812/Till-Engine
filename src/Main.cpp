@@ -272,9 +272,9 @@ int main()
 				// Get the size of the child (i.e. the whole draw size of the windows).
 				ImVec2 wsize = ImGui::GetWindowSize();
 				// Because I use the texture from OpenGL, I need to invert the V from the UV.
-				GLuint* x = (GLuint*)Application::instance().mWindows->GetFrameBuffer();
-				Debug::GetAppLogger()->info(*x);
-				ImGui::Image((ImTextureID)(*x), wsize, ImVec2(0, 1), ImVec2(1, 0));
+				auto fb = Application::instance().mWindows->GetFrameBuffer();
+				ImGui::Image((ImTextureID)fb->GetFBO(), wsize, ImVec2(0, 1), ImVec2(1, 0));
+				fb->Resize(wsize.x,wsize.y);
 				ImGui::EndChild();
 			}
 			ImGui::End();
@@ -282,10 +282,6 @@ int main()
 		"SceneView"));
 	guiLayer->RegisterGuiWindow(SceneView);
 
-	Application::instance().mWindows->SetFrameBuffer();
-	Texture* tex = new Texture();
-	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, tex->texture, 0);
-	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 	// 场景初始化
 	currentScene = new Scene(DATA_PATH "test.xml");
@@ -295,7 +291,7 @@ int main()
 	shared_ptr<Material> mat = object->GetComponent<Renderer>()->material;
 	mat->SetRenderCallback([](GameObject* gameobject, Shader* shader, Material* mat)
 		{
-			Application::instance().mWindows->SetFrameBuffer();
+			glEnable(GL_DEPTH_TEST);
 			mat->renderQueueIndex = (int)RendererQueue::Background;
 			glm::vec3 viewPos = cameraObject->transform->position;
 
@@ -318,7 +314,6 @@ int main()
 			SetUniformVec3(viewPos, shader);
 
 			glDrawArrays(GL_TRIANGLES, 0, 36); 
-			glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		});
 
 	GameLoop loop(60);
