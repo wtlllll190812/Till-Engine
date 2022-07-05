@@ -1,4 +1,5 @@
 #include "ImguiLayer.h"
+#include "GuiWindow.h"
 
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
@@ -9,11 +10,11 @@
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 
+#include "TLCore.h"
 
 ImguiLayer::ImguiLayer()
 	:Layer("ImguiLayer")
 {
-
 }
 
 ImguiLayer::~ImguiLayer()
@@ -25,18 +26,18 @@ void ImguiLayer::OnAttack()
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
-	
+
 	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 	io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
 	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;       // Enable Keyboard Controls
-	
+
 	ImGuiStyle& style = ImGui::GetStyle();
 	if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
 	{
 		style.WindowRounding = 0.0f;
 		style.Colors[ImGuiCol_WindowBg].w = 1.0f;
 	}
-    ImGui_ImplGlfw_InitForOpenGL(static_cast<GLFWwindow*>(Application::instance().mWindows->GetWindow()), true);
+	ImGui_ImplGlfw_InitForOpenGL(static_cast<GLFWwindow*>(Application::instance().mWindows->GetWindow()), true);
 	ImGui_ImplOpenGL3_Init("#version 410");
 }
 
@@ -51,7 +52,7 @@ inline void ImguiLayer::OnUpdate()
 {
 	ImGuiIO& io = ImGui::GetIO();
 	io.DisplaySize = ImVec2(Application::instance().mWindows->GetWidth(), Application::instance().mWindows->GetHeight());
-	
+
 	float time = (float)glfwGetTime();
 	io.DeltaTime = mTime > 0.0f ? (time - mTime) : (1.0f / 60.0f);
 	mTime = time;
@@ -60,7 +61,7 @@ inline void ImguiLayer::OnUpdate()
 	ImGui_ImplGlfw_NewFrame();
 	ImGui::NewFrame();
 
-	ImGui::ShowDemoWindow();
+	//ImGui::ShowDemoWindow();
 	for (std::shared_ptr<GuiWindow> i : uiWindows)
 	{
 		i->Render();
@@ -114,7 +115,7 @@ bool ImguiLayer::OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e)
 bool ImguiLayer::OnMouseMovedEvent(MouseMovedEvent& e)
 {
 	ImGuiIO& io = ImGui::GetIO();
-	io.MousePos = ImVec2(e.GetX(),e.GetY());
+	io.MousePos = ImVec2(e.GetX(), e.GetY());
 
 	return false;
 }

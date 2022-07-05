@@ -2,21 +2,22 @@
 #include "Component.h"
 #include "Material.h"
 #include "Mesh.h"
+#include <memory>
 
 class GameObject;
 class Renderer : public Component
 {
 public:
 	COMPONENTNAME(Renderer)
-	/// <summary>
-	/// 模型Mesh
-	/// </summary>
-	shared_ptr<Mesh> mesh;
+		/// <summary>
+		/// 模型Mesh
+		/// </summary>
+		std::shared_ptr<Mesh> mesh;
 
 	/// <summary>
 	/// 材质
 	/// </summary>
-	shared_ptr<Material> material;
+	std::shared_ptr<Material> material;
 
 	Renderer(Mesh*, Material*);
 	Renderer();
@@ -44,8 +45,5 @@ public:
 	/// <param name=""></param>
 	virtual void Instantiate(TiXmlNode*) override;
 
-	bool operator>(const Renderer& r)
-	{
-		return r.material->renderQueueIndex > material->renderQueueIndex;
-	}
+	bool operator>(const Renderer& r);
 };

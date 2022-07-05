@@ -1,7 +1,7 @@
 #pragma once
-#include "Singleton .h"
-#include "TillPch.h"
-
+#include "Singleton.h"
+#include <map>
+#include <string>
 typedef void* (*PTRCreateObject)(void);
 
 //反射注册宏

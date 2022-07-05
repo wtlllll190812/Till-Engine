@@ -1,5 +1,6 @@
 #pragma once
 #include "EventBase.h"
+#include <string>
 
 class Layer
 {

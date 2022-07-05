@@ -1,7 +1,9 @@
 #include"GameObject.h"
 #include "Scene.h"
 #include "Camera.h"
-#include "TillPch.h"
+#include "Reflection.h"
+#include "Transform.h"
+#include "Debug.h"
 
 REFLECTION(GameObject);
 
@@ -37,11 +39,6 @@ GameObject::GameObject(TiXmlNode* xml, Scene* s)
 			transform->Instantiate(element);
 			AddComponent(transform);
 		}
-		/*switch (element->Value())
-		{
-		default:
-			break;
-		}*/
 	}
 }
 

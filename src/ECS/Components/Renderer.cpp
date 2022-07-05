@@ -5,14 +5,14 @@ REFLECTION(Renderer);
 
 Renderer::Renderer(Mesh* m, Material* mater)
 {
-	mesh = shared_ptr<Mesh>(m);
-	material = shared_ptr<Material>(mater);
+	mesh = std::shared_ptr<Mesh>(m);
+	material = std::shared_ptr<Material>(mater);
 }
 
 Renderer::Renderer()
 {
-	mesh = shared_ptr<Mesh>(new Mesh());
-	material = shared_ptr<Material>(new Material());
+	mesh = std::shared_ptr<Mesh>(new Mesh());
+	material = std::shared_ptr<Material>(new Material());
 }
 
 Renderer::~Renderer()
@@ -41,4 +41,9 @@ void Renderer::Instantiate(TiXmlNode* xml)
 {
 	auto element = xml->ToElement();
 	guid = std::stoi(element->Attribute("guid"));
+}
+
+bool Renderer::operator>(const Renderer& r)
+{
+	return r.material->renderQueueIndex > material->renderQueueIndex;
 }

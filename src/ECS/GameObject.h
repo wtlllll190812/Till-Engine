@@ -1,15 +1,15 @@
 #pragma once
 #include <vector>
 #include "TLxml.h"
-#include "Reflection.h"
-#include "Transform.h"
 
 class Scene;
+class Transform;
+class Component;
 class GameObject
 {
 public:
-	Scene* owner;
 	Transform* transform;
+	Scene* owner;//所属场景
 	std::string name; //物体名称
 	int guid;		  //物体标识
 

@@ -1,4 +1,3 @@
-#include "Screen.h"
 #include "Camera.h"
 #include "GameObject.h"
 #include "Transform.h"
@@ -14,13 +13,11 @@
 #include "TLEngineCG.h"
 #include "Debug.h"
 #include "GuiWindow.h"
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include "WindowsWindow.h"
-#include "TillPch.h"
 #include "Application.h"
 #include "ImguiLayer.h"
+#include "imgui.h"
 
 #define DATA_PATH "../data/"
 #define SHADER_PATH "../shaders/"
@@ -40,13 +37,6 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void do_movement();
-void fixedupdate()
-{
-	Screen::instance().Display();
-	RenderSystem::instance().Update();
-	Screen::instance().GuiRender();
-	glfwSwapBuffers(Screen::instance().window);
-}
 
 void Init()
 {
@@ -63,8 +53,6 @@ int smain()
 	Debug::GetEngineLogger()->info("Engine Init");
 	Init();
 	Debug::GetEngineLogger()->info("Engine Inited");
-
-
 
 	shared_ptr<Material> mat = object->GetComponent<Renderer>()->material;
 	// 绑定回调函数
@@ -97,9 +85,9 @@ int smain()
 
 			glDrawArrays(GL_TRIANGLES, 0, 36); });
 
-	loop.SetUpdateCallback(fixedupdate); /*[]()
-		 {
-		 });*/
+	loop.SetUpdateCallback([]()
+		{
+		});
 
 	loop.SetFixedUpdateCallback([]()
 		{ do_movement(); });
@@ -117,7 +105,7 @@ int main()
 	//临时
 
 	auto guiLayer = Application::instance().GetGuiLayer();
-	
+
 	auto Docking = shared_ptr<GuiWindow>(new GuiWindow([]()
 		{
 			bool p_open = true;
@@ -260,8 +248,8 @@ int main()
 				ImGui::End();
 			} },
 		"Console"));
-	guiLayer->RegisterGuiWindow(Console);	
-	
+	guiLayer->RegisterGuiWindow(Console);
+
 	auto SceneView = shared_ptr<GuiWindow>(new GuiWindow([]()
 		{
 			ImGui::Begin("Scene");
@@ -274,14 +262,13 @@ int main()
 				// Because I use the texture from OpenGL, I need to invert the V from the UV.
 				auto fb = Application::instance().mWindows->GetFrameBuffer();
 				ImGui::Image((ImTextureID)fb->GetFBO(), wsize, ImVec2(0, 1), ImVec2(1, 0));
-				fb->Resize(wsize.x,wsize.y);
+				fb->Resize(wsize.x, wsize.y);
 				ImGui::EndChild();
 			}
 			ImGui::End();
 		},
 		"SceneView"));
 	guiLayer->RegisterGuiWindow(SceneView);
-
 
 	// 场景初始化
 	currentScene = new Scene(DATA_PATH "test.xml");
@@ -313,7 +300,7 @@ int main()
 			SetUniformVec3(lightColor, shader);
 			SetUniformVec3(viewPos, shader);
 
-			glDrawArrays(GL_TRIANGLES, 0, 36); 
+			glDrawArrays(GL_TRIANGLES, 0, 36);
 		});
 
 	GameLoop loop(60);

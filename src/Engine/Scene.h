@@ -2,10 +2,10 @@
 #include "TLxml.h"
 #include <string>
 #include <vector>
-#include "GameObject.h"
 #include <memory>
 
 class Camera;
+class GameObject;
 class Scene
 {
 public:

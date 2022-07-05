@@ -24,7 +24,7 @@ public:
 private:
 	float mMouseX;
 	float mMouseY;
-}; 
+};
 
 /// <summary>
 /// 鼠标滚轮事件
@@ -45,7 +45,7 @@ public:
 		return "MouseScrolled  " + std::to_string(mXOffset) + "  " + std::to_string(mYOffset);
 	}
 	EVENT_CLASS_TYPE(MouseScrolled)
-	EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
+		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 private:
 	float mXOffset;
 	float mYOffset;

@@ -3,7 +3,7 @@
 #include <GLFW/glfw3.h>
 #include <GL/glew.h>
 #include "Window.h"
-#include "Application.h"
+#include <vector>
 #include "FrameBuffer.h"
 
 /// <summary>
@@ -20,17 +20,24 @@ public:
 
 	inline unsigned int GetWidth() const override { return mData.Width; }
 	inline unsigned int GetHeight() const override { return mData.Height; }
-	inline virtual void SetEventCallback(const EventCallbackFn& callback) override { mData.EventCallback = callback; }
-	
-	inline void* GetWindow()const
-	{
-		return mWindow; 
-	}
-	inline FrameBuffer* GetFrameBuffer(int index = 0)override {  return framebuffer[index]; }
-	inline void AddFrameBuffer() override { framebuffer.push_back(new FrameBuffer()); }
-	inline void SetFrameBuffer(int index = 0)override { glBindFramebuffer(GL_FRAMEBUFFER, index==-1?0:framebuffer[index]->GetFBO()); }
 
-	
+	inline virtual void SetEventCallback(const EventCallbackFn& callback) override { mData.EventCallback = callback; }
+
+	inline void* GetWindow()const{return mWindow;}
+	inline FrameBuffer* GetFrameBuffer(int index = 0)override { return framebuffer[index]; }
+
+	inline void AddFrameBuffer() override { framebuffer.push_back(new FrameBuffer()); }
+	inline void SetFrameBuffer(int index = 0)override 
+	{
+		if(index==-1)
+			glBindFramebuffer(GL_FRAMEBUFFER,  0 ); 
+		else
+		{
+			currentBuffer = framebuffer[index];
+			glBindFramebuffer(GL_FRAMEBUFFER, framebuffer[index]->GetFBO());
+		}
+	}
+
 	void SetVSync(bool enabled) override;
 	bool IsVSync() const override;
 private:
@@ -39,8 +46,9 @@ private:
 	void SetCallback();
 private:
 	std::vector<FrameBuffer*> framebuffer;
+	FrameBuffer* currentBuffer;
 	GLFWwindow* mWindow;
-	
+
 	struct WindowData
 	{
 		std::string Title;

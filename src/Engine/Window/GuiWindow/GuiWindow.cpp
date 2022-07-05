@@ -1,12 +1,13 @@
 #include "GuiWindow.h"
+#include "imgui.h"
 
-GuiWindow::GuiWindow(void (*f)(), const char *_name)
+GuiWindow::GuiWindow(void (*f)(), const char* _name)
 {
 	RenderCallBack = f;
 	name = _name;
 }
 
-GuiWindow::GuiWindow(const char *_name)
+GuiWindow::GuiWindow(const char* _name)
 {
 	RenderCallBack = []()
 	{ ImGui::ShowDemoWindow(); };

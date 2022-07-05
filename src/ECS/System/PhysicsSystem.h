@@ -1,3 +1,6 @@
+#pragma once
+
+#include "System.h"
 class Physics
 {
 private:

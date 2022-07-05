@@ -1,10 +1,9 @@
 #include "Camera.h"
 #include "GameObject.h"
 #include "Transform.h"
-#include "Screen.h"
 #include "Application.h"
-
-
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 REFLECTION(Camera);
 
 Camera::Camera()

@@ -1,5 +1,6 @@
 #pragma once
 #include"Layer.h"
+#include <vector>
 
 class LayerStack
 {
@@ -18,4 +19,3 @@ private:
 	std::vector<Layer*> mLayers;
 	std::vector<Layer*>::iterator mLayerInsert;
 };
-

@@ -1,6 +1,11 @@
 #include "Shader.h"
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
+#include <GL/glew.h>
 
-Shader::Shader(const GLchar* vertexPath, const GLchar* fragmentPath)
+Shader::Shader(const char* vertexPath, const char* fragmentPath)
 {
 	string vertexCode;
 	string fragmentCode;

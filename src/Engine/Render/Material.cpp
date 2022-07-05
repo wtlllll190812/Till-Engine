@@ -1,7 +1,9 @@
 #include"Material.h"
 #include"GameObject.h"
+#include "Shader.h"
+#include <GL/glew.h> // 包含glew来获取所有的必须OpenGL头文件
 
-Material::Material(const GLchar* vertexPath, const GLchar* fragmentPath)
+Material::Material(const char* vertexPath, const char* fragmentPath)
 {
 	RenderCallback = nullptr;
 	shader = new Shader(vertexPath, fragmentPath);

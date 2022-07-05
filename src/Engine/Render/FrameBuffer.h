@@ -6,10 +6,12 @@ class FrameBuffer
 public:
 	FrameBuffer();
 	~FrameBuffer();
-	unsigned int &GetFBO();
+	unsigned int& GetFBO();
 	void Resize(float w, float h);
+	int GetWidth();
+	int GetHeight();
 private:
-	Texture* texture;
+	Texture* color;
+	Texture* depth;
 	unsigned int fbo;
 };
-

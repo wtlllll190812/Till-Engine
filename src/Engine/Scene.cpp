@@ -4,6 +4,7 @@
 #include <queue>
 #include <vector>
 #include "Debug.h"
+#include "GameObject.h"
 
 Scene::Scene(std::string p) :path(p), xml(TLxml(p, "scene"))
 {

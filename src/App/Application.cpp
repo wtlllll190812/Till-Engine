@@ -1,9 +1,10 @@
 #include "Application.h"
 #include "GameLoop.h"
 #include "Scene.h"
-#include "TillPch.h"
+#include "ImguiLayer.h"
+#include "KeyEvent.h"
+#include "MouseEvent.h"
 using namespace std;
-
 
 Application::Application()
 {
@@ -23,9 +24,7 @@ void Application::Init()
 
 void Application::Run()
 {
-	Application::instance().mWindows->SetFrameBuffer();
 	mWindows->OnRender();
-	Application::instance().mWindows->SetFrameBuffer(-1);
 	for (auto layer : mLayerStack)
 	{
 		layer->OnUpdate();
@@ -37,9 +36,8 @@ void Application::OnEvent(EventBase& e)
 {
 	EventDispatcher dispatcher(e);
 	dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::OnWindowsClose));
-	//Debug::GetEngineLogger()->info(e.ToString());
 
-	for (auto it =mLayerStack.end();it!=mLayerStack.begin();)
+	for (auto it = mLayerStack.end(); it != mLayerStack.begin();)
 	{
 		(*--it)->OnEvent(e);
 		if (e.mHandled)
@@ -52,4 +50,3 @@ bool Application::OnWindowsClose(WindowCloseEvent& e)
 	mRunning = false;
 	return true;
 }
-

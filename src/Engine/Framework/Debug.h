@@ -1,6 +1,5 @@
 #pragma once
 #include "spdlog/spdlog.h"
-#include "TillPch.h"
 
 class Debug
 {

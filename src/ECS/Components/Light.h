@@ -11,10 +11,10 @@ public:
 	~Light();
 
 	COMPONENTNAME(Light)
-	/// <summary>
-	/// 光的强度
-	/// </summary>
-	float intensity;
+		/// <summary>
+		/// 光的强度
+		/// </summary>
+		float intensity;
 
 	/// <summary>
 	/// 光的颜色

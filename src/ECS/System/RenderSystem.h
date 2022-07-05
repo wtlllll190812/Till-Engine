@@ -1,5 +1,6 @@
 #pragma once
 #include "System.h"
+#include <queue>
 
 class Component;
 class Renderer;

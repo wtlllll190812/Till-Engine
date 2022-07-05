@@ -1,7 +1,4 @@
-#include "TillPch.h"
 #include "LayerStack.h"
-
-
 
 LayerStack::LayerStack()
 {
@@ -19,7 +16,7 @@ LayerStack::~LayerStack()
 void LayerStack::PushLayer(Layer* layer)
 {
 	layer->OnAttack();
-	mLayerInsert = mLayers.emplace(mLayerInsert,layer);
+	mLayerInsert = mLayers.emplace(mLayerInsert, layer);
 }
 
 void LayerStack::PushOverlay(Layer* layer)

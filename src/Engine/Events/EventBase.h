@@ -1,5 +1,6 @@
 #pragma once
-#include "TillPch.h"
+#include "TLCore.h"
+#include <string>
 
 /// <summary>
 /// 事件类型
@@ -51,14 +52,14 @@ class EventBase
 {
 public:
 
-	virtual const char *GetName() const = 0;
-	
+	virtual const char* GetName() const = 0;
+
 	virtual EventType GetEventType() const = 0;
-	
+
 	virtual int GetCategoryFlags() const = 0;
-	
+
 	virtual std::string ToString() const { return GetName(); };
-	
+
 	/// <summary>
 	/// 是否属于该类型
 	/// </summary>
@@ -76,12 +77,12 @@ public:
 class EventDispatcher
 {
 	template <typename T>
-	using EventFn = std::function<bool(T &)>;
+	using EventFn = std::function<bool(T&)>;
 
 public:
-	EventDispatcher(EventBase &event) : mEvent(event) {}
+	EventDispatcher(EventBase& event) : mEvent(event) {}
 	template <typename T>
-	
+
 	/// <summary>
 	/// 判断事件类型是否符合
 	/// </summary>
@@ -89,12 +90,12 @@ public:
 	{
 		if (mEvent.GetEventType() == T::GetStaticType())
 		{
-			mEvent.mHandled = func(*(T *)&mEvent);
+			mEvent.mHandled = func(*(T*)&mEvent);
 			return true;
 		}
 		return false;
 	}
 
 private:
-	EventBase &mEvent;
+	EventBase& mEvent;
 };

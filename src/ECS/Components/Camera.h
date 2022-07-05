@@ -6,8 +6,8 @@ class Camera : public Component
 {
 public:
 	COMPONENTNAME(Camera)
-		
-	Camera();
+
+		Camera();
 	~Camera();
 
 	/// <summary>

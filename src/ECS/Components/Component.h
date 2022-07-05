@@ -1,7 +1,6 @@
 #pragma once
 #include "Reflection.h"
 #include "TLxml.h"
-#include "TillPch.h"
 
 class GameObject;
 class Component

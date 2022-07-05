@@ -1,6 +1,5 @@
 #pragma once
-#include "Singleton .h"
-#include "TillPch.h"
+#include "Singleton.h"
 
 class Component;
 class System

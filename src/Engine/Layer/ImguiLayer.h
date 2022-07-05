@@ -1,11 +1,14 @@
 #pragma once
 #include "Layer.h"
-#include "GuiWindow.h"
 #include "KeyEvent.h"
 #include "MouseEvent.h"
 #include "ApplicationEvent.h"
 
-class ImguiLayer:public Layer
+#include <vector>
+#include <memory>
+
+class GuiWindow;
+class ImguiLayer :public Layer
 {
 public:
 	ImguiLayer();
@@ -14,7 +17,7 @@ public:
 	void OnDetach()override;
 	void OnUpdate()override;
 	void OnEvent(EventBase& event)override;
-	void RegisterGuiWindow(std::shared_ptr<GuiWindow>); 
+	void RegisterGuiWindow(std::shared_ptr<GuiWindow>);
 private:
 	bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& e);
 	bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e);
@@ -28,4 +31,3 @@ private:
 	std::vector<std::shared_ptr<GuiWindow>> uiWindows;
 	float mTime = 0;
 };
-

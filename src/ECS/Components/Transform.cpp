@@ -1,4 +1,5 @@
 #include "Transform.h"
+#include <glm/gtc/matrix_transform.hpp>
 
 const glm::vec3 Transform::forward = glm::vec3(0.0f, 0.0f, -1.0f);
 const glm::vec3 Transform::back = glm::vec3(0.0f, 0.0f, 1.0f);

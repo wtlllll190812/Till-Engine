@@ -1,5 +1,4 @@
 #pragma once
-#include"TillPch.h"
 #include "EventBase.h"
 
 /// <summary>
@@ -34,13 +33,13 @@ public:
 
 	virtual unsigned int GetWidth() const = 0;
 	virtual unsigned int GetHeight() const = 0;
-	virtual void* GetWindow() const 
+	virtual void* GetWindow() const
 	{
 		return nullptr;
 	}
-	virtual FrameBuffer* GetFrameBuffer(int index=0) = 0;
-	virtual void SetFrameBuffer(int index=0)=0;
-	virtual void AddFrameBuffer()=0;
+	virtual FrameBuffer* GetFrameBuffer(int index = 0) = 0;
+	virtual void SetFrameBuffer(int index = 0) = 0;
+	virtual void AddFrameBuffer() = 0;
 
 	virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
 	virtual void SetVSync(bool enabled) = 0;

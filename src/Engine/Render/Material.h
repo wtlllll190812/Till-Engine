@@ -1,10 +1,10 @@
 #pragma once
-#include "Shader.h"
 #include "Mesh.h"
 #include "TLEngineCG.h"
 #include <memory>
 
 class GameObject;
+class Shader;
 class Material
 {
 public:
@@ -20,10 +20,10 @@ public:
 	/// </summary>
 	void (*RenderCallback)(GameObject*, Shader*, Material*);
 
-	Material(const GLchar*, const GLchar*);
+	Material(const char*, const char*);
 	Material();
 	~Material();
 
 	void SetRenderCallback(void (*f)(GameObject*, Shader*, Material*));
-	void Render(GameObject*, shared_ptr<Mesh>);
+	void Render(GameObject*, std::shared_ptr<Mesh>);
 };

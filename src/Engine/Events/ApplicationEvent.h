@@ -9,7 +9,7 @@ class WindowCloseEvent : public EventBase
 public:
 	WindowCloseEvent() {}
 	EVENT_CLASS_TYPE(WindowClose)
-	EVENT_CLASS_CATEGORY(EventCategoryApplication)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 };
 
 /// <summary>
@@ -18,10 +18,10 @@ public:
 class WindowResizeEvent : public EventBase
 {
 public:
-	WindowResizeEvent(unsigned int width,unsigned int heigth)
-		:mWidth(width),mHeight(heigth) 
+	WindowResizeEvent(unsigned int width, unsigned int heigth)
+		:mWidth(width), mHeight(heigth)
 	{}
-	
+
 	inline unsigned int GetWidth() const { return mWidth; }
 	inline unsigned int GetHeight() const { return mHeight; }
 
@@ -31,10 +31,8 @@ public:
 	}
 
 	EVENT_CLASS_TYPE(WindowResize)
-	EVENT_CLASS_CATEGORY(EventCategoryApplication)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 private:
 	unsigned int mWidth;
 	unsigned int mHeight;
 };
-
-

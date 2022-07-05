@@ -1,15 +1,15 @@
 #pragma once
-#include "TillPch.h"
-#include "EventBase.h"
 #include "Window.h"
 #include "LayerStack.h"
-#include "KeyEvent.h"
-#include "MouseEvent.h"
+#include "Singleton.h"
+#include "TLCore.h"
 #include "ApplicationEvent.h"
-#include "Singleton .h"
-#include "ImguiLayer.h"
+#include <memory>
 
-class Application:public Singleton<Application>
+class ImguiLayer;
+class Layer;
+
+class Application :public Singleton<Application>
 {
 public:
 	std::unique_ptr<Window> mWindows;
@@ -32,4 +32,3 @@ private:
 	bool OnWindowsClose(WindowCloseEvent& e);
 	ImguiLayer* guiLayer;
 };
-

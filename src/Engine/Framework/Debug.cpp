@@ -2,6 +2,7 @@
 #include "spdlog/sinks/stdout_color_sinks.h"
 #include "spdlog/sinks/ostream_sink.h "
 #include "spdlog/sinks/rotating_file_sink.h"
+#include <sstream>
 
 std::shared_ptr<spdlog::logger> Debug::engineLog = spdlog::stdout_color_mt("Till Engine");
 std::shared_ptr<spdlog::logger> Debug::appLog = spdlog::stdout_color_mt("App");;
