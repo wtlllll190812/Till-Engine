@@ -20,22 +20,22 @@ GameLoop::~GameLoop()
 {
 }
 
-void GameLoop::SetAwakeCallback(void (*f)())
+void GameLoop::SetAwakeCallback(std::function<void()> f)
 {
 	Awake = f;
 }
 
-void GameLoop::SetUpdateCallback(void (*f)())
+void GameLoop::SetUpdateCallback(std::function<void()> f)
 {
 	Update = f;
 }
 
-void GameLoop::SetFixedUpdateCallback(void (*f)())
+void GameLoop::SetFixedUpdateCallback(std::function<void()> f)
 {
 	FixedUpdate = f;
 }
 
-void GameLoop::SetLateUpdateCallback(void (*f)())
+void GameLoop::SetLateUpdateCallback(std::function<void()> f)
 {
 	LateUpdate = f;
 }

@@ -29,7 +29,7 @@ void Material::Render(GameObject* object, shared_ptr<Mesh> m)
 	glBindVertexArray(0);
 }
 
-void Material::SetRenderCallback(void (*f)(GameObject*, Shader*, Material*))
+void Material::SetRenderCallback(std::function<void(GameObject*, Shader*, Material*)> f)
 {
 	RenderCallback = f;
 }

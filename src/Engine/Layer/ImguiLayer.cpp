@@ -23,22 +23,7 @@ ImguiLayer::~ImguiLayer()
 
 void ImguiLayer::OnAttack()
 {
-	IMGUI_CHECKVERSION();
-	ImGui::CreateContext();
-	ImGuiIO& io = ImGui::GetIO(); (void)io;
-
-	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-	io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
-	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;       // Enable Keyboard Controls
-
-	ImGuiStyle& style = ImGui::GetStyle();
-	if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
-	{
-		style.WindowRounding = 0.0f;
-		style.Colors[ImGuiCol_WindowBg].w = 1.0f;
-	}
-	ImGui_ImplGlfw_InitForOpenGL(static_cast<GLFWwindow*>(Application::instance().mWindows->GetWindow()), true);
-	ImGui_ImplOpenGL3_Init("#version 410");
+	ImGuiInit();
 }
 
 void ImguiLayer::OnDetach()
@@ -48,38 +33,19 @@ void ImguiLayer::OnDetach()
 	ImGui::DestroyContext();
 }
 
-inline void ImguiLayer::OnUpdate()
+void ImguiLayer::OnUpdate()
 {
-	ImGuiIO& io = ImGui::GetIO();
-	io.DisplaySize = ImVec2(Application::instance().mWindows->GetWidth(), Application::instance().mWindows->GetHeight());
-
-	float time = (float)glfwGetTime();
-	io.DeltaTime = mTime > 0.0f ? (time - mTime) : (1.0f / 60.0f);
-	mTime = time;
-
-	ImGui_ImplOpenGL3_NewFrame();
-	ImGui_ImplGlfw_NewFrame();
-	ImGui::NewFrame();
+	RenderStart();
 
 	//ImGui::ShowDemoWindow();
 	for (std::shared_ptr<GuiWindow> i : uiWindows)
 	{
 		i->Render();
 	}
-
-	ImGui::Render();
-	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
-	if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
-	{
-		GLFWwindow* backup_current_context = glfwGetCurrentContext();
-		ImGui::UpdatePlatformWindows();
-		ImGui::RenderPlatformWindowsDefault();
-		glfwMakeContextCurrent(backup_current_context);
-	}
+	RenderEnd();
 }
 
-inline void ImguiLayer::OnEvent(EventBase& event)
+void ImguiLayer::OnEvent(EventBase& event)
 {
 	EventDispatcher dispatcher(event);
 	dispatcher.Dispatch<MouseButtonPressedEvent>(BIND_EVENT_FN(ImguiLayer::OnMouseButtonPressedEvent));
@@ -165,4 +131,58 @@ bool ImguiLayer::OnWindowResizeEvent(WindowResizeEvent& e)
 	io.DisplayFramebufferScale = ImVec2(1.0f, 1.0f);
 	glViewport(0, 0, e.GetWidth(), e.GetHeight());
 	return false;
+}
+
+void ImguiLayer::RenderStart()
+{
+	ImGuiIO& io = ImGui::GetIO();
+	io.DisplaySize = ImVec2(Application::instance().mWindows->GetWidth(), Application::instance().mWindows->GetHeight());
+
+	float time = (float)glfwGetTime();
+	io.DeltaTime = mTime > 0.0f ? (time - mTime) : (1.0f / 60.0f);
+	mTime = time;
+
+	ImGui_ImplOpenGL3_NewFrame();
+	ImGui_ImplGlfw_NewFrame();
+	ImGui::NewFrame();
+}
+
+void ImguiLayer::RenderEnd()
+{
+	ImGui::Render();
+	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+	ImGuiIO& io = ImGui::GetIO();
+
+	if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
+	{
+		GLFWwindow* backup_current_context = glfwGetCurrentContext();
+		ImGui::UpdatePlatformWindows();
+		ImGui::RenderPlatformWindowsDefault();
+		glfwMakeContextCurrent(backup_current_context);
+	}
+}
+
+void ImguiLayer::ImGuiInit()
+{
+	static bool isInited = false;
+	if (!isInited)
+	{
+		IMGUI_CHECKVERSION();
+		ImGui::CreateContext();
+		ImGuiIO& io = ImGui::GetIO(); (void)io;
+
+		io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+		io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;       // Enable Keyboard Controls
+
+		ImGuiStyle& style = ImGui::GetStyle();
+		if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
+		{
+			style.WindowRounding = 0.0f;
+			style.Colors[ImGuiCol_WindowBg].w = 1.0f;
+		}
+		ImGui_ImplGlfw_InitForOpenGL(static_cast<GLFWwindow*>(Application::instance().mWindows->GetWindow()), true);
+		ImGui_ImplOpenGL3_Init("#version 410");
+		isInited = true;
+	}
 }

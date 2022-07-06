@@ -15,9 +15,15 @@ public:
 	~ImguiLayer();
 	void OnAttack()override;
 	void OnDetach()override;
-	void OnUpdate()override;
 	void OnEvent(EventBase& event)override;
 	void RegisterGuiWindow(std::shared_ptr<GuiWindow>);
+	virtual void OnUpdate()override;
+
+protected:
+	void RenderStart();
+	void RenderEnd();
+	static void ImGuiInit();
+
 private:
 	bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& e);
 	bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e);
@@ -27,7 +33,8 @@ private:
 	bool OnKeyReleasedEvent(KeyReleasedEvent& e);
 	bool OnKeyTypedEvent(KeyPressedEvent& e);
 	bool OnWindowResizeEvent(WindowResizeEvent& e);
-private:
+
+protected:
 	std::vector<std::shared_ptr<GuiWindow>> uiWindows;
 	float mTime = 0;
 };

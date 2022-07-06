@@ -4,6 +4,7 @@
 #include "Reflection.h"
 #include "Transform.h"
 #include "Debug.h"
+#include "Transform.h"
 
 REFLECTION(GameObject);
 
@@ -11,6 +12,10 @@ GameObject::GameObject()
 {
 	name = "GameObject";
 	guid = GetHash();
+	transform = new Transform();
+	components.push_back(transform);
+	transform->gameobject = this;
+	transform->Awake();
 }
 
 GameObject::GameObject(TiXmlNode* xml, Scene* s)

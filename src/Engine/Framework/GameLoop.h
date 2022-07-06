@@ -1,5 +1,5 @@
 #pragma once
-#include <ctime>
+#include<functional>
 
 class GameLoop
 {
@@ -11,22 +11,22 @@ public:
 	/// <summary>
 	/// 设置回调
 	/// </summary>
-	void SetAwakeCallback(void (*Awake)());
+	void SetAwakeCallback(std::function<void()>);
 
 	/// <summary>
 	/// 设置回调
 	/// </summary>
-	void SetUpdateCallback(void (*Update)());
+	void SetUpdateCallback(std::function<void()> );
 
 	/// <summary>
 	/// 设置回调
 	/// </summary>
-	void SetFixedUpdateCallback(void (*FixedUpdate)());
+	void SetFixedUpdateCallback(std::function<void()>);
 
 	/// <summary>
 	/// 设置回调
 	/// </summary>
-	void SetLateUpdateCallback(void (*LateUpdate)());
+	void SetLateUpdateCallback(std::function<void()>);
 
 	/// <summary>
 	/// 开始游戏循环
@@ -38,19 +38,19 @@ private:
 	/// <summary>
 	/// 初始化回调
 	/// </summary>
-	void (*Awake)();
+	std::function<void()> Awake;
 	/// <summary>
 	/// update回调
 	/// </summary>
-	void (*Update)();
+	std::function<void()> Update;
 	/// <summary>
 	/// fixedupdate回调
 	/// </summary>
-	void (*FixedUpdate)();
+	std::function<void()> FixedUpdate;
 	/// <summary>
 	/// lateUpdate回调
 	/// </summary>
-	void (*LateUpdate)();
+	std::function<void()> LateUpdate;
 	// void (*OnEnabled)();
 	// void (*OnDisabled)();
 

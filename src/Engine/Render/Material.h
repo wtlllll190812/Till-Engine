@@ -2,6 +2,7 @@
 #include "Mesh.h"
 #include "TLEngineCG.h"
 #include <memory>
+#include <functional>
 
 class GameObject;
 class Shader;
@@ -18,12 +19,12 @@ public:
 	/// <summary>
 	/// 渲染时回调
 	/// </summary>
-	void (*RenderCallback)(GameObject*, Shader*, Material*);
+	std::function<void(GameObject*, Shader*, Material*)> RenderCallback;
 
 	Material(const char*, const char*);
 	Material();
 	~Material();
 
-	void SetRenderCallback(void (*f)(GameObject*, Shader*, Material*));
+	void SetRenderCallback(std::function<void(GameObject*, Shader*, Material*)> f);
 	void Render(GameObject*, std::shared_ptr<Mesh>);
 };
