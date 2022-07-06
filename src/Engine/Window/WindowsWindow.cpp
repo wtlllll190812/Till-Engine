@@ -1,7 +1,12 @@
 #include "WindowsWindow.h"
+#define GLFW_INCLUDE_NONE
+#include <GLFW/glfw3.h>
+#include <GL/glew.h>
+
 #include "KeyEvent.h"
 #include "MouseEvent.h"
 #include "ApplicationEvent.h"
+
 #include "RenderSystem.h"
 #include "Texture.h"
 #include "Application.h"
@@ -48,6 +53,17 @@ void WindowsWindow::OnRender()
 void WindowsWindow::OnRenderEnd()
 {
 	glfwSwapBuffers(mWindow);
+}
+
+void WindowsWindow::SetFrameBuffer(int index)
+{
+	if (index == -1)
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	else
+	{
+		currentBuffer = framebuffer[index];
+		glBindFramebuffer(GL_FRAMEBUFFER, framebuffer[index]->GetFBO());
+	}
 }
 
 void WindowsWindow::SetVSync(bool enabled)

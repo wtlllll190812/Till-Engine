@@ -1,7 +1,5 @@
 #pragma once
-#define GLFW_INCLUDE_NONE
-#include <GLFW/glfw3.h>
-#include <GL/glew.h>
+
 #include "Window.h"
 #include <vector>
 #include "FrameBuffer.h"
@@ -9,6 +7,8 @@
 /// <summary>
 /// tillwindow在windows平台下的实现
 /// </summary>
+
+class GLFWwindow;
 class WindowsWindow :public Window
 {
 public:
@@ -27,17 +27,8 @@ public:
 	inline FrameBuffer* GetFrameBuffer(int index = 0)override { return framebuffer[index]; }
 
 	inline void AddFrameBuffer() override { framebuffer.push_back(new FrameBuffer()); }
-	inline void SetFrameBuffer(int index = 0)override 
-	{
-		if(index==-1)
-			glBindFramebuffer(GL_FRAMEBUFFER,  0 ); 
-		else
-		{
-			currentBuffer = framebuffer[index];
-			glBindFramebuffer(GL_FRAMEBUFFER, framebuffer[index]->GetFBO());
-		}
-	}
 
+	void SetFrameBuffer(int index = 0)override;
 	void SetVSync(bool enabled) override;
 	bool IsVSync() const override;
 private:
