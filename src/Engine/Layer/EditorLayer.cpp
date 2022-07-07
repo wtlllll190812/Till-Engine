@@ -19,6 +19,9 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 	currentScene = s;
 	editorCamera = shared_ptr<GameObject>(new GameObject());
 	editorCamera->AddComponent(new Camera());
+	Transform* tr = s->camera->gameobject->transform;
+	editorCamera->transform->position = tr->position;
+	editorCamera->transform->position = tr->rotation;
 
 	auto Docking = shared_ptr<GuiWindow>(new GuiWindow([]()
 		{
@@ -172,24 +175,17 @@ void EditorLayer::OnUpdate()
 	{
 		i->Render();
 	}
-	if (Input::GetKeyDown(GLFW_KEY_W))
-		editorCamera->transform->Translate(0.1f);
-	if (Input::GetKeyDown(GLFW_KEY_S))
-		editorCamera->transform->Translate(-0.1f);
-	if (Input::GetKeyDown(GLFW_KEY_A))
-		editorCamera->transform->Translate(editorCamera->transform->GetRight(), -0.1f);
-	if (Input::GetKeyDown(GLFW_KEY_D))
-		editorCamera->transform->Translate(editorCamera->transform->GetRight(), 0.1f);
-	if (currentObj != nullptr)
+
+	if (Input::GetMouseButton(GLFW_MOUSE_BUTTON_2))
 	{
-		if (Input::GetKeyDown(GLFW_KEY_RIGHT))
-			currentObj->transform->rotation.z += 0.05f;
-		if (Input::GetKeyDown(GLFW_KEY_LEFT))
-			currentObj->transform->rotation.z -= 0.05f;
-		if (Input::GetKeyDown(GLFW_KEY_UP))
-			currentObj->transform->rotation.x += 0.05f;
-		if (Input::GetKeyDown(GLFW_KEY_DOWN))
-			currentObj->transform->rotation.x -= 0.05f;
+		static glm::vec2 lastPos = Input::MousePos();
+		glm::vec2 dir = Input::MousePos() - lastPos;
+		editorCamera->transform->Translate(editorCamera->transform->GetFront(), 0.05f);
+		lastPos = dir;
+	}
+	if (Input::GetMouseButton(GLFW_MOUSE_BUTTON_1))
+	{
+		editorCamera->transform->rotation.z += 0.05f;
 	}
 	RenderEnd();
 }
@@ -201,4 +197,20 @@ void EditorLayer::SetScene(Scene* s)
 Camera* EditorLayer::GetEditorCamera()
 {
 	return editorCamera->GetComponent<Camera>();
+}
+
+bool EditorLayer::OnMouseMovedEvent(MouseMovedEvent& e)
+{
+	return false;
+}
+
+bool EditorLayer::OnMouseScrolledEvent(MouseScrolledEvent& e)
+{
+	ImGuiIO& io = ImGui::GetIO();
+	io.MouseWheelH += e.GetXOffset();
+	io.MouseWheel += e.GetYOffset();
+
+	editorCamera->transform->Translate(-editorCamera->transform->GetFront(), e.GetYOffset());
+
+	return false;
 }

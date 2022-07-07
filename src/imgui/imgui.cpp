@@ -1413,8 +1413,8 @@ void ImGuiIO::AddMouseButtonEvent(int mouse_button, bool down)
     ImGuiInputEvent e;
     e.Type = ImGuiInputEventType_MouseButton;
     e.Source = ImGuiInputSource_Mouse;
-    e.MouseButton.Button = mouse_button;
-    e.MouseButton.Down = down;
+    e.GetMouseButton.Button = mouse_button;
+    e.GetMouseButton.Down = down;
     g.InputEventsQueue.push_back(e);
 }
 
@@ -8500,14 +8500,14 @@ void ImGui::UpdateInputEvents(bool trickle_fast_inputs)
         }
         else if (e->Type == ImGuiInputEventType_MouseButton)
         {
-            const ImGuiMouseButton button = e->MouseButton.Button;
+            const ImGuiMouseButton button = e->GetMouseButton.Button;
             IM_ASSERT(button >= 0 && button < ImGuiMouseButton_COUNT);
-            if (io.MouseDown[button] != e->MouseButton.Down)
+            if (io.MouseDown[button] != e->GetMouseButton.Down)
             {
                 // Trickling Rule: Stop processing queued events if we got multiple action on the same button
                 if (trickle_fast_inputs && ((mouse_button_changed & (1 << button)) || mouse_wheeled))
                     break;
-                io.MouseDown[button] = e->MouseButton.Down;
+                io.MouseDown[button] = e->GetMouseButton.Down;
                 mouse_button_changed |= (1 << button);
             }
         }

@@ -25,14 +25,14 @@ protected:
 	static void ImGuiInit();
 
 private:
-	bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& e);
-	bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e);
-	bool OnMouseMovedEvent(MouseMovedEvent& e);
-	bool OnMouseScrolledEvent(MouseScrolledEvent& e);
-	bool OnKeyPressedEvent(KeyPressedEvent& e);
-	bool OnKeyReleasedEvent(KeyReleasedEvent& e);
-	bool OnKeyTypedEvent(KeyPressedEvent& e);
-	bool OnWindowResizeEvent(WindowResizeEvent& e);
+	virtual bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& e);
+	virtual bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e);
+	virtual bool OnMouseMovedEvent(MouseMovedEvent& e);
+	virtual bool OnMouseScrolledEvent(MouseScrolledEvent& e);
+	virtual bool OnKeyPressedEvent(KeyPressedEvent& e);
+	virtual bool OnKeyReleasedEvent(KeyReleasedEvent& e);
+	virtual bool OnKeyTypedEvent(KeyPressedEvent& e);
+	virtual bool OnWindowResizeEvent(WindowResizeEvent& e);
 
 protected:
 	std::vector<std::shared_ptr<GuiWindow>> uiWindows;

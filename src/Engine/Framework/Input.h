@@ -7,8 +7,13 @@ public:
 	static bool GetKeyDown(const int key);
 	static bool GetKeyUp(const int key);
 	static bool GetKey(const int key);
-	static bool MouseButtonDown(const int key);
-	static bool MouseButtonUp(const int key);
-	static bool MouseButton(const int key);
+	static bool GetMouseButtonDown(const int key);
+	static bool GetMouseButtonUp(const int key);
+	static bool GetMouseButton(const int key);
+	static void Update();
+	static void Init();
 	static glm::vec2 MousePos();
+private:
+	static int keyBuf[512];
+	static int mouseBuf[8];
 };

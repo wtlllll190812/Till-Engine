@@ -129,7 +129,7 @@ void WindowsWindow::Init(const WindowProps& props)
 
 void WindowsWindow::ShutDown()
 {
-	glfwDestroyWindow(mWindow);
+	glfwTerminate();
 }
 
 void WindowsWindow::SetCallback()

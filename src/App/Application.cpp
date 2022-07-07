@@ -9,7 +9,7 @@ using namespace std;
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 #include <GL/glew.h>
-
+#include "Input.h"
 //临时
 #include "GameObject.h"
 #include "Material.h"
@@ -51,6 +51,7 @@ void Application::Init()
 {
 	mWindows->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
 	PushOverlay(editorLayer);
+	Input::Init();
 }
 
 void Application::Run()
@@ -89,9 +90,9 @@ void Application::Run()
 			glDrawArrays(GL_TRIANGLES, 0, 36);
 		});
 	
-	
 	mainLoop->SetUpdateCallback([this]()
 		{
+			Input::Update();
 			mWindows->OnRender();
 			for (auto layer : *mLayerStack)
 			{

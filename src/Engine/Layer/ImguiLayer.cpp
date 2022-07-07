@@ -82,7 +82,6 @@ bool ImguiLayer::OnMouseMovedEvent(MouseMovedEvent& e)
 {
 	ImGuiIO& io = ImGui::GetIO();
 	io.MousePos = ImVec2(e.GetX(), e.GetY());
-
 	return false;
 }
 
@@ -91,7 +90,6 @@ bool ImguiLayer::OnMouseScrolledEvent(MouseScrolledEvent& e)
 	ImGuiIO& io = ImGui::GetIO();
 	io.MouseWheelH += e.GetXOffset();
 	io.MouseWheel += e.GetYOffset();
-
 	return false;
 }
 
