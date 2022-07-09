@@ -21,7 +21,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 	editorCamera->AddComponent(new Camera());
 	Transform* tr = s->camera->gameobject->transform;
 	editorCamera->transform->position = tr->position;
-	editorCamera->transform->position = tr->rotation;
+	editorCamera->transform->rotation = tr->rotation;
 
 	auto Docking = shared_ptr<GuiWindow>(new GuiWindow([]()
 		{
@@ -170,22 +170,31 @@ void EditorLayer::OnUpdate()
 {
 	RenderStart();
 
+
+	static glm::vec2 lastPos = Input::MousePos();
+
 	//ImGui::ShowDemoWindow();
 	for (std::shared_ptr<GuiWindow> i : uiWindows)
 	{
 		i->Render();
 	}
 
+	if (Input::GetMouseButtonDown(GLFW_MOUSE_BUTTON_2))
+	{
+		lastPos = Input::MousePos();
+	}
 	if (Input::GetMouseButton(GLFW_MOUSE_BUTTON_2))
 	{
-		static glm::vec2 lastPos = Input::MousePos();
 		glm::vec2 dir = Input::MousePos() - lastPos;
-		editorCamera->transform->Translate(editorCamera->transform->GetFront(), 0.05f);
-		lastPos = dir;
+		editorCamera->transform->rotation.x -= dir.x/10;
+		editorCamera->transform->rotation.z += dir.y/10;
+		lastPos = Input::MousePos();
 	}
+
 	if (Input::GetMouseButton(GLFW_MOUSE_BUTTON_1))
 	{
-		editorCamera->transform->rotation.z += 0.05f;
+		//editorCamera->transform->rotation.z += 0.05f;
+		//editorCamera->transform->Translate(editorCamera->transform->GetFront(), 0.05f);
 	}
 	RenderEnd();
 }
@@ -210,7 +219,7 @@ bool EditorLayer::OnMouseScrolledEvent(MouseScrolledEvent& e)
 	io.MouseWheelH += e.GetXOffset();
 	io.MouseWheel += e.GetYOffset();
 
-	editorCamera->transform->Translate(-editorCamera->transform->GetFront(), e.GetYOffset());
+	editorCamera->transform->Translate(editorCamera->transform->GetFront(), e.GetYOffset());
 
 	return false;
 }
