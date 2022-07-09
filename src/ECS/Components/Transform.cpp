@@ -53,7 +53,7 @@ void Transform::Translate(glm::vec3 direct, float dis)
 	position += dis * direct;
 }
 
-glm::mat4 Transform::GetModel()
+glm::mat4 Transform::GetModelMatrix()
 {
 	glm::mat4 model(1.0f);
 	model = glm::translate(model, position);

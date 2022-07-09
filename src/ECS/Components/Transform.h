@@ -56,7 +56,7 @@ public:
 	/// 获取model矩阵
 	/// </summary>
 	/// <returns></returns>
-	glm::mat4 GetModel();
+	glm::mat4 GetModelMatrix();
 
 	/// <summary>
 	/// 序列化为xml

@@ -1,7 +1,6 @@
 #include"Light.h"
 #include "TLEngineCG.h"
 
-REFLECTION(Light);
 
 Light::Light(float _intensity, glm::vec3 _color)
 {
@@ -21,23 +20,6 @@ Light::~Light()
 		if (*i == this)
 			TLEngineCG::lights.erase(i);
 	}
-}
-
-TLxml* Light::Serialize()
-{
-	auto xml = new TLxml(GetName());
-	xml->pRoot->SetAttribute("guid", std::to_string(guid));
-	xml->pRoot->SetAttribute("intensity", std::to_string(intensity));
-	xml->AddChild(TLxml::Serialize(color, "color")->pRoot);
-	return xml;
-}
-
-void Light::Instantiate(TiXmlNode* xml)
-{
-	auto element = xml->ToElement();
-	guid = std::stoi(element->Attribute("guid"));
-	intensity = std::stof(element->Attribute("intensity"));
-	color = TLxml::DeSerialize(xml->FirstChild());
 }
 
 void Light::Awake()

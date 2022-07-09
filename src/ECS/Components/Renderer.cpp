@@ -22,7 +22,6 @@ Renderer::~Renderer()
 void Renderer::Render()
 {
 	material->Render(gameobject, mesh);
-	//RenderSystem::instance().RegisterComponent(this);
 }
 
 void Renderer::Awake()

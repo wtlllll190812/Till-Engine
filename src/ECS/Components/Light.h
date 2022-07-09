@@ -11,10 +11,10 @@ public:
 	~Light();
 
 	COMPONENTNAME(Light)
-		/// <summary>
-		/// 光的强度
-		/// </summary>
-		float intensity;
+	/// <summary>
+	/// 光的强度
+	/// </summary>
+	float intensity;
 
 	/// <summary>
 	/// 光的颜色
@@ -22,17 +22,12 @@ public:
 	glm::vec3 color;
 
 	/// <summary>
-	/// 序列化
-	/// </summary>
-	virtual TLxml* Serialize() override;
-
-	/// <summary>
-	/// 通过xml实例化
-	/// </summary>
-	virtual void Instantiate(TiXmlNode*) override;
-
-	/// <summary>
 	/// 刚添加时
 	/// </summary>
 	virtual void Awake() override;
+
+	/// <summary>
+	/// 获取光的衰减值
+	/// </summary>
+	virtual float GetAtten(glm::vec3 objPos)=0;
 };

@@ -10,6 +10,8 @@ using namespace std;
 #include <GLFW/glfw3.h>
 #include <GL/glew.h>
 #include "Input.h"
+#include <cmath>
+#include "TLTime.h"
 //临时
 #include "GameObject.h"
 #include "Material.h"
@@ -21,6 +23,8 @@ using namespace std;
 #include "TLEngineCG.h"
 #include "Shader.h"
 #include <glm/gtc/type_ptr.hpp>
+#include "Texture.h"
+#include "imgui.h"
 
 Application::Application()
 {
@@ -59,24 +63,36 @@ void Application::Run()
 	Init();
 	auto cameraObject = currentScene->Find("camera");
 	auto object = currentScene->Find("object");
-	//auto camera = cameraObject->GetComponent<Camera>();
-
+	Camera* camera = editorLayer->GetEditorCamera();
 	shared_ptr<Material> mat = object->GetComponent<Renderer>()->material;
-	mat->SetRenderCallback([cameraObject,object,this](GameObject* gameobject, Shader* shader, Material* mat)
+	Light* light = TLEngineCG::lights[0];
+
+	mat->shader->Use();
+	Texture tex(IMAGE_PATH"container.png");
+	Texture specTex(IMAGE_PATH"container_specular.png");
+	glUniform1i(glGetUniformLocation(mat->shader->Program, "diffuseMap"), 0);
+	glUniform1i(glGetUniformLocation(mat->shader->Program, "specularMap"), 1);
+
+	mat->SetRenderCallback([& cameraObject,object,camera,light,this,tex, specTex](GameObject* gameobject, Shader* shader, Material* mat)
 		{
+			glActiveTexture(GL_TEXTURE0);
+			glBindTexture(GL_TEXTURE_2D, tex.texture); 
+			glActiveTexture(GL_TEXTURE1);
+			glBindTexture(GL_TEXTURE_2D, specTex.texture);			
+
+
 			glEnable(GL_DEPTH_TEST);
-			Camera* camera = editorLayer->GetEditorCamera();//gameobject->owner->camera;
+			//gameobject->owner->camera;
 			mat->renderQueueIndex = (int)RendererQueue::Background;
-			glm::vec3 viewPos = cameraObject->transform->position;
+			glm::vec3 viewPos = camera->gameobject->transform->position;
 
 			glm::mat4 view = camera->GetViewMatrix();
 			glm::mat4 projection = camera->GetProjMatrix();
-			glm::mat4 model = object->transform->GetModel();
+			glm::mat4 model = object->transform->GetModelMatrix();
 
-			Light* light = TLEngineCG::lights[0];
-			glm::vec3 lightPos = light->gameobject->GetComponent<Transform>()->position;
+			glm::vec3 lightPos = light->gameobject->transform->position;
 			glm::vec3 lightColor = light->color;
-			glm::vec3 objectColor(1.0f, 0.5f, 0.31f);
+			glm::vec3 objectColor(1.0f, 1.0f, 1.0f);
 
 			SetUniformMat4(view, shader);
 			SetUniformMat4(projection, shader);
@@ -89,15 +105,17 @@ void Application::Run()
 
 			glDrawArrays(GL_TRIANGLES, 0, 36);
 		});
-	
-	mainLoop->SetUpdateCallback([this]()
+	mainLoop->SetUpdateCallback([& object,this]()
 		{
 			Input::Update();
 			mWindows->OnRender();
+
 			for (auto layer : *mLayerStack)
 			{
 				layer->OnUpdate();
 			}
+			object->transform->rotation.y = std::cos(TLTime::GetTime());
+			object->transform->rotation.x = std::sin(TLTime::GetTime());
 			mWindows->OnRenderEnd();
 		});
 	Debug::GetAppLogger()->info("start loop");
