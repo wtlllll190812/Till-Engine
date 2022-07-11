@@ -46,4 +46,7 @@ public:
 	virtual void Instantiate(TiXmlNode*) override;
 
 	bool operator>(const Renderer& r);
+
+private:
+	std::string modelPath;
 };

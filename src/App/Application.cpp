@@ -27,7 +27,6 @@ using namespace std;
 #include "imgui.h"
 
 
-#include "AssetImporter.h"
 Application::Application()
 {
 	Debug::Init();
@@ -70,13 +69,6 @@ void Application::Run()
 	shared_ptr<Material> mat = object->GetComponent<Renderer>()->material;
 	Light *light = TLEngineCG::lights[0];
 
-	auto meshs = AssetImporter::LoadMeshs(MODEL_PATH"nanosuit/nanosuit.obj");
-	for (auto &m : meshs)
-	{
-		Renderer* r = new Renderer();
-		r->mesh = m;
-		object->AddComponent(r);
-	}
 
 	mat->shader->Use();
 	Texture tex(IMAGE_PATH"container.png");
