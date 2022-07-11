@@ -1,32 +1,36 @@
 #pragma once
 #include <vector>
 #include <glm/glm.hpp>
-#include <vector>
-
-#include "Texture.h"
+#include <string>
 
 struct Vertex {
+	// position
 	glm::vec3 Position;
+	// normal
 	glm::vec3 Normal;
+	// texCoords
 	glm::vec2 TexCoords;
+	// tangent
+	glm::vec3 Tangent;
+	// bitangent
+	glm::vec3 Bitangent;
 };
+
 class Mesh
 {
 public:
-	unsigned int VAO; //顶点数组对象
-	unsigned int VBO; //顶点缓冲对象
-	unsigned int EBO; //顶点缓冲对象
-
+	unsigned int VAO; 
 	std::vector<Vertex> vertices;
 	std::vector<unsigned int> indices;
-	std::vector<Texture> textures;
-	// GLuint EBO;
 
-	Mesh(int, std::vector<int>, float[], int);
-	Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures);
-	Mesh();
+public:
+	Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices);
 	~Mesh();
-
+	void Render();
+	unsigned int GetSize() { return static_cast<unsigned int>(indices.size()); }
 private:
-	void Init(int, std::vector<int>, float[], int);
+	unsigned int VBO; //顶点缓冲对象
+	unsigned int EBO; 
+private:
+	void Init();
 };

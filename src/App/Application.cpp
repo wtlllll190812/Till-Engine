@@ -26,10 +26,8 @@ using namespace std;
 #include "Texture.h"
 #include "imgui.h"
 
-#include <assimp/Importer.hpp>
-#include <assimp/scene.h>
-#include <assimp/postprocess.h>
 
+#include "AssetImporter.h"
 Application::Application()
 {
 	Debug::Init();
@@ -65,13 +63,20 @@ void Application::Init()
 void Application::Run()
 {
 	Init();
-	//const aiScene* scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs);
 
 	auto cameraObject = currentScene->Find("camera");
 	auto object = currentScene->Find("object");
 	Camera *camera = editorLayer->GetEditorCamera();
 	shared_ptr<Material> mat = object->GetComponent<Renderer>()->material;
 	Light *light = TLEngineCG::lights[0];
+
+	auto meshs = AssetImporter::LoadMeshs(MODEL_PATH"nanosuit/nanosuit.obj");
+	for (auto &m : meshs)
+	{
+		Renderer* r = new Renderer();
+		r->mesh = m;
+		object->AddComponent(r);
+	}
 
 	mat->shader->Use();
 	Texture tex(IMAGE_PATH"container.png");
@@ -109,9 +114,8 @@ void Application::Run()
 			SetUniformVec3(objectColor, shader);
 			SetUniformVec3(lightColor, shader);
 			SetUniformVec3(viewPos, shader);
-			SetUniformVec3(spotLightDir, shader);
-
-			glDrawArrays(GL_TRIANGLES, 0, 36); });
+			SetUniformVec3(spotLightDir, shader);		
+		});
 	mainLoop->SetUpdateCallback([&object, this]()
 								{
 			Input::Update();
@@ -121,8 +125,8 @@ void Application::Run()
 			{
 				layer->OnUpdate();
 			}
-			object->transform->rotation.y = std::cos(TLTime::GetTime());
-			object->transform->rotation.x = std::sin(TLTime::GetTime());
+			/*object->transform->rotation.y = std::cos(TLTime::GetTime());
+			object->transform->rotation.x = std::sin(TLTime::GetTime());*/
 			mWindows->OnRenderEnd(); });
 	Debug::GetAppLogger()->info("start loop");
 	mainLoop->StartLoop();

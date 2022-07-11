@@ -19,7 +19,7 @@ void main()
     vec3 lightDir = normalize(lightPos - FragPos);
 
     //float t = dot(normalize(spotLightDir),lightDir);
-    float intensity = 1.0f / (1.0f + 0.09f * dis + 0.032 * dis * dis);
+    float intensity = 1.0f;// / (1.0f + 0.09f * dis + 0.032 * dis * dis);
 
     vec3 ObjectColor = vec3(texture(diffuseMap,TexCoords));
 

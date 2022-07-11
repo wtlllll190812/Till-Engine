@@ -27,6 +27,7 @@ void Material::Render(GameObject* object, shared_ptr<Mesh> m)
 	shader->Use();
 	if (RenderCallback != nullptr)
 		RenderCallback(object, shader, this);
+	glDrawElements(GL_TRIANGLES, m->GetSize(), GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
 }
 

@@ -9,17 +9,17 @@ class Renderer : public Component
 {
 public:
 	COMPONENTNAME(Renderer)
-		/// <summary>
-		/// 模型Mesh
-		/// </summary>
-		std::shared_ptr<Mesh> mesh;
+
+	/// <summary>
+	/// 模型Mesh
+	/// </summary>
+	std::shared_ptr<Mesh> mesh;
 
 	/// <summary>
 	/// 材质
 	/// </summary>
 	std::shared_ptr<Material> material;
 
-	Renderer(Mesh*, Material*);
 	Renderer();
 	~Renderer();
 

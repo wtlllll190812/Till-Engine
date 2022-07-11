@@ -1,18 +1,14 @@
 #include "Renderer.h"
 #include "RenderSystem.h"
-
+#include "AssetImporter.h"
+#include "TLCore.h"
 REFLECTION(Renderer);
 
-Renderer::Renderer(Mesh* m, Material* mater)
-{
-	mesh = std::shared_ptr<Mesh>(m);
-	material = std::shared_ptr<Material>(mater);
-}
 
 Renderer::Renderer()
 {
-	mesh = std::shared_ptr<Mesh>(new Mesh());
 	material = std::shared_ptr<Material>(new Material());
+	mesh = AssetImporter::LoadMeshs(MODEL_PATH"nanosuit/nanosuit.obj")[0];
 }
 
 Renderer::~Renderer()

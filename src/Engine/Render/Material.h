@@ -21,6 +21,7 @@ public:
 	/// </summary>
 	std::function<void(GameObject*, Shader*, Material*)> RenderCallback;
 
+public:
 	Material(const char*, const char*);
 	Material();
 	~Material();
