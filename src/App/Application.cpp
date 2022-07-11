@@ -65,7 +65,8 @@ void Application::Init()
 void Application::Run()
 {
 	Init();
-	Assimp::Importer importer;
+	//const aiScene* scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs);
+
 	auto cameraObject = currentScene->Find("camera");
 	auto object = currentScene->Find("object");
 	Camera *camera = editorLayer->GetEditorCamera();
@@ -73,8 +74,8 @@ void Application::Run()
 	Light *light = TLEngineCG::lights[0];
 
 	mat->shader->Use();
-	Texture tex(IMAGE_PATH "container.png");
-	Texture specTex(IMAGE_PATH "container_specular.png");
+	Texture tex(IMAGE_PATH"container.png");
+	Texture specTex(IMAGE_PATH"container_specular.png");
 	glUniform1i(glGetUniformLocation(mat->shader->Program, "diffuseMap"), 0);
 	glUniform1i(glGetUniformLocation(mat->shader->Program, "specularMap"), 1);
 

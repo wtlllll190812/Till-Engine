@@ -2,6 +2,7 @@
 #include"GameObject.h"
 #include "Shader.h"
 #include <GL/glew.h> // 包含glew来获取所有的必须OpenGL头文件
+#include "TLCore.h"
 
 Material::Material(const char* vertexPath, const char* fragmentPath)
 {
@@ -12,7 +13,7 @@ Material::Material(const char* vertexPath, const char* fragmentPath)
 Material::Material()
 {
 	RenderCallback = nullptr;
-	shader = new Shader("../shaders/vert.shader", "../shaders/frag.shader");
+	shader = new Shader(SHADER_PATH"default.vert", SHADER_PATH"default.frag");
 }
 
 Material::~Material()

@@ -5,4 +5,5 @@
 #define BIT(x) (1 << x)
 #define DATA_PATH "../data/"
 #define SHADER_PATH "../shaders/"
-#define IMAGE_PATH "../resource/"
+#define IMAGE_PATH "../resource/images/"
+#define MODEL_PATH "../resource/models/"
