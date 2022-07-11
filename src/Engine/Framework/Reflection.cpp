@@ -8,8 +8,8 @@ Reflection::Reflection()
 void* Reflection::getClassByName(std::string className)
 {
 	std::map<std::string, PTRCreateObject>::const_iterator iter;
-	iter = m_classMap.find(className);
-	if (iter == m_classMap.end())
+	iter = classMap.find(className);
+	if (iter == classMap.end())
 	{
 		return NULL;
 	}
@@ -22,5 +22,6 @@ void* Reflection::getClassByName(std::string className)
 //将给定的类名称字符串和对应的创建类对象的函数保存到map中
 void Reflection::registClass(std::string name, PTRCreateObject method)
 {
-	m_classMap.insert(std::pair<std::string, PTRCreateObject>(name, method));
+	members.push_back(name.c_str());
+	classMap.insert(std::pair<std::string, PTRCreateObject>(name, method));
 }

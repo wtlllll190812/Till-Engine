@@ -11,6 +11,7 @@
 #include <string>
 using namespace std;
 
+#include "Reflection.h"
 #include "Transform.h"
 #include "Input.h"
 #include "GLFW/glfw3.h"
@@ -57,7 +58,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 		"sdsd"));
 	RegisterGuiWindow(Docking);
 
-	auto Editor = shared_ptr<GuiWindow>(new GuiWindow([]()
+	auto Editor = shared_ptr<GuiWindow>(new GuiWindow([this]()
 		{
 			if (ImGui::BeginMainMenuBar())
 			{
@@ -67,8 +68,9 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				}
 				if (ImGui::BeginMenu("Edit"))
 				{
-					if (ImGui::MenuItem("TODO")) {
-						//do something
+					if (ImGui::MenuItem("Save")) {
+						currentScene->Save();
+						Debug::GetEngineLogger()->info("Save Current Scene");
 					}
 					ImGui::EndMenu();
 				}
@@ -89,7 +91,8 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 					{
 						for (auto i : currentScene->gameobjects)
 						{
-							if (ImGui::Button(i->name.c_str())) {
+							if (ImGui::Button(i->name.c_str())) 
+							{
 								currentObj = i;
 							}
 						}
@@ -115,7 +118,25 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 							i->GuiDisPlay();
 						}
 					}
+					static bool listOpen = false;
+					if (listOpen||ImGui::Button("Add Component", ImVec2(160, 30)))
+					{
+						listOpen = true;
+						for (auto& s : Reflection::instance().GetAllMember())
+						{
+							if (ImGui::Button(s.c_str(), ImVec2(140, 20)))
+							{
+								currentObj->AddComponent((Component*)Reflection::instance().getClassByName(s));
+								listOpen = false;
+							}
+							/*const char* items[] = { "Apple", "Banana", "Cherry", "Kiwi", "Mango", "Orange", "Pineapple", "Strawberry", "Watermelon" };
+							static int item_current = 1;
+							ImGui::ListBox("listbox", &item_current, items, IM_ARRAYSIZE(items), 4);*/
+						}
+					}
 				}
+				
+				
 				ImGui::End();
 			} },
 		"Inspector"));
@@ -135,7 +156,9 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				}
 
 				for (auto& s : logBuffer)
+				{
 					ImGui::BulletText(s.c_str());
+				}
 
 				ImGui::End();
 			} },

@@ -2,6 +2,7 @@
 #include "Singleton.h"
 #include <map>
 #include <string>
+#include <vector>
 typedef void* (*PTRCreateObject)(void);
 
 //反射注册宏
@@ -17,13 +18,16 @@ typedef void* (*PTRCreateObject)(void);
 class Reflection : public Singleton<Reflection>
 {
 private:
-	std::map<std::string, PTRCreateObject> m_classMap;
+	std::map<std::string, PTRCreateObject> classMap;
+	std::vector<std::string> members;
 
 public:
 	Reflection();
 	void* getClassByName(std::string className);
+	const std::vector<std::string>& GetAllMember() const{ return members; };
 	void registClass(std::string name, PTRCreateObject method);
 };
+
 
 //注册动作类
 class RegisterAction
