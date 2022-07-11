@@ -2,6 +2,7 @@
 #include "RenderSystem.h"
 #include "AssetImporter.h"
 #include "TLCore.h"
+#include "imgui.h"
 REFLECTION(Renderer);
 
 
@@ -39,6 +40,12 @@ void Renderer::Instantiate(TiXmlNode* xml)
 	modelPath = element->Attribute("modelPath");
 
 	mesh = AssetImporter::LoadMeshs(MODEL_PATH+modelPath)[0];
+}
+
+void Renderer::GuiDisPlay()
+{
+	ImGui::Text("Material");
+	ImGui::Text("Mesh");
 }
 
 bool Renderer::operator>(const Renderer& r)

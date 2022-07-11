@@ -1,7 +1,7 @@
 #include "PointLight.h"
 #include "GameObject.h"
 #include "Transform.h"
-
+#include "imgui.h"
 
 REFLECTION(PointLight);
 
@@ -30,6 +30,15 @@ TLxml* PointLight::Serialize()
 	xml->pRoot->SetAttribute("intensity", std::to_string(intensity));
 	xml->AddChild(TLxml::Serialize(color, "color")->pRoot);
 	return xml;
+}
+
+void PointLight::GuiDisPlay()
+{
+	float col[3] = { color.x,color.y,color.z };
+	ImGui::DragFloat("Intensity", &intensity);
+	ImGui::DragFloat("Range", &range);
+	ImGui::ColorEdit3("Color", col);
+	color = glm::vec3(col[0], col[1], col[2]);
 }
 
 void PointLight::Instantiate(TiXmlNode* xml)

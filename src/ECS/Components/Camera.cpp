@@ -4,6 +4,8 @@
 #include "Application.h"
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include "imgui.h"
+
 REFLECTION(Camera);
 
 Camera::Camera()
@@ -42,4 +44,9 @@ void Camera::Instantiate(TiXmlNode* xml)
 	auto element = xml->ToElement();
 	fov = std::stof(element->Attribute("fov"));
 	guid = std::stoi(element->Attribute("guid"));
+}
+
+void Camera::GuiDisPlay()
+{
+	ImGui::DragFloat("FOV",&fov);
 }

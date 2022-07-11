@@ -38,4 +38,6 @@ private:
 	/// </summary>
 	/// <param name=""></param>
 	virtual void Instantiate(TiXmlNode*) override;
+
+	virtual void GuiDisPlay() override;
 };

@@ -15,6 +15,8 @@ public:
 	
 	inline float GetCutoffInside()const { return cutoffInside; }
 	inline float GetCutoffOutside()const { return cutoffOutside; }
+	virtual void GuiDisPlay() override;
+
 public:
 	float cutoffInside;
 	float cutoffOutside;

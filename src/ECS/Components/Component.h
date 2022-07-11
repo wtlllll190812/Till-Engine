@@ -40,6 +40,11 @@ public:
 	virtual TLxml* Serialize() = 0;
 
 	/// <summary>
+	/// 显示到Gui
+	/// </summary>
+	virtual void GuiDisPlay() {};
+
+	/// <summary>
 	/// 获取哈希值
 	/// </summary>
 	int GetHash()

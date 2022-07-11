@@ -112,6 +112,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 					{
 						if (ImGui::CollapsingHeader(i->GetName().c_str()))
 						{
+							i->GuiDisPlay();
 						}
 					}
 				}

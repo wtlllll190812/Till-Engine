@@ -1,5 +1,6 @@
 #include "Transform.h"
 #include <glm/gtc/matrix_transform.hpp>
+#include "imgui.h"
 
 const glm::vec3 Transform::forward = glm::vec3(0.0f, 0.0f, -1.0f);
 const glm::vec3 Transform::back = glm::vec3(0.0f, 0.0f, 1.0f);
@@ -84,4 +85,18 @@ void Transform::Instantiate(TiXmlNode* xml)
 	rotation = TLxml::DeSerialize(element);
 	element = element->NextSiblingElement();
 	scale = TLxml::DeSerialize(element);
+}
+
+void Transform::GuiDisPlay()
+{
+	float pos[3] = { position.x,position.y,position.z };
+	float rot[3] = { rotation.x,rotation.y,rotation.z };
+	float sca[3] = { scale.x,scale.y,scale.z };
+
+	ImGui::DragFloat3("Position", pos);
+	position = glm::vec3(pos[0], pos[1], pos[2]);
+	ImGui::DragFloat3("Rotation", rot);
+	rotation = glm::vec3(rot[0], rot[1], rot[2]);
+	ImGui::DragFloat3("Scale", sca);
+	scale = glm::vec3(sca[0], sca[1], sca[2]);
 }

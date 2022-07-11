@@ -7,10 +7,11 @@ class Transform : public Component
 {
 public:
 	COMPONENTNAME(Transform)
-		/// <summary>
-		/// 向各个方向的单位向量
-		/// </summary>
-		static const glm::vec3 forward;
+
+	/// <summary>
+	/// 向各个方向的单位向量
+	/// </summary>
+	static const glm::vec3 forward;
 	static const glm::vec3 back;
 	static const glm::vec3 left;
 	static const glm::vec3 right;
@@ -69,4 +70,7 @@ public:
 	/// </summary>
 	/// <param name=""></param>
 	virtual void Instantiate(TiXmlNode*) override;
+
+
+	virtual void GuiDisPlay() override;
 };
