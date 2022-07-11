@@ -6,7 +6,7 @@ option(GROUP_BY_EXPLORER ON)    # 文件分组是否和资源管理器对应
 set(VCPKG_ROOT "D:/TL/Vscode/vcpkg-master/scripts/buildsystems/vcpkg.cmake")
 set(CMAKE_TOOLCHAIN_FILE ${VCPKG_ROOT})
 
-#设定文件名
+#设定工程名
 set(Proj_Name Till_Engine)
 
 PROJECT (${Proj_Name})
@@ -15,6 +15,7 @@ PROJECT (${Proj_Name})
 file(COPY ${PROJECT_SOURCE_DIR}/resource/ DESTINATION  resource FOLLOW_SYMLINK_CHAIN)
 file(COPY ${PROJECT_SOURCE_DIR}/shaders/ DESTINATION shaders FOLLOW_SYMLINK_CHAIN)
 file(COPY ${PROJECT_SOURCE_DIR}/data/ DESTINATION data FOLLOW_SYMLINK_CHAIN)
+file(COPY src/imgui.ini DESTINATION src)
 
 #源文件和头文件
 file(GLOB_RECURSE SRC_DIR_LIST "src/*.cpp" "src/*.h")
@@ -34,9 +35,13 @@ INCLUDE_DIRECTORIES(src src/ECS src/Engine src/App)
 INCLUDE_DIRECTORIES( src/ECS/Components  src/ECS/System )
 INCLUDE_DIRECTORIES(src/Engine/Events src/Engine/Framework src/Engine/Render src/Engine/Layer)
 INCLUDE_DIRECTORIES(src/Engine/Window src/Engine/Window/GuiWindow)
+INCLUDE_DIRECTORIES(third_party third_party/imgui)
 
-INCLUDE_DIRECTORIES(src/imgui)
-INCLUDE_DIRECTORIES(third_party)
+#指定库搜索目录
+LINK_DIRECTORIES(third_party/libs)
+LINK_LIBRARIES(assimp-vc143-mt)
 
 #子文件夹src
 ADD_SUBDIRECTORY(src)
+ADD_SUBDIRECTORY(third_party)
+
