@@ -29,5 +29,5 @@ public:
 	/// <summary>
 	/// 获取光的衰减值
 	/// </summary>
-	virtual float GetAtten(glm::vec3 objPos)=0;
+	virtual float GetAtten(glm::vec3 objPos)const =0;
 };

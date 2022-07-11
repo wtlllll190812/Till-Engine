@@ -17,7 +17,7 @@ PointLight::~PointLight()
 {
 }
 
-float PointLight::GetAtten(glm::vec3 objPos)
+float PointLight::GetAtten(glm::vec3 objPos)const
 {
 	float dis = glm::distance(gameobject->transform->position,objPos);
 	return intensity / (constant + linear * dis + quadratic * dis * dis);

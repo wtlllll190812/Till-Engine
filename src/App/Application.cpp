@@ -26,6 +26,10 @@ using namespace std;
 #include "Texture.h"
 #include "imgui.h"
 
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
+
 Application::Application()
 {
 	Debug::Init();
@@ -41,12 +45,12 @@ Application::~Application()
 	delete editorLayer;
 }
 
-inline void Application::PushLayer(Layer* layer)
+inline void Application::PushLayer(Layer *layer)
 {
 	mLayerStack->PushLayer(layer);
 }
 
-inline void Application::PushOverlay(Layer* layer)
+inline void Application::PushOverlay(Layer *layer)
 {
 	mLayerStack->PushOverlay(layer);
 }
@@ -61,20 +65,21 @@ void Application::Init()
 void Application::Run()
 {
 	Init();
+	Assimp::Importer importer;
 	auto cameraObject = currentScene->Find("camera");
 	auto object = currentScene->Find("object");
-	Camera* camera = editorLayer->GetEditorCamera();
+	Camera *camera = editorLayer->GetEditorCamera();
 	shared_ptr<Material> mat = object->GetComponent<Renderer>()->material;
-	Light* light = TLEngineCG::lights[0];
+	Light *light = TLEngineCG::lights[0];
 
 	mat->shader->Use();
-	Texture tex(IMAGE_PATH"container.png");
-	Texture specTex(IMAGE_PATH"container_specular.png");
+	Texture tex(IMAGE_PATH "container.png");
+	Texture specTex(IMAGE_PATH "container_specular.png");
 	glUniform1i(glGetUniformLocation(mat->shader->Program, "diffuseMap"), 0);
 	glUniform1i(glGetUniformLocation(mat->shader->Program, "specularMap"), 1);
 
-	mat->SetRenderCallback([& cameraObject,object,camera,light,this,tex, specTex](GameObject* gameobject, Shader* shader, Material* mat)
-		{
+	mat->SetRenderCallback([&cameraObject, object, camera, light, this, tex, specTex](GameObject *gameobject, Shader *shader, Material *mat)
+						   {
 			glActiveTexture(GL_TEXTURE0);
 			glBindTexture(GL_TEXTURE_2D, tex.texture); 
 			glActiveTexture(GL_TEXTURE1);
@@ -85,6 +90,7 @@ void Application::Run()
 			//gameobject->owner->camera;
 			mat->renderQueueIndex = (int)RendererQueue::Background;
 			glm::vec3 viewPos = camera->gameobject->transform->position;
+			glm::vec3 spotLightDir = light->gameobject->transform->GetFront();
 
 			glm::mat4 view = camera->GetViewMatrix();
 			glm::mat4 projection = camera->GetProjMatrix();
@@ -102,11 +108,11 @@ void Application::Run()
 			SetUniformVec3(objectColor, shader);
 			SetUniformVec3(lightColor, shader);
 			SetUniformVec3(viewPos, shader);
+			SetUniformVec3(spotLightDir, shader);
 
-			glDrawArrays(GL_TRIANGLES, 0, 36);
-		});
-	mainLoop->SetUpdateCallback([& object,this]()
-		{
+			glDrawArrays(GL_TRIANGLES, 0, 36); });
+	mainLoop->SetUpdateCallback([&object, this]()
+								{
 			Input::Update();
 			mWindows->OnRender();
 
@@ -116,13 +122,12 @@ void Application::Run()
 			}
 			object->transform->rotation.y = std::cos(TLTime::GetTime());
 			object->transform->rotation.x = std::sin(TLTime::GetTime());
-			mWindows->OnRenderEnd();
-		});
+			mWindows->OnRenderEnd(); });
 	Debug::GetAppLogger()->info("start loop");
 	mainLoop->StartLoop();
 }
 
-void Application::OnEvent(EventBase& e)
+void Application::OnEvent(EventBase &e)
 {
 	EventDispatcher dispatcher(e);
 	dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::OnWindowsClose));
@@ -135,7 +140,7 @@ void Application::OnEvent(EventBase& e)
 	}
 }
 
-bool Application::OnWindowsClose(WindowCloseEvent& e)
+bool Application::OnWindowsClose(WindowCloseEvent &e)
 {
 	mRunning = false;
 	return true;

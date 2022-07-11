@@ -9,7 +9,7 @@ public:
 
 	PointLight();
 	~PointLight();
-	virtual float GetAtten(glm::vec3 objPos) override;
+	virtual float GetAtten(glm::vec3 objPos)const override;
 	virtual void Instantiate(TiXmlNode*) override;
 	virtual TLxml* Serialize() override;
 private:
