@@ -84,7 +84,6 @@ void Application::Run()
 			glBindTexture(GL_TEXTURE_2D, specTex.texture);			
 
 
-			glEnable(GL_DEPTH_TEST);
 			//gameobject->owner->camera;
 			mat->renderQueueIndex = (int)RendererQueue::Background;
 			glm::vec3 viewPos = camera->gameobject->transform->position;

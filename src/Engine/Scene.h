@@ -29,6 +29,8 @@ public:
 	/// <param name="">对象名称</param>
 	std::shared_ptr<GameObject> Find(std::string);
 
+	void AddGameObject(std::shared_ptr<GameObject> gObj) { gameobjects.push_back(gObj); }
+public:
 	/// <summary>
 	/// 场景中物体的集合
 	/// </summary>

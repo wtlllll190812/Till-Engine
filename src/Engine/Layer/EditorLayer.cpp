@@ -72,6 +72,10 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 						currentScene->Save();
 						Debug::GetEngineLogger()->info("Save Current Scene");
 					}
+					if (ImGui::MenuItem("Empty GameObject")) {
+						currentScene->AddGameObject(shared_ptr<GameObject>(new GameObject()));
+						Debug::GetEngineLogger()->info("Add Empty GameObject");
+					}
 					ImGui::EndMenu();
 				}
 				ImGui::EndMainMenuBar();
