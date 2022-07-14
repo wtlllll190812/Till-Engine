@@ -43,8 +43,10 @@ public:
 	ReflectionManager();
 	void* getClassByName(std::string className);
 	const std::vector<std::string>& GetAllMember() const { return members; }
-	const std::multimap<ReflectionTag, std::string>::const_iterator GetAllMemberByTag(ReflectionTag tag) const{ return memberByTag.find(tag); }
 	void registClass(std::string name, Reflection* method);
+	
+	const std::multimap<ReflectionTag, std::string>::iterator GetMemberByTag(ReflectionTag tag) { return memberByTag.find(tag); }
+	const int GetMemberCountByTag(ReflectionTag tag)const { return memberByTag.count(tag); }
 };
 
 

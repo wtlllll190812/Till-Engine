@@ -34,7 +34,7 @@ find_package(glm CONFIG REQUIRED)
 INCLUDE_DIRECTORIES(src src/ECS src/Engine src/App)
 INCLUDE_DIRECTORIES(src/ECS/Components  src/ECS/System )
 INCLUDE_DIRECTORIES(src/Engine/Events src/Engine/Framework src/Engine/Render src/Engine/Layer)
-INCLUDE_DIRECTORIES(src/Engine/Window src/Engine/Window/GuiWindow)
+INCLUDE_DIRECTORIES(src/Engine/Window src/Engine/Window/GuiWindow src/Engine/Render/Materials)
 INCLUDE_DIRECTORIES(third_party third_party/imgui)
 
 #指定库搜索目录

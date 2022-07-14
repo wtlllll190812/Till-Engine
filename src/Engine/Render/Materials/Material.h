@@ -1,11 +1,11 @@
 #pragma once
-#include "Mesh.h"
 #include "TLEngineCG.h"
 #include <memory>
 #include <functional>
 
 class GameObject;
 class Shader;
+class Mesh;
 class Material
 {
 public:
@@ -16,16 +16,10 @@ public:
 	/// </summary>
 	int renderQueueIndex = (int)RendererQueue::Geometry;
 
-	/// <summary>
-	/// 渲染时回调
-	/// </summary>
-	std::function<void(GameObject*, Shader*, Material*)> RenderCallback;
-
 public:
-	Material(const char*, const char*);
 	Material();
 	~Material();
 
-	void SetRenderCallback(std::function<void(GameObject*, Shader*, Material*)> f);
 	void Render(GameObject*, std::shared_ptr<Mesh>);
+	virtual void RenderCallback(GameObject*, Shader*, Material*)=0;
 };

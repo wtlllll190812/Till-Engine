@@ -115,6 +115,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				ImGui::Begin("Inspector", &Inspector);
 				if (currentObj != nullptr)
 				{
+					//show Components
 					for (auto i : currentObj->components)
 					{
 						if (ImGui::CollapsingHeader(i->GetName().c_str()))
@@ -123,19 +124,20 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 						}
 					}
 					static bool listOpen = false;
+
+					//add component button
 					if (listOpen||ImGui::Button("Add Component", ImVec2(160, 30)))
 					{
 						listOpen = true;
-						for (auto& s : ReflectionManager::instance().GetAllMember())
+						auto start = ReflectionManager::instance().GetMemberByTag(ReflectionTag::Component);
+						int count= ReflectionManager::instance().GetMemberCountByTag(ReflectionTag::Component);
+						for (int k = 0; k != count; k++, start++)
 						{
-							if (ImGui::Button(s.c_str(), ImVec2(140, 20)))
+							if (ImGui::Button(start->second.c_str(), ImVec2(140, 20)))
 							{
-								currentObj->AddComponent((Component*)ReflectionManager::instance().getClassByName(s));
+								currentObj->AddComponent((Component*)ReflectionManager::instance().getClassByName(start->second));
 								listOpen = false;
 							}
-							/*const char* items[] = { "Apple", "Banana", "Cherry", "Kiwi", "Mango", "Orange", "Pineapple", "Strawberry", "Watermelon" };
-							static int item_current = 1;
-							ImGui::ListBox("listbox", &item_current, items, IM_ARRAYSIZE(items), 4);*/
 						}
 					}
 				}
