@@ -1,12 +1,11 @@
 #include"GameObject.h"
 #include "Scene.h"
 #include "Camera.h"
-#include "Reflection.h"
 #include "Transform.h"
 #include "Debug.h"
-#include "Transform.h"
+#include "Reflection.h"
 
-REFLECTION(GameObject);
+REFLECTION(GameObject, GameObject);
 
 GameObject::GameObject()
 {
@@ -30,7 +29,7 @@ GameObject::GameObject(TiXmlNode* xml, Scene* s)
 		Debug::GetEngineLogger()->info("Scene Load {0}", element->Value());
 		if (strcmp(element->Value(), "Transform") != 0)
 		{
-			auto comp = (Component*)Reflection::instance().getClassByName(element->Value());
+			auto comp = (Component*)ReflectionManager::instance().getClassByName(element->Value());
 			comp->Instantiate(element);
 			if (strcmp(element->Value(), "Camera") == 0)
 			{

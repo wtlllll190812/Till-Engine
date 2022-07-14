@@ -1,13 +1,13 @@
 #include "Reflection.h"
 
-Reflection::Reflection()
+ReflectionManager::ReflectionManager()
 {
 }
 
 //通过类名称字符串获取类的实例
-void* Reflection::getClassByName(std::string className)
+void* ReflectionManager::getClassByName(std::string className)
 {
-	std::map<std::string, PTRCreateObject>::const_iterator iter;
+	std::map<std::string, Reflection*>::const_iterator iter;
 	iter = classMap.find(className);
 	if (iter == classMap.end())
 	{
@@ -15,13 +15,14 @@ void* Reflection::getClassByName(std::string className)
 	}
 	else
 	{
-		return iter->second();
+		return iter->second->createF();
 	}
 }
 
 //将给定的类名称字符串和对应的创建类对象的函数保存到map中
-void Reflection::registClass(std::string name, PTRCreateObject method)
+void ReflectionManager::registClass(std::string name, Reflection* method)
 {
 	members.push_back(name.c_str());
-	classMap.insert(std::pair<std::string, PTRCreateObject>(name, method));
+	memberByTag.insert(std::pair<ReflectionTag,std::string>(method->tag,method->className));
+	classMap.insert(std::pair<std::string, Reflection*>(name, method));
 }

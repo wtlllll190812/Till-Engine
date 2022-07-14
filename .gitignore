@@ -8,8 +8,7 @@ doc/
 
 
 CMakeFiles/
-/cmake_install.cmake
-src/cmake_install.cmake
+*.cmake
 /CmakeCache.txt
 vcpkg_installed/
 

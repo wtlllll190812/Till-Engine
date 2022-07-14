@@ -3,8 +3,9 @@
 #include "AssetImporter.h"
 #include "TLCore.h"
 #include "imgui.h"
-REFLECTION(Renderer);
+#include "Reflection.h"
 
+REFLECTION(Renderer, Component);
 
 Renderer::Renderer()
 {

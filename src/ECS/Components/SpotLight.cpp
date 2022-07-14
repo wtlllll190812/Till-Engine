@@ -1,8 +1,9 @@
 #include "SpotLight.h"
 #include "Reflection.h"
 #include "imgui.h"
-REFLECTION(SpotLight);
+#include "Reflection.h"
 
+REFLECTION(SpotLight, Component);
 SpotLight::SpotLight()
 {
 }

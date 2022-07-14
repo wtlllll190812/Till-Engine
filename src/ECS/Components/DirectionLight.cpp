@@ -1,7 +1,8 @@
 #include "DirectionLight.h"
 #include "imgui.h"
+#include "Reflection.h"
 
-REFLECTION(DirectionLight);
+REFLECTION(DirectionLight, Component);
 DirectionLight::DirectionLight()
 {
 }

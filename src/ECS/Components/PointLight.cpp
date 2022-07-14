@@ -2,8 +2,9 @@
 #include "GameObject.h"
 #include "Transform.h"
 #include "imgui.h"
+#include "Reflection.h"
 
-REFLECTION(PointLight);
+REFLECTION(PointLight, Component);
 
 float PointLight::constant = 1;
 float PointLight::linear = 0.09;

@@ -1,5 +1,4 @@
 #pragma once
-#include "Reflection.h"
 #include "TLxml.h"
 
 class GameObject;

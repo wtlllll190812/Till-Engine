@@ -126,11 +126,11 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 					if (listOpen||ImGui::Button("Add Component", ImVec2(160, 30)))
 					{
 						listOpen = true;
-						for (auto& s : Reflection::instance().GetAllMember())
+						for (auto& s : ReflectionManager::instance().GetAllMember())
 						{
 							if (ImGui::Button(s.c_str(), ImVec2(140, 20)))
 							{
-								currentObj->AddComponent((Component*)Reflection::instance().getClassByName(s));
+								currentObj->AddComponent((Component*)ReflectionManager::instance().getClassByName(s));
 								listOpen = false;
 							}
 							/*const char* items[] = { "Apple", "Banana", "Cherry", "Kiwi", "Mango", "Orange", "Pineapple", "Strawberry", "Watermelon" };
