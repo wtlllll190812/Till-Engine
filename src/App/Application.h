@@ -27,8 +27,8 @@ public:
 	void Init();
 	void Run();
 	void OnEvent(EventBase& e);
-private:
 	EditorLayer* editorLayer;
+private:
 	std::shared_ptr<LayerStack> mLayerStack;
 	std::shared_ptr<GameLoop> mainLoop;
 	std::shared_ptr<Scene> currentScene;

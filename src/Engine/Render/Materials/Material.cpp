@@ -8,6 +8,7 @@
 
 Material::Material()
 {
+	inited = false;
 }
 
 Material::~Material()
@@ -16,10 +17,14 @@ Material::~Material()
 
 void Material::Render(GameObject* object, shared_ptr<Mesh> mesh)
 {
+	if (!inited)
+	{
+		BeforeRender(object, mesh);
+		inited = true;
+	}
 	glBindVertexArray(mesh->VAO);
 	shader->Use();
-	if (RenderCallback != nullptr)
-		RenderCallback(object, shader, this);
+	OnRender(object, mesh);
 	glDrawElements(GL_TRIANGLES, mesh->GetSize(), GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
 }

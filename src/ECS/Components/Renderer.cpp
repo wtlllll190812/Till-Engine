@@ -4,12 +4,12 @@
 #include "TLCore.h"
 #include "imgui.h"
 #include "Reflection.h"
-
+#include "DefaultMaterial.h"
 REFLECTION(Renderer, Component);
 
 Renderer::Renderer()
 {
-	material = std::shared_ptr<Material>(new Material());
+	material = std::shared_ptr<Material>(new DefaultMaterial());
 }
 
 Renderer::~Renderer()

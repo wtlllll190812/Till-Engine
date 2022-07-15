@@ -21,5 +21,8 @@ public:
 	~Material();
 
 	void Render(GameObject*, std::shared_ptr<Mesh>);
-	virtual void RenderCallback(GameObject*, Shader*, Material*)=0;
+	virtual void OnRender(GameObject* gObj,std::shared_ptr<Mesh> mesh) = 0;
+	virtual void BeforeRender(GameObject*, std::shared_ptr<Mesh> mesh) = 0;
+private:
+	bool inited;
 };
