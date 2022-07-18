@@ -17,6 +17,7 @@ class Application :public Singleton<Application>
 public:
 	bool mRunning = true;
 	std::unique_ptr<Window> mWindows;
+	EditorLayer* editorLayer;
 public:
 	Application();
 	~Application();
@@ -27,7 +28,7 @@ public:
 	void Init();
 	void Run();
 	void OnEvent(EventBase& e);
-	EditorLayer* editorLayer;
+
 private:
 	std::shared_ptr<LayerStack> mLayerStack;
 	std::shared_ptr<GameLoop> mainLoop;

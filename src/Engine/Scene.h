@@ -34,7 +34,7 @@ public:
 	/// <summary>
 	/// 场景中物体的集合
 	/// </summary>
-	std::vector<std::shared_ptr<GameObject>> gameobjects; //临时,之后改为私有
+	std::vector<std::shared_ptr<GameObject>> gameobjects;
 private:
 	/// <summary>
 	/// 场景文件路径

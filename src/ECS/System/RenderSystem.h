@@ -1,9 +1,12 @@
 #pragma once
 #include "System.h"
 #include <queue>
+#include "UniformBuffer.h"
+#include <memory>
 
 class Component;
 class Renderer;
+class Camera;
 class RenderSystem : public System, public Singleton<RenderSystem>
 {
 public:
@@ -39,4 +42,10 @@ public:
 	/// 清空
 	/// </summary>
 	void Clear();
+
+	inline void SetCamera(std::shared_ptr<Camera> camera) { currentCamera = camera; };
+
+private:
+	UniformBuffer maticesUniformBuffer;
+	std::shared_ptr<Camera> currentCamera;
 };

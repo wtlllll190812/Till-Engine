@@ -15,6 +15,7 @@
 #include "Camera.h"
 #include "EditorLayer.h"
 #include "Debug.h"
+
 REFLECTION(DefaultMaterial,Material);
 
 DefaultMaterial::DefaultMaterial()
@@ -65,7 +66,9 @@ void DefaultMaterial::BeforeRender(GameObject*, std::shared_ptr<Mesh> mesh)
 	glUniform1i(glGetUniformLocation(shader->Program, "diffuseMap"), 0);
 	glUniform1i(glGetUniformLocation(shader->Program, "specularMap"), 1);
 
-	//设定Ubo
+	//设定Ubo绑定节点
 	unsigned int mat = glGetUniformBlockIndex(shader->Program, "Matrices");
+	glUniformBlockBinding(shader->Program, mat, 0);	
+	mat = glGetUniformBlockIndex(shader->Program, "Matrices");
 	glUniformBlockBinding(shader->Program, mat, 0);
 }

@@ -5,12 +5,12 @@ in vec3 FragPos;
 in vec3 Normal;  
 in vec2 TexCoords;
 
-layout(std140)uniform() LightData
+layout(std140)uniform LightData
 {
     vec3 lightPos; 
     vec3 viewPos;
     vec3 lightColor;
-}
+};
 uniform float cutoff;
 uniform vec3 spotLightDir;
 uniform sampler2D diffuseMap;

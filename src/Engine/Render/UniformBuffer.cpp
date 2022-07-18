@@ -1,0 +1,24 @@
+#include "UniformBuffer.h"
+
+
+
+UniformBuffer::UniformBuffer()
+{
+	glGenBuffers(1, &buffer);
+}
+
+UniformBuffer::~UniformBuffer()
+{
+	
+}
+
+int UniformBuffer::BufferInit(int size)
+{
+	static int bufferIndex = 0;
+	glBindBuffer(GL_UNIFORM_BUFFER, buffer);
+	glBufferData(GL_UNIFORM_BUFFER, size, NULL, GL_STATIC_DRAW);
+	glBindBuffer(GL_UNIFORM_BUFFER, 0);
+	glBindBufferRange(GL_UNIFORM_BUFFER, bufferIndex, buffer, 0, size);
+	bufferIndex++;
+	return bufferIndex;
+}

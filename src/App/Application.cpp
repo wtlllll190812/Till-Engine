@@ -21,7 +21,7 @@ using namespace std;
 #include "TLEngineCG.h"
 #include <glm/gtc/type_ptr.hpp>
 #include "imgui.h"
-
+#include "UniformBuffer.h"
 
 Application::Application()
 {
@@ -58,30 +58,11 @@ void Application::Init()
 void Application::Run()
 {
 	Init();
-
 	auto cameraObject = currentScene->Find("camera");
 	auto object = currentScene->Find("object");
-	Camera *camera = editorLayer->GetEditorCamera();
-
-	unsigned int uboExampleBlock;
-	glGenBuffers(1, &uboExampleBlock);
-	glBindBuffer(GL_UNIFORM_BUFFER, uboExampleBlock);
-	glBufferData(GL_UNIFORM_BUFFER, 2 * sizeof(glm::mat4), NULL, GL_STATIC_DRAW); 
-	glBindBuffer(GL_UNIFORM_BUFFER, 0);
-	glBindBufferRange(GL_UNIFORM_BUFFER, 0, uboExampleBlock, 0, 2 * sizeof(glm::mat4));
-	
-	glm::mat4 projection = camera->GetProjMatrix();
-	glBindBuffer(GL_UNIFORM_BUFFER, uboExampleBlock);
-	glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_ptr(projection));
-	glBindBuffer(GL_UNIFORM_BUFFER, 0);
-
-	glm::mat4 view = camera->GetViewMatrix();
-	glBindBuffer(GL_UNIFORM_BUFFER, uboExampleBlock);
-	glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), glm::value_ptr(view));
-	glBindBuffer(GL_UNIFORM_BUFFER, 0);
 
 	mainLoop->SetUpdateCallback([&object, this]()
-								{
+		{
 			Input::Update();
 			mWindows->OnRender();
 			
@@ -91,7 +72,9 @@ void Application::Run()
 			}
 			/*object->transform->rotation.y = std::cos(TLTime::GetTime());
 			object->transform->rotation.x = std::sin(TLTime::GetTime());*/
-			mWindows->OnRenderEnd(); });
+			mWindows->OnRenderEnd(); 
+		});
+
 	Debug::GetAppLogger()->info("start loop");
 	mainLoop->StartLoop();
 }

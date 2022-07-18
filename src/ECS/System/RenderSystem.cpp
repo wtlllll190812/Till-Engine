@@ -1,7 +1,9 @@
 #include"RenderSystem.h"
 #include"Renderer.h"
-typedef std::priority_queue <Renderer*, std::vector<Renderer*>> renderPriorityQueue;
 
+
+
+typedef std::priority_queue <Renderer*, std::vector<Renderer*>> renderPriorityQueue;
 renderPriorityQueue RenderSystem::renderQueue = renderPriorityQueue();
 
 RenderSystem::RenderSystem()
