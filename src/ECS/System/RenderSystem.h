@@ -47,5 +47,6 @@ public:
 
 private:
 	UniformBuffer maticesUniformBuffer;
+	UniformBuffer lightUniformBuffer;
 	std::shared_ptr<Camera> currentCamera;
 };

@@ -12,16 +12,11 @@ using namespace std;
 #include "Input.h"
 #include <cmath>
 #include "TLTime.h"
+#include "RenderSystem.h"
 //临时
-#include "GameObject.h"
-#include "Renderer.h"
 #include "Scene.h"
-#include "Camera.h"
-#include "Light.h"
-#include "TLEngineCG.h"
 #include <glm/gtc/type_ptr.hpp>
 #include "imgui.h"
-#include "UniformBuffer.h"
 
 Application::Application()
 {
@@ -51,6 +46,7 @@ inline void Application::PushOverlay(Layer *layer)
 void Application::Init()
 {
 	mWindows->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
+	RenderSystem::instance().SetCamera(shared_ptr<Camera>(editorLayer->GetEditorCamera()));
 	PushOverlay(editorLayer);
 	Input::Init();
 }
@@ -58,10 +54,8 @@ void Application::Init()
 void Application::Run()
 {
 	Init();
-	auto cameraObject = currentScene->Find("camera");
-	auto object = currentScene->Find("object");
 
-	mainLoop->SetUpdateCallback([&object, this]()
+	mainLoop->SetUpdateCallback([this]()
 		{
 			Input::Update();
 			mWindows->OnRender();

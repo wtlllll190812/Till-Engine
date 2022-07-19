@@ -8,8 +8,8 @@ in vec2 TexCoords;
 layout(std140)uniform LightData
 {
     vec3 lightPos; 
-    vec3 viewPos;
     vec3 lightColor;
+    vec3 viewPos;
 };
 uniform float cutoff;
 uniform vec3 spotLightDir;

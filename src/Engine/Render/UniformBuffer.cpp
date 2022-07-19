@@ -1,4 +1,5 @@
 #include "UniformBuffer.h"
+#include "Debug.h"
 
 
 
@@ -19,6 +20,11 @@ int UniformBuffer::BufferInit(int size)
 	glBufferData(GL_UNIFORM_BUFFER, size, NULL, GL_STATIC_DRAW);
 	glBindBuffer(GL_UNIFORM_BUFFER, 0);
 	glBindBufferRange(GL_UNIFORM_BUFFER, bufferIndex, buffer, 0, size);
-	bufferIndex++;
-	return bufferIndex;
+	return bufferIndex++;
+}
+void UniformBuffer::SetData(int size,int offset,const void* data)
+{
+	glBindBuffer(GL_UNIFORM_BUFFER, buffer);
+	glBufferSubData(GL_UNIFORM_BUFFER,offset,size, data);
+	glBindBuffer(GL_UNIFORM_BUFFER, 0);
 }

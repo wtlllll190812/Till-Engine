@@ -11,13 +11,7 @@ public:
 	int BufferInit(int size);
 	inline unsigned int GetBuffer() { return buffer; };
 	
-	template<class T>
-	void Setdata(T data,int offset) 
-	{
-		glBindBuffer(GL_UNIFORM_BUFFER, buffer);
-		glBufferSubData(GL_UNIFORM_BUFFER, sizeof(data), offset, data);
-		glBindBuffer(GL_UNIFORM_BUFFER, 0);
-	};
+	void SetData(int size, int offset, const void* data);
 private:
 	unsigned int buffer;
 };

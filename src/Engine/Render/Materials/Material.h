@@ -2,6 +2,7 @@
 #include "TLEngineCG.h"
 #include <memory>
 #include <functional>
+#include <string>
 
 class GameObject;
 class Shader;
@@ -10,7 +11,7 @@ class Material
 {
 public:
 	Shader* shader;
-
+	std::string matName;
 	/// <summary>
 	/// 渲染队列次序
 	/// </summary>
