@@ -15,6 +15,10 @@ using namespace std;
 #include "Transform.h"
 #include "Input.h"
 #include "GLFW/glfw3.h"
+#include "ImGuizmo.h"
+#include <glm/gtc/type_ptr.hpp>
+#include "Transform.h"
+
 EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 {
 	currentScene = s;
@@ -55,7 +59,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);
 			}
 			ImGui::End(); },
-		"sdsd"));
+		"DockSpace"));
 	RegisterGuiWindow(Docking);
 
 	auto Editor = shared_ptr<GuiWindow>(new GuiWindow([this]()
@@ -171,21 +175,64 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 		"Console"));
 	RegisterGuiWindow(Console);
 
-	auto SceneView = shared_ptr<GuiWindow>(new GuiWindow([]()
+	auto SceneView = shared_ptr<GuiWindow>(new GuiWindow([this]()
 		{
 			ImGui::Begin("Scene");
 			{
-				// Using a Child allow to fill all the space of the window.
-				// It also alows customization
-				ImGui::BeginChild("GameRender");
-				// Get the size of the child (i.e. the whole draw size of the windows).
-				ImVec2 wsize = ImGui::GetWindowSize();
-				// Because I use the texture from OpenGL, I need to invert the V from the UV.
-				auto fb = Application::instance().mWindows->GetFrameBuffer();
-				ImGui::Image((ImTextureID)fb->GetFBO(), wsize, ImVec2(0, 1), ImVec2(1, 0));
-				fb->Resize(wsize.x, wsize.y);
-				ImGui::EndChild();
+				//设置多视口参数
+				auto viewportMinRegion = ImGui::GetWindowContentRegionMin();
+				auto viewportMaxRegion = ImGui::GetWindowContentRegionMax();
+				auto viewportOffset = ImGui::GetWindowPos();
+				glm::vec2 m_ViewportBounds0 = { viewportMinRegion.x + viewportOffset.x, viewportMinRegion.y + viewportOffset.y };
+				glm::vec2 m_ViewportBounds1 = { viewportMaxRegion.x + viewportOffset.x, viewportMaxRegion.y + viewportOffset.y };
+				ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
+
+				//渲染场景至编辑器
+				/*auto fb = Application::instance().mWindows->GetFrameBuffer();
+				ImGui::Image((ImTextureID)fb->GetFBO(), viewportPanelSize, ImVec2(0, 1), ImVec2(1, 0));
+				fb->Resize(viewportPanelSize.x, viewportPanelSize.y);*/
+
+				//渲染gizmos
+				if (currentObj)
+				{
+					ImGuizmo::SetOrthographic(false);
+					ImGuizmo::SetDrawlist();
+
+					//设置gizmos大小
+					ImGuizmo::SetRect(m_ViewportBounds0.x, m_ViewportBounds0.y, m_ViewportBounds1.x - m_ViewportBounds0.x, m_ViewportBounds1.y - m_ViewportBounds0.y);
+
+
+					const glm::mat4& cameraProjection = GetEditorCamera()->GetProjMatrix();
+					glm::mat4 cameraView = GetEditorCamera()->GetViewMatrix();
+					glm::mat4 model = currentObj->transform->GetModelMatrix();
+
+
+
+					bool snap = Input::GetKeyDown(341);
+					float snapValue = 0.5f; // Snap to 0.5m for translation/scale
+					static int m_GizmoType = ImGuizmo::OPERATION::TRANSLATE;
+					if (m_GizmoType == ImGuizmo::OPERATION::ROTATE)
+						snapValue = 45.0f;
+
+					float snapValues[3] = { snapValue, snapValue, snapValue };
+
+					ImGuizmo::Manipulate(glm::value_ptr(cameraView), glm::value_ptr(cameraProjection),
+						(ImGuizmo::OPERATION)m_GizmoType, ImGuizmo::LOCAL, glm::value_ptr(model),
+						nullptr, snap ? snapValues : nullptr);
+
+					if (ImGuizmo::IsUsing())
+					{
+						glm::vec3 translation, rotation, scale;
+						currentObj->transform->Decompose(model);
+
+						/*glm::vec3 deltaRotation = rotation - currentObj->transform->rotation;
+						currentObj->transform->position = translation;
+						currentObj->transform->rotation += deltaRotation;
+						currentObj->transform->scale = scale;*/
+					}
+				}
 			}
+			
 			ImGui::End();
 		},
 		"SceneView"));

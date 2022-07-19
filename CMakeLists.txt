@@ -29,6 +29,7 @@ find_package(GLEW CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
 find_package(fmt CONFIG REQUIRED)
 find_package(glm CONFIG REQUIRED)
+find_package(imguizmo CONFIG REQUIRED)
 
 #包含头文件
 INCLUDE_DIRECTORIES(src src/ECS src/Engine src/App)

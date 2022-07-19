@@ -15,8 +15,6 @@ using namespace std;
 #include "RenderSystem.h"
 //临时
 #include "Scene.h"
-#include <glm/gtc/type_ptr.hpp>
-#include "imgui.h"
 
 Application::Application()
 {

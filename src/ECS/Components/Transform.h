@@ -73,4 +73,6 @@ public:
 
 
 	virtual void GuiDisPlay() override;
+
+	void Decompose(glm::mat4 newModel);
 };
