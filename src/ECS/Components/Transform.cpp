@@ -5,7 +5,7 @@
 #include <glm/gtx/euler_angles.hpp>
 #include <glm/gtx/quaternion.hpp>
 #include <imgui/imgui_internal.h>
-
+#include "Debug.h"
 
 const glm::vec3 Transform::forward = glm::vec3(0.0f, 0.0f, -1.0f);
 const glm::vec3 Transform::back = glm::vec3(0.0f, 0.0f, 1.0f);
@@ -130,13 +130,6 @@ void Transform::Translate(glm::vec3 direct, float dis)
 
 glm::mat4 Transform::GetModelMatrix()
 {
-	/*glm::mat4 model(1.0f);
-	model = glm::translate(model, position);
-	model = glm::rotate(model, rotation.x, right);
-	model = glm::rotate(model, rotation.y, up);
-	model = glm::rotate(model, rotation.z, back);
-	model = glm::scale(model, scale);
-	return model;*/
 	//平移矩阵
 	glm::mat4 translationMatrix = glm::translate(glm::identity<glm::mat4>(), position);
 	glm::mat4 rotationMatrix = glm::eulerAngleYXZ(glm::radians(rotation.y),glm::radians(rotation.x), glm::radians(rotation.z));
@@ -181,17 +174,19 @@ void Transform::GuiDisPlay()
 	scale = glm::vec3(sca[0], sca[1], sca[2]);*/
 }
 
-
 void Transform::Decompose(glm::mat4 newModel)
 {
 	glm::quat quaternion;
 	glm::vec3 skew;
 	glm::vec4 perspective;
 	glm::decompose(newModel, scale, quaternion, position, skew, perspective);
+
 	glm::mat4 rotationMatrix1 = glm::toMat4(quaternion);
 	glm::vec3 euler(0, 0, 0);
 	glm::extractEulerAngleYXZ(rotationMatrix1, euler.y, euler.x, euler.z);
-	euler.y = glm::degrees(euler.y);
-	euler.x = glm::degrees(euler.x);
-	euler.z = glm::degrees(euler.z);
+	rotation.y = glm::degrees(euler.y);
+	rotation.x = glm::degrees(euler.x);
+	rotation.z = glm::degrees(euler.z);
+	
+	Debug::GetEngineLogger()->info("x{0} y{1} z{2}", euler.x, euler.y, euler.z);
 }

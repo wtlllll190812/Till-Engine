@@ -5,15 +5,16 @@
 #include "Application.h"
 #include "Debug.h"
 
-GLFWwindow* window;
+GLFWwindow *window;
 
 int Input::keyBuf[512];
 int Input::mouseBuf[8];
 
 bool Input::GetKeyDown(const int key)
 {
-	if (keyBuf[key] == -1)keyBuf[key] = 0;
-	return keyBuf[key]==2;
+	if (keyBuf[key] == -1)
+		keyBuf[key] = 0;
+	return keyBuf[key] == 2;
 }
 
 void Input::Init()
@@ -26,7 +27,7 @@ void Input::Init()
 void Input::Update()
 {
 	if (window == nullptr)
-		window = static_cast<GLFWwindow*>(Application::instance().mWindows->GetWindow());
+		window = static_cast<GLFWwindow *>(Application::instance().mWindows->GetWindow());
 	for (int i = 0; i < 512; i++)
 	{
 		if (keyBuf[i] >= 0)
@@ -34,8 +35,10 @@ void Input::Update()
 			auto state = glfwGetKey(window, static_cast<int32_t>(i));
 			if (state == GLFW_PRESS)
 			{
-				if (keyBuf[i] == 0)keyBuf[i] = 2;
-				else keyBuf[i] = 3;
+				if (keyBuf[i] == 0)
+					keyBuf[i] = 2;
+				else
+					keyBuf[i] = 3;
 			}
 			else if (keyBuf[i] > 1)
 				keyBuf[i] = 1;
@@ -50,8 +53,10 @@ void Input::Update()
 			auto state = glfwGetMouseButton(window, static_cast<int32_t>(i));
 			if (state == GLFW_PRESS)
 			{
-				if (mouseBuf[i] == 0)mouseBuf[i] = 2;
-				else mouseBuf[i] = 3;
+				if (mouseBuf[i] == 0)
+					mouseBuf[i] = 2;
+				else
+					mouseBuf[i] = 3;
 			}
 			else if (mouseBuf[i] > 1)
 				mouseBuf[i] = 1;
@@ -63,40 +68,45 @@ void Input::Update()
 
 bool Input::GetKeyUp(const int key)
 {
-	if (keyBuf[key] == -1)keyBuf[key] = 0;
+	if (keyBuf[key] == -1)
+		keyBuf[key] = 0;
 	return keyBuf[key] == 1;
 }
 
 bool Input::GetKey(const int key)
 {
-	if (keyBuf[key] == -1)keyBuf[key] = 0;
+	if (keyBuf[key] == -1)
+		keyBuf[key] = 0;
 	return keyBuf[key] == 3;
 }
 
 bool Input::GetMouseButtonDown(const int key)
 {
-	if (mouseBuf[key] == -1)mouseBuf[key] = 0;
+	if (mouseBuf[key] == -1)
+		mouseBuf[key] = 0;
 	return mouseBuf[key] == 2;
 }
 
 bool Input::GetMouseButtonUp(const int key)
 {
-	if (mouseBuf[key] == -1)mouseBuf[key] = 0;
+	if (mouseBuf[key] == -1)
+		mouseBuf[key] = 0;
 	return mouseBuf[key] == 1;
 }
 
 bool Input::GetMouseButton(const int key)
 {
-	if (mouseBuf[key] == -1)mouseBuf[key] = 0;
+	if (mouseBuf[key] == -1)
+		mouseBuf[key] = 0;
 	return mouseBuf[key] == 3;
 }
 
 glm::vec2 Input::MousePos()
 {
 	if (window == nullptr)
-		window = static_cast<GLFWwindow*>(Application::instance().mWindows->GetWindow());
+		window = static_cast<GLFWwindow *>(Application::instance().mWindows->GetWindow());
 	double xpos, ypos;
 	glfwGetCursorPos(window, &xpos, &ypos);
 
-	return { (float)xpos, (float)ypos };
+	return {(float)xpos, (float)ypos};
 }

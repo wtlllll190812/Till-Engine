@@ -28,7 +28,32 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 	editorCamera->transform->position = tr->position;
 	editorCamera->transform->rotation = tr->rotation;
 
-	auto Docking = shared_ptr<GuiWindow>(new GuiWindow([]()
+	auto Menu = shared_ptr<GuiWindow>(new GuiWindow([this]()
+		{
+			if (ImGui::BeginMainMenuBar())
+			{
+				if (ImGui::BeginMenu("File"))
+				{
+					ImGui::EndMenu();
+				}
+				if (ImGui::BeginMenu("Edit"))
+				{
+					if (ImGui::MenuItem("Save")) {
+						currentScene->Save();
+						Debug::GetEngineLogger()->info("Save Current Scene");
+					}
+					if (ImGui::MenuItem("Empty GameObject")) {
+						currentScene->AddGameObject(shared_ptr<GameObject>(new GameObject()));
+						Debug::GetEngineLogger()->info("Add Empty GameObject");
+					}
+					ImGui::EndMenu();
+				}
+				ImGui::EndMainMenuBar();
+			} },
+		"Editor"));
+	RegisterGuiWindow(Menu);
+
+	auto DockSpace = shared_ptr<GuiWindow>(new GuiWindow([]()
 		{
 			bool p_open = true;
 			static ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None | ImGuiDockNodeFlags_PassthruCentralNode;
@@ -60,32 +85,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 			}
 			ImGui::End(); },
 		"DockSpace"));
-	RegisterGuiWindow(Docking);
-
-	auto Editor = shared_ptr<GuiWindow>(new GuiWindow([this]()
-		{
-			if (ImGui::BeginMainMenuBar())
-			{
-				if (ImGui::BeginMenu("File"))
-				{
-					ImGui::EndMenu();
-				}
-				if (ImGui::BeginMenu("Edit"))
-				{
-					if (ImGui::MenuItem("Save")) {
-						currentScene->Save();
-						Debug::GetEngineLogger()->info("Save Current Scene");
-					}
-					if (ImGui::MenuItem("Empty GameObject")) {
-						currentScene->AddGameObject(shared_ptr<GameObject>(new GameObject()));
-						Debug::GetEngineLogger()->info("Add Empty GameObject");
-					}
-					ImGui::EndMenu();
-				}
-				ImGui::EndMainMenuBar();
-			} },
-		"Editor"));
-	RegisterGuiWindow(Editor);
+	RegisterGuiWindow(DockSpace);
 
 	auto Hierarchy = shared_ptr<GuiWindow>(new GuiWindow([this]()
 		{
@@ -109,7 +109,11 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				// Right-click on blank space
 				if (ImGui::BeginPopupContextWindow(0, 1, false))
 				{
-					ImGui::Text("test");
+					if (ImGui::MenuItem("Create Empty GameObject"))
+					{
+						currentScene->AddGameObject(shared_ptr<GameObject>(new GameObject()));
+						Debug::GetEngineLogger()->info("Add Empty GameObject");
+					}
 					ImGui::EndPopup();
 				}
 				ImGui::End();
@@ -185,6 +189,23 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 		{
 			ImGui::Begin("Scene");
 			{
+				static glm::vec2 lastPos = Input::MousePos();
+				static int m_GizmoType = ImGuizmo::OPERATION::TRANSLATE;
+				static const float identityMatrix[16] =
+				{
+					1.f, 0.f, 0.f, 0.f,
+					0.f, 1.f, 0.f, 0.f,
+					0.f, 0.f, 1.f, 0.f,
+					0.f, 0.f, 0.f, 1.f
+				};
+				bool snap = Input::GetKeyDown(GLFW_KEY_LEFT_CONTROL);
+
+				
+				ImGui::Selectable("R");
+				ImGui::SameLine();
+				ImGui::Button("R");
+				ImGui::SameLine();
+				ImGui::Button("R");
 				//设置多视口参数
 				auto viewportMinRegion = ImGui::GetWindowContentRegionMin();
 				auto viewportMaxRegion = ImGui::GetWindowContentRegionMax();
@@ -193,10 +214,11 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				glm::vec2 m_ViewportBounds1 = { viewportMaxRegion.x + viewportOffset.x, viewportMaxRegion.y + viewportOffset.y };
 				ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
 
-				//渲染场景至编辑器d
+				//渲染场景至编辑器
 				auto fb = Application::instance().mWindows->GetFrameBuffer();
 				ImGui::Image((ImTextureID)fb->GetFBO(), viewportPanelSize, ImVec2(0, 1), ImVec2(1, 0));
 				fb->Resize(viewportPanelSize.x, viewportPanelSize.y);
+
 				//渲染gizmos
 				if (currentObj)
 				{
@@ -206,31 +228,11 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 					//设置gizmos大小
 					ImGuizmo::SetRect(m_ViewportBounds0.x, m_ViewportBounds0.y, viewportPanelSize.x, viewportPanelSize.y);
 
-					static const float identityMatrix[16] =
-					{ 1.f, 0.f, 0.f, 0.f,
-						0.f, 1.f, 0.f, 0.f,
-						0.f, 0.f, 1.f, 0.f,
-						0.f, 0.f, 0.f, 1.f };
-
 					const glm::mat4& cameraProjection = GetEditorCamera()->GetProjMatrix();
 					glm::mat4 cameraView = GetEditorCamera()->GetViewMatrix();
 					glm::mat4 model = currentObj->transform->GetModelMatrix();
 
-					bool snap = Input::GetKeyDown(341);
-					float snapValue = 0.5f; // Snap to 0.5m for translation/scale
-
-					static int m_GizmoType = ImGuizmo::OPERATION::TRANSLATE;
-					if (Input::GetKeyDown(GLFW_KEY_W))
-						m_GizmoType = ImGuizmo::OPERATION::TRANSLATE;
-					else if(Input::GetKeyDown(GLFW_KEY_E))
-						m_GizmoType = ImGuizmo::OPERATION::ROTATE;
-					else if (Input::GetKeyDown(GLFW_KEY_R))
-						m_GizmoType = ImGuizmo::OPERATION::SCALE; 
-					else if (Input::GetKeyDown(GLFW_KEY_T))
-						m_GizmoType = ImGuizmo::OPERATION::SCALEU; 
-					else if (Input::GetKeyDown(GLFW_KEY_Y))
-						m_GizmoType = ImGuizmo::OPERATION::UNIVERSAL;
-					
+					float snapValue = 0.5f;
 					float snapValues[3] = { snapValue, snapValue, snapValue };
 
 					ImGuizmo::Manipulate(glm::value_ptr(cameraView), glm::value_ptr(cameraProjection),
@@ -243,6 +245,38 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 						glm::vec3 translation, rotation, scale;
 						currentObj->transform->Decompose(model);
 					}
+				}
+
+				//输入处理
+				if (Input::GetKeyDown(GLFW_KEY_W))
+					m_GizmoType = ImGuizmo::OPERATION::TRANSLATE;
+				else if (Input::GetKeyDown(GLFW_KEY_E))
+					m_GizmoType = ImGuizmo::OPERATION::ROTATE;
+				else if (Input::GetKeyDown(GLFW_KEY_R))
+					m_GizmoType = ImGuizmo::OPERATION::SCALE;
+				else if (Input::GetKeyDown(GLFW_KEY_T))
+					m_GizmoType = ImGuizmo::OPERATION::SCALEU;
+				else if (Input::GetKeyDown(GLFW_KEY_Y))
+					m_GizmoType = ImGuizmo::OPERATION::UNIVERSAL;
+				if (Input::GetMouseButtonDown(GLFW_MOUSE_BUTTON_2) || Input::GetMouseButtonDown(GLFW_MOUSE_BUTTON_3))
+				{
+					lastPos = Input::MousePos();
+				}
+				
+				if (Input::GetMouseButton(GLFW_MOUSE_BUTTON_2))
+				{
+					glm::vec2 dir = Input::MousePos() - lastPos;
+					editorCamera->transform->rotation.x -= dir.x / 10;
+					editorCamera->transform->rotation.z += dir.y / 10;
+					lastPos = Input::MousePos();
+				}
+				
+				if (Input::GetMouseButton(GLFW_MOUSE_BUTTON_3))
+				{
+					glm::vec2 dir = Input::MousePos() - lastPos;
+					editorCamera->transform->Translate(editorCamera->transform->GetRight(), -dir.x / 60);
+					editorCamera->transform->Translate(editorCamera->transform->GetUp(), dir.y / 60);
+					lastPos = Input::MousePos();
 				}
 			}
 			ImGui::End();
@@ -258,31 +292,11 @@ EditorLayer::~EditorLayer()
 void EditorLayer::OnUpdate()
 {
 	RenderStart();
-	static glm::vec2 lastPos = Input::MousePos();
 
-	ImGui::ShowDemoWindow();
+	//ImGui::ShowDemoWindow();
 	for (std::shared_ptr<GuiWindow> i : uiWindows)
 	{
 		i->Render();
-	}
-
-	if (Input::GetMouseButtonDown(GLFW_MOUSE_BUTTON_2)||Input::GetMouseButtonDown(GLFW_MOUSE_BUTTON_3))
-	{
-		lastPos = Input::MousePos();
-	}
-	if (Input::GetMouseButton(GLFW_MOUSE_BUTTON_2))
-	{
-		glm::vec2 dir = Input::MousePos() - lastPos;
-		editorCamera->transform->rotation.x -= dir.x/10;
-		editorCamera->transform->rotation.z += dir.y/10;
-		lastPos = Input::MousePos();
-	}
-	if (Input::GetMouseButton(GLFW_MOUSE_BUTTON_3))
-	{
-		glm::vec2 dir = Input::MousePos() - lastPos;
-		editorCamera->transform->Translate(editorCamera->transform->GetRight(), -dir.x/60);
-		editorCamera->transform->Translate(editorCamera->transform->GetUp(),dir.y/60);
-		lastPos = Input::MousePos();
 	}
 	RenderEnd();
 }
