@@ -177,7 +177,6 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 
 	auto SceneView = shared_ptr<GuiWindow>(new GuiWindow([this]()
 		{
-			
 			ImGui::Begin("Scene");
 			{
 				//设置多视口参数
@@ -187,11 +186,11 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				glm::vec2 m_ViewportBounds0 = { viewportMinRegion.x + viewportOffset.x, viewportMinRegion.y + viewportOffset.y };
 				glm::vec2 m_ViewportBounds1 = { viewportMaxRegion.x + viewportOffset.x, viewportMaxRegion.y + viewportOffset.y };
 				ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
-				//渲染场景至编辑器
+
+				//渲染场景至编辑器d
 				auto fb = Application::instance().mWindows->GetFrameBuffer();
 				ImGui::Image((ImTextureID)fb->GetFBO(), viewportPanelSize, ImVec2(0, 1), ImVec2(1, 0));
 				fb->Resize(viewportPanelSize.x, viewportPanelSize.y);
-
 				//渲染gizmos
 				if (currentObj)
 				{
@@ -199,78 +198,44 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 					ImGuizmo::SetDrawlist();
 
 					//设置gizmos大小
-					ImGuizmo::SetRect(m_ViewportBounds0.x, m_ViewportBounds0.y, m_ViewportBounds1.x - m_ViewportBounds0.x, m_ViewportBounds1.y - m_ViewportBounds0.y);
+					ImGuizmo::SetRect(m_ViewportBounds0.x, m_ViewportBounds0.y, viewportPanelSize.x, viewportPanelSize.y);
 
 					static const float identityMatrix[16] =
 					{ 1.f, 0.f, 0.f, 0.f,
 						0.f, 1.f, 0.f, 0.f,
 						0.f, 0.f, 1.f, 0.f,
 						0.f, 0.f, 0.f, 1.f };
-					float objectMatrix[4][16] = {
-				  { 1.f, 0.f, 0.f, 0.f,
-					0.f, 1.f, 0.f, 0.f,
-					0.f, 0.f, 1.f, 0.f,
-					0.f, 0.f, 0.f, 1.f },
 
-				  { 1.f, 0.f, 0.f, 0.f,
-				  0.f, 1.f, 0.f, 0.f,
-				  0.f, 0.f, 1.f, 0.f,
-				  2.f, 0.f, 0.f, 1.f },
-
-				  { 1.f, 0.f, 0.f, 0.f,
-				  0.f, 1.f, 0.f, 0.f,
-				  0.f, 0.f, 1.f, 0.f,
-				  2.f, 0.f, 2.f, 1.f },
-
-				  { 1.f, 0.f, 0.f, 0.f,
-				  0.f, 1.f, 0.f, 0.f,
-				  0.f, 0.f, 1.f, 0.f,
-				  0.f, 0.f, 2.f, 1.f }
-					};
 					const glm::mat4& cameraProjection = GetEditorCamera()->GetProjMatrix();
 					glm::mat4 cameraView = GetEditorCamera()->GetViewMatrix();
 					glm::mat4 model = currentObj->transform->GetModelMatrix();
 
 					bool snap = Input::GetKeyDown(341);
 					float snapValue = 0.5f; // Snap to 0.5m for translation/scale
-					static int m_GizmoType = ImGuizmo::OPERATION::TRANSLATE;
-					if (m_GizmoType == ImGuizmo::OPERATION::ROTATE)
-						snapValue = 45.0f;
 
+					static int m_GizmoType = ImGuizmo::OPERATION::TRANSLATE;
+					if (Input::GetKeyDown(GLFW_KEY_W))
+						m_GizmoType = ImGuizmo::OPERATION::TRANSLATE;
+					else if(Input::GetKeyDown(GLFW_KEY_E))
+						m_GizmoType = ImGuizmo::OPERATION::ROTATE;
+					else if (Input::GetKeyDown(GLFW_KEY_R))
+						m_GizmoType = ImGuizmo::OPERATION::SCALE; 
+					else if (Input::GetKeyDown(GLFW_KEY_T))
+						m_GizmoType = ImGuizmo::OPERATION::SCALEU; 
+					else if (Input::GetKeyDown(GLFW_KEY_Y))
+						m_GizmoType = ImGuizmo::OPERATION::UNIVERSAL;
+					
 					float snapValues[3] = { snapValue, snapValue, snapValue };
 
 					ImGuizmo::Manipulate(glm::value_ptr(cameraView), glm::value_ptr(cameraProjection),
 						(ImGuizmo::OPERATION)m_GizmoType, ImGuizmo::WORLD, glm::value_ptr(model),
 						nullptr, snap ? snapValues : nullptr);
-					//ImGuizmo::ViewManipulate(glm::value_ptr(cameraView), 8, ImVec2(m_ViewportBounds0.x - 128, m_ViewportBounds0.y), ImVec2(128, 128), 0x10101010);
 					ImGuizmo::DrawGrid(glm::value_ptr(cameraView), glm::value_ptr(cameraProjection), identityMatrix, 100.f);
-					ImGuizmo::DrawCubes(glm::value_ptr(cameraView), glm::value_ptr(cameraProjection), &objectMatrix[0][0], 1);
-					
-					
-					ImGuiIO& io = ImGui::GetIO();
-					ImGui::Text("X: %f Y: %f", io.MousePos.x, io.MousePos.y);
-
+				
 					if (ImGuizmo::IsUsing())
 					{
 						glm::vec3 translation, rotation, scale;
 						currentObj->transform->Decompose(model);
-
-						/*glm::vec3 deltaRotation = rotation - currentObj->transform->rotation;
-						currentObj->transform->position = translation;
-						currentObj->transform->rotation += deltaRotation;
-						currentObj->transform->scale = scale;*/
-						//ImGui::Text(ImGuizmo::IsOver() ? "Over gizmo" : "");
-						Debug::GetEngineLogger()->info("sdsdsdsd");
-					}
-					else
-					{
-						ImGui::Text(ImGuizmo::IsOver() ? "Over gizmo" : "sdsd");
-						ImGui::SameLine();
-						ImGui::Text(ImGuizmo::IsOver(ImGuizmo::TRANSLATE) ? "Over translate gizmo" : "sdsd");
-						ImGui::SameLine();
-						ImGui::Text(ImGuizmo::IsOver(ImGuizmo::ROTATE) ? "Over rotate gizmo" : "sdsd");
-						ImGui::SameLine();
-						ImGui::Text(ImGuizmo::IsOver(ImGuizmo::SCALE) ? "Over scale gizmo" : "sdsd");
 					}
 				}
 			}
@@ -289,7 +254,7 @@ void EditorLayer::OnUpdate()
 	RenderStart();
 	static glm::vec2 lastPos = Input::MousePos();
 
-	//ImGui::ShowDemoWindow();
+	ImGui::ShowDemoWindow();
 	for (std::shared_ptr<GuiWindow> i : uiWindows)
 	{
 		i->Render();

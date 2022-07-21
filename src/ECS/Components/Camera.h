@@ -27,6 +27,17 @@ public:
 	/// <returns>获取透视矩阵</returns>
 	glm::mat4 GetProjMatrix();
 
+	inline void SetAspectRatio(float value)
+	{
+		aspectRatio = value;
+	}
+	inline float GetAspectRatio()
+	{
+		return aspectRatio;
+	}
+private:
+	float aspectRatio = 4.0f/3;
+
 private:
 	/// <summary>
 	/// 序列化

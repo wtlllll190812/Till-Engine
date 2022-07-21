@@ -57,7 +57,7 @@ void Application::Run()
 		{
 			Input::Update();
 			mWindows->OnRender();
-			
+				
 			for (auto layer : *mLayerStack)
 			{
 				layer->OnUpdate();

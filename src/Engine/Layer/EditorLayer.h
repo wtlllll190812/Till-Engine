@@ -19,6 +19,7 @@ public:
 
 	bool OnMouseMovedEvent(MouseMovedEvent& e)override;
 	bool OnMouseScrolledEvent(MouseScrolledEvent& e)override;
+
 private:
 	std::shared_ptr<Scene> currentScene;
 	std::shared_ptr<GameObject> editorCamera;
