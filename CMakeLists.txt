@@ -29,14 +29,14 @@ find_package(GLEW CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
 find_package(fmt CONFIG REQUIRED)
 find_package(glm CONFIG REQUIRED)
-find_package(imguizmo CONFIG REQUIRED)
+# find_package(imguizmo CONFIG REQUIRED)
 
 #包含头文件
 INCLUDE_DIRECTORIES(src src/ECS src/Engine src/App)
 INCLUDE_DIRECTORIES(src/ECS/Components  src/ECS/System )
 INCLUDE_DIRECTORIES(src/Engine/Events src/Engine/Framework src/Engine/Render src/Engine/Layer)
 INCLUDE_DIRECTORIES(src/Engine/Window src/Engine/Window/GuiWindow src/Engine/Render/Materials)
-INCLUDE_DIRECTORIES(third_party third_party/imgui)
+INCLUDE_DIRECTORIES(third_party third_party/imgui third_party/imGuizmo)
 
 #指定库搜索目录
 LINK_DIRECTORIES(third_party/libs)

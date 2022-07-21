@@ -46,7 +46,7 @@ public:
 	inline void SetCamera(std::shared_ptr<Camera> camera) { currentCamera = camera; };
 
 private:
-	UniformBuffer maticesUniformBuffer;
-	UniformBuffer lightUniformBuffer;
+	UniformBuffer maticesUB;
+	UniformBuffer mainLightUB;
 	std::shared_ptr<Camera> currentCamera;
 };

@@ -6,7 +6,6 @@ TARGET_LINK_LIBRARIES(${Proj_Name}
     PRIVATE 
     imgui
     glfw
-    imguizmo::imguizmo
     ${tinyxml_LIBRARIES}
     fmt::fmt
     ${SOIL2_LIBRARIES}

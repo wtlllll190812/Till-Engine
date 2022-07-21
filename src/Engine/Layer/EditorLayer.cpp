@@ -177,6 +177,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 
 	auto SceneView = shared_ptr<GuiWindow>(new GuiWindow([this]()
 		{
+			
 			ImGui::Begin("Scene");
 			{
 				//设置多视口参数
@@ -186,11 +187,10 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				glm::vec2 m_ViewportBounds0 = { viewportMinRegion.x + viewportOffset.x, viewportMinRegion.y + viewportOffset.y };
 				glm::vec2 m_ViewportBounds1 = { viewportMaxRegion.x + viewportOffset.x, viewportMaxRegion.y + viewportOffset.y };
 				ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
-
 				//渲染场景至编辑器
-				/*auto fb = Application::instance().mWindows->GetFrameBuffer();
+				auto fb = Application::instance().mWindows->GetFrameBuffer();
 				ImGui::Image((ImTextureID)fb->GetFBO(), viewportPanelSize, ImVec2(0, 1), ImVec2(1, 0));
-				fb->Resize(viewportPanelSize.x, viewportPanelSize.y);*/
+				fb->Resize(viewportPanelSize.x, viewportPanelSize.y);
 
 				//渲染gizmos
 				if (currentObj)
@@ -201,12 +201,35 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 					//设置gizmos大小
 					ImGuizmo::SetRect(m_ViewportBounds0.x, m_ViewportBounds0.y, m_ViewportBounds1.x - m_ViewportBounds0.x, m_ViewportBounds1.y - m_ViewportBounds0.y);
 
+					static const float identityMatrix[16] =
+					{ 1.f, 0.f, 0.f, 0.f,
+						0.f, 1.f, 0.f, 0.f,
+						0.f, 0.f, 1.f, 0.f,
+						0.f, 0.f, 0.f, 1.f };
+					float objectMatrix[4][16] = {
+				  { 1.f, 0.f, 0.f, 0.f,
+					0.f, 1.f, 0.f, 0.f,
+					0.f, 0.f, 1.f, 0.f,
+					0.f, 0.f, 0.f, 1.f },
 
+				  { 1.f, 0.f, 0.f, 0.f,
+				  0.f, 1.f, 0.f, 0.f,
+				  0.f, 0.f, 1.f, 0.f,
+				  2.f, 0.f, 0.f, 1.f },
+
+				  { 1.f, 0.f, 0.f, 0.f,
+				  0.f, 1.f, 0.f, 0.f,
+				  0.f, 0.f, 1.f, 0.f,
+				  2.f, 0.f, 2.f, 1.f },
+
+				  { 1.f, 0.f, 0.f, 0.f,
+				  0.f, 1.f, 0.f, 0.f,
+				  0.f, 0.f, 1.f, 0.f,
+				  0.f, 0.f, 2.f, 1.f }
+					};
 					const glm::mat4& cameraProjection = GetEditorCamera()->GetProjMatrix();
 					glm::mat4 cameraView = GetEditorCamera()->GetViewMatrix();
 					glm::mat4 model = currentObj->transform->GetModelMatrix();
-
-
 
 					bool snap = Input::GetKeyDown(341);
 					float snapValue = 0.5f; // Snap to 0.5m for translation/scale
@@ -217,8 +240,15 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 					float snapValues[3] = { snapValue, snapValue, snapValue };
 
 					ImGuizmo::Manipulate(glm::value_ptr(cameraView), glm::value_ptr(cameraProjection),
-						(ImGuizmo::OPERATION)m_GizmoType, ImGuizmo::LOCAL, glm::value_ptr(model),
+						(ImGuizmo::OPERATION)m_GizmoType, ImGuizmo::WORLD, glm::value_ptr(model),
 						nullptr, snap ? snapValues : nullptr);
+					//ImGuizmo::ViewManipulate(glm::value_ptr(cameraView), 8, ImVec2(m_ViewportBounds0.x - 128, m_ViewportBounds0.y), ImVec2(128, 128), 0x10101010);
+					ImGuizmo::DrawGrid(glm::value_ptr(cameraView), glm::value_ptr(cameraProjection), identityMatrix, 100.f);
+					ImGuizmo::DrawCubes(glm::value_ptr(cameraView), glm::value_ptr(cameraProjection), &objectMatrix[0][0], 1);
+					
+					
+					ImGuiIO& io = ImGui::GetIO();
+					ImGui::Text("X: %f Y: %f", io.MousePos.x, io.MousePos.y);
 
 					if (ImGuizmo::IsUsing())
 					{
@@ -229,10 +259,21 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 						currentObj->transform->position = translation;
 						currentObj->transform->rotation += deltaRotation;
 						currentObj->transform->scale = scale;*/
+						//ImGui::Text(ImGuizmo::IsOver() ? "Over gizmo" : "");
+						Debug::GetEngineLogger()->info("sdsdsdsd");
+					}
+					else
+					{
+						ImGui::Text(ImGuizmo::IsOver() ? "Over gizmo" : "sdsd");
+						ImGui::SameLine();
+						ImGui::Text(ImGuizmo::IsOver(ImGuizmo::TRANSLATE) ? "Over translate gizmo" : "sdsd");
+						ImGui::SameLine();
+						ImGui::Text(ImGuizmo::IsOver(ImGuizmo::ROTATE) ? "Over rotate gizmo" : "sdsd");
+						ImGui::SameLine();
+						ImGui::Text(ImGuizmo::IsOver(ImGuizmo::SCALE) ? "Over scale gizmo" : "sdsd");
 					}
 				}
 			}
-			
 			ImGui::End();
 		},
 		"SceneView"));
@@ -246,8 +287,6 @@ EditorLayer::~EditorLayer()
 void EditorLayer::OnUpdate()
 {
 	RenderStart();
-
-
 	static glm::vec2 lastPos = Input::MousePos();
 
 	//ImGui::ShowDemoWindow();
@@ -256,7 +295,7 @@ void EditorLayer::OnUpdate()
 		i->Render();
 	}
 
-	if (Input::GetMouseButtonDown(GLFW_MOUSE_BUTTON_2))
+	if (Input::GetMouseButtonDown(GLFW_MOUSE_BUTTON_2)||Input::GetMouseButtonDown(GLFW_MOUSE_BUTTON_3))
 	{
 		lastPos = Input::MousePos();
 	}
@@ -267,11 +306,12 @@ void EditorLayer::OnUpdate()
 		editorCamera->transform->rotation.z += dir.y/10;
 		lastPos = Input::MousePos();
 	}
-
-	if (Input::GetMouseButton(GLFW_MOUSE_BUTTON_1))
+	if (Input::GetMouseButton(GLFW_MOUSE_BUTTON_3))
 	{
-		//editorCamera->transform->rotation.z += 0.05f;
-		//editorCamera->transform->Translate(editorCamera->transform->GetFront(), 0.05f);
+		glm::vec2 dir = Input::MousePos() - lastPos;
+		editorCamera->transform->Translate(editorCamera->transform->GetRight(), -dir.x/60);
+		editorCamera->transform->Translate(editorCamera->transform->GetUp(),dir.y/60);
+		lastPos = Input::MousePos();
 	}
 	RenderEnd();
 }
@@ -287,7 +327,7 @@ Camera* EditorLayer::GetEditorCamera()
 
 bool EditorLayer::OnMouseMovedEvent(MouseMovedEvent& e)
 {
-	return false;
+	return true;
 }
 
 bool EditorLayer::OnMouseScrolledEvent(MouseScrolledEvent& e)
@@ -298,5 +338,5 @@ bool EditorLayer::OnMouseScrolledEvent(MouseScrolledEvent& e)
 
 	editorCamera->transform->Translate(editorCamera->transform->GetFront(), e.GetYOffset());
 
-	return false;
+	return true;
 }
