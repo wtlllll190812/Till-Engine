@@ -95,16 +95,22 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				ImGui::Begin("Hierarchy", &hierarchy);
 				if (currentScene != nullptr)
 				{
-					if (ImGui::CollapsingHeader("Window options"))
+					if (ImGui::CollapsingHeader("currentScene"))
 					{
-						for (auto i : currentScene->gameobjects)
+						for (auto &i : currentScene->gameobjects)
 						{
-							if (ImGui::Button(i->name.c_str())) 
+							if (ImGui::CollapsingHeader(i->name.c_str()))
 							{
 								currentObj = i;
 							}
 						}
 					}
+				}
+				// Right-click on blank space
+				if (ImGui::BeginPopupContextWindow(0, 1, false))
+				{
+					ImGui::Text("test");
+					ImGui::EndPopup();
 				}
 				ImGui::End();
 			} },
