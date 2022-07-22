@@ -6,7 +6,7 @@
 #include "Reflection.h"
 #include "Material.h"
 #include "Debug.h"
-
+#include <map>
 REFLECTION(Renderer, Component);
 
 Renderer::Renderer()
@@ -19,7 +19,10 @@ Renderer::~Renderer()
 
 void Renderer::Draw()
 {
-	material->Draw(gameobject, mesh);
+	if (material != nullptr && mesh != nullptr)
+		material->Draw(gameobject, mesh);
+	else
+		Debug::GetAppLogger()->error("Can not find material or mesh");
 }
 
 void Renderer::Awake()
@@ -30,25 +33,47 @@ void Renderer::Awake()
 void Renderer::GuiDisPlay()
 {
 	static bool inited=false;
-	static std::vector<const char*> stest;
+	static std::vector<const char*> matList;
+	static std::vector<const char*> meshList;
+	static int currentMesh = 0;
+	static int currentMat = 0;
+
 	if (!inited)
 	{
 		auto start = ReflectionManager::instance().GetMemberStartByTag(ReflectionTag::Material);
 		int count = ReflectionManager::instance().GetMemberCountByTag(ReflectionTag::Material);
 		for (int k = 0; k != count; k++, start++)
 		{
-			stest.push_back(start->second.c_str());
+			if (start->second == material->matName)
+				currentMat = k;
+			matList.push_back(start->second.c_str());
 		}
-		Debug::GetEngineLogger()->warn(stest.size());
+		for (auto &it : AssetImporter::buildinModels) 
+		{
+			static int index = 0;
+			if (it.first+"/"+ it.first+".obj" == modelPath)
+				currentMesh = index;
+			meshList.push_back(it.first.c_str());
+			index++;
+		}
 		inited = true;
 	}
 	
-	static int current = 0;
-	int pre = current;
-	ImGui::Combo("combo", &current, &stest[0], stest.size());
-	if (pre != current)
+	int premat = currentMat;
+	ImGui::Combo("Material", &currentMat, &matList[0], matList.size());
+	if (premat != currentMat)
 	{
-		ChangeMaterial(std::static_pointer_cast<Material>(ReflectionManager::instance().GetInstanceByName(stest[current])));
+		ChangeMaterial(std::static_pointer_cast<Material>(ReflectionManager::instance().GetInstanceByName(matList[currentMat])));
+		UpdateNode();
+	}
+
+	int premesh = currentMesh;
+	ImGui::Combo("Mesh", &currentMesh, &meshList[0], meshList.size());
+	if (premesh != currentMesh)
+	{
+		mesh = AssetImporter::GetMeshByName(meshList[currentMesh]);
+		std::string meshName = meshList[currentMesh];
+		modelPath = meshName + "/" + meshName + ".obj";
 		UpdateNode();
 	}
 }

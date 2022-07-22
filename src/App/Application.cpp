@@ -1,4 +1,5 @@
 #include "Application.h"
+#include "AssetImporter.h"
 #include "GameLoop.h"
 #include "Scene.h"
 #include "Debug.h"
@@ -46,6 +47,7 @@ void Application::Init()
 	PushOverlay(editorLayer);
 	Input::Init();
 	Debug::GetEngineLogger()->info("Engine inited");
+	AssetImporter::Init();
 }
 
 void Application::Run()

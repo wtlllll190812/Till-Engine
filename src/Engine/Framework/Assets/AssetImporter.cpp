@@ -6,12 +6,16 @@
 
 
 Assimp::Importer AssetImporter::modelImporter;
-AssetImporter::AssetImporter()
-{
-}
+std::map<std::string, std::shared_ptr<Mesh>> AssetImporter::buildinModels;
 
-AssetImporter::~AssetImporter()
+void AssetImporter::Init()
 {
+    Debug::GetEngineLogger()->info("AssetImporter init");
+    buildinModels["Sphere"] = LoadMeshs(MODEL_PATH"Sphere/Sphere.obj")[0];
+    buildinModels["Cube"] = LoadMeshs(MODEL_PATH"Cube/Cube.obj")[0];
+    buildinModels["Cylinder"]=LoadMeshs(MODEL_PATH"Cylinder/Cylinder.obj")[0];
+    buildinModels["Plane"] = LoadMeshs(MODEL_PATH"Plane/Plane.obj")[0];
+    Debug::GetEngineLogger()->info("AssetImporter inited");
 }
 
 std::vector<std::shared_ptr<Mesh>> AssetImporter::LoadMeshs(std::string path)
@@ -31,6 +35,16 @@ std::vector<std::shared_ptr<Mesh>> AssetImporter::LoadMeshs(std::string path)
     // process ASSIMP's root node recursively
     ProcessNode(scene->mRootNode, scene,  res);
     return res;
+}
+
+std::shared_ptr<Mesh> AssetImporter::LoadMesh(std::string path)
+{
+    return std::shared_ptr<Mesh>();
+}
+
+std::shared_ptr<Mesh> AssetImporter::GetMeshByName(std::string name)
+{
+    return buildinModels[name];
 }
 
 void AssetImporter::ProcessNode(aiNode* node, const aiScene* scene, std::vector<std::shared_ptr<Mesh>>& res)
