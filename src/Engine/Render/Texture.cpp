@@ -23,6 +23,7 @@ Texture::Texture()
 
 Texture::~Texture()
 {
+	glDeleteTextures(1, &texture);
 }
 
 void Texture::ColorInit(int w, int h)

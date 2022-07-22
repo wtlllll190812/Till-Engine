@@ -1,6 +1,5 @@
 #include "DefaultMaterial.h"
 
-
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 #include <GL/glew.h>
@@ -14,7 +13,7 @@
 #include "glm/glm.hpp"
 #include <glm/gtc/type_ptr.hpp>
 
-REFLECTION(DefaultMaterial,Material);
+REFLECTIONINSTANCE(DefaultMaterial, Material);
 
 DefaultMaterial::DefaultMaterial()
 {

@@ -9,7 +9,7 @@
 #include "Transform.h"
 #include "Reflection.h"
 
-REFLECTION(LightMaterial,Material);
+REFLECTIONINSTANCE(LightMaterial,Material);
 
 LightMaterial::LightMaterial()
 {

@@ -6,6 +6,7 @@
 #include "Reflection.h"
 #include "Material.h"
 #include "Debug.h"
+
 REFLECTION(Renderer, Component);
 
 Renderer::Renderer()
@@ -30,10 +31,9 @@ void Renderer::GuiDisPlay()
 {
 	static bool inited=false;
 	static std::vector<const char*> stest;
-
 	if (!inited)
 	{
-		auto start = ReflectionManager::instance().GetMemberByTag(ReflectionTag::Material);
+		auto start = ReflectionManager::instance().GetMemberStartByTag(ReflectionTag::Material);
 		int count = ReflectionManager::instance().GetMemberCountByTag(ReflectionTag::Material);
 		for (int k = 0; k != count; k++, start++)
 		{
@@ -42,13 +42,14 @@ void Renderer::GuiDisPlay()
 		Debug::GetEngineLogger()->warn(stest.size());
 		inited = true;
 	}
-
+	
 	static int current = 0;
 	int pre = current;
 	ImGui::Combo("combo", &current, &stest[0], stest.size());
 	if (pre != current)
 	{
-		ChangeMaterial((Material*)ReflectionManager::instance().getClassByName(stest[current]));
+		ChangeMaterial(std::static_pointer_cast<Material>(ReflectionManager::instance().GetInstanceByName(stest[current])));
+		UpdateNode();
 	}
 }
 
@@ -59,23 +60,33 @@ bool Renderer::operator>(const Renderer& r)
 
 TiXmlElement* Renderer::Serialize(std::string name)
 {
-	auto node = new TiXmlElement(GetName());
-	node->SetAttribute("guid", std::to_string(guid));
-	node->SetAttribute("modelPath", modelPath);
-	node->SetAttribute("materialName", material->matName);
-	return node;
+	if (m_node == nullptr)
+	{
+		m_node = new TiXmlElement(GetName());
+	}
+	m_node->SetAttribute("guid", std::to_string(guid));
+	m_node->SetAttribute("modelPath", modelPath);
+	m_node->SetAttribute("materialName", material->matName);
+	return m_node;
 }
 
 void Renderer::DeSerialize(TiXmlElement* node)
 {
+	m_node = node;
 	guid = std::stoi(node->Attribute("guid"));
 	modelPath = node->Attribute("modelPath");
-	auto mat = ReflectionManager::instance().getClassByName(node->Attribute("materialName"));
+	auto mat = ReflectionManager::instance().CreateClassByName(node->Attribute("materialName"));
 	material = std::shared_ptr<Material>((Material*)mat);
 	mesh = AssetImporter::LoadMeshs(MODEL_PATH + modelPath)[0];
 }
 
-void Renderer::ChangeMaterial(Material* mat)
+void Renderer::UpdateNode()
 {
-	material = std::shared_ptr<Material>(mat);
+	m_node->SetAttribute("modelPath", modelPath);
+	m_node->SetAttribute("materialName", material->matName);
+}
+
+void Renderer::ChangeMaterial(std::shared_ptr<Material> mat)
+{
+	material = mat;
 }

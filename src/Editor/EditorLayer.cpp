@@ -144,13 +144,13 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 					if (listOpen||ImGui::Button("Add Component", ImVec2(160, 30)))
 					{
 						listOpen = true;
-						auto start = ReflectionManager::instance().GetMemberByTag(ReflectionTag::Component);
+						auto start = ReflectionManager::instance().GetMemberStartByTag(ReflectionTag::Component);
 						int count= ReflectionManager::instance().GetMemberCountByTag(ReflectionTag::Component);
 						for (int k = 0; k != count; k++, start++)
 						{
 							if (ImGui::Button(start->second.c_str(), ImVec2(140, 20)))
 							{
-								selectedObj->AddComponent((Component*)ReflectionManager::instance().getClassByName(start->second));
+								selectedObj->AddComponent((Component*)ReflectionManager::instance().CreateClassByName(start->second));
 								listOpen = false;
 							}
 						}

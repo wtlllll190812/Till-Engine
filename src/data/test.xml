@@ -20,10 +20,10 @@
     <GameObject name="object" guid="334550489">
         <Transform guid="-2108764455">
             <position x="0.000000" y="0.000000" z="-3.000000" />
-            <rotation x="89.800003" y="58.400002" z="45.000000" />
+            <rotation x="0.000000" y="0.000000" z="0.000000" />
             <scale x="1.000000" y="1.000000" z="1.000000" />
         </Transform>
-        <Renderer guid="-108561232" modelPath="Sphere/Sphere.obj" materialName="DefaultMaterial" />
+        <Renderer guid="-108561232" modelPath="Sphere/Sphere.obj" materialName="LightMaterial" />
     </GameObject>
     <GameObject name="GameObject" guid="1215957406">
         <Transform guid="518457726">

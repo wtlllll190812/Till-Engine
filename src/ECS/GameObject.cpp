@@ -60,7 +60,7 @@ void GameObject::DeSerialize(TiXmlElement* node)
 		Debug::GetEngineLogger()->info("Scene Load {0}", n->Value());
 		if (strcmp(n->Value(), "Transform") != 0)
 		{
-			auto comp = (Component*)ReflectionManager::instance().getClassByName(n->Value());
+			auto comp = (Component*)ReflectionManager::instance().CreateClassByName(n->Value());
 			comp->DeSerialize(n);
 			if (strcmp(n->Value(), "Camera") == 0)
 			{

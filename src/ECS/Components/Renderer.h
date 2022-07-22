@@ -47,8 +47,10 @@ public:
 	/// </summary>
 	virtual void DeSerialize(TiXmlElement*) override;
 
+	virtual void UpdateNode() override;
+
 private:
-	void ChangeMaterial(Material* mat);
+	void ChangeMaterial(std::shared_ptr<Material> mat);
 private:
 	std::string modelPath;
 };
