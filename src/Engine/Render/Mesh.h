@@ -26,7 +26,7 @@ public:
 public:
 	Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices);
 	~Mesh();
-	void Render();
+	void Draw();
 	unsigned int GetSize() { return static_cast<unsigned int>(indices.size()); }
 private:
 	unsigned int VBO; //顶点缓冲对象

@@ -15,16 +15,16 @@ Material::~Material()
 {
 }
 
-void Material::Render(GameObject* object, shared_ptr<Mesh> mesh)
+void Material::Draw(GameObject* object, shared_ptr<Mesh> mesh)
 {
 	if (!inited)
 	{
-		BeforeRender(object, mesh);
+		Init(object, mesh);
 		inited = true;
 	}
 	glBindVertexArray(mesh->VAO);
 	shader->Use();
-	OnRender(object, mesh);
+	DrawFunc(object, mesh);
 	glDrawElements(GL_TRIANGLES, mesh->GetSize(), GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
 }

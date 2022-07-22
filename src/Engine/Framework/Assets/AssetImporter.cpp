@@ -2,6 +2,7 @@
 #include "Mesh.h"
 #include "Debug.h"
 #include <fstream>
+#include "TLCore.h"
 
 
 Assimp::Importer AssetImporter::modelImporter;

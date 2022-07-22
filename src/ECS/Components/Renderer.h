@@ -26,7 +26,7 @@ public:
 	/// <summary>
 	/// 进行渲染
 	/// </summary>
-	void Render();
+	void Draw();
 
 	/// <summary>
 	/// 被添加时
@@ -46,6 +46,9 @@ public:
 	/// 反序列化
 	/// </summary>
 	virtual void DeSerialize(TiXmlElement*) override;
+
+private:
+	void ChangeMaterial(Material* mat);
 private:
 	std::string modelPath;
 };

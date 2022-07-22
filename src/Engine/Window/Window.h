@@ -29,7 +29,7 @@ public:
 
 	virtual ~Window() {};
 	//渲染一帧
-	virtual void OnRender() = 0;
+	virtual void DrawFunc() = 0;
 	//渲染结束时
 	virtual void OnRenderEnd() = 0;
 

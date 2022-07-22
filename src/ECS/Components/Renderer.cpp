@@ -5,6 +5,7 @@
 #include "imgui.h"
 #include "Reflection.h"
 #include "Material.h"
+#include "Debug.h"
 REFLECTION(Renderer, Component);
 
 Renderer::Renderer()
@@ -15,9 +16,9 @@ Renderer::~Renderer()
 {
 }
 
-void Renderer::Render()
+void Renderer::Draw()
 {
-	material->Render(gameobject, mesh);
+	material->Draw(gameobject, mesh);
 }
 
 void Renderer::Awake()
@@ -27,8 +28,28 @@ void Renderer::Awake()
 
 void Renderer::GuiDisPlay()
 {
-	ImGui::Text("Material");
-	ImGui::Text("Mesh");
+	static bool inited=false;
+	static std::vector<const char*> stest;
+
+	if (!inited)
+	{
+		auto start = ReflectionManager::instance().GetMemberByTag(ReflectionTag::Material);
+		int count = ReflectionManager::instance().GetMemberCountByTag(ReflectionTag::Material);
+		for (int k = 0; k != count; k++, start++)
+		{
+			stest.push_back(start->second.c_str());
+		}
+		Debug::GetEngineLogger()->warn(stest.size());
+		inited = true;
+	}
+
+	static int current = 0;
+	int pre = current;
+	ImGui::Combo("combo", &current, &stest[0], stest.size());
+	if (pre != current)
+	{
+		ChangeMaterial((Material*)ReflectionManager::instance().getClassByName(stest[current]));
+	}
 }
 
 bool Renderer::operator>(const Renderer& r)
@@ -52,4 +73,9 @@ void Renderer::DeSerialize(TiXmlElement* node)
 	auto mat = ReflectionManager::instance().getClassByName(node->Attribute("materialName"));
 	material = std::shared_ptr<Material>((Material*)mat);
 	mesh = AssetImporter::LoadMeshs(MODEL_PATH + modelPath)[0];
+}
+
+void Renderer::ChangeMaterial(Material* mat)
+{
+	material = std::shared_ptr<Material>(mat);
 }

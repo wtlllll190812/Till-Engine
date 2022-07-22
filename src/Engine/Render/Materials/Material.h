@@ -3,6 +3,7 @@
 #include <memory>
 #include <functional>
 #include <string>
+#include "TLCore.h"
 
 class GameObject;
 class Shader;
@@ -21,9 +22,9 @@ public:
 	Material();
 	~Material();
 
-	void Render(GameObject*, std::shared_ptr<Mesh>);
-	virtual void OnRender(GameObject* gObj,std::shared_ptr<Mesh> mesh) = 0;
-	virtual void BeforeRender(GameObject*, std::shared_ptr<Mesh> mesh) = 0;
+	void Draw(GameObject*, std::shared_ptr<Mesh>);
+	virtual void DrawFunc(GameObject* gObj,std::shared_ptr<Mesh> mesh) = 0;
+	virtual void Init(GameObject*, std::shared_ptr<Mesh> mesh) = 0;
 private:
 	bool inited;
 };

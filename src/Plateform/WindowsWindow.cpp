@@ -28,7 +28,7 @@ WindowsWindow::~WindowsWindow()
 	ShutDown();
 }
 
-void WindowsWindow::OnRender()
+void WindowsWindow::DrawFunc()
 {
 	glfwPollEvents();
 	glEnable(GL_CULL_FACE);
@@ -38,7 +38,7 @@ void WindowsWindow::OnRender()
 	glEnable(GL_DEPTH_TEST);
 	glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	
+
 	//清空所有缓存区
 	for(int i=0;i<framebuffer.size();++i)
 	{
@@ -123,10 +123,9 @@ void WindowsWindow::Init(const WindowProps& props)
 		Debug::GetEngineLogger()->error("Failed to initialize GLEW");
 		return;
 	}
-
 	SetCallback();
-
 	AddFrameBuffer();
+	glEnable(GL_FRAMEBUFFER_SRGB);
 }
 
 void WindowsWindow::ShutDown()

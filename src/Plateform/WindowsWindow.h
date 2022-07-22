@@ -14,7 +14,7 @@ public:
 	WindowsWindow(const WindowProps& props);
 	virtual ~WindowsWindow();
 
-	void OnRender() override;
+	void DrawFunc() override;
 	void OnRenderEnd() override;
 
 	inline unsigned int GetWidth() const override { return mData.Width; }

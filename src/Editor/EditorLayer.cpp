@@ -100,7 +100,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 					{
 						for (auto &i : currentScene->gameobjects)
 						{
-							if (ImGui::CollapsingHeader(i->name.c_str()))
+							if (ImGui::Button(i->name.c_str()))
 							{
 								selectedObj = i;
 							}
@@ -155,9 +155,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 							}
 						}
 					}
-				}
-				
-				
+				}				
 				ImGui::End();
 			} },
 		"Inspector"));
@@ -192,6 +190,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 			{
 				static glm::vec2 lastPos = Input::MousePos();
 				static int m_GizmoType = ImGuizmo::OPERATION::TRANSLATE;
+				static int mode = ImGuizmo::WORLD;
 				static const float identityMatrix[16] =
 				{
 					1.f, 0.f, 0.f, 0.f,
@@ -200,13 +199,23 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 					0.f, 0.f, 0.f, 1.f
 				};
 				bool snap = Input::GetKeyDown(GLFW_KEY_LEFT_CONTROL);
-
 				
-				ImGui::Selectable("R");
+				if(ImGui::Button("T"))
+					m_GizmoType = ImGuizmo::OPERATION::TRANSLATE;
 				ImGui::SameLine();
-				ImGui::Button("R");
+				if (ImGui::Button("R"))
+					m_GizmoType = ImGuizmo::OPERATION::ROTATE;			
 				ImGui::SameLine();
-				ImGui::Button("R");
+				if (ImGui::Button("S"))
+					m_GizmoType = ImGuizmo::OPERATION::SCALE;	
+
+				ImGui::SameLine();
+				if (ImGui::Button("W"))
+					mode = ImGuizmo::MODE::WORLD;				
+				ImGui::SameLine();
+				if (ImGui::Button("L"))
+					mode = ImGuizmo::MODE::LOCAL;
+
 				//设置多视口参数
 				auto viewportMinRegion = ImGui::GetWindowContentRegionMin();
 				auto viewportMaxRegion = ImGui::GetWindowContentRegionMax();
@@ -237,13 +246,12 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 					float snapValues[3] = { snapValue, snapValue, snapValue };
 
 					ImGuizmo::Manipulate(glm::value_ptr(cameraView), glm::value_ptr(cameraProjection),
-						(ImGuizmo::OPERATION)m_GizmoType, ImGuizmo::WORLD, glm::value_ptr(model),
+						(ImGuizmo::OPERATION)m_GizmoType, (ImGuizmo::MODE)mode, glm::value_ptr(model),
 						nullptr, snap ? snapValues : nullptr);
-					ImGuizmo::DrawGrid(glm::value_ptr(cameraView), glm::value_ptr(cameraProjection), identityMatrix, 100.f);
+					//ImGuizmo::DrawGrid(glm::value_ptr(cameraView), glm::value_ptr(cameraProjection), identityMatrix, 100.f);
 				
 					if (ImGuizmo::IsUsing())
 					{
-						glm::vec3 translation, rotation, scale;
 						selectedObj->transform->Decompose(model);
 					}
 				}
@@ -279,6 +287,52 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 					editorCamera->transform->Translate(editorCamera->transform->GetUp(), dir.y / 60);
 					lastPos = Input::MousePos();
 				}
+			
+
+
+				//ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 2));
+				//ImGui::PushStyleVar(ImGuiStyleVar_ItemInnerSpacing, ImVec2(0, 0));
+				//ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0, 0, 0, 0));
+				//auto& colors = ImGui::GetStyle().Colors;
+				//const auto& buttonHovered = colors[ImGuiCol_ButtonHovered];
+				//ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(buttonHovered.x, buttonHovered.y, buttonHovered.z, 0.5f));
+				//const auto& buttonActive = colors[ImGuiCol_ButtonActive];
+				//ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(buttonActive.x, buttonActive.y, buttonActive.z, 0.5f));
+
+				//ImGui::Begin("##toolbar", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse);
+
+				//bool toolbarEnabled = (bool)m_ActiveScene;
+
+				//ImVec4 tintColor = ImVec4(1, 1, 1, 1);
+				//if (!toolbarEnabled)
+				//	tintColor.w = 0.5f;
+
+				//float size = ImGui::GetWindowHeight() - 4.0f;
+				//{
+				//	Ref<Texture2D> icon = (m_SceneState == SceneState::Edit || m_SceneState == SceneState::Simulate) ? m_IconPlay : m_IconStop;
+				//	ImGui::SetCursorPosX((ImGui::GetWindowContentRegionMax().x * 0.5f) - (size * 0.5f));
+				//	if (ImGui::ImageButton((ImTextureID)icon->GetRendererID(), ImVec2(size, size), ImVec2(0, 0), ImVec2(1, 1), 0, ImVec4(0.0f, 0.0f, 0.0f, 0.0f), tintColor) && toolbarEnabled)
+				//	{
+				//		if (m_SceneState == SceneState::Edit || m_SceneState == SceneState::Simulate)
+				//			OnScenePlay();
+				//		else if (m_SceneState == SceneState::Play)
+				//			OnSceneStop();
+				//	}
+				//}
+				//ImGui::SameLine();
+				//{
+				//	Ref<Texture2D> icon = (m_SceneState == SceneState::Edit || m_SceneState == SceneState::Play) ? m_IconSimulate : m_IconStop;		//ImGui::SetCursorPosX((ImGui::GetWindowContentRegionMax().x * 0.5f) - (size * 0.5f));
+				//	if (ImGui::ImageButton((ImTextureID)icon->GetRendererID(), ImVec2(size, size), ImVec2(0, 0), ImVec2(1, 1), 0, ImVec4(0.0f, 0.0f, 0.0f, 0.0f), tintColor) && toolbarEnabled)
+				//	{
+				//		if (m_SceneState == SceneState::Edit || m_SceneState == SceneState::Play)
+				//			OnSceneSimulate();
+				//		else if (m_SceneState == SceneState::Simulate)
+				//			OnSceneStop();
+				//	}
+				//}
+				//ImGui::PopStyleVar(2);
+				//ImGui::PopStyleColor(3);
+				//ImGui::End();
 			}
 			ImGui::End();
 		},
@@ -293,7 +347,7 @@ EditorLayer::~EditorLayer()
 void EditorLayer::OnUpdate()
 {
 	RenderStart();
-	//ImGui::ShowDemoWindow();
+	ImGui::ShowDemoWindow();
 	for (std::shared_ptr<GuiWindow> i : uiWindows)
 	{
 		i->Render();

@@ -1,24 +1,25 @@
 #include "DefaultMaterial.h"
+
+
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 #include <GL/glew.h>
 
-#include "glm/glm.hpp"
-#include <glm/gtc/type_ptr.hpp>
 #include "Reflection.h"
-#include "TLCore.h"
 #include "Texture.h"
 #include "GameObject.h"
 #include "Transform.h"
 #include "Application.h"
 #include "Shader.h"
+#include "glm/glm.hpp"
+#include <glm/gtc/type_ptr.hpp>
 
 REFLECTION(DefaultMaterial,Material);
 
 DefaultMaterial::DefaultMaterial()
 {
 	shader = new Shader(SHADER_PATH"default.vert", SHADER_PATH"default.frag");
-	tex=new Texture(IMAGE_PATH"container.png");
+	mainTex=new Texture(IMAGE_PATH"container.png");
 	specTex=new Texture(IMAGE_PATH"container_specular.png");
 	matName = "DefaultMaterial";
 }
@@ -26,14 +27,14 @@ DefaultMaterial::DefaultMaterial()
 DefaultMaterial::~DefaultMaterial()
 {
 	delete shader;
-	delete tex;
+	delete mainTex;
 	delete specTex;
 }
 
-void DefaultMaterial::OnRender(GameObject* gObj, std::shared_ptr<Mesh> mesh)
+void DefaultMaterial::DrawFunc(GameObject* gObj, std::shared_ptr<Mesh> mesh)
 {
 	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, tex->texture);
+	glBindTexture(GL_TEXTURE_2D, mainTex->texture);
 	glActiveTexture(GL_TEXTURE1);
 	glBindTexture(GL_TEXTURE_2D, specTex->texture);
 
@@ -46,7 +47,7 @@ void DefaultMaterial::OnRender(GameObject* gObj, std::shared_ptr<Mesh> mesh)
 	SetUniformVec3(objectColor, shader);
 }
 
-void DefaultMaterial::BeforeRender(GameObject*, std::shared_ptr<Mesh> mesh)
+void DefaultMaterial::Init(GameObject*, std::shared_ptr<Mesh> mesh)
 {
 	shader->Use();
 	glUniform1i(glGetUniformLocation(shader->Program, "diffuseMap"), 0);

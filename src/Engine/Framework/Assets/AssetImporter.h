@@ -5,7 +5,6 @@
 #include <assimp/postprocess.h>
 #include <vector>
 #include <memory>
-
 class Mesh;
 class AssetImporter
 {

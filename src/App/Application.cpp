@@ -54,7 +54,7 @@ void Application::Run()
 	mainLoop->SetUpdateCallback([this]()
 		{
 			Input::Update();
-			mWindows->OnRender();
+			mWindows->DrawFunc();
 				
 			for (auto layer : *mLayerStack)
 			{

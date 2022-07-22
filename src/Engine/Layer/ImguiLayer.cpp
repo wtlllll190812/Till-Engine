@@ -147,7 +147,7 @@ void ImguiLayer::RenderStart()
 
 void ImguiLayer::RenderEnd()
 {
-	ImGui::Render();
+	ImGui::Draw();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 	ImGuiIO& io = ImGui::GetIO();
 

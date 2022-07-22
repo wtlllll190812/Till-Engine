@@ -36,7 +36,7 @@ void RenderSystem::Update()
 	{
 		if (queue.top() != nullptr)
 		{
-			queue.top()->Render();
+			queue.top()->Draw();
 			queue.pop();
 		}
 	}
