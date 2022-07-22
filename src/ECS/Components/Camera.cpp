@@ -34,19 +34,28 @@ glm::mat4 Camera::GetProjMatrix()
 
 TiXmlElement* Camera::Serialize(std::string name)
 {
-	auto xml = new TiXmlElement(GetName());
-	xml->SetAttribute("guid", std::to_string(guid));
-	xml->SetAttribute("fov", std::to_string(fov));
-	return xml;
+	if (m_node == nullptr)
+		m_node = new TiXmlElement(GetName());
+	m_node->SetAttribute("guid", std::to_string(guid));
+	m_node->SetAttribute("fov", std::to_string(fov));
+	return m_node;
 }
 
 void Camera::DeSerialize(TiXmlElement* node)
 {
+	m_node = node;
 	fov = std::stof(node->Attribute("fov"));
 	guid = std::stoi(node->Attribute("guid"));
+}
+
+void Camera::UpdateNode()
+{
+	m_node->SetAttribute("guid", std::to_string(guid));
+	m_node->SetAttribute("fov", std::to_string(fov));
 }
 
 void Camera::GuiDisPlay()
 {
 	ImGui::DragFloat("FOV",&fov);
+	UpdateNode();
 }

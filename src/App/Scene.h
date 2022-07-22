@@ -32,7 +32,7 @@ public:
 	/// <summary>
 	/// 添加新物体
 	/// </summary>
-	void AddGameObject(std::shared_ptr<GameObject> gObj) { gameobjects.push_back(gObj); }
+	void AddGameObject(std::shared_ptr<GameObject> gObj);
 
 public:
 	/// <summary>
@@ -49,5 +49,5 @@ private:
 	/// <summary>
 	/// 场景文件对象
 	/// </summary>
-	TLSerializeFile xml;
+	TLSerializeFile sceneFile;
 };

@@ -30,6 +30,7 @@ public:
 	/// </summary>
 	virtual TiXmlElement* Serialize(std::string name = "Default") override;
 	virtual void DeSerialize(TiXmlElement*) override;
+	virtual void UpdateNode() override;
 
 	/// <summary>
 	/// 获取hash值

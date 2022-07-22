@@ -35,11 +35,11 @@ void PointLight::GuiDisPlay()
 
 TiXmlElement* PointLight::Serialize(std::string name)
 {
-	auto xml = new TiXmlElement(GetName());
-	xml->SetAttribute("guid", std::to_string(guid));
-	xml->SetAttribute("intensity", std::to_string(intensity));
-	xml->LinkEndChild(TLSerialize::Serialize(color, "color"));
-	return xml;
+	auto sceneFile = new TiXmlElement(GetName());
+	sceneFile->SetAttribute("guid", std::to_string(guid));
+	sceneFile->SetAttribute("intensity", std::to_string(intensity));
+	sceneFile->LinkEndChild(TLSerialize::Serialize(color, "color"));
+	return sceneFile;
 }
 
 void PointLight::DeSerialize(TiXmlElement* node)

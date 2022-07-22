@@ -140,17 +140,18 @@ glm::mat4 Transform::GetModelMatrix()
 
 TiXmlElement* Transform::Serialize(std::string name)
 {
-	auto xml = new TiXmlElement("Transform");
-	xml->SetAttribute("guid", std::to_string(guid));
-	xml->LinkEndChild(TLSerialize::Serialize(position, "position"));
-	xml->LinkEndChild(TLSerialize::Serialize(rotation, "rotation"));
-	xml->LinkEndChild(TLSerialize::Serialize(scale, "scale"));
-	return xml;
-	return nullptr;
+	if (m_node == nullptr)
+		m_node = new TiXmlElement(GetName());
+	m_node->SetAttribute("guid", std::to_string(guid));
+	m_node->LinkEndChild(TLSerialize::Serialize(position, "position"));
+	m_node->LinkEndChild(TLSerialize::Serialize(rotation, "rotation"));
+	m_node->LinkEndChild(TLSerialize::Serialize(scale, "scale"));
+	return m_node;
 }
 
 void Transform::DeSerialize(TiXmlElement* node)
 {
+	m_node = node;
 	guid = std::stoi(node->Attribute("guid"));
 	node = node->FirstChildElement();
 	position = TLSerialize::DeSerialize(node);
@@ -160,11 +161,26 @@ void Transform::DeSerialize(TiXmlElement* node)
 	scale = TLSerialize::DeSerialize(node);
 }
 
+void Transform::UpdateNode()
+{
+	if (m_node)
+	{
+		m_node->SetAttribute("guid", std::to_string(guid));
+		auto node = m_node->FirstChildElement();
+		TLSerialize::UpdateNode(position, node);
+		node = node->NextSiblingElement();
+		TLSerialize::UpdateNode(rotation, node);
+		node = node->NextSiblingElement();
+		TLSerialize::UpdateNode(scale, node);
+	}
+}
+
 void Transform::GuiDisPlay()
 {
 	DrawVec3Control("Position", position);
 	DrawVec3Control("Rotation", rotation);
 	DrawVec3Control("Scale", scale);
+	UpdateNode();
 }
 
 void Transform::Decompose(glm::mat4 newModel)

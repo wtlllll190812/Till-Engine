@@ -68,6 +68,7 @@ public:
 	/// 反序列化
 	/// </summary>
 	virtual void DeSerialize(TiXmlElement*) override;
+	virtual void UpdateNode() override;
 
 	virtual void GuiDisPlay() override;
 

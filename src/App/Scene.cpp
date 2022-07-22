@@ -6,10 +6,10 @@
 #include "Debug.h"
 #include "GameObject.h"
 
-Scene::Scene(std::string p) :path(p), xml(TLSerializeFile(p, "scene"))
+Scene::Scene(std::string p) :path(p), sceneFile(TLSerializeFile(p, "scene"))
 {
 	Debug::GetEngineLogger()->info("Scene Loading");
-	for (auto node = xml.GetRoot()->FirstChild(); node != nullptr; node = node->NextSiblingElement())
+	for (auto node = sceneFile.GetRoot()->FirstChild(); node != nullptr; node = node->NextSiblingElement())
 	{
 		auto element = node->ToElement();
 		gameobjects.push_back(std::shared_ptr<GameObject>(new GameObject(element, this)));
@@ -25,7 +25,7 @@ Scene::~Scene()
 void Scene::Save()
 {
 	Debug::GetEngineLogger()->info("Scene Saving");
-	xml.Save();
+	sceneFile.Save();
 	Debug::GetEngineLogger()->info("Scene Saved");
 }
 
@@ -37,4 +37,10 @@ std::shared_ptr<GameObject> Scene::Find(std::string name)
 			return i;
 	}
 	return nullptr;
+}
+
+void Scene::AddGameObject(std::shared_ptr<GameObject> gObj)
+{
+	gameobjects.push_back(gObj);
+	sceneFile.GetRoot()->LinkEndChild(gObj->Serialize());
 }

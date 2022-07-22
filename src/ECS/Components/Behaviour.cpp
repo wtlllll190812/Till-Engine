@@ -11,3 +11,7 @@ TiXmlElement* Behaviour::Serialize(std::string name)
 void Behaviour::DeSerialize(TiXmlElement*)
 {
 }
+
+void Behaviour::UpdateNode()
+{
+}

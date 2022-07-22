@@ -3,7 +3,6 @@
 #include <tinyxml.h>
 #include <glm/glm.hpp>
 
-class TiXmlElement;
 class TLSerializeFile
 {
 public:
@@ -18,7 +17,10 @@ public:
 	/// <summary>
 	/// 保存文件
 	/// </summary>
-	void Save() { file->SaveFile(path); }
+	void Save()
+	{
+		file.SaveFile(path);
+	}
 
 	/// <summary>
 	/// 获取根节点
@@ -26,15 +28,16 @@ public:
 	inline TiXmlElement* GetRoot() { return root; }
 private:
 	std::string path;
-	TiXmlDocument* file;
+	TiXmlDocument file;
 	TiXmlElement* root;
 };
+
 class TLSerialize
 {
 public:
 	static TiXmlElement* Serialize(glm::vec3& vector, std::string name);
-	static glm::vec3 DeSerialize(TiXmlElement* xml);
-
+	static glm::vec3 DeSerialize(TiXmlElement* sceneFile);
+	static void UpdateNode(glm::vec3& vector, TiXmlElement* node);
 };
 
 /// <summary>
@@ -43,6 +46,9 @@ public:
 class Serializable
 {
 public:
+	TiXmlElement* m_node;
+public:
 	virtual TiXmlElement* Serialize(std::string name="Default") = 0;
 	virtual void DeSerialize(TiXmlElement*) = 0;
+	virtual void UpdateNode() {};
 };

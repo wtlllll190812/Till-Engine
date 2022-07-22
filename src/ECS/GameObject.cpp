@@ -37,18 +37,21 @@ void GameObject::AddComponent(Component* comp)
 
 TiXmlElement* GameObject::Serialize(std::string)
 {
-	TiXmlElement* xml = new TiXmlElement(name);
+	if (m_node == nullptr)
+		m_node = new TiXmlElement(name);
+
+	m_node->SetAttribute("name", name);
+	m_node->SetAttribute("guid", std::to_string(guid));
 	for (auto i : components)
 	{
-		xml->SetAttribute("name", name);
-		xml->SetAttribute("guid", std::to_string(guid));
-		xml->LinkEndChild(i->Serialize());
+		m_node->LinkEndChild(i->Serialize());
 	}
-	return xml;
+	return m_node;
 }
 
 void GameObject::DeSerialize(TiXmlElement* node)
 {
+	m_node = node;
 	guid = std::stoi(node->Attribute("guid"));
 	name = node->Attribute("name");
 	
@@ -71,6 +74,15 @@ void GameObject::DeSerialize(TiXmlElement* node)
 			transform->DeSerialize(n);
 			AddComponent(transform);
 		}
+	}
+}
+
+void GameObject::UpdateNode()
+{
+	if (m_node)
+	{
+		m_node->SetAttribute("name", name);
+		m_node->SetAttribute("guid", std::to_string(guid));
 	}
 }
 

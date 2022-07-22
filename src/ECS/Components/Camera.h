@@ -31,6 +31,7 @@ public:
 	{
 		aspectRatio = value;
 	}
+
 	inline float GetAspectRatio()
 	{
 		return aspectRatio;
@@ -45,6 +46,8 @@ public:
 	/// 反序列化
 	/// </summary>
 	virtual void DeSerialize(TiXmlElement*) override;
+	virtual void UpdateNode() override;
+
 private:
 	float aspectRatio = 4.0f/3;
 
