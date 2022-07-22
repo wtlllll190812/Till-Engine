@@ -2,19 +2,16 @@
 #include "GameLoop.h"
 #include "Scene.h"
 #include "Debug.h"
-#include "EditorLayer.h"
 #include "LayerStack.h"
-#include <string>
-using namespace std;
-#define GLFW_INCLUDE_NONE
-#include <GLFW/glfw3.h>
-#include <GL/glew.h>
-#include "Input.h"
-#include <cmath>
-#include "TLTime.h"
+#include "EditorLayer.h"
 #include "RenderSystem.h"
-//临时
-#include "Scene.h"
+#include "Input.h"
+#include "TLTime.h"
+
+#include <string>
+#include <cmath>
+
+using namespace std;
 
 Application::Application()
 {
@@ -43,16 +40,17 @@ inline void Application::PushOverlay(Layer *layer)
 
 void Application::Init()
 {
+	Debug::GetEngineLogger()->info("Engine start init");
 	mWindows->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
 	RenderSystem::instance().SetCamera(shared_ptr<Camera>(editorLayer->GetEditorCamera()));
 	PushOverlay(editorLayer);
 	Input::Init();
+	Debug::GetEngineLogger()->info("Engine inited");
 }
 
 void Application::Run()
 {
 	Init();
-
 	mainLoop->SetUpdateCallback([this]()
 		{
 			Input::Update();
@@ -62,8 +60,6 @@ void Application::Run()
 			{
 				layer->OnUpdate();
 			}
-			/*object->transform->rotation.y = std::cos(TLTime::GetTime());
-			object->transform->rotation.x = std::sin(TLTime::GetTime());*/
 			mWindows->OnRenderEnd(); 
 		});
 

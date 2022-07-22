@@ -10,9 +10,17 @@ public:
 	PointLight();
 	~PointLight();
 	virtual float GetAtten(glm::vec3 objPos)const override;
-	virtual void Instantiate(TiXmlNode*) override;
-	virtual TLxml* Serialize() override;
 	virtual void GuiDisPlay() override;
+
+	/// <summary>
+	/// 序列化
+	/// </summary>
+	virtual TiXmlElement* Serialize(std::string name = "Default") override;
+
+	/// <summary>
+	/// 反序列化
+	/// </summary>
+	virtual void DeSerialize(TiXmlElement*) override;
 public:
 	float range;
 private:

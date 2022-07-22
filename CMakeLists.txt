@@ -33,10 +33,13 @@ find_package(glm CONFIG REQUIRED)
 
 #包含头文件
 INCLUDE_DIRECTORIES(src src/ECS src/Engine src/App src/Plateform src/Editor)
-INCLUDE_DIRECTORIES(src/ECS/Components  src/ECS/System )
-INCLUDE_DIRECTORIES(src/Engine/Events src/Engine/Framework src/Engine/Render src/Engine/Layer)
-INCLUDE_DIRECTORIES(src/Engine/Window src/Engine/Window/GuiWindow src/Engine/Render/Materials)
-INCLUDE_DIRECTORIES(third_party third_party/imgui third_party/imGuizmo)
+INCLUDE_DIRECTORIES(src/ECS/Components  src/ECS/System)
+
+INCLUDE_DIRECTORIES(src/Engine/Framework src/Engine/Framework/Assets src/Engine/Framework/Tools src/Engine/Framework/Events)
+INCLUDE_DIRECTORIES(src/Engine/Window src/Engine/Window/GuiWindow)
+INCLUDE_DIRECTORIES(src/Engine/Render src/Engine/Render/Materials src/Engine/Render/Buffer)
+INCLUDE_DIRECTORIES(src/Engine/Layer)
+INCLUDE_DIRECTORIES(third_party third_party/imgui)
 
 #指定库搜索目录
 LINK_DIRECTORIES(third_party/libs)

@@ -1,5 +1,5 @@
 #pragma once
-#include "TLxml.h"
+#include "TLSerialize.h"
 #include <string>
 #include <vector>
 #include <memory>
@@ -9,7 +9,7 @@ class GameObject;
 class Scene
 {
 public:
-	Camera* camera;
+	Camera *camera;
 
 	/// <summary>
 	/// 读取并初始化场景
@@ -29,12 +29,17 @@ public:
 	/// <param name="">对象名称</param>
 	std::shared_ptr<GameObject> Find(std::string);
 
+	/// <summary>
+	/// 添加新物体
+	/// </summary>
 	void AddGameObject(std::shared_ptr<GameObject> gObj) { gameobjects.push_back(gObj); }
+
 public:
 	/// <summary>
 	/// 场景中物体的集合
 	/// </summary>
 	std::vector<std::shared_ptr<GameObject>> gameobjects;
+
 private:
 	/// <summary>
 	/// 场景文件路径
@@ -44,5 +49,5 @@ private:
 	/// <summary>
 	/// 场景文件对象
 	/// </summary>
-	TLxml xml;
+	TLSerializeFile xml;
 };

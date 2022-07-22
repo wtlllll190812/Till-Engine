@@ -4,7 +4,7 @@
 class GuiWindow
 {
 public:
-	GuiWindow(std::function<void()>  f, const char*);
+	GuiWindow(const std::function<void()>& f, const char*);
 	GuiWindow(const char*);
 	void Render();
 

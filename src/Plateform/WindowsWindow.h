@@ -5,9 +5,8 @@
 #include "FrameBuffer.h"
 
 /// <summary>
-/// tillwindow在windows平台下的实现
+/// tillwindow在opengl平台下的实现
 /// </summary>
-
 class GLFWwindow;
 class WindowsWindow :public Window
 {
@@ -25,7 +24,6 @@ public:
 
 	inline void* GetWindow()const{return mWindow;}
 	inline FrameBuffer* GetFrameBuffer(int index = 0)override { return framebuffer[index]; }
-
 	inline void AddFrameBuffer() override { framebuffer.push_back(new FrameBuffer()); }
 
 	void SetFrameBuffer(int index = 0)override;

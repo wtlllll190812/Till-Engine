@@ -32,19 +32,18 @@ glm::mat4 Camera::GetProjMatrix()
 	return glm::perspective(fov, b, 0.1f, 100.0f);
 }
 
-TLxml* Camera::Serialize()
+TiXmlElement* Camera::Serialize(std::string name)
 {
-	auto xml = new TLxml(GetName());
-	xml->pRoot->SetAttribute("guid", std::to_string(guid));
-	xml->pRoot->SetAttribute("fov", std::to_string(fov));
+	auto xml = new TiXmlElement(GetName());
+	xml->SetAttribute("guid", std::to_string(guid));
+	xml->SetAttribute("fov", std::to_string(fov));
 	return xml;
 }
 
-void Camera::Instantiate(TiXmlNode* xml)
+void Camera::DeSerialize(TiXmlElement* node)
 {
-	auto element = xml->ToElement();
-	fov = std::stof(element->Attribute("fov"));
-	guid = std::stoi(element->Attribute("guid"));
+	fov = std::stof(node->Attribute("fov"));
+	guid = std::stoi(node->Attribute("guid"));
 }
 
 void Camera::GuiDisPlay()

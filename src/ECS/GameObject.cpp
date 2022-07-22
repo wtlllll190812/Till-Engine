@@ -17,33 +17,10 @@ GameObject::GameObject()
 	transform->Awake();
 }
 
-GameObject::GameObject(TiXmlNode* xml, Scene* s)
+GameObject::GameObject(TiXmlElement* node, Scene* s)
 {
 	owner = s;
-	auto element = xml->ToElement();
-	guid = std::stoi(element->Attribute("guid"));
-	name = element->Attribute("name");
-	for (auto node = element->FirstChild(); node != 0; node = node->NextSibling())
-	{
-		auto element = node->ToElement();
-		Debug::GetEngineLogger()->info("Scene Load {0}", element->Value());
-		if (strcmp(element->Value(), "Transform") != 0)
-		{
-			auto comp = (Component*)ReflectionManager::instance().getClassByName(element->Value());
-			comp->Instantiate(element);
-			if (strcmp(element->Value(), "Camera") == 0)
-			{
-				s->camera = (Camera*)comp;
-			}
-			AddComponent(comp);
-		}
-		else
-		{
-			transform = new Transform();
-			transform->Instantiate(element);
-			AddComponent(transform);
-		}
-	}
+	DeSerialize(node);
 }
 
 GameObject::~GameObject()
@@ -58,24 +35,51 @@ void GameObject::AddComponent(Component* comp)
 	if (transform == nullptr)transform = dynamic_cast<Transform*>(comp);
 }
 
+TiXmlElement* GameObject::Serialize(std::string)
+{
+	TiXmlElement* xml = new TiXmlElement(name);
+	for (auto i : components)
+	{
+		xml->SetAttribute("name", name);
+		xml->SetAttribute("guid", std::to_string(guid));
+		xml->LinkEndChild(i->Serialize());
+	}
+	return xml;
+}
+
+void GameObject::DeSerialize(TiXmlElement* node)
+{
+	guid = std::stoi(node->Attribute("guid"));
+	name = node->Attribute("name");
+	
+	for (auto n = node->FirstChildElement(); n != 0; n = n->NextSiblingElement())
+	{
+		Debug::GetEngineLogger()->info("Scene Load {0}", n->Value());
+		if (strcmp(n->Value(), "Transform") != 0)
+		{
+			auto comp = (Component*)ReflectionManager::instance().getClassByName(n->Value());
+			comp->DeSerialize(n);
+			if (strcmp(n->Value(), "Camera") == 0)
+			{
+				owner->camera = (Camera*)comp;
+			}
+			AddComponent(comp);
+		}
+		else
+		{
+			transform = new Transform();
+			transform->DeSerialize(n);
+			AddComponent(transform);
+		}
+	}
+}
+
 void GameObject::Update()
 {
 	for (auto i = components.begin(); i != components.end(); ++i)
 	{
 		(*i)->OnUpdate();
 	}
-}
-
-TLxml* GameObject::Serialize()
-{
-	TLxml* xml = new TLxml(name);
-	for (auto i : components)
-	{
-		xml->pRoot->SetAttribute("name", name);
-		xml->pRoot->SetAttribute("guid", std::to_string(guid));
-		xml->AddChild(i->Serialize()->pRoot);
-	}
-	return xml;
 }
 
 int GameObject::GetHash()

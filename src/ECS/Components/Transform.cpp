@@ -138,26 +138,26 @@ glm::mat4 Transform::GetModelMatrix()
 	return translationMatrix * rotationMatrix * scaleMatrix;
 }
 
-TLxml* Transform::Serialize()
+TiXmlElement* Transform::Serialize(std::string name)
 {
-	auto xml = new TLxml("Transform");
-	xml->pRoot->SetAttribute("guid", std::to_string(guid));
-	xml->AddChild(TLxml::Serialize(position, "position")->pRoot);
-	xml->AddChild(TLxml::Serialize(rotation, "rotation")->pRoot);
-	xml->AddChild(TLxml::Serialize(scale, "scale")->pRoot);
+	auto xml = new TiXmlElement("Transform");
+	xml->SetAttribute("guid", std::to_string(guid));
+	xml->LinkEndChild(TLSerialize::Serialize(position, "position"));
+	xml->LinkEndChild(TLSerialize::Serialize(rotation, "rotation"));
+	xml->LinkEndChild(TLSerialize::Serialize(scale, "scale"));
 	return xml;
+	return nullptr;
 }
 
-void Transform::Instantiate(TiXmlNode* xml)
+void Transform::DeSerialize(TiXmlElement* node)
 {
-	auto element = xml->ToElement();
-	guid = std::stoi(element->Attribute("guid"));
-	element = element->FirstChildElement();
-	position = TLxml::DeSerialize(element);
-	element = element->NextSiblingElement();
-	rotation = TLxml::DeSerialize(element);
-	element = element->NextSiblingElement();
-	scale = TLxml::DeSerialize(element);
+	guid = std::stoi(node->Attribute("guid"));
+	node = node->FirstChildElement();
+	position = TLSerialize::DeSerialize(node);
+	node = node->NextSiblingElement();
+	rotation = TLSerialize::DeSerialize(node);
+	node = node->NextSiblingElement();
+	scale = TLSerialize::DeSerialize(node);
 }
 
 void Transform::GuiDisPlay()
@@ -165,13 +165,6 @@ void Transform::GuiDisPlay()
 	DrawVec3Control("Position", position);
 	DrawVec3Control("Rotation", rotation);
 	DrawVec3Control("Scale", scale);
-
-	/*ImGui::DragFloat3("Position", pos);
-	position = glm::vec3(pos[0], pos[1], pos[2]);
-	ImGui::DragFloat3("Rotation", rot);
-	rotation = glm::vec3(rot[0], rot[1], rot[2]);
-	ImGui::DragFloat3("Scale", sca);
-	scale = glm::vec3(sca[0], sca[1], sca[2]);*/
 }
 
 void Transform::Decompose(glm::mat4 newModel)
@@ -187,6 +180,4 @@ void Transform::Decompose(glm::mat4 newModel)
 	rotation.y = glm::degrees(euler.y);
 	rotation.x = glm::degrees(euler.x);
 	rotation.z = glm::degrees(euler.z);
-	
-	Debug::GetEngineLogger()->info("x{0} y{1} z{2}", euler.x, euler.y, euler.z);
 }

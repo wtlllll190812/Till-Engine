@@ -1,23 +1,24 @@
 #include "EditorLayer.h"
+
 #include "imgui.h"
+#include "ImGuizmo.h"
 #include "GuiWindow.h"
 #include "Application.h"
-#include "Scene.h"
-#include "GameObject.h"
-#include "Debug.h"
-#include "FrameBuffer.h"
-#include "Component.h"
-#include "Camera.h"
-#include <string>
-using namespace std;
 
-#include "Reflection.h"
+#include "GameObject.h"
 #include "Transform.h"
-#include "Input.h"
+#include "Camera.h"
+#include "Scene.h"
+
 #include "GLFW/glfw3.h"
-#include "ImGuizmo.h"
+#include "FrameBuffer.h"
+#include "Debug.h"
+#include "Input.h"
+#include "Reflection.h"
+
+#include <string>
 #include <glm/gtc/type_ptr.hpp>
-#include "Transform.h"
+using namespace std;
 
 EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 {
@@ -101,7 +102,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 						{
 							if (ImGui::CollapsingHeader(i->name.c_str()))
 							{
-								currentObj = i;
+								selectedObj = i;
 							}
 						}
 					}
@@ -127,10 +128,10 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 			if (Inspector)
 			{
 				ImGui::Begin("Inspector", &Inspector);
-				if (currentObj != nullptr)
+				if (selectedObj != nullptr)
 				{
 					//show Components
-					for (auto i : currentObj->components)
+					for (auto i : selectedObj->components)
 					{
 						if (ImGui::CollapsingHeader(i->GetName().c_str()))
 						{
@@ -149,7 +150,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 						{
 							if (ImGui::Button(start->second.c_str(), ImVec2(140, 20)))
 							{
-								currentObj->AddComponent((Component*)ReflectionManager::instance().getClassByName(start->second));
+								selectedObj->AddComponent((Component*)ReflectionManager::instance().getClassByName(start->second));
 								listOpen = false;
 							}
 						}
@@ -220,7 +221,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				fb->Resize(viewportPanelSize.x, viewportPanelSize.y);
 
 				//渲染gizmos
-				if (currentObj)
+				if (selectedObj)
 				{
 					ImGuizmo::SetOrthographic(false);
 					ImGuizmo::SetDrawlist();
@@ -230,7 +231,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 
 					const glm::mat4& cameraProjection = GetEditorCamera()->GetProjMatrix();
 					glm::mat4 cameraView = GetEditorCamera()->GetViewMatrix();
-					glm::mat4 model = currentObj->transform->GetModelMatrix();
+					glm::mat4 model = selectedObj->transform->GetModelMatrix();
 
 					float snapValue = 0.5f;
 					float snapValues[3] = { snapValue, snapValue, snapValue };
@@ -243,7 +244,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 					if (ImGuizmo::IsUsing())
 					{
 						glm::vec3 translation, rotation, scale;
-						currentObj->transform->Decompose(model);
+						selectedObj->transform->Decompose(model);
 					}
 				}
 
@@ -292,7 +293,6 @@ EditorLayer::~EditorLayer()
 void EditorLayer::OnUpdate()
 {
 	RenderStart();
-
 	//ImGui::ShowDemoWindow();
 	for (std::shared_ptr<GuiWindow> i : uiWindows)
 	{
@@ -301,8 +301,9 @@ void EditorLayer::OnUpdate()
 	RenderEnd();
 }
 
-void EditorLayer::SetScene(Scene* s)
+void EditorLayer::SetCurrentScene(Scene* s)
 {
+	currentScene = shared_ptr<Scene>(s);
 }
 
 Camera* EditorLayer::GetEditorCamera()

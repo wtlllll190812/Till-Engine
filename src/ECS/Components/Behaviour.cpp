@@ -2,11 +2,12 @@
 #include "Reflection.h"
 
 REFLECTION(Behaviour, Component);
-void Behaviour::Instantiate(TiXmlNode*)
-{
-}
 
-TLxml* Behaviour::Serialize()
+TiXmlElement* Behaviour::Serialize(std::string name)
 {
 	return nullptr;
+}
+
+void Behaviour::DeSerialize(TiXmlElement*)
+{
 }

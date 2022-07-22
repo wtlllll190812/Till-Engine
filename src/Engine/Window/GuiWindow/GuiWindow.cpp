@@ -3,7 +3,7 @@
 
 
 
-GuiWindow::GuiWindow(std::function<void()>  f, const char* _name)
+GuiWindow::GuiWindow(const std::function<void()>& f, const char* _name)
 {
 	RenderCallBack = f;
 	name = _name;

@@ -60,17 +60,14 @@ public:
 	glm::mat4 GetModelMatrix();
 
 	/// <summary>
-	/// 序列化为xml
+	/// 序列化
 	/// </summary>
-	/// <returns></returns>
-	virtual TLxml* Serialize() override;
+	virtual TiXmlElement* Serialize(std::string name = "Default") override;
 
 	/// <summary>
-	/// 通过xml实例化
+	/// 反序列化
 	/// </summary>
-	/// <param name=""></param>
-	virtual void Instantiate(TiXmlNode*) override;
-
+	virtual void DeSerialize(TiXmlElement*) override;
 
 	virtual void GuiDisPlay() override;
 

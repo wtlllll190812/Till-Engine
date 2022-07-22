@@ -14,7 +14,11 @@ public:
 	~EditorLayer();
 
 	void OnUpdate()override;
-	void SetScene(Scene* s);
+
+	//设置当前场景
+	void SetCurrentScene(Scene* s);
+	
+	//获取场景摄像机
 	Camera* GetEditorCamera();
 
 	bool OnMouseMovedEvent(MouseMovedEvent& e)override;
@@ -22,7 +26,7 @@ public:
 
 private:
 	std::shared_ptr<Scene> currentScene;
+	std::shared_ptr<GameObject> selectedObj;
 	std::shared_ptr<GameObject> editorCamera;
-	std::shared_ptr<GameObject> currentObj;
 };
 

@@ -8,11 +8,9 @@
 #include "ApplicationEvent.h"
 
 #include "RenderSystem.h"
-#include "Texture.h"
-#include "Application.h"
-#include "FrameBuffer.h"
 #include "Debug.h"
 
+//是否已经初始化
 static bool glfwInitialized = false;
 
 Window* Window::Create(const WindowProps& props)

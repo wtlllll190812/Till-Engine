@@ -25,25 +25,6 @@ void Renderer::Awake()
 	RenderSystem::instance().RegisterComponent(this);
 }
 
-TLxml* Renderer::Serialize()
-{
-	auto xml = new TLxml(GetName());
-	xml->pRoot->SetAttribute("guid", std::to_string(guid));
-	xml->pRoot->SetAttribute("modelPath", modelPath);
-	xml->pRoot->SetAttribute("materialName", material->matName);
-	return xml;
-}
-
-void Renderer::Instantiate(TiXmlNode* xml)
-{
-	auto element = xml->ToElement();
-	guid = std::stoi(element->Attribute("guid"));
-	modelPath = element->Attribute("modelPath");
-	auto mat = ReflectionManager::instance().getClassByName(element->Attribute("materialName"));
-	material = std::shared_ptr<Material>((Material*)mat);
-	mesh = AssetImporter::LoadMeshs(MODEL_PATH+modelPath)[0];
-}
-
 void Renderer::GuiDisPlay()
 {
 	ImGui::Text("Material");
@@ -53,4 +34,22 @@ void Renderer::GuiDisPlay()
 bool Renderer::operator>(const Renderer& r)
 {
 	return r.material->renderQueueIndex > material->renderQueueIndex;
+}
+
+TiXmlElement* Renderer::Serialize(std::string name)
+{
+	auto node = new TiXmlElement(GetName());
+	node->SetAttribute("guid", std::to_string(guid));
+	node->SetAttribute("modelPath", modelPath);
+	node->SetAttribute("materialName", material->matName);
+	return node;
+}
+
+void Renderer::DeSerialize(TiXmlElement* node)
+{
+	guid = std::stoi(node->Attribute("guid"));
+	modelPath = node->Attribute("modelPath");
+	auto mat = ReflectionManager::instance().getClassByName(node->Attribute("materialName"));
+	material = std::shared_ptr<Material>((Material*)mat);
+	mesh = AssetImporter::LoadMeshs(MODEL_PATH + modelPath)[0];
 }

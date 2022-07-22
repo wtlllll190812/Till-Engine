@@ -22,18 +22,25 @@ public:
 	Application();
 	~Application();
 
+	//添加层级
 	inline void PushLayer(Layer* layer);
-	inline void PushOverlay(Layer* layer) ;
-	inline EditorLayer* GetEditorLayer() { return editorLayer; }
+	inline void PushOverlay(Layer* layer);
+	//获取编辑器层级
+	inline const EditorLayer* GetEditorLayer() { return editorLayer; }
+	//初始化应用
 	void Init();
+	//运行应用
 	void Run();
+	//处理事件
 	void OnEvent(EventBase& e);
 
 private:
+	//层级栈
 	std::shared_ptr<LayerStack> mLayerStack;
+	//游戏主循环
 	std::shared_ptr<GameLoop> mainLoop;
+	//当前场景
 	std::shared_ptr<Scene> currentScene;
-	std::shared_ptr<GameObject> currentObj;
 
 private:
 	bool OnWindowsClose(WindowCloseEvent& e);

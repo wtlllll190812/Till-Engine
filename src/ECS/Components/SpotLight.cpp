@@ -12,15 +12,6 @@ SpotLight::~SpotLight()
 {
 }
 
-TLxml *SpotLight::Serialize()
-{
-	auto xml = new TLxml(GetName());
-	xml->pRoot->SetAttribute("guid", std::to_string(guid));
-	xml->pRoot->SetAttribute("intensity", std::to_string(intensity));
-	xml->AddChild(TLxml::Serialize(color, "color")->pRoot);
-	return xml;
-}
-
 void SpotLight::GuiDisPlay()
 {
 	float col[3] = { color.x,color.y,color.z };
@@ -31,10 +22,18 @@ void SpotLight::GuiDisPlay()
 	color = glm::vec3(col[0], col[1], col[2]);
 }
 
-void SpotLight::Instantiate(TiXmlNode *xml)
+TiXmlElement* SpotLight::Serialize(std::string name)
 {
-	auto element = xml->ToElement();
-	guid = std::stoi(element->Attribute("guid"));
-	intensity = std::stof(element->Attribute("intensity"));
-	color = TLxml::DeSerialize(xml->FirstChild());
+	auto xml = new TiXmlElement(GetName());
+	xml->SetAttribute("guid", std::to_string(guid));
+	xml->SetAttribute("intensity", std::to_string(intensity));
+	xml->LinkEndChild(TLSerialize::Serialize(color, "color"));
+	return xml;
+}
+
+void SpotLight::DeSerialize(TiXmlElement* node)
+{
+	guid = std::stoi(node->Attribute("guid"));
+	intensity = std::stof(node->Attribute("intensity"));
+	color = TLSerialize::DeSerialize(node->FirstChildElement());
 }

@@ -23,6 +23,6 @@
             <rotation x="45.000000" y="45.000000" z="45.000000" />
             <scale x="1.000000" y="1.000000" z="1.000000" />
         </Transform>
-        <Renderer guid="-108561232" modelPath="Sphere/Sphere.obj" materialName="DefaultMaterial"/>
+        <Renderer guid="-108561232" modelPath="Sphere/Sphere.obj" materialName="DefaultMaterial" />
     </GameObject>
 </sdsd>

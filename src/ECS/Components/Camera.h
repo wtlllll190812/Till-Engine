@@ -35,20 +35,19 @@ public:
 	{
 		return aspectRatio;
 	}
+
+	/// <summary>
+	/// 序列化
+	/// </summary>
+	virtual TiXmlElement* Serialize(std::string name = "Default") override;
+
+	/// <summary>
+	/// 反序列化
+	/// </summary>
+	virtual void DeSerialize(TiXmlElement*) override;
 private:
 	float aspectRatio = 4.0f/3;
 
 private:
-	/// <summary>
-	/// 序列化
-	/// </summary>
-	virtual TLxml* Serialize() override;
-
-	/// <summary>
-	/// 通过xml实例化
-	/// </summary>
-	/// <param name=""></param>
-	virtual void Instantiate(TiXmlNode*) override;
-
 	virtual void GuiDisPlay() override;
 };
