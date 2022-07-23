@@ -1,5 +1,6 @@
 #pragma once
 #include "EventBase.h"
+#include "FrameBuffer.h"
 
 /// <summary>
 /// 窗口属性
@@ -46,8 +47,10 @@ public:
 	virtual FrameBuffer* GetFrameBuffer(int index = 0) = 0;
 	//设定当前帧缓存
 	virtual void SetFrameBuffer(int index = 0) = 0;
+	virtual void SetFrameBuffer(FrameBuffer*) = 0;
+	virtual FrameBuffer* GetMianFrameBuffer(int index = 0) = 0;
 	//添加帧缓存
-	virtual void AddFrameBuffer() = 0;
+	virtual FrameBuffer* AddFrameBuffer(BufferType type) = 0;
 
 	virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
 	//设置垂直同步

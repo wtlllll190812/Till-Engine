@@ -26,7 +26,7 @@ Texture::~Texture()
 	glDeleteTextures(1, &texture);
 }
 
-void Texture::ColorInit(int w, int h)
+void Texture::ColorBufferInit(int w, int h)
 {
 	if (w != width || h != height)
 	{
@@ -38,7 +38,7 @@ void Texture::ColorInit(int w, int h)
 	}
 }
 
-void Texture::DepthInit(int w, int h)
+void Texture::DepthBufferInit(int w, int h)
 {
 	if (w != width || h != height)
 	{

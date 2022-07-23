@@ -8,8 +8,8 @@ public:
 	Texture(std::string);
 	Texture();
 	~Texture();
-	void ColorInit(int, int);
-	void DepthInit(int, int);
+	void ColorBufferInit(int, int);
+	void DepthBufferInit(int, int);
 private:
 	void TextureInit();
 };

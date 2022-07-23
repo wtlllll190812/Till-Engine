@@ -347,7 +347,7 @@ EditorLayer::~EditorLayer()
 void EditorLayer::OnUpdate()
 {
 	RenderStart();
-	ImGui::ShowDemoWindow();
+	//ImGui::ShowDemoWindow();
 	for (std::shared_ptr<GuiWindow> i : uiWindows)
 	{
 		i->Render();

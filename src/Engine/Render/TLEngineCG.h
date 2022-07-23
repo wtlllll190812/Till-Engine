@@ -1,6 +1,5 @@
 #pragma once
 #include <vector>
-
 enum class RendererQueue
 {
 	Background = 1000,
@@ -11,13 +10,17 @@ enum class RendererQueue
 };
 class Light;
 class Renderer;
+class FrameBuffer;
+class Material;
 class TLEngineCG
 {
 public:
-	TLEngineCG();
-	~TLEngineCG();
-
+	static FrameBuffer* shadowBuffer;
 	static std::vector<Light*> lights;
+	static Light* mainLight;
+	static Material* sadowCaster;
+public:
+	static void AddLight(Light* l);
 };
 
 #ifndef SetUniformMat4

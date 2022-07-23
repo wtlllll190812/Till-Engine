@@ -1,10 +1,18 @@
 #pragma once
 
+
+enum class BufferType
+{
+	Color,
+	Depth,
+	Both
+};
+
 class Texture;
 class FrameBuffer
 {
 public:
-	FrameBuffer();
+	FrameBuffer(BufferType type);
 	~FrameBuffer();
 	unsigned int& GetFBO();
 	void Resize(float w, float h);

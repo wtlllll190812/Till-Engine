@@ -24,9 +24,11 @@ public:
 
 	inline void* GetWindow()const{return mWindow;}
 	inline FrameBuffer* GetFrameBuffer(int index = 0)override { return framebuffer[index]; }
-	inline void AddFrameBuffer() override { framebuffer.push_back(new FrameBuffer()); }
+	inline FrameBuffer* AddFrameBuffer(BufferType type) override { FrameBuffer* buffer = new FrameBuffer(type); framebuffer.push_back(buffer); return buffer; }
+	inline FrameBuffer* GetMianFrameBuffer(int index = 0) override { return mainBuffer; }
 
 	void SetFrameBuffer(int index = 0)override;
+	void SetFrameBuffer(FrameBuffer*)override;
 	void SetVSync(bool enabled) override;
 	bool IsVSync() const override;
 private:
@@ -36,6 +38,7 @@ private:
 private:
 	std::vector<FrameBuffer*> framebuffer;
 	FrameBuffer* currentBuffer;
+	FrameBuffer* mainBuffer;
 	GLFWwindow* mWindow;
 
 	struct WindowData

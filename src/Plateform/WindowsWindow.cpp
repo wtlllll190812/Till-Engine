@@ -46,7 +46,6 @@ void WindowsWindow::DrawFunc()
 		glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
-
 	//调用渲染系统
 	RenderSystem::instance().Update();
 	SetFrameBuffer(-1);
@@ -66,6 +65,11 @@ void WindowsWindow::SetFrameBuffer(int index)
 		currentBuffer = framebuffer[index];
 		glBindFramebuffer(GL_FRAMEBUFFER, framebuffer[index]->GetFBO());
 	}
+}
+
+void WindowsWindow::SetFrameBuffer(FrameBuffer* buffer)
+{
+	glBindFramebuffer(GL_FRAMEBUFFER, buffer->GetFBO());
 }
 
 void WindowsWindow::SetVSync(bool enabled)
@@ -124,12 +128,14 @@ void WindowsWindow::Init(const WindowProps& props)
 		return;
 	}
 	SetCallback();
-	AddFrameBuffer();
+	mainBuffer=AddFrameBuffer(BufferType::Both);
 	glEnable(GL_FRAMEBUFFER_SRGB);
 }
 
 void WindowsWindow::ShutDown()
 {
+	for (auto i : framebuffer)
+		delete i;
 	glfwTerminate();
 }
 

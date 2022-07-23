@@ -17,6 +17,18 @@ public:
 	float intensity;
 
 	/// <summary>
+	/// 获取观察矩阵
+	/// </summary>
+	/// <returns>观察矩阵</returns>
+	glm::mat4 GetViewMatrix();
+
+	/// <summary>
+	/// 获取透视矩阵
+	/// </summary>
+	/// <returns>获取透视矩阵</returns>
+	glm::mat4 GetProjMatrix();
+	
+	/// <summary>
 	/// 光的颜色
 	/// </summary>
 	glm::vec3 color;

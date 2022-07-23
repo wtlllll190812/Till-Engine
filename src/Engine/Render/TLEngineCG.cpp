@@ -1,12 +1,15 @@
 #include"TLEngineCG.h"
 #include <glm/glm.hpp>
+#include "Window.h"
+#include "Application.h"
+#include "FrameBuffer.h"
+#include "MatShadowCaster.h"
 
 std::vector<Light*> TLEngineCG::lights = std::vector<Light*>();
+FrameBuffer* TLEngineCG::shadowBuffer = Application::instance().mWindows->AddFrameBuffer(BufferType::Depth);
+Material* TLEngineCG::sadowCaster=new MatShadowCaster();
 
-TLEngineCG::TLEngineCG()
+void TLEngineCG::AddLight(Light* light)
 {
-}
-
-TLEngineCG::~TLEngineCG()
-{
+	lights.push_back(light);
 }

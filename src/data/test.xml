@@ -9,27 +9,37 @@
     </GameObject>
     <GameObject name="light" guid="338550489">
         <Transform guid="-2106164455">
-            <position x="5.000000" y="5.000000" z="5.000000" />
-            <rotation x="0.000000" y="0.000000" z="0.000000" />
-            <scale x="0.000000" y="0.000000" z="0.000000" />
+            <position x="0.000000" y="12.130163" z="0.000000" />
+            <rotation x="-0.000000" y="0.000000" z="0.000000" />
+            <scale x="0.999998" y="0.999999" z="0.999997" />
         </Transform>
         <PointLight guid="-416323080" intensity="0.100000">
             <color x="0.900000" y="0.900000" z="0.900000" />
         </PointLight>
+        <Renderer guid="-108561432" modelPath="Cylinder/Cylinder.obj" materialName="LightMaterial" />
     </GameObject>
     <GameObject name="object" guid="334550489">
         <Transform guid="-2108764455">
-            <position x="0.000000" y="0.000000" z="-3.000000" />
-            <rotation x="0.000000" y="0.000000" z="0.000000" />
+            <position x="-2.644021" y="0.496766" z="-3.000000" />
+            <rotation x="-0.000000" y="0.000000" z="0.000000" />
             <scale x="1.000000" y="1.000000" z="1.000000" />
         </Transform>
-        <Renderer guid="-108561232" modelPath="Sphere/Sphere.obj" materialName="LightMaterial" />
+        <Renderer guid="-108561232" modelPath="Sphere/Sphere.obj" materialName="DefaultMaterial" />
     </GameObject>
-    <GameObject name="GameObject" guid="1215957406">
+    <GameObject name="Plane" guid="1215957406">
         <Transform guid="518457726">
-            <position x="0.000000" y="0.000000" z="0.000000" />
-            <rotation x="0.000000" y="0.000000" z="0.000000" />
-            <scale x="0.000000" y="0.000000" z="0.000000" />
+            <position x="-1.900000" y="-0.811753" z="0.000000" />
+            <rotation x="-0.000000" y="0.000000" z="0.000000" />
+            <scale x="20.000000" y="1.000000" z="20.000000" />
         </Transform>
+        <Renderer guid="-108561232" modelPath="Plane/Plane.obj" materialName="DefaultMaterial" />
+    </GameObject>
+    <GameObject name="Plane2" guid="1215557406">
+        <Transform guid="518557726">
+            <position x="6.101435" y="0.472453" z="0.000000" />
+            <rotation x="-0.000000" y="0.000000" z="0.000000" />
+            <scale x="1.000000" y="1.000000" z="1.000000" />
+        </Transform>
+        <Renderer guid="-108361232" modelPath="Cube/Cube.obj" materialName="DefaultMaterial" />
     </GameObject>
 </sdsd>
