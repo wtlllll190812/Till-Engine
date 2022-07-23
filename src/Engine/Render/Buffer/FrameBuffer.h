@@ -18,6 +18,8 @@ public:
 	void Resize(float w, float h);
 	int GetWidth();
 	int GetHeight();
+	inline Texture* GetColorBuffer() { return color; };
+	inline Texture* GetDepthBuffer() { return depth; };
 private:
 	Texture* color;
 	Texture* depth;

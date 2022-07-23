@@ -45,8 +45,6 @@ public:
 
 	inline void SetCamera(std::shared_ptr<Camera> camera) { currentCamera = camera; };
 
-
-
 	std::shared_ptr<Camera> currentCamera;
 
 private:

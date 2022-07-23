@@ -34,7 +34,7 @@ void RenderSystem::Update()
 	{
 		if (queue.top() != nullptr)
 		{
-			TLEngineCG::sadowCaster->Draw(queue.top()->gameobject, queue.top()->mesh);
+			//TLEngineCG::sadowCaster->Draw(queue.top()->gameobject, queue.top()->mesh);
 			queue.pop();
 		}
 	}
@@ -47,8 +47,8 @@ void RenderSystem::Update()
 	{
 		if (queue.top() != nullptr)
 		{
-			//TLEngineCG::sadowCaster->Draw(queue.top()->gameobject, queue.top()->mesh);
-			queue.top()->Draw();
+			TLEngineCG::sadowCaster->Draw(queue.top()->gameobject, queue.top()->mesh);
+			//queue.top()->Draw();
 			queue.pop();
 		}
 	}
@@ -64,6 +64,7 @@ void RenderSystem::SetData()
 	mainLightUB.SetData(sizeof(glm::vec3), 0, glm::value_ptr(light->gameobject->transform->position));
 	mainLightUB.SetData(sizeof(glm::vec3), 16, glm::value_ptr(light->color));
 	mainLightUB.SetData(sizeof(glm::vec3), 32, glm::value_ptr(currentCamera->gameobject->transform->position));
+
 }
 
 void RenderSystem::RenderShadow()
