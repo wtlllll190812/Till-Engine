@@ -29,7 +29,7 @@ MatShadowCaster::~MatShadowCaster()
 void MatShadowCaster::DrawFunc(GameObject* gObj, std::shared_ptr<Mesh> mesh)
 {
 	shader->Use();
-	glm::mat4 lightSpaceMat = TLEngineCG::lights[0]->GetProjMatrix() *TLEngineCG::lights[0]->GetViewMatrix();
+	glm::mat4 lightSpaceMat = TLEngineCG::lights[0]->GetOrthoMatrix() *TLEngineCG::lights[0]->GetViewMatrix();
 	glm::mat4 model = gObj->transform->GetModelMatrix();
 	SetUniformMat4(lightSpaceMat, shader);
 	SetUniformMat4(model, shader);

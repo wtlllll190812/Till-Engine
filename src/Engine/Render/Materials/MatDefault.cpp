@@ -43,7 +43,7 @@ void DefaultMaterial::DrawFunc(GameObject* gObj, std::shared_ptr<Mesh> mesh)
 	glActiveTexture(GL_TEXTURE2);
 	glBindTexture(GL_TEXTURE_2D, ShadowTex);
 
-	glm::mat4 lightSpaceMat = TLEngineCG::lights[0]->GetProjMatrix() * TLEngineCG::lights[0]->GetViewMatrix();
+	glm::mat4 lightSpaceMat = TLEngineCG::lights[0]->GetOrthoMatrix() * TLEngineCG::lights[0]->GetViewMatrix();
 	glm::mat4 model = gObj->transform->GetModelMatrix();
 	glm::vec3 objectColor(1.0f, 1.0f, 1.0f);
 

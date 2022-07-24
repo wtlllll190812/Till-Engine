@@ -26,7 +26,7 @@ public:
 	/// 获取透视矩阵
 	/// </summary>
 	/// <returns>获取透视矩阵</returns>
-	glm::mat4 GetProjMatrix();
+	glm::mat4 GetOrthoMatrix();
 	
 	/// <summary>
 	/// 光的颜色

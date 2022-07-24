@@ -28,13 +28,14 @@ Light::~Light()
 
 glm::mat4 Light::GetViewMatrix()
 {
-	return glm::lookAt(gameobject->transform->position, gameobject->transform->position+gameobject->transform->GetFront(), gameobject->transform->GetUp());
+	Transform* tr = gameobject->transform;
+	return glm::lookAt(tr->position, glm::vec3(0), gameobject->transform->GetUp());
 }
 
-glm::mat4 Light::GetProjMatrix()
+glm::mat4 Light::GetOrthoMatrix()
 {
-	float near_plane = 1.0f, far_plane = 7.5f;
-	return glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
+	float near_plane = 1.0f, far_plane = 100.0f;
+	return glm::ortho(-20.0f, 20.0f, -20.0f, 20.0f, near_plane, far_plane);
 }
 
 void Light::Awake()

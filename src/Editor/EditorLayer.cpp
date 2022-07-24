@@ -19,7 +19,7 @@
 #include <string>
 #include <glm/gtc/type_ptr.hpp>
 using namespace std;
-
+#include "TLEngineCG.h"
 EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 {
 	currentScene = s;
@@ -225,7 +225,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
 
 				//渲染场景至编辑器
-				auto fb = Application::instance().mWindows->GetFrameBuffer();
+				auto fb = Application::instance().mWindows->GetMianFrameBuffer(); //TLEngineCG::shadowBuffer; 
 				ImGui::Image((ImTextureID)fb->GetFBO(), viewportPanelSize, ImVec2(0, 1), ImVec2(1, 0));
 				fb->Resize(viewportPanelSize.x, viewportPanelSize.y);
 
@@ -287,8 +287,6 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 					editorCamera->transform->Translate(editorCamera->transform->GetUp(), dir.y / 60);
 					lastPos = Input::MousePos();
 				}
-			
-
 
 				//ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 2));
 				//ImGui::PushStyleVar(ImGuiStyleVar_ItemInnerSpacing, ImVec2(0, 0));

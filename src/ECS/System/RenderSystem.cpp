@@ -34,12 +34,12 @@ void RenderSystem::Update()
 	{
 		if (queue.top() != nullptr)
 		{
-			//TLEngineCG::sadowCaster->Draw(queue.top()->gameobject, queue.top()->mesh);
+			TLEngineCG::sadowCaster->Draw(queue.top()->gameobject, queue.top()->mesh);
 			queue.pop();
 		}
 	}
+	//window->SetFrameBuffer(-1);
 	window->SetFrameBuffer(window->GetMianFrameBuffer());
-
 	SetData();
 
 	queue = renderQueue;
@@ -47,8 +47,7 @@ void RenderSystem::Update()
 	{
 		if (queue.top() != nullptr)
 		{
-			TLEngineCG::sadowCaster->Draw(queue.top()->gameobject, queue.top()->mesh);
-			//queue.top()->Draw();
+			queue.top()->Draw();
 			queue.pop();
 		}
 	}

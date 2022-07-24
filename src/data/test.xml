@@ -9,7 +9,7 @@
     </GameObject>
     <GameObject name="light" guid="338550489">
         <Transform guid="-2106164455">
-            <position x="0.000000" y="12.130163" z="0.000000" />
+            <position x="-8.461156" y="10.329530" z="-0.367039" />
             <rotation x="-0.000000" y="0.000000" z="0.000000" />
             <scale x="0.999998" y="0.999999" z="0.999997" />
         </Transform>
