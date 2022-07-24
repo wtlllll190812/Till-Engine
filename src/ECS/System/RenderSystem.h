@@ -52,5 +52,5 @@ private:
 	UniformBuffer mainLightUB;
 private:
 	void SetData();
-	void RenderShadow();
+	void RenderShadow(std::priority_queue <Renderer*, std::vector<Renderer*>>);
 };

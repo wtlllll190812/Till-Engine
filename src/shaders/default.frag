@@ -64,9 +64,22 @@ void main()
     // 取得当前片段在光源视角下的深度
     float currentDepth = projCoords.z;
     // 检查当前片段是否在阴影中
-    float shadow = currentDepth-0.05 > closestDepth  ? 1.0 : 0.0;    
+
+    float shadow = 0.0;
+    vec2 texelSize = 1.0 / textureSize(shadowMap, 0);
+    for(int x = -1; x <= 1; ++x)
+    {
+        for(int y = -1; y <= 1; ++y)
+        {
+            float pcfDepth = texture(shadowMap, projCoords.xy + vec2(x, y) * texelSize).r; 
+            shadow += currentDepth - 0.05 > pcfDepth ? 1.0 : 0.0;        
+        }    
+    }
+    shadow /= 9.0;
+    if(projCoords.z > 1.0)
+        shadow = 0.0;
+
     vec3 result = ambient +( diffuse + specular)*intensity*(1-shadow);
 
-
-    color = vec4(vec3(shadow), 1.0f);
+    color = vec4(result, 1.0f);
 } 

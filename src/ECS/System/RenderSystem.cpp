@@ -27,18 +27,10 @@ RenderSystem::~RenderSystem()
 void RenderSystem::Update()
 {
 	renderPriorityQueue queue = renderQueue;
-	auto &window = Application::instance().mWindows;
 
+	auto& window = Application::instance().mWindows;
 	window->SetFrameBuffer(TLEngineCG::shadowBuffer);
-	while (!queue.empty())
-	{
-		if (queue.top() != nullptr)
-		{
-			TLEngineCG::sadowCaster->Draw(queue.top()->gameobject, queue.top()->mesh);
-			queue.pop();
-		}
-	}
-	//window->SetFrameBuffer(-1);
+	RenderShadow(queue);
 	window->SetFrameBuffer(window->GetMianFrameBuffer());
 	SetData();
 
@@ -66,8 +58,19 @@ void RenderSystem::SetData()
 
 }
 
-void RenderSystem::RenderShadow()
+void RenderSystem::RenderShadow(renderPriorityQueue queue)
 {
+
+	glCullFace(GL_FRONT);
+	while (!queue.empty())
+	{
+		if (queue.top() != nullptr)
+		{
+			TLEngineCG::sadowCaster->Draw(queue.top()->gameobject, queue.top()->mesh);
+			queue.pop();
+		}
+	}
+	glCullFace(GL_BACK); // 不要忘记设回原先的culling face
 }
 
 void RenderSystem::FixedUpdate()
