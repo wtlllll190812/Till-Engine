@@ -9,8 +9,8 @@
     </GameObject>
     <GameObject name="light" guid="338550489">
         <Transform guid="-2106164455">
-            <position x="4.725458" y="3.830000" z="4.900000" />
-            <rotation x="-0.000000" y="0.000000" z="65.800003" />
+            <position x="4.725458" y="15.570433" z="6.100000" />
+            <rotation x="-0.000000" y="0.000000" z="54.700001" />
             <scale x="0.999998" y="0.999999" z="0.999997" />
         </Transform>
         <PointLight guid="-416323080" intensity="0.100000">
