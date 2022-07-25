@@ -9,14 +9,13 @@
     </GameObject>
     <GameObject name="light" guid="338550489">
         <Transform guid="-2106164455">
-            <position x="-8.360000" y="9.530000" z="2.330000" />
-            <rotation x="-3.400000" y="0.000000" z="0.000000" />
+            <position x="4.725458" y="3.830000" z="4.900000" />
+            <rotation x="-0.000000" y="0.000000" z="65.800003" />
             <scale x="0.999998" y="0.999999" z="0.999997" />
         </Transform>
         <PointLight guid="-416323080" intensity="0.100000">
             <color x="0.900000" y="0.900000" z="0.900000" />
         </PointLight>
-        <Renderer guid="-108561432" modelPath="Plane/Plane.obj" materialName="LightMaterial" />
     </GameObject>
     <GameObject name="object" guid="334550489">
         <Transform guid="-2108764455">
@@ -36,7 +35,7 @@
     </GameObject>
     <GameObject name="Plane2" guid="1215557406">
         <Transform guid="518557726">
-            <position x="6.101435" y="0.472453" z="0.000000" />
+            <position x="5.300000" y="0.170000" z="-0.300000" />
             <rotation x="-0.000000" y="0.000000" z="0.000000" />
             <scale x="1.000000" y="1.000000" z="1.000000" />
         </Transform>

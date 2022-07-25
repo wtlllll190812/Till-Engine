@@ -43,7 +43,7 @@ void Texture::DepthBufferInit(int w, int h)
 	if (w != width || h != height)
 	{
 		glBindTexture(GL_TEXTURE_2D, texture);						  //绑定纹理
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH32F_STENCIL8, w, h, 0, GL_DEPTH_STENCIL, GL_UNSIGNED_INT_24_8, NULL);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, w, h, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
 		GLfloat borderColor[] = { 1.0, 1.0, 1.0, 1.0 };

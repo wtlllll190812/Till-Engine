@@ -20,6 +20,7 @@
 #include <glm/gtc/type_ptr.hpp>
 using namespace std;
 #include "TLEngineCG.h"
+#include "Texture.h"
 EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 {
 	currentScene = s;
@@ -223,12 +224,21 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				glm::vec2 m_ViewportBounds0 = { viewportMinRegion.x + viewportOffset.x, viewportMinRegion.y + viewportOffset.y };
 				glm::vec2 m_ViewportBounds1 = { viewportMaxRegion.x + viewportOffset.x, viewportMaxRegion.y + viewportOffset.y };
 				ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
+				
+				/*static Texture test;
+
+				Application::instance().mWindows->SetFrameBuffer(Application::instance().mWindows->GetMianFrameBuffer());
+				glReadPixels(0, 0, viewportPanelSize.x, viewportPanelSize.y, GL_RGB, GL_UNSIGNED_BYTE, &test.texture);*/
+				
 
 				//渲染场景至编辑器
-				auto fb = Application::instance().mWindows->GetMianFrameBuffer(); //TLEngineCG::shadowBuffer; 
-				ImGui::Image((ImTextureID)fb->GetFBO(), viewportPanelSize, ImVec2(0, 1), ImVec2(1, 0));
-				fb->Resize(viewportPanelSize.x, viewportPanelSize.y);
-
+				auto mainFB = Application::instance().mWindows->GetMianFrameBuffer(); 
+				auto shadowMap=TLEngineCG::shadowBuffer; 
+				ImGui::Image((ImTextureID)mainFB->GetColorBuffer()->texture, viewportPanelSize, ImVec2(0, 1), ImVec2(1, 0));
+				/*mainFB->Resize(viewportPanelSize.x, viewportPanelSize.y);
+				shadowMap->Resize(viewportPanelSize.x, viewportPanelSize.y);*/
+				Debug::GetAppLogger()->info("Heigth{0} vs {1}", mainFB->GetHeight(), shadowMap->GetHeight());
+				Debug::GetAppLogger()->info("Width{0} vs {1}", mainFB->GetWidth(), shadowMap->GetWidth());
 				//渲染gizmos
 				if (selectedObj)
 				{

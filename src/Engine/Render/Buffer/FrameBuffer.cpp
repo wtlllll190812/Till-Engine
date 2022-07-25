@@ -14,21 +14,23 @@ FrameBuffer::FrameBuffer(BufferType type)
 	{
 	case BufferType::Color:
 		color = new Texture();
-		color->ColorBufferInit(800, 600);
+		color->ColorBufferInit(1080, 720);
 		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, color->texture, 0);
 		break;
 	case BufferType::Depth:
 		depth = new Texture();
-		depth->DepthBufferInit(800, 600);
-		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_TEXTURE_2D, depth->texture, 0);
+		depth->DepthBufferInit(1080, 720);
+		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depth->texture, 0);
+		glDrawBuffer(GL_NONE);
+		glReadBuffer(GL_NONE);
 		break;
 	case BufferType::Both:
 		color = new Texture();
-		color->ColorBufferInit(800, 600);
+		color->ColorBufferInit(1080, 720);
 		depth = new Texture();
-		depth->DepthBufferInit(800, 600);
+		depth->DepthBufferInit(1080, 720);
 		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, color->texture, 0);
-		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_TEXTURE_2D, depth->texture, 0);
+		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depth->texture, 0);
 		break;
 	default:
 		break;
@@ -50,16 +52,20 @@ unsigned int& FrameBuffer::GetFBO()
 
 void FrameBuffer::Resize(float w, float h)
 {
-	color->ColorBufferInit(w, h);
-	depth->DepthBufferInit(w, h);
+	if(color) color->ColorBufferInit(w, h);
+	if(depth) depth->DepthBufferInit(w, h);
 }
 
 int FrameBuffer::GetWidth()
 {
-	return color->width;
+	if(color)
+		return color->width;
+	return depth->width;
 }
 
 int FrameBuffer::GetHeight()
 {
-	return color->height;
+	if (color)
+		return color->height;
+	return depth->height;
 }

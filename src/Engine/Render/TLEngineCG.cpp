@@ -6,7 +6,7 @@
 #include "MatShadowCaster.h"
 
 std::vector<Light*> TLEngineCG::lights = std::vector<Light*>();
-FrameBuffer* TLEngineCG::shadowBuffer = Application::instance().mWindows->AddFrameBuffer(BufferType::Depth);
+FrameBuffer* TLEngineCG::shadowBuffer = Application::instance().mWindows->AddFrameBuffer(BufferType::Both);
 Material* TLEngineCG::sadowCaster=new MatShadowCaster();
 
 void TLEngineCG::AddLight(Light* light)

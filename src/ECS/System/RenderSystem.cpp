@@ -52,7 +52,7 @@ void RenderSystem::SetData()
 
 	//Set Light Data
 	Light* light = TLEngineCG::lights[0];
-	mainLightUB.SetData(sizeof(glm::vec3), 0, glm::value_ptr(light->gameobject->transform->position));
+	mainLightUB.SetData(sizeof(glm::vec3), 0, glm::value_ptr(light->gameobject->transform->GetFront()));//glm::value_ptr(light->gameobject->transform->position));
 	mainLightUB.SetData(sizeof(glm::vec3), 16, glm::value_ptr(light->color));
 	mainLightUB.SetData(sizeof(glm::vec3), 32, glm::value_ptr(currentCamera->gameobject->transform->position));
 
@@ -60,7 +60,6 @@ void RenderSystem::SetData()
 
 void RenderSystem::RenderShadow(renderPriorityQueue queue)
 {
-
 	glCullFace(GL_FRONT);
 	while (!queue.empty())
 	{
@@ -70,7 +69,7 @@ void RenderSystem::RenderShadow(renderPriorityQueue queue)
 			queue.pop();
 		}
 	}
-	glCullFace(GL_BACK); // 不要忘记设回原先的culling face
+	glCullFace(GL_BACK);
 }
 
 void RenderSystem::FixedUpdate()

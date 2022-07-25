@@ -1,13 +1,9 @@
 #version 330 core
 out vec4 color;
 
-in vec3 FragPos;  
-in vec3 Normal;  
-in vec2 TexCoords;
-
 layout(std140)uniform LightData
 {
-    vec3 lightPos; 
+    vec3 lightDir; 
     vec3 lightColor;
     vec3 viewPos;
 };
@@ -28,9 +24,8 @@ uniform sampler2D shadowMap;
 
 void main()
 {
-    float dis = length(lightPos - defaultIn.FragPos);
-    vec3 lightDir = normalize(lightPos - defaultIn.FragPos);
-
+    // float dis = length(lightPos - defaultIn.FragPos);
+    vec3 lightDir = normalize(lightDir);// lightPos - defaultIn.FragPos);
     //float t = dot(normalize(spotLightDir),lightDir);
     float intensity = 1.0f;// / (1.0f + 0.09f * dis + 0.032 * dis * dis);
 
@@ -65,6 +60,8 @@ void main()
     float currentDepth = projCoords.z;
     // 检查当前片段是否在阴影中
 
+    float bias = max(0.001 * (1.0 - dot(defaultIn.Normal, lightDir)), 0.0005);
+
     float shadow = 0.0;
     vec2 texelSize = 1.0 / textureSize(shadowMap, 0);
     for(int x = -1; x <= 1; ++x)
@@ -72,14 +69,14 @@ void main()
         for(int y = -1; y <= 1; ++y)
         {
             float pcfDepth = texture(shadowMap, projCoords.xy + vec2(x, y) * texelSize).r; 
-            shadow += currentDepth - 0.05 > pcfDepth ? 1.0 : 0.0;        
+            shadow += currentDepth - bias > pcfDepth ? 1.0 : 0.0;        
         }    
     }
     shadow /= 9.0;
     if(projCoords.z > 1.0)
         shadow = 0.0;
 
-    vec3 result = ambient +( diffuse + specular)*intensity*(1-shadow);
-
+    // vec3 result = ambient +( diffuse + specular)*intensity*(1-shadow);
+    vec3 result = ambient+diffuse*(1-shadow);
     color = vec4(result, 1.0f);
 } 
