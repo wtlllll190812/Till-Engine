@@ -19,8 +19,9 @@ REFLECTIONINSTANCE(DefaultMaterial, Material);
 DefaultMaterial::DefaultMaterial()
 {
 	shader = new Shader(SHADER_PATH"default.vert", SHADER_PATH"default.frag");
-	mainTex=new Texture(IMAGE_PATH"ground_diff.jpg");
-	specTex=new Texture(IMAGE_PATH"ground_spec.jpg");
+	mainTex = new Texture(IMAGE_PATH"ground_diff.jpg");
+	specTex = new Texture(IMAGE_PATH"ground_spec.jpg");
+	normalTex = new Texture(IMAGE_PATH"ground_bump.jpg");
 	matName = "DefaultMaterial";
 }
 
@@ -29,6 +30,7 @@ DefaultMaterial::~DefaultMaterial()
 	delete shader;
 	delete mainTex;
 	delete specTex;
+	delete normalTex;
 }
 
 void DefaultMaterial::DrawFunc(GameObject* gObj, std::shared_ptr<Mesh> mesh)
@@ -37,7 +39,7 @@ void DefaultMaterial::DrawFunc(GameObject* gObj, std::shared_ptr<Mesh> mesh)
 
 	unsigned int ShadowTex = TLEngineCG::shadowBuffer->GetDepthBuffer()->texture;
 	
-	glActiveTexture(GL_TEXTURE2);
+	glActiveTexture(GL_TEXTURE3);
 	glBindTexture(GL_TEXTURE_2D, ShadowTex);
 
 	glm::mat4 lightSpaceMat = TLEngineCG::lights[0]->GetOrthoMatrix() * TLEngineCG::lights[0]->GetViewMatrix();
@@ -54,12 +56,15 @@ void DefaultMaterial::Init(GameObject*, std::shared_ptr<Mesh> mesh)
 	shader->Use();
 	glUniform1i(glGetUniformLocation(shader->Program, "diffuseMap"), 0);
 	glUniform1i(glGetUniformLocation(shader->Program, "specularMap"), 1);
-	glUniform1i(glGetUniformLocation(shader->Program, "shadowMap"), 2);
+	glUniform1i(glGetUniformLocation(shader->Program, "normalMap"), 2);
+	glUniform1i(glGetUniformLocation(shader->Program, "shadowMap"), 3);
 
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, mainTex->texture);
 	glActiveTexture(GL_TEXTURE1);
-	glBindTexture(GL_TEXTURE_2D, specTex->texture);
+	glBindTexture(GL_TEXTURE_2D, specTex->texture);	
+	glActiveTexture(GL_TEXTURE2);
+	glBindTexture(GL_TEXTURE_2D, normalTex->texture);
 	//设定Ubo绑定节点
 	unsigned int mat = glGetUniformBlockIndex(shader->Program, "Matrices");
 	glUniformBlockBinding(shader->Program, mat, 0);	

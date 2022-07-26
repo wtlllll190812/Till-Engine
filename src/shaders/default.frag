@@ -13,17 +13,23 @@ in DefaultOut {
     vec2 TexCoords;
     vec3 Normal;
     vec4 FragPosLightSpace;
+    mat3 TBN;
 } defaultIn;
 
 uniform float cutoff;
 uniform vec3 spotLightDir;
 uniform sampler2D diffuseMap;
 uniform sampler2D specularMap;
+uniform sampler2D normalMap;
 uniform sampler2D shadowMap;
 
 
 void main()
 {
+    vec3 normal = texture(normalMap, defaultIn.TexCoords).rgb;
+    normal = normalize(normal * 2.0 - 1.0);   
+    normal = normalize(defaultIn.TBN * normal);
+
     // float dis = length(lightPos - defaultIn.FragPos);
     vec3 lightDir = normalize(lightDir);// lightPos - defaultIn.FragPos);
     //float t = dot(normalize(spotLightDir),lightDir);
@@ -36,7 +42,7 @@ void main()
     vec3 ambient = ambientStrength * ObjectColor;
     
     // Diffuse 
-    vec3 norm = normalize(defaultIn.Normal);
+    vec3 norm = normalize(normal);
     float diff = max(dot(norm, lightDir), 0.0);
     vec3 diffuse = diff * lightColor * ObjectColor;
     
@@ -59,8 +65,7 @@ void main()
     // 取得当前片段在光源视角下的深度
     float currentDepth = projCoords.z;
     // 检查当前片段是否在阴影中
-
-    float bias = max(0.001 * (1.0 - dot(defaultIn.Normal, lightDir)), 0.0005);
+    float bias = max(0.0005 * (1.0 - dot(defaultIn.Normal, lightDir)), 0.0001);
 
     float shadow = 0.0;
     vec2 texelSize = 1.0 / textureSize(shadowMap, 0);

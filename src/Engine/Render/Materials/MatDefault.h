@@ -13,5 +13,6 @@ public:
 private:
 	Texture* mainTex;
 	Texture* specTex;
+	Texture* normalTex;
 };
 
