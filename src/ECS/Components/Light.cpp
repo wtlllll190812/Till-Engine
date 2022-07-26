@@ -29,7 +29,7 @@ Light::~Light()
 glm::mat4 Light::GetViewMatrix()
 {
 	Transform* tr = gameobject->transform;
-	return glm::lookAt(tr->position, glm::vec3(0), Transform::up);// tr->GetUp());
+	return glm::lookAt(tr->position + tr->GetFront(), tr->position,  tr->GetUp());
 }
 
 glm::mat4 Light::GetOrthoMatrix()

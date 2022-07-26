@@ -2,6 +2,7 @@
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 #include <GL/glew.h>
+#include <SOIL2/SOIL2.h>
 
 #include "KeyEvent.h"
 #include "MouseEvent.h"
@@ -9,6 +10,7 @@
 
 #include "RenderSystem.h"
 #include "Debug.h"
+#include "TLCore.h"
 
 //是否已经初始化
 static bool glfwInitialized = false;
@@ -112,6 +114,11 @@ void WindowsWindow::WindowInit(const WindowProps& props)
 		glfwInitialized = true;
 	}
 	mWindow = glfwCreateWindow((int)props.Width, (int)props.Height, mData.Title.c_str(), nullptr, nullptr);
+	int w, h;
+	unsigned char* image = SOIL_load_image(IMAGE_PATH"engine/Till_Engine.png", &w, &h, 0, SOIL_LOAD_RGB);
+	GLFWimage glfwimage{ w,h,image };
+	glfwSetWindowIcon(mWindow, 1, &glfwimage);
+	SOIL_free_image_data(image);
 
 	glfwMakeContextCurrent(mWindow);
 	glfwSetWindowUserPointer(mWindow, &mData);

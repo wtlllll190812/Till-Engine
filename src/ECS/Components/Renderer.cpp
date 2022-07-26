@@ -51,7 +51,7 @@ void Renderer::GuiDisPlay()
 		for (auto &it : AssetImporter::buildinModels) 
 		{
 			static int index = 0;
-			if (it.first+"/"+ it.first+".obj" == modelPath)
+			if (it.first == modelPath)
 				currentMesh = index;
 			meshList.push_back(it.first.c_str());
 			index++;
@@ -73,7 +73,7 @@ void Renderer::GuiDisPlay()
 	{
 		mesh = AssetImporter::GetMeshByName(meshList[currentMesh]);
 		std::string meshName = meshList[currentMesh];
-		modelPath = meshName + "/" + meshName + ".obj";
+		modelPath = meshName;
 		UpdateNode();
 	}
 }
@@ -102,7 +102,9 @@ void Renderer::DeSerialize(TiXmlElement* node)
 	modelPath = node->Attribute("modelPath");
 	auto mat = ReflectionManager::instance().CreateClassByName(node->Attribute("materialName"));
 	material = std::shared_ptr<Material>((Material*)mat);
-	mesh = AssetImporter::LoadMeshs(MODEL_PATH + modelPath)[0];
+	mesh = AssetImporter::GetMeshByName(modelPath);
+	if(mesh==nullptr)
+		mesh = AssetImporter::LoadMeshs(MODEL_PATH + modelPath)[0];
 }
 
 void Renderer::UpdateNode()

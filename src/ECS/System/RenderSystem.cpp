@@ -23,7 +23,7 @@ RenderSystem::RenderSystem()
 {
 	maticesUB.BufferInit(sizeof(glm::mat4) * 2);
 	mainLightUB.BufferInit(sizeof(glm::vec3) * 3);
-	skybox = AssetImporter::LoadMeshs(MODEL_PATH"Cube/Cube.obj")[0];
+	skybox = AssetImporter::GetMeshByName("Cube");
 }
 
 RenderSystem::~RenderSystem()

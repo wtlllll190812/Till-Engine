@@ -20,7 +20,7 @@ void AssetImporter::Init()
 
 std::vector<std::shared_ptr<Mesh>> AssetImporter::LoadMeshs(std::string path)
 {
-    Debug::GetEngineLogger()->warn("Load model {0}",path);
+    Debug::GetEngineLogger()->info("Load model {0}",path);
     std::vector<std::shared_ptr<Mesh>> res;
 
     const aiScene* scene = modelImporter.ReadFile(path, aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_FlipUVs | aiProcess_CalcTangentSpace);
@@ -45,7 +45,13 @@ std::shared_ptr<Mesh> AssetImporter::LoadMesh(std::string path)
 
 std::shared_ptr<Mesh> AssetImporter::GetMeshByName(std::string name)
 {
-    return buildinModels[name];
+    if (buildinModels.count(name))
+        return buildinModels[name];
+    else
+    {
+        Debug::GetEngineLogger()->info("Can not find buildin mesh {0}",name);
+        return nullptr;
+    }
 }
 
 void AssetImporter::ProcessNode(aiNode* node, const aiScene* scene, std::vector<std::shared_ptr<Mesh>>& res)

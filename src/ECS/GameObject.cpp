@@ -25,9 +25,9 @@ GameObject::GameObject(TiXmlElement* node, Scene* s)
 
 GameObject::~GameObject()
 {
-	for (size_t i = 0; i < components.size(); i++)
+	for (auto i = components.begin(); i != components.end(); i++) // 这里报错
 	{
-		delete components[i];
+		i=components.erase(i);
 	}
 }
 

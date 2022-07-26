@@ -8,7 +8,7 @@ class Light : public Component
 public:
 	Light(float, glm::vec3);
 	Light();
-	~Light();
+	virtual ~Light();
 
 	COMPONENTNAME(Light)
 	/// <summary>

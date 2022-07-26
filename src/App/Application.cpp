@@ -20,8 +20,6 @@ Application::Application()
 	mWindows = unique_ptr<Window>(Window::Create());
 	mainLoop = shared_ptr<GameLoop>(new GameLoop(10));
 	mLayerStack = shared_ptr<LayerStack>(new LayerStack());
-	mCurrentScene = shared_ptr<Scene>(new Scene(DATA_PATH "test.xml"));
-	mEditorLayer = new EditorLayer(mCurrentScene);
 }
 
 Application::~Application()
@@ -41,11 +39,15 @@ inline void Application::PushOverlay(Layer *layer)
 void Application::AppInit()
 {
 	Debug::GetEngineLogger()->info("Engine start init");
-	mWindows->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
-	RenderSystem::instance().SetCamera(mEditorLayer->GetEditorCamera());
-	PushOverlay(mEditorLayer);
-	Input::Init();
 	AssetImporter::Init();
+	Input::Init();
+
+	mWindows->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
+	mCurrentScene = shared_ptr<Scene>(new Scene(DATA_PATH "test.xml"));
+	mEditorLayer = new EditorLayer(mCurrentScene);
+	PushOverlay(mEditorLayer);
+
+	RenderSystem::instance().SetCamera(mEditorLayer->GetEditorCamera());
 	Debug::GetEngineLogger()->info("Engine inited");
 }
 
