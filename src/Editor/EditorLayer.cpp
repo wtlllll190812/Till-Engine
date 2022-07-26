@@ -99,13 +99,23 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				{
 					if (ImGui::CollapsingHeader("currentScene"))
 					{
+						ImGui::Indent();
 						for (auto &i : mCurrentScene->gameobjects)
 						{
-							if (ImGui::Button(i->name.c_str()))
+							/*char buf[sizeof(i->name)];
+							strcat(buf, i->name.c_str());*/
+							ImGui::Indent(3);
+							if (ImGui::CollapsingHeader(i->name.c_str()))
 							{
 								selectedObj = i;
 							}
+							ImGui::Unindent(3);
+							/*if (ImGui::Button())
+							{
+								selectedObj = i;
+							}*/
 						}
+						ImGui::Unindent();
 					}
 				}
 				// Right-click on blank space
@@ -347,7 +357,7 @@ EditorLayer::~EditorLayer()
 void EditorLayer::OnUpdate()
 {
 	RenderStart();
-	//ImGui::ShowDemoWindow();
+	ImGui::ShowDemoWindow();
 	for (std::shared_ptr<GuiWindow> i : uiWindows)
 	{
 		i->Render();

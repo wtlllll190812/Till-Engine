@@ -32,6 +32,7 @@ RenderSystem::~RenderSystem()
 
 void RenderSystem::Update()
 {
+	glEnable(GL_FRAMEBUFFER_SRGB);
 	renderPriorityQueue queue = renderQueue;
 
 	SetData();
@@ -50,6 +51,7 @@ void RenderSystem::Update()
 			queue.pop();
 		}
 	}
+	glDisable(GL_FRAMEBUFFER_SRGB);
 }
 
 void RenderSystem::SetData()

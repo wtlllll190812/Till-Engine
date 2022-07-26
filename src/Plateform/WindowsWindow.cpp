@@ -104,6 +104,8 @@ void WindowsWindow::WindowInit(const WindowProps& props)
 		//glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);//使用核心模式,使用旧版函数时会出错
 		//glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);//禁止调整窗口大小
 		//glfwWindowHint(GLFW_SAMPLES, 4);
+		/*glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
+		glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);*/
 
 		glfwSetErrorCallback([](int error_code, const char* description)
 			{
@@ -138,7 +140,6 @@ void WindowsWindow::WindowInit(const WindowProps& props)
 	}
 	SetCallback();
 	mainBuffer=AddFrameBuffer(BufferType::Both);
-	glEnable(GL_FRAMEBUFFER_SRGB);
 }
 
 void WindowsWindow::ShutDown()

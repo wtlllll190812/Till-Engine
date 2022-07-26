@@ -22,7 +22,7 @@ Light::~Light()
 	while (i != TLEngineCG::lights.end())
 	{
 		if (*i == this)
-			TLEngineCG::lights.erase(i);
+			i=TLEngineCG::lights.erase(i);
 	}
 }
 
