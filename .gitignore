@@ -19,5 +19,6 @@ vcpkg_installed/
 x64/
 out/
 Debug/
+Release/
 Till_Engine.dir/
 .VSCodeCounter/

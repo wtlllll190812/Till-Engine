@@ -26,5 +26,7 @@ void Material::Draw(GameObject* object, shared_ptr<Mesh> mesh)
 	shader->Use();
 	DrawFunc(object, mesh);
 	glDrawElements(GL_TRIANGLES, mesh->GetSize(), GL_UNSIGNED_INT, 0);
+	glDepthMask(GL_TRUE);
+	glCullFace(GL_BACK);
 	glBindVertexArray(0);
 }

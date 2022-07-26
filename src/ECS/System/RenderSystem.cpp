@@ -11,13 +11,17 @@
 #include "Window.h"
 #include "Material.h"
 
+
+#include "AssetImporter.h"
 typedef std::priority_queue <Renderer*, std::vector<Renderer*>> renderPriorityQueue;
 renderPriorityQueue RenderSystem::renderQueue = renderPriorityQueue();
+std::shared_ptr<Mesh> skybox;
 
 RenderSystem::RenderSystem()
 {
 	maticesUB.BufferInit(sizeof(glm::mat4) * 2);
 	mainLightUB.BufferInit(sizeof(glm::vec3) * 3);
+	skybox = AssetImporter::LoadMeshs(MODEL_PATH"Cube/Cube.obj")[0];
 }
 
 RenderSystem::~RenderSystem()
@@ -28,13 +32,11 @@ void RenderSystem::Update()
 {
 	renderPriorityQueue queue = renderQueue;
 
-	auto& window = Application::instance().mWindows;
-	window->SetFrameBuffer(TLEngineCG::shadowBuffer);
 	RenderShadow(queue);
-	window->SetFrameBuffer(window->GetMianFrameBuffer());
 	SetData();
 
 	queue = renderQueue;
+	TLEngineCG::skyboxMat->Draw(nullptr,skybox);
 	while (!queue.empty())
 	{
 		if (queue.top() != nullptr)
@@ -44,6 +46,7 @@ void RenderSystem::Update()
 		}
 	}
 }
+
 void RenderSystem::SetData()
 {
 	//Set MVP Matices
@@ -55,11 +58,12 @@ void RenderSystem::SetData()
 	mainLightUB.SetData(sizeof(glm::vec3), 0, glm::value_ptr(light->gameobject->transform->GetFront()));//glm::value_ptr(light->gameobject->transform->position));
 	mainLightUB.SetData(sizeof(glm::vec3), 16, glm::value_ptr(light->color));
 	mainLightUB.SetData(sizeof(glm::vec3), 32, glm::value_ptr(currentCamera->gameobject->transform->position));
-
 }
 
 void RenderSystem::RenderShadow(renderPriorityQueue queue)
 {
+	auto& window = Application::instance().mWindows;
+	window->SetFrameBuffer(TLEngineCG::shadowBuffer);
 	glCullFace(GL_FRONT);
 	while (!queue.empty())
 	{
@@ -70,6 +74,7 @@ void RenderSystem::RenderShadow(renderPriorityQueue queue)
 		}
 	}
 	glCullFace(GL_BACK);
+	window->SetFrameBuffer(window->GetMianFrameBuffer());
 }
 
 void RenderSystem::FixedUpdate()

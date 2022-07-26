@@ -65,5 +65,4 @@ void DefaultMaterial::Init(GameObject*, std::shared_ptr<Mesh> mesh)
 	glUniformBlockBinding(shader->Program, mat, 0);	
 	mat = glGetUniformBlockIndex(shader->Program, "LightData");
 	glUniformBlockBinding(shader->Program, mat, 1);
-
 }

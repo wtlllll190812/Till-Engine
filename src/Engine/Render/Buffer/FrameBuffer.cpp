@@ -13,22 +13,18 @@ FrameBuffer::FrameBuffer(BufferType type)
 	switch (type)
 	{
 	case BufferType::Color:
-		color = new Texture();
-		color->ColorBufferInit(1080, 720);
+		color = new Texture(TextureType::Color, 1080, 720);
 		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, color->texture, 0);
 		break;
 	case BufferType::Depth:
-		depth = new Texture();
-		depth->DepthBufferInit(1080, 720);
+		depth = new Texture(TextureType::Depth, 1080, 720);
 		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depth->texture, 0);
 		glDrawBuffer(GL_NONE);
 		glReadBuffer(GL_NONE);
 		break;
 	case BufferType::Both:
-		color = new Texture();
-		color->ColorBufferInit(1080, 720);
-		depth = new Texture();
-		depth->DepthBufferInit(1080, 720);
+		color = new Texture(TextureType::Color, 1080, 720);
+		depth = new Texture(TextureType::Depth, 1080, 720);
 		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, color->texture, 0);
 		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depth->texture, 0);
 		break;

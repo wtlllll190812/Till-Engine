@@ -12,6 +12,7 @@ class Light;
 class Renderer;
 class FrameBuffer;
 class Material;
+class Texture;
 class TLEngineCG
 {
 public:
@@ -19,6 +20,7 @@ public:
 	static std::vector<Light*> lights;
 	static Light* mainLight;
 	static Material* sadowCaster;
+	static Material* skyboxMat;
 public:
 	static void AddLight(Light* l);
 };
