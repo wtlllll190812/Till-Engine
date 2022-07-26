@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,42 +28,29 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public 成员函数</a> &#124;
 <a href="#pub-attribs">Public 属性</a> &#124;
 <a href="#pub-static-attribs">静态 Public 属性</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
 <a href="class_render_system-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">RenderSystem类 参考</div></div>
 </div><!--header-->
@@ -90,14 +75,19 @@ RenderSystem 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_render_system__coll__graph.png" border="0" usemap="#a_render_system_coll__map" alt="Collaboration graph"/></div>
 <map name="a_render_system_coll__map" id="a_render_system_coll__map">
-<area shape="rect" title="渲染系统" alt="" coords="59,80,167,107"/>
+<area shape="rect" title="渲染系统" alt="" coords="135,109,243,136"/>
 <area shape="rect" href="class_system.html" title=" " alt="" coords="5,5,72,32"/>
 <area shape="rect" href="class_singleton.html" title=" " alt="" coords="96,5,283,32"/>
+<area shape="rect" href="class_uniform_buffer.html" title="UBO缓存" alt="" coords="307,5,405,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
+<tr class="memitem:a20496a8f52c4eb755d4bfcaba2e98e1c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_system.html#a20496a8f52c4eb755d4bfcaba2e98e1c">RenderSystem</a> ()</td></tr>
+<tr class="separator:a20496a8f52c4eb755d4bfcaba2e98e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1838cd6142b9ba29bf086fd146d11f38"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_system.html#a1838cd6142b9ba29bf086fd146d11f38">~RenderSystem</a> ()</td></tr>
+<tr class="separator:a1838cd6142b9ba29bf086fd146d11f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a744c9a8ba4359b3353a6130f3af51fbb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_system.html#a744c9a8ba4359b3353a6130f3af51fbb">Update</a> () override</td></tr>
 <tr class="memdesc:a744c9a8ba4359b3353a6130f3af51fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">每帧刷新  <a href="class_render_system.html#a744c9a8ba4359b3353a6130f3af51fbb">更多...</a><br /></td></tr>
 <tr class="separator:a744c9a8ba4359b3353a6130f3af51fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -110,13 +100,11 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a6668d5e3723f22d6a7e0141989cfe461"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_system.html#a6668d5e3723f22d6a7e0141989cfe461">RemoveComponent</a> (<a class="el" href="class_component.html">Component</a> *) override</td></tr>
 <tr class="memdesc:a6668d5e3723f22d6a7e0141989cfe461"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除组件  <a href="class_render_system.html#a6668d5e3723f22d6a7e0141989cfe461">更多...</a><br /></td></tr>
 <tr class="separator:a6668d5e3723f22d6a7e0141989cfe461"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8bf74fc6dd8dc22739dbeafd667e6a6"><td class="memItemLeft" align="right" valign="top"><a id="aa8bf74fc6dd8dc22739dbeafd667e6a6" name="aa8bf74fc6dd8dc22739dbeafd667e6a6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Clear</b> ()</td></tr>
-<tr class="memdesc:aa8bf74fc6dd8dc22739dbeafd667e6a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">清空 <br /></td></tr>
+<tr class="memitem:aa8bf74fc6dd8dc22739dbeafd667e6a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_system.html#aa8bf74fc6dd8dc22739dbeafd667e6a6">Clear</a> ()</td></tr>
+<tr class="memdesc:aa8bf74fc6dd8dc22739dbeafd667e6a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">清空  <a href="class_render_system.html#aa8bf74fc6dd8dc22739dbeafd667e6a6">更多...</a><br /></td></tr>
 <tr class="separator:aa8bf74fc6dd8dc22739dbeafd667e6a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf71a2b40bd01841db74a4a75befc78b"><td class="memItemLeft" align="right" valign="top"><a id="acf71a2b40bd01841db74a4a75befc78b" name="acf71a2b40bd01841db74a4a75befc78b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetCamera</b> (std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt; mainCamera)</td></tr>
-<tr class="memdesc:acf71a2b40bd01841db74a4a75befc78b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置当前摄像机 <br /></td></tr>
+<tr class="memitem:acf71a2b40bd01841db74a4a75befc78b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_system.html#acf71a2b40bd01841db74a4a75befc78b">SetCamera</a> (std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt; mainCamera)</td></tr>
+<tr class="memdesc:acf71a2b40bd01841db74a4a75befc78b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置当前摄像机  <a href="class_render_system.html#acf71a2b40bd01841db74a4a75befc78b">更多...</a><br /></td></tr>
 <tr class="separator:acf71a2b40bd01841db74a4a75befc78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0128dd6a6f6ee885ec9861121599f6f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_system.html#af0128dd6a6f6ee885ec9861121599f6f">Update</a> ()=0</td></tr>
 <tr class="separator:af0128dd6a6f6ee885ec9861121599f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,31 +114,116 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetCamera</b> (std::s
 <tr class="separator:a451ca910192755adc3ef0226df6314d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85d857fb24aefacde3ae2461180befb7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_system.html#a85d857fb24aefacde3ae2461180befb7">RemoveComponent</a> (<a class="el" href="class_component.html">Component</a> *)=0</td></tr>
 <tr class="separator:a85d857fb24aefacde3ae2461180befb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_singleton"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_singleton')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="class_singleton.html">Singleton&lt; RenderSystem &gt;</a></td></tr>
+<tr class="memitem:a923b995920da9c06590adb170ab2f890 inherit pub_methods_class_singleton"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_singleton.html#a923b995920da9c06590adb170ab2f890">Singleton</a> ()</td></tr>
+<tr class="separator:a923b995920da9c06590adb170ab2f890 inherit pub_methods_class_singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public 属性</h2></td></tr>
-<tr class="memitem:ab9d175e0d1e547569acde2bfd6dc210f"><td class="memItemLeft" align="right" valign="top"><a id="ab9d175e0d1e547569acde2bfd6dc210f" name="ab9d175e0d1e547569acde2bfd6dc210f"></a>
-std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>currentCamera</b></td></tr>
-<tr class="memdesc:ab9d175e0d1e547569acde2bfd6dc210f"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前摄像机 <br /></td></tr>
+<tr class="memitem:ab9d175e0d1e547569acde2bfd6dc210f"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_system.html#ab9d175e0d1e547569acde2bfd6dc210f">currentCamera</a></td></tr>
+<tr class="memdesc:ab9d175e0d1e547569acde2bfd6dc210f"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前摄像机  <a href="class_render_system.html#ab9d175e0d1e547569acde2bfd6dc210f">更多...</a><br /></td></tr>
 <tr class="separator:ab9d175e0d1e547569acde2bfd6dc210f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 静态 Public 属性</h2></td></tr>
-<tr class="memitem:ad9da530f350b176618655d7e6bb17151"><td class="memItemLeft" align="right" valign="top"><a id="ad9da530f350b176618655d7e6bb17151" name="ad9da530f350b176618655d7e6bb17151"></a>
-static std::priority_queue&lt; <a class="el" href="class_renderer.html">Renderer</a> *, std::vector&lt; <a class="el" href="class_renderer.html">Renderer</a> * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>renderQueue</b> = renderPriorityQueue()</td></tr>
-<tr class="memdesc:ad9da530f350b176618655d7e6bb17151"><td class="mdescLeft">&#160;</td><td class="mdescRight">渲染队列 <br /></td></tr>
+<tr class="memitem:ad9da530f350b176618655d7e6bb17151"><td class="memItemLeft" align="right" valign="top">static std::priority_queue&lt; <a class="el" href="class_renderer.html">Renderer</a> *, std::vector&lt; <a class="el" href="class_renderer.html">Renderer</a> * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_system.html#ad9da530f350b176618655d7e6bb17151">renderQueue</a> = <a class="el" href="_render_system_8cpp.html#a2c2085acdabc15751a6b1d0a13596f79">renderPriorityQueue</a>()</td></tr>
+<tr class="memdesc:ad9da530f350b176618655d7e6bb17151"><td class="mdescLeft">&#160;</td><td class="mdescRight">渲染队列  <a href="class_render_system.html#ad9da530f350b176618655d7e6bb17151">更多...</a><br /></td></tr>
 <tr class="separator:ad9da530f350b176618655d7e6bb17151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a403f3d3b8c85d6ca32522dfb4b8092e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_system.html#a403f3d3b8c85d6ca32522dfb4b8092e2">SetData</a> ()</td></tr>
+<tr class="memdesc:a403f3d3b8c85d6ca32522dfb4b8092e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">配置渲染数据  <a href="class_render_system.html#a403f3d3b8c85d6ca32522dfb4b8092e2">更多...</a><br /></td></tr>
+<tr class="separator:a403f3d3b8c85d6ca32522dfb4b8092e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a811afc13db3e5f903195598618c7c421"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_system.html#a811afc13db3e5f903195598618c7c421">RenderShadow</a> (std::priority_queue&lt; <a class="el" href="class_renderer.html">Renderer</a> *, std::vector&lt; <a class="el" href="class_renderer.html">Renderer</a> * &gt; &gt;)</td></tr>
+<tr class="memdesc:a811afc13db3e5f903195598618c7c421"><td class="mdescLeft">&#160;</td><td class="mdescRight">渲染阴影  <a href="class_render_system.html#a811afc13db3e5f903195598618c7c421">更多...</a><br /></td></tr>
+<tr class="separator:a811afc13db3e5f903195598618c7c421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a8fe5db77fdb70b1417382aa79c0ff555"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_uniform_buffer.html">UniformBuffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_system.html#a8fe5db77fdb70b1417382aa79c0ff555">maticesUB</a></td></tr>
+<tr class="memdesc:a8fe5db77fdb70b1417382aa79c0ff555"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩阵UBO  <a href="class_render_system.html#a8fe5db77fdb70b1417382aa79c0ff555">更多...</a><br /></td></tr>
+<tr class="separator:a8fe5db77fdb70b1417382aa79c0ff555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1729b07fdebc23e66178c24a7cf896b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_uniform_buffer.html">UniformBuffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_system.html#a1729b07fdebc23e66178c24a7cf896b7">mainLightUB</a></td></tr>
+<tr class="memdesc:a1729b07fdebc23e66178c24a7cf896b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">光照UBO  <a href="class_render_system.html#a1729b07fdebc23e66178c24a7cf896b7">更多...</a><br /></td></tr>
+<tr class="separator:a1729b07fdebc23e66178c24a7cf896b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 额外继承的成员函数</h2></td></tr>
 <tr class="inherit_header pub_static_methods_class_singleton"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_singleton')"><img src="closed.png" alt="-"/>&#160;静态 Public 成员函数 继承自 <a class="el" href="class_singleton.html">Singleton&lt; RenderSystem &gt;</a></td></tr>
-<tr class="memitem:a258d9ee54e59cc9d9ea6020a19ae8640 inherit pub_static_methods_class_singleton"><td class="memItemLeft" align="right" valign="top"><a id="a258d9ee54e59cc9d9ea6020a19ae8640" name="a258d9ee54e59cc9d9ea6020a19ae8640"></a>
-static <a class="el" href="class_render_system.html">RenderSystem</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>instance</b> ()</td></tr>
+<tr class="memitem:a258d9ee54e59cc9d9ea6020a19ae8640 inherit pub_static_methods_class_singleton"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_render_system.html">RenderSystem</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640">instance</a> ()</td></tr>
 <tr class="separator:a258d9ee54e59cc9d9ea6020a19ae8640 inherit pub_static_methods_class_singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p >渲染系统 </p>
-</div><h2 class="groupheader">成员函数说明</h2>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a20496a8f52c4eb755d4bfcaba2e98e1c" name="a20496a8f52c4eb755d4bfcaba2e98e1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20496a8f52c4eb755d4bfcaba2e98e1c">&#9670;&nbsp;</a></span>RenderSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RenderSystem::RenderSystem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_render_system_a20496a8f52c4eb755d4bfcaba2e98e1c_cgraph.png" border="0" usemap="#aclass_render_system_a20496a8f52c4eb755d4bfcaba2e98e1c_cgraph" alt=""/></div>
+<map name="aclass_render_system_a20496a8f52c4eb755d4bfcaba2e98e1c_cgraph" id="aclass_render_system_a20496a8f52c4eb755d4bfcaba2e98e1c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,208,57"/>
+<area shape="rect" href="class_uniform_buffer.html#a38e80fe974cd99c47ad2759991d59b1d" title="初始化缓存" alt="" coords="267,5,424,32"/>
+<area shape="rect" href="class_asset_importer.html#a6849837d993ae78b78b65fa7dfe55732" title=" " alt="" coords="256,56,435,83"/>
+<area shape="rect" href="class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="494,19,661,45"/>
+<area shape="rect" href="class_asset_importer.html#a7e9906057d69bd51ffebcc4759b2fc37" title=" " alt="" coords="483,93,672,120"/>
+<area shape="rect" href="class_asset_importer.html#a6c9eacf9c08d7014f10a277b47873c78" title=" " alt="" coords="720,93,911,120"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1838cd6142b9ba29bf086fd146d11f38" name="a1838cd6142b9ba29bf086fd146d11f38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1838cd6142b9ba29bf086fd146d11f38">&#9670;&nbsp;</a></span>~RenderSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RenderSystem::~RenderSystem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aa8bf74fc6dd8dc22739dbeafd667e6a6" name="aa8bf74fc6dd8dc22739dbeafd667e6a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8bf74fc6dd8dc22739dbeafd667e6a6">&#9670;&nbsp;</a></span>Clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderSystem::Clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>清空 </p>
+
+</div>
+</div>
 <a id="aa111a299b5c035dbe08fa4559c680086" name="aa111a299b5c035dbe08fa4559c680086"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa111a299b5c035dbe08fa4559c680086">&#9670;&nbsp;</a></span>FixedUpdate()</h2>
 
@@ -176,7 +249,7 @@ static <a class="el" href="class_render_system.html">RenderSystem</a> &amp;&#160
 
 <p>固定时间刷新 </p>
 
-<p>实现了 <a class="el" href="class_system.html">System</a>.</p>
+<p>实现了 <a class="el" href="class_system.html#adafb6ad7cd3deed9032da2e3b47325b4">System</a>.</p>
 
 </div>
 </div>
@@ -206,7 +279,7 @@ static <a class="el" href="class_render_system.html">RenderSystem</a> &amp;&#160
 
 <p>注册组件 </p>
 
-<p>实现了 <a class="el" href="class_system.html">System</a>.</p>
+<p>实现了 <a class="el" href="class_system.html#a451ca910192755adc3ef0226df6314d1">System</a>.</p>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
@@ -245,7 +318,144 @@ static <a class="el" href="class_render_system.html">RenderSystem</a> &amp;&#160
 
 <p>移除组件 </p>
 
-<p>实现了 <a class="el" href="class_system.html">System</a>.</p>
+<p>实现了 <a class="el" href="class_system.html#a85d857fb24aefacde3ae2461180befb7">System</a>.</p>
+
+</div>
+</div>
+<a id="a811afc13db3e5f903195598618c7c421" name="a811afc13db3e5f903195598618c7c421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a811afc13db3e5f903195598618c7c421">&#9670;&nbsp;</a></span>RenderShadow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderSystem::RenderShadow </td>
+          <td>(</td>
+          <td class="paramtype">std::priority_queue&lt; <a class="el" href="class_renderer.html">Renderer</a> *, std::vector&lt; <a class="el" href="class_renderer.html">Renderer</a> * &gt; &gt;&#160;</td>
+          <td class="paramname"><em>queue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>渲染阴影 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_render_system_a811afc13db3e5f903195598618c7c421_cgraph.png" border="0" usemap="#aclass_render_system_a811afc13db3e5f903195598618c7c421_cgraph" alt=""/></div>
+<map name="aclass_render_system_a811afc13db3e5f903195598618c7c421_cgraph" id="aclass_render_system_a811afc13db3e5f903195598618c7c421_cgraph">
+<area shape="rect" title="渲染阴影" alt="" coords="5,85,208,112"/>
+<area shape="rect" href="class_material.html#a5e1a8c78aa8bd556586fc8aa508182dc" title=" " alt="" coords="279,56,385,83"/>
+<area shape="rect" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="256,107,408,149"/>
+<area shape="rect" href="class_material.html#ade83f651b2496c2911caecbbc7148dc0" title=" " alt="" coords="456,5,591,32"/>
+<area shape="rect" href="class_material.html#ad753ad7c64efd86ec2b4457b00925f0a" title=" " alt="" coords="477,56,570,83"/>
+<area shape="rect" href="class_shader.html#a6b11327cff651ffdb22988b6917b1650" title=" " alt="" coords="476,107,571,133"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_render_system_a811afc13db3e5f903195598618c7c421_icgraph.png" border="0" usemap="#aclass_render_system_a811afc13db3e5f903195598618c7c421_icgraph" alt=""/></div>
+<map name="aclass_render_system_a811afc13db3e5f903195598618c7c421_icgraph" id="aclass_render_system_a811afc13db3e5f903195598618c7c421_icgraph">
+<area shape="rect" title="渲染阴影" alt="" coords="445,5,648,32"/>
+<area shape="rect" href="class_render_system.html#a744c9a8ba4359b3353a6130f3af51fbb" title="每帧刷新" alt="" coords="240,5,397,32"/>
+<area shape="rect" href="class_windows_window.html#a27cad6c527b8b73dfea5420fa9efeef2" title="窗口渲染函数" alt="" coords="5,5,192,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acf71a2b40bd01841db74a4a75befc78b" name="acf71a2b40bd01841db74a4a75befc78b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf71a2b40bd01841db74a4a75befc78b">&#9670;&nbsp;</a></span>SetCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderSystem::SetCamera </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_camera.html">Camera</a> &gt;&#160;</td>
+          <td class="paramname"><em>mainCamera</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置当前摄像机 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_render_system_acf71a2b40bd01841db74a4a75befc78b_icgraph.png" border="0" usemap="#aclass_render_system_acf71a2b40bd01841db74a4a75befc78b_icgraph" alt=""/></div>
+<map name="aclass_render_system_acf71a2b40bd01841db74a4a75befc78b_icgraph" id="aclass_render_system_acf71a2b40bd01841db74a4a75befc78b_icgraph">
+<area shape="rect" title="设置当前摄像机" alt="" coords="475,5,656,32"/>
+<area shape="rect" href="class_application.html#a091df3ec4695b64249e57a76c93b6612" title="初始化应用" alt="" coords="292,5,427,32"/>
+<area shape="rect" href="class_application.html#a5378330e10e42fcb9a2269b533759b0f" title="运行应用" alt="" coords="104,5,244,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a403f3d3b8c85d6ca32522dfb4b8092e2" name="a403f3d3b8c85d6ca32522dfb4b8092e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a403f3d3b8c85d6ca32522dfb4b8092e2">&#9670;&nbsp;</a></span>SetData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderSystem::SetData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>配置渲染数据 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_render_system_a403f3d3b8c85d6ca32522dfb4b8092e2_cgraph.png" border="0" usemap="#aclass_render_system_a403f3d3b8c85d6ca32522dfb4b8092e2_cgraph" alt=""/></div>
+<map name="aclass_render_system_a403f3d3b8c85d6ca32522dfb4b8092e2_cgraph" id="aclass_render_system_a403f3d3b8c85d6ca32522dfb4b8092e2_cgraph">
+<area shape="rect" title="配置渲染数据" alt="" coords="5,31,168,57"/>
+<area shape="rect" href="class_transform.html#af0d0e8f8c55b67c115a5449f225f53e6" title="获取向前方向" alt="" coords="224,5,363,32"/>
+<area shape="rect" href="class_uniform_buffer.html#af84b3a5368ac87d3bbbd1d0f3b5cfd6f" title="设置缓存参数" alt="" coords="216,56,371,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_render_system_a403f3d3b8c85d6ca32522dfb4b8092e2_icgraph.png" border="0" usemap="#aclass_render_system_a403f3d3b8c85d6ca32522dfb4b8092e2_icgraph" alt=""/></div>
+<map name="aclass_render_system_a403f3d3b8c85d6ca32522dfb4b8092e2_icgraph" id="aclass_render_system_a403f3d3b8c85d6ca32522dfb4b8092e2_icgraph">
+<area shape="rect" title="配置渲染数据" alt="" coords="445,5,608,32"/>
+<area shape="rect" href="class_render_system.html#a744c9a8ba4359b3353a6130f3af51fbb" title="每帧刷新" alt="" coords="240,5,397,32"/>
+<area shape="rect" href="class_windows_window.html#a27cad6c527b8b73dfea5420fa9efeef2" title="窗口渲染函数" alt="" coords="5,5,192,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -274,7 +484,24 @@ static <a class="el" href="class_render_system.html">RenderSystem</a> &amp;&#160
 
 <p>每帧刷新 </p>
 
-<p>实现了 <a class="el" href="class_system.html">System</a>.</p>
+<p>实现了 <a class="el" href="class_system.html#af0128dd6a6f6ee885ec9861121599f6f">System</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_render_system_a744c9a8ba4359b3353a6130f3af51fbb_cgraph.png" border="0" usemap="#aclass_render_system_a744c9a8ba4359b3353a6130f3af51fbb_cgraph" alt=""/></div>
+<map name="aclass_render_system_a744c9a8ba4359b3353a6130f3af51fbb_cgraph" id="aclass_render_system_a744c9a8ba4359b3353a6130f3af51fbb_cgraph">
+<area shape="rect" title="每帧刷新" alt="" coords="5,113,163,140"/>
+<area shape="rect" href="class_material.html#a5e1a8c78aa8bd556586fc8aa508182dc" title=" " alt="" coords="486,56,591,83"/>
+<area shape="rect" href="class_render_system.html#a811afc13db3e5f903195598618c7c421" title="渲染阴影" alt="" coords="211,113,413,140"/>
+<area shape="rect" href="class_render_system.html#a403f3d3b8c85d6ca32522dfb4b8092e2" title="配置渲染数据" alt="" coords="231,173,393,200"/>
+<area shape="rect" href="class_material.html#ade83f651b2496c2911caecbbc7148dc0" title=" " alt="" coords="664,5,799,32"/>
+<area shape="rect" href="class_material.html#ad753ad7c64efd86ec2b4457b00925f0a" title=" " alt="" coords="685,56,778,83"/>
+<area shape="rect" href="class_shader.html#a6b11327cff651ffdb22988b6917b1650" title=" " alt="" coords="684,107,779,133"/>
+<area shape="rect" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="463,107,615,149"/>
+<area shape="rect" href="class_transform.html#af0d0e8f8c55b67c115a5449f225f53e6" title="获取向前方向" alt="" coords="469,173,608,200"/>
+<area shape="rect" href="class_uniform_buffer.html#af84b3a5368ac87d3bbbd1d0f3b5cfd6f" title="设置缓存参数" alt="" coords="461,224,616,251"/>
+</map>
+</div>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
@@ -287,9 +514,98 @@ static <a class="el" href="class_render_system.html">RenderSystem</a> &amp;&#160
 
 </div>
 </div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ab9d175e0d1e547569acde2bfd6dc210f" name="ab9d175e0d1e547569acde2bfd6dc210f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9d175e0d1e547569acde2bfd6dc210f">&#9670;&nbsp;</a></span>currentCamera</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="class_camera.html">Camera</a>&gt; RenderSystem::currentCamera</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>当前摄像机 </p>
+
+</div>
+</div>
+<a id="a1729b07fdebc23e66178c24a7cf896b7" name="a1729b07fdebc23e66178c24a7cf896b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1729b07fdebc23e66178c24a7cf896b7">&#9670;&nbsp;</a></span>mainLightUB</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_uniform_buffer.html">UniformBuffer</a> RenderSystem::mainLightUB</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>光照UBO </p>
+
+</div>
+</div>
+<a id="a8fe5db77fdb70b1417382aa79c0ff555" name="a8fe5db77fdb70b1417382aa79c0ff555"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fe5db77fdb70b1417382aa79c0ff555">&#9670;&nbsp;</a></span>maticesUB</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_uniform_buffer.html">UniformBuffer</a> RenderSystem::maticesUB</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>矩阵UBO </p>
+
+</div>
+</div>
+<a id="ad9da530f350b176618655d7e6bb17151" name="ad9da530f350b176618655d7e6bb17151"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9da530f350b176618655d7e6bb17151">&#9670;&nbsp;</a></span>renderQueue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_render_system_8cpp.html#a2c2085acdabc15751a6b1d0a13596f79">renderPriorityQueue</a> RenderSystem::renderQueue = <a class="el" href="_render_system_8cpp.html#a2c2085acdabc15751a6b1d0a13596f79">renderPriorityQueue</a>()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>渲染队列 </p>
+
+</div>
+</div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/ECS/System/<a class="el" href="_render_system_8h_source.html">RenderSystem.h</a></li>
-<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/ECS/System/RenderSystem.cpp</li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/ECS/System/<a class="el" href="_render_system_8cpp.html">RenderSystem.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

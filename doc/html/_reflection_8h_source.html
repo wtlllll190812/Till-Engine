@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,19 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_75ae6d3613b6c2f243b8fb439548ec3f.html">Framework</a></li><li class="navelem"><a class="el" href="dir_dfadc32455ebf8702b3c412ffa801504.html">Tools</a></li>  </ul>
@@ -69,18 +50,18 @@ $(function() {
   <div class="headertitle"><div class="title">Reflection.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;Singleton.h&quot;</span></div>
+<a href="_reflection_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_singleton_8h.html">Singleton.h</a>&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;map&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">typedef</span> <span class="keywordtype">void</span>* (*CreateObjectFunc)(void);</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">typedef</span> std::shared_ptr&lt;void&gt;(*GetInstanceFunc)(void);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="_reflection_8h.html#a8163356ccae08e66d7045f26d98e5435">    8</a></span><span class="keyword">typedef</span> <span class="keywordtype">void</span>* (*CreateObjectFunc)(void);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="_reflection_8h.html#a25687338db035b6fc181a7c9ffdcf8bd">    9</a></span><span class="keyword">typedef</span> std::shared_ptr&lt;void&gt;(*<a class="code hl_typedef" href="_reflection_8h.html#a25687338db035b6fc181a7c9ffdcf8bd">GetInstanceFunc</a>)(void);</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//反射注册宏</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define REFLECTION(className,tag)                                                   \</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="_reflection_8h.html#a06bb8e290bc7e9030c85a26e05d9fb1d">   12</a></span><span class="preprocessor">#define REFLECTION(className,tag)                                                   \</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">    className *Creator##className()                                                 \</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">    {                                                                               \</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">        return new className;                                                       \</span></div>
@@ -89,7 +70,7 @@ $(function() {
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">        #className,new Reflection(#className,(CreateObjectFunc)Creator##className,ReflectionTag::##tag))</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">//静态反射注册宏</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define REFLECTIONINSTANCE(className,tag)                                           \</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="_reflection_8h.html#a13c07f6a4ee9286475e76d90844caf29">   21</a></span><span class="preprocessor">#define REFLECTIONINSTANCE(className,tag)                                           \</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">    className *Creator##className()                                                 \</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">    {                                                                               \</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">        return new className;                                                       \</span></div>
@@ -104,7 +85,7 @@ $(function() {
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">    RegisterAction registerAction##className(                                       \</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">        #className,new Reflection(#className,(CreateObjectFunc)Creator##className,ReflectionTag::##tag,Instance##className))</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">enum class</span> ReflectionTag</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0">   36</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0">ReflectionTag</a></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_class" href="class_component.html">Component</a>,</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_class" href="class_game_object.html">GameObject</a>,</div>
@@ -113,13 +94,13 @@ $(function() {
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_reflection.html">   43</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_reflection.html">Reflection</a></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    std::string className;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    CreateObjectFunc createF;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    GetInstanceFunc getInstance;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    ReflectionTag tag;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="struct_reflection.html#a9b1d42a71cdb22438e6022d85464f6e3">   45</a></span>    std::string <a class="code hl_variable" href="struct_reflection.html#a9b1d42a71cdb22438e6022d85464f6e3">className</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="struct_reflection.html#ab521054a5c4460038b135a3763fae877">   46</a></span>    <a class="code hl_typedef" href="_reflection_8h.html#a8163356ccae08e66d7045f26d98e5435">CreateObjectFunc</a> <a class="code hl_variable" href="struct_reflection.html#ab521054a5c4460038b135a3763fae877">createF</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_reflection.html#a76d087e37059a90a3a1d6f8da2fbcda9">   47</a></span>    <a class="code hl_typedef" href="_reflection_8h.html#a25687338db035b6fc181a7c9ffdcf8bd">GetInstanceFunc</a> <a class="code hl_variable" href="struct_reflection.html#a76d087e37059a90a3a1d6f8da2fbcda9">getInstance</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="struct_reflection.html#a21551e1dbdfa468880a86b68f64186f3">   48</a></span>    <a class="code hl_enumeration" href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0">ReflectionTag</a> <a class="code hl_variable" href="struct_reflection.html#a21551e1dbdfa468880a86b68f64186f3">tag</a>;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_struct" href="struct_reflection.html">Reflection</a>(std::string name, CreateObjectFunc func, ReflectionTag _tag, GetInstanceFunc instance=<span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        :className(name), createF(func), tag(_tag), getInstance(instance)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="struct_reflection.html#a10d789e146a948c86c8dcaf7f4235350">   50</a></span>    <a class="code hl_function" href="struct_reflection.html#a10d789e146a948c86c8dcaf7f4235350">Reflection</a>(std::string name, <a class="code hl_typedef" href="_reflection_8h.html#a8163356ccae08e66d7045f26d98e5435">CreateObjectFunc</a> func, <a class="code hl_enumeration" href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0">ReflectionTag</a> _tag, <a class="code hl_typedef" href="_reflection_8h.html#a25687338db035b6fc181a7c9ffdcf8bd">GetInstanceFunc</a> instance=<span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        :<a class="code hl_variable" href="struct_reflection.html#a9b1d42a71cdb22438e6022d85464f6e3">className</a>(name), <a class="code hl_variable" href="struct_reflection.html#ab521054a5c4460038b135a3763fae877">createF</a>(func), <a class="code hl_variable" href="struct_reflection.html#a21551e1dbdfa468880a86b68f64186f3">tag</a>(_tag), <a class="code hl_variable" href="struct_reflection.html#a76d087e37059a90a3a1d6f8da2fbcda9">getInstance</a>(instance)</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {}</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
@@ -127,38 +108,59 @@ $(function() {
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_reflection_manager.html">   56</a></span><span class="keyword">class </span><a class="code hl_class" href="class_reflection_manager.html">ReflectionManager</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_singleton.html">Singleton</a>&lt;ReflectionManager&gt;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    std::map&lt;std::string, Reflection*&gt; classMap;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    std::vector&lt;std::string&gt; members;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    std::multimap&lt;ReflectionTag, std::string&gt; memberByTag;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_reflection_manager.html#a776cac5a78ba558ceefdff74aff29b1c">   59</a></span>    std::map&lt;std::string, Reflection*&gt; <a class="code hl_variable" href="class_reflection_manager.html#a776cac5a78ba558ceefdff74aff29b1c">classMap</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_reflection_manager.html#a4afcb582b7c84a2a136967aafd41c979">   60</a></span>    std::vector&lt;std::string&gt; <a class="code hl_variable" href="class_reflection_manager.html#a4afcb582b7c84a2a136967aafd41c979">members</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_reflection_manager.html#aeb3feeb97130a934f986390219486a1a">   61</a></span>    std::multimap&lt;ReflectionTag, std::string&gt; <a class="code hl_variable" href="class_reflection_manager.html#aeb3feeb97130a934f986390219486a1a">memberByTag</a>;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_class" href="class_reflection_manager.html">ReflectionManager</a>();</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">void</span>* CreateClassByName(std::string className);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    std::shared_ptr&lt;void&gt; GetInstanceByName(std::string className);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; GetAllMember()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> members; }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> RegistClass(std::string name, <a class="code hl_struct" href="struct_reflection.html">Reflection</a>* method);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_function" href="class_reflection_manager.html#a30ba0857225996867135027bfdae569c">ReflectionManager</a>();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">void</span>* <a class="code hl_function" href="class_reflection_manager.html#ad8948d57776c6010a31f2427a402feef">CreateClassByName</a>(std::string className);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    std::shared_ptr&lt;void&gt; <a class="code hl_function" href="class_reflection_manager.html#ae411fb6b17f5dfe70070fc88159a57b7">GetInstanceByName</a>(std::string className);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_reflection_manager.html#a5fad19100c22f92941e8579c6d609cb6">   66</a></span>    <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; <a class="code hl_function" href="class_reflection_manager.html#a5fad19100c22f92941e8579c6d609cb6">GetAllMember</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_reflection_manager.html#a4afcb582b7c84a2a136967aafd41c979">members</a>; }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_reflection_manager.html#a33e1e1079567372b698d116df2e1f257">RegistClass</a>(std::string name, <a class="code hl_struct" href="struct_reflection.html">Reflection</a>* method);</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">const</span> std::multimap&lt;ReflectionTag, std::string&gt;::iterator GetMemberStartByTag(ReflectionTag tag) { <span class="keywordflow">return</span> memberByTag.find(tag); }</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> GetMemberCountByTag(ReflectionTag tag)<span class="keyword">const </span>{ <span class="keywordflow">return</span> memberByTag.count(tag); }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_reflection_manager.html#a905fe98183914a00ee6ff809f4ef7992">   69</a></span>    <span class="keyword">const</span> std::multimap&lt;ReflectionTag, std::string&gt;::iterator <a class="code hl_function" href="class_reflection_manager.html#a905fe98183914a00ee6ff809f4ef7992">GetMemberStartByTag</a>(<a class="code hl_enumeration" href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0">ReflectionTag</a> tag) { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_reflection_manager.html#aeb3feeb97130a934f986390219486a1a">memberByTag</a>.find(tag); }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_reflection_manager.html#a2e46547856970f9dfa780291a254ed24">   70</a></span>    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_reflection_manager.html#a2e46547856970f9dfa780291a254ed24">GetMemberCountByTag</a>(<a class="code hl_enumeration" href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0">ReflectionTag</a> tag)<span class="keyword">const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_reflection_manager.html#aeb3feeb97130a934f986390219486a1a">memberByTag</a>.count(tag); }</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">//注册动作类</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_register_action.html">   74</a></span><span class="keyword">class </span><a class="code hl_class" href="class_register_action.html">RegisterAction</a></div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>{</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_class" href="class_register_action.html">RegisterAction</a>(std::string className, <a class="code hl_struct" href="struct_reflection.html">Reflection</a>* ptrCreateFn)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="class_register_action.html#a17ca9b1806520aff020906685f3d8acd">   77</a></span>    <a class="code hl_function" href="class_register_action.html#a17ca9b1806520aff020906685f3d8acd">RegisterAction</a>(std::string className, <a class="code hl_struct" href="struct_reflection.html">Reflection</a>* ptrCreateFn)</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        ReflectionManager::instance().RegistClass(className, ptrCreateFn);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <a class="code hl_function" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640">ReflectionManager::instance</a>().<a class="code hl_function" href="class_reflection_manager.html#a33e1e1079567372b698d116df2e1f257">RegistClass</a>(className, ptrCreateFn);</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="ttc" id="a_reflection_8h_html_a25687338db035b6fc181a7c9ffdcf8bd"><div class="ttname"><a href="_reflection_8h.html#a25687338db035b6fc181a7c9ffdcf8bd">GetInstanceFunc</a></div><div class="ttdeci">std::shared_ptr&lt; void &gt;(* GetInstanceFunc)(void)</div><div class="ttdef"><b>Definition:</b> Reflection.h:9</div></div>
+<div class="ttc" id="a_reflection_8h_html_a8163356ccae08e66d7045f26d98e5435"><div class="ttname"><a href="_reflection_8h.html#a8163356ccae08e66d7045f26d98e5435">CreateObjectFunc</a></div><div class="ttdeci">void *(* CreateObjectFunc)(void)</div><div class="ttdef"><b>Definition:</b> Reflection.h:8</div></div>
+<div class="ttc" id="a_reflection_8h_html_af1c18238a2a0f6cbf38e43358dc9b2c0"><div class="ttname"><a href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0">ReflectionTag</a></div><div class="ttdeci">ReflectionTag</div><div class="ttdef"><b>Definition:</b> Reflection.h:37</div></div>
+<div class="ttc" id="a_singleton_8h_html"><div class="ttname"><a href="_singleton_8h.html">Singleton.h</a></div></div>
 <div class="ttc" id="aclass_component_html"><div class="ttname"><a href="class_component.html">Component</a></div><div class="ttdoc">组件基类</div><div class="ttdef"><b>Definition:</b> Component.h:9</div></div>
 <div class="ttc" id="aclass_game_object_html"><div class="ttname"><a href="class_game_object.html">GameObject</a></div><div class="ttdef"><b>Definition:</b> GameObject.h:9</div></div>
 <div class="ttc" id="aclass_material_html"><div class="ttname"><a href="class_material.html">Material</a></div><div class="ttdef"><b>Definition:</b> Material.h:12</div></div>
 <div class="ttc" id="aclass_reflection_manager_html"><div class="ttname"><a href="class_reflection_manager.html">ReflectionManager</a></div><div class="ttdef"><b>Definition:</b> Reflection.h:57</div></div>
+<div class="ttc" id="aclass_reflection_manager_html_a2e46547856970f9dfa780291a254ed24"><div class="ttname"><a href="class_reflection_manager.html#a2e46547856970f9dfa780291a254ed24">ReflectionManager::GetMemberCountByTag</a></div><div class="ttdeci">const int GetMemberCountByTag(ReflectionTag tag) const</div><div class="ttdef"><b>Definition:</b> Reflection.h:70</div></div>
+<div class="ttc" id="aclass_reflection_manager_html_a30ba0857225996867135027bfdae569c"><div class="ttname"><a href="class_reflection_manager.html#a30ba0857225996867135027bfdae569c">ReflectionManager::ReflectionManager</a></div><div class="ttdeci">ReflectionManager()</div><div class="ttdef"><b>Definition:</b> Reflection.cpp:3</div></div>
+<div class="ttc" id="aclass_reflection_manager_html_a33e1e1079567372b698d116df2e1f257"><div class="ttname"><a href="class_reflection_manager.html#a33e1e1079567372b698d116df2e1f257">ReflectionManager::RegistClass</a></div><div class="ttdeci">void RegistClass(std::string name, Reflection *method)</div><div class="ttdef"><b>Definition:</b> Reflection.cpp:37</div></div>
+<div class="ttc" id="aclass_reflection_manager_html_a4afcb582b7c84a2a136967aafd41c979"><div class="ttname"><a href="class_reflection_manager.html#a4afcb582b7c84a2a136967aafd41c979">ReflectionManager::members</a></div><div class="ttdeci">std::vector&lt; std::string &gt; members</div><div class="ttdef"><b>Definition:</b> Reflection.h:60</div></div>
+<div class="ttc" id="aclass_reflection_manager_html_a5fad19100c22f92941e8579c6d609cb6"><div class="ttname"><a href="class_reflection_manager.html#a5fad19100c22f92941e8579c6d609cb6">ReflectionManager::GetAllMember</a></div><div class="ttdeci">const std::vector&lt; std::string &gt; &amp; GetAllMember() const</div><div class="ttdef"><b>Definition:</b> Reflection.h:66</div></div>
+<div class="ttc" id="aclass_reflection_manager_html_a776cac5a78ba558ceefdff74aff29b1c"><div class="ttname"><a href="class_reflection_manager.html#a776cac5a78ba558ceefdff74aff29b1c">ReflectionManager::classMap</a></div><div class="ttdeci">std::map&lt; std::string, Reflection * &gt; classMap</div><div class="ttdef"><b>Definition:</b> Reflection.h:59</div></div>
+<div class="ttc" id="aclass_reflection_manager_html_a905fe98183914a00ee6ff809f4ef7992"><div class="ttname"><a href="class_reflection_manager.html#a905fe98183914a00ee6ff809f4ef7992">ReflectionManager::GetMemberStartByTag</a></div><div class="ttdeci">const std::multimap&lt; ReflectionTag, std::string &gt;::iterator GetMemberStartByTag(ReflectionTag tag)</div><div class="ttdef"><b>Definition:</b> Reflection.h:69</div></div>
+<div class="ttc" id="aclass_reflection_manager_html_ad8948d57776c6010a31f2427a402feef"><div class="ttname"><a href="class_reflection_manager.html#ad8948d57776c6010a31f2427a402feef">ReflectionManager::CreateClassByName</a></div><div class="ttdeci">void * CreateClassByName(std::string className)</div><div class="ttdef"><b>Definition:</b> Reflection.cpp:8</div></div>
+<div class="ttc" id="aclass_reflection_manager_html_ae411fb6b17f5dfe70070fc88159a57b7"><div class="ttname"><a href="class_reflection_manager.html#ae411fb6b17f5dfe70070fc88159a57b7">ReflectionManager::GetInstanceByName</a></div><div class="ttdeci">std::shared_ptr&lt; void &gt; GetInstanceByName(std::string className)</div><div class="ttdef"><b>Definition:</b> Reflection.cpp:22</div></div>
+<div class="ttc" id="aclass_reflection_manager_html_aeb3feeb97130a934f986390219486a1a"><div class="ttname"><a href="class_reflection_manager.html#aeb3feeb97130a934f986390219486a1a">ReflectionManager::memberByTag</a></div><div class="ttdeci">std::multimap&lt; ReflectionTag, std::string &gt; memberByTag</div><div class="ttdef"><b>Definition:</b> Reflection.h:61</div></div>
 <div class="ttc" id="aclass_register_action_html"><div class="ttname"><a href="class_register_action.html">RegisterAction</a></div><div class="ttdef"><b>Definition:</b> Reflection.h:75</div></div>
+<div class="ttc" id="aclass_register_action_html_a17ca9b1806520aff020906685f3d8acd"><div class="ttname"><a href="class_register_action.html#a17ca9b1806520aff020906685f3d8acd">RegisterAction::RegisterAction</a></div><div class="ttdeci">RegisterAction(std::string className, Reflection *ptrCreateFn)</div><div class="ttdef"><b>Definition:</b> Reflection.h:77</div></div>
 <div class="ttc" id="aclass_singleton_html"><div class="ttname"><a href="class_singleton.html">Singleton</a></div><div class="ttdef"><b>Definition:</b> Singleton.h:5</div></div>
+<div class="ttc" id="aclass_singleton_html_a258d9ee54e59cc9d9ea6020a19ae8640"><div class="ttname"><a href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640">Singleton&lt; ReflectionManager &gt;::instance</a></div><div class="ttdeci">static ReflectionManager &amp; instance()</div><div class="ttdef"><b>Definition:</b> Singleton.h:7</div></div>
 <div class="ttc" id="astruct_reflection_html"><div class="ttname"><a href="struct_reflection.html">Reflection</a></div><div class="ttdef"><b>Definition:</b> Reflection.h:44</div></div>
+<div class="ttc" id="astruct_reflection_html_a10d789e146a948c86c8dcaf7f4235350"><div class="ttname"><a href="struct_reflection.html#a10d789e146a948c86c8dcaf7f4235350">Reflection::Reflection</a></div><div class="ttdeci">Reflection(std::string name, CreateObjectFunc func, ReflectionTag _tag, GetInstanceFunc instance=nullptr)</div><div class="ttdef"><b>Definition:</b> Reflection.h:50</div></div>
+<div class="ttc" id="astruct_reflection_html_a21551e1dbdfa468880a86b68f64186f3"><div class="ttname"><a href="struct_reflection.html#a21551e1dbdfa468880a86b68f64186f3">Reflection::tag</a></div><div class="ttdeci">ReflectionTag tag</div><div class="ttdef"><b>Definition:</b> Reflection.h:48</div></div>
+<div class="ttc" id="astruct_reflection_html_a76d087e37059a90a3a1d6f8da2fbcda9"><div class="ttname"><a href="struct_reflection.html#a76d087e37059a90a3a1d6f8da2fbcda9">Reflection::getInstance</a></div><div class="ttdeci">GetInstanceFunc getInstance</div><div class="ttdef"><b>Definition:</b> Reflection.h:47</div></div>
+<div class="ttc" id="astruct_reflection_html_a9b1d42a71cdb22438e6022d85464f6e3"><div class="ttname"><a href="struct_reflection.html#a9b1d42a71cdb22438e6022d85464f6e3">Reflection::className</a></div><div class="ttdeci">std::string className</div><div class="ttdef"><b>Definition:</b> Reflection.h:45</div></div>
+<div class="ttc" id="astruct_reflection_html_ab521054a5c4460038b135a3763fae877"><div class="ttname"><a href="struct_reflection.html#ab521054a5c4460038b135a3763fae877">Reflection::createF</a></div><div class="ttdeci">CreateObjectFunc createF</div><div class="ttdef"><b>Definition:</b> Reflection.h:46</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

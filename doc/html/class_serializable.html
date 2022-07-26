@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,21 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
@@ -107,9 +90,8 @@ Public 成员函数</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public 属性</h2></td></tr>
-<tr class="memitem:a4be5c5e13129b89d05d7b4a7094d440b"><td class="memItemLeft" align="right" valign="top"><a id="a4be5c5e13129b89d05d7b4a7094d440b" name="a4be5c5e13129b89d05d7b4a7094d440b"></a>
-TiXmlElement *&#160;</td><td class="memItemRight" valign="bottom"><b>m_node</b> =nullptr</td></tr>
-<tr class="memdesc:a4be5c5e13129b89d05d7b4a7094d440b"><td class="mdescLeft">&#160;</td><td class="mdescRight">序列化节点 <br /></td></tr>
+<tr class="memitem:a4be5c5e13129b89d05d7b4a7094d440b"><td class="memItemLeft" align="right" valign="top">TiXmlElement *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serializable.html#a4be5c5e13129b89d05d7b4a7094d440b">m_node</a> =nullptr</td></tr>
+<tr class="memdesc:a4be5c5e13129b89d05d7b4a7094d440b"><td class="mdescLeft">&#160;</td><td class="mdescRight">序列化节点  <a href="class_serializable.html#a4be5c5e13129b89d05d7b4a7094d440b">更多...</a><br /></td></tr>
 <tr class="separator:a4be5c5e13129b89d05d7b4a7094d440b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
@@ -141,7 +123,7 @@ TiXmlElement *&#160;</td><td class="memItemRight" valign="bottom"><b>m_node</b> 
 
 <p>反序列化 </p>
 
-<p>在 <a class="el" href="class_camera.html#ae62246ee56adb668d0b66219e4a5e35a">Camera</a>, <a class="el" href="class_direction_light.html#acee57f63f803535fa8ff74ae8b4663a8">DirectionLight</a>, <a class="el" href="class_point_light.html#ab878efadcb12dee4f3aafb31189386e9">PointLight</a>, <a class="el" href="class_renderer.html#ac300e94373098ca8336b3a54b65a6c2c">Renderer</a>, <a class="el" href="class_spot_light.html#aa7d60f9312634b2708cbd32fdce23957">SpotLight</a>, <a class="el" href="class_transform.html#abe93692dc6c3083f804c0c44f8e8fcc4">Transform</a> , 以及 <a class="el" href="class_game_object.html#a7bd3840ff675f1ee44ddec99fb89bc32">GameObject</a> 内被实现.</p>
+<p>在 <a class="el" href="class_behaviour.html#a6a74eff8500a3dce75553882615c7263">Behaviour</a>, <a class="el" href="class_camera.html#ae62246ee56adb668d0b66219e4a5e35a">Camera</a>, <a class="el" href="class_direction_light.html#acee57f63f803535fa8ff74ae8b4663a8">DirectionLight</a>, <a class="el" href="class_point_light.html#ab878efadcb12dee4f3aafb31189386e9">PointLight</a>, <a class="el" href="class_renderer.html#ac300e94373098ca8336b3a54b65a6c2c">Renderer</a>, <a class="el" href="class_spot_light.html#aa7d60f9312634b2708cbd32fdce23957">SpotLight</a>, <a class="el" href="class_transform.html#abe93692dc6c3083f804c0c44f8e8fcc4">Transform</a> , 以及 <a class="el" href="class_game_object.html#a7bd3840ff675f1ee44ddec99fb89bc32">GameObject</a> 内被实现.</p>
 
 </div>
 </div>
@@ -171,7 +153,7 @@ TiXmlElement *&#160;</td><td class="memItemRight" valign="bottom"><b>m_node</b> 
 
 <p>序列化 </p>
 
-<p>在 <a class="el" href="class_camera.html#abc8f353bd41c87389760a400b008c84b">Camera</a>, <a class="el" href="class_direction_light.html#acf7bdc44fa95366871a2e8fe8d1f7c09">DirectionLight</a>, <a class="el" href="class_point_light.html#aa1ab02a23e44b18021700a4e27373295">PointLight</a>, <a class="el" href="class_renderer.html#abaf6583d3608eda85a587073d92b354d">Renderer</a>, <a class="el" href="class_spot_light.html#a07e6bcdf50c13272805091893130c575">SpotLight</a>, <a class="el" href="class_transform.html#ae6c2b74033dd4cd5ca9af6e0a1d25301">Transform</a> , 以及 <a class="el" href="class_game_object.html#ac9b6e61cb40bcede4ae0309cc618ad97">GameObject</a> 内被实现.</p>
+<p>在 <a class="el" href="class_behaviour.html#a255c09990c70805ad30865793aa3c06f">Behaviour</a>, <a class="el" href="class_camera.html#abc8f353bd41c87389760a400b008c84b">Camera</a>, <a class="el" href="class_direction_light.html#acf7bdc44fa95366871a2e8fe8d1f7c09">DirectionLight</a>, <a class="el" href="class_point_light.html#aa1ab02a23e44b18021700a4e27373295">PointLight</a>, <a class="el" href="class_renderer.html#abaf6583d3608eda85a587073d92b354d">Renderer</a>, <a class="el" href="class_spot_light.html#a07e6bcdf50c13272805091893130c575">SpotLight</a>, <a class="el" href="class_transform.html#ae6c2b74033dd4cd5ca9af6e0a1d25301">Transform</a> , 以及 <a class="el" href="class_game_object.html#ac9b6e61cb40bcede4ae0309cc618ad97">GameObject</a> 内被实现.</p>
 
 </div>
 </div>
@@ -200,7 +182,24 @@ TiXmlElement *&#160;</td><td class="memItemRight" valign="bottom"><b>m_node</b> 
 
 <p>更新序列化节点 </p>
 
-<p>被 <a class="el" href="class_camera.html#a088b21306b84082425926de5596f910e">Camera</a>, <a class="el" href="class_renderer.html#ad4e6fd64f7992b43c9749f029953bb96">Renderer</a>, <a class="el" href="class_transform.html#a61265532c475d33a022f1a4238089cff">Transform</a> , 以及 <a class="el" href="class_game_object.html#aabef8abf8f97c44cbc06cda376b438e3">GameObject</a> 重载.</p>
+<p>被 <a class="el" href="class_behaviour.html#acf5865d3036e361a74a9625adab23df1">Behaviour</a>, <a class="el" href="class_camera.html#a088b21306b84082425926de5596f910e">Camera</a>, <a class="el" href="class_renderer.html#ad4e6fd64f7992b43c9749f029953bb96">Renderer</a>, <a class="el" href="class_transform.html#a61265532c475d33a022f1a4238089cff">Transform</a> , 以及 <a class="el" href="class_game_object.html#aabef8abf8f97c44cbc06cda376b438e3">GameObject</a> 重载.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a4be5c5e13129b89d05d7b4a7094d440b" name="a4be5c5e13129b89d05d7b4a7094d440b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4be5c5e13129b89d05d7b4a7094d440b">&#9670;&nbsp;</a></span>m_node</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TiXmlElement* Serializable::m_node =nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>序列化节点 </p>
 
 </div>
 </div>

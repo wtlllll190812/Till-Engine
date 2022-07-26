@@ -1,8 +1,9 @@
 <map id="Scene" name="Scene">
-<area shape="rect" id="node1" title="场景类" alt="" coords="5,5,64,32"/>
-<area shape="rect" id="node5" href="$class_game_object.html" title=" " alt="" coords="153,95,247,121"/>
-<area shape="rect" id="node2" href="$class_camera.html" title=" " alt="" coords="52,260,119,287"/>
-<area shape="rect" id="node3" href="$class_component.html" title="组件基类" alt="" coords="92,184,180,211"/>
-<area shape="rect" id="node6" href="$class_transform.html" title=" " alt="" coords="146,260,225,287"/>
-<area shape="rect" id="node4" href="$class_serializable.html" title="可序列化对象接口" alt="" coords="90,5,179,32"/>
+<area shape="rect" id="node1" title="场景类" alt="" coords="29,95,88,121"/>
+<area shape="rect" id="node5" href="$class_game_object.html" title=" " alt="" coords="177,184,271,211"/>
+<area shape="rect" id="node2" href="$class_camera.html" title=" " alt="" coords="76,349,143,376"/>
+<area shape="rect" id="node3" href="$class_component.html" title="组件基类" alt="" coords="116,273,204,300"/>
+<area shape="rect" id="node6" href="$class_transform.html" title=" " alt="" coords="170,349,249,376"/>
+<area shape="rect" id="node4" href="$class_serializable.html" title="可序列化对象接口" alt="" coords="114,95,203,121"/>
+<area shape="rect" id="node7" href="$class_t_l_serialize_file.html" title=" " alt="" coords="5,5,112,32"/>
 </map>

@@ -1,6 +1,9 @@
 <map id="Component::GetName" name="Component::GetName">
-<area shape="rect" id="node1" title=" " alt="" coords="185,56,336,83"/>
-<area shape="rect" id="node2" href="$class_camera.html#af5dedc615c68f285bd6f07e0858cf672" title="序列化" alt="" coords="9,5,134,32"/>
-<area shape="rect" id="node3" href="$class_light.html#a688669aaff17e4addca81839db0fde11" title="序列化" alt="" coords="17,56,125,83"/>
-<area shape="rect" id="node4" href="$class_renderer.html#a01be5abd2431430f995b10c241f6476d" title="序列化为xml" alt="" coords="5,107,137,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="212,132,363,159"/>
+<area shape="rect" id="node2" href="$class_camera.html#abc8f353bd41c87389760a400b008c84b" title="序列化" alt="" coords="22,5,147,32"/>
+<area shape="rect" id="node3" href="$class_direction_light.html#acf7bdc44fa95366871a2e8fe8d1f7c09" title="序列化" alt="" coords="5,56,164,83"/>
+<area shape="rect" id="node4" href="$class_point_light.html#aa1ab02a23e44b18021700a4e27373295" title="序列化" alt="" coords="15,107,154,133"/>
+<area shape="rect" id="node5" href="$class_renderer.html#abaf6583d3608eda85a587073d92b354d" title="序列化" alt="" coords="19,157,151,184"/>
+<area shape="rect" id="node6" href="$class_spot_light.html#a07e6bcdf50c13272805091893130c575" title="序列化" alt="" coords="17,208,152,235"/>
+<area shape="rect" id="node7" href="$class_transform.html#ae6c2b74033dd4cd5ca9af6e0a1d25301" title="序列化" alt="" coords="16,259,153,285"/>
 </map>

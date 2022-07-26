@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,82 +28,345 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public 成员函数</a> &#124;
 <a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
 <a href="class_texture-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">Texture类 参考</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_texture_8h_source.html">Texture.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a74575667645e6a368c1c43ff9eade55e"><td class="memItemLeft" align="right" valign="top"><a id="a74575667645e6a368c1c43ff9eade55e" name="a74575667645e6a368c1c43ff9eade55e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Texture</b> (std::string)</td></tr>
+<tr class="memitem:a74575667645e6a368c1c43ff9eade55e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texture.html#a74575667645e6a368c1c43ff9eade55e">Texture</a> (std::string)</td></tr>
 <tr class="separator:a74575667645e6a368c1c43ff9eade55e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6efc43d1125ea5b5d3bb4c7357b73104"><td class="memItemLeft" align="right" valign="top"><a id="a6efc43d1125ea5b5d3bb4c7357b73104" name="a6efc43d1125ea5b5d3bb4c7357b73104"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Texture</b> (TextureType type, int width=0, int heigth=0)</td></tr>
+<tr class="memitem:a6efc43d1125ea5b5d3bb4c7357b73104"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texture.html#a6efc43d1125ea5b5d3bb4c7357b73104">Texture</a> (<a class="el" href="_texture_8h.html#a65468556d79304b3a4bfc464cc12e549">TextureType</a> type, int <a class="el" href="class_texture.html#a06a0246cb31343557c3441c5733349cd">width</a>=0, int heigth=0)</td></tr>
 <tr class="separator:a6efc43d1125ea5b5d3bb4c7357b73104"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27eb85880d033e580c9099ac216f85d4"><td class="memItemLeft" align="right" valign="top"><a id="a27eb85880d033e580c9099ac216f85d4" name="a27eb85880d033e580c9099ac216f85d4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ColorBufferInit</b> (int, int)</td></tr>
-<tr class="memdesc:a27eb85880d033e580c9099ac216f85d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">用于颜色缓存的初始化 <br /></td></tr>
+<tr class="memitem:a09c4bcb7462f64c1d20fa69dba3cee8a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texture.html#a09c4bcb7462f64c1d20fa69dba3cee8a">~Texture</a> ()</td></tr>
+<tr class="separator:a09c4bcb7462f64c1d20fa69dba3cee8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27eb85880d033e580c9099ac216f85d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texture.html#a27eb85880d033e580c9099ac216f85d4">ColorBufferInit</a> (int, int)</td></tr>
+<tr class="memdesc:a27eb85880d033e580c9099ac216f85d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">用于颜色缓存的初始化  <a href="class_texture.html#a27eb85880d033e580c9099ac216f85d4">更多...</a><br /></td></tr>
 <tr class="separator:a27eb85880d033e580c9099ac216f85d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48ea73d477e6c8eacf5b24352da146fe"><td class="memItemLeft" align="right" valign="top"><a id="a48ea73d477e6c8eacf5b24352da146fe" name="a48ea73d477e6c8eacf5b24352da146fe"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DepthBufferInit</b> (int, int)</td></tr>
-<tr class="memdesc:a48ea73d477e6c8eacf5b24352da146fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">用于深度缓冲的初始化 <br /></td></tr>
+<tr class="memitem:a48ea73d477e6c8eacf5b24352da146fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texture.html#a48ea73d477e6c8eacf5b24352da146fe">DepthBufferInit</a> (int, int)</td></tr>
+<tr class="memdesc:a48ea73d477e6c8eacf5b24352da146fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">用于深度缓冲的初始化  <a href="class_texture.html#a48ea73d477e6c8eacf5b24352da146fe">更多...</a><br /></td></tr>
 <tr class="separator:a48ea73d477e6c8eacf5b24352da146fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cf5a9b03d35803bc110e4682ddffa3a"><td class="memItemLeft" align="right" valign="top"><a id="a4cf5a9b03d35803bc110e4682ddffa3a" name="a4cf5a9b03d35803bc110e4682ddffa3a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CubeMapInit</b> ()</td></tr>
-<tr class="memdesc:a4cf5a9b03d35803bc110e4682ddffa3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">用于立方体贴图的初始化 <br /></td></tr>
+<tr class="memitem:a4cf5a9b03d35803bc110e4682ddffa3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texture.html#a4cf5a9b03d35803bc110e4682ddffa3a">CubeMapInit</a> ()</td></tr>
+<tr class="memdesc:a4cf5a9b03d35803bc110e4682ddffa3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">用于立方体贴图的初始化  <a href="class_texture.html#a4cf5a9b03d35803bc110e4682ddffa3a">更多...</a><br /></td></tr>
 <tr class="separator:a4cf5a9b03d35803bc110e4682ddffa3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public 属性</h2></td></tr>
-<tr class="memitem:ac54718cb08fddb9e291adb62962213ad"><td class="memItemLeft" align="right" valign="top"><a id="ac54718cb08fddb9e291adb62962213ad" name="ac54718cb08fddb9e291adb62962213ad"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>texture</b></td></tr>
+<tr class="memitem:ac54718cb08fddb9e291adb62962213ad"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texture.html#ac54718cb08fddb9e291adb62962213ad">texture</a></td></tr>
 <tr class="separator:ac54718cb08fddb9e291adb62962213ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06a0246cb31343557c3441c5733349cd"><td class="memItemLeft" align="right" valign="top"><a id="a06a0246cb31343557c3441c5733349cd" name="a06a0246cb31343557c3441c5733349cd"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>width</b></td></tr>
+<tr class="memitem:a06a0246cb31343557c3441c5733349cd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texture.html#a06a0246cb31343557c3441c5733349cd">width</a></td></tr>
 <tr class="separator:a06a0246cb31343557c3441c5733349cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad37c395c65ff8bde86230908027a6fcd"><td class="memItemLeft" align="right" valign="top"><a id="ad37c395c65ff8bde86230908027a6fcd" name="ad37c395c65ff8bde86230908027a6fcd"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>height</b></td></tr>
+<tr class="memitem:ad37c395c65ff8bde86230908027a6fcd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texture.html#ad37c395c65ff8bde86230908027a6fcd">height</a></td></tr>
 <tr class="separator:ad37c395c65ff8bde86230908027a6fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a2bcd7538eb2df9b69d0a650f6e1a9426"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texture.html#a2bcd7538eb2df9b69d0a650f6e1a9426">TextureInit</a> ()</td></tr>
+<tr class="separator:a2bcd7538eb2df9b69d0a650f6e1a9426"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a74575667645e6a368c1c43ff9eade55e" name="a74575667645e6a368c1c43ff9eade55e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74575667645e6a368c1c43ff9eade55e">&#9670;&nbsp;</a></span>Texture() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Texture::Texture </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_texture_a74575667645e6a368c1c43ff9eade55e_cgraph.png" border="0" usemap="#aclass_texture_a74575667645e6a368c1c43ff9eade55e_cgraph" alt=""/></div>
+<map name="aclass_texture_a74575667645e6a368c1c43ff9eade55e_cgraph" id="aclass_texture_a74575667645e6a368c1c43ff9eade55e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,121,32"/>
+<area shape="rect" href="class_texture.html#a2bcd7538eb2df9b69d0a650f6e1a9426" title=" " alt="" coords="169,5,303,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6efc43d1125ea5b5d3bb4c7357b73104" name="a6efc43d1125ea5b5d3bb4c7357b73104"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6efc43d1125ea5b5d3bb4c7357b73104">&#9670;&nbsp;</a></span>Texture() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Texture::Texture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_texture_8h.html#a65468556d79304b3a4bfc464cc12e549">TextureType</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>heigth</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_texture_a6efc43d1125ea5b5d3bb4c7357b73104_cgraph.png" border="0" usemap="#aclass_texture_a6efc43d1125ea5b5d3bb4c7357b73104_cgraph" alt=""/></div>
+<map name="aclass_texture_a6efc43d1125ea5b5d3bb4c7357b73104_cgraph" id="aclass_texture_a6efc43d1125ea5b5d3bb4c7357b73104_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,121,83"/>
+<area shape="rect" href="class_texture.html#a27eb85880d033e580c9099ac216f85d4" title="用于颜色缓存的初始化" alt="" coords="171,5,325,32"/>
+<area shape="rect" href="class_texture.html#a4cf5a9b03d35803bc110e4682ddffa3a" title="用于立方体贴图的初始化" alt="" coords="175,56,321,83"/>
+<area shape="rect" href="class_texture.html#a48ea73d477e6c8eacf5b24352da146fe" title="用于深度缓冲的初始化" alt="" coords="169,107,327,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a09c4bcb7462f64c1d20fa69dba3cee8a" name="a09c4bcb7462f64c1d20fa69dba3cee8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09c4bcb7462f64c1d20fa69dba3cee8a">&#9670;&nbsp;</a></span>~Texture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Texture::~Texture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a27eb85880d033e580c9099ac216f85d4" name="a27eb85880d033e580c9099ac216f85d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27eb85880d033e580c9099ac216f85d4">&#9670;&nbsp;</a></span>ColorBufferInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Texture::ColorBufferInit </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>用于颜色缓存的初始化 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_texture_a27eb85880d033e580c9099ac216f85d4_icgraph.png" border="0" usemap="#aclass_texture_a27eb85880d033e580c9099ac216f85d4_icgraph" alt=""/></div>
+<map name="aclass_texture_a27eb85880d033e580c9099ac216f85d4_icgraph" id="aclass_texture_a27eb85880d033e580c9099ac216f85d4_icgraph">
+<area shape="rect" title="用于颜色缓存的初始化" alt="" coords="193,31,347,57"/>
+<area shape="rect" href="class_frame_buffer.html#a85fd1f406095bd483183a4b7d2173852" title="重置缓存大小" alt="" coords="5,5,145,32"/>
+<area shape="rect" href="class_texture.html#a6efc43d1125ea5b5d3bb4c7357b73104" title=" " alt="" coords="17,56,133,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4cf5a9b03d35803bc110e4682ddffa3a" name="a4cf5a9b03d35803bc110e4682ddffa3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cf5a9b03d35803bc110e4682ddffa3a">&#9670;&nbsp;</a></span>CubeMapInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Texture::CubeMapInit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>用于立方体贴图的初始化 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_texture_a4cf5a9b03d35803bc110e4682ddffa3a_icgraph.png" border="0" usemap="#aclass_texture_a4cf5a9b03d35803bc110e4682ddffa3a_icgraph" alt=""/></div>
+<map name="aclass_texture_a4cf5a9b03d35803bc110e4682ddffa3a_icgraph" id="aclass_texture_a4cf5a9b03d35803bc110e4682ddffa3a_icgraph">
+<area shape="rect" title="用于立方体贴图的初始化" alt="" coords="169,5,315,32"/>
+<area shape="rect" href="class_texture.html#a6efc43d1125ea5b5d3bb4c7357b73104" title=" " alt="" coords="5,5,121,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a48ea73d477e6c8eacf5b24352da146fe" name="a48ea73d477e6c8eacf5b24352da146fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48ea73d477e6c8eacf5b24352da146fe">&#9670;&nbsp;</a></span>DepthBufferInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Texture::DepthBufferInit </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>用于深度缓冲的初始化 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_texture_a48ea73d477e6c8eacf5b24352da146fe_icgraph.png" border="0" usemap="#aclass_texture_a48ea73d477e6c8eacf5b24352da146fe_icgraph" alt=""/></div>
+<map name="aclass_texture_a48ea73d477e6c8eacf5b24352da146fe_icgraph" id="aclass_texture_a48ea73d477e6c8eacf5b24352da146fe_icgraph">
+<area shape="rect" title="用于深度缓冲的初始化" alt="" coords="193,31,351,57"/>
+<area shape="rect" href="class_frame_buffer.html#a85fd1f406095bd483183a4b7d2173852" title="重置缓存大小" alt="" coords="5,5,145,32"/>
+<area shape="rect" href="class_texture.html#a6efc43d1125ea5b5d3bb4c7357b73104" title=" " alt="" coords="17,56,133,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2bcd7538eb2df9b69d0a650f6e1a9426" name="a2bcd7538eb2df9b69d0a650f6e1a9426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bcd7538eb2df9b69d0a650f6e1a9426">&#9670;&nbsp;</a></span>TextureInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Texture::TextureInit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_texture_a2bcd7538eb2df9b69d0a650f6e1a9426_icgraph.png" border="0" usemap="#aclass_texture_a2bcd7538eb2df9b69d0a650f6e1a9426_icgraph" alt=""/></div>
+<map name="aclass_texture_a2bcd7538eb2df9b69d0a650f6e1a9426_icgraph" id="aclass_texture_a2bcd7538eb2df9b69d0a650f6e1a9426_icgraph">
+<area shape="rect" title=" " alt="" coords="169,5,303,32"/>
+<area shape="rect" href="class_texture.html#a74575667645e6a368c1c43ff9eade55e" title=" " alt="" coords="5,5,121,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ad37c395c65ff8bde86230908027a6fcd" name="ad37c395c65ff8bde86230908027a6fcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad37c395c65ff8bde86230908027a6fcd">&#9670;&nbsp;</a></span>height</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Texture::height</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac54718cb08fddb9e291adb62962213ad" name="ac54718cb08fddb9e291adb62962213ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac54718cb08fddb9e291adb62962213ad">&#9670;&nbsp;</a></span>texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Texture::texture</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a06a0246cb31343557c3441c5733349cd" name="a06a0246cb31343557c3441c5733349cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06a0246cb31343557c3441c5733349cd">&#9670;&nbsp;</a></span>width</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Texture::width</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Render/<a class="el" href="_texture_8h_source.html">Texture.h</a></li>
-<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Render/Texture.cpp</li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Render/<a class="el" href="_texture_8cpp.html">Texture.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

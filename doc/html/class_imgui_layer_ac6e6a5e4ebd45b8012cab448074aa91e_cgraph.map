@@ -1,5 +1,4 @@
 <map id="ImguiLayer::OnKeyReleasedEvent" name="ImguiLayer::OnKeyReleasedEvent">
-<area shape="rect" id="node1" title=" " alt="" coords="5,23,192,65"/>
-<area shape="rect" id="node2" href="$namespace_im_gui.html#a3179e560812f878f3961ce803a5d9302" title=" " alt="" coords="270,5,369,32"/>
-<area shape="rect" id="node3" href="$class_key_event.html#a381484404b2aac1ea73952a78a9fa047" title=" " alt="" coords="240,56,399,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,192,47"/>
+<area shape="rect" id="node2" href="$class_key_event.html#a381484404b2aac1ea73952a78a9fa047" title=" " alt="" coords="240,13,399,39"/>
 </map>

@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,44 +28,32 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
 <a href="class_layer-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">Layer类 参考</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_layer_8h_source.html">Layer.h</a>&gt;</code></p>
 <div class="dynheader">
 类 Layer 继承关系图:</div>
 <div class="dyncontent">
@@ -81,28 +67,241 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:aa9b7ebb7ef25f36b2c1859e5ee2c867d"><td class="memItemLeft" align="right" valign="top"><a id="aa9b7ebb7ef25f36b2c1859e5ee2c867d" name="aa9b7ebb7ef25f36b2c1859e5ee2c867d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Layer</b> (const std::string &amp;name=&quot;Layer&quot;)</td></tr>
+<tr class="memitem:aa9b7ebb7ef25f36b2c1859e5ee2c867d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#aa9b7ebb7ef25f36b2c1859e5ee2c867d">Layer</a> (const std::string &amp;name=&quot;Layer&quot;)</td></tr>
 <tr class="separator:aa9b7ebb7ef25f36b2c1859e5ee2c867d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f4da008000c82831f0f327008156635"><td class="memItemLeft" align="right" valign="top"><a id="a1f4da008000c82831f0f327008156635" name="a1f4da008000c82831f0f327008156635"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnAttack</b> ()</td></tr>
+<tr class="memitem:a1b1ba4804451dfe6cc357194e42762ae"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a1b1ba4804451dfe6cc357194e42762ae">~Layer</a> ()</td></tr>
+<tr class="separator:a1b1ba4804451dfe6cc357194e42762ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f4da008000c82831f0f327008156635"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a1f4da008000c82831f0f327008156635">OnAttack</a> ()</td></tr>
 <tr class="separator:a1f4da008000c82831f0f327008156635"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a253ff7092bb8b817f6a9f195021083ec"><td class="memItemLeft" align="right" valign="top"><a id="a253ff7092bb8b817f6a9f195021083ec" name="a253ff7092bb8b817f6a9f195021083ec"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnDetach</b> ()</td></tr>
+<tr class="memitem:a253ff7092bb8b817f6a9f195021083ec"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a253ff7092bb8b817f6a9f195021083ec">OnDetach</a> ()</td></tr>
 <tr class="separator:a253ff7092bb8b817f6a9f195021083ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fff58cf356c53ef765724b8e5aae9e2"><td class="memItemLeft" align="right" valign="top"><a id="a5fff58cf356c53ef765724b8e5aae9e2" name="a5fff58cf356c53ef765724b8e5aae9e2"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnUpdate</b> ()</td></tr>
+<tr class="memitem:a5fff58cf356c53ef765724b8e5aae9e2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a5fff58cf356c53ef765724b8e5aae9e2">OnUpdate</a> ()</td></tr>
 <tr class="separator:a5fff58cf356c53ef765724b8e5aae9e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06c17a43a6dd3d2d8298b46ef600ad0f"><td class="memItemLeft" align="right" valign="top"><a id="a06c17a43a6dd3d2d8298b46ef600ad0f" name="a06c17a43a6dd3d2d8298b46ef600ad0f"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnEvent</b> (<a class="el" href="class_event_base.html">EventBase</a> &amp;event)</td></tr>
+<tr class="memitem:a06c17a43a6dd3d2d8298b46ef600ad0f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a06c17a43a6dd3d2d8298b46ef600ad0f">OnEvent</a> (<a class="el" href="class_event_base.html">EventBase</a> &amp;event)</td></tr>
 <tr class="separator:a06c17a43a6dd3d2d8298b46ef600ad0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac62a46a7b506f1c30485a8c9baaa0f8d"><td class="memItemLeft" align="right" valign="top"><a id="ac62a46a7b506f1c30485a8c9baaa0f8d" name="ac62a46a7b506f1c30485a8c9baaa0f8d"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetName</b> () const</td></tr>
+<tr class="memitem:ac62a46a7b506f1c30485a8c9baaa0f8d"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#ac62a46a7b506f1c30485a8c9baaa0f8d">GetName</a> () const</td></tr>
 <tr class="separator:ac62a46a7b506f1c30485a8c9baaa0f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a7648f0501a42545de56cb1f5c0b0930f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a7648f0501a42545de56cb1f5c0b0930f">mDebugName</a></td></tr>
+<tr class="separator:a7648f0501a42545de56cb1f5c0b0930f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aa9b7ebb7ef25f36b2c1859e5ee2c867d" name="aa9b7ebb7ef25f36b2c1859e5ee2c867d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9b7ebb7ef25f36b2c1859e5ee2c867d">&#9670;&nbsp;</a></span>Layer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Layer::Layer </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;Layer&quot;</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1b1ba4804451dfe6cc357194e42762ae" name="a1b1ba4804451dfe6cc357194e42762ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b1ba4804451dfe6cc357194e42762ae">&#9670;&nbsp;</a></span>~Layer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Layer::~Layer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ac62a46a7b506f1c30485a8c9baaa0f8d" name="ac62a46a7b506f1c30485a8c9baaa0f8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac62a46a7b506f1c30485a8c9baaa0f8d">&#9670;&nbsp;</a></span>GetName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; Layer::GetName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1f4da008000c82831f0f327008156635" name="a1f4da008000c82831f0f327008156635"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f4da008000c82831f0f327008156635">&#9670;&nbsp;</a></span>OnAttack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Layer::OnAttack </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>被 <a class="el" href="class_imgui_layer.html#a1562d5da90335d2f5c7757801d7e9377">ImguiLayer</a> 重载.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_layer_a1f4da008000c82831f0f327008156635_icgraph.png" border="0" usemap="#aclass_layer_a1f4da008000c82831f0f327008156635_icgraph" alt=""/></div>
+<map name="aclass_layer_a1f4da008000c82831f0f327008156635_icgraph" id="aclass_layer_a1f4da008000c82831f0f327008156635_icgraph">
+<area shape="rect" title=" " alt="" coords="223,31,340,57"/>
+<area shape="rect" href="class_layer_stack.html#a5b81860c12f3bcf674285f6790effc6a" title=" " alt="" coords="11,5,169,32"/>
+<area shape="rect" href="class_layer_stack.html#a026912b6d43e50ea69154b6f12e3276c" title=" " alt="" coords="5,56,175,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a253ff7092bb8b817f6a9f195021083ec" name="a253ff7092bb8b817f6a9f195021083ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a253ff7092bb8b817f6a9f195021083ec">&#9670;&nbsp;</a></span>OnDetach()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Layer::OnDetach </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>被 <a class="el" href="class_imgui_layer.html#a06e8812d7144d1fa6c154d43d7372d97">ImguiLayer</a> 重载.</p>
+
+</div>
+</div>
+<a id="a06c17a43a6dd3d2d8298b46ef600ad0f" name="a06c17a43a6dd3d2d8298b46ef600ad0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06c17a43a6dd3d2d8298b46ef600ad0f">&#9670;&nbsp;</a></span>OnEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Layer::OnEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_event_base.html">EventBase</a> &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>被 <a class="el" href="class_imgui_layer.html#ade36001fdd1861e19dadc2d32d5e7bd5">ImguiLayer</a> 重载.</p>
+
+</div>
+</div>
+<a id="a5fff58cf356c53ef765724b8e5aae9e2" name="a5fff58cf356c53ef765724b8e5aae9e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fff58cf356c53ef765724b8e5aae9e2">&#9670;&nbsp;</a></span>OnUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Layer::OnUpdate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>被 <a class="el" href="class_editor_layer.html#ade3e74ebc4c5487446fda26262151cef">EditorLayer</a> , 以及 <a class="el" href="class_imgui_layer.html#aa98053a216128343d985192439323544">ImguiLayer</a> 重载.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a7648f0501a42545de56cb1f5c0b0930f" name="a7648f0501a42545de56cb1f5c0b0930f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7648f0501a42545de56cb1f5c0b0930f">&#9670;&nbsp;</a></span>mDebugName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Layer::mDebugName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Layer/<a class="el" href="_layer_8h_source.html">Layer.h</a></li>
-<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Layer/Layer.cpp</li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Layer/<a class="el" href="_layer_8cpp.html">Layer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

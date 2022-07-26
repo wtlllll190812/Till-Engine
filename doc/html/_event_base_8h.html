@@ -5,13 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TillEngine: D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Events/EventBase.h 文件参考</title>
+<title>TillEngine: D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Events/EventBase.h 文件参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,39 +28,22 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_eaa02307cc4840e18867bc607bee3cb2.html">Events</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_75ae6d3613b6c2f243b8fb439548ec3f.html">Framework</a></li><li class="navelem"><a class="el" href="dir_2820ecf7c6a311b96e4b9f781fa1dc4a.html">Events</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -73,55 +54,50 @@ $(function() {
   <div class="headertitle"><div class="title">EventBase.h 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_till_pch_8h_source.html">TillPch.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="_t_l_core_8h_source.html">TLCore.h</a>&quot;</code><br />
+<code>#include &lt;string&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 EventBase.h 的引用(Include)关系图:</div>
 <div class="dyncontent">
-<div class="center"><img src="_event_base_8h__incl.png" border="0" usemap="#a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_events_2_event_base_8h" alt=""/></div>
-<map name="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_events_2_event_base_8h" id="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_events_2_event_base_8h">
-<area shape="rect" title=" " alt="" coords="809,5,995,61"/>
-<area shape="rect" href="_till_pch_8h.html" title=" " alt="" coords="866,109,938,136"/>
-<area shape="rect" title=" " alt="" coords="5,184,60,211"/>
-<area shape="rect" title=" " alt="" coords="85,184,162,211"/>
-<area shape="rect" title=" " alt="" coords="186,184,255,211"/>
-<area shape="rect" title=" " alt="" coords="279,184,373,211"/>
-<area shape="rect" title=" " alt="" coords="397,184,588,211"/>
-<area shape="rect" title=" " alt="" coords="613,184,754,211"/>
-<area shape="rect" title=" " alt="" coords="778,184,850,211"/>
-<area shape="rect" title=" " alt="" coords="874,184,930,211"/>
-<area shape="rect" title=" " alt="" coords="954,184,1023,211"/>
-<area shape="rect" title=" " alt="" coords="1048,184,1105,211"/>
-<area shape="rect" title=" " alt="" coords="1129,184,1176,211"/>
-<area shape="rect" title=" " alt="" coords="1201,184,1254,211"/>
-<area shape="rect" href="_singleton_01_8h.html" title=" " alt="" coords="1278,184,1369,211"/>
-<area shape="rect" href="_debug_8h.html" title=" " alt="" coords="1393,184,1464,211"/>
-<area shape="rect" title=" " alt="" coords="1372,259,1485,285"/>
+<div class="center"><img src="_event_base_8h__incl.png" border="0" usemap="#a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_events_2_event_base_8h" alt=""/></div>
+<map name="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_events_2_event_base_8h" id="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_events_2_event_base_8h">
+<area shape="rect" title=" " alt="" coords="5,5,183,76"/>
+<area shape="rect" href="_t_l_core_8h.html" title=" " alt="" coords="13,124,87,151"/>
+<area shape="rect" title=" " alt="" coords="112,124,167,151"/>
+<area shape="rect" title=" " alt="" coords="11,199,89,225"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 此图展示该文件直接或间接的被哪些文件引用了:</div>
 <div class="dyncontent">
-<div class="center"><img src="_event_base_8h__dep__incl.png" border="0" usemap="#a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_events_2_event_base_8hdep" alt=""/></div>
-<map name="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_events_2_event_base_8hdep" id="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_events_2_event_base_8hdep">
-<area shape="rect" title=" " alt="" coords="1054,5,1241,61"/>
-<area shape="rect" href="_application_8h.html" title=" " alt="" coords="1020,317,1171,373"/>
-<area shape="rect" href="_application_event_8h.html" title=" " alt="" coords="1325,109,1545,165"/>
-<area shape="rect" href="_key_event_8h.html" title=" " alt="" coords="1122,109,1301,165"/>
-<area shape="rect" href="_mouse_event_8h.html" title=" " alt="" coords="853,109,1047,165"/>
-<area shape="rect" href="_layer_8h.html" title=" " alt="" coords="1569,109,1720,165"/>
-<area shape="rect" href="_window_8h.html" title=" " alt="" coords="727,213,904,269"/>
-<area shape="rect" href="_application_8cpp.html" title=" " alt="" coords="829,421,980,477"/>
-<area shape="rect" href="_camera_8cpp.html" title=" " alt="" coords="1004,421,1208,477"/>
-<area shape="rect" href="_game_loop_8cpp.html" title=" " alt="" coords="367,421,594,477"/>
-<area shape="rect" href="_imgui_layer_8cpp.html" title=" " alt="" coords="1283,421,1478,477"/>
-<area shape="rect" href="_screen_8cpp.html" title=" " alt="" coords="618,421,805,477"/>
-<area shape="rect" href="_windows_window_8h.html" title=" " alt="" coords="112,421,343,477"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="1171,525,1321,581"/>
-<area shape="rect" href="_windows_window_8cpp.html" title=" " alt="" coords="29,525,273,581"/>
-<area shape="rect" href="_imgui_layer_8h.html" title=" " alt="" coords="1291,213,1471,269"/>
-<area shape="rect" href="_layer_8cpp.html" title=" " alt="" coords="1761,213,1923,269"/>
-<area shape="rect" href="_layer_stack_8h.html" title=" " alt="" coords="1553,213,1736,269"/>
-<area shape="rect" href="_layer_stack_8cpp.html" title=" " alt="" coords="1553,317,1750,373"/>
+<div class="center"><img src="_event_base_8h__dep__incl.png" border="0" usemap="#a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_events_2_event_base_8hdep" alt=""/></div>
+<map name="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_events_2_event_base_8hdep" id="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_events_2_event_base_8hdep">
+<area shape="rect" title=" " alt="" coords="581,5,759,76"/>
+<area shape="rect" href="_application_event_8h.html" title=" " alt="" coords="581,124,759,195"/>
+<area shape="rect" href="_key_event_8h.html" title=" " alt="" coords="179,124,356,195"/>
+<area shape="rect" href="_mouse_event_8h.html" title=" " alt="" coords="380,124,557,195"/>
+<area shape="rect" href="_layer_8h.html" title=" " alt="" coords="1456,131,1607,187"/>
+<area shape="rect" href="_window_8h.html" title=" " alt="" coords="1208,131,1385,187"/>
+<area shape="rect" href="_application_8h.html" title=" " alt="" coords="1221,243,1372,299"/>
+<area shape="rect" href="_imgui_layer_8h.html" title=" " alt="" coords="407,243,587,299"/>
+<area shape="rect" href="_windows_window_8cpp.html" title=" " alt="" coords="180,354,389,410"/>
+<area shape="rect" href="_application_8cpp.html" title=" " alt="" coords="1673,465,1824,521"/>
+<area shape="rect" href="_camera_8cpp.html" title=" " alt="" coords="1296,354,1500,410"/>
+<area shape="rect" href="_light_8cpp.html" title=" " alt="" coords="1525,354,1711,410"/>
+<area shape="rect" href="_render_system_8cpp.html" title=" " alt="" coords="2229,354,2447,410"/>
+<area shape="rect" href="_editor_layer_8cpp.html" title=" " alt="" coords="409,465,563,521"/>
+<area shape="rect" href="_g_lfw_input_8cpp.html" title=" " alt="" coords="633,354,853,410"/>
+<area shape="rect" href="_game_loop_8cpp.html" title=" " alt="" coords="1786,354,2013,410"/>
+<area shape="rect" href="_imgui_layer_8cpp.html" title=" " alt="" coords="414,354,609,410"/>
+<area shape="rect" href="_mat_default_8cpp.html" title=" " alt="" coords="2037,347,2205,417"/>
+<area shape="rect" href="_mat_shadow_caster_8cpp.html" title=" " alt="" coords="929,347,1097,417"/>
+<area shape="rect" href="_t_l_engine_c_g_8cpp.html" title=" " alt="" coords="2471,354,2685,410"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="1121,354,1272,410"/>
+<area shape="rect" href="_editor_layer_8h.html" title=" " alt="" coords="5,354,156,410"/>
+<area shape="rect" href="_layer_8cpp.html" title=" " alt="" coords="1498,243,1661,299"/>
+<area shape="rect" href="_layer_stack_8h.html" title=" " alt="" coords="2631,243,2813,299"/>
+<area shape="rect" href="_layer_stack_8cpp.html" title=" " alt="" coords="2759,354,2957,410"/>
+<area shape="rect" href="_windows_window_8h.html" title=" " alt="" coords="662,243,857,299"/>
 </map>
 </div>
 </div>
@@ -138,7 +114,7 @@ EventBase.h 的引用(Include)关系图:</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 宏定义</h2></td></tr>
-<tr class="memitem:a80d534fc4d69a68eefd1573fd0ac2f44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_event_base_8h.html#a80d534fc4d69a68eefd1573fd0ac2f44">EVENT_CLASS_TYPE</a>(<a class="el" href="imgui__impl__opengl3__loader_8h.html#a63267399cd2a2ee217572c11d2e54f07">type</a>)</td></tr>
+<tr class="memitem:a80d534fc4d69a68eefd1573fd0ac2f44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_event_base_8h.html#a80d534fc4d69a68eefd1573fd0ac2f44">EVENT_CLASS_TYPE</a>(type)</td></tr>
 <tr class="separator:a80d534fc4d69a68eefd1573fd0ac2f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd52deea587a36ef619e596a0c691839"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_event_base_8h.html#abd52deea587a36ef619e596a0c691839">EVENT_CLASS_CATEGORY</a>(category)&#160;&#160;&#160;	virtual int GetCategoryFlags() const override { return category; }</td></tr>
 <tr class="separator:abd52deea587a36ef619e596a0c691839"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,16 +186,15 @@ EventBase.h 的引用(Include)关系图:</div>
           <td class="memname">#define EVENT_CLASS_TYPE</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#a63267399cd2a2ee217572c11d2e54f07">type</a></td><td>)</td>
+          <td class="paramname">type</td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>值:</b><div class="fragment"><div class="line">    <span class="keyword">static</span> <a class="code hl_enumeration" href="_event_base_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a> GetStaticType() { <span class="keywordflow">return</span> <a class="code hl_enumeration" href="_event_base_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a>::##<a class="code hl_typedef" href="imgui__impl__opengl3__loader_8h.html#a63267399cd2a2ee217572c11d2e54f07">type</a>; }              \</div>
+<b>值:</b><div class="fragment"><div class="line">    <span class="keyword">static</span> <a class="code hl_enumeration" href="_event_base_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a> GetStaticType() { <span class="keywordflow">return</span> <a class="code hl_enumeration" href="_event_base_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a>::##type; }              \</div>
 <div class="line">    virtual <a class="code hl_enumeration" href="_event_base_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a> GetEventType()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> GetStaticType(); } \</div>
-<div class="line">    virtual <span class="keyword">const</span> <span class="keywordtype">char</span> *GetName()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> #<a class="code hl_typedef" href="imgui__impl__opengl3__loader_8h.html#a63267399cd2a2ee217572c11d2e54f07">type</a>; }</div>
-<div class="ttc" id="a_event_base_8h_html_a2628ea8d12e8b2563c32f05dc7fff6fa"><div class="ttname"><a href="_event_base_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a></div><div class="ttdeci">EventType</div><div class="ttdoc">事件类型</div><div class="ttdef"><b>Definition:</b> EventBase.h:8</div></div>
-<div class="ttc" id="aimgui__impl__opengl3__loader_8h_html_a63267399cd2a2ee217572c11d2e54f07"><div class="ttname"><a href="imgui__impl__opengl3__loader_8h.html#a63267399cd2a2ee217572c11d2e54f07">type</a></div><div class="ttdeci">GLint GLint GLsizei GLsizei GLint GLenum GLenum type</div><div class="ttdef"><b>Definition:</b> imgui_impl_opengl3_loader.h:177</div></div>
+<div class="line">    virtual <span class="keyword">const</span> <span class="keywordtype">char</span> *GetName()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> #type; }</div>
+<div class="ttc" id="a_event_base_8h_html_a2628ea8d12e8b2563c32f05dc7fff6fa"><div class="ttname"><a href="_event_base_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a></div><div class="ttdeci">EventType</div><div class="ttdoc">事件类型</div><div class="ttdef"><b>Definition:</b> EventBase.h:9</div></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,21 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
@@ -70,6 +53,8 @@ $(function() {
   <div class="headertitle"><div class="title">Transform类 参考</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_transform_8h_source.html">Transform.h</a>&gt;</code></p>
 <div class="dynheader">
 类 Transform 继承关系图:</div>
 <div class="dyncontent">
@@ -85,35 +70,35 @@ Transform 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_transform__coll__graph.png" border="0" usemap="#a_transform_coll__map" alt="Collaboration graph"/></div>
 <map name="a_transform_coll__map" id="a_transform_coll__map">
-<area shape="rect" title=" " alt="" coords="187,5,266,32"/>
-<area shape="rect" href="class_game_object.html" title=" " alt="" coords="13,95,107,121"/>
-<area shape="rect" href="class_component.html" title="组件基类" alt="" coords="77,184,165,211"/>
-<area shape="rect" href="class_camera.html" title=" " alt="" coords="56,273,123,300"/>
-<area shape="rect" href="class_serializable.html" title="可序列化对象接口" alt="" coords="58,5,147,32"/>
-<area shape="rect" href="class_scene.html" title="场景类" alt="" coords="5,363,64,389"/>
+<area shape="rect" title=" " alt="" coords="180,5,259,32"/>
+<area shape="rect" href="class_game_object.html" title=" " alt="" coords="5,95,100,121"/>
+<area shape="rect" href="class_component.html" title="组件基类" alt="" coords="70,184,158,211"/>
+<area shape="rect" href="class_camera.html" title=" " alt="" coords="49,273,115,300"/>
+<area shape="rect" href="class_serializable.html" title="可序列化对象接口" alt="" coords="51,5,140,32"/>
+<area shape="rect" href="class_scene.html" title="场景类" alt="" coords="53,363,111,389"/>
+<area shape="rect" href="class_t_l_serialize_file.html" title=" " alt="" coords="139,273,246,300"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a27f544c53dcb706fbf6c82f851fcbf3b"><td class="memItemLeft" align="right" valign="top"><a id="a27f544c53dcb706fbf6c82f851fcbf3b" name="a27f544c53dcb706fbf6c82f851fcbf3b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Transform</b> (glm::vec3, <a class="el" href="class_game_object.html">GameObject</a> *)</td></tr>
+<tr class="memitem:aa08ca4266efabc768973cdeea51945ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#aa08ca4266efabc768973cdeea51945ab">Transform</a> ()</td></tr>
+<tr class="separator:aa08ca4266efabc768973cdeea51945ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27f544c53dcb706fbf6c82f851fcbf3b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#a27f544c53dcb706fbf6c82f851fcbf3b">Transform</a> (glm::vec3, <a class="el" href="class_game_object.html">GameObject</a> *)</td></tr>
 <tr class="separator:a27f544c53dcb706fbf6c82f851fcbf3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0d0e8f8c55b67c115a5449f225f53e6"><td class="memItemLeft" align="right" valign="top"><a id="af0d0e8f8c55b67c115a5449f225f53e6" name="af0d0e8f8c55b67c115a5449f225f53e6"></a>
-glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>GetFront</b> ()</td></tr>
-<tr class="memdesc:af0d0e8f8c55b67c115a5449f225f53e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取向前方向 <br /></td></tr>
+<tr class="memitem:aa72e286c069850db80927b0e6554cd3e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#aa72e286c069850db80927b0e6554cd3e">~Transform</a> ()</td></tr>
+<tr class="separator:aa72e286c069850db80927b0e6554cd3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0d0e8f8c55b67c115a5449f225f53e6"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#af0d0e8f8c55b67c115a5449f225f53e6">GetFront</a> ()</td></tr>
+<tr class="memdesc:af0d0e8f8c55b67c115a5449f225f53e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取向前方向  <a href="class_transform.html#af0d0e8f8c55b67c115a5449f225f53e6">更多...</a><br /></td></tr>
 <tr class="separator:af0d0e8f8c55b67c115a5449f225f53e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e34c4791358814412983d8606cc4cdf"><td class="memItemLeft" align="right" valign="top"><a id="a7e34c4791358814412983d8606cc4cdf" name="a7e34c4791358814412983d8606cc4cdf"></a>
-glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>GetRight</b> ()</td></tr>
-<tr class="memdesc:a7e34c4791358814412983d8606cc4cdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取向右方向 <br /></td></tr>
+<tr class="memitem:a7e34c4791358814412983d8606cc4cdf"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#a7e34c4791358814412983d8606cc4cdf">GetRight</a> ()</td></tr>
+<tr class="memdesc:a7e34c4791358814412983d8606cc4cdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取向右方向  <a href="class_transform.html#a7e34c4791358814412983d8606cc4cdf">更多...</a><br /></td></tr>
 <tr class="separator:a7e34c4791358814412983d8606cc4cdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d87de590be3b413b962ca5a1c90c0ef"><td class="memItemLeft" align="right" valign="top"><a id="a9d87de590be3b413b962ca5a1c90c0ef" name="a9d87de590be3b413b962ca5a1c90c0ef"></a>
-glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>GetUp</b> ()</td></tr>
-<tr class="memdesc:a9d87de590be3b413b962ca5a1c90c0ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取向上方向 <br /></td></tr>
+<tr class="memitem:a9d87de590be3b413b962ca5a1c90c0ef"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#a9d87de590be3b413b962ca5a1c90c0ef">GetUp</a> ()</td></tr>
+<tr class="memdesc:a9d87de590be3b413b962ca5a1c90c0ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取向上方向  <a href="class_transform.html#a9d87de590be3b413b962ca5a1c90c0ef">更多...</a><br /></td></tr>
 <tr class="separator:a9d87de590be3b413b962ca5a1c90c0ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ffa079dae0fe2046c6b6595df394bf1"><td class="memItemLeft" align="right" valign="top"><a id="a8ffa079dae0fe2046c6b6595df394bf1" name="a8ffa079dae0fe2046c6b6595df394bf1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Translate</b> (float)</td></tr>
-<tr class="memdesc:a8ffa079dae0fe2046c6b6595df394bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">向前移动 <br /></td></tr>
+<tr class="memitem:a8ffa079dae0fe2046c6b6595df394bf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#a8ffa079dae0fe2046c6b6595df394bf1">Translate</a> (float)</td></tr>
+<tr class="memdesc:a8ffa079dae0fe2046c6b6595df394bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">向前移动  <a href="class_transform.html#a8ffa079dae0fe2046c6b6595df394bf1">更多...</a><br /></td></tr>
 <tr class="separator:a8ffa079dae0fe2046c6b6595df394bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fe8799ec430bdc5f8fdf25c55084bae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#a2fe8799ec430bdc5f8fdf25c55084bae">Translate</a> (glm::vec3, float)</td></tr>
 <tr class="memdesc:a2fe8799ec430bdc5f8fdf25c55084bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">向某个方向移动  <a href="class_transform.html#a2fe8799ec430bdc5f8fdf25c55084bae">更多...</a><br /></td></tr>
@@ -133,23 +118,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Translate</b> (float)
 <tr class="memitem:a295a782dcb0a07ecc5049d98e888e9c4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#a295a782dcb0a07ecc5049d98e888e9c4">GuiDisPlay</a> () override</td></tr>
 <tr class="memdesc:a295a782dcb0a07ecc5049d98e888e9c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">显示到Gui  <a href="class_transform.html#a295a782dcb0a07ecc5049d98e888e9c4">更多...</a><br /></td></tr>
 <tr class="separator:a295a782dcb0a07ecc5049d98e888e9c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ab4c76d50f592954fa71b021395e24c"><td class="memItemLeft" align="right" valign="top"><a id="a1ab4c76d50f592954fa71b021395e24c" name="a1ab4c76d50f592954fa71b021395e24c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Decompose</b> (glm::mat4 newModel)</td></tr>
+<tr class="memitem:a1ab4c76d50f592954fa71b021395e24c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#a1ab4c76d50f592954fa71b021395e24c">Decompose</a> (glm::mat4 newModel)</td></tr>
 <tr class="separator:a1ab4c76d50f592954fa71b021395e24c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_component')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="class_component.html">Component</a></td></tr>
-<tr class="memitem:ac350787c55558ea752326fc44a360f16 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top"><a id="ac350787c55558ea752326fc44a360f16" name="ac350787c55558ea752326fc44a360f16"></a>
-virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetName</b> () const =0</td></tr>
+<tr class="memitem:a8775db6d1a2c1afc2e77cd3c8f39da6f inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a8775db6d1a2c1afc2e77cd3c8f39da6f">Component</a> ()</td></tr>
+<tr class="separator:a8775db6d1a2c1afc2e77cd3c8f39da6f inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac350787c55558ea752326fc44a360f16 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#ac350787c55558ea752326fc44a360f16">GetName</a> () const =0</td></tr>
 <tr class="separator:ac350787c55558ea752326fc44a360f16 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a706e9681ec78cc0a863e5184ba4abe49 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top"><a id="a706e9681ec78cc0a863e5184ba4abe49" name="a706e9681ec78cc0a863e5184ba4abe49"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnUpdate</b> ()</td></tr>
-<tr class="memdesc:a706e9681ec78cc0a863e5184ba4abe49 inherit pub_methods_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">刷新时 <br /></td></tr>
+<tr class="memitem:a706e9681ec78cc0a863e5184ba4abe49 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a706e9681ec78cc0a863e5184ba4abe49">OnUpdate</a> ()</td></tr>
+<tr class="memdesc:a706e9681ec78cc0a863e5184ba4abe49 inherit pub_methods_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">刷新时  <a href="class_component.html#a706e9681ec78cc0a863e5184ba4abe49">更多...</a><br /></td></tr>
 <tr class="separator:a706e9681ec78cc0a863e5184ba4abe49 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97db16de1c451add8d2886151d5f0f4a inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a97db16de1c451add8d2886151d5f0f4a">Awake</a> ()</td></tr>
 <tr class="memdesc:a97db16de1c451add8d2886151d5f0f4a inherit pub_methods_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加时  <a href="class_component.html#a97db16de1c451add8d2886151d5f0f4a">更多...</a><br /></td></tr>
 <tr class="separator:a97db16de1c451add8d2886151d5f0f4a inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a700986a2f0d8681399632108d896978a inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top"><a id="a700986a2f0d8681399632108d896978a" name="a700986a2f0d8681399632108d896978a"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnRemove</b> ()</td></tr>
-<tr class="memdesc:a700986a2f0d8681399632108d896978a inherit pub_methods_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除时 <br /></td></tr>
+<tr class="memitem:a700986a2f0d8681399632108d896978a inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a700986a2f0d8681399632108d896978a">OnRemove</a> ()</td></tr>
+<tr class="memdesc:a700986a2f0d8681399632108d896978a inherit pub_methods_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除时  <a href="class_component.html#a700986a2f0d8681399632108d896978a">更多...</a><br /></td></tr>
 <tr class="separator:a700986a2f0d8681399632108d896978a inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93c3cc9bd70fec54aeb42875ba48dfa3 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a93c3cc9bd70fec54aeb42875ba48dfa3">GuiDisPlay</a> ()</td></tr>
 <tr class="memdesc:a93c3cc9bd70fec54aeb42875ba48dfa3 inherit pub_methods_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">显示到Gui  <a href="class_component.html#a93c3cc9bd70fec54aeb42875ba48dfa3">更多...</a><br /></td></tr>
@@ -158,9 +141,8 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnRemove</b> 
 <tr class="memitem:a8fca2c981efd6e4a7801dada5eb992ec inherit pub_methods_class_component"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_component.html#a8fca2c981efd6e4a7801dada5eb992ec">GetComponent</a> ()</td></tr>
 <tr class="memdesc:a8fca2c981efd6e4a7801dada5eb992ec inherit pub_methods_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取组件  <a href="class_component.html#a8fca2c981efd6e4a7801dada5eb992ec">更多...</a><br /></td></tr>
 <tr class="separator:a8fca2c981efd6e4a7801dada5eb992ec inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43a014c7f8624d95464ad2996ce493ef inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top"><a id="a43a014c7f8624d95464ad2996ce493ef" name="a43a014c7f8624d95464ad2996ce493ef"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>GetHash</b> ()</td></tr>
-<tr class="memdesc:a43a014c7f8624d95464ad2996ce493ef inherit pub_methods_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取哈希值 <br /></td></tr>
+<tr class="memitem:a43a014c7f8624d95464ad2996ce493ef inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a43a014c7f8624d95464ad2996ce493ef">GetHash</a> ()</td></tr>
+<tr class="memdesc:a43a014c7f8624d95464ad2996ce493ef inherit pub_methods_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取哈希值  <a href="class_component.html#a43a014c7f8624d95464ad2996ce493ef">更多...</a><br /></td></tr>
 <tr class="separator:a43a014c7f8624d95464ad2996ce493ef inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2b954777bfb26bd486d7aee9675667e"><td class="memItemLeft" align="right" valign="top">virtual TiXmlElement *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serializable.html#ad2b954777bfb26bd486d7aee9675667e">Serialize</a> (std::string name=&quot;Default&quot;)=0</td></tr>
 <tr class="memdesc:ad2b954777bfb26bd486d7aee9675667e"><td class="mdescLeft">&#160;</td><td class="mdescRight">序列化  <a href="class_serializable.html#ad2b954777bfb26bd486d7aee9675667e">更多...</a><br /></td></tr>
@@ -174,53 +156,122 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>GetHash</b> ()</td></t
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public 属性</h2></td></tr>
-<tr class="memitem:aa357f8eb780f4ef195027d1c636baa36"><td class="memItemLeft" align="right" valign="top"><a id="aa357f8eb780f4ef195027d1c636baa36" name="aa357f8eb780f4ef195027d1c636baa36"></a>
-glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>position</b></td></tr>
+<tr class="memitem:aa357f8eb780f4ef195027d1c636baa36"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#aa357f8eb780f4ef195027d1c636baa36">position</a></td></tr>
 <tr class="separator:aa357f8eb780f4ef195027d1c636baa36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefd4a6bf41e01cf5898fd57430d93dea"><td class="memItemLeft" align="right" valign="top"><a id="aefd4a6bf41e01cf5898fd57430d93dea" name="aefd4a6bf41e01cf5898fd57430d93dea"></a>
-glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>rotation</b></td></tr>
+<tr class="memitem:aefd4a6bf41e01cf5898fd57430d93dea"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#aefd4a6bf41e01cf5898fd57430d93dea">rotation</a></td></tr>
 <tr class="separator:aefd4a6bf41e01cf5898fd57430d93dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf6ab53778448fd2f2d8a367c14e7f95"><td class="memItemLeft" align="right" valign="top"><a id="acf6ab53778448fd2f2d8a367c14e7f95" name="acf6ab53778448fd2f2d8a367c14e7f95"></a>
-glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>scale</b></td></tr>
+<tr class="memitem:acf6ab53778448fd2f2d8a367c14e7f95"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#acf6ab53778448fd2f2d8a367c14e7f95">scale</a></td></tr>
 <tr class="separator:acf6ab53778448fd2f2d8a367c14e7f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_component"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_component')"><img src="closed.png" alt="-"/>&#160;Public 属性 继承自 <a class="el" href="class_component.html">Component</a></td></tr>
-<tr class="memitem:a4be7636ba1ed0be9cffbe35a72f51bab inherit pub_attribs_class_component"><td class="memItemLeft" align="right" valign="top"><a id="a4be7636ba1ed0be9cffbe35a72f51bab" name="a4be7636ba1ed0be9cffbe35a72f51bab"></a>
-<a class="el" href="class_game_object.html">GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>gameobject</b></td></tr>
-<tr class="memdesc:a4be7636ba1ed0be9cffbe35a72f51bab inherit pub_attribs_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">所属物体 <br /></td></tr>
+<tr class="memitem:a4be7636ba1ed0be9cffbe35a72f51bab inherit pub_attribs_class_component"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_object.html">GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a4be7636ba1ed0be9cffbe35a72f51bab">gameobject</a></td></tr>
+<tr class="memdesc:a4be7636ba1ed0be9cffbe35a72f51bab inherit pub_attribs_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">所属物体  <a href="class_component.html#a4be7636ba1ed0be9cffbe35a72f51bab">更多...</a><br /></td></tr>
 <tr class="separator:a4be7636ba1ed0be9cffbe35a72f51bab inherit pub_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57e565f803beda2c2976d3a5b708d704 inherit pub_attribs_class_component"><td class="memItemLeft" align="right" valign="top"><a id="a57e565f803beda2c2976d3a5b708d704" name="a57e565f803beda2c2976d3a5b708d704"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>guid</b></td></tr>
-<tr class="memdesc:a57e565f803beda2c2976d3a5b708d704 inherit pub_attribs_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局标识 <br /></td></tr>
+<tr class="memitem:a57e565f803beda2c2976d3a5b708d704 inherit pub_attribs_class_component"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a57e565f803beda2c2976d3a5b708d704">guid</a></td></tr>
+<tr class="memdesc:a57e565f803beda2c2976d3a5b708d704 inherit pub_attribs_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局标识  <a href="class_component.html#a57e565f803beda2c2976d3a5b708d704">更多...</a><br /></td></tr>
 <tr class="separator:a57e565f803beda2c2976d3a5b708d704 inherit pub_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_serializable"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_serializable')"><img src="closed.png" alt="-"/>&#160;Public 属性 继承自 <a class="el" href="class_serializable.html">Serializable</a></td></tr>
-<tr class="memitem:a4be5c5e13129b89d05d7b4a7094d440b inherit pub_attribs_class_serializable"><td class="memItemLeft" align="right" valign="top"><a id="a4be5c5e13129b89d05d7b4a7094d440b" name="a4be5c5e13129b89d05d7b4a7094d440b"></a>
-TiXmlElement *&#160;</td><td class="memItemRight" valign="bottom"><b>m_node</b> =nullptr</td></tr>
-<tr class="memdesc:a4be5c5e13129b89d05d7b4a7094d440b inherit pub_attribs_class_serializable"><td class="mdescLeft">&#160;</td><td class="mdescRight">序列化节点 <br /></td></tr>
+<tr class="memitem:a4be5c5e13129b89d05d7b4a7094d440b inherit pub_attribs_class_serializable"><td class="memItemLeft" align="right" valign="top">TiXmlElement *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serializable.html#a4be5c5e13129b89d05d7b4a7094d440b">m_node</a> =nullptr</td></tr>
+<tr class="memdesc:a4be5c5e13129b89d05d7b4a7094d440b inherit pub_attribs_class_serializable"><td class="mdescLeft">&#160;</td><td class="mdescRight">序列化节点  <a href="class_serializable.html#a4be5c5e13129b89d05d7b4a7094d440b">更多...</a><br /></td></tr>
 <tr class="separator:a4be5c5e13129b89d05d7b4a7094d440b inherit pub_attribs_class_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 静态 Public 属性</h2></td></tr>
-<tr class="memitem:ac824152f5fdac81efa0ae40990ca6d3a"><td class="memItemLeft" align="right" valign="top"><a id="ac824152f5fdac81efa0ae40990ca6d3a" name="ac824152f5fdac81efa0ae40990ca6d3a"></a>
-static const glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>forward</b> = glm::vec3(0.0f, 0.0f, -1.0f)</td></tr>
-<tr class="memdesc:ac824152f5fdac81efa0ae40990ca6d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">向各个方向的单位向量 <br /></td></tr>
+<tr class="memitem:ac824152f5fdac81efa0ae40990ca6d3a"><td class="memItemLeft" align="right" valign="top">static const glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#ac824152f5fdac81efa0ae40990ca6d3a">forward</a> = glm::vec3(0.0f, 0.0f, -1.0f)</td></tr>
+<tr class="memdesc:ac824152f5fdac81efa0ae40990ca6d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">向各个方向的单位向量  <a href="class_transform.html#ac824152f5fdac81efa0ae40990ca6d3a">更多...</a><br /></td></tr>
 <tr class="separator:ac824152f5fdac81efa0ae40990ca6d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5f3e1e0cc9cb2060a1ba556da124f3e"><td class="memItemLeft" align="right" valign="top"><a id="ae5f3e1e0cc9cb2060a1ba556da124f3e" name="ae5f3e1e0cc9cb2060a1ba556da124f3e"></a>
-static const glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>back</b> = glm::vec3(0.0f, 0.0f, 1.0f)</td></tr>
+<tr class="memitem:ae5f3e1e0cc9cb2060a1ba556da124f3e"><td class="memItemLeft" align="right" valign="top">static const glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#ae5f3e1e0cc9cb2060a1ba556da124f3e">back</a> = glm::vec3(0.0f, 0.0f, 1.0f)</td></tr>
 <tr class="separator:ae5f3e1e0cc9cb2060a1ba556da124f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae16ecff75f14e1f6c2856ebc5578c0db"><td class="memItemLeft" align="right" valign="top"><a id="ae16ecff75f14e1f6c2856ebc5578c0db" name="ae16ecff75f14e1f6c2856ebc5578c0db"></a>
-static const glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>left</b> = glm::vec3(-1.0f, 0.0f, 0.0f)</td></tr>
+<tr class="memitem:ae16ecff75f14e1f6c2856ebc5578c0db"><td class="memItemLeft" align="right" valign="top">static const glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#ae16ecff75f14e1f6c2856ebc5578c0db">left</a> = glm::vec3(-1.0f, 0.0f, 0.0f)</td></tr>
 <tr class="separator:ae16ecff75f14e1f6c2856ebc5578c0db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7ee58650da32c47e270c686e2299715"><td class="memItemLeft" align="right" valign="top"><a id="af7ee58650da32c47e270c686e2299715" name="af7ee58650da32c47e270c686e2299715"></a>
-static const glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>right</b> = glm::vec3(1.0f, 0.0f, 0.0f)</td></tr>
+<tr class="memitem:af7ee58650da32c47e270c686e2299715"><td class="memItemLeft" align="right" valign="top">static const glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#af7ee58650da32c47e270c686e2299715">right</a> = glm::vec3(1.0f, 0.0f, 0.0f)</td></tr>
 <tr class="separator:af7ee58650da32c47e270c686e2299715"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1c8231cb029171d4d62c0159dfe72aa"><td class="memItemLeft" align="right" valign="top"><a id="ae1c8231cb029171d4d62c0159dfe72aa" name="ae1c8231cb029171d4d62c0159dfe72aa"></a>
-static const glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>up</b> = glm::vec3(0.0f, 1.0f, 0.0f)</td></tr>
+<tr class="memitem:ae1c8231cb029171d4d62c0159dfe72aa"><td class="memItemLeft" align="right" valign="top">static const glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#ae1c8231cb029171d4d62c0159dfe72aa">up</a> = glm::vec3(0.0f, 1.0f, 0.0f)</td></tr>
 <tr class="separator:ae1c8231cb029171d4d62c0159dfe72aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2151a4b609fc2324563c09dfde0a83a4"><td class="memItemLeft" align="right" valign="top"><a id="a2151a4b609fc2324563c09dfde0a83a4" name="a2151a4b609fc2324563c09dfde0a83a4"></a>
-static const glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>down</b> = glm::vec3(0.0f, -1.0f, 0.0f)</td></tr>
+<tr class="memitem:a2151a4b609fc2324563c09dfde0a83a4"><td class="memItemLeft" align="right" valign="top">static const glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#a2151a4b609fc2324563c09dfde0a83a4">down</a> = glm::vec3(0.0f, -1.0f, 0.0f)</td></tr>
 <tr class="separator:a2151a4b609fc2324563c09dfde0a83a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aa08ca4266efabc768973cdeea51945ab" name="aa08ca4266efabc768973cdeea51945ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa08ca4266efabc768973cdeea51945ab">&#9670;&nbsp;</a></span>Transform() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Transform::Transform </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a27f544c53dcb706fbf6c82f851fcbf3b" name="a27f544c53dcb706fbf6c82f851fcbf3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27f544c53dcb706fbf6c82f851fcbf3b">&#9670;&nbsp;</a></span>Transform() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Transform::Transform </td>
+          <td>(</td>
+          <td class="paramtype">glm::vec3&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_object.html">GameObject</a> *&#160;</td>
+          <td class="paramname"><em>gameobject</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa72e286c069850db80927b0e6554cd3e" name="aa72e286c069850db80927b0e6554cd3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa72e286c069850db80927b0e6554cd3e">&#9670;&nbsp;</a></span>~Transform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Transform::~Transform </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">成员函数说明</h2>
+<a id="a1ab4c76d50f592954fa71b021395e24c" name="a1ab4c76d50f592954fa71b021395e24c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ab4c76d50f592954fa71b021395e24c">&#9670;&nbsp;</a></span>Decompose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Transform::Decompose </td>
+          <td>(</td>
+          <td class="paramtype">glm::mat4&#160;</td>
+          <td class="paramname"><em>newModel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="abe93692dc6c3083f804c0c44f8e8fcc4" name="abe93692dc6c3083f804c0c44f8e8fcc4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe93692dc6c3083f804c0c44f8e8fcc4">&#9670;&nbsp;</a></span>DeSerialize()</h2>
 
@@ -249,12 +300,57 @@ static const glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>dow
 
 <p>实现了 <a class="el" href="class_serializable.html#a4169f7b98f9816d6b1ebf2dbd3b2d3cb">Serializable</a>.</p>
 <div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transform_abe93692dc6c3083f804c0c44f8e8fcc4_cgraph.png" border="0" usemap="#aclass_transform_abe93692dc6c3083f804c0c44f8e8fcc4_cgraph" alt=""/></div>
+<map name="aclass_transform_abe93692dc6c3083f804c0c44f8e8fcc4_cgraph" id="aclass_transform_abe93692dc6c3083f804c0c44f8e8fcc4_cgraph">
+<area shape="rect" title="反序列化" alt="" coords="5,5,159,32"/>
+<area shape="rect" href="class_t_l_serialize.html#a08b4b91a0b7e2dce0ce47e223c4c6469" title=" " alt="" coords="207,5,367,32"/>
+</map>
+</div>
+<div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_transform_abe93692dc6c3083f804c0c44f8e8fcc4_icgraph.png" border="0" usemap="#aclass_transform_abe93692dc6c3083f804c0c44f8e8fcc4_icgraph" alt=""/></div>
 <map name="aclass_transform_abe93692dc6c3083f804c0c44f8e8fcc4_icgraph" id="aclass_transform_abe93692dc6c3083f804c0c44f8e8fcc4_icgraph">
-<area shape="rect" title="反序列化" alt="" coords="223,5,376,32"/>
-<area shape="rect" href="class_game_object.html#a7bd3840ff675f1ee44ddec99fb89bc32" title="反序列化" alt="" coords="5,5,175,32"/>
+<area shape="rect" title="反序列化" alt="" coords="447,5,600,32"/>
+<area shape="rect" href="class_game_object.html#a7bd3840ff675f1ee44ddec99fb89bc32" title="反序列化" alt="" coords="229,5,399,32"/>
+<area shape="rect" href="class_game_object.html#a723e616ef6ce1ca7697911c818774d4c" title=" " alt="" coords="5,5,181,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af0d0e8f8c55b67c115a5449f225f53e6" name="af0d0e8f8c55b67c115a5449f225f53e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0d0e8f8c55b67c115a5449f225f53e6">&#9670;&nbsp;</a></span>GetFront()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Transform::GetFront </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取向前方向 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transform_af0d0e8f8c55b67c115a5449f225f53e6_icgraph.png" border="0" usemap="#aclass_transform_af0d0e8f8c55b67c115a5449f225f53e6_icgraph" alt=""/></div>
+<map name="aclass_transform_af0d0e8f8c55b67c115a5449f225f53e6_icgraph" id="aclass_transform_af0d0e8f8c55b67c115a5449f225f53e6_icgraph">
+<area shape="rect" title="获取向前方向" alt="" coords="867,107,1005,133"/>
+<area shape="rect" href="class_transform.html#a7e34c4791358814412983d8606cc4cdf" title="获取向右方向" alt="" coords="668,5,807,32"/>
+<area shape="rect" href="class_transform.html#a9d87de590be3b413b962ca5a1c90c0ef" title="获取向上方向" alt="" coords="467,56,591,83"/>
+<area shape="rect" href="class_camera.html#affa333055635aed96518c4c66be9a70c" title="获取观察矩阵" alt="" coords="229,81,389,108"/>
+<area shape="rect" href="class_render_system.html#a403f3d3b8c85d6ca32522dfb4b8092e2" title="配置渲染数据" alt="" coords="656,157,819,184"/>
+<area shape="rect" href="class_transform.html#a8ffa079dae0fe2046c6b6595df394bf1" title="向前移动" alt="" coords="667,208,807,235"/>
+<area shape="rect" href="class_editor_layer.html#ac68e82509971314260c282a174f63bb5" title=" " alt="" coords="5,81,168,108"/>
+<area shape="rect" href="class_render_system.html#a744c9a8ba4359b3353a6130f3af51fbb" title="每帧刷新" alt="" coords="451,157,608,184"/>
+<area shape="rect" href="class_windows_window.html#a27cad6c527b8b73dfea5420fa9efeef2" title="窗口渲染函数" alt="" coords="216,157,403,184"/>
 </map>
 </div>
 
@@ -277,6 +373,95 @@ static const glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>dow
 
 <p>获取model矩阵 </p>
 <dl class="section return"><dt>返回</dt><dd></dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transform_aac5b8a016ec8ecb9eae51e636322a7dd_icgraph.png" border="0" usemap="#aclass_transform_aac5b8a016ec8ecb9eae51e636322a7dd_icgraph" alt=""/></div>
+<map name="aclass_transform_aac5b8a016ec8ecb9eae51e636322a7dd_icgraph" id="aclass_transform_aac5b8a016ec8ecb9eae51e636322a7dd_icgraph">
+<area shape="rect" title="获取model矩阵" alt="" coords="248,56,427,83"/>
+<area shape="rect" href="class_default_material.html#a7a7ea7bf4b54e222f802dac87c6c75ba" title=" " alt="" coords="15,5,190,32"/>
+<area shape="rect" href="class_light_material.html#a9d95ee4e03cec82d94d6e0a319f32c08" title=" " alt="" coords="21,56,184,83"/>
+<area shape="rect" href="class_mat_shadow_caster.html#a625fc3d54d917f931ae28b079aab8da6" title=" " alt="" coords="5,107,200,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7e34c4791358814412983d8606cc4cdf" name="a7e34c4791358814412983d8606cc4cdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e34c4791358814412983d8606cc4cdf">&#9670;&nbsp;</a></span>GetRight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Transform::GetRight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取向右方向 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transform_a7e34c4791358814412983d8606cc4cdf_cgraph.png" border="0" usemap="#aclass_transform_a7e34c4791358814412983d8606cc4cdf_cgraph" alt=""/></div>
+<map name="aclass_transform_a7e34c4791358814412983d8606cc4cdf_cgraph" id="aclass_transform_a7e34c4791358814412983d8606cc4cdf_cgraph">
+<area shape="rect" title="获取向右方向" alt="" coords="5,5,144,32"/>
+<area shape="rect" href="class_transform.html#af0d0e8f8c55b67c115a5449f225f53e6" title="获取向前方向" alt="" coords="192,5,331,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transform_a7e34c4791358814412983d8606cc4cdf_icgraph.png" border="0" usemap="#aclass_transform_a7e34c4791358814412983d8606cc4cdf_icgraph" alt=""/></div>
+<map name="aclass_transform_a7e34c4791358814412983d8606cc4cdf_icgraph" id="aclass_transform_a7e34c4791358814412983d8606cc4cdf_icgraph">
+<area shape="rect" title="获取向右方向" alt="" coords="596,5,735,32"/>
+<area shape="rect" href="class_transform.html#a9d87de590be3b413b962ca5a1c90c0ef" title="获取向上方向" alt="" coords="424,5,548,32"/>
+<area shape="rect" href="class_camera.html#affa333055635aed96518c4c66be9a70c" title="获取观察矩阵" alt="" coords="216,5,376,32"/>
+<area shape="rect" href="class_editor_layer.html#ac68e82509971314260c282a174f63bb5" title=" " alt="" coords="5,5,168,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9d87de590be3b413b962ca5a1c90c0ef" name="a9d87de590be3b413b962ca5a1c90c0ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d87de590be3b413b962ca5a1c90c0ef">&#9670;&nbsp;</a></span>GetUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Transform::GetUp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取向上方向 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transform_a9d87de590be3b413b962ca5a1c90c0ef_cgraph.png" border="0" usemap="#aclass_transform_a9d87de590be3b413b962ca5a1c90c0ef_cgraph" alt=""/></div>
+<map name="aclass_transform_a9d87de590be3b413b962ca5a1c90c0ef_cgraph" id="aclass_transform_a9d87de590be3b413b962ca5a1c90c0ef_cgraph">
+<area shape="rect" title="获取向上方向" alt="" coords="5,5,129,32"/>
+<area shape="rect" href="class_transform.html#af0d0e8f8c55b67c115a5449f225f53e6" title="获取向前方向" alt="" coords="364,5,503,32"/>
+<area shape="rect" href="class_transform.html#a7e34c4791358814412983d8606cc4cdf" title="获取向右方向" alt="" coords="177,31,316,57"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transform_a9d87de590be3b413b962ca5a1c90c0ef_icgraph.png" border="0" usemap="#aclass_transform_a9d87de590be3b413b962ca5a1c90c0ef_icgraph" alt=""/></div>
+<map name="aclass_transform_a9d87de590be3b413b962ca5a1c90c0ef_icgraph" id="aclass_transform_a9d87de590be3b413b962ca5a1c90c0ef_icgraph">
+<area shape="rect" title="获取向上方向" alt="" coords="424,5,548,32"/>
+<area shape="rect" href="class_camera.html#affa333055635aed96518c4c66be9a70c" title="获取观察矩阵" alt="" coords="216,5,376,32"/>
+<area shape="rect" href="class_editor_layer.html#ac68e82509971314260c282a174f63bb5" title=" " alt="" coords="5,5,168,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -311,8 +496,10 @@ static const glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>dow
 <div class="dyncontent">
 <div class="center"><img src="class_transform_a295a782dcb0a07ecc5049d98e888e9c4_cgraph.png" border="0" usemap="#aclass_transform_a295a782dcb0a07ecc5049d98e888e9c4_cgraph" alt=""/></div>
 <map name="aclass_transform_a295a782dcb0a07ecc5049d98e888e9c4_cgraph" id="aclass_transform_a295a782dcb0a07ecc5049d98e888e9c4_cgraph">
-<area shape="rect" title="显示到Gui" alt="" coords="5,5,157,32"/>
-<area shape="rect" href="class_transform.html#a61265532c475d33a022f1a4238089cff" title="更新序列化节点" alt="" coords="205,5,364,32"/>
+<area shape="rect" title="显示到Gui" alt="" coords="5,31,157,57"/>
+<area shape="rect" href="_transform_8cpp.html#a550b72c699b56a9af6874ed6098a4c9d" title=" " alt="" coords="223,5,346,32"/>
+<area shape="rect" href="class_transform.html#a61265532c475d33a022f1a4238089cff" title="更新序列化节点" alt="" coords="205,56,364,83"/>
+<area shape="rect" href="class_t_l_serialize.html#a1c31cfb5c1e937debfe285d87637d766" title=" " alt="" coords="412,56,577,83"/>
 </map>
 </div>
 
@@ -345,11 +532,50 @@ static const glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>dow
 <p>序列化 </p>
 
 <p>实现了 <a class="el" href="class_serializable.html#ad2b954777bfb26bd486d7aee9675667e">Serializable</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transform_ae6c2b74033dd4cd5ca9af6e0a1d25301_cgraph.png" border="0" usemap="#aclass_transform_ae6c2b74033dd4cd5ca9af6e0a1d25301_cgraph" alt=""/></div>
+<map name="aclass_transform_ae6c2b74033dd4cd5ca9af6e0a1d25301_cgraph" id="aclass_transform_ae6c2b74033dd4cd5ca9af6e0a1d25301_cgraph">
+<area shape="rect" title="序列化" alt="" coords="5,31,143,57"/>
+<area shape="rect" href="class_component.html#ac350787c55558ea752326fc44a360f16" title=" " alt="" coords="191,5,341,32"/>
+<area shape="rect" href="class_t_l_serialize.html#a766e81aec61c3bcef8ad82b5edc78701" title=" " alt="" coords="194,56,338,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8ffa079dae0fe2046c6b6595df394bf1" name="a8ffa079dae0fe2046c6b6595df394bf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ffa079dae0fe2046c6b6595df394bf1">&#9670;&nbsp;</a></span>Translate() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Transform::Translate </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>dis</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>向前移动 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transform_a8ffa079dae0fe2046c6b6595df394bf1_cgraph.png" border="0" usemap="#aclass_transform_a8ffa079dae0fe2046c6b6595df394bf1_cgraph" alt=""/></div>
+<map name="aclass_transform_a8ffa079dae0fe2046c6b6595df394bf1_cgraph" id="aclass_transform_a8ffa079dae0fe2046c6b6595df394bf1_cgraph">
+<area shape="rect" title="向前移动" alt="" coords="5,5,145,32"/>
+<area shape="rect" href="class_transform.html#af0d0e8f8c55b67c115a5449f225f53e6" title="获取向前方向" alt="" coords="193,5,332,32"/>
+</map>
+</div>
 
 </div>
 </div>
 <a id="a2fe8799ec430bdc5f8fdf25c55084bae" name="a2fe8799ec430bdc5f8fdf25c55084bae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fe8799ec430bdc5f8fdf25c55084bae">&#9670;&nbsp;</a></span>Translate()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fe8799ec430bdc5f8fdf25c55084bae">&#9670;&nbsp;</a></span>Translate() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -407,6 +633,15 @@ static const glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>dow
 
 <p>重载 <a class="el" href="class_serializable.html#ac713a26d2d8e38066e29555199af5580">Serializable</a> .</p>
 <div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transform_a61265532c475d33a022f1a4238089cff_cgraph.png" border="0" usemap="#aclass_transform_a61265532c475d33a022f1a4238089cff_cgraph" alt=""/></div>
+<map name="aclass_transform_a61265532c475d33a022f1a4238089cff_cgraph" id="aclass_transform_a61265532c475d33a022f1a4238089cff_cgraph">
+<area shape="rect" title="更新序列化节点" alt="" coords="5,5,164,32"/>
+<area shape="rect" href="class_t_l_serialize.html#a1c31cfb5c1e937debfe285d87637d766" title=" " alt="" coords="212,5,377,32"/>
+</map>
+</div>
+<div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_transform_a61265532c475d33a022f1a4238089cff_icgraph.png" border="0" usemap="#aclass_transform_a61265532c475d33a022f1a4238089cff_icgraph" alt=""/></div>
@@ -418,9 +653,186 @@ static const glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>dow
 
 </div>
 </div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ae5f3e1e0cc9cb2060a1ba556da124f3e" name="ae5f3e1e0cc9cb2060a1ba556da124f3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5f3e1e0cc9cb2060a1ba556da124f3e">&#9670;&nbsp;</a></span>back</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const glm::vec3 Transform::back = glm::vec3(0.0f, 0.0f, 1.0f)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2151a4b609fc2324563c09dfde0a83a4" name="a2151a4b609fc2324563c09dfde0a83a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2151a4b609fc2324563c09dfde0a83a4">&#9670;&nbsp;</a></span>down</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const glm::vec3 Transform::down = glm::vec3(0.0f, -1.0f, 0.0f)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac824152f5fdac81efa0ae40990ca6d3a" name="ac824152f5fdac81efa0ae40990ca6d3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac824152f5fdac81efa0ae40990ca6d3a">&#9670;&nbsp;</a></span>forward</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const glm::vec3 Transform::forward = glm::vec3(0.0f, 0.0f, -1.0f)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向各个方向的单位向量 </p>
+
+</div>
+</div>
+<a id="ae16ecff75f14e1f6c2856ebc5578c0db" name="ae16ecff75f14e1f6c2856ebc5578c0db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae16ecff75f14e1f6c2856ebc5578c0db">&#9670;&nbsp;</a></span>left</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const glm::vec3 Transform::left = glm::vec3(-1.0f, 0.0f, 0.0f)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa357f8eb780f4ef195027d1c636baa36" name="aa357f8eb780f4ef195027d1c636baa36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa357f8eb780f4ef195027d1c636baa36">&#9670;&nbsp;</a></span>position</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Transform::position</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af7ee58650da32c47e270c686e2299715" name="af7ee58650da32c47e270c686e2299715"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7ee58650da32c47e270c686e2299715">&#9670;&nbsp;</a></span>right</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const glm::vec3 Transform::right = glm::vec3(1.0f, 0.0f, 0.0f)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aefd4a6bf41e01cf5898fd57430d93dea" name="aefd4a6bf41e01cf5898fd57430d93dea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefd4a6bf41e01cf5898fd57430d93dea">&#9670;&nbsp;</a></span>rotation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Transform::rotation</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf6ab53778448fd2f2d8a367c14e7f95" name="acf6ab53778448fd2f2d8a367c14e7f95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf6ab53778448fd2f2d8a367c14e7f95">&#9670;&nbsp;</a></span>scale</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Transform::scale</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae1c8231cb029171d4d62c0159dfe72aa" name="ae1c8231cb029171d4d62c0159dfe72aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1c8231cb029171d4d62c0159dfe72aa">&#9670;&nbsp;</a></span>up</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const glm::vec3 Transform::up = glm::vec3(0.0f, 1.0f, 0.0f)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/ECS/Components/<a class="el" href="_transform_8h_source.html">Transform.h</a></li>
-<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/ECS/Components/Transform.cpp</li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/ECS/Components/<a class="el" href="_transform_8cpp.html">Transform.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,21 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
@@ -69,58 +52,215 @@ $(function() {
   <div class="headertitle"><div class="title">TLEngineCG类 参考</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_t_l_engine_c_g_8h_source.html">TLEngineCG.h</a>&gt;</code></p>
 <div class="dynheader">
 TLEngineCG 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_t_l_engine_c_g__coll__graph.png" border="0" usemap="#a_t_l_engine_c_g_coll__map" alt="Collaboration graph"/></div>
 <map name="a_t_l_engine_c_g_coll__map" id="a_t_l_engine_c_g_coll__map">
-<area shape="rect" title=" " alt="" coords="108,275,203,301"/>
-<area shape="rect" href="class_frame_buffer.html" title="帧缓存" alt="" coords="5,171,97,197"/>
-<area shape="rect" href="class_light.html" title=" " alt="" coords="298,171,349,197"/>
+<area shape="rect" title=" " alt="" coords="108,289,203,316"/>
+<area shape="rect" href="class_frame_buffer.html" title="帧缓存" alt="" coords="5,185,97,212"/>
+<area shape="rect" href="class_texture.html" title=" " alt="" coords="19,81,84,108"/>
+<area shape="rect" href="class_light.html" title=" " alt="" coords="298,185,349,212"/>
 <area shape="rect" href="class_component.html" title="组件基类" alt="" coords="347,81,435,108"/>
-<area shape="rect" href="class_transform.html" title=" " alt="" coords="471,223,549,249"/>
-<area shape="rect" href="class_camera.html" title=" " alt="" coords="530,171,597,197"/>
+<area shape="rect" href="class_transform.html" title=" " alt="" coords="471,237,549,264"/>
+<area shape="rect" href="class_camera.html" title=" " alt="" coords="653,185,719,212"/>
 <area shape="rect" href="class_serializable.html" title="可序列化对象接口" alt="" coords="227,5,316,32"/>
-<area shape="rect" href="class_game_object.html" title=" " alt="" coords="379,364,473,391"/>
-<area shape="rect" href="class_scene.html" title="场景类" alt="" coords="547,275,606,301"/>
-<area shape="rect" href="class_material.html" title=" " alt="" coords="121,171,189,197"/>
+<area shape="rect" href="class_game_object.html" title=" " alt="" coords="379,379,473,405"/>
+<area shape="rect" href="class_scene.html" title="场景类" alt="" coords="551,289,610,316"/>
+<area shape="rect" href="class_t_l_serialize_file.html" title=" " alt="" coords="522,185,629,212"/>
+<area shape="rect" href="class_material.html" title=" " alt="" coords="121,185,189,212"/>
 <area shape="rect" href="class_shader.html" title=" " alt="" coords="124,81,187,108"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 静态 Public 成员函数</h2></td></tr>
-<tr class="memitem:a14e19eddf1d2d274db23c8f0e7d5ada4"><td class="memItemLeft" align="right" valign="top"><a id="a14e19eddf1d2d274db23c8f0e7d5ada4" name="a14e19eddf1d2d274db23c8f0e7d5ada4"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>AddLight</b> (<a class="el" href="class_light.html">Light</a> *l)</td></tr>
-<tr class="memdesc:a14e19eddf1d2d274db23c8f0e7d5ada4"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册光源 <br /></td></tr>
+<tr class="memitem:a14e19eddf1d2d274db23c8f0e7d5ada4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_engine_c_g.html#a14e19eddf1d2d274db23c8f0e7d5ada4">AddLight</a> (<a class="el" href="class_light.html">Light</a> *l)</td></tr>
+<tr class="memdesc:a14e19eddf1d2d274db23c8f0e7d5ada4"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册光源  <a href="class_t_l_engine_c_g.html#a14e19eddf1d2d274db23c8f0e7d5ada4">更多...</a><br /></td></tr>
 <tr class="separator:a14e19eddf1d2d274db23c8f0e7d5ada4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 静态 Public 属性</h2></td></tr>
-<tr class="memitem:a673ff852860ad7d87b53d587a9dbeb9e"><td class="memItemLeft" align="right" valign="top"><a id="a673ff852860ad7d87b53d587a9dbeb9e" name="a673ff852860ad7d87b53d587a9dbeb9e"></a>
-static std::vector&lt; <a class="el" href="class_light.html">Light</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>lights</b> = std::vector&lt;<a class="el" href="class_light.html">Light</a>*&gt;()</td></tr>
-<tr class="memdesc:a673ff852860ad7d87b53d587a9dbeb9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">场景中所有的灯 <br /></td></tr>
+<tr class="memitem:a673ff852860ad7d87b53d587a9dbeb9e"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="class_light.html">Light</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_engine_c_g.html#a673ff852860ad7d87b53d587a9dbeb9e">lights</a> = std::vector&lt;<a class="el" href="class_light.html">Light</a>*&gt;()</td></tr>
+<tr class="memdesc:a673ff852860ad7d87b53d587a9dbeb9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">场景中所有的灯  <a href="class_t_l_engine_c_g.html#a673ff852860ad7d87b53d587a9dbeb9e">更多...</a><br /></td></tr>
 <tr class="separator:a673ff852860ad7d87b53d587a9dbeb9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53ba88205d9e90f6ef6115bba07e59ce"><td class="memItemLeft" align="right" valign="top"><a id="a53ba88205d9e90f6ef6115bba07e59ce" name="a53ba88205d9e90f6ef6115bba07e59ce"></a>
-static <a class="el" href="class_frame_buffer.html">FrameBuffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>shadowMap</b> = Application::instance().mWindows-&gt;AddFrameBuffer(BufferType::Both)</td></tr>
-<tr class="memdesc:a53ba88205d9e90f6ef6115bba07e59ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">深度缓冲 <br /></td></tr>
+<tr class="memitem:a53ba88205d9e90f6ef6115bba07e59ce"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_frame_buffer.html">FrameBuffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_engine_c_g.html#a53ba88205d9e90f6ef6115bba07e59ce">shadowMap</a> = <a class="el" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640">Application::instance</a>().mWindows-&gt;AddFrameBuffer(<a class="el" href="_frame_buffer_8h.html#adf8e136713c0691010d2bec6ba63e9cfa130c5b3473c57faa76e2a1c54e26f88e">BufferType::Both</a>)</td></tr>
+<tr class="memdesc:a53ba88205d9e90f6ef6115bba07e59ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">深度缓冲  <a href="class_t_l_engine_c_g.html#a53ba88205d9e90f6ef6115bba07e59ce">更多...</a><br /></td></tr>
 <tr class="separator:a53ba88205d9e90f6ef6115bba07e59ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac52b2b1026a687123e18ce61293c630"><td class="memItemLeft" align="right" valign="top"><a id="aac52b2b1026a687123e18ce61293c630" name="aac52b2b1026a687123e18ce61293c630"></a>
-static <a class="el" href="class_light.html">Light</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mainLight</b></td></tr>
-<tr class="memdesc:aac52b2b1026a687123e18ce61293c630"><td class="mdescLeft">&#160;</td><td class="mdescRight">场景主光源 <br /></td></tr>
+<tr class="memitem:aac52b2b1026a687123e18ce61293c630"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_light.html">Light</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_engine_c_g.html#aac52b2b1026a687123e18ce61293c630">mainLight</a></td></tr>
+<tr class="memdesc:aac52b2b1026a687123e18ce61293c630"><td class="mdescLeft">&#160;</td><td class="mdescRight">场景主光源  <a href="class_t_l_engine_c_g.html#aac52b2b1026a687123e18ce61293c630">更多...</a><br /></td></tr>
 <tr class="separator:aac52b2b1026a687123e18ce61293c630"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e3661154c375dc32b0afeef5b0e63e9"><td class="memItemLeft" align="right" valign="top"><a id="a0e3661154c375dc32b0afeef5b0e63e9" name="a0e3661154c375dc32b0afeef5b0e63e9"></a>
-static <a class="el" href="class_material.html">Material</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>sadowCaster</b> =new <a class="el" href="class_mat_shadow_caster.html">MatShadowCaster</a>()</td></tr>
-<tr class="memdesc:a0e3661154c375dc32b0afeef5b0e63e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">用于投射阴影的材质 <br /></td></tr>
+<tr class="memitem:a0e3661154c375dc32b0afeef5b0e63e9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_material.html">Material</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_engine_c_g.html#a0e3661154c375dc32b0afeef5b0e63e9">sadowCaster</a> =new <a class="el" href="class_mat_shadow_caster.html">MatShadowCaster</a>()</td></tr>
+<tr class="memdesc:a0e3661154c375dc32b0afeef5b0e63e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">用于投射阴影的材质  <a href="class_t_l_engine_c_g.html#a0e3661154c375dc32b0afeef5b0e63e9">更多...</a><br /></td></tr>
 <tr class="separator:a0e3661154c375dc32b0afeef5b0e63e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9169d7f0d86c7eaa94db90fa9e827a1d"><td class="memItemLeft" align="right" valign="top"><a id="a9169d7f0d86c7eaa94db90fa9e827a1d" name="a9169d7f0d86c7eaa94db90fa9e827a1d"></a>
-static <a class="el" href="class_material.html">Material</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>skyboxMat</b> = new <a class="el" href="class_mat_skybox.html">MatSkybox</a>()</td></tr>
-<tr class="memdesc:a9169d7f0d86c7eaa94db90fa9e827a1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">用于渲染天空盒的材质 <br /></td></tr>
+<tr class="memitem:a9169d7f0d86c7eaa94db90fa9e827a1d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_material.html">Material</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_engine_c_g.html#a9169d7f0d86c7eaa94db90fa9e827a1d">skyboxMat</a> = new <a class="el" href="class_mat_skybox.html">MatSkybox</a>()</td></tr>
+<tr class="memdesc:a9169d7f0d86c7eaa94db90fa9e827a1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">用于渲染天空盒的材质  <a href="class_t_l_engine_c_g.html#a9169d7f0d86c7eaa94db90fa9e827a1d">更多...</a><br /></td></tr>
 <tr class="separator:a9169d7f0d86c7eaa94db90fa9e827a1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a14e19eddf1d2d274db23c8f0e7d5ada4" name="a14e19eddf1d2d274db23c8f0e7d5ada4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14e19eddf1d2d274db23c8f0e7d5ada4">&#9670;&nbsp;</a></span>AddLight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TLEngineCG::AddLight </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_light.html">Light</a> *&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>注册光源 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_t_l_engine_c_g_a14e19eddf1d2d274db23c8f0e7d5ada4_icgraph.png" border="0" usemap="#aclass_t_l_engine_c_g_a14e19eddf1d2d274db23c8f0e7d5ada4_icgraph" alt=""/></div>
+<map name="aclass_t_l_engine_c_g_a14e19eddf1d2d274db23c8f0e7d5ada4_icgraph" id="aclass_t_l_engine_c_g_a14e19eddf1d2d274db23c8f0e7d5ada4_icgraph">
+<area shape="rect" title="注册光源" alt="" coords="151,5,305,32"/>
+<area shape="rect" href="class_light.html#aefc911f0e61151d584c34435aba20157" title="刚添加时" alt="" coords="5,5,103,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a673ff852860ad7d87b53d587a9dbeb9e" name="a673ff852860ad7d87b53d587a9dbeb9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a673ff852860ad7d87b53d587a9dbeb9e">&#9670;&nbsp;</a></span>lights</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_light.html">Light</a> * &gt; TLEngineCG::lights = std::vector&lt;<a class="el" href="class_light.html">Light</a>*&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>场景中所有的灯 </p>
+
+</div>
+</div>
+<a id="aac52b2b1026a687123e18ce61293c630" name="aac52b2b1026a687123e18ce61293c630"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac52b2b1026a687123e18ce61293c630">&#9670;&nbsp;</a></span>mainLight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_light.html">Light</a>* TLEngineCG::mainLight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>场景主光源 </p>
+
+</div>
+</div>
+<a id="a0e3661154c375dc32b0afeef5b0e63e9" name="a0e3661154c375dc32b0afeef5b0e63e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e3661154c375dc32b0afeef5b0e63e9">&#9670;&nbsp;</a></span>sadowCaster</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_material.html">Material</a> * TLEngineCG::sadowCaster =new <a class="el" href="class_mat_shadow_caster.html">MatShadowCaster</a>()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>用于投射阴影的材质 </p>
+
+</div>
+</div>
+<a id="a53ba88205d9e90f6ef6115bba07e59ce" name="a53ba88205d9e90f6ef6115bba07e59ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53ba88205d9e90f6ef6115bba07e59ce">&#9670;&nbsp;</a></span>shadowMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_frame_buffer.html">FrameBuffer</a> * TLEngineCG::shadowMap = <a class="el" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640">Application::instance</a>().mWindows-&gt;AddFrameBuffer(<a class="el" href="_frame_buffer_8h.html#adf8e136713c0691010d2bec6ba63e9cfa130c5b3473c57faa76e2a1c54e26f88e">BufferType::Both</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>深度缓冲 </p>
+
+</div>
+</div>
+<a id="a9169d7f0d86c7eaa94db90fa9e827a1d" name="a9169d7f0d86c7eaa94db90fa9e827a1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9169d7f0d86c7eaa94db90fa9e827a1d">&#9670;&nbsp;</a></span>skyboxMat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_material.html">Material</a> * TLEngineCG::skyboxMat = new <a class="el" href="class_mat_skybox.html">MatSkybox</a>()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>用于渲染天空盒的材质 </p>
+
+</div>
+</div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Render/<a class="el" href="_t_l_engine_c_g_8h_source.html">TLEngineCG.h</a></li>
-<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Render/TLEngineCG.cpp</li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Render/<a class="el" href="_t_l_engine_c_g_8cpp.html">TLEngineCG.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

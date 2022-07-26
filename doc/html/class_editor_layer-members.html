@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,21 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">EditorLayer 成员列表</div></div>
@@ -68,27 +51,37 @@ $(function() {
 
 <p>成员的完整列表，这些成员属于 <a class="el" href="class_editor_layer.html">EditorLayer</a>,包括所有继承而来的类成员</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>EditorLayer</b>(std::shared_ptr&lt; Scene &gt; s) (定义于 <a class="el" href="class_editor_layer.html">EditorLayer</a>)</td><td class="entry"><a class="el" href="class_editor_layer.html">EditorLayer</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_editor_layer.html#ae6f0a2ebee383c130bd96268b95b1b19">GetEditorCamera</a>()</td><td class="entry"><a class="el" href="class_editor_layer.html">EditorLayer</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>GetName</b>() const (定义于 <a class="el" href="class_layer.html">Layer</a>)</td><td class="entry"><a class="el" href="class_layer.html">Layer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>ImGuiInit</b>() (定义于 <a class="el" href="class_imgui_layer.html">ImguiLayer</a>)</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ImguiLayer</b>() (定义于 <a class="el" href="class_imgui_layer.html">ImguiLayer</a>)</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Layer</b>(const std::string &amp;name=&quot;Layer&quot;) (定义于 <a class="el" href="class_layer.html">Layer</a>)</td><td class="entry"><a class="el" href="class_layer.html">Layer</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>mTime</b> (定义于 <a class="el" href="class_imgui_layer.html">ImguiLayer</a>)</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>OnAttack</b>() override (定义于 <a class="el" href="class_imgui_layer.html">ImguiLayer</a>)</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>OnDetach</b>() override (定义于 <a class="el" href="class_imgui_layer.html">ImguiLayer</a>)</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>OnEvent</b>(EventBase &amp;event) override (定义于 <a class="el" href="class_imgui_layer.html">ImguiLayer</a>)</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_editor_layer.html#a2379dbda55a9f598befb9c4f21bdd349">editorCamera</a></td><td class="entry"><a class="el" href="class_editor_layer.html">EditorLayer</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_editor_layer.html#ac68e82509971314260c282a174f63bb5">EditorLayer</a>(std::shared_ptr&lt; Scene &gt; s)</td><td class="entry"><a class="el" href="class_editor_layer.html">EditorLayer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_editor_layer.html#ae6f0a2ebee383c130bd96268b95b1b19">GetEditorCamera</a>()</td><td class="entry"><a class="el" href="class_editor_layer.html">EditorLayer</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_layer.html#ac62a46a7b506f1c30485a8c9baaa0f8d">GetName</a>() const</td><td class="entry"><a class="el" href="class_layer.html">Layer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_imgui_layer.html#ae5d6495ed844751709b98c329692ba9a">ImGuiInit</a>()</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_imgui_layer.html#ad02f617b4d56845f07a999f1251c1097">ImguiLayer</a>()</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_layer.html#aa9b7ebb7ef25f36b2c1859e5ee2c867d">Layer</a>(const std::string &amp;name=&quot;Layer&quot;)</td><td class="entry"><a class="el" href="class_layer.html">Layer</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_editor_layer.html#a350435be8108b2d79335da96b623e5d2">mCurrentScene</a></td><td class="entry"><a class="el" href="class_editor_layer.html">EditorLayer</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_layer.html#a7648f0501a42545de56cb1f5c0b0930f">mDebugName</a></td><td class="entry"><a class="el" href="class_layer.html">Layer</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_imgui_layer.html#ab1c2ca0d2f28bd3a0e56f565254112c7">mTime</a></td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_imgui_layer.html#a1562d5da90335d2f5c7757801d7e9377">OnAttack</a>() override</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_imgui_layer.html#a06e8812d7144d1fa6c154d43d7372d97">OnDetach</a>() override</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_imgui_layer.html#ade36001fdd1861e19dadc2d32d5e7bd5">OnEvent</a>(EventBase &amp;event) override</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_imgui_layer.html#a5fa8dfce443a983133d953af55a377f6">OnKeyPressedEvent</a>(KeyPressedEvent &amp;e)</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_imgui_layer.html#ac6e6a5e4ebd45b8012cab448074aa91e">OnKeyReleasedEvent</a>(KeyReleasedEvent &amp;e)</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_imgui_layer.html#ab11e32ee191388e11444da6af20817c0">OnKeyTypedEvent</a>(KeyPressedEvent &amp;e)</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_imgui_layer.html#a1d4a95519a5ebc1d7e229c376096b059">OnMouseButtonPressedEvent</a>(MouseButtonPressedEvent &amp;e)</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_imgui_layer.html#a368d0e869c0520ee085f82f9b7389aa1">OnMouseButtonReleasedEvent</a>(MouseButtonReleasedEvent &amp;e)</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_editor_layer.html#a049127382838e3bd031f8ac03ab0e791">OnMouseMovedEvent</a>(MouseMovedEvent &amp;e) override</td><td class="entry"><a class="el" href="class_editor_layer.html">EditorLayer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_editor_layer.html#a033bc9abb193a1bbc5858f8e7aa2d292">OnMouseScrolledEvent</a>(MouseScrolledEvent &amp;e) override</td><td class="entry"><a class="el" href="class_editor_layer.html">EditorLayer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>OnUpdate</b>() override (定义于 <a class="el" href="class_editor_layer.html">EditorLayer</a>)</td><td class="entry"><a class="el" href="class_editor_layer.html">EditorLayer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>RegisterGuiWindow</b>(std::shared_ptr&lt; GuiWindow &gt;) (定义于 <a class="el" href="class_imgui_layer.html">ImguiLayer</a>)</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>RenderEnd</b>() (定义于 <a class="el" href="class_imgui_layer.html">ImguiLayer</a>)</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>RenderStart</b>() (定义于 <a class="el" href="class_imgui_layer.html">ImguiLayer</a>)</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_editor_layer.html#ade3e74ebc4c5487446fda26262151cef">OnUpdate</a>() override</td><td class="entry"><a class="el" href="class_editor_layer.html">EditorLayer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_imgui_layer.html#a23c057937f4d3e54a4538ae6feead348">OnWindowResizeEvent</a>(WindowResizeEvent &amp;e)</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_imgui_layer.html#a43530d88ce55849d8b9dd2617435cf8a">RegisterGuiWindow</a>(std::shared_ptr&lt; GuiWindow &gt;)</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_imgui_layer.html#aadd4f1314d523328cc8a2d40165611e0">RenderEnd</a>()</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_imgui_layer.html#a7c94ff83e9809b1a158e890920daed20">RenderStart</a>()</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_editor_layer.html#aa4d2be41af46aa526fe44188911ea76a">selectedObj</a></td><td class="entry"><a class="el" href="class_editor_layer.html">EditorLayer</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_editor_layer.html#a4880fce5f9bc2134bbb51def03bbee98">SetCurrentScene</a>(Scene *s)</td><td class="entry"><a class="el" href="class_editor_layer.html">EditorLayer</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>uiWindows</b> (定义于 <a class="el" href="class_imgui_layer.html">ImguiLayer</a>)</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~EditorLayer</b>() (定义于 <a class="el" href="class_editor_layer.html">EditorLayer</a>)</td><td class="entry"><a class="el" href="class_editor_layer.html">EditorLayer</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~ImguiLayer</b>() (定义于 <a class="el" href="class_imgui_layer.html">ImguiLayer</a>)</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~Layer</b>() (定义于 <a class="el" href="class_layer.html">Layer</a>)</td><td class="entry"><a class="el" href="class_layer.html">Layer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_imgui_layer.html#a36a760d7ac4b5a422fd4ab9968a29440">uiWindows</a></td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_editor_layer.html#af1fe83d70a5e42eb1088f17346d19605">~EditorLayer</a>()</td><td class="entry"><a class="el" href="class_editor_layer.html">EditorLayer</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_imgui_layer.html#ab099f09c4ff88d0a283e68e2e41540d5">~ImguiLayer</a>()</td><td class="entry"><a class="el" href="class_imgui_layer.html">ImguiLayer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_layer.html#a1b1ba4804451dfe6cc357194e42762ae">~Layer</a>()</td><td class="entry"><a class="el" href="class_layer.html">Layer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

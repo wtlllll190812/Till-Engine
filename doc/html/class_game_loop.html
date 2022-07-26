@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,84 +28,378 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public 成员函数</a> &#124;
 <a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
 <a href="class_game_loop-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">GameLoop类 参考</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_game_loop_8h_source.html">GameLoop.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:afe38580d2699e1b8e1da33d90e23d88b"><td class="memItemLeft" align="right" valign="top"><a id="afe38580d2699e1b8e1da33d90e23d88b" name="afe38580d2699e1b8e1da33d90e23d88b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GameLoop</b> (int)</td></tr>
+<tr class="memitem:afe38580d2699e1b8e1da33d90e23d88b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_loop.html#afe38580d2699e1b8e1da33d90e23d88b">GameLoop</a> (int)</td></tr>
 <tr class="separator:afe38580d2699e1b8e1da33d90e23d88b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab61320008312d54daea6ef1757163007"><td class="memItemLeft" align="right" valign="top"><a id="ab61320008312d54daea6ef1757163007" name="ab61320008312d54daea6ef1757163007"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetAwakeCallback</b> (std::function&lt; void()&gt;)</td></tr>
-<tr class="memdesc:ab61320008312d54daea6ef1757163007"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置回调 <br /></td></tr>
+<tr class="memitem:ae6c558d0d751a068dbafe2cae465ec1f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_loop.html#ae6c558d0d751a068dbafe2cae465ec1f">~GameLoop</a> ()</td></tr>
+<tr class="separator:ae6c558d0d751a068dbafe2cae465ec1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab61320008312d54daea6ef1757163007"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_loop.html#ab61320008312d54daea6ef1757163007">SetAwakeCallback</a> (std::function&lt; void()&gt;)</td></tr>
+<tr class="memdesc:ab61320008312d54daea6ef1757163007"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置回调  <a href="class_game_loop.html#ab61320008312d54daea6ef1757163007">更多...</a><br /></td></tr>
 <tr class="separator:ab61320008312d54daea6ef1757163007"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae26309f103ac3e326fdc4a28a5f763c6"><td class="memItemLeft" align="right" valign="top"><a id="ae26309f103ac3e326fdc4a28a5f763c6" name="ae26309f103ac3e326fdc4a28a5f763c6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetUpdateCallback</b> (std::function&lt; void()&gt;)</td></tr>
-<tr class="memdesc:ae26309f103ac3e326fdc4a28a5f763c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置回调 <br /></td></tr>
+<tr class="memitem:ae26309f103ac3e326fdc4a28a5f763c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_loop.html#ae26309f103ac3e326fdc4a28a5f763c6">SetUpdateCallback</a> (std::function&lt; void()&gt;)</td></tr>
+<tr class="memdesc:ae26309f103ac3e326fdc4a28a5f763c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置回调  <a href="class_game_loop.html#ae26309f103ac3e326fdc4a28a5f763c6">更多...</a><br /></td></tr>
 <tr class="separator:ae26309f103ac3e326fdc4a28a5f763c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad3f1e8da1be35a9ee8679642eae287b"><td class="memItemLeft" align="right" valign="top"><a id="aad3f1e8da1be35a9ee8679642eae287b" name="aad3f1e8da1be35a9ee8679642eae287b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetFixedUpdateCallback</b> (std::function&lt; void()&gt;)</td></tr>
-<tr class="memdesc:aad3f1e8da1be35a9ee8679642eae287b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置回调 <br /></td></tr>
+<tr class="memitem:aad3f1e8da1be35a9ee8679642eae287b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_loop.html#aad3f1e8da1be35a9ee8679642eae287b">SetFixedUpdateCallback</a> (std::function&lt; void()&gt;)</td></tr>
+<tr class="memdesc:aad3f1e8da1be35a9ee8679642eae287b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置回调  <a href="class_game_loop.html#aad3f1e8da1be35a9ee8679642eae287b">更多...</a><br /></td></tr>
 <tr class="separator:aad3f1e8da1be35a9ee8679642eae287b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89a9d52b6e99a2bf92372b97497d6c1b"><td class="memItemLeft" align="right" valign="top"><a id="a89a9d52b6e99a2bf92372b97497d6c1b" name="a89a9d52b6e99a2bf92372b97497d6c1b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetLateUpdateCallback</b> (std::function&lt; void()&gt;)</td></tr>
-<tr class="memdesc:a89a9d52b6e99a2bf92372b97497d6c1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置回调 <br /></td></tr>
+<tr class="memitem:a89a9d52b6e99a2bf92372b97497d6c1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_loop.html#a89a9d52b6e99a2bf92372b97497d6c1b">SetLateUpdateCallback</a> (std::function&lt; void()&gt;)</td></tr>
+<tr class="memdesc:a89a9d52b6e99a2bf92372b97497d6c1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置回调  <a href="class_game_loop.html#a89a9d52b6e99a2bf92372b97497d6c1b">更多...</a><br /></td></tr>
 <tr class="separator:a89a9d52b6e99a2bf92372b97497d6c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a038d7e76b450c82959c3dae6f86f1a61"><td class="memItemLeft" align="right" valign="top"><a id="a038d7e76b450c82959c3dae6f86f1a61" name="a038d7e76b450c82959c3dae6f86f1a61"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>StartLoop</b> ()</td></tr>
-<tr class="memdesc:a038d7e76b450c82959c3dae6f86f1a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">开始游戏循环 <br /></td></tr>
+<tr class="memitem:a038d7e76b450c82959c3dae6f86f1a61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_loop.html#a038d7e76b450c82959c3dae6f86f1a61">StartLoop</a> ()</td></tr>
+<tr class="memdesc:a038d7e76b450c82959c3dae6f86f1a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">开始游戏循环  <a href="class_game_loop.html#a038d7e76b450c82959c3dae6f86f1a61">更多...</a><br /></td></tr>
 <tr class="separator:a038d7e76b450c82959c3dae6f86f1a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87dfa36f0a6244461ce522e999c00f3a"><td class="memItemLeft" align="right" valign="top"><a id="a87dfa36f0a6244461ce522e999c00f3a" name="a87dfa36f0a6244461ce522e999c00f3a"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>GetFPS</b> ()</td></tr>
+<tr class="memitem:a87dfa36f0a6244461ce522e999c00f3a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_loop.html#a87dfa36f0a6244461ce522e999c00f3a">GetFPS</a> ()</td></tr>
 <tr class="separator:a87dfa36f0a6244461ce522e999c00f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public 属性</h2></td></tr>
-<tr class="memitem:a44834b32a429231f3f25dbd7e2410bb6"><td class="memItemLeft" align="right" valign="top"><a id="a44834b32a429231f3f25dbd7e2410bb6" name="a44834b32a429231f3f25dbd7e2410bb6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>endLoop</b></td></tr>
+<tr class="memitem:a44834b32a429231f3f25dbd7e2410bb6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_loop.html#a44834b32a429231f3f25dbd7e2410bb6">endLoop</a></td></tr>
 <tr class="separator:a44834b32a429231f3f25dbd7e2410bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a300149799504a1558ec4a0a61dfdc341"><td class="memItemLeft" align="right" valign="top">std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_loop.html#a300149799504a1558ec4a0a61dfdc341">Awake</a></td></tr>
+<tr class="memdesc:a300149799504a1558ec4a0a61dfdc341"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化回调  <a href="class_game_loop.html#a300149799504a1558ec4a0a61dfdc341">更多...</a><br /></td></tr>
+<tr class="separator:a300149799504a1558ec4a0a61dfdc341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d8abdab15ad8c91c9e65a24c8adec7d"><td class="memItemLeft" align="right" valign="top">std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_loop.html#a0d8abdab15ad8c91c9e65a24c8adec7d">Update</a></td></tr>
+<tr class="memdesc:a0d8abdab15ad8c91c9e65a24c8adec7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">update回调  <a href="class_game_loop.html#a0d8abdab15ad8c91c9e65a24c8adec7d">更多...</a><br /></td></tr>
+<tr class="separator:a0d8abdab15ad8c91c9e65a24c8adec7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0f761f5e727de243e3ae32002000de2"><td class="memItemLeft" align="right" valign="top">std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_loop.html#ae0f761f5e727de243e3ae32002000de2">FixedUpdate</a></td></tr>
+<tr class="memdesc:ae0f761f5e727de243e3ae32002000de2"><td class="mdescLeft">&#160;</td><td class="mdescRight">fixedupdate回调  <a href="class_game_loop.html#ae0f761f5e727de243e3ae32002000de2">更多...</a><br /></td></tr>
+<tr class="separator:ae0f761f5e727de243e3ae32002000de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a784b0b64aca61490e842f99cb77bc45f"><td class="memItemLeft" align="right" valign="top">std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_loop.html#a784b0b64aca61490e842f99cb77bc45f">LateUpdate</a></td></tr>
+<tr class="memdesc:a784b0b64aca61490e842f99cb77bc45f"><td class="mdescLeft">&#160;</td><td class="mdescRight">lateUpdate回调  <a href="class_game_loop.html#a784b0b64aca61490e842f99cb77bc45f">更多...</a><br /></td></tr>
+<tr class="separator:a784b0b64aca61490e842f99cb77bc45f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0022226ae9b93038a9819733858cc622"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_loop.html#a0022226ae9b93038a9819733858cc622">frame</a></td></tr>
+<tr class="separator:a0022226ae9b93038a9819733858cc622"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="afe38580d2699e1b8e1da33d90e23d88b" name="afe38580d2699e1b8e1da33d90e23d88b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe38580d2699e1b8e1da33d90e23d88b">&#9670;&nbsp;</a></span>GameLoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameLoop::GameLoop </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae6c558d0d751a068dbafe2cae465ec1f" name="ae6c558d0d751a068dbafe2cae465ec1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6c558d0d751a068dbafe2cae465ec1f">&#9670;&nbsp;</a></span>~GameLoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameLoop::~GameLoop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a87dfa36f0a6244461ce522e999c00f3a" name="a87dfa36f0a6244461ce522e999c00f3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87dfa36f0a6244461ce522e999c00f3a">&#9670;&nbsp;</a></span>GetFPS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float GameLoop::GetFPS </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab61320008312d54daea6ef1757163007" name="ab61320008312d54daea6ef1757163007"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab61320008312d54daea6ef1757163007">&#9670;&nbsp;</a></span>SetAwakeCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameLoop::SetAwakeCallback </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置回调 </p>
+
+</div>
+</div>
+<a id="aad3f1e8da1be35a9ee8679642eae287b" name="aad3f1e8da1be35a9ee8679642eae287b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad3f1e8da1be35a9ee8679642eae287b">&#9670;&nbsp;</a></span>SetFixedUpdateCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameLoop::SetFixedUpdateCallback </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置回调 </p>
+
+</div>
+</div>
+<a id="a89a9d52b6e99a2bf92372b97497d6c1b" name="a89a9d52b6e99a2bf92372b97497d6c1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89a9d52b6e99a2bf92372b97497d6c1b">&#9670;&nbsp;</a></span>SetLateUpdateCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameLoop::SetLateUpdateCallback </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置回调 </p>
+
+</div>
+</div>
+<a id="ae26309f103ac3e326fdc4a28a5f763c6" name="ae26309f103ac3e326fdc4a28a5f763c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae26309f103ac3e326fdc4a28a5f763c6">&#9670;&nbsp;</a></span>SetUpdateCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameLoop::SetUpdateCallback </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置回调 </p>
+
+</div>
+</div>
+<a id="a038d7e76b450c82959c3dae6f86f1a61" name="a038d7e76b450c82959c3dae6f86f1a61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a038d7e76b450c82959c3dae6f86f1a61">&#9670;&nbsp;</a></span>StartLoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameLoop::StartLoop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>开始游戏循环 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_loop_a038d7e76b450c82959c3dae6f86f1a61_cgraph.png" border="0" usemap="#aclass_game_loop_a038d7e76b450c82959c3dae6f86f1a61_cgraph" alt=""/></div>
+<map name="aclass_game_loop_a038d7e76b450c82959c3dae6f86f1a61_cgraph" id="aclass_game_loop_a038d7e76b450c82959c3dae6f86f1a61_cgraph">
+<area shape="rect" title="开始游戏循环" alt="" coords="5,13,155,39"/>
+<area shape="rect" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="203,5,355,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a300149799504a1558ec4a0a61dfdc341" name="a300149799504a1558ec4a0a61dfdc341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a300149799504a1558ec4a0a61dfdc341">&#9670;&nbsp;</a></span>Awake</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void()&gt; GameLoop::Awake</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初始化回调 </p>
+
+</div>
+</div>
+<a id="a44834b32a429231f3f25dbd7e2410bb6" name="a44834b32a429231f3f25dbd7e2410bb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44834b32a429231f3f25dbd7e2410bb6">&#9670;&nbsp;</a></span>endLoop</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameLoop::endLoop</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae0f761f5e727de243e3ae32002000de2" name="ae0f761f5e727de243e3ae32002000de2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0f761f5e727de243e3ae32002000de2">&#9670;&nbsp;</a></span>FixedUpdate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void()&gt; GameLoop::FixedUpdate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>fixedupdate回调 </p>
+
+</div>
+</div>
+<a id="a0022226ae9b93038a9819733858cc622" name="a0022226ae9b93038a9819733858cc622"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0022226ae9b93038a9819733858cc622">&#9670;&nbsp;</a></span>frame</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GameLoop::frame</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a784b0b64aca61490e842f99cb77bc45f" name="a784b0b64aca61490e842f99cb77bc45f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a784b0b64aca61490e842f99cb77bc45f">&#9670;&nbsp;</a></span>LateUpdate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void()&gt; GameLoop::LateUpdate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>lateUpdate回调 </p>
+
+</div>
+</div>
+<a id="a0d8abdab15ad8c91c9e65a24c8adec7d" name="a0d8abdab15ad8c91c9e65a24c8adec7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d8abdab15ad8c91c9e65a24c8adec7d">&#9670;&nbsp;</a></span>Update</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void()&gt; GameLoop::Update</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>update回调 </p>
+
+</div>
+</div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/<a class="el" href="_game_loop_8h_source.html">GameLoop.h</a></li>
-<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/GameLoop.cpp</li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/<a class="el" href="_game_loop_8cpp.html">GameLoop.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

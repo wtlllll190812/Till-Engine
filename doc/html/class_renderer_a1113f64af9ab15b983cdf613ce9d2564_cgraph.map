@@ -1,4 +1,5 @@
 <map id="Renderer::Awake" name="Renderer::Awake">
-<area shape="rect" id="node1" title="被添加时" alt="" coords="5,5,127,32"/>
-<area shape="rect" id="node2" href="$class_render_system.html#a794ef0a6f643330a8ff07e4e4bea8671" title="注册组件" alt="" coords="175,5,405,32"/>
+<area shape="rect" id="node1" title="被添加时" alt="" coords="5,42,127,69"/>
+<area shape="rect" id="node2" href="$class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="203,5,377,47"/>
+<area shape="rect" id="node3" href="$class_render_system.html#a794ef0a6f643330a8ff07e4e4bea8671" title="注册组件" alt="" coords="175,71,405,98"/>
 </map>

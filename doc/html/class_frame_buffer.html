@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,40 +28,26 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
 <a href="class_frame_buffer-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">FrameBuffer类 参考</div></div>
 </div><!--header-->
@@ -73,40 +57,322 @@ $(function() {
  <a href="class_frame_buffer.html#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_frame_buffer_8h_source.html">FrameBuffer.h</a>&gt;</code></p>
+<div class="dynheader">
+FrameBuffer 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_frame_buffer__coll__graph.png" border="0" usemap="#a_frame_buffer_coll__map" alt="Collaboration graph"/></div>
+<map name="a_frame_buffer_coll__map" id="a_frame_buffer_coll__map">
+<area shape="rect" title="帧缓存" alt="" coords="5,109,97,136"/>
+<area shape="rect" href="class_texture.html" title=" " alt="" coords="19,5,84,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a158589f7d8e83244b6b20ad49fd79187"><td class="memItemLeft" align="right" valign="top"><a id="a158589f7d8e83244b6b20ad49fd79187" name="a158589f7d8e83244b6b20ad49fd79187"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>FrameBuffer</b> (BufferType type)</td></tr>
+<tr class="memitem:a158589f7d8e83244b6b20ad49fd79187"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_buffer.html#a158589f7d8e83244b6b20ad49fd79187">FrameBuffer</a> (<a class="el" href="_frame_buffer_8h.html#adf8e136713c0691010d2bec6ba63e9cf">BufferType</a> type)</td></tr>
 <tr class="separator:a158589f7d8e83244b6b20ad49fd79187"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa9465a950a0fe694fd802fee17d1cf8"><td class="memItemLeft" align="right" valign="top"><a id="afa9465a950a0fe694fd802fee17d1cf8" name="afa9465a950a0fe694fd802fee17d1cf8"></a>
-unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetFBO</b> ()</td></tr>
-<tr class="memdesc:afa9465a950a0fe694fd802fee17d1cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取缓存ID <br /></td></tr>
+<tr class="memitem:aef8be9884e8cc0fc3f3692e6c6968fa1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_buffer.html#aef8be9884e8cc0fc3f3692e6c6968fa1">~FrameBuffer</a> ()</td></tr>
+<tr class="separator:aef8be9884e8cc0fc3f3692e6c6968fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa9465a950a0fe694fd802fee17d1cf8"><td class="memItemLeft" align="right" valign="top">unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_buffer.html#afa9465a950a0fe694fd802fee17d1cf8">GetFBO</a> ()</td></tr>
+<tr class="memdesc:afa9465a950a0fe694fd802fee17d1cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取缓存ID  <a href="class_frame_buffer.html#afa9465a950a0fe694fd802fee17d1cf8">更多...</a><br /></td></tr>
 <tr class="separator:afa9465a950a0fe694fd802fee17d1cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85fd1f406095bd483183a4b7d2173852"><td class="memItemLeft" align="right" valign="top"><a id="a85fd1f406095bd483183a4b7d2173852" name="a85fd1f406095bd483183a4b7d2173852"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Resize</b> (float w, float h)</td></tr>
-<tr class="memdesc:a85fd1f406095bd483183a4b7d2173852"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置缓存大小 <br /></td></tr>
+<tr class="memitem:a85fd1f406095bd483183a4b7d2173852"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_buffer.html#a85fd1f406095bd483183a4b7d2173852">Resize</a> (float w, float h)</td></tr>
+<tr class="memdesc:a85fd1f406095bd483183a4b7d2173852"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置缓存大小  <a href="class_frame_buffer.html#a85fd1f406095bd483183a4b7d2173852">更多...</a><br /></td></tr>
 <tr class="separator:a85fd1f406095bd483183a4b7d2173852"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8a632746c53d8ad13aaa70b7c45f8d2"><td class="memItemLeft" align="right" valign="top"><a id="ae8a632746c53d8ad13aaa70b7c45f8d2" name="ae8a632746c53d8ad13aaa70b7c45f8d2"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>GetWidth</b> ()</td></tr>
+<tr class="memitem:ae8a632746c53d8ad13aaa70b7c45f8d2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_buffer.html#ae8a632746c53d8ad13aaa70b7c45f8d2">GetWidth</a> ()</td></tr>
 <tr class="separator:ae8a632746c53d8ad13aaa70b7c45f8d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf627ed69a009d902b2444cf2e6afd5d"><td class="memItemLeft" align="right" valign="top"><a id="acf627ed69a009d902b2444cf2e6afd5d" name="acf627ed69a009d902b2444cf2e6afd5d"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>GetHeight</b> ()</td></tr>
+<tr class="memitem:acf627ed69a009d902b2444cf2e6afd5d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_buffer.html#acf627ed69a009d902b2444cf2e6afd5d">GetHeight</a> ()</td></tr>
 <tr class="separator:acf627ed69a009d902b2444cf2e6afd5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeabda4df7044f9ccbcf9b59afdae1396"><td class="memItemLeft" align="right" valign="top"><a id="aeabda4df7044f9ccbcf9b59afdae1396" name="aeabda4df7044f9ccbcf9b59afdae1396"></a>
-<a class="el" href="class_texture.html">Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetColorBuffer</b> ()</td></tr>
-<tr class="memdesc:aeabda4df7044f9ccbcf9b59afdae1396"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取颜色缓存 <br /></td></tr>
+<tr class="memitem:aeabda4df7044f9ccbcf9b59afdae1396"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_texture.html">Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_buffer.html#aeabda4df7044f9ccbcf9b59afdae1396">GetColorBuffer</a> ()</td></tr>
+<tr class="memdesc:aeabda4df7044f9ccbcf9b59afdae1396"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取颜色缓存  <a href="class_frame_buffer.html#aeabda4df7044f9ccbcf9b59afdae1396">更多...</a><br /></td></tr>
 <tr class="separator:aeabda4df7044f9ccbcf9b59afdae1396"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af18dfccf88adaa8773dd472bd53bda05"><td class="memItemLeft" align="right" valign="top"><a id="af18dfccf88adaa8773dd472bd53bda05" name="af18dfccf88adaa8773dd472bd53bda05"></a>
-<a class="el" href="class_texture.html">Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetDepthBuffer</b> ()</td></tr>
-<tr class="memdesc:af18dfccf88adaa8773dd472bd53bda05"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取深度缓存 <br /></td></tr>
+<tr class="memitem:af18dfccf88adaa8773dd472bd53bda05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_texture.html">Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_buffer.html#af18dfccf88adaa8773dd472bd53bda05">GetDepthBuffer</a> ()</td></tr>
+<tr class="memdesc:af18dfccf88adaa8773dd472bd53bda05"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取深度缓存  <a href="class_frame_buffer.html#af18dfccf88adaa8773dd472bd53bda05">更多...</a><br /></td></tr>
 <tr class="separator:af18dfccf88adaa8773dd472bd53bda05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a692bd62c0f9828342b29d7f084d25977"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_texture.html">Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_buffer.html#a692bd62c0f9828342b29d7f084d25977">color</a></td></tr>
+<tr class="separator:a692bd62c0f9828342b29d7f084d25977"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a974c48b6e8f748ac732d45957e7bc601"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_texture.html">Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_buffer.html#a974c48b6e8f748ac732d45957e7bc601">depth</a></td></tr>
+<tr class="separator:a974c48b6e8f748ac732d45957e7bc601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fcb44010395a41db16581338d3a71a9"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_buffer.html#a4fcb44010395a41db16581338d3a71a9">fbo</a></td></tr>
+<tr class="separator:a4fcb44010395a41db16581338d3a71a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p >帧缓存 </p>
-</div><hr/>该类的文档由以下文件生成:<ul>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a158589f7d8e83244b6b20ad49fd79187" name="a158589f7d8e83244b6b20ad49fd79187"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a158589f7d8e83244b6b20ad49fd79187">&#9670;&nbsp;</a></span>FrameBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FrameBuffer::FrameBuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_frame_buffer_8h.html#adf8e136713c0691010d2bec6ba63e9cf">BufferType</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aef8be9884e8cc0fc3f3692e6c6968fa1" name="aef8be9884e8cc0fc3f3692e6c6968fa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef8be9884e8cc0fc3f3692e6c6968fa1">&#9670;&nbsp;</a></span>~FrameBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FrameBuffer::~FrameBuffer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aeabda4df7044f9ccbcf9b59afdae1396" name="aeabda4df7044f9ccbcf9b59afdae1396"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeabda4df7044f9ccbcf9b59afdae1396">&#9670;&nbsp;</a></span>GetColorBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_texture.html">Texture</a> * FrameBuffer::GetColorBuffer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取颜色缓存 </p>
+
+</div>
+</div>
+<a id="af18dfccf88adaa8773dd472bd53bda05" name="af18dfccf88adaa8773dd472bd53bda05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af18dfccf88adaa8773dd472bd53bda05">&#9670;&nbsp;</a></span>GetDepthBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_texture.html">Texture</a> * FrameBuffer::GetDepthBuffer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取深度缓存 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_frame_buffer_af18dfccf88adaa8773dd472bd53bda05_icgraph.png" border="0" usemap="#aclass_frame_buffer_af18dfccf88adaa8773dd472bd53bda05_icgraph" alt=""/></div>
+<map name="aclass_frame_buffer_af18dfccf88adaa8773dd472bd53bda05_icgraph" id="aclass_frame_buffer_af18dfccf88adaa8773dd472bd53bda05_icgraph">
+<area shape="rect" title="获取深度缓存" alt="" coords="228,5,416,32"/>
+<area shape="rect" href="class_default_material.html#a7a7ea7bf4b54e222f802dac87c6c75ba" title=" " alt="" coords="5,5,180,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afa9465a950a0fe694fd802fee17d1cf8" name="afa9465a950a0fe694fd802fee17d1cf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa9465a950a0fe694fd802fee17d1cf8">&#9670;&nbsp;</a></span>GetFBO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int &amp; FrameBuffer::GetFBO </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取缓存ID </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_frame_buffer_afa9465a950a0fe694fd802fee17d1cf8_icgraph.png" border="0" usemap="#aclass_frame_buffer_afa9465a950a0fe694fd802fee17d1cf8_icgraph" alt=""/></div>
+<map name="aclass_frame_buffer_afa9465a950a0fe694fd802fee17d1cf8_icgraph" id="aclass_frame_buffer_afa9465a950a0fe694fd802fee17d1cf8_icgraph">
+<area shape="rect" title="获取缓存ID" alt="" coords="272,5,420,32"/>
+<area shape="rect" href="class_windows_window.html#ac3a15ef56e458ac9187da42fbdd7a08b" title=" " alt="" coords="5,5,224,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acf627ed69a009d902b2444cf2e6afd5d" name="acf627ed69a009d902b2444cf2e6afd5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf627ed69a009d902b2444cf2e6afd5d">&#9670;&nbsp;</a></span>GetHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FrameBuffer::GetHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae8a632746c53d8ad13aaa70b7c45f8d2" name="ae8a632746c53d8ad13aaa70b7c45f8d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8a632746c53d8ad13aaa70b7c45f8d2">&#9670;&nbsp;</a></span>GetWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FrameBuffer::GetWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85fd1f406095bd483183a4b7d2173852" name="a85fd1f406095bd483183a4b7d2173852"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85fd1f406095bd483183a4b7d2173852">&#9670;&nbsp;</a></span>Resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FrameBuffer::Resize </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>重置缓存大小 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_frame_buffer_a85fd1f406095bd483183a4b7d2173852_cgraph.png" border="0" usemap="#aclass_frame_buffer_a85fd1f406095bd483183a4b7d2173852_cgraph" alt=""/></div>
+<map name="aclass_frame_buffer_a85fd1f406095bd483183a4b7d2173852_cgraph" id="aclass_frame_buffer_a85fd1f406095bd483183a4b7d2173852_cgraph">
+<area shape="rect" title="重置缓存大小" alt="" coords="5,31,145,57"/>
+<area shape="rect" href="class_texture.html#a27eb85880d033e580c9099ac216f85d4" title="用于颜色缓存的初始化" alt="" coords="195,5,349,32"/>
+<area shape="rect" href="class_texture.html#a48ea73d477e6c8eacf5b24352da146fe" title="用于深度缓冲的初始化" alt="" coords="193,56,351,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a692bd62c0f9828342b29d7f084d25977" name="a692bd62c0f9828342b29d7f084d25977"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a692bd62c0f9828342b29d7f084d25977">&#9670;&nbsp;</a></span>color</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_texture.html">Texture</a>* FrameBuffer::color</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a974c48b6e8f748ac732d45957e7bc601" name="a974c48b6e8f748ac732d45957e7bc601"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a974c48b6e8f748ac732d45957e7bc601">&#9670;&nbsp;</a></span>depth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_texture.html">Texture</a>* FrameBuffer::depth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4fcb44010395a41db16581338d3a71a9" name="a4fcb44010395a41db16581338d3a71a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fcb44010395a41db16581338d3a71a9">&#9670;&nbsp;</a></span>fbo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int FrameBuffer::fbo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Render/Buffer/<a class="el" href="_frame_buffer_8h_source.html">FrameBuffer.h</a></li>
-<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Render/Buffer/FrameBuffer.cpp</li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Render/Buffer/<a class="el" href="_frame_buffer_8cpp.html">FrameBuffer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,0 +1,6 @@
+<map id="Texture::Texture" name="Texture::Texture">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,121,83"/>
+<area shape="rect" id="node2" href="$class_texture.html#a27eb85880d033e580c9099ac216f85d4" title="用于颜色缓存的初始化" alt="" coords="171,5,325,32"/>
+<area shape="rect" id="node3" href="$class_texture.html#a4cf5a9b03d35803bc110e4682ddffa3a" title="用于立方体贴图的初始化" alt="" coords="175,56,321,83"/>
+<area shape="rect" id="node4" href="$class_texture.html#a48ea73d477e6c8eacf5b24352da146fe" title="用于深度缓冲的初始化" alt="" coords="169,107,327,133"/>
+</map>

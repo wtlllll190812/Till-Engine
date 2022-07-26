@@ -1,0 +1,18 @@
+<map id="Application::AppInit" name="Application::AppInit">
+<area shape="rect" id="node1" title="初始化应用" alt="" coords="5,187,140,213"/>
+<area shape="rect" id="node2" href="$class_editor_layer.html#ae6f0a2ebee383c130bd96268b95b1b19" title="获取编辑器摄像机" alt="" coords="188,5,384,32"/>
+<area shape="rect" id="node3" href="$class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="689,95,855,121"/>
+<area shape="rect" id="node4" href="$class_asset_importer.html#a2b95bafd62ab55bf0c83a4928aee3d91" title=" " alt="" coords="222,107,350,133"/>
+<area shape="rect" id="node8" href="$class_input.html#a5197114da7299198826ff7277ee12bff" title=" " alt="" coords="249,157,323,184"/>
+<area shape="rect" id="node10" href="$class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="199,209,373,250"/>
+<area shape="rect" id="node11" href="$class_application.html#a1d31824bbed36791a15243852d18669a" title="处理事件" alt="" coords="215,299,357,325"/>
+<area shape="rect" id="node15" href="$class_application.html#a7c47dfc920cb1be81474b297b8e3b4c7" title=" " alt="" coords="203,349,369,376"/>
+<area shape="rect" id="node16" href="$class_render_system.html#acf71a2b40bd01841db74a4a75befc78b" title="设置当前摄像机" alt="" coords="195,400,377,427"/>
+<area shape="rect" id="node5" href="$class_asset_importer.html#a6849837d993ae78b78b65fa7dfe55732" title=" " alt="" coords="441,157,620,184"/>
+<area shape="rect" id="node6" href="$class_asset_importer.html#a7e9906057d69bd51ffebcc4759b2fc37" title=" " alt="" coords="677,169,867,196"/>
+<area shape="rect" id="node7" href="$class_asset_importer.html#a6c9eacf9c08d7014f10a277b47873c78" title=" " alt="" coords="915,169,1105,196"/>
+<area shape="rect" id="node9" href="$class_debug.html#aba43a04a085adda136af3ed7fa2593c9" title=" " alt="" coords="455,208,606,235"/>
+<area shape="rect" id="node12" href="$class_event_dispatcher.html#aa52657a74c2be46ec503b3ad8fc469d1" title="判断事件类型是否符合" alt="" coords="443,279,618,305"/>
+<area shape="rect" id="node14" href="$class_application.html#a7da658ad03aa7614f3a24ef738b57f32" title="窗口关闭时" alt="" coords="432,329,629,356"/>
+<area shape="rect" id="node13" href="$class_event_base.html#a91f4adadacab79ddf2c64b92057a6cc6" title=" " alt="" coords="685,279,859,305"/>
+</map>

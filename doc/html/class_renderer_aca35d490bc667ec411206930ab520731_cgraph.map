@@ -1,4 +1,9 @@
 <map id="Renderer::GuiDisPlay" name="Renderer::GuiDisPlay">
-<area shape="rect" id="node1" title="显示到Gui" alt="" coords="5,5,152,32"/>
-<area shape="rect" id="node2" href="$class_renderer.html#ad4e6fd64f7992b43c9749f029953bb96" title="更新序列化节点" alt="" coords="200,5,353,32"/>
+<area shape="rect" id="node1" title="显示到Gui" alt="" coords="5,159,152,185"/>
+<area shape="rect" id="node2" href="$class_renderer.html#a74f81841420fec541cc52ac671ebbaf2" title=" " alt="" coords="221,5,393,32"/>
+<area shape="rect" id="node3" href="$class_reflection_manager.html#a2e46547856970f9dfa780291a254ed24" title=" " alt="" coords="227,57,388,98"/>
+<area shape="rect" id="node4" href="$class_reflection_manager.html#a905fe98183914a00ee6ff809f4ef7992" title=" " alt="" coords="230,122,385,163"/>
+<area shape="rect" id="node5" href="$class_asset_importer.html#aad84704ce92e9d77f03d64046ed89245" title=" " alt="" coords="200,188,415,215"/>
+<area shape="rect" id="node6" href="$class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="210,239,405,281"/>
+<area shape="rect" id="node7" href="$class_renderer.html#ad4e6fd64f7992b43c9749f029953bb96" title="更新序列化节点" alt="" coords="231,305,384,332"/>
 </map>

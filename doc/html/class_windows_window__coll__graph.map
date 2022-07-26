@@ -1,4 +1,7 @@
 <map id="WindowsWindow" name="WindowsWindow">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,127,107"/>
-<area shape="rect" id="node2" href="$class_window.html" title=" " alt="" coords="32,5,100,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="83,213,204,240"/>
+<area shape="rect" id="node2" href="$class_window.html" title=" " alt="" coords="5,109,73,136"/>
+<area shape="rect" id="node3" href="$class_frame_buffer.html" title="帧缓存" alt="" coords="97,109,189,136"/>
+<area shape="rect" id="node4" href="$class_texture.html" title=" " alt="" coords="111,5,176,32"/>
+<area shape="rect" id="node5" href="$struct_windows_window_1_1_window_data.html" title=" " alt="" coords="214,109,417,136"/>
 </map>

@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,21 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">Scene 成员列表</div></div>
@@ -72,9 +55,11 @@ $(function() {
   <tr class="odd"><td class="entry"><a class="el" href="class_scene.html#a8a58a7c1acc53416d58dc0ed6c4fdaeb">Find</a>(std::string)</td><td class="entry"><a class="el" href="class_scene.html">Scene</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_scene.html#aa0f312fd1a9d0367146f345192b5cc9d">gameobjects</a></td><td class="entry"><a class="el" href="class_scene.html">Scene</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_scene.html#a878011b448f85714694abf6ddeee9376">mainCamera</a></td><td class="entry"><a class="el" href="class_scene.html">Scene</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_scene.html#aec4393448e15e9422ae62681dca0d70f">Save</a>()</td><td class="entry"><a class="el" href="class_scene.html">Scene</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_scene.html#a68aaa2ba723de8190353354012658db6">Scene</a>(std::string)</td><td class="entry"><a class="el" href="class_scene.html">Scene</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~Scene</b>() (定义于 <a class="el" href="class_scene.html">Scene</a>)</td><td class="entry"><a class="el" href="class_scene.html">Scene</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_scene.html#ac9c0ec8489612ed97cd5608bda45600b">path</a></td><td class="entry"><a class="el" href="class_scene.html">Scene</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_scene.html#aec4393448e15e9422ae62681dca0d70f">Save</a>()</td><td class="entry"><a class="el" href="class_scene.html">Scene</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_scene.html#a68aaa2ba723de8190353354012658db6">Scene</a>(std::string)</td><td class="entry"><a class="el" href="class_scene.html">Scene</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_scene.html#a7dce4fb959a793e2fa394a0afb146640">sceneFile</a></td><td class="entry"><a class="el" href="class_scene.html">Scene</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_scene.html#a3b8cec2e32546713915f8c6303c951f1">~Scene</a>()</td><td class="entry"><a class="el" href="class_scene.html">Scene</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

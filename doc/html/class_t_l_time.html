@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,90 +28,428 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
 <a href="#pub-static-attribs">静态 Public 属性</a> &#124;
+<a href="#pri-static-attribs">静态 Private 属性</a> &#124;
 <a href="#friends">友元</a> &#124;
 <a href="class_t_l_time-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">TLTime类 参考</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_t_l_time_8h_source.html">TLTime.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 静态 Public 成员函数</h2></td></tr>
-<tr class="memitem:afd906a8411b3bbf025ad7dfc6e4ce046"><td class="memItemLeft" align="right" valign="top"><a id="afd906a8411b3bbf025ad7dfc6e4ce046" name="afd906a8411b3bbf025ad7dfc6e4ce046"></a>
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>GetTime</b> ()</td></tr>
-<tr class="memdesc:afd906a8411b3bbf025ad7dfc6e4ce046"><td class="mdescLeft">&#160;</td><td class="mdescRight">游戏开始运行后的时间 <br /></td></tr>
+<tr class="memitem:afd906a8411b3bbf025ad7dfc6e4ce046"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_time.html#afd906a8411b3bbf025ad7dfc6e4ce046">GetTime</a> ()</td></tr>
+<tr class="memdesc:afd906a8411b3bbf025ad7dfc6e4ce046"><td class="mdescLeft">&#160;</td><td class="mdescRight">游戏开始运行后的时间  <a href="class_t_l_time.html#afd906a8411b3bbf025ad7dfc6e4ce046">更多...</a><br /></td></tr>
 <tr class="separator:afd906a8411b3bbf025ad7dfc6e4ce046"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03914498193a072cd48606bd320a9cd6"><td class="memItemLeft" align="right" valign="top"><a id="a03914498193a072cd48606bd320a9cd6" name="a03914498193a072cd48606bd320a9cd6"></a>
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>GetUnscaledTime</b> ()</td></tr>
-<tr class="memdesc:a03914498193a072cd48606bd320a9cd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">游戏开始运行后的时间 <br /></td></tr>
+<tr class="memitem:a03914498193a072cd48606bd320a9cd6"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_time.html#a03914498193a072cd48606bd320a9cd6">GetUnscaledTime</a> ()</td></tr>
+<tr class="memdesc:a03914498193a072cd48606bd320a9cd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">游戏开始运行后的时间  <a href="class_t_l_time.html#a03914498193a072cd48606bd320a9cd6">更多...</a><br /></td></tr>
 <tr class="separator:a03914498193a072cd48606bd320a9cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a848790146b2b0c797c40c6ff14863dcb"><td class="memItemLeft" align="right" valign="top"><a id="a848790146b2b0c797c40c6ff14863dcb" name="a848790146b2b0c797c40c6ff14863dcb"></a>
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>GetFixedTime</b> ()</td></tr>
-<tr class="memdesc:a848790146b2b0c797c40c6ff14863dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">最近一次fixedTime的时间 <br /></td></tr>
+<tr class="memitem:a848790146b2b0c797c40c6ff14863dcb"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_time.html#a848790146b2b0c797c40c6ff14863dcb">GetFixedTime</a> ()</td></tr>
+<tr class="memdesc:a848790146b2b0c797c40c6ff14863dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">最近一次fixedTime的时间  <a href="class_t_l_time.html#a848790146b2b0c797c40c6ff14863dcb">更多...</a><br /></td></tr>
 <tr class="separator:a848790146b2b0c797c40c6ff14863dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6897fe28bebe44a93ecb3dc2854f8898"><td class="memItemLeft" align="right" valign="top"><a id="a6897fe28bebe44a93ecb3dc2854f8898" name="a6897fe28bebe44a93ecb3dc2854f8898"></a>
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>GetDeltaTime</b> ()</td></tr>
-<tr class="memdesc:a6897fe28bebe44a93ecb3dc2854f8898"><td class="mdescLeft">&#160;</td><td class="mdescRight">完成上一帧所用时间 <br /></td></tr>
+<tr class="memitem:a6897fe28bebe44a93ecb3dc2854f8898"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_time.html#a6897fe28bebe44a93ecb3dc2854f8898">GetDeltaTime</a> ()</td></tr>
+<tr class="memdesc:a6897fe28bebe44a93ecb3dc2854f8898"><td class="mdescLeft">&#160;</td><td class="mdescRight">完成上一帧所用时间  <a href="class_t_l_time.html#a6897fe28bebe44a93ecb3dc2854f8898">更多...</a><br /></td></tr>
 <tr class="separator:a6897fe28bebe44a93ecb3dc2854f8898"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c2a325e0eb9b631a243db79f74c5c61"><td class="memItemLeft" align="right" valign="top"><a id="a2c2a325e0eb9b631a243db79f74c5c61" name="a2c2a325e0eb9b631a243db79f74c5c61"></a>
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>GetUnscaledDeltaTime</b> ()</td></tr>
-<tr class="memdesc:a2c2a325e0eb9b631a243db79f74c5c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">完成上一帧所用时间(不受timescale影响) <br /></td></tr>
+<tr class="memitem:a2c2a325e0eb9b631a243db79f74c5c61"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_time.html#a2c2a325e0eb9b631a243db79f74c5c61">GetUnscaledDeltaTime</a> ()</td></tr>
+<tr class="memdesc:a2c2a325e0eb9b631a243db79f74c5c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">完成上一帧所用时间(不受timescale影响)  <a href="class_t_l_time.html#a2c2a325e0eb9b631a243db79f74c5c61">更多...</a><br /></td></tr>
 <tr class="separator:a2c2a325e0eb9b631a243db79f74c5c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a370467cbe5c57461c1172278d7f2ecf8"><td class="memItemLeft" align="right" valign="top"><a id="a370467cbe5c57461c1172278d7f2ecf8" name="a370467cbe5c57461c1172278d7f2ecf8"></a>
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>GetFrameCount</b> ()</td></tr>
-<tr class="memdesc:a370467cbe5c57461c1172278d7f2ecf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">游戏开始之后的帧数 <br /></td></tr>
+<tr class="memitem:a370467cbe5c57461c1172278d7f2ecf8"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_time.html#a370467cbe5c57461c1172278d7f2ecf8">GetFrameCount</a> ()</td></tr>
+<tr class="memdesc:a370467cbe5c57461c1172278d7f2ecf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">游戏开始之后的帧数  <a href="class_t_l_time.html#a370467cbe5c57461c1172278d7f2ecf8">更多...</a><br /></td></tr>
 <tr class="separator:a370467cbe5c57461c1172278d7f2ecf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 静态 Public 属性</h2></td></tr>
-<tr class="memitem:a108b8e7c27c78d6581638fc577e59eaa"><td class="memItemLeft" align="right" valign="top"><a id="a108b8e7c27c78d6581638fc577e59eaa" name="a108b8e7c27c78d6581638fc577e59eaa"></a>
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>timeScale</b> = 1</td></tr>
-<tr class="memdesc:a108b8e7c27c78d6581638fc577e59eaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">时间流失的速度 <br /></td></tr>
+<tr class="memitem:a108b8e7c27c78d6581638fc577e59eaa"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_time.html#a108b8e7c27c78d6581638fc577e59eaa">timeScale</a> = 1</td></tr>
+<tr class="memdesc:a108b8e7c27c78d6581638fc577e59eaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">时间流失的速度  <a href="class_t_l_time.html#a108b8e7c27c78d6581638fc577e59eaa">更多...</a><br /></td></tr>
 <tr class="separator:a108b8e7c27c78d6581638fc577e59eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静态 Private 属性</h2></td></tr>
+<tr class="memitem:a80ad5e6e905398843f35b762b15624da"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_time.html#a80ad5e6e905398843f35b762b15624da">time</a> = 0</td></tr>
+<tr class="separator:a80ad5e6e905398843f35b762b15624da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a7c503aa61a97ad6a9b7191b88bf21c"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_time.html#a0a7c503aa61a97ad6a9b7191b88bf21c">unscaledTime</a> = 0</td></tr>
+<tr class="separator:a0a7c503aa61a97ad6a9b7191b88bf21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad059318462665b122f94c828bd0e78d7"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_time.html#ad059318462665b122f94c828bd0e78d7">fixedTime</a> = 0</td></tr>
+<tr class="separator:ad059318462665b122f94c828bd0e78d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3264e0cb73b120178696a1f57e68eeca"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_time.html#a3264e0cb73b120178696a1f57e68eeca">deltaTime</a> = 0</td></tr>
+<tr class="separator:a3264e0cb73b120178696a1f57e68eeca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6e917cdb5b4160f6f3cbfb0b393977b"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_time.html#af6e917cdb5b4160f6f3cbfb0b393977b">unscaledDeltaTime</a> = 0</td></tr>
+<tr class="separator:af6e917cdb5b4160f6f3cbfb0b393977b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad999e7793bec501175ecb06503da2705"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_time.html#ad999e7793bec501175ecb06503da2705">frameCount</a> = 0</td></tr>
+<tr class="separator:ad999e7793bec501175ecb06503da2705"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 友元</h2></td></tr>
-<tr class="memitem:afd9c20201ae610637dc6ed36c0b62f7f"><td class="memItemLeft" align="right" valign="top"><a id="afd9c20201ae610637dc6ed36c0b62f7f" name="afd9c20201ae610637dc6ed36c0b62f7f"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>GameLoop</b></td></tr>
+<tr class="memitem:afd9c20201ae610637dc6ed36c0b62f7f"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_time.html#afd9c20201ae610637dc6ed36c0b62f7f">GameLoop</a></td></tr>
 <tr class="separator:afd9c20201ae610637dc6ed36c0b62f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a6897fe28bebe44a93ecb3dc2854f8898" name="a6897fe28bebe44a93ecb3dc2854f8898"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6897fe28bebe44a93ecb3dc2854f8898">&#9670;&nbsp;</a></span>GetDeltaTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double TLTime::GetDeltaTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>完成上一帧所用时间 </p>
+
+</div>
+</div>
+<a id="a848790146b2b0c797c40c6ff14863dcb" name="a848790146b2b0c797c40c6ff14863dcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a848790146b2b0c797c40c6ff14863dcb">&#9670;&nbsp;</a></span>GetFixedTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double TLTime::GetFixedTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>最近一次fixedTime的时间 </p>
+
+</div>
+</div>
+<a id="a370467cbe5c57461c1172278d7f2ecf8" name="a370467cbe5c57461c1172278d7f2ecf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a370467cbe5c57461c1172278d7f2ecf8">&#9670;&nbsp;</a></span>GetFrameCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double TLTime::GetFrameCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>游戏开始之后的帧数 </p>
+
+</div>
+</div>
+<a id="afd906a8411b3bbf025ad7dfc6e4ce046" name="afd906a8411b3bbf025ad7dfc6e4ce046"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd906a8411b3bbf025ad7dfc6e4ce046">&#9670;&nbsp;</a></span>GetTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double TLTime::GetTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>游戏开始运行后的时间 </p>
+
+</div>
+</div>
+<a id="a2c2a325e0eb9b631a243db79f74c5c61" name="a2c2a325e0eb9b631a243db79f74c5c61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c2a325e0eb9b631a243db79f74c5c61">&#9670;&nbsp;</a></span>GetUnscaledDeltaTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double TLTime::GetUnscaledDeltaTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>完成上一帧所用时间(不受timescale影响) </p>
+
+</div>
+</div>
+<a id="a03914498193a072cd48606bd320a9cd6" name="a03914498193a072cd48606bd320a9cd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03914498193a072cd48606bd320a9cd6">&#9670;&nbsp;</a></span>GetUnscaledTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double TLTime::GetUnscaledTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>游戏开始运行后的时间 </p>
+
+</div>
+</div>
+<h2 class="groupheader">友元及相关函数文档</h2>
+<a id="afd9c20201ae610637dc6ed36c0b62f7f" name="afd9c20201ae610637dc6ed36c0b62f7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd9c20201ae610637dc6ed36c0b62f7f">&#9670;&nbsp;</a></span>GameLoop</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="class_game_loop.html">GameLoop</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a3264e0cb73b120178696a1f57e68eeca" name="a3264e0cb73b120178696a1f57e68eeca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3264e0cb73b120178696a1f57e68eeca">&#9670;&nbsp;</a></span>deltaTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double TLTime::deltaTime = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad059318462665b122f94c828bd0e78d7" name="ad059318462665b122f94c828bd0e78d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad059318462665b122f94c828bd0e78d7">&#9670;&nbsp;</a></span>fixedTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double TLTime::fixedTime = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad999e7793bec501175ecb06503da2705" name="ad999e7793bec501175ecb06503da2705"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad999e7793bec501175ecb06503da2705">&#9670;&nbsp;</a></span>frameCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double TLTime::frameCount = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a80ad5e6e905398843f35b762b15624da" name="a80ad5e6e905398843f35b762b15624da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80ad5e6e905398843f35b762b15624da">&#9670;&nbsp;</a></span>time</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double TLTime::time = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a108b8e7c27c78d6581638fc577e59eaa" name="a108b8e7c27c78d6581638fc577e59eaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a108b8e7c27c78d6581638fc577e59eaa">&#9670;&nbsp;</a></span>timeScale</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double TLTime::timeScale = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>时间流失的速度 </p>
+
+</div>
+</div>
+<a id="af6e917cdb5b4160f6f3cbfb0b393977b" name="af6e917cdb5b4160f6f3cbfb0b393977b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6e917cdb5b4160f6f3cbfb0b393977b">&#9670;&nbsp;</a></span>unscaledDeltaTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double TLTime::unscaledDeltaTime = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0a7c503aa61a97ad6a9b7191b88bf21c" name="a0a7c503aa61a97ad6a9b7191b88bf21c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a7c503aa61a97ad6a9b7191b88bf21c">&#9670;&nbsp;</a></span>unscaledTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double TLTime::unscaledTime = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Tools/<a class="el" href="_t_l_time_8h_source.html">TLTime.h</a></li>
-<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Tools/TLTime.cpp</li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Tools/<a class="el" href="_t_l_time_8cpp.html">TLTime.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

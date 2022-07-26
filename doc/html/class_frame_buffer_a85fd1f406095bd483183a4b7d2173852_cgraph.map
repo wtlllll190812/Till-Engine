@@ -1,0 +1,5 @@
+<map id="FrameBuffer::Resize" name="FrameBuffer::Resize">
+<area shape="rect" id="node1" title="重置缓存大小" alt="" coords="5,31,145,57"/>
+<area shape="rect" id="node2" href="$class_texture.html#a27eb85880d033e580c9099ac216f85d4" title="用于颜色缓存的初始化" alt="" coords="195,5,349,32"/>
+<area shape="rect" id="node3" href="$class_texture.html#a48ea73d477e6c8eacf5b24352da146fe" title="用于深度缓冲的初始化" alt="" coords="193,56,351,83"/>
+</map>

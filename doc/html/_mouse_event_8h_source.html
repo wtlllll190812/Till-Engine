@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,19 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_75ae6d3613b6c2f243b8fb439548ec3f.html">Framework</a></li><li class="navelem"><a class="el" href="dir_2820ecf7c6a311b96e4b9f781fa1dc4a.html">Events</a></li>  </ul>
@@ -69,96 +50,125 @@ $(function() {
   <div class="headertitle"><div class="title">MouseEvent.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;EventBase.h&quot;</span></div>
+<a href="_mouse_event_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_event_base_8h.html">EventBase.h</a>&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_mouse_moved_event.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="class_mouse_moved_event.html">MouseMovedEvent</a> :<span class="keyword">public</span> <a class="code hl_class" href="class_event_base.html">EventBase</a></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_class" href="class_mouse_moved_event.html">MouseMovedEvent</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y)</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        :mMouseX(x), mMouseY(y)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_mouse_moved_event.html#a917981db3e3ff4a38a6920f400106fd0">   10</a></span>    <a class="code hl_function" href="class_mouse_moved_event.html#a917981db3e3ff4a38a6920f400106fd0">MouseMovedEvent</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        :<a class="code hl_variable" href="class_mouse_moved_event.html#a077f4ac786c5107796e87db2476ee5fc">mMouseX</a>(x), <a class="code hl_variable" href="class_mouse_moved_event.html#a723705b464a897431568c723c729e6cf">mMouseY</a>(y)</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">inline</span> <span class="keywordtype">float</span> GetX()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mMouseX; }</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">inline</span> <span class="keywordtype">float</span> GetY()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mMouseY; }</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_mouse_moved_event.html#a7b9e9e121dc213bc27dff766488fd21c">   15</a></span>    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code hl_function" href="class_mouse_moved_event.html#a7b9e9e121dc213bc27dff766488fd21c">GetX</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_mouse_moved_event.html#a077f4ac786c5107796e87db2476ee5fc">mMouseX</a>; }</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_mouse_moved_event.html#aedb72739694d42dd2ff243b981e85dd7">   16</a></span>    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code hl_function" href="class_mouse_moved_event.html#aedb72739694d42dd2ff243b981e85dd7">GetY</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_mouse_moved_event.html#a723705b464a897431568c723c729e6cf">mMouseY</a>; }</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    std::string ToString()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_mouse_moved_event.html#a19099ea15500bf87ded9159322a79154">   18</a></span>    std::string <a class="code hl_function" href="class_mouse_moved_event.html#a19099ea15500bf87ded9159322a79154">ToString</a>()<span class="keyword"> const override</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;MouseMoved  &quot;</span> + std::to_string(mMouseX) + <span class="stringliteral">&quot;  &quot;</span> + std::to_string(mMouseY);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;MouseMoved  &quot;</span> + std::to_string(<a class="code hl_variable" href="class_mouse_moved_event.html#a077f4ac786c5107796e87db2476ee5fc">mMouseX</a>) + <span class="stringliteral">&quot;  &quot;</span> + std::to_string(<a class="code hl_variable" href="class_mouse_moved_event.html#a723705b464a897431568c723c729e6cf">mMouseY</a>);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    EVENT_CLASS_TYPE(MouseMoved)</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_define" href="_event_base_8h.html#a80d534fc4d69a68eefd1573fd0ac2f44">EVENT_CLASS_TYPE</a>(<a class="code hl_enumvalue" href="_event_base_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faac2770ad109c8063ce69a3608a9a16c08">MouseMoved</a>)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_define" href="_event_base_8h.html#abd52deea587a36ef619e596a0c691839">EVENT_CLASS_CATEGORY</a>(<a class="code hl_enumvalue" href="_event_base_8h.html#aa8b0556527d429476e3f3d6cfab1a21faf3f5f68228efdd30f0b07869e86e2712">EventCategoryMouse</a> | <a class="code hl_enumvalue" href="_event_base_8h.html#aa8b0556527d429476e3f3d6cfab1a21fa352e01ef44a28d0831b9429181b99150">EventCategoryInput</a>)</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">float</span> mMouseX;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">float</span> mMouseY;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_mouse_moved_event.html#a077f4ac786c5107796e87db2476ee5fc">   25</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_mouse_moved_event.html#a077f4ac786c5107796e87db2476ee5fc">mMouseX</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_mouse_moved_event.html#a723705b464a897431568c723c729e6cf">   26</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_mouse_moved_event.html#a723705b464a897431568c723c729e6cf">mMouseY</a>;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_mouse_scrolled_event.html">   32</a></span><span class="keyword">class </span><a class="code hl_class" href="class_mouse_scrolled_event.html">MouseScrolledEvent</a> :<span class="keyword">public</span> <a class="code hl_class" href="class_event_base.html">EventBase</a></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_class" href="class_mouse_scrolled_event.html">MouseScrolledEvent</a>(<span class="keywordtype">float</span> xOffset, <span class="keywordtype">float</span> yOffset)</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        :mXOffset(xOffset), mYOffset(yOffset)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_mouse_scrolled_event.html#a2e1856540ecff3aacf0189c0432532f6">   35</a></span>    <a class="code hl_function" href="class_mouse_scrolled_event.html#a2e1856540ecff3aacf0189c0432532f6">MouseScrolledEvent</a>(<span class="keywordtype">float</span> xOffset, <span class="keywordtype">float</span> yOffset)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        :<a class="code hl_variable" href="class_mouse_scrolled_event.html#aa6bf084479c7a5eebebdbc43eae65385">mXOffset</a>(xOffset), <a class="code hl_variable" href="class_mouse_scrolled_event.html#a1c6f527b56fee268d3cf3c51d0c10e6a">mYOffset</a>(yOffset)</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    {</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">inline</span> <span class="keywordtype">float</span> GetXOffset()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mXOffset; }</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">inline</span> <span class="keywordtype">float</span> GetYOffset()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mYOffset; }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_mouse_scrolled_event.html#a8541a530920db59f18810d759a41c6a5">   40</a></span>    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code hl_function" href="class_mouse_scrolled_event.html#a8541a530920db59f18810d759a41c6a5">GetXOffset</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_mouse_scrolled_event.html#aa6bf084479c7a5eebebdbc43eae65385">mXOffset</a>; }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_mouse_scrolled_event.html#a2c442543f2334c7686faa2c28ca334bc">   41</a></span>    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code hl_function" href="class_mouse_scrolled_event.html#a2c442543f2334c7686faa2c28ca334bc">GetYOffset</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_mouse_scrolled_event.html#a1c6f527b56fee268d3cf3c51d0c10e6a">mYOffset</a>; }</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    std::string ToString()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_mouse_scrolled_event.html#a33faaf2f4e120de4716591174b020319">   43</a></span>    std::string <a class="code hl_function" href="class_mouse_scrolled_event.html#a33faaf2f4e120de4716591174b020319">ToString</a>()<span class="keyword"> const override</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;MouseScrolled  &quot;</span> + std::to_string(mXOffset) + <span class="stringliteral">&quot;  &quot;</span> + std::to_string(mYOffset);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;MouseScrolled  &quot;</span> + std::to_string(<a class="code hl_variable" href="class_mouse_scrolled_event.html#aa6bf084479c7a5eebebdbc43eae65385">mXOffset</a>) + <span class="stringliteral">&quot;  &quot;</span> + std::to_string(<a class="code hl_variable" href="class_mouse_scrolled_event.html#a1c6f527b56fee268d3cf3c51d0c10e6a">mYOffset</a>);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    EVENT_CLASS_TYPE(MouseScrolled)</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_define" href="_event_base_8h.html#a80d534fc4d69a68eefd1573fd0ac2f44">EVENT_CLASS_TYPE</a>(<a class="code hl_enumvalue" href="_event_base_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa50edb169910041bb3c06f6e8322d74c1">MouseScrolled</a>)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <a class="code hl_define" href="_event_base_8h.html#abd52deea587a36ef619e596a0c691839">EVENT_CLASS_CATEGORY</a>(<a class="code hl_enumvalue" href="_event_base_8h.html#aa8b0556527d429476e3f3d6cfab1a21faf3f5f68228efdd30f0b07869e86e2712">EventCategoryMouse</a> | <a class="code hl_enumvalue" href="_event_base_8h.html#aa8b0556527d429476e3f3d6cfab1a21fa352e01ef44a28d0831b9429181b99150">EventCategoryInput</a>)</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">float</span> mXOffset;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">float</span> mYOffset;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_mouse_scrolled_event.html#aa6bf084479c7a5eebebdbc43eae65385">   50</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_mouse_scrolled_event.html#aa6bf084479c7a5eebebdbc43eae65385">mXOffset</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_mouse_scrolled_event.html#a1c6f527b56fee268d3cf3c51d0c10e6a">   51</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_mouse_scrolled_event.html#a1c6f527b56fee268d3cf3c51d0c10e6a">mYOffset</a>;</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_mouse_button_event.html">   57</a></span><span class="keyword">class </span><a class="code hl_class" href="class_mouse_button_event.html">MouseButtonEvent</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_event_base.html">EventBase</a></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">inline</span> <span class="keywordtype">int</span> GetMouseButton()<span class="keyword">const </span>{ <span class="keywordflow">return</span> mMouseButton; }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    EVENT_CLASS_CATEGORY(EventCategoryMouseButton | EventCategoryInput)</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_mouse_button_event.html#a95acf32682fe88f6dd35406818dc689d">   60</a></span>    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_mouse_button_event.html#a95acf32682fe88f6dd35406818dc689d">GetMouseButton</a>()<span class="keyword">const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_mouse_button_event.html#a6d0c1a42694aff8c288b295b36a3321a">mMouseButton</a>; }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_define" href="_event_base_8h.html#abd52deea587a36ef619e596a0c691839">EVENT_CLASS_CATEGORY</a>(<a class="code hl_enumvalue" href="_event_base_8h.html#aa8b0556527d429476e3f3d6cfab1a21fad9da379e2b26bfbe841d7425ae9468aa">EventCategoryMouseButton</a> | <a class="code hl_enumvalue" href="_event_base_8h.html#aa8b0556527d429476e3f3d6cfab1a21fa352e01ef44a28d0831b9429181b99150">EventCategoryInput</a>)</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">int</span> mMouseButton;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_class" href="class_mouse_button_event.html">MouseButtonEvent</a>(<span class="keywordtype">int</span> button) :mMouseButton(button) {}</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_mouse_button_event.html#a6d0c1a42694aff8c288b295b36a3321a">   63</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_mouse_button_event.html#a6d0c1a42694aff8c288b295b36a3321a">mMouseButton</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_mouse_button_event.html#aaa0c1d8131f2fd7fc11c60900d211216">   64</a></span>    <a class="code hl_function" href="class_mouse_button_event.html#aaa0c1d8131f2fd7fc11c60900d211216">MouseButtonEvent</a>(<span class="keywordtype">int</span> button) :<a class="code hl_variable" href="class_mouse_button_event.html#a6d0c1a42694aff8c288b295b36a3321a">mMouseButton</a>(button) {}</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_mouse_button_pressed_event.html">   70</a></span><span class="keyword">class </span><a class="code hl_class" href="class_mouse_button_pressed_event.html">MouseButtonPressedEvent</a> :<span class="keyword">public</span> <a class="code hl_class" href="class_mouse_button_event.html">MouseButtonEvent</a></div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>{</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_class" href="class_mouse_button_pressed_event.html">MouseButtonPressedEvent</a>(<span class="keywordtype">int</span> MouseButtoncode)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_mouse_button_pressed_event.html#ae5a61b64470348667dfdc757a030476f">   73</a></span>    <a class="code hl_function" href="class_mouse_button_pressed_event.html#ae5a61b64470348667dfdc757a030476f">MouseButtonPressedEvent</a>(<span class="keywordtype">int</span> MouseButtoncode)</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        :<a class="code hl_class" href="class_mouse_button_event.html">MouseButtonEvent</a>(MouseButtoncode)</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    {}</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    std::string ToString()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="class_mouse_button_pressed_event.html#a5942b33ee7e64d0ec01b51949a44f4c4">   76</a></span>    std::string <a class="code hl_function" href="class_mouse_button_pressed_event.html#a5942b33ee7e64d0ec01b51949a44f4c4">ToString</a>()<span class="keyword"> const override</span></div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;MouseButtonPressed  &quot;</span> + std::to_string(mMouseButton);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;MouseButtonPressed  &quot;</span> + std::to_string(<a class="code hl_variable" href="class_mouse_button_event.html#a6d0c1a42694aff8c288b295b36a3321a">mMouseButton</a>);</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    EVENT_CLASS_TYPE(MouseButtonPressed)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_define" href="_event_base_8h.html#a80d534fc4d69a68eefd1573fd0ac2f44">EVENT_CLASS_TYPE</a>(<a class="code hl_enumvalue" href="_event_base_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa7349f643d689997b7c54bf93e4095f5c">MouseButtonPressed</a>)</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>};</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="class_mouse_button_released_event.html">   87</a></span><span class="keyword">class </span><a class="code hl_class" href="class_mouse_button_released_event.html">MouseButtonReleasedEvent</a> :<span class="keyword">public</span> <a class="code hl_class" href="class_mouse_button_event.html">MouseButtonEvent</a></div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>{</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_class" href="class_mouse_button_released_event.html">MouseButtonReleasedEvent</a>(<span class="keywordtype">int</span> MouseButtoncode)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="class_mouse_button_released_event.html#a701fb106b4183a403d065d609ea5e7a6">   90</a></span>    <a class="code hl_function" href="class_mouse_button_released_event.html#a701fb106b4183a403d065d609ea5e7a6">MouseButtonReleasedEvent</a>(<span class="keywordtype">int</span> MouseButtoncode)</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        :<a class="code hl_class" href="class_mouse_button_event.html">MouseButtonEvent</a>(MouseButtoncode)</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    {}</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    std::string ToString()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_mouse_button_released_event.html#a2df202924fc8870f0649d1d4c2a924af">   93</a></span>    std::string <a class="code hl_function" href="class_mouse_button_released_event.html#a2df202924fc8870f0649d1d4c2a924af">ToString</a>()<span class="keyword"> const override</span></div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;MouseButtonReleased  &quot;</span> + std::to_string(mMouseButton);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;MouseButtonReleased  &quot;</span> + std::to_string(<a class="code hl_variable" href="class_mouse_button_event.html#a6d0c1a42694aff8c288b295b36a3321a">mMouseButton</a>);</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    EVENT_CLASS_TYPE(MouseButtonReleased)</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <a class="code hl_define" href="_event_base_8h.html#a80d534fc4d69a68eefd1573fd0ac2f44">EVENT_CLASS_TYPE</a>(<a class="code hl_enumvalue" href="_event_base_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa7584c169de594c27f00084b93186fd7c">MouseButtonReleased</a>)</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>};</div>
+<div class="ttc" id="a_event_base_8h_html"><div class="ttname"><a href="_event_base_8h.html">EventBase.h</a></div></div>
+<div class="ttc" id="a_event_base_8h_html_a2628ea8d12e8b2563c32f05dc7fff6faa50edb169910041bb3c06f6e8322d74c1"><div class="ttname"><a href="_event_base_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa50edb169910041bb3c06f6e8322d74c1">EventType::MouseScrolled</a></div><div class="ttdeci">@ MouseScrolled</div></div>
+<div class="ttc" id="a_event_base_8h_html_a2628ea8d12e8b2563c32f05dc7fff6faa7349f643d689997b7c54bf93e4095f5c"><div class="ttname"><a href="_event_base_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa7349f643d689997b7c54bf93e4095f5c">EventType::MouseButtonPressed</a></div><div class="ttdeci">@ MouseButtonPressed</div></div>
+<div class="ttc" id="a_event_base_8h_html_a2628ea8d12e8b2563c32f05dc7fff6faa7584c169de594c27f00084b93186fd7c"><div class="ttname"><a href="_event_base_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa7584c169de594c27f00084b93186fd7c">EventType::MouseButtonReleased</a></div><div class="ttdeci">@ MouseButtonReleased</div></div>
+<div class="ttc" id="a_event_base_8h_html_a2628ea8d12e8b2563c32f05dc7fff6faac2770ad109c8063ce69a3608a9a16c08"><div class="ttname"><a href="_event_base_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faac2770ad109c8063ce69a3608a9a16c08">EventType::MouseMoved</a></div><div class="ttdeci">@ MouseMoved</div></div>
+<div class="ttc" id="a_event_base_8h_html_a80d534fc4d69a68eefd1573fd0ac2f44"><div class="ttname"><a href="_event_base_8h.html#a80d534fc4d69a68eefd1573fd0ac2f44">EVENT_CLASS_TYPE</a></div><div class="ttdeci">#define EVENT_CLASS_TYPE(type)</div><div class="ttdef"><b>Definition:</b> EventBase.h:40</div></div>
+<div class="ttc" id="a_event_base_8h_html_aa8b0556527d429476e3f3d6cfab1a21fa352e01ef44a28d0831b9429181b99150"><div class="ttname"><a href="_event_base_8h.html#aa8b0556527d429476e3f3d6cfab1a21fa352e01ef44a28d0831b9429181b99150">EventCategoryInput</a></div><div class="ttdeci">@ EventCategoryInput</div><div class="ttdef"><b>Definition:</b> EventBase.h:34</div></div>
+<div class="ttc" id="a_event_base_8h_html_aa8b0556527d429476e3f3d6cfab1a21fad9da379e2b26bfbe841d7425ae9468aa"><div class="ttname"><a href="_event_base_8h.html#aa8b0556527d429476e3f3d6cfab1a21fad9da379e2b26bfbe841d7425ae9468aa">EventCategoryMouseButton</a></div><div class="ttdeci">@ EventCategoryMouseButton</div><div class="ttdef"><b>Definition:</b> EventBase.h:37</div></div>
+<div class="ttc" id="a_event_base_8h_html_aa8b0556527d429476e3f3d6cfab1a21faf3f5f68228efdd30f0b07869e86e2712"><div class="ttname"><a href="_event_base_8h.html#aa8b0556527d429476e3f3d6cfab1a21faf3f5f68228efdd30f0b07869e86e2712">EventCategoryMouse</a></div><div class="ttdeci">@ EventCategoryMouse</div><div class="ttdef"><b>Definition:</b> EventBase.h:36</div></div>
+<div class="ttc" id="a_event_base_8h_html_abd52deea587a36ef619e596a0c691839"><div class="ttname"><a href="_event_base_8h.html#abd52deea587a36ef619e596a0c691839">EVENT_CLASS_CATEGORY</a></div><div class="ttdeci">#define EVENT_CLASS_CATEGORY(category)</div><div class="ttdef"><b>Definition:</b> EventBase.h:45</div></div>
 <div class="ttc" id="aclass_event_base_html"><div class="ttname"><a href="class_event_base.html">EventBase</a></div><div class="ttdoc">事件类基类</div><div class="ttdef"><b>Definition:</b> EventBase.h:52</div></div>
 <div class="ttc" id="aclass_mouse_button_event_html"><div class="ttname"><a href="class_mouse_button_event.html">MouseButtonEvent</a></div><div class="ttdoc">鼠标按键事件基类</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:58</div></div>
+<div class="ttc" id="aclass_mouse_button_event_html_a6d0c1a42694aff8c288b295b36a3321a"><div class="ttname"><a href="class_mouse_button_event.html#a6d0c1a42694aff8c288b295b36a3321a">MouseButtonEvent::mMouseButton</a></div><div class="ttdeci">int mMouseButton</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:63</div></div>
+<div class="ttc" id="aclass_mouse_button_event_html_a95acf32682fe88f6dd35406818dc689d"><div class="ttname"><a href="class_mouse_button_event.html#a95acf32682fe88f6dd35406818dc689d">MouseButtonEvent::GetMouseButton</a></div><div class="ttdeci">int GetMouseButton() const</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:60</div></div>
+<div class="ttc" id="aclass_mouse_button_event_html_aaa0c1d8131f2fd7fc11c60900d211216"><div class="ttname"><a href="class_mouse_button_event.html#aaa0c1d8131f2fd7fc11c60900d211216">MouseButtonEvent::MouseButtonEvent</a></div><div class="ttdeci">MouseButtonEvent(int button)</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:64</div></div>
 <div class="ttc" id="aclass_mouse_button_pressed_event_html"><div class="ttname"><a href="class_mouse_button_pressed_event.html">MouseButtonPressedEvent</a></div><div class="ttdoc">鼠标按下事件</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:71</div></div>
+<div class="ttc" id="aclass_mouse_button_pressed_event_html_a5942b33ee7e64d0ec01b51949a44f4c4"><div class="ttname"><a href="class_mouse_button_pressed_event.html#a5942b33ee7e64d0ec01b51949a44f4c4">MouseButtonPressedEvent::ToString</a></div><div class="ttdeci">std::string ToString() const override</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:76</div></div>
+<div class="ttc" id="aclass_mouse_button_pressed_event_html_ae5a61b64470348667dfdc757a030476f"><div class="ttname"><a href="class_mouse_button_pressed_event.html#ae5a61b64470348667dfdc757a030476f">MouseButtonPressedEvent::MouseButtonPressedEvent</a></div><div class="ttdeci">MouseButtonPressedEvent(int MouseButtoncode)</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:73</div></div>
 <div class="ttc" id="aclass_mouse_button_released_event_html"><div class="ttname"><a href="class_mouse_button_released_event.html">MouseButtonReleasedEvent</a></div><div class="ttdoc">鼠标抬起事件</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:88</div></div>
+<div class="ttc" id="aclass_mouse_button_released_event_html_a2df202924fc8870f0649d1d4c2a924af"><div class="ttname"><a href="class_mouse_button_released_event.html#a2df202924fc8870f0649d1d4c2a924af">MouseButtonReleasedEvent::ToString</a></div><div class="ttdeci">std::string ToString() const override</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:93</div></div>
+<div class="ttc" id="aclass_mouse_button_released_event_html_a701fb106b4183a403d065d609ea5e7a6"><div class="ttname"><a href="class_mouse_button_released_event.html#a701fb106b4183a403d065d609ea5e7a6">MouseButtonReleasedEvent::MouseButtonReleasedEvent</a></div><div class="ttdeci">MouseButtonReleasedEvent(int MouseButtoncode)</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:90</div></div>
 <div class="ttc" id="aclass_mouse_moved_event_html"><div class="ttname"><a href="class_mouse_moved_event.html">MouseMovedEvent</a></div><div class="ttdoc">鼠标移动事件</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:8</div></div>
+<div class="ttc" id="aclass_mouse_moved_event_html_a077f4ac786c5107796e87db2476ee5fc"><div class="ttname"><a href="class_mouse_moved_event.html#a077f4ac786c5107796e87db2476ee5fc">MouseMovedEvent::mMouseX</a></div><div class="ttdeci">float mMouseX</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:25</div></div>
+<div class="ttc" id="aclass_mouse_moved_event_html_a19099ea15500bf87ded9159322a79154"><div class="ttname"><a href="class_mouse_moved_event.html#a19099ea15500bf87ded9159322a79154">MouseMovedEvent::ToString</a></div><div class="ttdeci">std::string ToString() const override</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:18</div></div>
+<div class="ttc" id="aclass_mouse_moved_event_html_a723705b464a897431568c723c729e6cf"><div class="ttname"><a href="class_mouse_moved_event.html#a723705b464a897431568c723c729e6cf">MouseMovedEvent::mMouseY</a></div><div class="ttdeci">float mMouseY</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:26</div></div>
+<div class="ttc" id="aclass_mouse_moved_event_html_a7b9e9e121dc213bc27dff766488fd21c"><div class="ttname"><a href="class_mouse_moved_event.html#a7b9e9e121dc213bc27dff766488fd21c">MouseMovedEvent::GetX</a></div><div class="ttdeci">float GetX() const</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:15</div></div>
+<div class="ttc" id="aclass_mouse_moved_event_html_a917981db3e3ff4a38a6920f400106fd0"><div class="ttname"><a href="class_mouse_moved_event.html#a917981db3e3ff4a38a6920f400106fd0">MouseMovedEvent::MouseMovedEvent</a></div><div class="ttdeci">MouseMovedEvent(float x, float y)</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:10</div></div>
+<div class="ttc" id="aclass_mouse_moved_event_html_aedb72739694d42dd2ff243b981e85dd7"><div class="ttname"><a href="class_mouse_moved_event.html#aedb72739694d42dd2ff243b981e85dd7">MouseMovedEvent::GetY</a></div><div class="ttdeci">float GetY() const</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:16</div></div>
 <div class="ttc" id="aclass_mouse_scrolled_event_html"><div class="ttname"><a href="class_mouse_scrolled_event.html">MouseScrolledEvent</a></div><div class="ttdoc">鼠标滚轮事件</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:33</div></div>
+<div class="ttc" id="aclass_mouse_scrolled_event_html_a1c6f527b56fee268d3cf3c51d0c10e6a"><div class="ttname"><a href="class_mouse_scrolled_event.html#a1c6f527b56fee268d3cf3c51d0c10e6a">MouseScrolledEvent::mYOffset</a></div><div class="ttdeci">float mYOffset</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:51</div></div>
+<div class="ttc" id="aclass_mouse_scrolled_event_html_a2c442543f2334c7686faa2c28ca334bc"><div class="ttname"><a href="class_mouse_scrolled_event.html#a2c442543f2334c7686faa2c28ca334bc">MouseScrolledEvent::GetYOffset</a></div><div class="ttdeci">float GetYOffset() const</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:41</div></div>
+<div class="ttc" id="aclass_mouse_scrolled_event_html_a2e1856540ecff3aacf0189c0432532f6"><div class="ttname"><a href="class_mouse_scrolled_event.html#a2e1856540ecff3aacf0189c0432532f6">MouseScrolledEvent::MouseScrolledEvent</a></div><div class="ttdeci">MouseScrolledEvent(float xOffset, float yOffset)</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:35</div></div>
+<div class="ttc" id="aclass_mouse_scrolled_event_html_a33faaf2f4e120de4716591174b020319"><div class="ttname"><a href="class_mouse_scrolled_event.html#a33faaf2f4e120de4716591174b020319">MouseScrolledEvent::ToString</a></div><div class="ttdeci">std::string ToString() const override</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:43</div></div>
+<div class="ttc" id="aclass_mouse_scrolled_event_html_a8541a530920db59f18810d759a41c6a5"><div class="ttname"><a href="class_mouse_scrolled_event.html#a8541a530920db59f18810d759a41c6a5">MouseScrolledEvent::GetXOffset</a></div><div class="ttdeci">float GetXOffset() const</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:40</div></div>
+<div class="ttc" id="aclass_mouse_scrolled_event_html_aa6bf084479c7a5eebebdbc43eae65385"><div class="ttname"><a href="class_mouse_scrolled_event.html#aa6bf084479c7a5eebebdbc43eae65385">MouseScrolledEvent::mXOffset</a></div><div class="ttdeci">float mXOffset</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:50</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

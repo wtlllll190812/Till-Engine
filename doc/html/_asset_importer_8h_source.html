@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,19 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_75ae6d3613b6c2f243b8fb439548ec3f.html">Framework</a></li><li class="navelem"><a class="el" href="dir_d728e987cc4520b27396cbe721fa6dea.html">Assets</a></li>  </ul>
@@ -69,7 +50,7 @@ $(function() {
   <div class="headertitle"><div class="title">AssetImporter.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="_asset_importer_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;assimp/Importer.hpp&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;assimp/scene.h&gt;</span></div>
@@ -82,21 +63,29 @@ $(function() {
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_asset_importer.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="class_asset_importer.html">AssetImporter</a></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">static</span> std::map&lt;std::string,std::shared_ptr&lt;Mesh&gt;&gt; buildinModels;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_asset_importer.html#add78aae08feef9b3863c211b3cfea0fd">   14</a></span>    <span class="keyword">static</span> std::map&lt;std::string,std::shared_ptr&lt;Mesh&gt;&gt; <a class="code hl_variable" href="class_asset_importer.html#add78aae08feef9b3863c211b3cfea0fd">buildinModels</a>;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> Init();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">static</span> std::vector&lt;std::shared_ptr&lt;Mesh&gt;&gt; LoadMeshs(std::string path);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">static</span> std::shared_ptr&lt;Mesh&gt; LoadMesh(std::string path);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">static</span> std::shared_ptr&lt;Mesh&gt; GetMeshByName(std::string);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_asset_importer.html#a2b95bafd62ab55bf0c83a4928aee3d91">Init</a>();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">static</span> std::vector&lt;std::shared_ptr&lt;Mesh&gt;&gt; <a class="code hl_function" href="class_asset_importer.html#a6849837d993ae78b78b65fa7dfe55732">LoadMeshs</a>(std::string path);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">static</span> std::shared_ptr&lt;Mesh&gt; <a class="code hl_function" href="class_asset_importer.html#a76543db87d73acadba9ee8dc35e93877">LoadMesh</a>(std::string path);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">static</span> std::shared_ptr&lt;Mesh&gt; <a class="code hl_function" href="class_asset_importer.html#aad84704ce92e9d77f03d64046ed89245">GetMeshByName</a>(std::string);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> ProcessNode(aiNode* node, <span class="keyword">const</span> aiScene* scene, std::vector&lt;std::shared_ptr&lt;Mesh&gt;&gt;&amp; res);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">static</span> <a class="code hl_class" href="class_mesh.html">Mesh</a>* ProcessMesh(aiMesh* mesh, <span class="keyword">const</span> aiScene* scene);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_asset_importer.html#a7e9906057d69bd51ffebcc4759b2fc37">ProcessNode</a>(aiNode* node, <span class="keyword">const</span> aiScene* scene, std::vector&lt;std::shared_ptr&lt;Mesh&gt;&gt;&amp; res);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">static</span> <a class="code hl_class" href="class_mesh.html">Mesh</a>* <a class="code hl_function" href="class_asset_importer.html#a6c9eacf9c08d7014f10a277b47873c78">ProcessMesh</a>(aiMesh* mesh, <span class="keyword">const</span> aiScene* scene);</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">static</span> Assimp::Importer modelImporter;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_asset_importer.html#a356bc884e9d0145972ad54f7cd362f51">   26</a></span>    <span class="keyword">static</span> Assimp::Importer <a class="code hl_variable" href="class_asset_importer.html#a356bc884e9d0145972ad54f7cd362f51">modelImporter</a>;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
 <div class="ttc" id="aclass_asset_importer_html"><div class="ttname"><a href="class_asset_importer.html">AssetImporter</a></div><div class="ttdef"><b>Definition:</b> AssetImporter.h:12</div></div>
+<div class="ttc" id="aclass_asset_importer_html_a2b95bafd62ab55bf0c83a4928aee3d91"><div class="ttname"><a href="class_asset_importer.html#a2b95bafd62ab55bf0c83a4928aee3d91">AssetImporter::Init</a></div><div class="ttdeci">static void Init()</div><div class="ttdef"><b>Definition:</b> AssetImporter.cpp:11</div></div>
+<div class="ttc" id="aclass_asset_importer_html_a356bc884e9d0145972ad54f7cd362f51"><div class="ttname"><a href="class_asset_importer.html#a356bc884e9d0145972ad54f7cd362f51">AssetImporter::modelImporter</a></div><div class="ttdeci">static Assimp::Importer modelImporter</div><div class="ttdef"><b>Definition:</b> AssetImporter.h:26</div></div>
+<div class="ttc" id="aclass_asset_importer_html_a6849837d993ae78b78b65fa7dfe55732"><div class="ttname"><a href="class_asset_importer.html#a6849837d993ae78b78b65fa7dfe55732">AssetImporter::LoadMeshs</a></div><div class="ttdeci">static std::vector&lt; std::shared_ptr&lt; Mesh &gt; &gt; LoadMeshs(std::string path)</div><div class="ttdef"><b>Definition:</b> AssetImporter.cpp:21</div></div>
+<div class="ttc" id="aclass_asset_importer_html_a6c9eacf9c08d7014f10a277b47873c78"><div class="ttname"><a href="class_asset_importer.html#a6c9eacf9c08d7014f10a277b47873c78">AssetImporter::ProcessMesh</a></div><div class="ttdeci">static Mesh * ProcessMesh(aiMesh *mesh, const aiScene *scene)</div><div class="ttdef"><b>Definition:</b> AssetImporter.cpp:67</div></div>
+<div class="ttc" id="aclass_asset_importer_html_a76543db87d73acadba9ee8dc35e93877"><div class="ttname"><a href="class_asset_importer.html#a76543db87d73acadba9ee8dc35e93877">AssetImporter::LoadMesh</a></div><div class="ttdeci">static std::shared_ptr&lt; Mesh &gt; LoadMesh(std::string path)</div><div class="ttdef"><b>Definition:</b> AssetImporter.cpp:40</div></div>
+<div class="ttc" id="aclass_asset_importer_html_a7e9906057d69bd51ffebcc4759b2fc37"><div class="ttname"><a href="class_asset_importer.html#a7e9906057d69bd51ffebcc4759b2fc37">AssetImporter::ProcessNode</a></div><div class="ttdeci">static void ProcessNode(aiNode *node, const aiScene *scene, std::vector&lt; std::shared_ptr&lt; Mesh &gt; &gt; &amp;res)</div><div class="ttdef"><b>Definition:</b> AssetImporter.cpp:50</div></div>
+<div class="ttc" id="aclass_asset_importer_html_aad84704ce92e9d77f03d64046ed89245"><div class="ttname"><a href="class_asset_importer.html#aad84704ce92e9d77f03d64046ed89245">AssetImporter::GetMeshByName</a></div><div class="ttdeci">static std::shared_ptr&lt; Mesh &gt; GetMeshByName(std::string)</div><div class="ttdef"><b>Definition:</b> AssetImporter.cpp:45</div></div>
+<div class="ttc" id="aclass_asset_importer_html_add78aae08feef9b3863c211b3cfea0fd"><div class="ttname"><a href="class_asset_importer.html#add78aae08feef9b3863c211b3cfea0fd">AssetImporter::buildinModels</a></div><div class="ttdeci">static std::map&lt; std::string, std::shared_ptr&lt; Mesh &gt; &gt; buildinModels</div><div class="ttdef"><b>Definition:</b> AssetImporter.h:14</div></div>
 <div class="ttc" id="aclass_mesh_html"><div class="ttname"><a href="class_mesh.html">Mesh</a></div><div class="ttdef"><b>Definition:</b> Mesh.h:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

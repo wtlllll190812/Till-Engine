@@ -1,4 +1,5 @@
 <map id="Scene::Save" name="Scene::Save">
-<area shape="rect" id="node1" title="保存场景" alt="" coords="5,5,100,32"/>
-<area shape="rect" id="node2" href="$class_t_lxml.html#aee8cee8302a7b8bef3002d0f5952df69" title="保存文件" alt="" coords="148,5,241,32"/>
+<area shape="rect" id="node1" title="保存场景" alt="" coords="5,31,100,57"/>
+<area shape="rect" id="node2" href="$class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="148,5,315,32"/>
+<area shape="rect" id="node3" href="$class_t_l_serialize_file.html#a86c2393db265dbaa18d7188852f80252" title="保存文件" alt="" coords="160,56,303,83"/>
 </map>

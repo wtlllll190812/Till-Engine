@@ -1,4 +1,5 @@
 <map id="Scene::Scene" name="Scene::Scene">
-<area shape="rect" id="node1" title="读取并初始化场景" alt="" coords="5,5,109,32"/>
-<area shape="rect" id="node2" href="$class_t_l_serialize_file.html#a0b6871867e3d1d19cbe0368541a0b4b0" title="获取根节点" alt="" coords="157,5,320,32"/>
+<area shape="rect" id="node1" title="读取并初始化场景" alt="" coords="5,31,109,57"/>
+<area shape="rect" id="node2" href="$class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="157,5,324,32"/>
+<area shape="rect" id="node3" href="$class_t_l_serialize_file.html#a0b6871867e3d1d19cbe0368541a0b4b0" title="获取根节点" alt="" coords="159,56,322,83"/>
 </map>

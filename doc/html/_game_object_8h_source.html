@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,19 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b1a122bf62c958266ec5bf64d14fde5a.html">ECS</a></li>  </ul>
@@ -69,9 +50,9 @@ $(function() {
   <div class="headertitle"><div class="title">GameObject.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="_game_object_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;TLSerialize.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="_t_l_serialize_8h.html">TLSerialize.h</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">class </span><a class="code hl_class" href="class_scene.html">Scene</a>;</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">class </span><a class="code hl_class" href="class_transform.html">Transform</a>;</div>
@@ -87,9 +68,9 @@ $(function() {
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_game_object.html#a18fb64f3ea41847054e267abd4bfb338">   29</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_game_object.html#a18fb64f3ea41847054e267abd4bfb338">guid</a>;         </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_class" href="class_game_object.html">GameObject</a>();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_class" href="class_game_object.html">GameObject</a>(TiXmlElement*, <a class="code hl_class" href="class_scene.html">Scene</a> *);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_class" href="class_game_object.html">~GameObject</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="class_game_object.html#a0348e3ee2e83d56eafca7a3547f432c4">GameObject</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="class_game_object.html#a0348e3ee2e83d56eafca7a3547f432c4">GameObject</a>(TiXmlElement*, <a class="code hl_class" href="class_scene.html">Scene</a> *);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_function" href="class_game_object.html#ab82dfdb656f9051c0587e6593b2dda97">~GameObject</a>();</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_object.html#a1bd14aa169f501f94f1721943d716535">Update</a>();</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
@@ -106,7 +87,7 @@ $(function() {
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_game_object.html#a5ba3b458e6bee6ea5aedd5c8cdeabf18">   72</a></span>    T *<a class="code hl_function" href="class_game_object.html#a5ba3b458e6bee6ea5aedd5c8cdeabf18">GetComponent</a>()</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    {</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = components.begin(); it != components.end(); it++)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = <a class="code hl_variable" href="class_game_object.html#aac1acad42a3837282d3abf7df8eb34a7">components</a>.begin(); it != <a class="code hl_variable" href="class_game_object.html#aac1acad42a3837282d3abf7df8eb34a7">components</a>.end(); it++)</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        {</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keyword">auto</span> com = <span class="keyword">dynamic_cast&lt;</span>T *<span class="keyword">&gt;</span>(*it);</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">if</span> (com)</div>
@@ -121,7 +102,7 @@ $(function() {
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="class_game_object.html#a5216b8316fe1702edd1de4f188696cc3">   91</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_object.html#a5216b8316fe1702edd1de4f188696cc3">RemoveComponent</a>()</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = components.begin(); it != components.end(); it++)</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = <a class="code hl_variable" href="class_game_object.html#aac1acad42a3837282d3abf7df8eb34a7">components</a>.begin(); it != <a class="code hl_variable" href="class_game_object.html#aac1acad42a3837282d3abf7df8eb34a7">components</a>.end(); it++)</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        {</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordflow">if</span> (<span class="keyword">dynamic_cast&lt;</span>T *<span class="keyword">&gt;</span>(*it))</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            {</div>
@@ -132,18 +113,20 @@ $(function() {
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Component is not exist&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_game_object.html#a87cd9cdd8c107c2127a16edc24429196">  107</a></span>    <span class="keyword">inline</span> std::vector&lt;Component*&gt;&amp; <a class="code hl_function" href="class_game_object.html#a87cd9cdd8c107c2127a16edc24429196">GetComponents</a>() { <span class="keywordflow">return</span> components; }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_game_object.html#a87cd9cdd8c107c2127a16edc24429196">  107</a></span>    <span class="keyword">inline</span> std::vector&lt;Component*&gt;&amp; <a class="code hl_function" href="class_game_object.html#a87cd9cdd8c107c2127a16edc24429196">GetComponents</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_game_object.html#aac1acad42a3837282d3abf7df8eb34a7">components</a>; }</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code hl_class" href="class_game_object.html">GameObject</a> &amp;g)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="class_game_object.html#aaca03b85cc541d4719a4d8f7ee6daa01">  109</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_game_object.html#aaca03b85cc541d4719a4d8f7ee6daa01">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_game_object.html">GameObject</a> &amp;g)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword">    </span>{</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keywordflow">return</span> g.<a class="code hl_variable" href="class_game_object.html#a18fb64f3ea41847054e267abd4bfb338">guid</a> == this-&gt;<a class="code hl_variable" href="class_game_object.html#a18fb64f3ea41847054e267abd4bfb338">guid</a>;</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    }</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    std::vector&lt;Component*&gt; components; </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="class_game_object.html#aac1acad42a3837282d3abf7df8eb34a7">  118</a></span>    std::vector&lt;Component*&gt; <a class="code hl_variable" href="class_game_object.html#aac1acad42a3837282d3abf7df8eb34a7">components</a>; </div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>};</div>
+<div class="ttc" id="a_t_l_serialize_8h_html"><div class="ttname"><a href="_t_l_serialize_8h.html">TLSerialize.h</a></div></div>
 <div class="ttc" id="aclass_component_html"><div class="ttname"><a href="class_component.html">Component</a></div><div class="ttdoc">组件基类</div><div class="ttdef"><b>Definition:</b> Component.h:9</div></div>
 <div class="ttc" id="aclass_game_object_html"><div class="ttname"><a href="class_game_object.html">GameObject</a></div><div class="ttdef"><b>Definition:</b> GameObject.h:9</div></div>
+<div class="ttc" id="aclass_game_object_html_a0348e3ee2e83d56eafca7a3547f432c4"><div class="ttname"><a href="class_game_object.html#a0348e3ee2e83d56eafca7a3547f432c4">GameObject::GameObject</a></div><div class="ttdeci">GameObject()</div><div class="ttdef"><b>Definition:</b> GameObject.cpp:10</div></div>
 <div class="ttc" id="aclass_game_object_html_a18fb64f3ea41847054e267abd4bfb338"><div class="ttname"><a href="class_game_object.html#a18fb64f3ea41847054e267abd4bfb338">GameObject::guid</a></div><div class="ttdeci">int guid</div><div class="ttdoc">物体全局唯一标识标识</div><div class="ttdef"><b>Definition:</b> GameObject.h:29</div></div>
 <div class="ttc" id="aclass_game_object_html_a1bd14aa169f501f94f1721943d716535"><div class="ttname"><a href="class_game_object.html#a1bd14aa169f501f94f1721943d716535">GameObject::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdoc">物体刷新</div><div class="ttdef"><b>Definition:</b> GameObject.cpp:89</div></div>
 <div class="ttc" id="aclass_game_object_html_a1f6ffb8c4827da5a8e6a878f2b83fdc8"><div class="ttname"><a href="class_game_object.html#a1f6ffb8c4827da5a8e6a878f2b83fdc8">GameObject::GetHash</a></div><div class="ttdeci">int GetHash()</div><div class="ttdoc">获取hash值</div><div class="ttdef"><b>Definition:</b> GameObject.cpp:97</div></div>
@@ -153,6 +136,9 @@ $(function() {
 <div class="ttc" id="aclass_game_object_html_a87cd9cdd8c107c2127a16edc24429196"><div class="ttname"><a href="class_game_object.html#a87cd9cdd8c107c2127a16edc24429196">GameObject::GetComponents</a></div><div class="ttdeci">std::vector&lt; Component * &gt; &amp; GetComponents()</div><div class="ttdoc">获取组件引用</div><div class="ttdef"><b>Definition:</b> GameObject.h:107</div></div>
 <div class="ttc" id="aclass_game_object_html_a9edf603be120d5a9221e5c5c962465f8"><div class="ttname"><a href="class_game_object.html#a9edf603be120d5a9221e5c5c962465f8">GameObject::transform</a></div><div class="ttdeci">Transform * transform</div><div class="ttdoc">物体的transform</div><div class="ttdef"><b>Definition:</b> GameObject.h:14</div></div>
 <div class="ttc" id="aclass_game_object_html_aabef8abf8f97c44cbc06cda376b438e3"><div class="ttname"><a href="class_game_object.html#aabef8abf8f97c44cbc06cda376b438e3">GameObject::UpdateNode</a></div><div class="ttdeci">virtual void UpdateNode() override</div><div class="ttdoc">更新序列化节点</div><div class="ttdef"><b>Definition:</b> GameObject.cpp:80</div></div>
+<div class="ttc" id="aclass_game_object_html_aac1acad42a3837282d3abf7df8eb34a7"><div class="ttname"><a href="class_game_object.html#aac1acad42a3837282d3abf7df8eb34a7">GameObject::components</a></div><div class="ttdeci">std::vector&lt; Component * &gt; components</div><div class="ttdoc">持有组件</div><div class="ttdef"><b>Definition:</b> GameObject.h:118</div></div>
+<div class="ttc" id="aclass_game_object_html_aaca03b85cc541d4719a4d8f7ee6daa01"><div class="ttname"><a href="class_game_object.html#aaca03b85cc541d4719a4d8f7ee6daa01">GameObject::operator==</a></div><div class="ttdeci">bool operator==(const GameObject &amp;g) const</div><div class="ttdef"><b>Definition:</b> GameObject.h:109</div></div>
+<div class="ttc" id="aclass_game_object_html_ab82dfdb656f9051c0587e6593b2dda97"><div class="ttname"><a href="class_game_object.html#ab82dfdb656f9051c0587e6593b2dda97">GameObject::~GameObject</a></div><div class="ttdeci">~GameObject()</div><div class="ttdef"><b>Definition:</b> GameObject.cpp:26</div></div>
 <div class="ttc" id="aclass_game_object_html_ac9b6e61cb40bcede4ae0309cc618ad97"><div class="ttname"><a href="class_game_object.html#ac9b6e61cb40bcede4ae0309cc618ad97">GameObject::Serialize</a></div><div class="ttdeci">virtual TiXmlElement * Serialize(std::string name=&quot;Default&quot;) override</div><div class="ttdoc">序列化</div><div class="ttdef"><b>Definition:</b> GameObject.cpp:38</div></div>
 <div class="ttc" id="aclass_game_object_html_ad3926c85ad7af4e238cc5e3d6a116030"><div class="ttname"><a href="class_game_object.html#ad3926c85ad7af4e238cc5e3d6a116030">GameObject::owner</a></div><div class="ttdeci">Scene * owner</div><div class="ttdoc">所属场景</div><div class="ttdef"><b>Definition:</b> GameObject.h:19</div></div>
 <div class="ttc" id="aclass_game_object_html_af542b33c8de269343e22c5629e6b66c0"><div class="ttname"><a href="class_game_object.html#af542b33c8de269343e22c5629e6b66c0">GameObject::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">物体名称</div><div class="ttdef"><b>Definition:</b> GameObject.h:24</div></div>

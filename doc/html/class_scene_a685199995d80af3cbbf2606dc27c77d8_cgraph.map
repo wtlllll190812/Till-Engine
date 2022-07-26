@@ -1,0 +1,5 @@
+<map id="Scene::AddGameObject" name="Scene::AddGameObject">
+<area shape="rect" id="node1" title="添加新物体" alt="" coords="5,31,168,57"/>
+<area shape="rect" id="node2" href="$class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="216,5,383,32"/>
+<area shape="rect" id="node3" href="$class_t_l_serialize_file.html#a0b6871867e3d1d19cbe0368541a0b4b0" title="获取根节点" alt="" coords="218,56,381,83"/>
+</map>

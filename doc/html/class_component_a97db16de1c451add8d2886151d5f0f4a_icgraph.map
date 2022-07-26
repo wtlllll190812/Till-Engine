@@ -1,5 +1,7 @@
 <map id="Component::Awake" name="Component::Awake">
-<area shape="rect" id="node1" title="添加时" alt="" coords="463,5,597,32"/>
-<area shape="rect" id="node2" href="$class_game_object.html#af9eceda0f9df6fc8d4c398971bbe231e" title="添加组件" alt="" coords="223,5,415,32"/>
-<area shape="rect" id="node3" href="$class_game_object.html#a7bd3840ff675f1ee44ddec99fb89bc32" title="反序列化" alt="" coords="5,5,175,32"/>
+<area shape="rect" id="node1" title="添加时" alt="" coords="687,31,821,57"/>
+<area shape="rect" id="node2" href="$class_game_object.html#af9eceda0f9df6fc8d4c398971bbe231e" title="添加组件" alt="" coords="447,5,639,32"/>
+<area shape="rect" id="node5" href="$class_game_object.html#a0348e3ee2e83d56eafca7a3547f432c4" title=" " alt="" coords="455,56,631,83"/>
+<area shape="rect" id="node3" href="$class_game_object.html#a7bd3840ff675f1ee44ddec99fb89bc32" title="反序列化" alt="" coords="229,5,399,32"/>
+<area shape="rect" id="node4" href="$class_game_object.html#a723e616ef6ce1ca7697911c818774d4c" title=" " alt="" coords="5,5,181,32"/>
 </map>

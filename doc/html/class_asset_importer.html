@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,70 +28,390 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
 <a href="#pub-static-attribs">静态 Public 属性</a> &#124;
+<a href="#pri-static-methods">静态 Private 成员函数</a> &#124;
+<a href="#pri-static-attribs">静态 Private 属性</a> &#124;
 <a href="class_asset_importer-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">AssetImporter类 参考</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_asset_importer_8h_source.html">AssetImporter.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 静态 Public 成员函数</h2></td></tr>
-<tr class="memitem:a2b95bafd62ab55bf0c83a4928aee3d91"><td class="memItemLeft" align="right" valign="top"><a id="a2b95bafd62ab55bf0c83a4928aee3d91" name="a2b95bafd62ab55bf0c83a4928aee3d91"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> ()</td></tr>
+<tr class="memitem:a2b95bafd62ab55bf0c83a4928aee3d91"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_importer.html#a2b95bafd62ab55bf0c83a4928aee3d91">Init</a> ()</td></tr>
 <tr class="separator:a2b95bafd62ab55bf0c83a4928aee3d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6849837d993ae78b78b65fa7dfe55732"><td class="memItemLeft" align="right" valign="top"><a id="a6849837d993ae78b78b65fa7dfe55732" name="a6849837d993ae78b78b65fa7dfe55732"></a>
-static std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>LoadMeshs</b> (std::string path)</td></tr>
+<tr class="memitem:a6849837d993ae78b78b65fa7dfe55732"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_importer.html#a6849837d993ae78b78b65fa7dfe55732">LoadMeshs</a> (std::string path)</td></tr>
 <tr class="separator:a6849837d993ae78b78b65fa7dfe55732"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76543db87d73acadba9ee8dc35e93877"><td class="memItemLeft" align="right" valign="top"><a id="a76543db87d73acadba9ee8dc35e93877" name="a76543db87d73acadba9ee8dc35e93877"></a>
-static std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>LoadMesh</b> (std::string path)</td></tr>
+<tr class="memitem:a76543db87d73acadba9ee8dc35e93877"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_importer.html#a76543db87d73acadba9ee8dc35e93877">LoadMesh</a> (std::string path)</td></tr>
 <tr class="separator:a76543db87d73acadba9ee8dc35e93877"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad84704ce92e9d77f03d64046ed89245"><td class="memItemLeft" align="right" valign="top"><a id="aad84704ce92e9d77f03d64046ed89245" name="aad84704ce92e9d77f03d64046ed89245"></a>
-static std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetMeshByName</b> (std::string)</td></tr>
+<tr class="memitem:aad84704ce92e9d77f03d64046ed89245"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_importer.html#aad84704ce92e9d77f03d64046ed89245">GetMeshByName</a> (std::string)</td></tr>
 <tr class="separator:aad84704ce92e9d77f03d64046ed89245"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 静态 Public 属性</h2></td></tr>
-<tr class="memitem:add78aae08feef9b3863c211b3cfea0fd"><td class="memItemLeft" align="right" valign="top"><a id="add78aae08feef9b3863c211b3cfea0fd" name="add78aae08feef9b3863c211b3cfea0fd"></a>
-static std::map&lt; std::string, std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>buildinModels</b></td></tr>
+<tr class="memitem:add78aae08feef9b3863c211b3cfea0fd"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_importer.html#add78aae08feef9b3863c211b3cfea0fd">buildinModels</a></td></tr>
 <tr class="separator:add78aae08feef9b3863c211b3cfea0fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+静态 Private 成员函数</h2></td></tr>
+<tr class="memitem:a7e9906057d69bd51ffebcc4759b2fc37"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_importer.html#a7e9906057d69bd51ffebcc4759b2fc37">ProcessNode</a> (aiNode *node, const aiScene *scene, std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt; &gt; &amp;res)</td></tr>
+<tr class="separator:a7e9906057d69bd51ffebcc4759b2fc37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c9eacf9c08d7014f10a277b47873c78"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mesh.html">Mesh</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_importer.html#a6c9eacf9c08d7014f10a277b47873c78">ProcessMesh</a> (aiMesh *mesh, const aiScene *scene)</td></tr>
+<tr class="separator:a6c9eacf9c08d7014f10a277b47873c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静态 Private 属性</h2></td></tr>
+<tr class="memitem:a356bc884e9d0145972ad54f7cd362f51"><td class="memItemLeft" align="right" valign="top">static Assimp::Importer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_importer.html#a356bc884e9d0145972ad54f7cd362f51">modelImporter</a></td></tr>
+<tr class="separator:a356bc884e9d0145972ad54f7cd362f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aad84704ce92e9d77f03d64046ed89245" name="aad84704ce92e9d77f03d64046ed89245"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad84704ce92e9d77f03d64046ed89245">&#9670;&nbsp;</a></span>GetMeshByName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt; AssetImporter::GetMeshByName </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_asset_importer_aad84704ce92e9d77f03d64046ed89245_icgraph.png" border="0" usemap="#aclass_asset_importer_aad84704ce92e9d77f03d64046ed89245_icgraph" alt=""/></div>
+<map name="aclass_asset_importer_aad84704ce92e9d77f03d64046ed89245_icgraph" id="aclass_asset_importer_aad84704ce92e9d77f03d64046ed89245_icgraph">
+<area shape="rect" title=" " alt="" coords="200,5,415,32"/>
+<area shape="rect" href="class_renderer.html#aca35d490bc667ec411206930ab520731" title="显示到Gui" alt="" coords="5,5,152,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2b95bafd62ab55bf0c83a4928aee3d91" name="a2b95bafd62ab55bf0c83a4928aee3d91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b95bafd62ab55bf0c83a4928aee3d91">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AssetImporter::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_asset_importer_a2b95bafd62ab55bf0c83a4928aee3d91_cgraph.png" border="0" usemap="#aclass_asset_importer_a2b95bafd62ab55bf0c83a4928aee3d91_cgraph" alt=""/></div>
+<map name="aclass_asset_importer_a2b95bafd62ab55bf0c83a4928aee3d91_cgraph" id="aclass_asset_importer_a2b95bafd62ab55bf0c83a4928aee3d91_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,133,57"/>
+<area shape="rect" href="class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="419,5,586,32"/>
+<area shape="rect" href="class_asset_importer.html#a6849837d993ae78b78b65fa7dfe55732" title=" " alt="" coords="181,56,360,83"/>
+<area shape="rect" href="class_asset_importer.html#a7e9906057d69bd51ffebcc4759b2fc37" title=" " alt="" coords="408,80,597,107"/>
+<area shape="rect" href="class_asset_importer.html#a6c9eacf9c08d7014f10a277b47873c78" title=" " alt="" coords="645,80,836,107"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_asset_importer_a2b95bafd62ab55bf0c83a4928aee3d91_icgraph.png" border="0" usemap="#aclass_asset_importer_a2b95bafd62ab55bf0c83a4928aee3d91_icgraph" alt=""/></div>
+<map name="aclass_asset_importer_a2b95bafd62ab55bf0c83a4928aee3d91_icgraph" id="aclass_asset_importer_a2b95bafd62ab55bf0c83a4928aee3d91_icgraph">
+<area shape="rect" title=" " alt="" coords="475,5,603,32"/>
+<area shape="rect" href="class_application.html#a091df3ec4695b64249e57a76c93b6612" title="初始化应用" alt="" coords="292,5,427,32"/>
+<area shape="rect" href="class_application.html#a5378330e10e42fcb9a2269b533759b0f" title="运行应用" alt="" coords="104,5,244,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a76543db87d73acadba9ee8dc35e93877" name="a76543db87d73acadba9ee8dc35e93877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76543db87d73acadba9ee8dc35e93877">&#9670;&nbsp;</a></span>LoadMesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt; AssetImporter::LoadMesh </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6849837d993ae78b78b65fa7dfe55732" name="a6849837d993ae78b78b65fa7dfe55732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6849837d993ae78b78b65fa7dfe55732">&#9670;&nbsp;</a></span>LoadMeshs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt; &gt; AssetImporter::LoadMeshs </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_asset_importer_a6849837d993ae78b78b65fa7dfe55732_cgraph.png" border="0" usemap="#aclass_asset_importer_a6849837d993ae78b78b65fa7dfe55732_cgraph" alt=""/></div>
+<map name="aclass_asset_importer_a6849837d993ae78b78b65fa7dfe55732_cgraph" id="aclass_asset_importer_a6849837d993ae78b78b65fa7dfe55732_cgraph">
+<area shape="rect" title=" " alt="" coords="5,43,184,69"/>
+<area shape="rect" href="class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="243,5,410,32"/>
+<area shape="rect" href="class_asset_importer.html#a7e9906057d69bd51ffebcc4759b2fc37" title=" " alt="" coords="232,80,421,107"/>
+<area shape="rect" href="class_asset_importer.html#a6c9eacf9c08d7014f10a277b47873c78" title=" " alt="" coords="469,80,660,107"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_asset_importer_a6849837d993ae78b78b65fa7dfe55732_icgraph.png" border="0" usemap="#aclass_asset_importer_a6849837d993ae78b78b65fa7dfe55732_icgraph" alt=""/></div>
+<map name="aclass_asset_importer_a6849837d993ae78b78b65fa7dfe55732_icgraph" id="aclass_asset_importer_a6849837d993ae78b78b65fa7dfe55732_icgraph">
+<area shape="rect" title=" " alt="" coords="725,56,904,83"/>
+<area shape="rect" href="class_renderer.html#ac300e94373098ca8336b3a54b65a6c2c" title="反序列化" alt="" coords="502,5,650,32"/>
+<area shape="rect" href="class_asset_importer.html#a2b95bafd62ab55bf0c83a4928aee3d91" title=" " alt="" coords="512,56,640,83"/>
+<area shape="rect" href="class_render_system.html#a20496a8f52c4eb755d4bfcaba2e98e1c" title=" " alt="" coords="475,107,677,133"/>
+<area shape="rect" href="class_application.html#a091df3ec4695b64249e57a76c93b6612" title="初始化应用" alt="" coords="292,56,427,83"/>
+<area shape="rect" href="class_application.html#a5378330e10e42fcb9a2269b533759b0f" title="运行应用" alt="" coords="104,56,244,83"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,56,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6c9eacf9c08d7014f10a277b47873c78" name="a6c9eacf9c08d7014f10a277b47873c78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c9eacf9c08d7014f10a277b47873c78">&#9670;&nbsp;</a></span>ProcessMesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_mesh.html">Mesh</a> * AssetImporter::ProcessMesh </td>
+          <td>(</td>
+          <td class="paramtype">aiMesh *&#160;</td>
+          <td class="paramname"><em>mesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const aiScene *&#160;</td>
+          <td class="paramname"><em>scene</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_asset_importer_a6c9eacf9c08d7014f10a277b47873c78_icgraph.png" border="0" usemap="#aclass_asset_importer_a6c9eacf9c08d7014f10a277b47873c78_icgraph" alt=""/></div>
+<map name="aclass_asset_importer_a6c9eacf9c08d7014f10a277b47873c78_icgraph" id="aclass_asset_importer_a6c9eacf9c08d7014f10a277b47873c78_icgraph">
+<area shape="rect" title=" " alt="" coords="1189,56,1380,83"/>
+<area shape="rect" href="class_asset_importer.html#a7e9906057d69bd51ffebcc4759b2fc37" title=" " alt="" coords="952,56,1141,83"/>
+<area shape="rect" href="class_asset_importer.html#a6849837d993ae78b78b65fa7dfe55732" title=" " alt="" coords="725,56,904,83"/>
+<area shape="rect" href="class_renderer.html#ac300e94373098ca8336b3a54b65a6c2c" title="反序列化" alt="" coords="502,5,650,32"/>
+<area shape="rect" href="class_asset_importer.html#a2b95bafd62ab55bf0c83a4928aee3d91" title=" " alt="" coords="512,56,640,83"/>
+<area shape="rect" href="class_render_system.html#a20496a8f52c4eb755d4bfcaba2e98e1c" title=" " alt="" coords="475,107,677,133"/>
+<area shape="rect" href="class_application.html#a091df3ec4695b64249e57a76c93b6612" title="初始化应用" alt="" coords="292,56,427,83"/>
+<area shape="rect" href="class_application.html#a5378330e10e42fcb9a2269b533759b0f" title="运行应用" alt="" coords="104,56,244,83"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,56,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7e9906057d69bd51ffebcc4759b2fc37" name="a7e9906057d69bd51ffebcc4759b2fc37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e9906057d69bd51ffebcc4759b2fc37">&#9670;&nbsp;</a></span>ProcessNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AssetImporter::ProcessNode </td>
+          <td>(</td>
+          <td class="paramtype">aiNode *&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const aiScene *&#160;</td>
+          <td class="paramname"><em>scene</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>res</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_asset_importer_a7e9906057d69bd51ffebcc4759b2fc37_cgraph.png" border="0" usemap="#aclass_asset_importer_a7e9906057d69bd51ffebcc4759b2fc37_cgraph" alt=""/></div>
+<map name="aclass_asset_importer_a7e9906057d69bd51ffebcc4759b2fc37_cgraph" id="aclass_asset_importer_a7e9906057d69bd51ffebcc4759b2fc37_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,195,56"/>
+<area shape="rect" href="class_asset_importer.html#a6c9eacf9c08d7014f10a277b47873c78" title=" " alt="" coords="243,29,433,56"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_asset_importer_a7e9906057d69bd51ffebcc4759b2fc37_icgraph.png" border="0" usemap="#aclass_asset_importer_a7e9906057d69bd51ffebcc4759b2fc37_icgraph" alt=""/></div>
+<map name="aclass_asset_importer_a7e9906057d69bd51ffebcc4759b2fc37_icgraph" id="aclass_asset_importer_a7e9906057d69bd51ffebcc4759b2fc37_icgraph">
+<area shape="rect" title=" " alt="" coords="952,56,1141,83"/>
+<area shape="rect" href="class_asset_importer.html#a6849837d993ae78b78b65fa7dfe55732" title=" " alt="" coords="725,56,904,83"/>
+<area shape="rect" href="class_renderer.html#ac300e94373098ca8336b3a54b65a6c2c" title="反序列化" alt="" coords="502,5,650,32"/>
+<area shape="rect" href="class_asset_importer.html#a2b95bafd62ab55bf0c83a4928aee3d91" title=" " alt="" coords="512,56,640,83"/>
+<area shape="rect" href="class_render_system.html#a20496a8f52c4eb755d4bfcaba2e98e1c" title=" " alt="" coords="475,107,677,133"/>
+<area shape="rect" href="class_application.html#a091df3ec4695b64249e57a76c93b6612" title="初始化应用" alt="" coords="292,56,427,83"/>
+<area shape="rect" href="class_application.html#a5378330e10e42fcb9a2269b533759b0f" title="运行应用" alt="" coords="104,56,244,83"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,56,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="add78aae08feef9b3863c211b3cfea0fd" name="add78aae08feef9b3863c211b3cfea0fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add78aae08feef9b3863c211b3cfea0fd">&#9670;&nbsp;</a></span>buildinModels</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt; std::string, std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt; &gt; AssetImporter::buildinModels</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a356bc884e9d0145972ad54f7cd362f51" name="a356bc884e9d0145972ad54f7cd362f51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a356bc884e9d0145972ad54f7cd362f51">&#9670;&nbsp;</a></span>modelImporter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Assimp::Importer AssetImporter::modelImporter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Assets/<a class="el" href="_asset_importer_8h_source.html">AssetImporter.h</a></li>
-<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Assets/AssetImporter.cpp</li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Assets/<a class="el" href="_asset_importer_8cpp.html">AssetImporter.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

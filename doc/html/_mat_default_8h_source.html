@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,19 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_700da30f51666cd81523daa4ef5fcfbf.html">Render</a></li><li class="navelem"><a class="el" href="dir_c4780dacc70885753030afb2b218a1f4.html">Materials</a></li>  </ul>
@@ -69,25 +50,33 @@ $(function() {
   <div class="headertitle"><div class="title">MatDefault.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;Material.h&quot;</span></div>
+<a href="_mat_default_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_material_8h.html">Material.h</a>&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">class </span><a class="code hl_class" href="class_texture.html">Texture</a>;</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="class_default_material.html">    5</a></span><span class="keyword">class </span><a class="code hl_class" href="class_default_material.html">DefaultMaterial</a>:<span class="keyword">public</span> <a class="code hl_class" href="class_material.html">Material</a></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_class" href="class_default_material.html">DefaultMaterial</a>();</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_class" href="class_default_material.html">~DefaultMaterial</a>();</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_function" href="class_default_material.html#a20f822260b6db0885a5ad92080493544">DefaultMaterial</a>();</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_function" href="class_default_material.html#a120d7e93741b9e450e77a6ad36f07d73">~DefaultMaterial</a>();</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> DrawFunc(<a class="code hl_class" href="class_game_object.html">GameObject</a>* gObj, std::shared_ptr&lt;Mesh&gt; mesh) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Init(<a class="code hl_class" href="class_game_object.html">GameObject</a>*, std::shared_ptr&lt;Mesh&gt; mesh) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_default_material.html#a7a7ea7bf4b54e222f802dac87c6c75ba">DrawFunc</a>(<a class="code hl_class" href="class_game_object.html">GameObject</a>* gObj, std::shared_ptr&lt;Mesh&gt; mesh) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_default_material.html#ac6c487c23b80955228f26f358cced75d">Init</a>(<a class="code hl_class" href="class_game_object.html">GameObject</a>*, std::shared_ptr&lt;Mesh&gt; mesh) <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_class" href="class_texture.html">Texture</a>* mainTex;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_class" href="class_texture.html">Texture</a>* specTex;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="class_texture.html">Texture</a>* normalTex;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_default_material.html#a59843e68c277fe796ebd5b8760558aa3">   14</a></span>    <a class="code hl_class" href="class_texture.html">Texture</a>* <a class="code hl_variable" href="class_default_material.html#a59843e68c277fe796ebd5b8760558aa3">mainTex</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_default_material.html#a02313cfaedf6e5532e2a9d9cae1b7aec">   15</a></span>    <a class="code hl_class" href="class_texture.html">Texture</a>* <a class="code hl_variable" href="class_default_material.html#a02313cfaedf6e5532e2a9d9cae1b7aec">specTex</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_default_material.html#af2621f7f65d1b9818c1020dbdc315ce1">   16</a></span>    <a class="code hl_class" href="class_texture.html">Texture</a>* <a class="code hl_variable" href="class_default_material.html#af2621f7f65d1b9818c1020dbdc315ce1">normalTex</a>;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="ttc" id="a_material_8h_html"><div class="ttname"><a href="_material_8h.html">Material.h</a></div></div>
 <div class="ttc" id="aclass_default_material_html"><div class="ttname"><a href="class_default_material.html">DefaultMaterial</a></div><div class="ttdef"><b>Definition:</b> MatDefault.h:6</div></div>
+<div class="ttc" id="aclass_default_material_html_a02313cfaedf6e5532e2a9d9cae1b7aec"><div class="ttname"><a href="class_default_material.html#a02313cfaedf6e5532e2a9d9cae1b7aec">DefaultMaterial::specTex</a></div><div class="ttdeci">Texture * specTex</div><div class="ttdef"><b>Definition:</b> MatDefault.h:15</div></div>
+<div class="ttc" id="aclass_default_material_html_a120d7e93741b9e450e77a6ad36f07d73"><div class="ttname"><a href="class_default_material.html#a120d7e93741b9e450e77a6ad36f07d73">DefaultMaterial::~DefaultMaterial</a></div><div class="ttdeci">~DefaultMaterial()</div><div class="ttdef"><b>Definition:</b> MatDefault.cpp:28</div></div>
+<div class="ttc" id="aclass_default_material_html_a20f822260b6db0885a5ad92080493544"><div class="ttname"><a href="class_default_material.html#a20f822260b6db0885a5ad92080493544">DefaultMaterial::DefaultMaterial</a></div><div class="ttdeci">DefaultMaterial()</div><div class="ttdef"><b>Definition:</b> MatDefault.cpp:19</div></div>
+<div class="ttc" id="aclass_default_material_html_a59843e68c277fe796ebd5b8760558aa3"><div class="ttname"><a href="class_default_material.html#a59843e68c277fe796ebd5b8760558aa3">DefaultMaterial::mainTex</a></div><div class="ttdeci">Texture * mainTex</div><div class="ttdef"><b>Definition:</b> MatDefault.h:14</div></div>
+<div class="ttc" id="aclass_default_material_html_a7a7ea7bf4b54e222f802dac87c6c75ba"><div class="ttname"><a href="class_default_material.html#a7a7ea7bf4b54e222f802dac87c6c75ba">DefaultMaterial::DrawFunc</a></div><div class="ttdeci">virtual void DrawFunc(GameObject *gObj, std::shared_ptr&lt; Mesh &gt; mesh) override</div><div class="ttdef"><b>Definition:</b> MatDefault.cpp:36</div></div>
+<div class="ttc" id="aclass_default_material_html_ac6c487c23b80955228f26f358cced75d"><div class="ttname"><a href="class_default_material.html#ac6c487c23b80955228f26f358cced75d">DefaultMaterial::Init</a></div><div class="ttdeci">virtual void Init(GameObject *, std::shared_ptr&lt; Mesh &gt; mesh) override</div><div class="ttdef"><b>Definition:</b> MatDefault.cpp:54</div></div>
+<div class="ttc" id="aclass_default_material_html_af2621f7f65d1b9818c1020dbdc315ce1"><div class="ttname"><a href="class_default_material.html#af2621f7f65d1b9818c1020dbdc315ce1">DefaultMaterial::normalTex</a></div><div class="ttdeci">Texture * normalTex</div><div class="ttdef"><b>Definition:</b> MatDefault.h:16</div></div>
 <div class="ttc" id="aclass_game_object_html"><div class="ttname"><a href="class_game_object.html">GameObject</a></div><div class="ttdef"><b>Definition:</b> GameObject.h:9</div></div>
 <div class="ttc" id="aclass_material_html"><div class="ttname"><a href="class_material.html">Material</a></div><div class="ttdef"><b>Definition:</b> Material.h:12</div></div>
 <div class="ttc" id="aclass_texture_html"><div class="ttname"><a href="class_texture.html">Texture</a></div><div class="ttdef"><b>Definition:</b> Texture.h:12</div></div>

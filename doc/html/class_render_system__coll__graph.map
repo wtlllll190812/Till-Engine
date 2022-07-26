@@ -1,5 +1,6 @@
 <map id="RenderSystem" name="RenderSystem">
-<area shape="rect" id="node1" title="渲染系统" alt="" coords="59,80,167,107"/>
+<area shape="rect" id="node1" title="渲染系统" alt="" coords="135,109,243,136"/>
 <area shape="rect" id="node2" href="$class_system.html" title=" " alt="" coords="5,5,72,32"/>
 <area shape="rect" id="node3" href="$class_singleton.html" title=" " alt="" coords="96,5,283,32"/>
+<area shape="rect" id="node4" href="$class_uniform_buffer.html" title="UBO缓存" alt="" coords="307,5,405,32"/>
 </map>

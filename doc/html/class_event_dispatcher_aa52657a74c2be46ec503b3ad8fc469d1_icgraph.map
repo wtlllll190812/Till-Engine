@@ -1,6 +1,8 @@
 <map id="EventDispatcher::Dispatch" name="EventDispatcher::Dispatch">
-<area shape="rect" id="node1" title="判断事件类型是否符合" alt="" coords="403,55,577,81"/>
-<area shape="rect" id="node2" href="$class_application.html#a1d31824bbed36791a15243852d18669a" title=" " alt="" coords="212,29,355,56"/>
-<area shape="rect" id="node4" href="$class_imgui_layer.html#ade36001fdd1861e19dadc2d32d5e7bd5" title=" " alt="" coords="212,80,355,107"/>
-<area shape="rect" id="node3" href="$class_application.html#afa8cc05ce6b6092be5ecdfdae44e05f8" title=" " alt="" coords="5,29,164,56"/>
+<area shape="rect" id="node1" title="判断事件类型是否符合" alt="" coords="665,55,840,81"/>
+<area shape="rect" id="node2" href="$class_application.html#a1d31824bbed36791a15243852d18669a" title="处理事件" alt="" coords="475,29,617,56"/>
+<area shape="rect" id="node6" href="$class_imgui_layer.html#ade36001fdd1861e19dadc2d32d5e7bd5" title=" " alt="" coords="475,80,617,107"/>
+<area shape="rect" id="node3" href="$class_application.html#a091df3ec4695b64249e57a76c93b6612" title="初始化应用" alt="" coords="292,29,427,56"/>
+<area shape="rect" id="node4" href="$class_application.html#a5378330e10e42fcb9a2269b533759b0f" title="运行应用" alt="" coords="104,29,244,56"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,29,56,56"/>
 </map>

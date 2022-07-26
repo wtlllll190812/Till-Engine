@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,78 +28,425 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pri-static-attribs">静态 Private 属性</a> &#124;
 <a href="class_input-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">Input类 参考</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_input_8h_source.html">Input.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 静态 Public 成员函数</h2></td></tr>
-<tr class="memitem:a4094d923afac36af9f05c18f984d107f"><td class="memItemLeft" align="right" valign="top"><a id="a4094d923afac36af9f05c18f984d107f" name="a4094d923afac36af9f05c18f984d107f"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetKeyDown</b> (const int key)</td></tr>
+<tr class="memitem:a4094d923afac36af9f05c18f984d107f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a4094d923afac36af9f05c18f984d107f">GetKeyDown</a> (const int key)</td></tr>
 <tr class="separator:a4094d923afac36af9f05c18f984d107f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8aa8c251f1ca2983842b6d4df831d68b"><td class="memItemLeft" align="right" valign="top"><a id="a8aa8c251f1ca2983842b6d4df831d68b" name="a8aa8c251f1ca2983842b6d4df831d68b"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetKeyUp</b> (const int key)</td></tr>
+<tr class="memitem:a8aa8c251f1ca2983842b6d4df831d68b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a8aa8c251f1ca2983842b6d4df831d68b">GetKeyUp</a> (const int key)</td></tr>
 <tr class="separator:a8aa8c251f1ca2983842b6d4df831d68b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95f1685dfe5752cd4f3a22430138199d"><td class="memItemLeft" align="right" valign="top"><a id="a95f1685dfe5752cd4f3a22430138199d" name="a95f1685dfe5752cd4f3a22430138199d"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetKey</b> (const int key)</td></tr>
+<tr class="memitem:a95f1685dfe5752cd4f3a22430138199d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a95f1685dfe5752cd4f3a22430138199d">GetKey</a> (const int key)</td></tr>
 <tr class="separator:a95f1685dfe5752cd4f3a22430138199d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa96b37ceccba6684125fef6fdb8776e4"><td class="memItemLeft" align="right" valign="top"><a id="aa96b37ceccba6684125fef6fdb8776e4" name="aa96b37ceccba6684125fef6fdb8776e4"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetMouseButtonDown</b> (const int key)</td></tr>
+<tr class="memitem:aa96b37ceccba6684125fef6fdb8776e4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#aa96b37ceccba6684125fef6fdb8776e4">GetMouseButtonDown</a> (const int key)</td></tr>
 <tr class="separator:aa96b37ceccba6684125fef6fdb8776e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad81415442c94e3147de8d9dfa0aca566"><td class="memItemLeft" align="right" valign="top"><a id="ad81415442c94e3147de8d9dfa0aca566" name="ad81415442c94e3147de8d9dfa0aca566"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetMouseButtonUp</b> (const int key)</td></tr>
+<tr class="memitem:ad81415442c94e3147de8d9dfa0aca566"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#ad81415442c94e3147de8d9dfa0aca566">GetMouseButtonUp</a> (const int key)</td></tr>
 <tr class="separator:ad81415442c94e3147de8d9dfa0aca566"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac707d3d56d521674485677c85c67d9b5"><td class="memItemLeft" align="right" valign="top"><a id="ac707d3d56d521674485677c85c67d9b5" name="ac707d3d56d521674485677c85c67d9b5"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetMouseButton</b> (const int key)</td></tr>
+<tr class="memitem:ac707d3d56d521674485677c85c67d9b5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#ac707d3d56d521674485677c85c67d9b5">GetMouseButton</a> (const int key)</td></tr>
 <tr class="separator:ac707d3d56d521674485677c85c67d9b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af80dcfde6dbfe39bf3bc0345c75595ce"><td class="memItemLeft" align="right" valign="top"><a id="af80dcfde6dbfe39bf3bc0345c75595ce" name="af80dcfde6dbfe39bf3bc0345c75595ce"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> ()</td></tr>
+<tr class="memitem:af80dcfde6dbfe39bf3bc0345c75595ce"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#af80dcfde6dbfe39bf3bc0345c75595ce">Update</a> ()</td></tr>
 <tr class="separator:af80dcfde6dbfe39bf3bc0345c75595ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5197114da7299198826ff7277ee12bff"><td class="memItemLeft" align="right" valign="top"><a id="a5197114da7299198826ff7277ee12bff" name="a5197114da7299198826ff7277ee12bff"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> ()</td></tr>
+<tr class="memitem:a5197114da7299198826ff7277ee12bff"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a5197114da7299198826ff7277ee12bff">Init</a> ()</td></tr>
 <tr class="separator:a5197114da7299198826ff7277ee12bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1780ef990d2434b6f8302613a7547f1"><td class="memItemLeft" align="right" valign="top"><a id="ab1780ef990d2434b6f8302613a7547f1" name="ab1780ef990d2434b6f8302613a7547f1"></a>
-static glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><b>MousePos</b> ()</td></tr>
+<tr class="memitem:ab1780ef990d2434b6f8302613a7547f1"><td class="memItemLeft" align="right" valign="top">static glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#ab1780ef990d2434b6f8302613a7547f1">MousePos</a> ()</td></tr>
 <tr class="separator:ab1780ef990d2434b6f8302613a7547f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静态 Private 属性</h2></td></tr>
+<tr class="memitem:a4d5c26a69aa5dd5cfb1bf86f41431e28"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a4d5c26a69aa5dd5cfb1bf86f41431e28">keyBuf</a> [512]</td></tr>
+<tr class="separator:a4d5c26a69aa5dd5cfb1bf86f41431e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a3a3d87d5e8abebed630fdd16d58e7b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a9a3a3d87d5e8abebed630fdd16d58e7b">mouseBuf</a> [8]</td></tr>
+<tr class="separator:a9a3a3d87d5e8abebed630fdd16d58e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a95f1685dfe5752cd4f3a22430138199d" name="a95f1685dfe5752cd4f3a22430138199d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95f1685dfe5752cd4f3a22430138199d">&#9670;&nbsp;</a></span>GetKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Input::GetKey </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4094d923afac36af9f05c18f984d107f" name="a4094d923afac36af9f05c18f984d107f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4094d923afac36af9f05c18f984d107f">&#9670;&nbsp;</a></span>GetKeyDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Input::GetKeyDown </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_input_a4094d923afac36af9f05c18f984d107f_icgraph.png" border="0" usemap="#aclass_input_a4094d923afac36af9f05c18f984d107f_icgraph" alt=""/></div>
+<map name="aclass_input_a4094d923afac36af9f05c18f984d107f_icgraph" id="aclass_input_a4094d923afac36af9f05c18f984d107f_icgraph">
+<area shape="rect" title=" " alt="" coords="216,5,351,32"/>
+<area shape="rect" href="class_editor_layer.html#ac68e82509971314260c282a174f63bb5" title=" " alt="" coords="5,5,168,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8aa8c251f1ca2983842b6d4df831d68b" name="a8aa8c251f1ca2983842b6d4df831d68b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aa8c251f1ca2983842b6d4df831d68b">&#9670;&nbsp;</a></span>GetKeyUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Input::GetKeyUp </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac707d3d56d521674485677c85c67d9b5" name="ac707d3d56d521674485677c85c67d9b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac707d3d56d521674485677c85c67d9b5">&#9670;&nbsp;</a></span>GetMouseButton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Input::GetMouseButton </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_input_ac707d3d56d521674485677c85c67d9b5_icgraph.png" border="0" usemap="#aclass_input_ac707d3d56d521674485677c85c67d9b5_icgraph" alt=""/></div>
+<map name="aclass_input_ac707d3d56d521674485677c85c67d9b5_icgraph" id="aclass_input_ac707d3d56d521674485677c85c67d9b5_icgraph">
+<area shape="rect" title=" " alt="" coords="216,5,372,32"/>
+<area shape="rect" href="class_editor_layer.html#ac68e82509971314260c282a174f63bb5" title=" " alt="" coords="5,5,168,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa96b37ceccba6684125fef6fdb8776e4" name="aa96b37ceccba6684125fef6fdb8776e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa96b37ceccba6684125fef6fdb8776e4">&#9670;&nbsp;</a></span>GetMouseButtonDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Input::GetMouseButtonDown </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_input_aa96b37ceccba6684125fef6fdb8776e4_icgraph.png" border="0" usemap="#aclass_input_aa96b37ceccba6684125fef6fdb8776e4_icgraph" alt=""/></div>
+<map name="aclass_input_aa96b37ceccba6684125fef6fdb8776e4_icgraph" id="aclass_input_aa96b37ceccba6684125fef6fdb8776e4_icgraph">
+<area shape="rect" title=" " alt="" coords="216,5,404,32"/>
+<area shape="rect" href="class_editor_layer.html#ac68e82509971314260c282a174f63bb5" title=" " alt="" coords="5,5,168,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad81415442c94e3147de8d9dfa0aca566" name="ad81415442c94e3147de8d9dfa0aca566"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad81415442c94e3147de8d9dfa0aca566">&#9670;&nbsp;</a></span>GetMouseButtonUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Input::GetMouseButtonUp </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5197114da7299198826ff7277ee12bff" name="a5197114da7299198826ff7277ee12bff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5197114da7299198826ff7277ee12bff">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Input::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_input_a5197114da7299198826ff7277ee12bff_cgraph.png" border="0" usemap="#aclass_input_a5197114da7299198826ff7277ee12bff_cgraph" alt=""/></div>
+<map name="aclass_input_a5197114da7299198826ff7277ee12bff_cgraph" id="aclass_input_a5197114da7299198826ff7277ee12bff_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,80,32"/>
+<area shape="rect" href="class_debug.html#aba43a04a085adda136af3ed7fa2593c9" title=" " alt="" coords="128,5,279,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_input_a5197114da7299198826ff7277ee12bff_icgraph.png" border="0" usemap="#aclass_input_a5197114da7299198826ff7277ee12bff_icgraph" alt=""/></div>
+<map name="aclass_input_a5197114da7299198826ff7277ee12bff_icgraph" id="aclass_input_a5197114da7299198826ff7277ee12bff_icgraph">
+<area shape="rect" title=" " alt="" coords="475,5,549,32"/>
+<area shape="rect" href="class_application.html#a091df3ec4695b64249e57a76c93b6612" title="初始化应用" alt="" coords="292,5,427,32"/>
+<area shape="rect" href="class_application.html#a5378330e10e42fcb9a2269b533759b0f" title="运行应用" alt="" coords="104,5,244,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab1780ef990d2434b6f8302613a7547f1" name="ab1780ef990d2434b6f8302613a7547f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1780ef990d2434b6f8302613a7547f1">&#9670;&nbsp;</a></span>MousePos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec2 Input::MousePos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_input_ab1780ef990d2434b6f8302613a7547f1_cgraph.png" border="0" usemap="#aclass_input_ab1780ef990d2434b6f8302613a7547f1_cgraph" alt=""/></div>
+<map name="aclass_input_ab1780ef990d2434b6f8302613a7547f1_cgraph" id="aclass_input_ab1780ef990d2434b6f8302613a7547f1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,125,39"/>
+<area shape="rect" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="173,5,325,47"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_input_ab1780ef990d2434b6f8302613a7547f1_icgraph.png" border="0" usemap="#aclass_input_ab1780ef990d2434b6f8302613a7547f1_icgraph" alt=""/></div>
+<map name="aclass_input_ab1780ef990d2434b6f8302613a7547f1_icgraph" id="aclass_input_ab1780ef990d2434b6f8302613a7547f1_icgraph">
+<area shape="rect" title=" " alt="" coords="216,5,336,32"/>
+<area shape="rect" href="class_editor_layer.html#ac68e82509971314260c282a174f63bb5" title=" " alt="" coords="5,5,168,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af80dcfde6dbfe39bf3bc0345c75595ce" name="af80dcfde6dbfe39bf3bc0345c75595ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af80dcfde6dbfe39bf3bc0345c75595ce">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Input::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_input_af80dcfde6dbfe39bf3bc0345c75595ce_cgraph.png" border="0" usemap="#aclass_input_af80dcfde6dbfe39bf3bc0345c75595ce_cgraph" alt=""/></div>
+<map name="aclass_input_af80dcfde6dbfe39bf3bc0345c75595ce_cgraph" id="aclass_input_af80dcfde6dbfe39bf3bc0345c75595ce_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,104,39"/>
+<area shape="rect" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="152,5,304,47"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_input_af80dcfde6dbfe39bf3bc0345c75595ce_icgraph.png" border="0" usemap="#aclass_input_af80dcfde6dbfe39bf3bc0345c75595ce_icgraph" alt=""/></div>
+<map name="aclass_input_af80dcfde6dbfe39bf3bc0345c75595ce_icgraph" id="aclass_input_af80dcfde6dbfe39bf3bc0345c75595ce_icgraph">
+<area shape="rect" title=" " alt="" coords="292,5,391,32"/>
+<area shape="rect" href="class_application.html#a5378330e10e42fcb9a2269b533759b0f" title="运行应用" alt="" coords="104,5,244,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a4d5c26a69aa5dd5cfb1bf86f41431e28" name="a4d5c26a69aa5dd5cfb1bf86f41431e28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d5c26a69aa5dd5cfb1bf86f41431e28">&#9670;&nbsp;</a></span>keyBuf</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Input::keyBuf</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9a3a3d87d5e8abebed630fdd16d58e7b" name="a9a3a3d87d5e8abebed630fdd16d58e7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a3a3d87d5e8abebed630fdd16d58e7b">&#9670;&nbsp;</a></span>mouseBuf</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Input::mouseBuf</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/<a class="el" href="_input_8h_source.html">Input.h</a></li>
-<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/GLfwInput.cpp</li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/<a class="el" href="_g_lfw_input_8cpp.html">GLfwInput.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

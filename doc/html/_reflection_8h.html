@@ -5,13 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TillEngine: D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Reflection.h 文件参考</title>
+<title>TillEngine: D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Tools/Reflection.h 文件参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,104 +28,69 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_75ae6d3613b6c2f243b8fb439548ec3f.html">Framework</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_75ae6d3613b6c2f243b8fb439548ec3f.html">Framework</a></li><li class="navelem"><a class="el" href="dir_dfadc32455ebf8702b3c412ffa801504.html">Tools</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">类</a> &#124;
 <a href="#define-members">宏定义</a> &#124;
-<a href="#typedef-members">类型定义</a>  </div>
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#enum-members">枚举</a>  </div>
   <div class="headertitle"><div class="title">Reflection.h 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_singleton_01_8h_source.html">Singleton .h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_till_pch_8h_source.html">TillPch.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="_singleton_8h_source.html">Singleton.h</a>&quot;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Reflection.h 的引用(Include)关系图:</div>
 <div class="dyncontent">
-<div class="center"><img src="_reflection_8h__incl.png" border="0" usemap="#a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_reflection_8h" alt=""/></div>
-<map name="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_reflection_8h" id="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_reflection_8h">
-<area shape="rect" title=" " alt="" coords="386,5,593,61"/>
-<area shape="rect" href="_singleton_01_8h.html" title=" " alt="" coords="5,184,96,211"/>
-<area shape="rect" href="_till_pch_8h.html" title=" " alt="" coords="828,109,900,136"/>
-<area shape="rect" title=" " alt="" coords="121,184,175,211"/>
-<area shape="rect" title=" " alt="" coords="200,184,277,211"/>
-<area shape="rect" title=" " alt="" coords="301,184,371,211"/>
-<area shape="rect" title=" " alt="" coords="395,184,488,211"/>
-<area shape="rect" title=" " alt="" coords="513,184,703,211"/>
-<area shape="rect" title=" " alt="" coords="728,184,869,211"/>
-<area shape="rect" title=" " alt="" coords="893,184,965,211"/>
-<area shape="rect" title=" " alt="" coords="989,184,1045,211"/>
-<area shape="rect" title=" " alt="" coords="1069,184,1139,211"/>
-<area shape="rect" title=" " alt="" coords="1163,184,1221,211"/>
-<area shape="rect" title=" " alt="" coords="1245,184,1291,211"/>
-<area shape="rect" title=" " alt="" coords="1316,184,1369,211"/>
-<area shape="rect" href="_debug_8h.html" title=" " alt="" coords="1394,184,1465,211"/>
-<area shape="rect" title=" " alt="" coords="1373,259,1486,285"/>
+<div class="center"><img src="_reflection_8h__incl.png" border="0" usemap="#a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_tools_2_reflection_8h" alt=""/></div>
+<map name="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_tools_2_reflection_8h" id="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_tools_2_reflection_8h">
+<area shape="rect" title=" " alt="" coords="129,5,299,76"/>
+<area shape="rect" href="_singleton_8h.html" title=" " alt="" coords="5,124,92,151"/>
+<area shape="rect" title=" " alt="" coords="116,124,163,151"/>
+<area shape="rect" title=" " alt="" coords="187,124,241,151"/>
+<area shape="rect" title=" " alt="" coords="266,124,322,151"/>
+<area shape="rect" title=" " alt="" coords="346,124,415,151"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 此图展示该文件直接或间接的被哪些文件引用了:</div>
 <div class="dyncontent">
-<div class="center"><img src="_reflection_8h__dep__incl.png" border="0" usemap="#a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_reflection_8hdep" alt=""/></div>
-<map name="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_reflection_8hdep" id="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_reflection_8hdep">
-<area shape="rect" title=" " alt="" coords="773,5,980,61"/>
-<area shape="rect" href="_component_8h.html" title=" " alt="" coords="701,109,911,165"/>
-<area shape="rect" href="_game_object_8h.html" title=" " alt="" coords="272,317,423,373"/>
-<area shape="rect" href="_reflection_8cpp.html" title=" " alt="" coords="987,109,1207,165"/>
-<area shape="rect" href="_t_l_engine_c_g_8h.html" title=" " alt="" coords="1215,213,1413,269"/>
-<area shape="rect" href="_behaviour_8h.html" title=" " alt="" coords="705,213,907,269"/>
-<area shape="rect" href="_camera_8h.html" title=" " alt="" coords="5,317,196,373"/>
-<area shape="rect" href="_light_8h.html" title=" " alt="" coords="931,213,1105,269"/>
-<area shape="rect" href="_renderer_8h.html" title=" " alt="" coords="1754,421,1951,477"/>
-<area shape="rect" href="_transform_8h.html" title=" " alt="" coords="454,213,657,269"/>
-<area shape="rect" href="_behaviour_8cpp.html" title=" " alt="" coords="739,317,953,373"/>
-<area shape="rect" href="_camera_8cpp.html" title=" " alt="" coords="139,421,343,477"/>
-<area shape="rect" href="_game_object_8cpp.html" title=" " alt="" coords="293,525,447,581"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="776,525,927,581"/>
-<area shape="rect" href="_light_8cpp.html" title=" " alt="" coords="1029,317,1215,373"/>
-<area shape="rect" href="_renderer_8cpp.html" title=" " alt="" coords="1747,525,1958,581"/>
-<area shape="rect" href="_render_system_8cpp.html" title=" " alt="" coords="1983,525,2200,581"/>
-<area shape="rect" href="_scene_8cpp.html" title=" " alt="" coords="1572,525,1723,581"/>
-<area shape="rect" href="_transform_8cpp.html" title=" " alt="" coords="447,317,663,373"/>
-<area shape="rect" href="_material_8cpp.html" title=" " alt="" coords="753,421,939,477"/>
-<area shape="rect" href="_scene_8h.html" title=" " alt="" coords="461,421,612,477"/>
-<area shape="rect" href="_application_8cpp.html" title=" " alt="" coords="472,525,623,581"/>
-<area shape="rect" href="_material_8h.html" title=" " alt="" coords="1291,317,1463,373"/>
-<area shape="rect" href="_t_l_engine_c_g_8cpp.html" title=" " alt="" coords="1487,317,1701,373"/>
+<div class="center"><img src="_reflection_8h__dep__incl.png" border="0" usemap="#a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_tools_2_reflection_8hdep" alt=""/></div>
+<map name="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_tools_2_reflection_8hdep" id="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_tools_2_reflection_8hdep">
+<area shape="rect" title=" " alt="" coords="1339,5,1508,76"/>
+<area shape="rect" href="_behaviour_8cpp.html" title=" " alt="" coords="5,131,220,187"/>
+<area shape="rect" href="_camera_8cpp.html" title=" " alt="" coords="244,131,448,187"/>
+<area shape="rect" href="_direction_light_8cpp.html" title=" " alt="" coords="472,131,711,187"/>
+<area shape="rect" href="_point_light_8cpp.html" title=" " alt="" coords="735,131,952,187"/>
+<area shape="rect" href="_renderer_8cpp.html" title=" " alt="" coords="977,131,1187,187"/>
+<area shape="rect" href="_spot_light_8cpp.html" title=" " alt="" coords="1212,131,1427,187"/>
+<area shape="rect" href="_game_object_8cpp.html" title=" " alt="" coords="1451,131,1606,187"/>
+<area shape="rect" href="_editor_layer_8cpp.html" title=" " alt="" coords="1630,131,1785,187"/>
+<area shape="rect" href="_reflection_8cpp.html" title=" " alt="" coords="1809,124,1979,195"/>
+<area shape="rect" href="_mat_default_8cpp.html" title=" " alt="" coords="2003,124,2171,195"/>
+<area shape="rect" href="_mat_light_8cpp.html" title=" " alt="" coords="2195,124,2363,195"/>
+<area shape="rect" href="_mat_shadow_caster_8cpp.html" title=" " alt="" coords="2387,124,2555,195"/>
 </map>
 </div>
 </div>
@@ -135,24 +98,38 @@ Reflection.h 的引用(Include)关系图:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 类</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reflection.html">Reflection</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_reflection.html">Reflection</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reflection_manager.html">ReflectionManager</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_register_action.html">RegisterAction</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 宏定义</h2></td></tr>
-<tr class="memitem:aeb1e66a57bac45853c387ead53c8dad0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_reflection_8h.html#aeb1e66a57bac45853c387ead53c8dad0">REFLECTION</a>(className)</td></tr>
-<tr class="separator:aeb1e66a57bac45853c387ead53c8dad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06bb8e290bc7e9030c85a26e05d9fb1d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_reflection_8h.html#a06bb8e290bc7e9030c85a26e05d9fb1d">REFLECTION</a>(className,  tag)</td></tr>
+<tr class="separator:a06bb8e290bc7e9030c85a26e05d9fb1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13c07f6a4ee9286475e76d90844caf29"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_reflection_8h.html#a13c07f6a4ee9286475e76d90844caf29">REFLECTIONINSTANCE</a>(className,  tag)</td></tr>
+<tr class="separator:a13c07f6a4ee9286475e76d90844caf29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 类型定义</h2></td></tr>
-<tr class="memitem:a69a4ec742fe7731cb16b1d34e7cc79a5"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_reflection_8h.html#a69a4ec742fe7731cb16b1d34e7cc79a5">PTRCreateObject</a>) (<a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>)</td></tr>
-<tr class="separator:a69a4ec742fe7731cb16b1d34e7cc79a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8163356ccae08e66d7045f26d98e5435"><td class="memItemLeft" align="right" valign="top">typedef void *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_reflection_8h.html#a8163356ccae08e66d7045f26d98e5435">CreateObjectFunc</a>) (void)</td></tr>
+<tr class="separator:a8163356ccae08e66d7045f26d98e5435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25687338db035b6fc181a7c9ffdcf8bd"><td class="memItemLeft" align="right" valign="top">typedef std::shared_ptr&lt; void &gt;(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_reflection_8h.html#a25687338db035b6fc181a7c9ffdcf8bd">GetInstanceFunc</a>) (void)</td></tr>
+<tr class="separator:a25687338db035b6fc181a7c9ffdcf8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:af1c18238a2a0f6cbf38e43358dc9b2c0"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0">ReflectionTag</a> { <a class="el" href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0a2cb05e4bb7830be982f0922fed86b4cd">Component</a>
+, <a class="el" href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0a3d164a4fbbdd103bddb596268f741bae">GameObject</a>
+, <a class="el" href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0ad92a8333dd3ccb895cc65f7455b71206">Material</a>
+ }</td></tr>
+<tr class="separator:af1c18238a2a0f6cbf38e43358dc9b2c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">宏定义说明</h2>
-<a id="aeb1e66a57bac45853c387ead53c8dad0" name="aeb1e66a57bac45853c387ead53c8dad0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb1e66a57bac45853c387ead53c8dad0">&#9670;&nbsp;</a></span>REFLECTION</h2>
+<a id="a06bb8e290bc7e9030c85a26e05d9fb1d" name="a06bb8e290bc7e9030c85a26e05d9fb1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06bb8e290bc7e9030c85a26e05d9fb1d">&#9670;&nbsp;</a></span>REFLECTION</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,33 +138,128 @@ Reflection.h 的引用(Include)关系图:</div>
           <td class="memname">#define REFLECTION</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">className</td><td>)</td>
+          <td class="paramname">className, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tag&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>值:</b><div class="fragment"><div class="line">    className *Creator##className()           \</div>
-<div class="line">    {                                         \</div>
-<div class="line">        return <span class="keyword">new</span> className;                 \</div>
-<div class="line">    }                                         \</div>
-<div class="line">    RegisterAction registerAction##className( \</div>
-<div class="line">        #className, (<a class="code hl_typedef" href="_reflection_8h.html#a69a4ec742fe7731cb16b1d34e7cc79a5">PTRCreateObject</a>)Creator##className)</div>
-<div class="ttc" id="a_reflection_8h_html_a69a4ec742fe7731cb16b1d34e7cc79a5"><div class="ttname"><a href="_reflection_8h.html#a69a4ec742fe7731cb16b1d34e7cc79a5">PTRCreateObject</a></div><div class="ttdeci">void *(* PTRCreateObject)(void)</div><div class="ttdef"><b>Definition:</b> Reflection.h:5</div></div>
+<b>值:</b><div class="fragment"><div class="line">    className *Creator##className()                                                 \</div>
+<div class="line">    {                                                                               \</div>
+<div class="line">        return <span class="keyword">new</span> className;                                                       \</div>
+<div class="line">    }                                                                               \</div>
+<div class="line">    RegisterAction registerAction##className(                                       \</div>
+<div class="line">        #className,<span class="keyword">new</span> <a class="code hl_struct" href="struct_reflection.html">Reflection</a>(#className,(<a class="code hl_typedef" href="_reflection_8h.html#a8163356ccae08e66d7045f26d98e5435">CreateObjectFunc</a>)Creator##className,<a class="code hl_enumeration" href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0">ReflectionTag</a>::##tag))</div>
+<div class="ttc" id="a_reflection_8h_html_a8163356ccae08e66d7045f26d98e5435"><div class="ttname"><a href="_reflection_8h.html#a8163356ccae08e66d7045f26d98e5435">CreateObjectFunc</a></div><div class="ttdeci">void *(* CreateObjectFunc)(void)</div><div class="ttdef"><b>Definition:</b> Reflection.h:8</div></div>
+<div class="ttc" id="a_reflection_8h_html_af1c18238a2a0f6cbf38e43358dc9b2c0"><div class="ttname"><a href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0">ReflectionTag</a></div><div class="ttdeci">ReflectionTag</div><div class="ttdef"><b>Definition:</b> Reflection.h:37</div></div>
+<div class="ttc" id="astruct_reflection_html"><div class="ttname"><a href="struct_reflection.html">Reflection</a></div><div class="ttdef"><b>Definition:</b> Reflection.h:44</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<h2 class="groupheader">类型定义说明</h2>
-<a id="a69a4ec742fe7731cb16b1d34e7cc79a5" name="a69a4ec742fe7731cb16b1d34e7cc79a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69a4ec742fe7731cb16b1d34e7cc79a5">&#9670;&nbsp;</a></span>PTRCreateObject</h2>
+<a id="a13c07f6a4ee9286475e76d90844caf29" name="a13c07f6a4ee9286475e76d90844caf29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13c07f6a4ee9286475e76d90844caf29">&#9670;&nbsp;</a></span>REFLECTIONINSTANCE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> *(* PTRCreateObject) (<a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>)</td>
+          <td class="memname">#define REFLECTIONINSTANCE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">className, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tag&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    className *Creator##className()                                                 \</div>
+<div class="line">    {                                                                               \</div>
+<div class="line">        return <span class="keyword">new</span> className;                                                       \</div>
+<div class="line">    }                                                                               \</div>
+<div class="line">    std::shared_ptr&lt;void&gt; Instance##className()                                     \</div>
+<div class="line">    {                                                                               \</div>
+<div class="line">        static std::shared_ptr&lt;void&gt; instance;                                      \</div>
+<div class="line">        if (!instance)                                                              \</div>
+<div class="line">            instance = std::shared_ptr&lt;className&gt;(<span class="keyword">new</span> className());                 \</div>
+<div class="line">        return instance;                                                            \</div>
+<div class="line">    }                                                                               \</div>
+<div class="line">    RegisterAction registerAction##className(                                       \</div>
+<div class="line">        #className,<span class="keyword">new</span> <a class="code hl_struct" href="struct_reflection.html">Reflection</a>(#className,(<a class="code hl_typedef" href="_reflection_8h.html#a8163356ccae08e66d7045f26d98e5435">CreateObjectFunc</a>)Creator##className,<a class="code hl_enumeration" href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0">ReflectionTag</a>::##tag,Instance##className))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a8163356ccae08e66d7045f26d98e5435" name="a8163356ccae08e66d7045f26d98e5435"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8163356ccae08e66d7045f26d98e5435">&#9670;&nbsp;</a></span>CreateObjectFunc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void *(* CreateObjectFunc) (void)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a25687338db035b6fc181a7c9ffdcf8bd" name="a25687338db035b6fc181a7c9ffdcf8bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25687338db035b6fc181a7c9ffdcf8bd">&#9670;&nbsp;</a></span>GetInstanceFunc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::shared_ptr&lt; void &gt;(* GetInstanceFunc) (void)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="af1c18238a2a0f6cbf38e43358dc9b2c0" name="af1c18238a2a0f6cbf38e43358dc9b2c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1c18238a2a0f6cbf38e43358dc9b2c0">&#9670;&nbsp;</a></span>ReflectionTag</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0">ReflectionTag</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="af1c18238a2a0f6cbf38e43358dc9b2c0a2cb05e4bb7830be982f0922fed86b4cd" name="af1c18238a2a0f6cbf38e43358dc9b2c0a2cb05e4bb7830be982f0922fed86b4cd"></a>Component&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af1c18238a2a0f6cbf38e43358dc9b2c0a3d164a4fbbdd103bddb596268f741bae" name="af1c18238a2a0f6cbf38e43358dc9b2c0a3d164a4fbbdd103bddb596268f741bae"></a>GameObject&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af1c18238a2a0f6cbf38e43358dc9b2c0ad92a8333dd3ccb895cc65f7455b71206" name="af1c18238a2a0f6cbf38e43358dc9b2c0ad92a8333dd3ccb895cc65f7455b71206"></a>Material&#160;</td><td class="fielddoc"></td></tr>
+</table>
 
 </div>
 </div>

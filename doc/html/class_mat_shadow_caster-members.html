@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,21 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">MatShadowCaster 成员列表</div></div>
@@ -68,16 +51,17 @@ $(function() {
 
 <p>成员的完整列表，这些成员属于 <a class="el" href="class_mat_shadow_caster.html">MatShadowCaster</a>,包括所有继承而来的类成员</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Draw</b>(GameObject *, std::shared_ptr&lt; Mesh &gt;) (定义于 <a class="el" href="class_material.html">Material</a>)</td><td class="entry"><a class="el" href="class_material.html">Material</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>DrawFunc</b>(GameObject *gObj, std::shared_ptr&lt; Mesh &gt; mesh) override (定义于 <a class="el" href="class_mat_shadow_caster.html">MatShadowCaster</a>)</td><td class="entry"><a class="el" href="class_mat_shadow_caster.html">MatShadowCaster</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Init</b>(GameObject *, std::shared_ptr&lt; Mesh &gt; mesh) override (定义于 <a class="el" href="class_mat_shadow_caster.html">MatShadowCaster</a>)</td><td class="entry"><a class="el" href="class_mat_shadow_caster.html">MatShadowCaster</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Material</b>() (定义于 <a class="el" href="class_material.html">Material</a>)</td><td class="entry"><a class="el" href="class_material.html">Material</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>matName</b> (定义于 <a class="el" href="class_material.html">Material</a>)</td><td class="entry"><a class="el" href="class_material.html">Material</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>MatShadowCaster</b>() (定义于 <a class="el" href="class_mat_shadow_caster.html">MatShadowCaster</a>)</td><td class="entry"><a class="el" href="class_mat_shadow_caster.html">MatShadowCaster</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_material.html#a6c9d433520daedd36fd172970e86c42a">renderQueueIndex</a></td><td class="entry"><a class="el" href="class_material.html">Material</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>shader</b> (定义于 <a class="el" href="class_material.html">Material</a>)</td><td class="entry"><a class="el" href="class_material.html">Material</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~Material</b>() (定义于 <a class="el" href="class_material.html">Material</a>)</td><td class="entry"><a class="el" href="class_material.html">Material</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~MatShadowCaster</b>() (定义于 <a class="el" href="class_mat_shadow_caster.html">MatShadowCaster</a>)</td><td class="entry"><a class="el" href="class_mat_shadow_caster.html">MatShadowCaster</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_material.html#a5e1a8c78aa8bd556586fc8aa508182dc">Draw</a>(GameObject *, std::shared_ptr&lt; Mesh &gt;)</td><td class="entry"><a class="el" href="class_material.html">Material</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_mat_shadow_caster.html#a625fc3d54d917f931ae28b079aab8da6">DrawFunc</a>(GameObject *gObj, std::shared_ptr&lt; Mesh &gt; mesh) override</td><td class="entry"><a class="el" href="class_mat_shadow_caster.html">MatShadowCaster</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_mat_shadow_caster.html#a00a1d740627de52b58bc1a7f350d1481">Init</a>(GameObject *, std::shared_ptr&lt; Mesh &gt; mesh) override</td><td class="entry"><a class="el" href="class_mat_shadow_caster.html">MatShadowCaster</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_material.html#a782e40e6239d6c65257a0644b966ba3f">inited</a></td><td class="entry"><a class="el" href="class_material.html">Material</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_material.html#a137e987401b63eb7c6c27c3e38bc74b5">Material</a>()</td><td class="entry"><a class="el" href="class_material.html">Material</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_material.html#aae1227cfe05cd515bde9bd5b5e686201">matName</a></td><td class="entry"><a class="el" href="class_material.html">Material</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_mat_shadow_caster.html#a203912ab9f16457ee84539bb6463fa66">MatShadowCaster</a>()</td><td class="entry"><a class="el" href="class_mat_shadow_caster.html">MatShadowCaster</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_material.html#a6c9d433520daedd36fd172970e86c42a">renderQueueIndex</a></td><td class="entry"><a class="el" href="class_material.html">Material</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_material.html#abaac6082ee6cf042b2d4da4f6e6fe403">shader</a></td><td class="entry"><a class="el" href="class_material.html">Material</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_material.html#a2c19452d71f54075df8f5405b03129f4">~Material</a>()</td><td class="entry"><a class="el" href="class_material.html">Material</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_mat_shadow_caster.html#a38086f2c3f3a42d28673dd4c573b77af">~MatShadowCaster</a>()</td><td class="entry"><a class="el" href="class_mat_shadow_caster.html">MatShadowCaster</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

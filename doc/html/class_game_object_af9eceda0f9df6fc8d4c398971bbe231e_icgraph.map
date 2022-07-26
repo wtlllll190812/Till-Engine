@@ -1,4 +1,5 @@
 <map id="GameObject::AddComponent" name="GameObject::AddComponent">
-<area shape="rect" id="node1" title="添加组件" alt="" coords="223,5,415,32"/>
-<area shape="rect" id="node2" href="$class_game_object.html#a7bd3840ff675f1ee44ddec99fb89bc32" title="反序列化" alt="" coords="5,5,175,32"/>
+<area shape="rect" id="node1" title="添加组件" alt="" coords="447,5,639,32"/>
+<area shape="rect" id="node2" href="$class_game_object.html#a7bd3840ff675f1ee44ddec99fb89bc32" title="反序列化" alt="" coords="229,5,399,32"/>
+<area shape="rect" id="node3" href="$class_game_object.html#a723e616ef6ce1ca7697911c818774d4c" title=" " alt="" coords="5,5,181,32"/>
 </map>

@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,76 +28,87 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b1a122bf62c958266ec5bf64d14fde5a.html">ECS</a></li><li class="navelem"><a class="el" href="dir_eba7f6b8b7d3fd8e024a882aba073963.html">Components</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
   <div class="headertitle"><div class="title">Behaviour.cpp 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_behaviour_8h_source.html">Behaviour.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_reflection_8h_source.html">Reflection.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Behaviour.cpp 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="_behaviour_8cpp__incl.png" border="0" usemap="#a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_e_c_s_2_components_2_behaviour_8cpp" alt=""/></div>
 <map name="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_e_c_s_2_components_2_behaviour_8cpp" id="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_e_c_s_2_components_2_behaviour_8cpp">
-<area shape="rect" title=" " alt="" coords="690,5,905,61"/>
-<area shape="rect" href="_behaviour_8h.html" title=" " alt="" coords="753,109,842,136"/>
-<area shape="rect" href="_component_8h.html" title=" " alt="" coords="748,184,847,211"/>
-<area shape="rect" href="_reflection_8h.html" title=" " alt="" coords="669,259,760,285"/>
-<area shape="rect" href="_till_pch_8h.html" title=" " alt="" coords="739,333,811,360"/>
-<area shape="rect" href="_t_lxml_8h.html" title=" " alt="" coords="1334,333,1402,360"/>
-<area shape="rect" href="_singleton_01_8h.html" title=" " alt="" coords="5,408,96,435"/>
-<area shape="rect" title=" " alt="" coords="1291,408,1346,435"/>
-<area shape="rect" title=" " alt="" coords="293,408,371,435"/>
-<area shape="rect" title=" " alt="" coords="395,408,464,435"/>
-<area shape="rect" title=" " alt="" coords="1371,408,1464,435"/>
-<area shape="rect" title=" " alt="" coords="489,408,679,435"/>
-<area shape="rect" title=" " alt="" coords="704,408,845,435"/>
-<area shape="rect" title=" " alt="" coords="869,408,941,435"/>
-<area shape="rect" title=" " alt="" coords="965,408,1021,435"/>
-<area shape="rect" title=" " alt="" coords="1045,408,1115,435"/>
-<area shape="rect" title=" " alt="" coords="1139,408,1197,435"/>
-<area shape="rect" title=" " alt="" coords="1221,408,1267,435"/>
-<area shape="rect" title=" " alt="" coords="120,408,173,435"/>
-<area shape="rect" href="_debug_8h.html" title=" " alt="" coords="198,408,269,435"/>
-<area shape="rect" title=" " alt="" coords="177,483,290,509"/>
-<area shape="rect" title=" " alt="" coords="1488,408,1563,435"/>
+<area shape="rect" title=" " alt="" coords="89,5,303,61"/>
+<area shape="rect" href="_behaviour_8h.html" title=" " alt="" coords="94,109,183,136"/>
+<area shape="rect" href="_reflection_8h.html" title=" " alt="" coords="255,109,345,136"/>
+<area shape="rect" href="_component_8h.html" title=" " alt="" coords="5,184,104,211"/>
+<area shape="rect" href="_t_l_serialize_8h.html" title=" " alt="" coords="79,259,177,285"/>
+<area shape="rect" title=" " alt="" coords="398,333,453,360"/>
+<area shape="rect" title=" " alt="" coords="37,333,112,360"/>
+<area shape="rect" title=" " alt="" coords="136,333,229,360"/>
+<area shape="rect" href="_singleton_8h.html" title=" " alt="" coords="129,184,215,211"/>
+<area shape="rect" title=" " alt="" coords="239,184,286,211"/>
+<area shape="rect" title=" " alt="" coords="311,184,367,211"/>
+<area shape="rect" title=" " alt="" coords="391,184,460,211"/>
 </map>
 </div>
-</div></div><!-- contents -->
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a668f5b2042720e7f40d3efa419e2c825"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_behaviour_8cpp.html#a668f5b2042720e7f40d3efa419e2c825">REFLECTION</a> (<a class="el" href="class_behaviour.html">Behaviour</a>, <a class="el" href="class_component.html">Component</a>)</td></tr>
+<tr class="separator:a668f5b2042720e7f40d3efa419e2c825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="a668f5b2042720e7f40d3efa419e2c825" name="a668f5b2042720e7f40d3efa419e2c825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a668f5b2042720e7f40d3efa419e2c825">&#9670;&nbsp;</a></span>REFLECTION()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">REFLECTION </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_behaviour.html">Behaviour</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_component.html">Component</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4

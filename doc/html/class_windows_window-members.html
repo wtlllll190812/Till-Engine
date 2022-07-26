@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,21 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">WindowsWindow 成员列表</div></div>
@@ -69,23 +52,31 @@ $(function() {
 <p>成员的完整列表，这些成员属于 <a class="el" href="class_windows_window.html">WindowsWindow</a>,包括所有继承而来的类成员</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_windows_window.html#af89257b48d6fa8d8cb71ec1815551d19">AddFrameBuffer</a>(BufferType type) override</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Create</b>(const WindowProps &amp;props=WindowProps()) (定义于 <a class="el" href="class_window.html">Window</a>)</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_windows_window.html#a27cad6c527b8b73dfea5420fa9efeef2">DrawFunc</a>() override</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>EventCallbackFn</b> typedef (定义于 <a class="el" href="class_window.html">Window</a>)</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_window.html#a08d478a17b15bcf682d6d057460f81f7">Create</a>(const WindowProps &amp;props=WindowProps())</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_windows_window.html#a821238a294ce7aff05199ebeda9f9363">currentBuffer</a></td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_windows_window.html#a27cad6c527b8b73dfea5420fa9efeef2">DrawFunc</a>() override</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_window.html#afc178159093368739a4e65ed7a59b581">EventCallbackFn</a> typedef</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_windows_window.html#ac93f03481229920a84dfafef11a6fbc6">framebuffer</a></td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_windows_window.html#accb632f44700cfaef9688e3649a74b30">GetFrameBuffer</a>(int index=0) override</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_windows_window.html#a686ae2f91f8d01fc79e14efb283c8df1">GetHeight</a>() const override</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_windows_window.html#aa53b808e9996854304e815ff929d123e">GetMianFrameBuffer</a>(int index=0) override</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_windows_window.html#ac906871efb10dc561d47903603e39088">GetWidth</a>() const override</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_windows_window.html#a38fa94de0b3ce9b800317f6a6e06c6ed">GetWindow</a>() const</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>IsVSync</b>() const override (定义于 <a class="el" href="class_windows_window.html">WindowsWindow</a>)</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_windows_window.html#a5e1c514b38869b443941c670d6a3107e">OnRenderEnd</a>() override</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>SetEventCallback</b>(const EventCallbackFn &amp;callback) override (定义于 <a class="el" href="class_windows_window.html">WindowsWindow</a>)</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_windows_window.html#a7c80e96817a382eb9841b11100007413">IsVSync</a>() const override</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_windows_window.html#af856f50e6cf96e9a3878eb40d616f431">mainBuffer</a></td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_windows_window.html#a883619c3855a517e42866154a4eb199e">mData</a></td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_windows_window.html#a7bcab1b9182648d20b2e1c8e1b39b6d9">mWindow</a></td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_windows_window.html#a5e1c514b38869b443941c670d6a3107e">OnRenderEnd</a>() override</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_windows_window.html#a0b326b5573de24375a73d268edf8646f">SetCallback</a>()</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_windows_window.html#a88ef63042510d35bb4a1cf35bd0a3424">SetEventCallback</a>(const EventCallbackFn &amp;callback) override</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_windows_window.html#ae033c187fcc058e81b9ddb59ff60c970">SetFrameBuffer</a>(int index=0) override</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>SetFrameBuffer</b>(FrameBuffer *) override (定义于 <a class="el" href="class_windows_window.html">WindowsWindow</a>)</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_windows_window.html#ac3a15ef56e458ac9187da42fbdd7a08b">SetFrameBuffer</a>(FrameBuffer *) override</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_windows_window.html#a883ecb4b5fe42225cb05c137711757e2">SetVSync</a>(bool enabled) override</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>WindowsWindow</b>(const WindowProps &amp;props) (定义于 <a class="el" href="class_windows_window.html">WindowsWindow</a>)</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~Window</b>() (定义于 <a class="el" href="class_window.html">Window</a>)</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~WindowsWindow</b>() (定义于 <a class="el" href="class_windows_window.html">WindowsWindow</a>)</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_windows_window.html#a1f7ed30162d3bbc4fec38141fecdc240">ShutDown</a>()</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_windows_window.html#a18f60bb57db9857b4a2f28b8dc0d8d0e">WindowInit</a>(const WindowProps &amp;props)</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_windows_window.html#a9546e57a10dd1b786acb13c65fbddbea">WindowsWindow</a>(const WindowProps &amp;props)</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_window.html#a62b4a97b3c2e492f1d9a46092011e2d9">~Window</a>()</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_windows_window.html#a1a2b8c5022400764e5362c2b52886a30">~WindowsWindow</a>()</td><td class="entry"><a class="el" href="class_windows_window.html">WindowsWindow</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,19 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_75ae6d3613b6c2f243b8fb439548ec3f.html">Framework</a></li><li class="navelem"><a class="el" href="dir_dfadc32455ebf8702b3c412ffa801504.html">Tools</a></li>  </ul>
@@ -69,25 +50,31 @@ $(function() {
   <div class="headertitle"><div class="title">Debug.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="_debug_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;spdlog/spdlog.h&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="class_debug.html">    4</a></span><span class="keyword">class </span><a class="code hl_class" href="class_debug.html">Debug</a></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">//applog的字符串流对象,用于编辑器显示</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">static</span> std::stringstream appLogOss;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_debug.html#a63308dbb1f75a54d8899fd6a292ab0e0">    8</a></span>    <span class="keyword">static</span> std::stringstream <a class="code hl_variable" href="class_debug.html#a63308dbb1f75a54d8899fd6a292ab0e0">appLogOss</a>;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">//初始化debug系统</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> Init();</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_debug.html#af74e4b59f00db09b7d39625da34f7eef">Init</a>();</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">inline</span> <span class="keyword">static</span> std::shared_ptr&lt;spdlog::logger&gt;&amp; GetEngineLogger() { <span class="keywordflow">return</span> engineLog; }</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">inline</span> <span class="keyword">static</span> std::shared_ptr&lt;spdlog::logger&gt;&amp; GetAppLogger() { <span class="keywordflow">return</span> appLog; }</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_debug.html#a9ac5291fd84802ff1a4601de9218810c">   12</a></span>    <span class="keyword">inline</span> <span class="keyword">static</span> std::shared_ptr&lt;spdlog::logger&gt;&amp; <a class="code hl_function" href="class_debug.html#a9ac5291fd84802ff1a4601de9218810c">GetEngineLogger</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_debug.html#a71413820cd11d47182559fff13f2cc55">engineLog</a>; }</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_debug.html#aba43a04a085adda136af3ed7fa2593c9">   13</a></span>    <span class="keyword">inline</span> <span class="keyword">static</span> std::shared_ptr&lt;spdlog::logger&gt;&amp; <a class="code hl_function" href="class_debug.html#aba43a04a085adda136af3ed7fa2593c9">GetAppLogger</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_debug.html#a2a065d3da5f2b508b8814f6573dbf2ff">appLog</a>; }</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">static</span> std::shared_ptr&lt;spdlog::logger&gt; engineLog;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">static</span> std::shared_ptr&lt;spdlog::logger&gt; appLog;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_debug.html#a71413820cd11d47182559fff13f2cc55">   16</a></span>    <span class="keyword">static</span> std::shared_ptr&lt;spdlog::logger&gt; <a class="code hl_variable" href="class_debug.html#a71413820cd11d47182559fff13f2cc55">engineLog</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_debug.html#a2a065d3da5f2b508b8814f6573dbf2ff">   17</a></span>    <span class="keyword">static</span> std::shared_ptr&lt;spdlog::logger&gt; <a class="code hl_variable" href="class_debug.html#a2a065d3da5f2b508b8814f6573dbf2ff">appLog</a>;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>};</div>
 <div class="ttc" id="aclass_debug_html"><div class="ttname"><a href="class_debug.html">Debug</a></div><div class="ttdef"><b>Definition:</b> Debug.h:5</div></div>
+<div class="ttc" id="aclass_debug_html_a2a065d3da5f2b508b8814f6573dbf2ff"><div class="ttname"><a href="class_debug.html#a2a065d3da5f2b508b8814f6573dbf2ff">Debug::appLog</a></div><div class="ttdeci">static std::shared_ptr&lt; spdlog::logger &gt; appLog</div><div class="ttdef"><b>Definition:</b> Debug.h:17</div></div>
+<div class="ttc" id="aclass_debug_html_a63308dbb1f75a54d8899fd6a292ab0e0"><div class="ttname"><a href="class_debug.html#a63308dbb1f75a54d8899fd6a292ab0e0">Debug::appLogOss</a></div><div class="ttdeci">static std::stringstream appLogOss</div><div class="ttdef"><b>Definition:</b> Debug.h:8</div></div>
+<div class="ttc" id="aclass_debug_html_a71413820cd11d47182559fff13f2cc55"><div class="ttname"><a href="class_debug.html#a71413820cd11d47182559fff13f2cc55">Debug::engineLog</a></div><div class="ttdeci">static std::shared_ptr&lt; spdlog::logger &gt; engineLog</div><div class="ttdef"><b>Definition:</b> Debug.h:16</div></div>
+<div class="ttc" id="aclass_debug_html_a9ac5291fd84802ff1a4601de9218810c"><div class="ttname"><a href="class_debug.html#a9ac5291fd84802ff1a4601de9218810c">Debug::GetEngineLogger</a></div><div class="ttdeci">static std::shared_ptr&lt; spdlog::logger &gt; &amp; GetEngineLogger()</div><div class="ttdef"><b>Definition:</b> Debug.h:12</div></div>
+<div class="ttc" id="aclass_debug_html_aba43a04a085adda136af3ed7fa2593c9"><div class="ttname"><a href="class_debug.html#aba43a04a085adda136af3ed7fa2593c9">Debug::GetAppLogger</a></div><div class="ttdeci">static std::shared_ptr&lt; spdlog::logger &gt; &amp; GetAppLogger()</div><div class="ttdef"><b>Definition:</b> Debug.h:13</div></div>
+<div class="ttc" id="aclass_debug_html_af74e4b59f00db09b7d39625da34f7eef"><div class="ttname"><a href="class_debug.html#af74e4b59f00db09b7d39625da34f7eef">Debug::Init</a></div><div class="ttdeci">static void Init()</div><div class="ttdef"><b>Definition:</b> Debug.cpp:11</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

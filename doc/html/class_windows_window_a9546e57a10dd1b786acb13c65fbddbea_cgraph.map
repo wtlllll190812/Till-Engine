@@ -1,6 +1,8 @@
 <map id="WindowsWindow::WindowsWindow" name="WindowsWindow::WindowsWindow">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,233,57"/>
-<area shape="rect" id="node2" href="$class_windows_window.html#a2d953a29c786e860277dd965fdc01ed2" title=" " alt="" coords="281,31,428,57"/>
-<area shape="rect" id="node3" href="$class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="487,5,653,32"/>
-<area shape="rect" id="node4" href="$class_windows_window.html#a883ecb4b5fe42225cb05c137711757e2" title=" " alt="" coords="476,56,664,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,233,108"/>
+<area shape="rect" id="node2" href="$class_windows_window.html#a18f60bb57db9857b4a2f28b8dc0d8d0e" title="窗口初始化" alt="" coords="281,81,473,108"/>
+<area shape="rect" id="node3" href="$class_windows_window.html#af89257b48d6fa8d8cb71ec1815551d19" title="添加FBO" alt="" coords="521,5,744,32"/>
+<area shape="rect" id="node4" href="$class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="549,56,716,83"/>
+<area shape="rect" id="node5" href="$class_windows_window.html#a0b326b5573de24375a73d268edf8646f" title="设置窗口回调函数" alt="" coords="533,107,732,133"/>
+<area shape="rect" id="node6" href="$class_windows_window.html#a883ecb4b5fe42225cb05c137711757e2" title="设定垂直同步" alt="" coords="539,157,727,184"/>
 </map>

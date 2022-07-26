@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,19 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_4681a19507fe33ded8545b89b782904d.html">Window</a></li>  </ul>
@@ -69,20 +50,20 @@ $(function() {
   <div class="headertitle"><div class="title">Window.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;EventBase.h&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;FrameBuffer.h&quot;</span></div>
+<a href="_window_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_event_base_8h.html">EventBase.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="_frame_buffer_8h.html">FrameBuffer.h</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_window_props.html">    8</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_window_props.html">WindowProps</a></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    std::string Title;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Width;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Height;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_window_props.html#a12dfa63e8262968795a63695247789fa">   10</a></span>    std::string <a class="code hl_variable" href="struct_window_props.html#a12dfa63e8262968795a63695247789fa">Title</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_window_props.html#abd9ebe7579a464477a29e14eeeef963d">   11</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_window_props.html#abd9ebe7579a464477a29e14eeeef963d">Width</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_window_props.html#a5e91c66c84e0e0b9a63e05466a937a7b">   12</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_window_props.html#a5e91c66c84e0e0b9a63e05466a937a7b">Height</a>;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_struct" href="struct_window_props.html">WindowProps</a>(<span class="keyword">const</span> std::string&amp; title = <span class="stringliteral">&quot;Till Engine&quot;</span>,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_window_props.html#a204d860ff2544994c85cbe63ae8ae845">   14</a></span>    <a class="code hl_function" href="struct_window_props.html#a204d860ff2544994c85cbe63ae8ae845">WindowProps</a>(<span class="keyword">const</span> std::string&amp; title = <span class="stringliteral">&quot;Till Engine&quot;</span>,</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> width = 1080,</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> height = 720)</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        :Title(title), Width(width), Height(height)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        :<a class="code hl_variable" href="struct_window_props.html#a12dfa63e8262968795a63695247789fa">Title</a>(title), <a class="code hl_variable" href="struct_window_props.html#abd9ebe7579a464477a29e14eeeef963d">Width</a>(width), <a class="code hl_variable" href="struct_window_props.html#a5e91c66c84e0e0b9a63e05466a937a7b">Height</a>(height)</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
@@ -91,9 +72,9 @@ $(function() {
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_window.html">   26</a></span><span class="keyword">class </span><a class="code hl_class" href="class_window.html">Window</a></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">using </span>EventCallbackFn = std::function&lt;void(<a class="code hl_class" href="class_event_base.html">EventBase</a>&amp;)&gt;;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_window.html#afc178159093368739a4e65ed7a59b581">   29</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="class_window.html#afc178159093368739a4e65ed7a59b581">EventCallbackFn</a> = std::function&lt;void(<a class="code hl_class" href="class_event_base.html">EventBase</a>&amp;)&gt;;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_window.html">~Window</a>() {};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_window.html#a62b4a97b3c2e492f1d9a46092011e2d9">   31</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_window.html#a62b4a97b3c2e492f1d9a46092011e2d9">~Window</a>() {};</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_window.html#a64a4a74428952dbfd0d5ecbfdf56f604">   36</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_window.html#a64a4a74428952dbfd0d5ecbfdf56f604">DrawFunc</a>() = 0;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    </div>
@@ -110,31 +91,44 @@ $(function() {
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_window.html#a08cbfbd80938207165ed07120ed6cc23">   65</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_frame_buffer.html">FrameBuffer</a>* <a class="code hl_function" href="class_window.html#a08cbfbd80938207165ed07120ed6cc23">GetFrameBuffer</a>(<span class="keywordtype">int</span> index = 0) = 0;</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_window.html#a747f38cf55fdbc23552b6577ebb7efb1">   70</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_window.html#a747f38cf55fdbc23552b6577ebb7efb1">SetFrameBuffer</a>(<span class="keywordtype">int</span> index = 0) = 0;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_window.html#a747f38cf55fdbc23552b6577ebb7efb1">SetFrameBuffer</a>(<a class="code hl_class" href="class_frame_buffer.html">FrameBuffer</a>*) = 0;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_window.html#a981cf7002fb02bb3702f6883356a45f9">   71</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_window.html#a981cf7002fb02bb3702f6883356a45f9">SetFrameBuffer</a>(<a class="code hl_class" href="class_frame_buffer.html">FrameBuffer</a>*) = 0;</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_window.html#aba02ea624269e2f0a18e2e21c8c1807d">   75</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_frame_buffer.html">FrameBuffer</a>* <a class="code hl_function" href="class_window.html#aba02ea624269e2f0a18e2e21c8c1807d">GetMianFrameBuffer</a>(<span class="keywordtype">int</span> index = 0) = 0;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_window.html#afc596cc511a849dce3100da62b263f05">   79</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_frame_buffer.html">FrameBuffer</a>* <a class="code hl_function" href="class_window.html#afc596cc511a849dce3100da62b263f05">AddFrameBuffer</a>(BufferType type) = 0;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_window.html#afc596cc511a849dce3100da62b263f05">   79</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_frame_buffer.html">FrameBuffer</a>* <a class="code hl_function" href="class_window.html#afc596cc511a849dce3100da62b263f05">AddFrameBuffer</a>(<a class="code hl_enumeration" href="_frame_buffer_8h.html#adf8e136713c0691010d2bec6ba63e9cf">BufferType</a> type) = 0;</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetEventCallback(<span class="keyword">const</span> EventCallbackFn&amp; callback) = 0;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_window.html#aa806e44b1ad9d9e11f7bf74aceef3357">   81</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_window.html#aa806e44b1ad9d9e11f7bf74aceef3357">SetEventCallback</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="class_window.html#afc178159093368739a4e65ed7a59b581">EventCallbackFn</a>&amp; callback) = 0;</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="class_window.html#a14993a46f3548887496f4a5d374c470a">   85</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_window.html#a14993a46f3548887496f4a5d374c470a">SetVSync</a>(<span class="keywordtype">bool</span> enabled) = 0;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> IsVSync() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_window.html#ac4b9a50bd3360575d0f593e678f3b6e9">   86</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_window.html#ac4b9a50bd3360575d0f593e678f3b6e9">IsVSync</a>() <span class="keyword">const</span> = 0;</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="comment">//窗口工厂函数</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">static</span> <a class="code hl_class" href="class_window.html">Window</a>* Create(<span class="keyword">const</span> <a class="code hl_struct" href="struct_window_props.html">WindowProps</a>&amp; props = <a class="code hl_struct" href="struct_window_props.html">WindowProps</a>());</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">static</span> <a class="code hl_class" href="class_window.html">Window</a>* <a class="code hl_function" href="class_window.html#a08d478a17b15bcf682d6d057460f81f7">Create</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_window_props.html">WindowProps</a>&amp; props = <a class="code hl_struct" href="struct_window_props.html">WindowProps</a>());</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>};</div>
+<div class="ttc" id="a_event_base_8h_html"><div class="ttname"><a href="_event_base_8h.html">EventBase.h</a></div></div>
+<div class="ttc" id="a_frame_buffer_8h_html"><div class="ttname"><a href="_frame_buffer_8h.html">FrameBuffer.h</a></div></div>
+<div class="ttc" id="a_frame_buffer_8h_html_adf8e136713c0691010d2bec6ba63e9cf"><div class="ttname"><a href="_frame_buffer_8h.html#adf8e136713c0691010d2bec6ba63e9cf">BufferType</a></div><div class="ttdeci">BufferType</div><div class="ttdef"><b>Definition:</b> FrameBuffer.h:5</div></div>
 <div class="ttc" id="aclass_event_base_html"><div class="ttname"><a href="class_event_base.html">EventBase</a></div><div class="ttdoc">事件类基类</div><div class="ttdef"><b>Definition:</b> EventBase.h:52</div></div>
 <div class="ttc" id="aclass_frame_buffer_html"><div class="ttname"><a href="class_frame_buffer.html">FrameBuffer</a></div><div class="ttdoc">帧缓存</div><div class="ttdef"><b>Definition:</b> FrameBuffer.h:16</div></div>
 <div class="ttc" id="aclass_window_html"><div class="ttname"><a href="class_window.html">Window</a></div><div class="ttdef"><b>Definition:</b> Window.h:27</div></div>
 <div class="ttc" id="aclass_window_html_a08cbfbd80938207165ed07120ed6cc23"><div class="ttname"><a href="class_window.html#a08cbfbd80938207165ed07120ed6cc23">Window::GetFrameBuffer</a></div><div class="ttdeci">virtual FrameBuffer * GetFrameBuffer(int index=0)=0</div><div class="ttdoc">获取指定FBO</div></div>
+<div class="ttc" id="aclass_window_html_a08d478a17b15bcf682d6d057460f81f7"><div class="ttname"><a href="class_window.html#a08d478a17b15bcf682d6d057460f81f7">Window::Create</a></div><div class="ttdeci">static Window * Create(const WindowProps &amp;props=WindowProps())</div><div class="ttdef"><b>Definition:</b> WindowsWindow.cpp:16</div></div>
 <div class="ttc" id="aclass_window_html_a0dcd7f056cb1534c4fda7ea82dfaf462"><div class="ttname"><a href="class_window.html#a0dcd7f056cb1534c4fda7ea82dfaf462">Window::GetWindow</a></div><div class="ttdeci">virtual void * GetWindow() const</div><div class="ttdoc">获取当前平台的窗口对象</div><div class="ttdef"><b>Definition:</b> Window.h:56</div></div>
 <div class="ttc" id="aclass_window_html_a14993a46f3548887496f4a5d374c470a"><div class="ttname"><a href="class_window.html#a14993a46f3548887496f4a5d374c470a">Window::SetVSync</a></div><div class="ttdeci">virtual void SetVSync(bool enabled)=0</div><div class="ttdoc">设定垂直同步</div></div>
 <div class="ttc" id="aclass_window_html_a35f0d591a21f367314853952e54cdf84"><div class="ttname"><a href="class_window.html#a35f0d591a21f367314853952e54cdf84">Window::GetHeight</a></div><div class="ttdeci">virtual unsigned int GetHeight() const =0</div><div class="ttdoc">获取窗口高度</div></div>
+<div class="ttc" id="aclass_window_html_a62b4a97b3c2e492f1d9a46092011e2d9"><div class="ttname"><a href="class_window.html#a62b4a97b3c2e492f1d9a46092011e2d9">Window::~Window</a></div><div class="ttdeci">virtual ~Window()</div><div class="ttdef"><b>Definition:</b> Window.h:31</div></div>
 <div class="ttc" id="aclass_window_html_a64a4a74428952dbfd0d5ecbfdf56f604"><div class="ttname"><a href="class_window.html#a64a4a74428952dbfd0d5ecbfdf56f604">Window::DrawFunc</a></div><div class="ttdeci">virtual void DrawFunc()=0</div><div class="ttdoc">窗口渲染函数</div></div>
 <div class="ttc" id="aclass_window_html_a747f38cf55fdbc23552b6577ebb7efb1"><div class="ttname"><a href="class_window.html#a747f38cf55fdbc23552b6577ebb7efb1">Window::SetFrameBuffer</a></div><div class="ttdeci">virtual void SetFrameBuffer(int index=0)=0</div><div class="ttdoc">设定当前FBO上下文</div></div>
 <div class="ttc" id="aclass_window_html_a88bb5f556857ba82c62dd79abacf4c67"><div class="ttname"><a href="class_window.html#a88bb5f556857ba82c62dd79abacf4c67">Window::GetWidth</a></div><div class="ttdeci">virtual unsigned int GetWidth() const =0</div><div class="ttdoc">获取窗口宽度</div></div>
+<div class="ttc" id="aclass_window_html_a981cf7002fb02bb3702f6883356a45f9"><div class="ttname"><a href="class_window.html#a981cf7002fb02bb3702f6883356a45f9">Window::SetFrameBuffer</a></div><div class="ttdeci">virtual void SetFrameBuffer(FrameBuffer *)=0</div></div>
+<div class="ttc" id="aclass_window_html_aa806e44b1ad9d9e11f7bf74aceef3357"><div class="ttname"><a href="class_window.html#aa806e44b1ad9d9e11f7bf74aceef3357">Window::SetEventCallback</a></div><div class="ttdeci">virtual void SetEventCallback(const EventCallbackFn &amp;callback)=0</div></div>
 <div class="ttc" id="aclass_window_html_aba02ea624269e2f0a18e2e21c8c1807d"><div class="ttname"><a href="class_window.html#aba02ea624269e2f0a18e2e21c8c1807d">Window::GetMianFrameBuffer</a></div><div class="ttdeci">virtual FrameBuffer * GetMianFrameBuffer(int index=0)=0</div><div class="ttdoc">获取主FBO</div></div>
+<div class="ttc" id="aclass_window_html_ac4b9a50bd3360575d0f593e678f3b6e9"><div class="ttname"><a href="class_window.html#ac4b9a50bd3360575d0f593e678f3b6e9">Window::IsVSync</a></div><div class="ttdeci">virtual bool IsVSync() const =0</div></div>
 <div class="ttc" id="aclass_window_html_af654767b70e208db7fe08f34133bb2c7"><div class="ttname"><a href="class_window.html#af654767b70e208db7fe08f34133bb2c7">Window::OnRenderEnd</a></div><div class="ttdeci">virtual void OnRenderEnd()=0</div><div class="ttdoc">每帧渲染结束时调用</div></div>
+<div class="ttc" id="aclass_window_html_afc178159093368739a4e65ed7a59b581"><div class="ttname"><a href="class_window.html#afc178159093368739a4e65ed7a59b581">Window::EventCallbackFn</a></div><div class="ttdeci">std::function&lt; void(EventBase &amp;)&gt; EventCallbackFn</div><div class="ttdef"><b>Definition:</b> Window.h:29</div></div>
 <div class="ttc" id="aclass_window_html_afc596cc511a849dce3100da62b263f05"><div class="ttname"><a href="class_window.html#afc596cc511a849dce3100da62b263f05">Window::AddFrameBuffer</a></div><div class="ttdeci">virtual FrameBuffer * AddFrameBuffer(BufferType type)=0</div><div class="ttdoc">添加FBO</div></div>
 <div class="ttc" id="astruct_window_props_html"><div class="ttname"><a href="struct_window_props.html">WindowProps</a></div><div class="ttdoc">窗口属性</div><div class="ttdef"><b>Definition:</b> Window.h:9</div></div>
+<div class="ttc" id="astruct_window_props_html_a12dfa63e8262968795a63695247789fa"><div class="ttname"><a href="struct_window_props.html#a12dfa63e8262968795a63695247789fa">WindowProps::Title</a></div><div class="ttdeci">std::string Title</div><div class="ttdef"><b>Definition:</b> Window.h:10</div></div>
+<div class="ttc" id="astruct_window_props_html_a204d860ff2544994c85cbe63ae8ae845"><div class="ttname"><a href="struct_window_props.html#a204d860ff2544994c85cbe63ae8ae845">WindowProps::WindowProps</a></div><div class="ttdeci">WindowProps(const std::string &amp;title=&quot;Till Engine&quot;, unsigned int width=1080, unsigned int height=720)</div><div class="ttdef"><b>Definition:</b> Window.h:14</div></div>
+<div class="ttc" id="astruct_window_props_html_a5e91c66c84e0e0b9a63e05466a937a7b"><div class="ttname"><a href="struct_window_props.html#a5e91c66c84e0e0b9a63e05466a937a7b">WindowProps::Height</a></div><div class="ttdeci">unsigned int Height</div><div class="ttdef"><b>Definition:</b> Window.h:12</div></div>
+<div class="ttc" id="astruct_window_props_html_abd9ebe7579a464477a29e14eeeef963d"><div class="ttname"><a href="struct_window_props.html#abd9ebe7579a464477a29e14eeeef963d">WindowProps::Width</a></div><div class="ttdeci">unsigned int Width</div><div class="ttdef"><b>Definition:</b> Window.h:11</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

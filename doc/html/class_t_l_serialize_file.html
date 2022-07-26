@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,58 +28,58 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
 <a href="class_t_l_serialize_file-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">TLSerializeFile类 参考</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_t_l_serialize_8h_source.html">TLSerialize.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:a84b86cdbb9fea5df943b4a4a34293acd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_serialize_file.html#a84b86cdbb9fea5df943b4a4a34293acd">TLSerializeFile</a> (std::string, std::string)</td></tr>
 <tr class="memdesc:a84b86cdbb9fea5df943b4a4a34293acd"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <a href="class_t_l_serialize_file.html#a84b86cdbb9fea5df943b4a4a34293acd">更多...</a><br /></td></tr>
 <tr class="separator:a84b86cdbb9fea5df943b4a4a34293acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86c2393db265dbaa18d7188852f80252"><td class="memItemLeft" align="right" valign="top"><a id="a86c2393db265dbaa18d7188852f80252" name="a86c2393db265dbaa18d7188852f80252"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Save</b> ()</td></tr>
-<tr class="memdesc:a86c2393db265dbaa18d7188852f80252"><td class="mdescLeft">&#160;</td><td class="mdescRight">保存文件 <br /></td></tr>
+<tr class="memitem:a5778d8581da01b70c1a119596fc2fb5f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_serialize_file.html#a5778d8581da01b70c1a119596fc2fb5f">~TLSerializeFile</a> ()</td></tr>
+<tr class="separator:a5778d8581da01b70c1a119596fc2fb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86c2393db265dbaa18d7188852f80252"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_serialize_file.html#a86c2393db265dbaa18d7188852f80252">Save</a> ()</td></tr>
+<tr class="memdesc:a86c2393db265dbaa18d7188852f80252"><td class="mdescLeft">&#160;</td><td class="mdescRight">保存文件  <a href="class_t_l_serialize_file.html#a86c2393db265dbaa18d7188852f80252">更多...</a><br /></td></tr>
 <tr class="separator:a86c2393db265dbaa18d7188852f80252"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b6871867e3d1d19cbe0368541a0b4b0"><td class="memItemLeft" align="right" valign="top"><a id="a0b6871867e3d1d19cbe0368541a0b4b0" name="a0b6871867e3d1d19cbe0368541a0b4b0"></a>
-TiXmlElement *&#160;</td><td class="memItemRight" valign="bottom"><b>GetRoot</b> ()</td></tr>
-<tr class="memdesc:a0b6871867e3d1d19cbe0368541a0b4b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取根节点 <br /></td></tr>
+<tr class="memitem:a0b6871867e3d1d19cbe0368541a0b4b0"><td class="memItemLeft" align="right" valign="top">TiXmlElement *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_serialize_file.html#a0b6871867e3d1d19cbe0368541a0b4b0">GetRoot</a> ()</td></tr>
+<tr class="memdesc:a0b6871867e3d1d19cbe0368541a0b4b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取根节点  <a href="class_t_l_serialize_file.html#a0b6871867e3d1d19cbe0368541a0b4b0">更多...</a><br /></td></tr>
 <tr class="separator:a0b6871867e3d1d19cbe0368541a0b4b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:aa22059f0181b39b39acae68e74e059c7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_serialize_file.html#aa22059f0181b39b39acae68e74e059c7">path</a></td></tr>
+<tr class="memdesc:aa22059f0181b39b39acae68e74e059c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">文件路径  <a href="class_t_l_serialize_file.html#aa22059f0181b39b39acae68e74e059c7">更多...</a><br /></td></tr>
+<tr class="separator:aa22059f0181b39b39acae68e74e059c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7114842c903d2c82243215f0424d5b80"><td class="memItemLeft" align="right" valign="top">TiXmlDocument&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_serialize_file.html#a7114842c903d2c82243215f0424d5b80">file</a></td></tr>
+<tr class="memdesc:a7114842c903d2c82243215f0424d5b80"><td class="mdescLeft">&#160;</td><td class="mdescRight">文件对象  <a href="class_t_l_serialize_file.html#a7114842c903d2c82243215f0424d5b80">更多...</a><br /></td></tr>
+<tr class="separator:a7114842c903d2c82243215f0424d5b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80cafd44f26090b3771c80cd89da324e"><td class="memItemLeft" align="right" valign="top">TiXmlElement *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_serialize_file.html#a80cafd44f26090b3771c80cd89da324e">root</a></td></tr>
+<tr class="memdesc:a80cafd44f26090b3771c80cd89da324e"><td class="mdescLeft">&#160;</td><td class="mdescRight">文件根节点  <a href="class_t_l_serialize_file.html#a80cafd44f26090b3771c80cd89da324e">更多...</a><br /></td></tr>
+<tr class="separator:a80cafd44f26090b3771c80cd89da324e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">构造及析构函数说明</h2>
 <a id="a84b86cdbb9fea5df943b4a4a34293acd" name="a84b86cdbb9fea5df943b4a4a34293acd"></a>
@@ -116,9 +114,174 @@ TiXmlElement *&#160;</td><td class="memItemRight" valign="bottom"><b>GetRoot</b>
 
 </div>
 </div>
+<a id="a5778d8581da01b70c1a119596fc2fb5f" name="a5778d8581da01b70c1a119596fc2fb5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5778d8581da01b70c1a119596fc2fb5f">&#9670;&nbsp;</a></span>~TLSerializeFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TLSerializeFile::~TLSerializeFile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a0b6871867e3d1d19cbe0368541a0b4b0" name="a0b6871867e3d1d19cbe0368541a0b4b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b6871867e3d1d19cbe0368541a0b4b0">&#9670;&nbsp;</a></span>GetRoot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TiXmlElement * TLSerializeFile::GetRoot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取根节点 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_t_l_serialize_file_a0b6871867e3d1d19cbe0368541a0b4b0_icgraph.png" border="0" usemap="#aclass_t_l_serialize_file_a0b6871867e3d1d19cbe0368541a0b4b0_icgraph" alt=""/></div>
+<map name="aclass_t_l_serialize_file_a0b6871867e3d1d19cbe0368541a0b4b0_icgraph" id="aclass_t_l_serialize_file_a0b6871867e3d1d19cbe0368541a0b4b0_icgraph">
+<area shape="rect" title="获取根节点" alt="" coords="216,31,379,57"/>
+<area shape="rect" href="class_scene.html#a685199995d80af3cbbf2606dc27c77d8" title="添加新物体" alt="" coords="5,5,168,32"/>
+<area shape="rect" href="class_scene.html#a68aaa2ba723de8190353354012658db6" title="读取并初始化场景" alt="" coords="35,56,139,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a86c2393db265dbaa18d7188852f80252" name="a86c2393db265dbaa18d7188852f80252"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86c2393db265dbaa18d7188852f80252">&#9670;&nbsp;</a></span>Save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TLSerializeFile::Save </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>保存文件 </p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_t_l_serialize_file_a86c2393db265dbaa18d7188852f80252_icgraph.png" border="0" usemap="#aclass_t_l_serialize_file_a86c2393db265dbaa18d7188852f80252_icgraph" alt=""/></div>
+<map name="aclass_t_l_serialize_file_a86c2393db265dbaa18d7188852f80252_icgraph" id="aclass_t_l_serialize_file_a86c2393db265dbaa18d7188852f80252_icgraph">
+<area shape="rect" title="保存文件" alt="" coords="308,5,451,32"/>
+<area shape="rect" href="class_scene.html#aec4393448e15e9422ae62681dca0d70f" title="保存场景" alt="" coords="165,5,260,32"/>
+<area shape="rect" href="class_scene.html#a3b8cec2e32546713915f8c6303c951f1" title=" " alt="" coords="5,5,117,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a7114842c903d2c82243215f0424d5b80" name="a7114842c903d2c82243215f0424d5b80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7114842c903d2c82243215f0424d5b80">&#9670;&nbsp;</a></span>file</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TiXmlDocument TLSerializeFile::file</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>文件对象 </p>
+
+</div>
+</div>
+<a id="aa22059f0181b39b39acae68e74e059c7" name="aa22059f0181b39b39acae68e74e059c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa22059f0181b39b39acae68e74e059c7">&#9670;&nbsp;</a></span>path</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string TLSerializeFile::path</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>文件路径 </p>
+
+</div>
+</div>
+<a id="a80cafd44f26090b3771c80cd89da324e" name="a80cafd44f26090b3771c80cd89da324e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80cafd44f26090b3771c80cd89da324e">&#9670;&nbsp;</a></span>root</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TiXmlElement* TLSerializeFile::root</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>文件根节点 </p>
+
+</div>
+</div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Tools/<a class="el" href="_t_l_serialize_8h_source.html">TLSerialize.h</a></li>
-<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Tools/TLSerialize.cpp</li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Tools/<a class="el" href="_t_l_serialize_8cpp.html">TLSerialize.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

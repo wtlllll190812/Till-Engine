@@ -1,0 +1,6 @@
+<map id="Transform::GetModelMatrix" name="Transform::GetModelMatrix">
+<area shape="rect" id="node1" title="获取model矩阵" alt="" coords="248,56,427,83"/>
+<area shape="rect" id="node2" href="$class_default_material.html#a7a7ea7bf4b54e222f802dac87c6c75ba" title=" " alt="" coords="15,5,190,32"/>
+<area shape="rect" id="node3" href="$class_light_material.html#a9d95ee4e03cec82d94d6e0a319f32c08" title=" " alt="" coords="21,56,184,83"/>
+<area shape="rect" id="node4" href="$class_mat_shadow_caster.html#a625fc3d54d917f931ae28b079aab8da6" title=" " alt="" coords="5,107,200,133"/>
+</map>

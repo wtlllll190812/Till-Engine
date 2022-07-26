@@ -1,0 +1,9 @@
+<map id="TLSerialize::DeSerialize" name="TLSerialize::DeSerialize">
+<area shape="rect" id="node1" title=" " alt="" coords="669,81,829,108"/>
+<area shape="rect" id="node2" href="$class_direction_light.html#acee57f63f803535fa8ff74ae8b4663a8" title="反序列化" alt="" coords="447,5,621,32"/>
+<area shape="rect" id="node3" href="$class_point_light.html#ab878efadcb12dee4f3aafb31189386e9" title="反序列化" alt="" coords="457,56,611,83"/>
+<area shape="rect" id="node4" href="$class_spot_light.html#aa7d60f9312634b2708cbd32fdce23957" title="反序列化" alt="" coords="459,107,609,133"/>
+<area shape="rect" id="node5" href="$class_transform.html#abe93692dc6c3083f804c0c44f8e8fcc4" title="反序列化" alt="" coords="457,157,611,184"/>
+<area shape="rect" id="node6" href="$class_game_object.html#a7bd3840ff675f1ee44ddec99fb89bc32" title="反序列化" alt="" coords="229,157,399,184"/>
+<area shape="rect" id="node7" href="$class_game_object.html#a723e616ef6ce1ca7697911c818774d4c" title=" " alt="" coords="5,157,181,184"/>
+</map>

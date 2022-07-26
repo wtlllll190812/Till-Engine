@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,21 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">DirectionLight 成员列表</div></div>
@@ -70,28 +53,28 @@ $(function() {
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_light.html#aefc911f0e61151d584c34435aba20157">Awake</a>() override</td><td class="entry"><a class="el" href="class_light.html">Light</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_light.html#a91d73d70b4bd4beb402c0f16dab19a25">color</a></td><td class="entry"><a class="el" href="class_light.html">Light</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Component</b>() (定义于 <a class="el" href="class_component.html">Component</a>)</td><td class="entry"><a class="el" href="class_component.html">Component</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_component.html#a8775db6d1a2c1afc2e77cd3c8f39da6f">Component</a>()</td><td class="entry"><a class="el" href="class_component.html">Component</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_direction_light.html#acee57f63f803535fa8ff74ae8b4663a8">DeSerialize</a>(TiXmlElement *) override</td><td class="entry"><a class="el" href="class_direction_light.html">DirectionLight</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>DirectionLight</b>() (定义于 <a class="el" href="class_direction_light.html">DirectionLight</a>)</td><td class="entry"><a class="el" href="class_direction_light.html">DirectionLight</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_direction_light.html#ad4c0856107bb83e3d3db36b3c2a96036">DirectionLight</a>()</td><td class="entry"><a class="el" href="class_direction_light.html">DirectionLight</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_component.html#a4be7636ba1ed0be9cffbe35a72f51bab">gameobject</a></td><td class="entry"><a class="el" href="class_component.html">Component</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_direction_light.html#af03a2f9c620db69d426c76fc48e2453d">GetAtten</a>(glm::vec3 objPos) const override</td><td class="entry"><a class="el" href="class_direction_light.html">DirectionLight</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_component.html#a8fca2c981efd6e4a7801dada5eb992ec">GetComponent</a>()</td><td class="entry"><a class="el" href="class_component.html">Component</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_component.html#a43a014c7f8624d95464ad2996ce493ef">GetHash</a>()</td><td class="entry"><a class="el" href="class_component.html">Component</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>GetName</b>() const =0 (定义于 <a class="el" href="class_component.html">Component</a>)</td><td class="entry"><a class="el" href="class_component.html">Component</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_component.html#ac350787c55558ea752326fc44a360f16">GetName</a>() const =0</td><td class="entry"><a class="el" href="class_component.html">Component</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_light.html#a588ac0fdc08c1e5a7dc2bd1359050b58">GetOrthoMatrix</a>()</td><td class="entry"><a class="el" href="class_light.html">Light</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_light.html#a1e7165b7078fbdf2235de9f3c9587e1a">GetViewMatrix</a>()</td><td class="entry"><a class="el" href="class_light.html">Light</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_component.html#a57e565f803beda2c2976d3a5b708d704">guid</a></td><td class="entry"><a class="el" href="class_component.html">Component</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_direction_light.html#a1722bf9ba1a25621543507f530c9ea89">GuiDisPlay</a>() override</td><td class="entry"><a class="el" href="class_direction_light.html">DirectionLight</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_light.html#a1071eaa556f4bb2a9345fdfba7e6f220">intensity</a></td><td class="entry"><a class="el" href="class_light.html">Light</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Light</b>(float, glm::vec3) (定义于 <a class="el" href="class_light.html">Light</a>)</td><td class="entry"><a class="el" href="class_light.html">Light</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Light</b>() (定义于 <a class="el" href="class_light.html">Light</a>)</td><td class="entry"><a class="el" href="class_light.html">Light</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_light.html#ad3340a6ce401c6a28e8aef4c38e9d20b">Light</a>(float, glm::vec3)</td><td class="entry"><a class="el" href="class_light.html">Light</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_light.html#aeb5df09a25a32f19fdffa761268ba24f">Light</a>()</td><td class="entry"><a class="el" href="class_light.html">Light</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_serializable.html#a4be5c5e13129b89d05d7b4a7094d440b">m_node</a></td><td class="entry"><a class="el" href="class_serializable.html">Serializable</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_component.html#a700986a2f0d8681399632108d896978a">OnRemove</a>()</td><td class="entry"><a class="el" href="class_component.html">Component</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_component.html#a706e9681ec78cc0a863e5184ba4abe49">OnUpdate</a>()</td><td class="entry"><a class="el" href="class_component.html">Component</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_direction_light.html#acf7bdc44fa95366871a2e8fe8d1f7c09">Serialize</a>(std::string name=&quot;Default&quot;) override</td><td class="entry"><a class="el" href="class_direction_light.html">DirectionLight</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_serializable.html#ac713a26d2d8e38066e29555199af5580">UpdateNode</a>()</td><td class="entry"><a class="el" href="class_serializable.html">Serializable</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~DirectionLight</b>() (定义于 <a class="el" href="class_direction_light.html">DirectionLight</a>)</td><td class="entry"><a class="el" href="class_direction_light.html">DirectionLight</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~Light</b>() (定义于 <a class="el" href="class_light.html">Light</a>)</td><td class="entry"><a class="el" href="class_light.html">Light</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_direction_light.html#a19d8938a0009a76e1d793d172607fff9">~DirectionLight</a>()</td><td class="entry"><a class="el" href="class_direction_light.html">DirectionLight</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_light.html#ad0e59fad13bb6cfadc25b2c477e9ddc7">~Light</a>()</td><td class="entry"><a class="el" href="class_light.html">Light</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

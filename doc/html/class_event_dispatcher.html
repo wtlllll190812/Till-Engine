@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,40 +28,27 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-types">Private 类型</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
 <a href="class_event_dispatcher-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">EventDispatcher类 参考</div></div>
 </div><!--header-->
@@ -73,21 +58,167 @@ $(function() {
  <a href="class_event_dispatcher.html#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_event_base_8h_source.html">EventBase.h</a>&gt;</code></p>
+<div class="dynheader">
+EventDispatcher 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_event_dispatcher__coll__graph.png" border="0" usemap="#a_event_dispatcher_coll__map" alt="Collaboration graph"/></div>
+<map name="a_event_dispatcher_coll__map" id="a_event_dispatcher_coll__map">
+<area shape="rect" title="事件调度类" alt="" coords="5,95,121,121"/>
+<area shape="rect" href="class_event_base.html" title="事件类基类" alt="" coords="21,5,105,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:ab470ca75c0491a850e0fea809cf77ba1"><td class="memItemLeft" align="right" valign="top"><a id="ab470ca75c0491a850e0fea809cf77ba1" name="ab470ca75c0491a850e0fea809cf77ba1"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>EventDispatcher</b> (<a class="el" href="class_event_base.html">EventBase</a> &amp;event)</td></tr>
+<tr class="memitem:ab470ca75c0491a850e0fea809cf77ba1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_dispatcher.html#ab470ca75c0491a850e0fea809cf77ba1">EventDispatcher</a> (<a class="el" href="class_event_base.html">EventBase</a> &amp;event)</td></tr>
 <tr class="separator:ab470ca75c0491a850e0fea809cf77ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa52657a74c2be46ec503b3ad8fc469d1"><td class="memTemplParams" colspan="2"><a id="aa52657a74c2be46ec503b3ad8fc469d1" name="aa52657a74c2be46ec503b3ad8fc469d1"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:aa52657a74c2be46ec503b3ad8fc469d1"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>Dispatch</b> (EventFn&lt; T &gt; func)</td></tr>
-<tr class="memdesc:aa52657a74c2be46ec503b3ad8fc469d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断事件类型是否符合 <br /></td></tr>
+<tr class="memitem:aa52657a74c2be46ec503b3ad8fc469d1"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aa52657a74c2be46ec503b3ad8fc469d1"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_event_dispatcher.html#aa52657a74c2be46ec503b3ad8fc469d1">Dispatch</a> (<a class="el" href="class_event_dispatcher.html#abcbec7ded3e63bd45bc384834a22a7da">EventFn</a>&lt; T &gt; func)</td></tr>
+<tr class="memdesc:aa52657a74c2be46ec503b3ad8fc469d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断事件类型是否符合  <a href="class_event_dispatcher.html#aa52657a74c2be46ec503b3ad8fc469d1">更多...</a><br /></td></tr>
 <tr class="separator:aa52657a74c2be46ec503b3ad8fc469d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private 类型</h2></td></tr>
+<tr class="memitem:abcbec7ded3e63bd45bc384834a22a7da"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:abcbec7ded3e63bd45bc384834a22a7da"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_event_dispatcher.html#abcbec7ded3e63bd45bc384834a22a7da">EventFn</a> = std::function&lt; bool(T &amp;)&gt;</td></tr>
+<tr class="separator:abcbec7ded3e63bd45bc384834a22a7da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a1f2b901d49209e1bc097c32dd6d5c1b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_event_base.html">EventBase</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_dispatcher.html#a1f2b901d49209e1bc097c32dd6d5c1b2">mEvent</a></td></tr>
+<tr class="separator:a1f2b901d49209e1bc097c32dd6d5c1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p >事件调度类 </p>
-</div><hr/>该类的文档由以下文件生成:<ul>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="abcbec7ded3e63bd45bc384834a22a7da" name="abcbec7ded3e63bd45bc384834a22a7da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcbec7ded3e63bd45bc384834a22a7da">&#9670;&nbsp;</a></span>EventFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_event_dispatcher.html#abcbec7ded3e63bd45bc384834a22a7da">EventDispatcher::EventFn</a> =  std::function&lt;bool(T&amp;)&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ab470ca75c0491a850e0fea809cf77ba1" name="ab470ca75c0491a850e0fea809cf77ba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab470ca75c0491a850e0fea809cf77ba1">&#9670;&nbsp;</a></span>EventDispatcher()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventDispatcher::EventDispatcher </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_event_base.html">EventBase</a> &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aa52657a74c2be46ec503b3ad8fc469d1" name="aa52657a74c2be46ec503b3ad8fc469d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa52657a74c2be46ec503b3ad8fc469d1">&#9670;&nbsp;</a></span>Dispatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EventDispatcher::Dispatch </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_event_dispatcher.html#abcbec7ded3e63bd45bc384834a22a7da">EventFn</a>&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>func</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>判断事件类型是否符合 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_event_dispatcher_aa52657a74c2be46ec503b3ad8fc469d1_cgraph.png" border="0" usemap="#aclass_event_dispatcher_aa52657a74c2be46ec503b3ad8fc469d1_cgraph" alt=""/></div>
+<map name="aclass_event_dispatcher_aa52657a74c2be46ec503b3ad8fc469d1_cgraph" id="aclass_event_dispatcher_aa52657a74c2be46ec503b3ad8fc469d1_cgraph">
+<area shape="rect" title="判断事件类型是否符合" alt="" coords="5,5,180,32"/>
+<area shape="rect" href="class_event_base.html#a91f4adadacab79ddf2c64b92057a6cc6" title=" " alt="" coords="228,5,401,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_event_dispatcher_aa52657a74c2be46ec503b3ad8fc469d1_icgraph.png" border="0" usemap="#aclass_event_dispatcher_aa52657a74c2be46ec503b3ad8fc469d1_icgraph" alt=""/></div>
+<map name="aclass_event_dispatcher_aa52657a74c2be46ec503b3ad8fc469d1_icgraph" id="aclass_event_dispatcher_aa52657a74c2be46ec503b3ad8fc469d1_icgraph">
+<area shape="rect" title="判断事件类型是否符合" alt="" coords="665,55,840,81"/>
+<area shape="rect" href="class_application.html#a1d31824bbed36791a15243852d18669a" title="处理事件" alt="" coords="475,29,617,56"/>
+<area shape="rect" href="class_imgui_layer.html#ade36001fdd1861e19dadc2d32d5e7bd5" title=" " alt="" coords="475,80,617,107"/>
+<area shape="rect" href="class_application.html#a091df3ec4695b64249e57a76c93b6612" title="初始化应用" alt="" coords="292,29,427,56"/>
+<area shape="rect" href="class_application.html#a5378330e10e42fcb9a2269b533759b0f" title="运行应用" alt="" coords="104,29,244,56"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,29,56,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a1f2b901d49209e1bc097c32dd6d5c1b2" name="a1f2b901d49209e1bc097c32dd6d5c1b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f2b901d49209e1bc097c32dd6d5c1b2">&#9670;&nbsp;</a></span>mEvent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_event_base.html">EventBase</a>&amp; EventDispatcher::mEvent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Events/<a class="el" href="_event_base_8h_source.html">EventBase.h</a></li>
 </ul>
 </div><!-- contents -->

@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,41 +28,27 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public 成员函数</a> &#124;
 <a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
 <a href="class_scene-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">Scene类 参考</div></div>
 </div><!--header-->
@@ -79,12 +63,13 @@ Scene 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_scene__coll__graph.png" border="0" usemap="#a_scene_coll__map" alt="Collaboration graph"/></div>
 <map name="a_scene_coll__map" id="a_scene_coll__map">
-<area shape="rect" title="场景类" alt="" coords="5,5,64,32"/>
-<area shape="rect" href="class_game_object.html" title=" " alt="" coords="153,95,247,121"/>
-<area shape="rect" href="class_camera.html" title=" " alt="" coords="52,260,119,287"/>
-<area shape="rect" href="class_component.html" title="组件基类" alt="" coords="92,184,180,211"/>
-<area shape="rect" href="class_transform.html" title=" " alt="" coords="146,260,225,287"/>
-<area shape="rect" href="class_serializable.html" title="可序列化对象接口" alt="" coords="90,5,179,32"/>
+<area shape="rect" title="场景类" alt="" coords="29,95,88,121"/>
+<area shape="rect" href="class_game_object.html" title=" " alt="" coords="177,184,271,211"/>
+<area shape="rect" href="class_camera.html" title=" " alt="" coords="76,349,143,376"/>
+<area shape="rect" href="class_component.html" title="组件基类" alt="" coords="116,273,204,300"/>
+<area shape="rect" href="class_transform.html" title=" " alt="" coords="170,349,249,376"/>
+<area shape="rect" href="class_serializable.html" title="可序列化对象接口" alt="" coords="114,95,203,121"/>
+<area shape="rect" href="class_t_l_serialize_file.html" title=" " alt="" coords="5,5,112,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
 <table class="memberdecls">
@@ -93,28 +78,35 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a68aaa2ba723de8190353354012658db6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a68aaa2ba723de8190353354012658db6">Scene</a> (std::string)</td></tr>
 <tr class="memdesc:a68aaa2ba723de8190353354012658db6"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取并初始化场景  <a href="class_scene.html#a68aaa2ba723de8190353354012658db6">更多...</a><br /></td></tr>
 <tr class="separator:a68aaa2ba723de8190353354012658db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec4393448e15e9422ae62681dca0d70f"><td class="memItemLeft" align="right" valign="top"><a id="aec4393448e15e9422ae62681dca0d70f" name="aec4393448e15e9422ae62681dca0d70f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Save</b> ()</td></tr>
-<tr class="memdesc:aec4393448e15e9422ae62681dca0d70f"><td class="mdescLeft">&#160;</td><td class="mdescRight">保存场景 <br /></td></tr>
+<tr class="memitem:a3b8cec2e32546713915f8c6303c951f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a3b8cec2e32546713915f8c6303c951f1">~Scene</a> ()</td></tr>
+<tr class="separator:a3b8cec2e32546713915f8c6303c951f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec4393448e15e9422ae62681dca0d70f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#aec4393448e15e9422ae62681dca0d70f">Save</a> ()</td></tr>
+<tr class="memdesc:aec4393448e15e9422ae62681dca0d70f"><td class="mdescLeft">&#160;</td><td class="mdescRight">保存场景  <a href="class_scene.html#aec4393448e15e9422ae62681dca0d70f">更多...</a><br /></td></tr>
 <tr class="separator:aec4393448e15e9422ae62681dca0d70f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a58a7c1acc53416d58dc0ed6c4fdaeb"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_game_object.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a8a58a7c1acc53416d58dc0ed6c4fdaeb">Find</a> (std::string)</td></tr>
 <tr class="memdesc:a8a58a7c1acc53416d58dc0ed6c4fdaeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">在场景中寻找对象  <a href="class_scene.html#a8a58a7c1acc53416d58dc0ed6c4fdaeb">更多...</a><br /></td></tr>
 <tr class="separator:a8a58a7c1acc53416d58dc0ed6c4fdaeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a685199995d80af3cbbf2606dc27c77d8"><td class="memItemLeft" align="right" valign="top"><a id="a685199995d80af3cbbf2606dc27c77d8" name="a685199995d80af3cbbf2606dc27c77d8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>AddGameObject</b> (std::shared_ptr&lt; <a class="el" href="class_game_object.html">GameObject</a> &gt; gObj)</td></tr>
-<tr class="memdesc:a685199995d80af3cbbf2606dc27c77d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加新物体 <br /></td></tr>
+<tr class="memitem:a685199995d80af3cbbf2606dc27c77d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a685199995d80af3cbbf2606dc27c77d8">AddGameObject</a> (std::shared_ptr&lt; <a class="el" href="class_game_object.html">GameObject</a> &gt; gObj)</td></tr>
+<tr class="memdesc:a685199995d80af3cbbf2606dc27c77d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加新物体  <a href="class_scene.html#a685199995d80af3cbbf2606dc27c77d8">更多...</a><br /></td></tr>
 <tr class="separator:a685199995d80af3cbbf2606dc27c77d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public 属性</h2></td></tr>
-<tr class="memitem:a878011b448f85714694abf6ddeee9376"><td class="memItemLeft" align="right" valign="top"><a id="a878011b448f85714694abf6ddeee9376" name="a878011b448f85714694abf6ddeee9376"></a>
-<a class="el" href="class_camera.html">Camera</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mainCamera</b></td></tr>
-<tr class="memdesc:a878011b448f85714694abf6ddeee9376"><td class="mdescLeft">&#160;</td><td class="mdescRight">主摄像机 <br /></td></tr>
+<tr class="memitem:a878011b448f85714694abf6ddeee9376"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_camera.html">Camera</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a878011b448f85714694abf6ddeee9376">mainCamera</a></td></tr>
+<tr class="memdesc:a878011b448f85714694abf6ddeee9376"><td class="mdescLeft">&#160;</td><td class="mdescRight">主摄像机  <a href="class_scene.html#a878011b448f85714694abf6ddeee9376">更多...</a><br /></td></tr>
 <tr class="separator:a878011b448f85714694abf6ddeee9376"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0f312fd1a9d0367146f345192b5cc9d"><td class="memItemLeft" align="right" valign="top"><a id="aa0f312fd1a9d0367146f345192b5cc9d" name="aa0f312fd1a9d0367146f345192b5cc9d"></a>
-std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_game_object.html">GameObject</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>gameobjects</b></td></tr>
-<tr class="memdesc:aa0f312fd1a9d0367146f345192b5cc9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">场景中物体的集合 <br /></td></tr>
+<tr class="memitem:aa0f312fd1a9d0367146f345192b5cc9d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_game_object.html">GameObject</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#aa0f312fd1a9d0367146f345192b5cc9d">gameobjects</a></td></tr>
+<tr class="memdesc:aa0f312fd1a9d0367146f345192b5cc9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">场景中物体的集合  <a href="class_scene.html#aa0f312fd1a9d0367146f345192b5cc9d">更多...</a><br /></td></tr>
 <tr class="separator:aa0f312fd1a9d0367146f345192b5cc9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:ac9c0ec8489612ed97cd5608bda45600b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ac9c0ec8489612ed97cd5608bda45600b">path</a></td></tr>
+<tr class="memdesc:ac9c0ec8489612ed97cd5608bda45600b"><td class="mdescLeft">&#160;</td><td class="mdescRight">场景文件路径  <a href="class_scene.html#ac9c0ec8489612ed97cd5608bda45600b">更多...</a><br /></td></tr>
+<tr class="separator:ac9c0ec8489612ed97cd5608bda45600b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dce4fb959a793e2fa394a0afb146640"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_l_serialize_file.html">TLSerializeFile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a7dce4fb959a793e2fa394a0afb146640">sceneFile</a></td></tr>
+<tr class="memdesc:a7dce4fb959a793e2fa394a0afb146640"><td class="mdescLeft">&#160;</td><td class="mdescRight">场景文件对象  <a href="class_scene.html#a7dce4fb959a793e2fa394a0afb146640">更多...</a><br /></td></tr>
+<tr class="separator:a7dce4fb959a793e2fa394a0afb146640"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p >场景类 </p>
@@ -142,14 +134,73 @@ std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_game_object.html">
 <div class="dyncontent">
 <div class="center"><img src="class_scene_a68aaa2ba723de8190353354012658db6_cgraph.png" border="0" usemap="#aclass_scene_a68aaa2ba723de8190353354012658db6_cgraph" alt=""/></div>
 <map name="aclass_scene_a68aaa2ba723de8190353354012658db6_cgraph" id="aclass_scene_a68aaa2ba723de8190353354012658db6_cgraph">
-<area shape="rect" title="读取并初始化场景" alt="" coords="5,5,109,32"/>
-<area shape="rect" href="class_t_l_serialize_file.html#a0b6871867e3d1d19cbe0368541a0b4b0" title="获取根节点" alt="" coords="157,5,320,32"/>
+<area shape="rect" title="读取并初始化场景" alt="" coords="5,31,109,57"/>
+<area shape="rect" href="class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="157,5,324,32"/>
+<area shape="rect" href="class_t_l_serialize_file.html#a0b6871867e3d1d19cbe0368541a0b4b0" title="获取根节点" alt="" coords="159,56,322,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3b8cec2e32546713915f8c6303c951f1" name="a3b8cec2e32546713915f8c6303c951f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b8cec2e32546713915f8c6303c951f1">&#9670;&nbsp;</a></span>~Scene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Scene::~Scene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_a3b8cec2e32546713915f8c6303c951f1_cgraph.png" border="0" usemap="#aclass_scene_a3b8cec2e32546713915f8c6303c951f1_cgraph" alt=""/></div>
+<map name="aclass_scene_a3b8cec2e32546713915f8c6303c951f1_cgraph" id="aclass_scene_a3b8cec2e32546713915f8c6303c951f1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,117,57"/>
+<area shape="rect" href="class_scene.html#aec4393448e15e9422ae62681dca0d70f" title="保存场景" alt="" coords="165,31,260,57"/>
+<area shape="rect" href="class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="308,5,475,32"/>
+<area shape="rect" href="class_t_l_serialize_file.html#a86c2393db265dbaa18d7188852f80252" title="保存文件" alt="" coords="320,56,463,83"/>
 </map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">成员函数说明</h2>
+<a id="a685199995d80af3cbbf2606dc27c77d8" name="a685199995d80af3cbbf2606dc27c77d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a685199995d80af3cbbf2606dc27c77d8">&#9670;&nbsp;</a></span>AddGameObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::AddGameObject </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_game_object.html">GameObject</a> &gt;&#160;</td>
+          <td class="paramname"><em>gObj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>添加新物体 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_a685199995d80af3cbbf2606dc27c77d8_cgraph.png" border="0" usemap="#aclass_scene_a685199995d80af3cbbf2606dc27c77d8_cgraph" alt=""/></div>
+<map name="aclass_scene_a685199995d80af3cbbf2606dc27c77d8_cgraph" id="aclass_scene_a685199995d80af3cbbf2606dc27c77d8_cgraph">
+<area shape="rect" title="添加新物体" alt="" coords="5,31,168,57"/>
+<area shape="rect" href="class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="216,5,383,32"/>
+<area shape="rect" href="class_t_l_serialize_file.html#a0b6871867e3d1d19cbe0368541a0b4b0" title="获取根节点" alt="" coords="218,56,381,83"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a8a58a7c1acc53416d58dc0ed6c4fdaeb" name="a8a58a7c1acc53416d58dc0ed6c4fdaeb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8a58a7c1acc53416d58dc0ed6c4fdaeb">&#9670;&nbsp;</a></span>Find()</h2>
 
@@ -171,9 +222,128 @@ std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_game_object.html">
 
 </div>
 </div>
+<a id="aec4393448e15e9422ae62681dca0d70f" name="aec4393448e15e9422ae62681dca0d70f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec4393448e15e9422ae62681dca0d70f">&#9670;&nbsp;</a></span>Save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::Save </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>保存场景 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_aec4393448e15e9422ae62681dca0d70f_cgraph.png" border="0" usemap="#aclass_scene_aec4393448e15e9422ae62681dca0d70f_cgraph" alt=""/></div>
+<map name="aclass_scene_aec4393448e15e9422ae62681dca0d70f_cgraph" id="aclass_scene_aec4393448e15e9422ae62681dca0d70f_cgraph">
+<area shape="rect" title="保存场景" alt="" coords="5,31,100,57"/>
+<area shape="rect" href="class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="148,5,315,32"/>
+<area shape="rect" href="class_t_l_serialize_file.html#a86c2393db265dbaa18d7188852f80252" title="保存文件" alt="" coords="160,56,303,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_aec4393448e15e9422ae62681dca0d70f_icgraph.png" border="0" usemap="#aclass_scene_aec4393448e15e9422ae62681dca0d70f_icgraph" alt=""/></div>
+<map name="aclass_scene_aec4393448e15e9422ae62681dca0d70f_icgraph" id="aclass_scene_aec4393448e15e9422ae62681dca0d70f_icgraph">
+<area shape="rect" title="保存场景" alt="" coords="165,5,260,32"/>
+<area shape="rect" href="class_scene.html#a3b8cec2e32546713915f8c6303c951f1" title=" " alt="" coords="5,5,117,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="aa0f312fd1a9d0367146f345192b5cc9d" name="aa0f312fd1a9d0367146f345192b5cc9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0f312fd1a9d0367146f345192b5cc9d">&#9670;&nbsp;</a></span>gameobjects</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::shared_ptr&lt;<a class="el" href="class_game_object.html">GameObject</a>&gt; &gt; Scene::gameobjects</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>场景中物体的集合 </p>
+
+</div>
+</div>
+<a id="a878011b448f85714694abf6ddeee9376" name="a878011b448f85714694abf6ddeee9376"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a878011b448f85714694abf6ddeee9376">&#9670;&nbsp;</a></span>mainCamera</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_camera.html">Camera</a>* Scene::mainCamera</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>主摄像机 </p>
+
+</div>
+</div>
+<a id="ac9c0ec8489612ed97cd5608bda45600b" name="ac9c0ec8489612ed97cd5608bda45600b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9c0ec8489612ed97cd5608bda45600b">&#9670;&nbsp;</a></span>path</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Scene::path</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>场景文件路径 </p>
+
+</div>
+</div>
+<a id="a7dce4fb959a793e2fa394a0afb146640" name="a7dce4fb959a793e2fa394a0afb146640"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dce4fb959a793e2fa394a0afb146640">&#9670;&nbsp;</a></span>sceneFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_t_l_serialize_file.html">TLSerializeFile</a> Scene::sceneFile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>场景文件对象 </p>
+
+</div>
+</div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/App/<a class="el" href="_scene_8h_source.html">Scene.h</a></li>
-<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/App/Scene.cpp</li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/App/<a class="el" href="_scene_8cpp.html">Scene.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

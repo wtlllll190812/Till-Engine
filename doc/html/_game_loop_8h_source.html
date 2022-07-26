@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,19 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_75ae6d3613b6c2f243b8fb439548ec3f.html">Framework</a></li>  </ul>
@@ -69,15 +50,15 @@ $(function() {
   <div class="headertitle"><div class="title">GameLoop.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="_game_loop_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include&lt;functional&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="class_game_loop.html">    4</a></span><span class="keyword">class </span><a class="code hl_class" href="class_game_loop.html">GameLoop</a></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_class" href="class_game_loop.html">GameLoop</a>(<span class="keywordtype">int</span>);</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_class" href="class_game_loop.html">~GameLoop</a>();</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">bool</span> endLoop;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_function" href="class_game_loop.html#afe38580d2699e1b8e1da33d90e23d88b">GameLoop</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_function" href="class_game_loop.html#ae6c558d0d751a068dbafe2cae465ec1f">~GameLoop</a>();</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_game_loop.html#a44834b32a429231f3f25dbd7e2410bb6">    9</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_game_loop.html#a44834b32a429231f3f25dbd7e2410bb6">endLoop</a>;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_loop.html#ab61320008312d54daea6ef1757163007">SetAwakeCallback</a>(std::function&lt;<span class="keywordtype">void</span>()&gt;);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
@@ -88,24 +69,33 @@ $(function() {
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_loop.html#a89a9d52b6e99a2bf92372b97497d6c1b">SetLateUpdateCallback</a>(std::function&lt;<span class="keywordtype">void</span>()&gt;);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_loop.html#a038d7e76b450c82959c3dae6f86f1a61">StartLoop</a>();</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">float</span> GetFPS();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_game_loop.html#a87dfa36f0a6244461ce522e999c00f3a">GetFPS</a>();</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    std::function&lt;void()&gt; Awake;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    std::function&lt;void()&gt; Update;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    std::function&lt;void()&gt; FixedUpdate;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    std::function&lt;void()&gt; LateUpdate;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_game_loop.html#a300149799504a1558ec4a0a61dfdc341">   41</a></span>    std::function&lt;void()&gt; <a class="code hl_variable" href="class_game_loop.html#a300149799504a1558ec4a0a61dfdc341">Awake</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_game_loop.html#a0d8abdab15ad8c91c9e65a24c8adec7d">   45</a></span>    std::function&lt;void()&gt; <a class="code hl_variable" href="class_game_loop.html#a0d8abdab15ad8c91c9e65a24c8adec7d">Update</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_game_loop.html#ae0f761f5e727de243e3ae32002000de2">   49</a></span>    std::function&lt;void()&gt; <a class="code hl_variable" href="class_game_loop.html#ae0f761f5e727de243e3ae32002000de2">FixedUpdate</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_game_loop.html#a784b0b64aca61490e842f99cb77bc45f">   53</a></span>    std::function&lt;void()&gt; <a class="code hl_variable" href="class_game_loop.html#a784b0b64aca61490e842f99cb77bc45f">LateUpdate</a>;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">// void (*OnEnabled)();</span></div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">// void (*OnDisabled)();</span></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">int</span> frame;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_game_loop.html#a0022226ae9b93038a9819733858cc622">   57</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_game_loop.html#a0022226ae9b93038a9819733858cc622">frame</a>;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
 <div class="ttc" id="aclass_game_loop_html"><div class="ttname"><a href="class_game_loop.html">GameLoop</a></div><div class="ttdef"><b>Definition:</b> GameLoop.h:5</div></div>
+<div class="ttc" id="aclass_game_loop_html_a0022226ae9b93038a9819733858cc622"><div class="ttname"><a href="class_game_loop.html#a0022226ae9b93038a9819733858cc622">GameLoop::frame</a></div><div class="ttdeci">int frame</div><div class="ttdef"><b>Definition:</b> GameLoop.h:57</div></div>
 <div class="ttc" id="aclass_game_loop_html_a038d7e76b450c82959c3dae6f86f1a61"><div class="ttname"><a href="class_game_loop.html#a038d7e76b450c82959c3dae6f86f1a61">GameLoop::StartLoop</a></div><div class="ttdeci">void StartLoop()</div><div class="ttdoc">开始游戏循环</div><div class="ttdef"><b>Definition:</b> GameLoop.cpp:43</div></div>
+<div class="ttc" id="aclass_game_loop_html_a0d8abdab15ad8c91c9e65a24c8adec7d"><div class="ttname"><a href="class_game_loop.html#a0d8abdab15ad8c91c9e65a24c8adec7d">GameLoop::Update</a></div><div class="ttdeci">std::function&lt; void()&gt; Update</div><div class="ttdoc">update回调</div><div class="ttdef"><b>Definition:</b> GameLoop.h:45</div></div>
+<div class="ttc" id="aclass_game_loop_html_a300149799504a1558ec4a0a61dfdc341"><div class="ttname"><a href="class_game_loop.html#a300149799504a1558ec4a0a61dfdc341">GameLoop::Awake</a></div><div class="ttdeci">std::function&lt; void()&gt; Awake</div><div class="ttdoc">初始化回调</div><div class="ttdef"><b>Definition:</b> GameLoop.h:41</div></div>
+<div class="ttc" id="aclass_game_loop_html_a44834b32a429231f3f25dbd7e2410bb6"><div class="ttname"><a href="class_game_loop.html#a44834b32a429231f3f25dbd7e2410bb6">GameLoop::endLoop</a></div><div class="ttdeci">bool endLoop</div><div class="ttdef"><b>Definition:</b> GameLoop.h:9</div></div>
+<div class="ttc" id="aclass_game_loop_html_a784b0b64aca61490e842f99cb77bc45f"><div class="ttname"><a href="class_game_loop.html#a784b0b64aca61490e842f99cb77bc45f">GameLoop::LateUpdate</a></div><div class="ttdeci">std::function&lt; void()&gt; LateUpdate</div><div class="ttdoc">lateUpdate回调</div><div class="ttdef"><b>Definition:</b> GameLoop.h:53</div></div>
+<div class="ttc" id="aclass_game_loop_html_a87dfa36f0a6244461ce522e999c00f3a"><div class="ttname"><a href="class_game_loop.html#a87dfa36f0a6244461ce522e999c00f3a">GameLoop::GetFPS</a></div><div class="ttdeci">float GetFPS()</div><div class="ttdef"><b>Definition:</b> GameLoop.cpp:68</div></div>
 <div class="ttc" id="aclass_game_loop_html_a89a9d52b6e99a2bf92372b97497d6c1b"><div class="ttname"><a href="class_game_loop.html#a89a9d52b6e99a2bf92372b97497d6c1b">GameLoop::SetLateUpdateCallback</a></div><div class="ttdeci">void SetLateUpdateCallback(std::function&lt; void()&gt;)</div><div class="ttdoc">设置回调</div><div class="ttdef"><b>Definition:</b> GameLoop.cpp:38</div></div>
 <div class="ttc" id="aclass_game_loop_html_aad3f1e8da1be35a9ee8679642eae287b"><div class="ttname"><a href="class_game_loop.html#aad3f1e8da1be35a9ee8679642eae287b">GameLoop::SetFixedUpdateCallback</a></div><div class="ttdeci">void SetFixedUpdateCallback(std::function&lt; void()&gt;)</div><div class="ttdoc">设置回调</div><div class="ttdef"><b>Definition:</b> GameLoop.cpp:33</div></div>
 <div class="ttc" id="aclass_game_loop_html_ab61320008312d54daea6ef1757163007"><div class="ttname"><a href="class_game_loop.html#ab61320008312d54daea6ef1757163007">GameLoop::SetAwakeCallback</a></div><div class="ttdeci">void SetAwakeCallback(std::function&lt; void()&gt;)</div><div class="ttdoc">设置回调</div><div class="ttdef"><b>Definition:</b> GameLoop.cpp:23</div></div>
+<div class="ttc" id="aclass_game_loop_html_ae0f761f5e727de243e3ae32002000de2"><div class="ttname"><a href="class_game_loop.html#ae0f761f5e727de243e3ae32002000de2">GameLoop::FixedUpdate</a></div><div class="ttdeci">std::function&lt; void()&gt; FixedUpdate</div><div class="ttdoc">fixedupdate回调</div><div class="ttdef"><b>Definition:</b> GameLoop.h:49</div></div>
 <div class="ttc" id="aclass_game_loop_html_ae26309f103ac3e326fdc4a28a5f763c6"><div class="ttname"><a href="class_game_loop.html#ae26309f103ac3e326fdc4a28a5f763c6">GameLoop::SetUpdateCallback</a></div><div class="ttdeci">void SetUpdateCallback(std::function&lt; void()&gt;)</div><div class="ttdoc">设置回调</div><div class="ttdef"><b>Definition:</b> GameLoop.cpp:28</div></div>
+<div class="ttc" id="aclass_game_loop_html_ae6c558d0d751a068dbafe2cae465ec1f"><div class="ttname"><a href="class_game_loop.html#ae6c558d0d751a068dbafe2cae465ec1f">GameLoop::~GameLoop</a></div><div class="ttdeci">~GameLoop()</div><div class="ttdef"><b>Definition:</b> GameLoop.cpp:19</div></div>
+<div class="ttc" id="aclass_game_loop_html_afe38580d2699e1b8e1da33d90e23d88b"><div class="ttname"><a href="class_game_loop.html#afe38580d2699e1b8e1da33d90e23d88b">GameLoop::GameLoop</a></div><div class="ttdeci">GameLoop(int)</div><div class="ttdef"><b>Definition:</b> GameLoop.cpp:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

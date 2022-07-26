@@ -1,8 +1,6 @@
 <map id="Application::OnEvent" name="Application::OnEvent">
-<area shape="rect" id="node1" title=" " alt="" coords="5,81,148,108"/>
-<area shape="rect" id="node2" href="$class_layer_stack.html#abc1ae8816a9b21d405062502c0a98f5b" title=" " alt="" coords="231,5,358,32"/>
-<area shape="rect" id="node3" href="$class_event_dispatcher.html#aa52657a74c2be46ec503b3ad8fc469d1" title="判断事件类型是否符合" alt="" coords="207,56,382,83"/>
-<area shape="rect" id="node5" href="$class_layer_stack.html#a91c8a0dadf6f79e18d8f41e9572a7c7e" title=" " alt="" coords="236,107,353,133"/>
-<area shape="rect" id="node6" href="$class_application.html#a7da658ad03aa7614f3a24ef738b57f32" title=" " alt="" coords="196,157,393,184"/>
-<area shape="rect" id="node4" href="$class_event_base.html#a91f4adadacab79ddf2c64b92057a6cc6" title=" " alt="" coords="441,56,615,83"/>
+<area shape="rect" id="node1" title="处理事件" alt="" coords="5,31,148,57"/>
+<area shape="rect" id="node2" href="$class_event_dispatcher.html#aa52657a74c2be46ec503b3ad8fc469d1" title="判断事件类型是否符合" alt="" coords="207,5,382,32"/>
+<area shape="rect" id="node4" href="$class_application.html#a7da658ad03aa7614f3a24ef738b57f32" title="窗口关闭时" alt="" coords="196,56,393,83"/>
+<area shape="rect" id="node3" href="$class_event_base.html#a91f4adadacab79ddf2c64b92057a6cc6" title=" " alt="" coords="441,5,615,32"/>
 </map>

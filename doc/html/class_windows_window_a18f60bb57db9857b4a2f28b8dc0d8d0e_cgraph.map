@@ -1,0 +1,7 @@
+<map id="WindowsWindow::WindowInit" name="WindowsWindow::WindowInit">
+<area shape="rect" id="node1" title="窗口初始化" alt="" coords="5,81,197,108"/>
+<area shape="rect" id="node2" href="$class_windows_window.html#af89257b48d6fa8d8cb71ec1815551d19" title="添加FBO" alt="" coords="245,5,468,32"/>
+<area shape="rect" id="node3" href="$class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="273,56,440,83"/>
+<area shape="rect" id="node4" href="$class_windows_window.html#a0b326b5573de24375a73d268edf8646f" title="设置窗口回调函数" alt="" coords="257,107,456,133"/>
+<area shape="rect" id="node5" href="$class_windows_window.html#a883ecb4b5fe42225cb05c137711757e2" title="设定垂直同步" alt="" coords="263,157,451,184"/>
+</map>

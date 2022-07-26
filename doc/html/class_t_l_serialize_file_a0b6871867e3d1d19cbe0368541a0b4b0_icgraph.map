@@ -1,0 +1,5 @@
+<map id="TLSerializeFile::GetRoot" name="TLSerializeFile::GetRoot">
+<area shape="rect" id="node1" title="获取根节点" alt="" coords="216,31,379,57"/>
+<area shape="rect" id="node2" href="$class_scene.html#a685199995d80af3cbbf2606dc27c77d8" title="添加新物体" alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node3" href="$class_scene.html#a68aaa2ba723de8190353354012658db6" title="读取并初始化场景" alt="" coords="35,56,139,83"/>
+</map>

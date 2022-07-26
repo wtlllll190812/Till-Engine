@@ -1,10 +1,19 @@
 <map id="Debug::GetEngineLogger" name="Debug::GetEngineLogger">
-<area shape="rect" id="node1" title=" " alt="" coords="505,132,672,159"/>
-<area shape="rect" id="node2" href="$class_game_object.html#a33074f92747661b849ca8542383603fc" title=" " alt="" coords="281,5,457,32"/>
-<area shape="rect" id="node3" href="$class_window.html#a0dcd7f056cb1534c4fda7ea82dfaf462" title=" " alt="" coords="298,56,441,83"/>
-<area shape="rect" id="node4" href="$class_windows_window.html#a2d953a29c786e860277dd965fdc01ed2" title=" " alt="" coords="296,107,443,133"/>
-<area shape="rect" id="node6" href="$class_scene.html#a68aaa2ba723de8190353354012658db6" title="读取并初始化场景" alt="" coords="317,157,421,184"/>
-<area shape="rect" id="node7" href="$class_screen.html#ada20c3556b6abff7882900dc1e1deeaa" title=" " alt="" coords="313,208,425,235"/>
-<area shape="rect" id="node8" href="$main_8cpp.html#a3ac1fe7e6bd625ee388cee2dc03a2ebc" title=" " alt="" coords="341,259,398,285"/>
-<area shape="rect" id="node5" href="$class_windows_window.html#a9546e57a10dd1b786acb13c65fbddbea" title=" " alt="" coords="5,107,233,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="991,208,1157,235"/>
+<area shape="rect" id="node2" href="$class_scene.html#a685199995d80af3cbbf2606dc27c77d8" title="添加新物体" alt="" coords="765,5,928,32"/>
+<area shape="rect" id="node3" href="$class_application.html#a091df3ec4695b64249e57a76c93b6612" title="初始化应用" alt="" coords="292,120,427,147"/>
+<area shape="rect" id="node6" href="$class_game_object.html#a7bd3840ff675f1ee44ddec99fb89bc32" title="反序列化" alt="" coords="762,107,931,133"/>
+<area shape="rect" id="node8" href="$class_editor_layer.html#ac68e82509971314260c282a174f63bb5" title=" " alt="" coords="765,157,928,184"/>
+<area shape="rect" id="node9" href="$class_asset_importer.html#a2b95bafd62ab55bf0c83a4928aee3d91" title=" " alt="" coords="525,183,653,209"/>
+<area shape="rect" id="node10" href="$class_asset_importer.html#a6849837d993ae78b78b65fa7dfe55732" title=" " alt="" coords="757,259,936,285"/>
+<area shape="rect" id="node13" href="$class_scene.html#aec4393448e15e9422ae62681dca0d70f" title="保存场景" alt="" coords="799,309,894,336"/>
+<area shape="rect" id="node15" href="$class_scene.html#a68aaa2ba723de8190353354012658db6" title="读取并初始化场景" alt="" coords="795,360,899,387"/>
+<area shape="rect" id="node16" href="$class_windows_window.html#a18f60bb57db9857b4a2f28b8dc0d8d0e" title="窗口初始化" alt="" coords="751,411,943,437"/>
+<area shape="rect" id="node4" href="$class_application.html#a5378330e10e42fcb9a2269b533759b0f" title="运行应用" alt="" coords="104,120,244,147"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,120,56,147"/>
+<area shape="rect" id="node7" href="$class_game_object.html#a723e616ef6ce1ca7697911c818774d4c" title=" " alt="" coords="501,107,677,133"/>
+<area shape="rect" id="node11" href="$class_renderer.html#ac300e94373098ca8336b3a54b65a6c2c" title="反序列化" alt="" coords="515,233,663,260"/>
+<area shape="rect" id="node12" href="$class_render_system.html#a20496a8f52c4eb755d4bfcaba2e98e1c" title=" " alt="" coords="487,284,690,311"/>
+<area shape="rect" id="node14" href="$class_scene.html#a3b8cec2e32546713915f8c6303c951f1" title=" " alt="" coords="533,335,645,361"/>
+<area shape="rect" id="node17" href="$class_windows_window.html#a9546e57a10dd1b786acb13c65fbddbea" title=" " alt="" coords="475,411,703,437"/>
 </map>

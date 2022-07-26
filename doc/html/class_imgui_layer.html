@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,21 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
@@ -67,10 +50,13 @@ $(function() {
 <a href="#pro-methods">Protected 成员函数</a> &#124;
 <a href="#pro-static-methods">静态 Protected 成员函数</a> &#124;
 <a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
 <a href="class_imgui_layer-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">ImguiLayer类 参考</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_imgui_layer_8h_source.html">ImguiLayer.h</a>&gt;</code></p>
 <div class="dynheader">
 类 ImguiLayer 继承关系图:</div>
 <div class="dyncontent">
@@ -93,62 +79,153 @@ ImguiLayer 的协作图:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
+<tr class="memitem:ad02f617b4d56845f07a999f1251c1097"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#ad02f617b4d56845f07a999f1251c1097">ImguiLayer</a> ()</td></tr>
+<tr class="separator:ad02f617b4d56845f07a999f1251c1097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab099f09c4ff88d0a283e68e2e41540d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#ab099f09c4ff88d0a283e68e2e41540d5">~ImguiLayer</a> ()</td></tr>
+<tr class="separator:ab099f09c4ff88d0a283e68e2e41540d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1562d5da90335d2f5c7757801d7e9377"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#a1562d5da90335d2f5c7757801d7e9377">OnAttack</a> () override</td></tr>
 <tr class="separator:a1562d5da90335d2f5c7757801d7e9377"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06e8812d7144d1fa6c154d43d7372d97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#a06e8812d7144d1fa6c154d43d7372d97">OnDetach</a> () override</td></tr>
 <tr class="separator:a06e8812d7144d1fa6c154d43d7372d97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade36001fdd1861e19dadc2d32d5e7bd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#ade36001fdd1861e19dadc2d32d5e7bd5">OnEvent</a> (<a class="el" href="class_event_base.html">EventBase</a> &amp;event) override</td></tr>
 <tr class="separator:ade36001fdd1861e19dadc2d32d5e7bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43530d88ce55849d8b9dd2617435cf8a"><td class="memItemLeft" align="right" valign="top"><a id="a43530d88ce55849d8b9dd2617435cf8a" name="a43530d88ce55849d8b9dd2617435cf8a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RegisterGuiWindow</b> (std::shared_ptr&lt; <a class="el" href="class_gui_window.html">GuiWindow</a> &gt;)</td></tr>
+<tr class="memitem:a43530d88ce55849d8b9dd2617435cf8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#a43530d88ce55849d8b9dd2617435cf8a">RegisterGuiWindow</a> (std::shared_ptr&lt; <a class="el" href="class_gui_window.html">GuiWindow</a> &gt;)</td></tr>
 <tr class="separator:a43530d88ce55849d8b9dd2617435cf8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa98053a216128343d985192439323544"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#aa98053a216128343d985192439323544">OnUpdate</a> () override</td></tr>
 <tr class="separator:aa98053a216128343d985192439323544"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_layer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_layer')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="class_layer.html">Layer</a></td></tr>
-<tr class="memitem:aa9b7ebb7ef25f36b2c1859e5ee2c867d inherit pub_methods_class_layer"><td class="memItemLeft" align="right" valign="top"><a id="aa9b7ebb7ef25f36b2c1859e5ee2c867d" name="aa9b7ebb7ef25f36b2c1859e5ee2c867d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Layer</b> (const std::string &amp;name=&quot;Layer&quot;)</td></tr>
+<tr class="memitem:aa9b7ebb7ef25f36b2c1859e5ee2c867d inherit pub_methods_class_layer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#aa9b7ebb7ef25f36b2c1859e5ee2c867d">Layer</a> (const std::string &amp;name=&quot;Layer&quot;)</td></tr>
 <tr class="separator:aa9b7ebb7ef25f36b2c1859e5ee2c867d inherit pub_methods_class_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f4da008000c82831f0f327008156635 inherit pub_methods_class_layer"><td class="memItemLeft" align="right" valign="top"><a id="a1f4da008000c82831f0f327008156635" name="a1f4da008000c82831f0f327008156635"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnAttack</b> ()</td></tr>
+<tr class="memitem:a1b1ba4804451dfe6cc357194e42762ae inherit pub_methods_class_layer"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a1b1ba4804451dfe6cc357194e42762ae">~Layer</a> ()</td></tr>
+<tr class="separator:a1b1ba4804451dfe6cc357194e42762ae inherit pub_methods_class_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f4da008000c82831f0f327008156635 inherit pub_methods_class_layer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a1f4da008000c82831f0f327008156635">OnAttack</a> ()</td></tr>
 <tr class="separator:a1f4da008000c82831f0f327008156635 inherit pub_methods_class_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a253ff7092bb8b817f6a9f195021083ec inherit pub_methods_class_layer"><td class="memItemLeft" align="right" valign="top"><a id="a253ff7092bb8b817f6a9f195021083ec" name="a253ff7092bb8b817f6a9f195021083ec"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnDetach</b> ()</td></tr>
+<tr class="memitem:a253ff7092bb8b817f6a9f195021083ec inherit pub_methods_class_layer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a253ff7092bb8b817f6a9f195021083ec">OnDetach</a> ()</td></tr>
 <tr class="separator:a253ff7092bb8b817f6a9f195021083ec inherit pub_methods_class_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fff58cf356c53ef765724b8e5aae9e2 inherit pub_methods_class_layer"><td class="memItemLeft" align="right" valign="top"><a id="a5fff58cf356c53ef765724b8e5aae9e2" name="a5fff58cf356c53ef765724b8e5aae9e2"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnUpdate</b> ()</td></tr>
+<tr class="memitem:a5fff58cf356c53ef765724b8e5aae9e2 inherit pub_methods_class_layer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a5fff58cf356c53ef765724b8e5aae9e2">OnUpdate</a> ()</td></tr>
 <tr class="separator:a5fff58cf356c53ef765724b8e5aae9e2 inherit pub_methods_class_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06c17a43a6dd3d2d8298b46ef600ad0f inherit pub_methods_class_layer"><td class="memItemLeft" align="right" valign="top"><a id="a06c17a43a6dd3d2d8298b46ef600ad0f" name="a06c17a43a6dd3d2d8298b46ef600ad0f"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnEvent</b> (<a class="el" href="class_event_base.html">EventBase</a> &amp;event)</td></tr>
+<tr class="memitem:a06c17a43a6dd3d2d8298b46ef600ad0f inherit pub_methods_class_layer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#a06c17a43a6dd3d2d8298b46ef600ad0f">OnEvent</a> (<a class="el" href="class_event_base.html">EventBase</a> &amp;event)</td></tr>
 <tr class="separator:a06c17a43a6dd3d2d8298b46ef600ad0f inherit pub_methods_class_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac62a46a7b506f1c30485a8c9baaa0f8d inherit pub_methods_class_layer"><td class="memItemLeft" align="right" valign="top"><a id="ac62a46a7b506f1c30485a8c9baaa0f8d" name="ac62a46a7b506f1c30485a8c9baaa0f8d"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetName</b> () const</td></tr>
+<tr class="memitem:ac62a46a7b506f1c30485a8c9baaa0f8d inherit pub_methods_class_layer"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_layer.html#ac62a46a7b506f1c30485a8c9baaa0f8d">GetName</a> () const</td></tr>
 <tr class="separator:ac62a46a7b506f1c30485a8c9baaa0f8d inherit pub_methods_class_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected 成员函数</h2></td></tr>
-<tr class="memitem:a7c94ff83e9809b1a158e890920daed20"><td class="memItemLeft" align="right" valign="top"><a id="a7c94ff83e9809b1a158e890920daed20" name="a7c94ff83e9809b1a158e890920daed20"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RenderStart</b> ()</td></tr>
+<tr class="memitem:a7c94ff83e9809b1a158e890920daed20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#a7c94ff83e9809b1a158e890920daed20">RenderStart</a> ()</td></tr>
 <tr class="separator:a7c94ff83e9809b1a158e890920daed20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadd4f1314d523328cc8a2d40165611e0"><td class="memItemLeft" align="right" valign="top"><a id="aadd4f1314d523328cc8a2d40165611e0" name="aadd4f1314d523328cc8a2d40165611e0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RenderEnd</b> ()</td></tr>
+<tr class="memitem:aadd4f1314d523328cc8a2d40165611e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#aadd4f1314d523328cc8a2d40165611e0">RenderEnd</a> ()</td></tr>
 <tr class="separator:aadd4f1314d523328cc8a2d40165611e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
 静态 Protected 成员函数</h2></td></tr>
-<tr class="memitem:ae5d6495ed844751709b98c329692ba9a"><td class="memItemLeft" align="right" valign="top"><a id="ae5d6495ed844751709b98c329692ba9a" name="ae5d6495ed844751709b98c329692ba9a"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>ImGuiInit</b> ()</td></tr>
+<tr class="memitem:ae5d6495ed844751709b98c329692ba9a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#ae5d6495ed844751709b98c329692ba9a">ImGuiInit</a> ()</td></tr>
 <tr class="separator:ae5d6495ed844751709b98c329692ba9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected 属性</h2></td></tr>
-<tr class="memitem:a36a760d7ac4b5a422fd4ab9968a29440"><td class="memItemLeft" align="right" valign="top"><a id="a36a760d7ac4b5a422fd4ab9968a29440" name="a36a760d7ac4b5a422fd4ab9968a29440"></a>
-std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_gui_window.html">GuiWindow</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>uiWindows</b></td></tr>
+<tr class="memitem:a36a760d7ac4b5a422fd4ab9968a29440"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_gui_window.html">GuiWindow</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#a36a760d7ac4b5a422fd4ab9968a29440">uiWindows</a></td></tr>
 <tr class="separator:a36a760d7ac4b5a422fd4ab9968a29440"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1c2ca0d2f28bd3a0e56f565254112c7"><td class="memItemLeft" align="right" valign="top"><a id="ab1c2ca0d2f28bd3a0e56f565254112c7" name="ab1c2ca0d2f28bd3a0e56f565254112c7"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>mTime</b> = 0</td></tr>
+<tr class="memitem:ab1c2ca0d2f28bd3a0e56f565254112c7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#ab1c2ca0d2f28bd3a0e56f565254112c7">mTime</a> = 0</td></tr>
 <tr class="separator:ab1c2ca0d2f28bd3a0e56f565254112c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a1d4a95519a5ebc1d7e229c376096b059"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#a1d4a95519a5ebc1d7e229c376096b059">OnMouseButtonPressedEvent</a> (<a class="el" href="class_mouse_button_pressed_event.html">MouseButtonPressedEvent</a> &amp;e)</td></tr>
+<tr class="separator:a1d4a95519a5ebc1d7e229c376096b059"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a368d0e869c0520ee085f82f9b7389aa1"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#a368d0e869c0520ee085f82f9b7389aa1">OnMouseButtonReleasedEvent</a> (<a class="el" href="class_mouse_button_released_event.html">MouseButtonReleasedEvent</a> &amp;e)</td></tr>
+<tr class="separator:a368d0e869c0520ee085f82f9b7389aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fcfcc4f206dca3f12a0dbca26186aa2"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#a2fcfcc4f206dca3f12a0dbca26186aa2">OnMouseMovedEvent</a> (<a class="el" href="class_mouse_moved_event.html">MouseMovedEvent</a> &amp;e)</td></tr>
+<tr class="separator:a2fcfcc4f206dca3f12a0dbca26186aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a090711e0e18f621c4c9af4ea44fa443a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#a090711e0e18f621c4c9af4ea44fa443a">OnMouseScrolledEvent</a> (<a class="el" href="class_mouse_scrolled_event.html">MouseScrolledEvent</a> &amp;e)</td></tr>
+<tr class="separator:a090711e0e18f621c4c9af4ea44fa443a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fa8dfce443a983133d953af55a377f6"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#a5fa8dfce443a983133d953af55a377f6">OnKeyPressedEvent</a> (<a class="el" href="class_key_pressed_event.html">KeyPressedEvent</a> &amp;e)</td></tr>
+<tr class="separator:a5fa8dfce443a983133d953af55a377f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6e6a5e4ebd45b8012cab448074aa91e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#ac6e6a5e4ebd45b8012cab448074aa91e">OnKeyReleasedEvent</a> (<a class="el" href="class_key_released_event.html">KeyReleasedEvent</a> &amp;e)</td></tr>
+<tr class="separator:ac6e6a5e4ebd45b8012cab448074aa91e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab11e32ee191388e11444da6af20817c0"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#ab11e32ee191388e11444da6af20817c0">OnKeyTypedEvent</a> (<a class="el" href="class_key_pressed_event.html">KeyPressedEvent</a> &amp;e)</td></tr>
+<tr class="separator:ab11e32ee191388e11444da6af20817c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23c057937f4d3e54a4538ae6feead348"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imgui_layer.html#a23c057937f4d3e54a4538ae6feead348">OnWindowResizeEvent</a> (<a class="el" href="class_window_resize_event.html">WindowResizeEvent</a> &amp;e)</td></tr>
+<tr class="separator:a23c057937f4d3e54a4538ae6feead348"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ad02f617b4d56845f07a999f1251c1097" name="ad02f617b4d56845f07a999f1251c1097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad02f617b4d56845f07a999f1251c1097">&#9670;&nbsp;</a></span>ImguiLayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ImguiLayer::ImguiLayer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab099f09c4ff88d0a283e68e2e41540d5" name="ab099f09c4ff88d0a283e68e2e41540d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab099f09c4ff88d0a283e68e2e41540d5">&#9670;&nbsp;</a></span>~ImguiLayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ImguiLayer::~ImguiLayer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">成员函数说明</h2>
+<a id="ae5d6495ed844751709b98c329692ba9a" name="ae5d6495ed844751709b98c329692ba9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5d6495ed844751709b98c329692ba9a">&#9670;&nbsp;</a></span>ImGuiInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImguiLayer::ImGuiInit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_ae5d6495ed844751709b98c329692ba9a_cgraph.png" border="0" usemap="#aclass_imgui_layer_ae5d6495ed844751709b98c329692ba9a_cgraph" alt=""/></div>
+<map name="aclass_imgui_layer_ae5d6495ed844751709b98c329692ba9a_cgraph" id="aclass_imgui_layer_ae5d6495ed844751709b98c329692ba9a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,149,39"/>
+<area shape="rect" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="197,5,349,47"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_ae5d6495ed844751709b98c329692ba9a_icgraph.png" border="0" usemap="#aclass_imgui_layer_ae5d6495ed844751709b98c329692ba9a_icgraph" alt=""/></div>
+<map name="aclass_imgui_layer_ae5d6495ed844751709b98c329692ba9a_icgraph" id="aclass_imgui_layer_ae5d6495ed844751709b98c329692ba9a_icgraph">
+<area shape="rect" title=" " alt="" coords="201,5,345,32"/>
+<area shape="rect" href="class_imgui_layer.html#a1562d5da90335d2f5c7757801d7e9377" title=" " alt="" coords="5,5,153,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a1562d5da90335d2f5c7757801d7e9377" name="a1562d5da90335d2f5c7757801d7e9377"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1562d5da90335d2f5c7757801d7e9377">&#9670;&nbsp;</a></span>OnAttack()</h2>
 
@@ -172,7 +249,17 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>mTime</b> = 0</td></
 </table>
 </div><div class="memdoc">
 
-<p>重载 <a class="el" href="class_layer.html">Layer</a> .</p>
+<p>重载 <a class="el" href="class_layer.html#a1f4da008000c82831f0f327008156635">Layer</a> .</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_a1562d5da90335d2f5c7757801d7e9377_cgraph.png" border="0" usemap="#aclass_imgui_layer_a1562d5da90335d2f5c7757801d7e9377_cgraph" alt=""/></div>
+<map name="aclass_imgui_layer_a1562d5da90335d2f5c7757801d7e9377_cgraph" id="aclass_imgui_layer_a1562d5da90335d2f5c7757801d7e9377_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,153,39"/>
+<area shape="rect" href="class_imgui_layer.html#ae5d6495ed844751709b98c329692ba9a" title=" " alt="" coords="201,13,345,39"/>
+<area shape="rect" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="393,5,545,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -199,7 +286,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>mTime</b> = 0</td></
 </table>
 </div><div class="memdoc">
 
-<p>重载 <a class="el" href="class_layer.html">Layer</a> .</p>
+<p>重载 <a class="el" href="class_layer.html#a253ff7092bb8b817f6a9f195021083ec">Layer</a> .</p>
 
 </div>
 </div>
@@ -227,7 +314,318 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>mTime</b> = 0</td></
 </table>
 </div><div class="memdoc">
 
-<p>重载 <a class="el" href="class_layer.html">Layer</a> .</p>
+<p>重载 <a class="el" href="class_layer.html#a06c17a43a6dd3d2d8298b46ef600ad0f">Layer</a> .</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_ade36001fdd1861e19dadc2d32d5e7bd5_cgraph.png" border="0" usemap="#aclass_imgui_layer_ade36001fdd1861e19dadc2d32d5e7bd5_cgraph" alt=""/></div>
+<map name="aclass_imgui_layer_ade36001fdd1861e19dadc2d32d5e7bd5_cgraph" id="aclass_imgui_layer_ade36001fdd1861e19dadc2d32d5e7bd5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,195,148,221"/>
+<area shape="rect" href="class_event_dispatcher.html#aa52657a74c2be46ec503b3ad8fc469d1" title="判断事件类型是否符合" alt="" coords="207,5,381,32"/>
+<area shape="rect" href="class_imgui_layer.html#a5fa8dfce443a983133d953af55a377f6" title=" " alt="" coords="203,57,385,98"/>
+<area shape="rect" href="class_imgui_layer.html#a1d4a95519a5ebc1d7e229c376096b059" title=" " alt="" coords="201,122,387,163"/>
+<area shape="rect" href="class_imgui_layer.html#a368d0e869c0520ee085f82f9b7389aa1" title=" " alt="" coords="201,187,387,229"/>
+<area shape="rect" href="class_imgui_layer.html#a2fcfcc4f206dca3f12a0dbca26186aa2" title=" " alt="" coords="201,253,387,294"/>
+<area shape="rect" href="class_imgui_layer.html#a090711e0e18f621c4c9af4ea44fa443a" title=" " alt="" coords="196,318,392,359"/>
+<area shape="rect" href="class_imgui_layer.html#a23c057937f4d3e54a4538ae6feead348" title=" " alt="" coords="196,442,392,483"/>
+<area shape="rect" href="class_event_base.html#a91f4adadacab79ddf2c64b92057a6cc6" title=" " alt="" coords="453,5,626,32"/>
+<area shape="rect" href="class_key_event.html#a381484404b2aac1ea73952a78a9fa047" title=" " alt="" coords="460,64,619,91"/>
+<area shape="rect" href="class_mouse_button_event.html#a95acf32682fe88f6dd35406818dc689d" title=" " alt="" coords="440,133,639,174"/>
+<area shape="rect" href="class_mouse_moved_event.html#a7b9e9e121dc213bc27dff766488fd21c" title=" " alt="" coords="456,209,623,236"/>
+<area shape="rect" href="class_mouse_moved_event.html#aedb72739694d42dd2ff243b981e85dd7" title=" " alt="" coords="455,260,623,287"/>
+<area shape="rect" href="class_mouse_scrolled_event.html#a8541a530920db59f18810d759a41c6a5" title=" " alt="" coords="469,311,609,353"/>
+<area shape="rect" href="class_mouse_scrolled_event.html#a2c442543f2334c7686faa2c28ca334bc" title=" " alt="" coords="469,377,609,418"/>
+<area shape="rect" href="class_window_resize_event.html#ab3aa091a7fa016f762764ddc263eee98" title=" " alt="" coords="465,442,613,483"/>
+<area shape="rect" href="class_window_resize_event.html#a5f3a24ccf55cde3e08028e61ce17c458" title=" " alt="" coords="465,507,613,549"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5fa8dfce443a983133d953af55a377f6" name="a5fa8dfce443a983133d953af55a377f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fa8dfce443a983133d953af55a377f6">&#9670;&nbsp;</a></span>OnKeyPressedEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImguiLayer::OnKeyPressedEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_key_pressed_event.html">KeyPressedEvent</a> &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_a5fa8dfce443a983133d953af55a377f6_cgraph.png" border="0" usemap="#aclass_imgui_layer_a5fa8dfce443a983133d953af55a377f6_cgraph" alt=""/></div>
+<map name="aclass_imgui_layer_a5fa8dfce443a983133d953af55a377f6_cgraph" id="aclass_imgui_layer_a5fa8dfce443a983133d953af55a377f6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,187,47"/>
+<area shape="rect" href="class_key_event.html#a381484404b2aac1ea73952a78a9fa047" title=" " alt="" coords="235,13,393,39"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_a5fa8dfce443a983133d953af55a377f6_icgraph.png" border="0" usemap="#aclass_imgui_layer_a5fa8dfce443a983133d953af55a377f6_icgraph" alt=""/></div>
+<map name="aclass_imgui_layer_a5fa8dfce443a983133d953af55a377f6_icgraph" id="aclass_imgui_layer_a5fa8dfce443a983133d953af55a377f6_icgraph">
+<area shape="rect" title=" " alt="" coords="196,5,377,47"/>
+<area shape="rect" href="class_imgui_layer.html#ade36001fdd1861e19dadc2d32d5e7bd5" title=" " alt="" coords="5,13,148,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac6e6a5e4ebd45b8012cab448074aa91e" name="ac6e6a5e4ebd45b8012cab448074aa91e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6e6a5e4ebd45b8012cab448074aa91e">&#9670;&nbsp;</a></span>OnKeyReleasedEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImguiLayer::OnKeyReleasedEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_key_released_event.html">KeyReleasedEvent</a> &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_ac6e6a5e4ebd45b8012cab448074aa91e_cgraph.png" border="0" usemap="#aclass_imgui_layer_ac6e6a5e4ebd45b8012cab448074aa91e_cgraph" alt=""/></div>
+<map name="aclass_imgui_layer_ac6e6a5e4ebd45b8012cab448074aa91e_cgraph" id="aclass_imgui_layer_ac6e6a5e4ebd45b8012cab448074aa91e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,192,47"/>
+<area shape="rect" href="class_key_event.html#a381484404b2aac1ea73952a78a9fa047" title=" " alt="" coords="240,13,399,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab11e32ee191388e11444da6af20817c0" name="ab11e32ee191388e11444da6af20817c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab11e32ee191388e11444da6af20817c0">&#9670;&nbsp;</a></span>OnKeyTypedEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImguiLayer::OnKeyTypedEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_key_pressed_event.html">KeyPressedEvent</a> &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d4a95519a5ebc1d7e229c376096b059" name="a1d4a95519a5ebc1d7e229c376096b059"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d4a95519a5ebc1d7e229c376096b059">&#9670;&nbsp;</a></span>OnMouseButtonPressedEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImguiLayer::OnMouseButtonPressedEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_mouse_button_pressed_event.html">MouseButtonPressedEvent</a> &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_a1d4a95519a5ebc1d7e229c376096b059_cgraph.png" border="0" usemap="#aclass_imgui_layer_a1d4a95519a5ebc1d7e229c376096b059_cgraph" alt=""/></div>
+<map name="aclass_imgui_layer_a1d4a95519a5ebc1d7e229c376096b059_cgraph" id="aclass_imgui_layer_a1d4a95519a5ebc1d7e229c376096b059_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,192,47"/>
+<area shape="rect" href="class_mouse_button_event.html#a95acf32682fe88f6dd35406818dc689d" title=" " alt="" coords="240,5,439,47"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_a1d4a95519a5ebc1d7e229c376096b059_icgraph.png" border="0" usemap="#aclass_imgui_layer_a1d4a95519a5ebc1d7e229c376096b059_icgraph" alt=""/></div>
+<map name="aclass_imgui_layer_a1d4a95519a5ebc1d7e229c376096b059_icgraph" id="aclass_imgui_layer_a1d4a95519a5ebc1d7e229c376096b059_icgraph">
+<area shape="rect" title=" " alt="" coords="196,5,383,47"/>
+<area shape="rect" href="class_imgui_layer.html#ade36001fdd1861e19dadc2d32d5e7bd5" title=" " alt="" coords="5,13,148,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a368d0e869c0520ee085f82f9b7389aa1" name="a368d0e869c0520ee085f82f9b7389aa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a368d0e869c0520ee085f82f9b7389aa1">&#9670;&nbsp;</a></span>OnMouseButtonReleasedEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImguiLayer::OnMouseButtonReleasedEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_mouse_button_released_event.html">MouseButtonReleasedEvent</a> &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_a368d0e869c0520ee085f82f9b7389aa1_cgraph.png" border="0" usemap="#aclass_imgui_layer_a368d0e869c0520ee085f82f9b7389aa1_cgraph" alt=""/></div>
+<map name="aclass_imgui_layer_a368d0e869c0520ee085f82f9b7389aa1_cgraph" id="aclass_imgui_layer_a368d0e869c0520ee085f82f9b7389aa1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,192,47"/>
+<area shape="rect" href="class_mouse_button_event.html#a95acf32682fe88f6dd35406818dc689d" title=" " alt="" coords="240,5,439,47"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_a368d0e869c0520ee085f82f9b7389aa1_icgraph.png" border="0" usemap="#aclass_imgui_layer_a368d0e869c0520ee085f82f9b7389aa1_icgraph" alt=""/></div>
+<map name="aclass_imgui_layer_a368d0e869c0520ee085f82f9b7389aa1_icgraph" id="aclass_imgui_layer_a368d0e869c0520ee085f82f9b7389aa1_icgraph">
+<area shape="rect" title=" " alt="" coords="196,5,383,47"/>
+<area shape="rect" href="class_imgui_layer.html#ade36001fdd1861e19dadc2d32d5e7bd5" title=" " alt="" coords="5,13,148,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2fcfcc4f206dca3f12a0dbca26186aa2" name="a2fcfcc4f206dca3f12a0dbca26186aa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fcfcc4f206dca3f12a0dbca26186aa2">&#9670;&nbsp;</a></span>OnMouseMovedEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImguiLayer::OnMouseMovedEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_mouse_moved_event.html">MouseMovedEvent</a> &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>被 <a class="el" href="class_editor_layer.html#a049127382838e3bd031f8ac03ab0e791">EditorLayer</a> 重载.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_a2fcfcc4f206dca3f12a0dbca26186aa2_cgraph.png" border="0" usemap="#aclass_imgui_layer_a2fcfcc4f206dca3f12a0dbca26186aa2_cgraph" alt=""/></div>
+<map name="aclass_imgui_layer_a2fcfcc4f206dca3f12a0dbca26186aa2_cgraph" id="aclass_imgui_layer_a2fcfcc4f206dca3f12a0dbca26186aa2_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,192,65"/>
+<area shape="rect" href="class_mouse_moved_event.html#a7b9e9e121dc213bc27dff766488fd21c" title=" " alt="" coords="241,5,407,32"/>
+<area shape="rect" href="class_mouse_moved_event.html#aedb72739694d42dd2ff243b981e85dd7" title=" " alt="" coords="240,56,408,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_a2fcfcc4f206dca3f12a0dbca26186aa2_icgraph.png" border="0" usemap="#aclass_imgui_layer_a2fcfcc4f206dca3f12a0dbca26186aa2_icgraph" alt=""/></div>
+<map name="aclass_imgui_layer_a2fcfcc4f206dca3f12a0dbca26186aa2_icgraph" id="aclass_imgui_layer_a2fcfcc4f206dca3f12a0dbca26186aa2_icgraph">
+<area shape="rect" title=" " alt="" coords="196,5,383,47"/>
+<area shape="rect" href="class_imgui_layer.html#ade36001fdd1861e19dadc2d32d5e7bd5" title=" " alt="" coords="5,13,148,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a090711e0e18f621c4c9af4ea44fa443a" name="a090711e0e18f621c4c9af4ea44fa443a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a090711e0e18f621c4c9af4ea44fa443a">&#9670;&nbsp;</a></span>OnMouseScrolledEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImguiLayer::OnMouseScrolledEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_mouse_scrolled_event.html">MouseScrolledEvent</a> &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>被 <a class="el" href="class_editor_layer.html#a033bc9abb193a1bbc5858f8e7aa2d292">EditorLayer</a> 重载.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_a090711e0e18f621c4c9af4ea44fa443a_cgraph.png" border="0" usemap="#aclass_imgui_layer_a090711e0e18f621c4c9af4ea44fa443a_cgraph" alt=""/></div>
+<map name="aclass_imgui_layer_a090711e0e18f621c4c9af4ea44fa443a_cgraph" id="aclass_imgui_layer_a090711e0e18f621c4c9af4ea44fa443a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,201,80"/>
+<area shape="rect" href="class_mouse_scrolled_event.html#a8541a530920db59f18810d759a41c6a5" title=" " alt="" coords="249,5,389,47"/>
+<area shape="rect" href="class_mouse_scrolled_event.html#a2c442543f2334c7686faa2c28ca334bc" title=" " alt="" coords="249,71,389,112"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_a090711e0e18f621c4c9af4ea44fa443a_icgraph.png" border="0" usemap="#aclass_imgui_layer_a090711e0e18f621c4c9af4ea44fa443a_icgraph" alt=""/></div>
+<map name="aclass_imgui_layer_a090711e0e18f621c4c9af4ea44fa443a_icgraph" id="aclass_imgui_layer_a090711e0e18f621c4c9af4ea44fa443a_icgraph">
+<area shape="rect" title=" " alt="" coords="196,5,392,47"/>
+<area shape="rect" href="class_imgui_layer.html#ade36001fdd1861e19dadc2d32d5e7bd5" title=" " alt="" coords="5,13,148,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -254,13 +652,222 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>mTime</b> = 0</td></
 </table>
 </div><div class="memdoc">
 
-<p>重载 <a class="el" href="class_layer.html">Layer</a> .</p>
+<p>重载 <a class="el" href="class_layer.html#a5fff58cf356c53ef765724b8e5aae9e2">Layer</a> .</p>
+
+<p>被 <a class="el" href="class_editor_layer.html#ade3e74ebc4c5487446fda26262151cef">EditorLayer</a> 重载.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_aa98053a216128343d985192439323544_cgraph.png" border="0" usemap="#aclass_imgui_layer_aa98053a216128343d985192439323544_cgraph" alt=""/></div>
+<map name="aclass_imgui_layer_aa98053a216128343d985192439323544_cgraph" id="aclass_imgui_layer_aa98053a216128343d985192439323544_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,156,57"/>
+<area shape="rect" href="class_imgui_layer.html#aadd4f1314d523328cc8a2d40165611e0" title=" " alt="" coords="207,5,364,32"/>
+<area shape="rect" href="class_imgui_layer.html#a7c94ff83e9809b1a158e890920daed20" title=" " alt="" coords="204,56,367,83"/>
+<area shape="rect" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="415,49,567,90"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a23c057937f4d3e54a4538ae6feead348" name="a23c057937f4d3e54a4538ae6feead348"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23c057937f4d3e54a4538ae6feead348">&#9670;&nbsp;</a></span>OnWindowResizeEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImguiLayer::OnWindowResizeEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_window_resize_event.html">WindowResizeEvent</a> &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_a23c057937f4d3e54a4538ae6feead348_cgraph.png" border="0" usemap="#aclass_imgui_layer_a23c057937f4d3e54a4538ae6feead348_cgraph" alt=""/></div>
+<map name="aclass_imgui_layer_a23c057937f4d3e54a4538ae6feead348_cgraph" id="aclass_imgui_layer_a23c057937f4d3e54a4538ae6feead348_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,201,80"/>
+<area shape="rect" href="class_window_resize_event.html#ab3aa091a7fa016f762764ddc263eee98" title=" " alt="" coords="249,5,397,47"/>
+<area shape="rect" href="class_window_resize_event.html#a5f3a24ccf55cde3e08028e61ce17c458" title=" " alt="" coords="249,71,397,112"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_a23c057937f4d3e54a4538ae6feead348_icgraph.png" border="0" usemap="#aclass_imgui_layer_a23c057937f4d3e54a4538ae6feead348_icgraph" alt=""/></div>
+<map name="aclass_imgui_layer_a23c057937f4d3e54a4538ae6feead348_icgraph" id="aclass_imgui_layer_a23c057937f4d3e54a4538ae6feead348_icgraph">
+<area shape="rect" title=" " alt="" coords="196,5,392,47"/>
+<area shape="rect" href="class_imgui_layer.html#ade36001fdd1861e19dadc2d32d5e7bd5" title=" " alt="" coords="5,13,148,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a43530d88ce55849d8b9dd2617435cf8a" name="a43530d88ce55849d8b9dd2617435cf8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43530d88ce55849d8b9dd2617435cf8a">&#9670;&nbsp;</a></span>RegisterGuiWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImguiLayer::RegisterGuiWindow </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_gui_window.html">GuiWindow</a> &gt;&#160;</td>
+          <td class="paramname"><em>guiwindow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_a43530d88ce55849d8b9dd2617435cf8a_icgraph.png" border="0" usemap="#aclass_imgui_layer_a43530d88ce55849d8b9dd2617435cf8a_icgraph" alt=""/></div>
+<map name="aclass_imgui_layer_a43530d88ce55849d8b9dd2617435cf8a_icgraph" id="aclass_imgui_layer_a43530d88ce55849d8b9dd2617435cf8a_icgraph">
+<area shape="rect" title=" " alt="" coords="216,5,423,32"/>
+<area shape="rect" href="class_editor_layer.html#ac68e82509971314260c282a174f63bb5" title=" " alt="" coords="5,5,168,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aadd4f1314d523328cc8a2d40165611e0" name="aadd4f1314d523328cc8a2d40165611e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadd4f1314d523328cc8a2d40165611e0">&#9670;&nbsp;</a></span>RenderEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImguiLayer::RenderEnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_aadd4f1314d523328cc8a2d40165611e0_icgraph.png" border="0" usemap="#aclass_imgui_layer_aadd4f1314d523328cc8a2d40165611e0_icgraph" alt=""/></div>
+<map name="aclass_imgui_layer_aadd4f1314d523328cc8a2d40165611e0_icgraph" id="aclass_imgui_layer_aadd4f1314d523328cc8a2d40165611e0_icgraph">
+<area shape="rect" title=" " alt="" coords="208,31,365,57"/>
+<area shape="rect" href="class_editor_layer.html#ade3e74ebc4c5487446fda26262151cef" title=" " alt="" coords="5,5,160,32"/>
+<area shape="rect" href="class_imgui_layer.html#aa98053a216128343d985192439323544" title=" " alt="" coords="7,56,158,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7c94ff83e9809b1a158e890920daed20" name="a7c94ff83e9809b1a158e890920daed20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c94ff83e9809b1a158e890920daed20">&#9670;&nbsp;</a></span>RenderStart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImguiLayer::RenderStart </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_a7c94ff83e9809b1a158e890920daed20_cgraph.png" border="0" usemap="#aclass_imgui_layer_a7c94ff83e9809b1a158e890920daed20_cgraph" alt=""/></div>
+<map name="aclass_imgui_layer_a7c94ff83e9809b1a158e890920daed20_cgraph" id="aclass_imgui_layer_a7c94ff83e9809b1a158e890920daed20_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,168,39"/>
+<area shape="rect" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="216,5,368,47"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_imgui_layer_a7c94ff83e9809b1a158e890920daed20_icgraph.png" border="0" usemap="#aclass_imgui_layer_a7c94ff83e9809b1a158e890920daed20_icgraph" alt=""/></div>
+<map name="aclass_imgui_layer_a7c94ff83e9809b1a158e890920daed20_icgraph" id="aclass_imgui_layer_a7c94ff83e9809b1a158e890920daed20_icgraph">
+<area shape="rect" title=" " alt="" coords="208,31,371,57"/>
+<area shape="rect" href="class_editor_layer.html#ade3e74ebc4c5487446fda26262151cef" title=" " alt="" coords="5,5,160,32"/>
+<area shape="rect" href="class_imgui_layer.html#aa98053a216128343d985192439323544" title=" " alt="" coords="7,56,158,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ab1c2ca0d2f28bd3a0e56f565254112c7" name="ab1c2ca0d2f28bd3a0e56f565254112c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1c2ca0d2f28bd3a0e56f565254112c7">&#9670;&nbsp;</a></span>mTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ImguiLayer::mTime = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a36a760d7ac4b5a422fd4ab9968a29440" name="a36a760d7ac4b5a422fd4ab9968a29440"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36a760d7ac4b5a422fd4ab9968a29440">&#9670;&nbsp;</a></span>uiWindows</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::shared_ptr&lt;<a class="el" href="class_gui_window.html">GuiWindow</a>&gt; &gt; ImguiLayer::uiWindows</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Layer/<a class="el" href="_imgui_layer_8h_source.html">ImguiLayer.h</a></li>
-<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Layer/ImguiLayer.cpp</li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Layer/<a class="el" href="_imgui_layer_8cpp.html">ImguiLayer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

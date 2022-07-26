@@ -1,0 +1,5 @@
+<map id="Texture::DepthBufferInit" name="Texture::DepthBufferInit">
+<area shape="rect" id="node1" title="用于深度缓冲的初始化" alt="" coords="193,31,351,57"/>
+<area shape="rect" id="node2" href="$class_frame_buffer.html#a85fd1f406095bd483183a4b7d2173852" title="重置缓存大小" alt="" coords="5,5,145,32"/>
+<area shape="rect" id="node3" href="$class_texture.html#a6efc43d1125ea5b5d3bb4c7357b73104" title=" " alt="" coords="17,56,133,83"/>
+</map>

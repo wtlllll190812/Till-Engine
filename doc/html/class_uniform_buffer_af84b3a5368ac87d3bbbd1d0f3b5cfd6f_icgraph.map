@@ -1,0 +1,6 @@
+<map id="UniformBuffer::SetData" name="UniformBuffer::SetData">
+<area shape="rect" id="node1" title="设置缓存参数" alt="" coords="656,5,811,32"/>
+<area shape="rect" id="node2" href="$class_render_system.html#a403f3d3b8c85d6ca32522dfb4b8092e2" title="配置渲染数据" alt="" coords="445,5,608,32"/>
+<area shape="rect" id="node3" href="$class_render_system.html#a744c9a8ba4359b3353a6130f3af51fbb" title="每帧刷新" alt="" coords="240,5,397,32"/>
+<area shape="rect" id="node4" href="$class_windows_window.html#a27cad6c527b8b73dfea5420fa9efeef2" title="窗口渲染函数" alt="" coords="5,5,192,32"/>
+</map>

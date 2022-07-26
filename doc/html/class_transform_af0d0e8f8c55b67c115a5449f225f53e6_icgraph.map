@@ -1,9 +1,11 @@
 <map id="Transform::GetFront" name="Transform::GetFront">
-<area shape="rect" id="node1" title="获取向前方向" alt="" coords="679,81,817,108"/>
-<area shape="rect" id="node2" href="$class_transform.html#a7e34c4791358814412983d8606cc4cdf" title="获取向右方向" alt="" coords="491,5,630,32"/>
-<area shape="rect" id="node3" href="$class_transform.html#a9d87de590be3b413b962ca5a1c90c0ef" title="获取向上方向" alt="" coords="319,56,443,83"/>
-<area shape="rect" id="node4" href="$class_camera.html#affa333055635aed96518c4c66be9a70c" title="获取观察矩阵" alt="" coords="111,81,271,108"/>
-<area shape="rect" id="node7" href="$class_transform.html#a8ffa079dae0fe2046c6b6595df394bf1" title="向前移动" alt="" coords="491,157,631,184"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="9,56,59,83"/>
-<area shape="rect" id="node6" href="$main_8cpp.html#a3ac1fe7e6bd625ee388cee2dc03a2ebc" title=" " alt="" coords="5,107,63,133"/>
+<area shape="rect" id="node1" title="获取向前方向" alt="" coords="867,107,1005,133"/>
+<area shape="rect" id="node2" href="$class_transform.html#a7e34c4791358814412983d8606cc4cdf" title="获取向右方向" alt="" coords="668,5,807,32"/>
+<area shape="rect" id="node3" href="$class_transform.html#a9d87de590be3b413b962ca5a1c90c0ef" title="获取向上方向" alt="" coords="467,56,591,83"/>
+<area shape="rect" id="node4" href="$class_camera.html#affa333055635aed96518c4c66be9a70c" title="获取观察矩阵" alt="" coords="229,81,389,108"/>
+<area shape="rect" id="node6" href="$class_render_system.html#a403f3d3b8c85d6ca32522dfb4b8092e2" title="配置渲染数据" alt="" coords="656,157,819,184"/>
+<area shape="rect" id="node9" href="$class_transform.html#a8ffa079dae0fe2046c6b6595df394bf1" title="向前移动" alt="" coords="667,208,807,235"/>
+<area shape="rect" id="node5" href="$class_editor_layer.html#ac68e82509971314260c282a174f63bb5" title=" " alt="" coords="5,81,168,108"/>
+<area shape="rect" id="node7" href="$class_render_system.html#a744c9a8ba4359b3353a6130f3af51fbb" title="每帧刷新" alt="" coords="451,157,608,184"/>
+<area shape="rect" id="node8" href="$class_windows_window.html#a27cad6c527b8b73dfea5420fa9efeef2" title="窗口渲染函数" alt="" coords="216,157,403,184"/>
 </map>

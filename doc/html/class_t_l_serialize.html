@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,21 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
@@ -76,21 +59,153 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 静态 Public 成员函数</h2></td></tr>
-<tr class="memitem:a766e81aec61c3bcef8ad82b5edc78701"><td class="memItemLeft" align="right" valign="top"><a id="a766e81aec61c3bcef8ad82b5edc78701" name="a766e81aec61c3bcef8ad82b5edc78701"></a>
-static TiXmlElement *&#160;</td><td class="memItemRight" valign="bottom"><b>Serialize</b> (glm::vec3 &amp;vector, std::string name)</td></tr>
+<tr class="memitem:a766e81aec61c3bcef8ad82b5edc78701"><td class="memItemLeft" align="right" valign="top">static TiXmlElement *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_serialize.html#a766e81aec61c3bcef8ad82b5edc78701">Serialize</a> (glm::vec3 &amp;vector, std::string name)</td></tr>
 <tr class="separator:a766e81aec61c3bcef8ad82b5edc78701"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08b4b91a0b7e2dce0ce47e223c4c6469"><td class="memItemLeft" align="right" valign="top"><a id="a08b4b91a0b7e2dce0ce47e223c4c6469" name="a08b4b91a0b7e2dce0ce47e223c4c6469"></a>
-static glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>DeSerialize</b> (TiXmlElement *sceneFile)</td></tr>
+<tr class="memitem:a08b4b91a0b7e2dce0ce47e223c4c6469"><td class="memItemLeft" align="right" valign="top">static glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_serialize.html#a08b4b91a0b7e2dce0ce47e223c4c6469">DeSerialize</a> (TiXmlElement *sceneFile)</td></tr>
 <tr class="separator:a08b4b91a0b7e2dce0ce47e223c4c6469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c31cfb5c1e937debfe285d87637d766"><td class="memItemLeft" align="right" valign="top"><a id="a1c31cfb5c1e937debfe285d87637d766" name="a1c31cfb5c1e937debfe285d87637d766"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateNode</b> (glm::vec3 &amp;vector, TiXmlElement *node)</td></tr>
+<tr class="memitem:a1c31cfb5c1e937debfe285d87637d766"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_serialize.html#a1c31cfb5c1e937debfe285d87637d766">UpdateNode</a> (glm::vec3 &amp;vector, TiXmlElement *node)</td></tr>
 <tr class="separator:a1c31cfb5c1e937debfe285d87637d766"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p >常用类的序列化支持 </p>
-</div><hr/>该类的文档由以下文件生成:<ul>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a id="a08b4b91a0b7e2dce0ce47e223c4c6469" name="a08b4b91a0b7e2dce0ce47e223c4c6469"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08b4b91a0b7e2dce0ce47e223c4c6469">&#9670;&nbsp;</a></span>DeSerialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 TLSerialize::DeSerialize </td>
+          <td>(</td>
+          <td class="paramtype">TiXmlElement *&#160;</td>
+          <td class="paramname"><em>sceneFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_t_l_serialize_a08b4b91a0b7e2dce0ce47e223c4c6469_icgraph.png" border="0" usemap="#aclass_t_l_serialize_a08b4b91a0b7e2dce0ce47e223c4c6469_icgraph" alt=""/></div>
+<map name="aclass_t_l_serialize_a08b4b91a0b7e2dce0ce47e223c4c6469_icgraph" id="aclass_t_l_serialize_a08b4b91a0b7e2dce0ce47e223c4c6469_icgraph">
+<area shape="rect" title=" " alt="" coords="669,81,829,108"/>
+<area shape="rect" href="class_direction_light.html#acee57f63f803535fa8ff74ae8b4663a8" title="反序列化" alt="" coords="447,5,621,32"/>
+<area shape="rect" href="class_point_light.html#ab878efadcb12dee4f3aafb31189386e9" title="反序列化" alt="" coords="457,56,611,83"/>
+<area shape="rect" href="class_spot_light.html#aa7d60f9312634b2708cbd32fdce23957" title="反序列化" alt="" coords="459,107,609,133"/>
+<area shape="rect" href="class_transform.html#abe93692dc6c3083f804c0c44f8e8fcc4" title="反序列化" alt="" coords="457,157,611,184"/>
+<area shape="rect" href="class_game_object.html#a7bd3840ff675f1ee44ddec99fb89bc32" title="反序列化" alt="" coords="229,157,399,184"/>
+<area shape="rect" href="class_game_object.html#a723e616ef6ce1ca7697911c818774d4c" title=" " alt="" coords="5,157,181,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a766e81aec61c3bcef8ad82b5edc78701" name="a766e81aec61c3bcef8ad82b5edc78701"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a766e81aec61c3bcef8ad82b5edc78701">&#9670;&nbsp;</a></span>Serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TiXmlElement * TLSerialize::Serialize </td>
+          <td>(</td>
+          <td class="paramtype">glm::vec3 &amp;&#160;</td>
+          <td class="paramname"><em>vector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_t_l_serialize_a766e81aec61c3bcef8ad82b5edc78701_icgraph.png" border="0" usemap="#aclass_t_l_serialize_a766e81aec61c3bcef8ad82b5edc78701_icgraph" alt=""/></div>
+<map name="aclass_t_l_serialize_a766e81aec61c3bcef8ad82b5edc78701_icgraph" id="aclass_t_l_serialize_a766e81aec61c3bcef8ad82b5edc78701_icgraph">
+<area shape="rect" title=" " alt="" coords="212,81,356,108"/>
+<area shape="rect" href="class_direction_light.html#acf7bdc44fa95366871a2e8fe8d1f7c09" title="序列化" alt="" coords="5,5,164,32"/>
+<area shape="rect" href="class_point_light.html#aa1ab02a23e44b18021700a4e27373295" title="序列化" alt="" coords="15,56,154,83"/>
+<area shape="rect" href="class_spot_light.html#a07e6bcdf50c13272805091893130c575" title="序列化" alt="" coords="17,107,152,133"/>
+<area shape="rect" href="class_transform.html#ae6c2b74033dd4cd5ca9af6e0a1d25301" title="序列化" alt="" coords="16,157,153,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1c31cfb5c1e937debfe285d87637d766" name="a1c31cfb5c1e937debfe285d87637d766"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c31cfb5c1e937debfe285d87637d766">&#9670;&nbsp;</a></span>UpdateNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TLSerialize::UpdateNode </td>
+          <td>(</td>
+          <td class="paramtype">glm::vec3 &amp;&#160;</td>
+          <td class="paramname"><em>vector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TiXmlElement *&#160;</td>
+          <td class="paramname"><em>node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_t_l_serialize_a1c31cfb5c1e937debfe285d87637d766_icgraph.png" border="0" usemap="#aclass_t_l_serialize_a1c31cfb5c1e937debfe285d87637d766_icgraph" alt=""/></div>
+<map name="aclass_t_l_serialize_a1c31cfb5c1e937debfe285d87637d766_icgraph" id="aclass_t_l_serialize_a1c31cfb5c1e937debfe285d87637d766_icgraph">
+<area shape="rect" title=" " alt="" coords="412,5,577,32"/>
+<area shape="rect" href="class_transform.html#a61265532c475d33a022f1a4238089cff" title="更新序列化节点" alt="" coords="205,5,364,32"/>
+<area shape="rect" href="class_transform.html#a295a782dcb0a07ecc5049d98e888e9c4" title="显示到Gui" alt="" coords="5,5,157,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Tools/<a class="el" href="_t_l_serialize_8h_source.html">TLSerialize.h</a></li>
-<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Tools/TLSerialize.cpp</li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Tools/<a class="el" href="_t_l_serialize_8cpp.html">TLSerialize.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

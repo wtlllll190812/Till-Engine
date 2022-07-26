@@ -1,0 +1,11 @@
+<map id="GameObject::GameObject" name="GameObject::GameObject">
+<area shape="rect" id="node1" title=" " alt="" coords="5,123,181,149"/>
+<area shape="rect" id="node2" href="$class_game_object.html#a7bd3840ff675f1ee44ddec99fb89bc32" title="反序列化" alt="" coords="229,123,399,149"/>
+<area shape="rect" id="node3" href="$class_game_object.html#af9eceda0f9df6fc8d4c398971bbe231e" title="添加组件" alt="" coords="448,5,640,32"/>
+<area shape="rect" id="node5" href="$class_reflection_manager.html#ad8948d57776c6010a31f2427a402feef" title=" " alt="" coords="473,57,615,98"/>
+<area shape="rect" id="node6" href="$class_transform.html#abe93692dc6c3083f804c0c44f8e8fcc4" title="反序列化" alt="" coords="467,123,621,149"/>
+<area shape="rect" id="node8" href="$class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="461,173,627,200"/>
+<area shape="rect" id="node9" href="$class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="447,225,641,266"/>
+<area shape="rect" id="node4" href="$class_component.html#a97db16de1c451add8d2886151d5f0f4a" title="添加时" alt="" coords="702,5,837,32"/>
+<area shape="rect" id="node7" href="$class_t_l_serialize.html#a08b4b91a0b7e2dce0ce47e223c4c6469" title=" " alt="" coords="689,123,849,149"/>
+</map>

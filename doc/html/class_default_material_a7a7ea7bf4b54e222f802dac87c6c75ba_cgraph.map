@@ -1,0 +1,5 @@
+<map id="DefaultMaterial::DrawFunc" name="DefaultMaterial::DrawFunc">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,180,57"/>
+<area shape="rect" id="node2" href="$class_frame_buffer.html#af18dfccf88adaa8773dd472bd53bda05" title="获取深度缓存" alt="" coords="228,5,416,32"/>
+<area shape="rect" id="node3" href="$class_transform.html#aac5b8a016ec8ecb9eae51e636322a7dd" title="获取model矩阵" alt="" coords="233,56,411,83"/>
+</map>

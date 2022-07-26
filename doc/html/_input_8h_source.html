@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,19 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_75ae6d3613b6c2f243b8fb439548ec3f.html">Framework</a></li>  </ul>
@@ -69,26 +50,37 @@ $(function() {
   <div class="headertitle"><div class="title">Input.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="_input_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;glm/glm.hpp&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="class_input.html">    4</a></span><span class="keyword">class </span><a class="code hl_class" href="class_input.html">Input</a></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> GetKeyDown(<span class="keyword">const</span> <span class="keywordtype">int</span> key);</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> GetKeyUp(<span class="keyword">const</span> <span class="keywordtype">int</span> key);</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> GetKey(<span class="keyword">const</span> <span class="keywordtype">int</span> key);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> GetMouseButtonDown(<span class="keyword">const</span> <span class="keywordtype">int</span> key);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> GetMouseButtonUp(<span class="keyword">const</span> <span class="keywordtype">int</span> key);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> GetMouseButton(<span class="keyword">const</span> <span class="keywordtype">int</span> key);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> Update();</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> Init();</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">static</span> glm::vec2 MousePos();</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_input.html#a4094d923afac36af9f05c18f984d107f">GetKeyDown</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> key);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_input.html#a8aa8c251f1ca2983842b6d4df831d68b">GetKeyUp</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> key);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_input.html#a95f1685dfe5752cd4f3a22430138199d">GetKey</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> key);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_input.html#aa96b37ceccba6684125fef6fdb8776e4">GetMouseButtonDown</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> key);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_input.html#ad81415442c94e3147de8d9dfa0aca566">GetMouseButtonUp</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> key);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_input.html#ac707d3d56d521674485677c85c67d9b5">GetMouseButton</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> key);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_input.html#af80dcfde6dbfe39bf3bc0345c75595ce">Update</a>();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_input.html#a5197114da7299198826ff7277ee12bff">Init</a>();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">static</span> glm::vec2 <a class="code hl_function" href="class_input.html#ab1780ef990d2434b6f8302613a7547f1">MousePos</a>();</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> keyBuf[512];</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> mouseBuf[8];</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_input.html#a4d5c26a69aa5dd5cfb1bf86f41431e28">   17</a></span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_input.html#a4d5c26a69aa5dd5cfb1bf86f41431e28">keyBuf</a>[512];</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_input.html#a9a3a3d87d5e8abebed630fdd16d58e7b">   18</a></span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_input.html#a9a3a3d87d5e8abebed630fdd16d58e7b">mouseBuf</a>[8];</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>};</div>
 <div class="ttc" id="aclass_input_html"><div class="ttname"><a href="class_input.html">Input</a></div><div class="ttdef"><b>Definition:</b> Input.h:5</div></div>
+<div class="ttc" id="aclass_input_html_a4094d923afac36af9f05c18f984d107f"><div class="ttname"><a href="class_input.html#a4094d923afac36af9f05c18f984d107f">Input::GetKeyDown</a></div><div class="ttdeci">static bool GetKeyDown(const int key)</div><div class="ttdef"><b>Definition:</b> GLfwInput.cpp:13</div></div>
+<div class="ttc" id="aclass_input_html_a4d5c26a69aa5dd5cfb1bf86f41431e28"><div class="ttname"><a href="class_input.html#a4d5c26a69aa5dd5cfb1bf86f41431e28">Input::keyBuf</a></div><div class="ttdeci">static int keyBuf[512]</div><div class="ttdef"><b>Definition:</b> Input.h:17</div></div>
+<div class="ttc" id="aclass_input_html_a5197114da7299198826ff7277ee12bff"><div class="ttname"><a href="class_input.html#a5197114da7299198826ff7277ee12bff">Input::Init</a></div><div class="ttdeci">static void Init()</div><div class="ttdef"><b>Definition:</b> GLfwInput.cpp:20</div></div>
+<div class="ttc" id="aclass_input_html_a8aa8c251f1ca2983842b6d4df831d68b"><div class="ttname"><a href="class_input.html#a8aa8c251f1ca2983842b6d4df831d68b">Input::GetKeyUp</a></div><div class="ttdeci">static bool GetKeyUp(const int key)</div><div class="ttdef"><b>Definition:</b> GLfwInput.cpp:69</div></div>
+<div class="ttc" id="aclass_input_html_a95f1685dfe5752cd4f3a22430138199d"><div class="ttname"><a href="class_input.html#a95f1685dfe5752cd4f3a22430138199d">Input::GetKey</a></div><div class="ttdeci">static bool GetKey(const int key)</div><div class="ttdef"><b>Definition:</b> GLfwInput.cpp:76</div></div>
+<div class="ttc" id="aclass_input_html_a9a3a3d87d5e8abebed630fdd16d58e7b"><div class="ttname"><a href="class_input.html#a9a3a3d87d5e8abebed630fdd16d58e7b">Input::mouseBuf</a></div><div class="ttdeci">static int mouseBuf[8]</div><div class="ttdef"><b>Definition:</b> Input.h:18</div></div>
+<div class="ttc" id="aclass_input_html_aa96b37ceccba6684125fef6fdb8776e4"><div class="ttname"><a href="class_input.html#aa96b37ceccba6684125fef6fdb8776e4">Input::GetMouseButtonDown</a></div><div class="ttdeci">static bool GetMouseButtonDown(const int key)</div><div class="ttdef"><b>Definition:</b> GLfwInput.cpp:83</div></div>
+<div class="ttc" id="aclass_input_html_ab1780ef990d2434b6f8302613a7547f1"><div class="ttname"><a href="class_input.html#ab1780ef990d2434b6f8302613a7547f1">Input::MousePos</a></div><div class="ttdeci">static glm::vec2 MousePos()</div><div class="ttdef"><b>Definition:</b> GLfwInput.cpp:104</div></div>
+<div class="ttc" id="aclass_input_html_ac707d3d56d521674485677c85c67d9b5"><div class="ttname"><a href="class_input.html#ac707d3d56d521674485677c85c67d9b5">Input::GetMouseButton</a></div><div class="ttdeci">static bool GetMouseButton(const int key)</div><div class="ttdef"><b>Definition:</b> GLfwInput.cpp:97</div></div>
+<div class="ttc" id="aclass_input_html_ad81415442c94e3147de8d9dfa0aca566"><div class="ttname"><a href="class_input.html#ad81415442c94e3147de8d9dfa0aca566">Input::GetMouseButtonUp</a></div><div class="ttdeci">static bool GetMouseButtonUp(const int key)</div><div class="ttdef"><b>Definition:</b> GLfwInput.cpp:90</div></div>
+<div class="ttc" id="aclass_input_html_af80dcfde6dbfe39bf3bc0345c75595ce"><div class="ttname"><a href="class_input.html#af80dcfde6dbfe39bf3bc0345c75595ce">Input::Update</a></div><div class="ttdeci">static void Update()</div><div class="ttdef"><b>Definition:</b> GLfwInput.cpp:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

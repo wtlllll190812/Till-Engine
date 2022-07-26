@@ -1,4 +1,5 @@
 <map id="GameObject::GameObject" name="GameObject::GameObject">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,181,32"/>
-<area shape="rect" id="node2" href="$class_game_object.html#a1f6ffb8c4827da5a8e6a878f2b83fdc8" title="获取hash值" alt="" coords="229,5,384,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,181,57"/>
+<area shape="rect" id="node2" href="$class_component.html#a97db16de1c451add8d2886151d5f0f4a" title="添加时" alt="" coords="239,5,374,32"/>
+<area shape="rect" id="node3" href="$class_game_object.html#a1f6ffb8c4827da5a8e6a878f2b83fdc8" title="获取hash值" alt="" coords="229,56,384,83"/>
 </map>

@@ -1,5 +1,4 @@
 <map id="ImguiLayer::OnMouseButtonReleasedEvent" name="ImguiLayer::OnMouseButtonReleasedEvent">
-<area shape="rect" id="node1" title=" " alt="" coords="5,27,192,69"/>
-<area shape="rect" id="node2" href="$namespace_im_gui.html#a3179e560812f878f3961ce803a5d9302" title=" " alt="" coords="290,5,389,32"/>
-<area shape="rect" id="node3" href="$class_mouse_button_event.html#a95acf32682fe88f6dd35406818dc689d" title=" " alt="" coords="240,57,439,98"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,192,47"/>
+<area shape="rect" id="node2" href="$class_mouse_button_event.html#a95acf32682fe88f6dd35406818dc689d" title=" " alt="" coords="240,5,439,47"/>
 </map>

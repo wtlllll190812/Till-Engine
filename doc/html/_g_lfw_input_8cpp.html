@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TillEngine: D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/GLfwInput.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_75ae6d3613b6c2f243b8fb439548ec3f.html">Framework</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">GLfwInput.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_input_8h_source.html">Input.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_windows_window_8h_source.html">WindowsWindow.h</a>&quot;</code><br />
+<code>#include &lt;GLFW/glfw3.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_application_8h_source.html">Application.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_debug_8h_source.html">Debug.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+GLfwInput.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_g_lfw_input_8cpp__incl.png" border="0" usemap="#a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_g_lfw_input_8cpp" alt=""/></div>
+<map name="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_g_lfw_input_8cpp" id="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_framework_2_g_lfw_input_8cpp">
+<area shape="rect" title=" " alt="" coords="278,5,498,61"/>
+<area shape="rect" href="_input_8h.html" title=" " alt="" coords="48,109,109,136"/>
+<area shape="rect" href="_windows_window_8h.html" title=" " alt="" coords="155,109,287,136"/>
+<area shape="rect" title=" " alt="" coords="336,109,440,136"/>
+<area shape="rect" href="_application_8h.html" title=" " alt="" coords="477,109,574,136"/>
+<area shape="rect" href="_debug_8h.html" title=" " alt="" coords="695,109,766,136"/>
+<area shape="rect" title=" " alt="" coords="5,184,99,211"/>
+<area shape="rect" href="_window_8h.html" title=" " alt="" coords="254,184,333,211"/>
+<area shape="rect" href="_frame_buffer_8h.html" title=" " alt="" coords="203,259,306,285"/>
+<area shape="rect" title=" " alt="" coords="123,184,179,211"/>
+<area shape="rect" href="_event_base_8h.html" title=" " alt="" coords="485,259,579,285"/>
+<area shape="rect" href="_t_l_core_8h.html" title=" " alt="" coords="637,333,712,360"/>
+<area shape="rect" title=" " alt="" coords="505,333,559,360"/>
+<area shape="rect" title=" " alt="" coords="636,408,713,435"/>
+<area shape="rect" href="_singleton_8h.html" title=" " alt="" coords="357,184,443,211"/>
+<area shape="rect" href="_application_event_8h.html" title=" " alt="" coords="467,184,597,211"/>
+<area shape="rect" title=" " alt="" coords="621,184,691,211"/>
+<area shape="rect" title=" " alt="" coords="766,184,879,211"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a088324ad8995e3eb76024e3e79083d48"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_lfw_input_8cpp.html#a088324ad8995e3eb76024e3e79083d48">GLFW_INCLUDE_NONE</a></td></tr>
+<tr class="separator:a088324ad8995e3eb76024e3e79083d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a80de27bd7dc4e2b2ad3d5895b97a70f0"><td class="memItemLeft" align="right" valign="top">GLFWwindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_lfw_input_8cpp.html#a80de27bd7dc4e2b2ad3d5895b97a70f0">window</a></td></tr>
+<tr class="separator:a80de27bd7dc4e2b2ad3d5895b97a70f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a088324ad8995e3eb76024e3e79083d48" name="a088324ad8995e3eb76024e3e79083d48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a088324ad8995e3eb76024e3e79083d48">&#9670;&nbsp;</a></span>GLFW_INCLUDE_NONE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GLFW_INCLUDE_NONE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a80de27bd7dc4e2b2ad3d5895b97a70f0" name="a80de27bd7dc4e2b2ad3d5895b97a70f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80de27bd7dc4e2b2ad3d5895b97a70f0">&#9670;&nbsp;</a></span>window</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLFWwindow* window</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

@@ -5,13 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TillEngine: D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Render/Material.cpp 文件参考</title>
+<title>TillEngine: D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Render/Materials/Material.cpp 文件参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,39 +28,22 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_700da30f51666cd81523daa4ef5fcfbf.html">Render</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_700da30f51666cd81523daa4ef5fcfbf.html">Render</a></li><li class="navelem"><a class="el" href="dir_c4780dacc70885753030afb2b218a1f4.html">Materials</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -71,41 +52,30 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_material_8h_source.html">Material.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_game_object_8h_source.html">GameObject.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_shader_8h_source.html">Shader.h</a>&quot;</code><br />
+<code>#include &lt;GL/glew.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_t_l_core_8h_source.html">TLCore.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_mesh_8h_source.html">Mesh.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Material.cpp 的引用(Include)关系图:</div>
 <div class="dyncontent">
-<div class="center"><img src="_material_8cpp__incl.png" border="0" usemap="#a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_render_2_material_8cpp" alt=""/></div>
-<map name="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_render_2_material_8cpp" id="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_render_2_material_8cpp">
-<area shape="rect" title=" " alt="" coords="707,5,893,61"/>
-<area shape="rect" href="_material_8h.html" title=" " alt="" coords="670,184,749,211"/>
-<area shape="rect" href="_game_object_8h.html" title=" " alt="" coords="837,109,944,136"/>
-<area shape="rect" href="_shader_8h.html" title=" " alt="" coords="411,408,485,435"/>
-<area shape="rect" href="_mesh_8h.html" title=" " alt="" coords="154,408,219,435"/>
-<area shape="rect" href="_t_l_engine_c_g_8h.html" title=" " alt="" coords="747,259,853,285"/>
-<area shape="rect" title=" " alt="" coords="677,483,747,509"/>
-<area shape="rect" title=" " alt="" coords="133,483,213,509"/>
-<area shape="rect" title=" " alt="" coords="502,483,557,509"/>
-<area shape="rect" title=" " alt="" coords="318,483,383,509"/>
-<area shape="rect" title=" " alt="" coords="408,483,477,509"/>
-<area shape="rect" title=" " alt="" coords="581,483,653,509"/>
-<area shape="rect" title=" " alt="" coords="5,483,109,509"/>
-<area shape="rect" title=" " alt="" coords="237,483,293,509"/>
-<area shape="rect" title=" " alt="" coords="1696,483,1789,509"/>
-<area shape="rect" title=" " alt="" coords="771,483,829,509"/>
-<area shape="rect" href="_reflection_8h.html" title=" " alt="" coords="847,333,937,360"/>
-<area shape="rect" href="_singleton_01_8h.html" title=" " alt="" coords="853,483,944,509"/>
-<area shape="rect" href="_till_pch_8h.html" title=" " alt="" coords="929,408,1001,435"/>
-<area shape="rect" title=" " alt="" coords="1595,483,1672,509"/>
-<area shape="rect" title=" " alt="" coords="969,483,1159,509"/>
-<area shape="rect" title=" " alt="" coords="1184,483,1325,509"/>
-<area shape="rect" title=" " alt="" coords="1350,483,1397,509"/>
-<area shape="rect" title=" " alt="" coords="1421,483,1475,509"/>
-<area shape="rect" href="_debug_8h.html" title=" " alt="" coords="1499,483,1570,509"/>
-<area shape="rect" title=" " alt="" coords="1478,557,1591,584"/>
-<area shape="rect" href="_t_lxml_8h.html" title=" " alt="" coords="1077,333,1145,360"/>
-<area shape="rect" href="_transform_8h.html" title=" " alt="" coords="931,184,1021,211"/>
-<area shape="rect" title=" " alt="" coords="1076,408,1151,435"/>
-<area shape="rect" href="_component_8h.html" title=" " alt="" coords="928,259,1027,285"/>
+<div class="center"><img src="_material_8cpp__incl.png" border="0" usemap="#a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_render_2_materials_2_material_8cpp" alt=""/></div>
+<map name="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_render_2_materials_2_material_8cpp" id="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_render_2_materials_2_material_8cpp">
+<area shape="rect" title=" " alt="" coords="507,5,675,76"/>
+<area shape="rect" href="_material_8h.html" title=" " alt="" coords="513,124,591,151"/>
+<area shape="rect" href="_t_l_core_8h.html" title=" " alt="" coords="683,199,757,225"/>
+<area shape="rect" href="_game_object_8h.html" title=" " alt="" coords="267,124,373,151"/>
+<area shape="rect" href="_shader_8h.html" title=" " alt="" coords="667,124,741,151"/>
+<area shape="rect" title=" " alt="" coords="765,124,845,151"/>
+<area shape="rect" href="_mesh_8h.html" title=" " alt="" coords="217,199,282,225"/>
+<area shape="rect" href="_t_l_engine_c_g_8h.html" title=" " alt="" coords="408,199,515,225"/>
+<area shape="rect" title=" " alt="" coords="539,199,608,225"/>
+<area shape="rect" title=" " alt="" coords="644,273,721,300"/>
+<area shape="rect" title=" " alt="" coords="222,273,277,300"/>
+<area shape="rect" title=" " alt="" coords="301,273,357,300"/>
+<area shape="rect" href="_t_l_serialize_8h.html" title=" " alt="" coords="95,199,193,225"/>
+<area shape="rect" title=" " alt="" coords="5,273,80,300"/>
+<area shape="rect" title=" " alt="" coords="104,273,197,300"/>
 </map>
 </div>
 </div></div><!-- contents -->

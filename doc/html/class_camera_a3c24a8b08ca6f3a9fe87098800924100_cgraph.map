@@ -1,0 +1,4 @@
+<map id="Camera::GuiDisPlay" name="Camera::GuiDisPlay">
+<area shape="rect" id="node1" title="显示到Gui" alt="" coords="5,5,145,32"/>
+<area shape="rect" id="node2" href="$class_camera.html#a088b21306b84082425926de5596f910e" title="更新序列化节点" alt="" coords="193,5,340,32"/>
+</map>

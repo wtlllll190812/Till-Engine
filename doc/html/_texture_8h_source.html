@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,19 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_700da30f51666cd81523daa4ef5fcfbf.html">Render</a></li>  </ul>
@@ -69,24 +50,24 @@ $(function() {
   <div class="headertitle"><div class="title">Texture.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="_texture_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">enum class</span> TextureType</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="_texture_8h.html#a65468556d79304b3a4bfc464cc12e549">    4</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="_texture_8h.html#a65468556d79304b3a4bfc464cc12e549">TextureType</a></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    Depth,</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    Color,</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    Cube</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <a class="code hl_enumvalue" href="_frame_buffer_8h.html#adf8e136713c0691010d2bec6ba63e9cfa675056ad1441b6375b2c5abd48c27ef1">Depth</a>,</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_enumvalue" href="_frame_buffer_8h.html#adf8e136713c0691010d2bec6ba63e9cfacb5feb1b7314637725a2e73bdc9f7295">Color</a>,</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_enumvalue" href="_texture_8h.html#a65468556d79304b3a4bfc464cc12e549aa296104f0c61a9cf39f4824d05315e12">Cube</a></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>};</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_texture.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="class_texture.html">Texture</a></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> texture;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">int</span> width, height;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="class_texture.html">Texture</a>(std::string);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_class" href="class_texture.html">Texture</a>(TextureType type,<span class="keywordtype">int</span> width=0,<span class="keywordtype">int</span> heigth=0);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_class" href="class_texture.html">~Texture</a>();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_texture.html#ac54718cb08fddb9e291adb62962213ad">   14</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_texture.html#ac54718cb08fddb9e291adb62962213ad">texture</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_texture.html#ad37c395c65ff8bde86230908027a6fcd">   15</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_texture.html#a06a0246cb31343557c3441c5733349cd">width</a>, <a class="code hl_variable" href="class_texture.html#ad37c395c65ff8bde86230908027a6fcd">height</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_function" href="class_texture.html#a74575667645e6a368c1c43ff9eade55e">Texture</a>(std::string);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_function" href="class_texture.html#a74575667645e6a368c1c43ff9eade55e">Texture</a>(<a class="code hl_enumeration" href="_texture_8h.html#a65468556d79304b3a4bfc464cc12e549">TextureType</a> type,<span class="keywordtype">int</span> <a class="code hl_variable" href="class_texture.html#a06a0246cb31343557c3441c5733349cd">width</a>=0,<span class="keywordtype">int</span> heigth=0);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_function" href="class_texture.html#a09c4bcb7462f64c1d20fa69dba3cee8a">~Texture</a>();</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_texture.html#a27eb85880d033e580c9099ac216f85d4">ColorBufferInit</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    </div>
@@ -94,12 +75,22 @@ $(function() {
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_texture.html#a4cf5a9b03d35803bc110e4682ddffa3a">CubeMapInit</a>();</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> TextureInit();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_texture.html#a2bcd7538eb2df9b69d0a650f6e1a9426">TextureInit</a>();</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+<div class="ttc" id="a_frame_buffer_8h_html_adf8e136713c0691010d2bec6ba63e9cfa675056ad1441b6375b2c5abd48c27ef1"><div class="ttname"><a href="_frame_buffer_8h.html#adf8e136713c0691010d2bec6ba63e9cfa675056ad1441b6375b2c5abd48c27ef1">BufferType::Depth</a></div><div class="ttdeci">@ Depth</div></div>
+<div class="ttc" id="a_frame_buffer_8h_html_adf8e136713c0691010d2bec6ba63e9cfacb5feb1b7314637725a2e73bdc9f7295"><div class="ttname"><a href="_frame_buffer_8h.html#adf8e136713c0691010d2bec6ba63e9cfacb5feb1b7314637725a2e73bdc9f7295">BufferType::Color</a></div><div class="ttdeci">@ Color</div></div>
+<div class="ttc" id="a_texture_8h_html_a65468556d79304b3a4bfc464cc12e549"><div class="ttname"><a href="_texture_8h.html#a65468556d79304b3a4bfc464cc12e549">TextureType</a></div><div class="ttdeci">TextureType</div><div class="ttdef"><b>Definition:</b> Texture.h:5</div></div>
+<div class="ttc" id="a_texture_8h_html_a65468556d79304b3a4bfc464cc12e549aa296104f0c61a9cf39f4824d05315e12"><div class="ttname"><a href="_texture_8h.html#a65468556d79304b3a4bfc464cc12e549aa296104f0c61a9cf39f4824d05315e12">TextureType::Cube</a></div><div class="ttdeci">@ Cube</div></div>
 <div class="ttc" id="aclass_texture_html"><div class="ttname"><a href="class_texture.html">Texture</a></div><div class="ttdef"><b>Definition:</b> Texture.h:12</div></div>
+<div class="ttc" id="aclass_texture_html_a06a0246cb31343557c3441c5733349cd"><div class="ttname"><a href="class_texture.html#a06a0246cb31343557c3441c5733349cd">Texture::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition:</b> Texture.h:15</div></div>
+<div class="ttc" id="aclass_texture_html_a09c4bcb7462f64c1d20fa69dba3cee8a"><div class="ttname"><a href="class_texture.html#a09c4bcb7462f64c1d20fa69dba3cee8a">Texture::~Texture</a></div><div class="ttdeci">~Texture()</div><div class="ttdef"><b>Definition:</b> Texture.cpp:44</div></div>
 <div class="ttc" id="aclass_texture_html_a27eb85880d033e580c9099ac216f85d4"><div class="ttname"><a href="class_texture.html#a27eb85880d033e580c9099ac216f85d4">Texture::ColorBufferInit</a></div><div class="ttdeci">void ColorBufferInit(int, int)</div><div class="ttdoc">用于颜色缓存的初始化</div><div class="ttdef"><b>Definition:</b> Texture.cpp:49</div></div>
+<div class="ttc" id="aclass_texture_html_a2bcd7538eb2df9b69d0a650f6e1a9426"><div class="ttname"><a href="class_texture.html#a2bcd7538eb2df9b69d0a650f6e1a9426">Texture::TextureInit</a></div><div class="ttdeci">void TextureInit()</div><div class="ttdef"><b>Definition:</b> Texture.cpp:104</div></div>
 <div class="ttc" id="aclass_texture_html_a48ea73d477e6c8eacf5b24352da146fe"><div class="ttname"><a href="class_texture.html#a48ea73d477e6c8eacf5b24352da146fe">Texture::DepthBufferInit</a></div><div class="ttdeci">void DepthBufferInit(int, int)</div><div class="ttdoc">用于深度缓冲的初始化</div><div class="ttdef"><b>Definition:</b> Texture.cpp:66</div></div>
 <div class="ttc" id="aclass_texture_html_a4cf5a9b03d35803bc110e4682ddffa3a"><div class="ttname"><a href="class_texture.html#a4cf5a9b03d35803bc110e4682ddffa3a">Texture::CubeMapInit</a></div><div class="ttdeci">void CubeMapInit()</div><div class="ttdoc">用于立方体贴图的初始化</div><div class="ttdef"><b>Definition:</b> Texture.cpp:84</div></div>
+<div class="ttc" id="aclass_texture_html_a74575667645e6a368c1c43ff9eade55e"><div class="ttname"><a href="class_texture.html#a74575667645e6a368c1c43ff9eade55e">Texture::Texture</a></div><div class="ttdeci">Texture(std::string)</div><div class="ttdef"><b>Definition:</b> Texture.cpp:12</div></div>
+<div class="ttc" id="aclass_texture_html_ac54718cb08fddb9e291adb62962213ad"><div class="ttname"><a href="class_texture.html#ac54718cb08fddb9e291adb62962213ad">Texture::texture</a></div><div class="ttdeci">unsigned int texture</div><div class="ttdef"><b>Definition:</b> Texture.h:14</div></div>
+<div class="ttc" id="aclass_texture_html_ad37c395c65ff8bde86230908027a6fcd"><div class="ttname"><a href="class_texture.html#ad37c395c65ff8bde86230908027a6fcd">Texture::height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition:</b> Texture.h:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

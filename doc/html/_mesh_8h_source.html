@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,19 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_700da30f51666cd81523daa4ef5fcfbf.html">Render</a></li>  </ul>
@@ -69,44 +50,59 @@ $(function() {
   <div class="headertitle"><div class="title">Mesh.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="_mesh_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;glm/glm.hpp&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_vertex.html">    6</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_vertex.html">Vertex</a> {</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">// position</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    glm::vec3 Position;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_vertex.html#abb3cfacd96b5955b0cec9359840ee49f">    8</a></span>    glm::vec3 <a class="code hl_variable" href="struct_vertex.html#abb3cfacd96b5955b0cec9359840ee49f">Position</a>;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">// normal</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    glm::vec3 Normal;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_vertex.html#a9ab4dc431b41509f0b1bb1a4bf09d4e2">   10</a></span>    glm::vec3 <a class="code hl_variable" href="struct_vertex.html#a9ab4dc431b41509f0b1bb1a4bf09d4e2">Normal</a>;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">// texCoords</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    glm::vec2 TexCoords;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_vertex.html#a921a513c1e6d1e63e99d477fa837a317">   12</a></span>    glm::vec2 <a class="code hl_variable" href="struct_vertex.html#a921a513c1e6d1e63e99d477fa837a317">TexCoords</a>;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">// tangent</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    glm::vec3 Tangent;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_vertex.html#abfd8917796f41a3bd16441b2626e8212">   14</a></span>    glm::vec3 <a class="code hl_variable" href="struct_vertex.html#abfd8917796f41a3bd16441b2626e8212">Tangent</a>;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">// bitangent</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    glm::vec3 Bitangent;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_vertex.html#af65a7edcbe784e73e9fb29fdf6368615">   16</a></span>    glm::vec3 <a class="code hl_variable" href="struct_vertex.html#af65a7edcbe784e73e9fb29fdf6368615">Bitangent</a>;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_mesh.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="class_mesh.html">Mesh</a></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> VAO; </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    std::vector&lt;Vertex&gt; vertices;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    std::vector&lt;unsigned int&gt; indices;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_mesh.html#a79afa055e485fb65b1a7aa5b8eda2940">   22</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_mesh.html#a79afa055e485fb65b1a7aa5b8eda2940">VAO</a>; </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_mesh.html#a6465a888c97232a39e12aad008c969c3">   23</a></span>    std::vector&lt;Vertex&gt; <a class="code hl_variable" href="class_mesh.html#a6465a888c97232a39e12aad008c969c3">vertices</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_mesh.html#a26632e27b772f24b069a738e7983b9da">   24</a></span>    std::vector&lt;unsigned int&gt; <a class="code hl_variable" href="class_mesh.html#a26632e27b772f24b069a738e7983b9da">indices</a>;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_class" href="class_mesh.html">Mesh</a>(std::vector&lt;Vertex&gt; vertices, std::vector&lt;unsigned int&gt; indices);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_class" href="class_mesh.html">~Mesh</a>();</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> Draw();</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> GetSize() { <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(indices.size()); }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="class_mesh.html#a9471cc66749be2d05a9e2bdf77090450">Mesh</a>(std::vector&lt;Vertex&gt; <a class="code hl_variable" href="class_mesh.html#a6465a888c97232a39e12aad008c969c3">vertices</a>, std::vector&lt;unsigned int&gt; <a class="code hl_variable" href="class_mesh.html#a26632e27b772f24b069a738e7983b9da">indices</a>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">~Mesh</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_mesh.html#afdd95c079fd0442afef8a6c421c8bfc9">   29</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_mesh.html#afdd95c079fd0442afef8a6c421c8bfc9">Draw</a>();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_mesh.html#ad04d70fe2faef28ce32842359d0cc9f6">   30</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_mesh.html#ad04d70fe2faef28ce32842359d0cc9f6">GetSize</a>() { <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="class_mesh.html#a26632e27b772f24b069a738e7983b9da">indices</a>.size()); }</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> VBO; <span class="comment">//顶点缓冲对象</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> EBO; </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_mesh.html#af08e5f92b0cf587817841104c16fa803">   32</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_mesh.html#af08e5f92b0cf587817841104c16fa803">VBO</a>; <span class="comment">//顶点缓冲对象</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_mesh.html#a25262f446aea3107da7c23f126a81faa">   33</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_mesh.html#a25262f446aea3107da7c23f126a81faa">EBO</a>; </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> Init();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_mesh.html#aa7b3ccf0761b58f8710467d6a9c368a8">Init</a>();</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
 <div class="ttc" id="aclass_mesh_html"><div class="ttname"><a href="class_mesh.html">Mesh</a></div><div class="ttdef"><b>Definition:</b> Mesh.h:20</div></div>
+<div class="ttc" id="aclass_mesh_html_a25262f446aea3107da7c23f126a81faa"><div class="ttname"><a href="class_mesh.html#a25262f446aea3107da7c23f126a81faa">Mesh::EBO</a></div><div class="ttdeci">unsigned int EBO</div><div class="ttdef"><b>Definition:</b> Mesh.h:33</div></div>
+<div class="ttc" id="aclass_mesh_html_a26632e27b772f24b069a738e7983b9da"><div class="ttname"><a href="class_mesh.html#a26632e27b772f24b069a738e7983b9da">Mesh::indices</a></div><div class="ttdeci">std::vector&lt; unsigned int &gt; indices</div><div class="ttdef"><b>Definition:</b> Mesh.h:24</div></div>
+<div class="ttc" id="aclass_mesh_html_a5efe4da1a4c0971cfb037bd70304c303"><div class="ttname"><a href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">Mesh::~Mesh</a></div><div class="ttdeci">~Mesh()</div><div class="ttdef"><b>Definition:</b> Mesh.cpp:15</div></div>
+<div class="ttc" id="aclass_mesh_html_a6465a888c97232a39e12aad008c969c3"><div class="ttname"><a href="class_mesh.html#a6465a888c97232a39e12aad008c969c3">Mesh::vertices</a></div><div class="ttdeci">std::vector&lt; Vertex &gt; vertices</div><div class="ttdef"><b>Definition:</b> Mesh.h:23</div></div>
+<div class="ttc" id="aclass_mesh_html_a79afa055e485fb65b1a7aa5b8eda2940"><div class="ttname"><a href="class_mesh.html#a79afa055e485fb65b1a7aa5b8eda2940">Mesh::VAO</a></div><div class="ttdeci">unsigned int VAO</div><div class="ttdef"><b>Definition:</b> Mesh.h:22</div></div>
+<div class="ttc" id="aclass_mesh_html_a9471cc66749be2d05a9e2bdf77090450"><div class="ttname"><a href="class_mesh.html#a9471cc66749be2d05a9e2bdf77090450">Mesh::Mesh</a></div><div class="ttdeci">Mesh(std::vector&lt; Vertex &gt; vertices, std::vector&lt; unsigned int &gt; indices)</div><div class="ttdef"><b>Definition:</b> Mesh.cpp:8</div></div>
+<div class="ttc" id="aclass_mesh_html_aa7b3ccf0761b58f8710467d6a9c368a8"><div class="ttname"><a href="class_mesh.html#aa7b3ccf0761b58f8710467d6a9c368a8">Mesh::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdef"><b>Definition:</b> Mesh.cpp:22</div></div>
+<div class="ttc" id="aclass_mesh_html_ad04d70fe2faef28ce32842359d0cc9f6"><div class="ttname"><a href="class_mesh.html#ad04d70fe2faef28ce32842359d0cc9f6">Mesh::GetSize</a></div><div class="ttdeci">unsigned int GetSize()</div><div class="ttdef"><b>Definition:</b> Mesh.h:30</div></div>
+<div class="ttc" id="aclass_mesh_html_af08e5f92b0cf587817841104c16fa803"><div class="ttname"><a href="class_mesh.html#af08e5f92b0cf587817841104c16fa803">Mesh::VBO</a></div><div class="ttdeci">unsigned int VBO</div><div class="ttdef"><b>Definition:</b> Mesh.h:32</div></div>
+<div class="ttc" id="aclass_mesh_html_afdd95c079fd0442afef8a6c421c8bfc9"><div class="ttname"><a href="class_mesh.html#afdd95c079fd0442afef8a6c421c8bfc9">Mesh::Draw</a></div><div class="ttdeci">void Draw()</div></div>
 <div class="ttc" id="astruct_vertex_html"><div class="ttname"><a href="struct_vertex.html">Vertex</a></div><div class="ttdef"><b>Definition:</b> Mesh.h:6</div></div>
+<div class="ttc" id="astruct_vertex_html_a921a513c1e6d1e63e99d477fa837a317"><div class="ttname"><a href="struct_vertex.html#a921a513c1e6d1e63e99d477fa837a317">Vertex::TexCoords</a></div><div class="ttdeci">glm::vec2 TexCoords</div><div class="ttdef"><b>Definition:</b> Mesh.h:12</div></div>
+<div class="ttc" id="astruct_vertex_html_a9ab4dc431b41509f0b1bb1a4bf09d4e2"><div class="ttname"><a href="struct_vertex.html#a9ab4dc431b41509f0b1bb1a4bf09d4e2">Vertex::Normal</a></div><div class="ttdeci">glm::vec3 Normal</div><div class="ttdef"><b>Definition:</b> Mesh.h:10</div></div>
+<div class="ttc" id="astruct_vertex_html_abb3cfacd96b5955b0cec9359840ee49f"><div class="ttname"><a href="struct_vertex.html#abb3cfacd96b5955b0cec9359840ee49f">Vertex::Position</a></div><div class="ttdeci">glm::vec3 Position</div><div class="ttdef"><b>Definition:</b> Mesh.h:8</div></div>
+<div class="ttc" id="astruct_vertex_html_abfd8917796f41a3bd16441b2626e8212"><div class="ttname"><a href="struct_vertex.html#abfd8917796f41a3bd16441b2626e8212">Vertex::Tangent</a></div><div class="ttdeci">glm::vec3 Tangent</div><div class="ttdef"><b>Definition:</b> Mesh.h:14</div></div>
+<div class="ttc" id="astruct_vertex_html_af65a7edcbe784e73e9fb29fdf6368615"><div class="ttname"><a href="struct_vertex.html#af65a7edcbe784e73e9fb29fdf6368615">Vertex::Bitangent</a></div><div class="ttdeci">glm::vec3 Bitangent</div><div class="ttdef"><b>Definition:</b> Mesh.h:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

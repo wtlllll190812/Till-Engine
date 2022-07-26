@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,60 +28,162 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
 <a href="class_gui_window-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">GuiWindow类 参考</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_gui_window_8h_source.html">GuiWindow.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:af6f123046319a54831c335b174d09e58"><td class="memItemLeft" align="right" valign="top"><a id="af6f123046319a54831c335b174d09e58" name="af6f123046319a54831c335b174d09e58"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GuiWindow</b> (const std::function&lt; void()&gt; &amp;f, const char *)</td></tr>
+<tr class="memitem:af6f123046319a54831c335b174d09e58"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gui_window.html#af6f123046319a54831c335b174d09e58">GuiWindow</a> (const std::function&lt; void()&gt; &amp;f, const char *)</td></tr>
 <tr class="separator:af6f123046319a54831c335b174d09e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0dabe8f7c97d9207e03a30f9d29d1dd"><td class="memItemLeft" align="right" valign="top"><a id="ab0dabe8f7c97d9207e03a30f9d29d1dd" name="ab0dabe8f7c97d9207e03a30f9d29d1dd"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GuiWindow</b> (const char *)</td></tr>
+<tr class="memitem:ab0dabe8f7c97d9207e03a30f9d29d1dd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gui_window.html#ab0dabe8f7c97d9207e03a30f9d29d1dd">GuiWindow</a> (const char *)</td></tr>
 <tr class="separator:ab0dabe8f7c97d9207e03a30f9d29d1dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45d7fc5e116d205c999e34f9697573fe"><td class="memItemLeft" align="right" valign="top"><a id="a45d7fc5e116d205c999e34f9697573fe" name="a45d7fc5e116d205c999e34f9697573fe"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Render</b> ()</td></tr>
+<tr class="memitem:a45d7fc5e116d205c999e34f9697573fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gui_window.html#a45d7fc5e116d205c999e34f9697573fe">Render</a> ()</td></tr>
 <tr class="separator:a45d7fc5e116d205c999e34f9697573fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a884fc0b23bdef1d97c383a3c86e27452"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gui_window.html#a884fc0b23bdef1d97c383a3c86e27452">name</a></td></tr>
+<tr class="separator:a884fc0b23bdef1d97c383a3c86e27452"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48559f92d3e3620cbead4cd1a66bfcf0"><td class="memItemLeft" align="right" valign="top">std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gui_window.html#a48559f92d3e3620cbead4cd1a66bfcf0">RenderCallBack</a></td></tr>
+<tr class="separator:a48559f92d3e3620cbead4cd1a66bfcf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="af6f123046319a54831c335b174d09e58" name="af6f123046319a54831c335b174d09e58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6f123046319a54831c335b174d09e58">&#9670;&nbsp;</a></span>GuiWindow() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GuiWindow::GuiWindow </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; void()&gt; &amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab0dabe8f7c97d9207e03a30f9d29d1dd" name="ab0dabe8f7c97d9207e03a30f9d29d1dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0dabe8f7c97d9207e03a30f9d29d1dd">&#9670;&nbsp;</a></span>GuiWindow() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GuiWindow::GuiWindow </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a45d7fc5e116d205c999e34f9697573fe" name="a45d7fc5e116d205c999e34f9697573fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45d7fc5e116d205c999e34f9697573fe">&#9670;&nbsp;</a></span>Render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GuiWindow::Render </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a884fc0b23bdef1d97c383a3c86e27452" name="a884fc0b23bdef1d97c383a3c86e27452"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a884fc0b23bdef1d97c383a3c86e27452">&#9670;&nbsp;</a></span>name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* GuiWindow::name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a48559f92d3e3620cbead4cd1a66bfcf0" name="a48559f92d3e3620cbead4cd1a66bfcf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48559f92d3e3620cbead4cd1a66bfcf0">&#9670;&nbsp;</a></span>RenderCallBack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void()&gt; GuiWindow::RenderCallBack</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Window/GuiWindow/<a class="el" href="_gui_window_8h_source.html">GuiWindow.h</a></li>
-<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Window/GuiWindow/GuiWindow.cpp</li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Window/GuiWindow/<a class="el" href="_gui_window_8cpp.html">GuiWindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

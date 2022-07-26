@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,40 +28,26 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
 <a href="class_mouse_moved_event-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">MouseMovedEvent类 参考</div></div>
 </div><!--header-->
@@ -94,45 +78,150 @@ MouseMovedEvent 的协作图:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a917981db3e3ff4a38a6920f400106fd0"><td class="memItemLeft" align="right" valign="top"><a id="a917981db3e3ff4a38a6920f400106fd0" name="a917981db3e3ff4a38a6920f400106fd0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MouseMovedEvent</b> (float x, float y)</td></tr>
+<tr class="memitem:a917981db3e3ff4a38a6920f400106fd0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mouse_moved_event.html#a917981db3e3ff4a38a6920f400106fd0">MouseMovedEvent</a> (float x, float y)</td></tr>
 <tr class="separator:a917981db3e3ff4a38a6920f400106fd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b9e9e121dc213bc27dff766488fd21c"><td class="memItemLeft" align="right" valign="top"><a id="a7b9e9e121dc213bc27dff766488fd21c" name="a7b9e9e121dc213bc27dff766488fd21c"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>GetX</b> () const</td></tr>
+<tr class="memitem:a7b9e9e121dc213bc27dff766488fd21c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mouse_moved_event.html#a7b9e9e121dc213bc27dff766488fd21c">GetX</a> () const</td></tr>
 <tr class="separator:a7b9e9e121dc213bc27dff766488fd21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedb72739694d42dd2ff243b981e85dd7"><td class="memItemLeft" align="right" valign="top"><a id="aedb72739694d42dd2ff243b981e85dd7" name="aedb72739694d42dd2ff243b981e85dd7"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>GetY</b> () const</td></tr>
+<tr class="memitem:aedb72739694d42dd2ff243b981e85dd7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mouse_moved_event.html#aedb72739694d42dd2ff243b981e85dd7">GetY</a> () const</td></tr>
 <tr class="separator:aedb72739694d42dd2ff243b981e85dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19099ea15500bf87ded9159322a79154"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mouse_moved_event.html#a19099ea15500bf87ded9159322a79154">ToString</a> () const override</td></tr>
 <tr class="separator:a19099ea15500bf87ded9159322a79154"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_event_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_event_base')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="class_event_base.html">EventBase</a></td></tr>
-<tr class="memitem:ab7a6851ea02a379b45a8f266ea995851 inherit pub_methods_class_event_base"><td class="memItemLeft" align="right" valign="top"><a id="ab7a6851ea02a379b45a8f266ea995851" name="ab7a6851ea02a379b45a8f266ea995851"></a>
-virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><b>GetName</b> () const =0</td></tr>
+<tr class="memitem:ab7a6851ea02a379b45a8f266ea995851 inherit pub_methods_class_event_base"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_base.html#ab7a6851ea02a379b45a8f266ea995851">GetName</a> () const =0</td></tr>
 <tr class="separator:ab7a6851ea02a379b45a8f266ea995851 inherit pub_methods_class_event_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91f4adadacab79ddf2c64b92057a6cc6 inherit pub_methods_class_event_base"><td class="memItemLeft" align="right" valign="top"><a id="a91f4adadacab79ddf2c64b92057a6cc6" name="a91f4adadacab79ddf2c64b92057a6cc6"></a>
-virtual EventType&#160;</td><td class="memItemRight" valign="bottom"><b>GetEventType</b> () const =0</td></tr>
+<tr class="memitem:a91f4adadacab79ddf2c64b92057a6cc6 inherit pub_methods_class_event_base"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_event_base_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_base.html#a91f4adadacab79ddf2c64b92057a6cc6">GetEventType</a> () const =0</td></tr>
 <tr class="separator:a91f4adadacab79ddf2c64b92057a6cc6 inherit pub_methods_class_event_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71727f1eb26629c5662f7adae144c58f inherit pub_methods_class_event_base"><td class="memItemLeft" align="right" valign="top"><a id="a71727f1eb26629c5662f7adae144c58f" name="a71727f1eb26629c5662f7adae144c58f"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>GetCategoryFlags</b> () const =0</td></tr>
+<tr class="memitem:a71727f1eb26629c5662f7adae144c58f inherit pub_methods_class_event_base"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_base.html#a71727f1eb26629c5662f7adae144c58f">GetCategoryFlags</a> () const =0</td></tr>
 <tr class="separator:a71727f1eb26629c5662f7adae144c58f inherit pub_methods_class_event_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f4357f5f6c5525b3c7b8b33c4fec86d inherit pub_methods_class_event_base"><td class="memItemLeft" align="right" valign="top"><a id="a8f4357f5f6c5525b3c7b8b33c4fec86d" name="a8f4357f5f6c5525b3c7b8b33c4fec86d"></a>
-virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ToString</b> () const</td></tr>
+<tr class="memitem:a8f4357f5f6c5525b3c7b8b33c4fec86d inherit pub_methods_class_event_base"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_base.html#a8f4357f5f6c5525b3c7b8b33c4fec86d">ToString</a> () const</td></tr>
 <tr class="separator:a8f4357f5f6c5525b3c7b8b33c4fec86d inherit pub_methods_class_event_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b1afd36cc9f9b406718e4546efed6fc inherit pub_methods_class_event_base"><td class="memItemLeft" align="right" valign="top"><a id="a9b1afd36cc9f9b406718e4546efed6fc" name="a9b1afd36cc9f9b406718e4546efed6fc"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsInCategory</b> (EventCategory category)</td></tr>
-<tr class="memdesc:a9b1afd36cc9f9b406718e4546efed6fc inherit pub_methods_class_event_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否属于该类型 <br /></td></tr>
+<tr class="memitem:a9b1afd36cc9f9b406718e4546efed6fc inherit pub_methods_class_event_base"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_base.html#a9b1afd36cc9f9b406718e4546efed6fc">IsInCategory</a> (<a class="el" href="_event_base_8h.html#aa8b0556527d429476e3f3d6cfab1a21f">EventCategory</a> category)</td></tr>
+<tr class="memdesc:a9b1afd36cc9f9b406718e4546efed6fc inherit pub_methods_class_event_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否属于该类型  <a href="class_event_base.html#a9b1afd36cc9f9b406718e4546efed6fc">更多...</a><br /></td></tr>
 <tr class="separator:a9b1afd36cc9f9b406718e4546efed6fc inherit pub_methods_class_event_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a077f4ac786c5107796e87db2476ee5fc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mouse_moved_event.html#a077f4ac786c5107796e87db2476ee5fc">mMouseX</a></td></tr>
+<tr class="separator:a077f4ac786c5107796e87db2476ee5fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a723705b464a897431568c723c729e6cf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mouse_moved_event.html#a723705b464a897431568c723c729e6cf">mMouseY</a></td></tr>
+<tr class="separator:a723705b464a897431568c723c729e6cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 额外继承的成员函数</h2></td></tr>
 <tr class="inherit_header pub_attribs_class_event_base"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_event_base')"><img src="closed.png" alt="-"/>&#160;Public 属性 继承自 <a class="el" href="class_event_base.html">EventBase</a></td></tr>
-<tr class="memitem:adb10e34cf68958ecd4da3edab78dd488 inherit pub_attribs_class_event_base"><td class="memItemLeft" align="right" valign="top"><a id="adb10e34cf68958ecd4da3edab78dd488" name="adb10e34cf68958ecd4da3edab78dd488"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>mHandled</b> = false</td></tr>
+<tr class="memitem:adb10e34cf68958ecd4da3edab78dd488 inherit pub_attribs_class_event_base"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_base.html#adb10e34cf68958ecd4da3edab78dd488">mHandled</a> = false</td></tr>
 <tr class="separator:adb10e34cf68958ecd4da3edab78dd488 inherit pub_attribs_class_event_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p >鼠标移动事件 </p>
-</div><h2 class="groupheader">成员函数说明</h2>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a917981db3e3ff4a38a6920f400106fd0" name="a917981db3e3ff4a38a6920f400106fd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a917981db3e3ff4a38a6920f400106fd0">&#9670;&nbsp;</a></span>MouseMovedEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MouseMovedEvent::MouseMovedEvent </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a7b9e9e121dc213bc27dff766488fd21c" name="a7b9e9e121dc213bc27dff766488fd21c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b9e9e121dc213bc27dff766488fd21c">&#9670;&nbsp;</a></span>GetX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MouseMovedEvent::GetX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_mouse_moved_event_a7b9e9e121dc213bc27dff766488fd21c_icgraph.png" border="0" usemap="#aclass_mouse_moved_event_a7b9e9e121dc213bc27dff766488fd21c_icgraph" alt=""/></div>
+<map name="aclass_mouse_moved_event_a7b9e9e121dc213bc27dff766488fd21c_icgraph" id="aclass_mouse_moved_event_a7b9e9e121dc213bc27dff766488fd21c_icgraph">
+<area shape="rect" title=" " alt="" coords="431,13,597,39"/>
+<area shape="rect" href="class_imgui_layer.html#a2fcfcc4f206dca3f12a0dbca26186aa2" title=" " alt="" coords="196,5,383,47"/>
+<area shape="rect" href="class_imgui_layer.html#ade36001fdd1861e19dadc2d32d5e7bd5" title=" " alt="" coords="5,13,148,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aedb72739694d42dd2ff243b981e85dd7" name="aedb72739694d42dd2ff243b981e85dd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedb72739694d42dd2ff243b981e85dd7">&#9670;&nbsp;</a></span>GetY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MouseMovedEvent::GetY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_mouse_moved_event_aedb72739694d42dd2ff243b981e85dd7_icgraph.png" border="0" usemap="#aclass_mouse_moved_event_aedb72739694d42dd2ff243b981e85dd7_icgraph" alt=""/></div>
+<map name="aclass_mouse_moved_event_aedb72739694d42dd2ff243b981e85dd7_icgraph" id="aclass_mouse_moved_event_aedb72739694d42dd2ff243b981e85dd7_icgraph">
+<area shape="rect" title=" " alt="" coords="431,13,599,39"/>
+<area shape="rect" href="class_imgui_layer.html#a2fcfcc4f206dca3f12a0dbca26186aa2" title=" " alt="" coords="196,5,383,47"/>
+<area shape="rect" href="class_imgui_layer.html#ade36001fdd1861e19dadc2d32d5e7bd5" title=" " alt="" coords="5,13,148,39"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a19099ea15500bf87ded9159322a79154" name="a19099ea15500bf87ded9159322a79154"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a19099ea15500bf87ded9159322a79154">&#9670;&nbsp;</a></span>ToString()</h2>
 
@@ -156,7 +245,52 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mHandled</b> = false<
 </table>
 </div><div class="memdoc">
 
-<p>重载 <a class="el" href="class_event_base.html">EventBase</a> .</p>
+<p>重载 <a class="el" href="class_event_base.html#a8f4357f5f6c5525b3c7b8b33c4fec86d">EventBase</a> .</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a077f4ac786c5107796e87db2476ee5fc" name="a077f4ac786c5107796e87db2476ee5fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a077f4ac786c5107796e87db2476ee5fc">&#9670;&nbsp;</a></span>mMouseX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MouseMovedEvent::mMouseX</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a723705b464a897431568c723c729e6cf" name="a723705b464a897431568c723c729e6cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a723705b464a897431568c723c729e6cf">&#9670;&nbsp;</a></span>mMouseY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MouseMovedEvent::mMouseY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

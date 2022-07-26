@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,21 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">ReflectionManager 成员列表</div></div>
@@ -68,13 +51,18 @@ $(function() {
 
 <p>成员的完整列表，这些成员属于 <a class="el" href="class_reflection_manager.html">ReflectionManager</a>,包括所有继承而来的类成员</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>CreateClassByName</b>(std::string className) (定义于 <a class="el" href="class_reflection_manager.html">ReflectionManager</a>)</td><td class="entry"><a class="el" href="class_reflection_manager.html">ReflectionManager</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>GetAllMember</b>() const (定义于 <a class="el" href="class_reflection_manager.html">ReflectionManager</a>)</td><td class="entry"><a class="el" href="class_reflection_manager.html">ReflectionManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>GetInstanceByName</b>(std::string className) (定义于 <a class="el" href="class_reflection_manager.html">ReflectionManager</a>)</td><td class="entry"><a class="el" href="class_reflection_manager.html">ReflectionManager</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>GetMemberCountByTag</b>(ReflectionTag tag) const (定义于 <a class="el" href="class_reflection_manager.html">ReflectionManager</a>)</td><td class="entry"><a class="el" href="class_reflection_manager.html">ReflectionManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>GetMemberStartByTag</b>(ReflectionTag tag) (定义于 <a class="el" href="class_reflection_manager.html">ReflectionManager</a>)</td><td class="entry"><a class="el" href="class_reflection_manager.html">ReflectionManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>ReflectionManager</b>() (定义于 <a class="el" href="class_reflection_manager.html">ReflectionManager</a>)</td><td class="entry"><a class="el" href="class_reflection_manager.html">ReflectionManager</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>RegistClass</b>(std::string name, Reflection *method) (定义于 <a class="el" href="class_reflection_manager.html">ReflectionManager</a>)</td><td class="entry"><a class="el" href="class_reflection_manager.html">ReflectionManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_reflection_manager.html#a776cac5a78ba558ceefdff74aff29b1c">classMap</a></td><td class="entry"><a class="el" href="class_reflection_manager.html">ReflectionManager</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_reflection_manager.html#ad8948d57776c6010a31f2427a402feef">CreateClassByName</a>(std::string className)</td><td class="entry"><a class="el" href="class_reflection_manager.html">ReflectionManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_reflection_manager.html#a5fad19100c22f92941e8579c6d609cb6">GetAllMember</a>() const</td><td class="entry"><a class="el" href="class_reflection_manager.html">ReflectionManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_reflection_manager.html#ae411fb6b17f5dfe70070fc88159a57b7">GetInstanceByName</a>(std::string className)</td><td class="entry"><a class="el" href="class_reflection_manager.html">ReflectionManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_reflection_manager.html#a2e46547856970f9dfa780291a254ed24">GetMemberCountByTag</a>(ReflectionTag tag) const</td><td class="entry"><a class="el" href="class_reflection_manager.html">ReflectionManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_reflection_manager.html#a905fe98183914a00ee6ff809f4ef7992">GetMemberStartByTag</a>(ReflectionTag tag)</td><td class="entry"><a class="el" href="class_reflection_manager.html">ReflectionManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640">instance</a>()</td><td class="entry"><a class="el" href="class_singleton.html">Singleton&lt; ReflectionManager &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_reflection_manager.html#aeb3feeb97130a934f986390219486a1a">memberByTag</a></td><td class="entry"><a class="el" href="class_reflection_manager.html">ReflectionManager</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_reflection_manager.html#a4afcb582b7c84a2a136967aafd41c979">members</a></td><td class="entry"><a class="el" href="class_reflection_manager.html">ReflectionManager</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_reflection_manager.html#a30ba0857225996867135027bfdae569c">ReflectionManager</a>()</td><td class="entry"><a class="el" href="class_reflection_manager.html">ReflectionManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_reflection_manager.html#a33e1e1079567372b698d116df2e1f257">RegistClass</a>(std::string name, Reflection *method)</td><td class="entry"><a class="el" href="class_reflection_manager.html">ReflectionManager</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_singleton.html#a923b995920da9c06590adb170ab2f890">Singleton</a>()</td><td class="entry"><a class="el" href="class_singleton.html">Singleton&lt; ReflectionManager &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

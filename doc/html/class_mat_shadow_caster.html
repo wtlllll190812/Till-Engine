@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,21 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
@@ -68,6 +51,8 @@ $(function() {
   <div class="headertitle"><div class="title">MatShadowCaster类 参考</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_mat_shadow_caster_8h_source.html">MatShadowCaster.h</a>&gt;</code></p>
 <div class="dynheader">
 类 MatShadowCaster 继承关系图:</div>
 <div class="dyncontent">
@@ -90,35 +75,72 @@ MatShadowCaster 的协作图:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
+<tr class="memitem:a203912ab9f16457ee84539bb6463fa66"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mat_shadow_caster.html#a203912ab9f16457ee84539bb6463fa66">MatShadowCaster</a> ()</td></tr>
+<tr class="separator:a203912ab9f16457ee84539bb6463fa66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38086f2c3f3a42d28673dd4c573b77af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mat_shadow_caster.html#a38086f2c3f3a42d28673dd4c573b77af">~MatShadowCaster</a> ()</td></tr>
+<tr class="separator:a38086f2c3f3a42d28673dd4c573b77af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a625fc3d54d917f931ae28b079aab8da6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mat_shadow_caster.html#a625fc3d54d917f931ae28b079aab8da6">DrawFunc</a> (<a class="el" href="class_game_object.html">GameObject</a> *gObj, std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt; mesh) override</td></tr>
 <tr class="separator:a625fc3d54d917f931ae28b079aab8da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00a1d740627de52b58bc1a7f350d1481"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mat_shadow_caster.html#a00a1d740627de52b58bc1a7f350d1481">Init</a> (<a class="el" href="class_game_object.html">GameObject</a> *, std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt; mesh) override</td></tr>
 <tr class="separator:a00a1d740627de52b58bc1a7f350d1481"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_material"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_material')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="class_material.html">Material</a></td></tr>
-<tr class="memitem:a5e1a8c78aa8bd556586fc8aa508182dc inherit pub_methods_class_material"><td class="memItemLeft" align="right" valign="top"><a id="a5e1a8c78aa8bd556586fc8aa508182dc" name="a5e1a8c78aa8bd556586fc8aa508182dc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Draw</b> (<a class="el" href="class_game_object.html">GameObject</a> *, std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt;)</td></tr>
+<tr class="memitem:a137e987401b63eb7c6c27c3e38bc74b5 inherit pub_methods_class_material"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_material.html#a137e987401b63eb7c6c27c3e38bc74b5">Material</a> ()</td></tr>
+<tr class="separator:a137e987401b63eb7c6c27c3e38bc74b5 inherit pub_methods_class_material"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c19452d71f54075df8f5405b03129f4 inherit pub_methods_class_material"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_material.html#a2c19452d71f54075df8f5405b03129f4">~Material</a> ()</td></tr>
+<tr class="separator:a2c19452d71f54075df8f5405b03129f4 inherit pub_methods_class_material"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e1a8c78aa8bd556586fc8aa508182dc inherit pub_methods_class_material"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_material.html#a5e1a8c78aa8bd556586fc8aa508182dc">Draw</a> (<a class="el" href="class_game_object.html">GameObject</a> *, std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt;)</td></tr>
 <tr class="separator:a5e1a8c78aa8bd556586fc8aa508182dc inherit pub_methods_class_material"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade83f651b2496c2911caecbbc7148dc0 inherit pub_methods_class_material"><td class="memItemLeft" align="right" valign="top"><a id="ade83f651b2496c2911caecbbc7148dc0" name="ade83f651b2496c2911caecbbc7148dc0"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawFunc</b> (<a class="el" href="class_game_object.html">GameObject</a> *gObj, std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt; mesh)=0</td></tr>
+<tr class="memitem:ade83f651b2496c2911caecbbc7148dc0 inherit pub_methods_class_material"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_material.html#ade83f651b2496c2911caecbbc7148dc0">DrawFunc</a> (<a class="el" href="class_game_object.html">GameObject</a> *gObj, std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt; mesh)=0</td></tr>
 <tr class="separator:ade83f651b2496c2911caecbbc7148dc0 inherit pub_methods_class_material"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad753ad7c64efd86ec2b4457b00925f0a inherit pub_methods_class_material"><td class="memItemLeft" align="right" valign="top"><a id="ad753ad7c64efd86ec2b4457b00925f0a" name="ad753ad7c64efd86ec2b4457b00925f0a"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> (<a class="el" href="class_game_object.html">GameObject</a> *, std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt; mesh)=0</td></tr>
+<tr class="memitem:ad753ad7c64efd86ec2b4457b00925f0a inherit pub_methods_class_material"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_material.html#ad753ad7c64efd86ec2b4457b00925f0a">Init</a> (<a class="el" href="class_game_object.html">GameObject</a> *, std::shared_ptr&lt; <a class="el" href="class_mesh.html">Mesh</a> &gt; mesh)=0</td></tr>
 <tr class="separator:ad753ad7c64efd86ec2b4457b00925f0a inherit pub_methods_class_material"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 额外继承的成员函数</h2></td></tr>
 <tr class="inherit_header pub_attribs_class_material"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_material')"><img src="closed.png" alt="-"/>&#160;Public 属性 继承自 <a class="el" href="class_material.html">Material</a></td></tr>
-<tr class="memitem:abaac6082ee6cf042b2d4da4f6e6fe403 inherit pub_attribs_class_material"><td class="memItemLeft" align="right" valign="top"><a id="abaac6082ee6cf042b2d4da4f6e6fe403" name="abaac6082ee6cf042b2d4da4f6e6fe403"></a>
-<a class="el" href="class_shader.html">Shader</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>shader</b></td></tr>
+<tr class="memitem:abaac6082ee6cf042b2d4da4f6e6fe403 inherit pub_attribs_class_material"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_shader.html">Shader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_material.html#abaac6082ee6cf042b2d4da4f6e6fe403">shader</a></td></tr>
 <tr class="separator:abaac6082ee6cf042b2d4da4f6e6fe403 inherit pub_attribs_class_material"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae1227cfe05cd515bde9bd5b5e686201 inherit pub_attribs_class_material"><td class="memItemLeft" align="right" valign="top"><a id="aae1227cfe05cd515bde9bd5b5e686201" name="aae1227cfe05cd515bde9bd5b5e686201"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>matName</b></td></tr>
+<tr class="memitem:aae1227cfe05cd515bde9bd5b5e686201 inherit pub_attribs_class_material"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_material.html#aae1227cfe05cd515bde9bd5b5e686201">matName</a></td></tr>
 <tr class="separator:aae1227cfe05cd515bde9bd5b5e686201 inherit pub_attribs_class_material"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c9d433520daedd36fd172970e86c42a inherit pub_attribs_class_material"><td class="memItemLeft" align="right" valign="top"><a id="a6c9d433520daedd36fd172970e86c42a" name="a6c9d433520daedd36fd172970e86c42a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>renderQueueIndex</b> = (int)RendererQueue::Geometry</td></tr>
-<tr class="memdesc:a6c9d433520daedd36fd172970e86c42a inherit pub_attribs_class_material"><td class="mdescLeft">&#160;</td><td class="mdescRight">渲染队列次序 <br /></td></tr>
+<tr class="memitem:a6c9d433520daedd36fd172970e86c42a inherit pub_attribs_class_material"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_material.html#a6c9d433520daedd36fd172970e86c42a">renderQueueIndex</a> = (int)<a class="el" href="_t_l_engine_c_g_8h.html#a03042f324a1ccd5ce42ddd762c351cddad9c6333623e6357515fcbf17be806273">RendererQueue::Geometry</a></td></tr>
+<tr class="memdesc:a6c9d433520daedd36fd172970e86c42a inherit pub_attribs_class_material"><td class="mdescLeft">&#160;</td><td class="mdescRight">渲染队列次序  <a href="class_material.html#a6c9d433520daedd36fd172970e86c42a">更多...</a><br /></td></tr>
 <tr class="separator:a6c9d433520daedd36fd172970e86c42a inherit pub_attribs_class_material"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a203912ab9f16457ee84539bb6463fa66" name="a203912ab9f16457ee84539bb6463fa66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a203912ab9f16457ee84539bb6463fa66">&#9670;&nbsp;</a></span>MatShadowCaster()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MatShadowCaster::MatShadowCaster </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38086f2c3f3a42d28673dd4c573b77af" name="a38086f2c3f3a42d28673dd4c573b77af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38086f2c3f3a42d28673dd4c573b77af">&#9670;&nbsp;</a></span>~MatShadowCaster()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MatShadowCaster::~MatShadowCaster </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">成员函数说明</h2>
 <a id="a625fc3d54d917f931ae28b079aab8da6" name="a625fc3d54d917f931ae28b079aab8da6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a625fc3d54d917f931ae28b079aab8da6">&#9670;&nbsp;</a></span>DrawFunc()</h2>
@@ -154,7 +176,17 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>renderQueueIndex</b> =
 </table>
 </div><div class="memdoc">
 
-<p>实现了 <a class="el" href="class_material.html">Material</a>.</p>
+<p>实现了 <a class="el" href="class_material.html#ade83f651b2496c2911caecbbc7148dc0">Material</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_mat_shadow_caster_a625fc3d54d917f931ae28b079aab8da6_cgraph.png" border="0" usemap="#aclass_mat_shadow_caster_a625fc3d54d917f931ae28b079aab8da6_cgraph" alt=""/></div>
+<map name="aclass_mat_shadow_caster_a625fc3d54d917f931ae28b079aab8da6_cgraph" id="aclass_mat_shadow_caster_a625fc3d54d917f931ae28b079aab8da6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,200,57"/>
+<area shape="rect" href="class_transform.html#aac5b8a016ec8ecb9eae51e636322a7dd" title="获取model矩阵" alt="" coords="248,5,427,32"/>
+<area shape="rect" href="class_shader.html#a6b11327cff651ffdb22988b6917b1650" title=" " alt="" coords="290,56,385,83"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -192,13 +224,13 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>renderQueueIndex</b> =
 </table>
 </div><div class="memdoc">
 
-<p>实现了 <a class="el" href="class_material.html">Material</a>.</p>
+<p>实现了 <a class="el" href="class_material.html#ad753ad7c64efd86ec2b4457b00925f0a">Material</a>.</p>
 
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Render/Materials/<a class="el" href="_mat_shadow_caster_8h_source.html">MatShadowCaster.h</a></li>
-<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Render/Materials/MatShadowCaster.cpp</li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Render/Materials/<a class="el" href="_mat_shadow_caster_8cpp.html">MatShadowCaster.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,21 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
@@ -69,28 +52,131 @@ $(function() {
   <div class="headertitle"><div class="title">Reflection结构体 参考</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_reflection_8h_source.html">Reflection.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a10d789e146a948c86c8dcaf7f4235350"><td class="memItemLeft" align="right" valign="top"><a id="a10d789e146a948c86c8dcaf7f4235350" name="a10d789e146a948c86c8dcaf7f4235350"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Reflection</b> (std::string name, CreateObjectFunc func, ReflectionTag _tag, GetInstanceFunc instance=nullptr)</td></tr>
+<tr class="memitem:a10d789e146a948c86c8dcaf7f4235350"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_reflection.html#a10d789e146a948c86c8dcaf7f4235350">Reflection</a> (std::string name, <a class="el" href="_reflection_8h.html#a8163356ccae08e66d7045f26d98e5435">CreateObjectFunc</a> func, <a class="el" href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0">ReflectionTag</a> _tag, <a class="el" href="_reflection_8h.html#a25687338db035b6fc181a7c9ffdcf8bd">GetInstanceFunc</a> instance=nullptr)</td></tr>
 <tr class="separator:a10d789e146a948c86c8dcaf7f4235350"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public 属性</h2></td></tr>
-<tr class="memitem:a9b1d42a71cdb22438e6022d85464f6e3"><td class="memItemLeft" align="right" valign="top"><a id="a9b1d42a71cdb22438e6022d85464f6e3" name="a9b1d42a71cdb22438e6022d85464f6e3"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>className</b></td></tr>
+<tr class="memitem:a9b1d42a71cdb22438e6022d85464f6e3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_reflection.html#a9b1d42a71cdb22438e6022d85464f6e3">className</a></td></tr>
 <tr class="separator:a9b1d42a71cdb22438e6022d85464f6e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab521054a5c4460038b135a3763fae877"><td class="memItemLeft" align="right" valign="top"><a id="ab521054a5c4460038b135a3763fae877" name="ab521054a5c4460038b135a3763fae877"></a>
-CreateObjectFunc&#160;</td><td class="memItemRight" valign="bottom"><b>createF</b></td></tr>
+<tr class="memitem:ab521054a5c4460038b135a3763fae877"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_reflection_8h.html#a8163356ccae08e66d7045f26d98e5435">CreateObjectFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_reflection.html#ab521054a5c4460038b135a3763fae877">createF</a></td></tr>
 <tr class="separator:ab521054a5c4460038b135a3763fae877"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76d087e37059a90a3a1d6f8da2fbcda9"><td class="memItemLeft" align="right" valign="top"><a id="a76d087e37059a90a3a1d6f8da2fbcda9" name="a76d087e37059a90a3a1d6f8da2fbcda9"></a>
-GetInstanceFunc&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b></td></tr>
+<tr class="memitem:a76d087e37059a90a3a1d6f8da2fbcda9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_reflection_8h.html#a25687338db035b6fc181a7c9ffdcf8bd">GetInstanceFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_reflection.html#a76d087e37059a90a3a1d6f8da2fbcda9">getInstance</a></td></tr>
 <tr class="separator:a76d087e37059a90a3a1d6f8da2fbcda9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21551e1dbdfa468880a86b68f64186f3"><td class="memItemLeft" align="right" valign="top"><a id="a21551e1dbdfa468880a86b68f64186f3" name="a21551e1dbdfa468880a86b68f64186f3"></a>
-ReflectionTag&#160;</td><td class="memItemRight" valign="bottom"><b>tag</b></td></tr>
+<tr class="memitem:a21551e1dbdfa468880a86b68f64186f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0">ReflectionTag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_reflection.html#a21551e1dbdfa468880a86b68f64186f3">tag</a></td></tr>
 <tr class="separator:a21551e1dbdfa468880a86b68f64186f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a10d789e146a948c86c8dcaf7f4235350" name="a10d789e146a948c86c8dcaf7f4235350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10d789e146a948c86c8dcaf7f4235350">&#9670;&nbsp;</a></span>Reflection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Reflection::Reflection </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_reflection_8h.html#a8163356ccae08e66d7045f26d98e5435">CreateObjectFunc</a>&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0">ReflectionTag</a>&#160;</td>
+          <td class="paramname"><em>_tag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_reflection_8h.html#a25687338db035b6fc181a7c9ffdcf8bd">GetInstanceFunc</a>&#160;</td>
+          <td class="paramname"><em>instance</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a9b1d42a71cdb22438e6022d85464f6e3" name="a9b1d42a71cdb22438e6022d85464f6e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b1d42a71cdb22438e6022d85464f6e3">&#9670;&nbsp;</a></span>className</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Reflection::className</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab521054a5c4460038b135a3763fae877" name="ab521054a5c4460038b135a3763fae877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab521054a5c4460038b135a3763fae877">&#9670;&nbsp;</a></span>createF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_reflection_8h.html#a8163356ccae08e66d7045f26d98e5435">CreateObjectFunc</a> Reflection::createF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a76d087e37059a90a3a1d6f8da2fbcda9" name="a76d087e37059a90a3a1d6f8da2fbcda9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76d087e37059a90a3a1d6f8da2fbcda9">&#9670;&nbsp;</a></span>getInstance</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_reflection_8h.html#a25687338db035b6fc181a7c9ffdcf8bd">GetInstanceFunc</a> Reflection::getInstance</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21551e1dbdfa468880a86b68f64186f3" name="a21551e1dbdfa468880a86b68f64186f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21551e1dbdfa468880a86b68f64186f3">&#9670;&nbsp;</a></span>tag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_reflection_8h.html#af1c18238a2a0f6cbf38e43358dc9b2c0">ReflectionTag</a> Reflection::tag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>该结构体的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Tools/<a class="el" href="_reflection_8h_source.html">Reflection.h</a></li>
 </ul>

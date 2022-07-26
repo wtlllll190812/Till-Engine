@@ -1,6 +1,5 @@
 <map id="ImguiLayer::OnWindowResizeEvent" name="ImguiLayer::OnWindowResizeEvent">
-<area shape="rect" id="node1" title=" " alt="" coords="5,64,201,105"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,39,201,80"/>
 <area shape="rect" id="node2" href="$class_window_resize_event.html#ab3aa091a7fa016f762764ddc263eee98" title=" " alt="" coords="249,5,397,47"/>
-<area shape="rect" id="node3" href="$namespace_im_gui.html#a3179e560812f878f3961ce803a5d9302" title=" " alt="" coords="274,71,373,98"/>
-<area shape="rect" id="node4" href="$class_window_resize_event.html#a5f3a24ccf55cde3e08028e61ce17c458" title=" " alt="" coords="249,123,397,164"/>
+<area shape="rect" id="node3" href="$class_window_resize_event.html#a5f3a24ccf55cde3e08028e61ce17c458" title=" " alt="" coords="249,71,397,112"/>
 </map>

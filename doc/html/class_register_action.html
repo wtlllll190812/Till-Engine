@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,21 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
@@ -68,13 +51,61 @@ $(function() {
   <div class="headertitle"><div class="title">RegisterAction类 参考</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_reflection_8h_source.html">Reflection.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a17ca9b1806520aff020906685f3d8acd"><td class="memItemLeft" align="right" valign="top"><a id="a17ca9b1806520aff020906685f3d8acd" name="a17ca9b1806520aff020906685f3d8acd"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>RegisterAction</b> (std::string className, <a class="el" href="struct_reflection.html">Reflection</a> *ptrCreateFn)</td></tr>
+<tr class="memitem:a17ca9b1806520aff020906685f3d8acd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_register_action.html#a17ca9b1806520aff020906685f3d8acd">RegisterAction</a> (std::string className, <a class="el" href="struct_reflection.html">Reflection</a> *ptrCreateFn)</td></tr>
 <tr class="separator:a17ca9b1806520aff020906685f3d8acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a17ca9b1806520aff020906685f3d8acd" name="a17ca9b1806520aff020906685f3d8acd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17ca9b1806520aff020906685f3d8acd">&#9670;&nbsp;</a></span>RegisterAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RegisterAction::RegisterAction </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>className</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_reflection.html">Reflection</a> *&#160;</td>
+          <td class="paramname"><em>ptrCreateFn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_register_action_a17ca9b1806520aff020906685f3d8acd_cgraph.png" border="0" usemap="#aclass_register_action_a17ca9b1806520aff020906685f3d8acd_cgraph" alt=""/></div>
+<map name="aclass_register_action_a17ca9b1806520aff020906685f3d8acd_cgraph" id="aclass_register_action_a17ca9b1806520aff020906685f3d8acd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,168,80"/>
+<area shape="rect" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="216,5,411,47"/>
+<area shape="rect" href="class_reflection_manager.html#a33e1e1079567372b698d116df2e1f257" title=" " alt="" coords="245,71,382,112"/>
+</map>
+</div>
+
+</div>
+</div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Tools/<a class="el" href="_reflection_8h_source.html">Reflection.h</a></li>
 </ul>

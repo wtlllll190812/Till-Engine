@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,19 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_700da30f51666cd81523daa4ef5fcfbf.html">Render</a></li>  </ul>
@@ -67,43 +48,22 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">类</a> &#124;
-<a href="#define-members">宏定义</a>  </div>
+<a href="#nested-classes">类</a>  </div>
   <div class="headertitle"><div class="title">Shader.h 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;GL/glew.h&gt;</code><br />
-<code>#include &lt;string&gt;</code><br />
-<code>#include &lt;fstream&gt;</code><br />
-<code>#include &lt;sstream&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Shader.h 的引用(Include)关系图:</div>
-<div class="dyncontent">
-<div class="center"><img src="_shader_8h__incl.png" border="0" usemap="#a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_render_2_shader_8h" alt=""/></div>
-<map name="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_render_2_shader_8h" id="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_render_2_shader_8h">
-<area shape="rect" title=" " alt="" coords="138,5,305,61"/>
-<area shape="rect" title=" " alt="" coords="5,109,85,136"/>
-<area shape="rect" title=" " alt="" coords="110,109,165,136"/>
-<area shape="rect" title=" " alt="" coords="189,109,254,136"/>
-<area shape="rect" title=" " alt="" coords="279,109,348,136"/>
-<area shape="rect" title=" " alt="" coords="372,109,444,136"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
+<div class="textblock"><div class="dynheader">
 此图展示该文件直接或间接的被哪些文件引用了:</div>
 <div class="dyncontent">
 <div class="center"><img src="_shader_8h__dep__incl.png" border="0" usemap="#a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_render_2_shader_8hdep" alt=""/></div>
 <map name="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_render_2_shader_8hdep" id="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_render_2_shader_8hdep">
-<area shape="rect" title=" " alt="" coords="767,5,934,61"/>
-<area shape="rect" href="_material_8h.html" title=" " alt="" coords="569,109,741,165"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="657,317,807,373"/>
-<area shape="rect" href="_shader_8cpp.html" title=" " alt="" coords="888,109,1069,165"/>
-<area shape="rect" href="_renderer_8h.html" title=" " alt="" coords="355,213,552,269"/>
-<area shape="rect" href="_material_8cpp.html" title=" " alt="" coords="627,213,813,269"/>
-<area shape="rect" href="_renderer_8cpp.html" title=" " alt="" coords="5,317,216,373"/>
-<area shape="rect" href="_render_system_8cpp.html" title=" " alt="" coords="241,317,458,373"/>
-<area shape="rect" href="_scene_8cpp.html" title=" " alt="" coords="482,317,633,373"/>
+<area shape="rect" title=" " alt="" coords="486,5,653,61"/>
+<area shape="rect" href="_mat_default_8cpp.html" title=" " alt="" coords="5,109,173,180"/>
+<area shape="rect" href="_mat_light_8cpp.html" title=" " alt="" coords="197,109,365,180"/>
+<area shape="rect" href="_mat_shadow_caster_8cpp.html" title=" " alt="" coords="389,109,557,180"/>
+<area shape="rect" href="_mat_skybox_8cpp.html" title=" " alt="" coords="581,109,749,180"/>
+<area shape="rect" href="_material_8cpp.html" title=" " alt="" coords="773,109,941,180"/>
+<area shape="rect" href="_shader_8cpp.html" title=" " alt="" coords="965,117,1147,173"/>
 </map>
 </div>
 </div>
@@ -113,27 +73,7 @@ Shader.h 的引用(Include)关系图:</div>
 类</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html">Shader</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-宏定义</h2></td></tr>
-<tr class="memitem:a5a06afe39fc642001b13b6e5c6044ff6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_shader_8h.html#a5a06afe39fc642001b13b6e5c6044ff6">SHADER_H</a></td></tr>
-<tr class="separator:a5a06afe39fc642001b13b6e5c6044ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">宏定义说明</h2>
-<a id="a5a06afe39fc642001b13b6e5c6044ff6" name="a5a06afe39fc642001b13b6e5c6044ff6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a06afe39fc642001b13b6e5c6044ff6">&#9670;&nbsp;</a></span>SHADER_H</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SHADER_H</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

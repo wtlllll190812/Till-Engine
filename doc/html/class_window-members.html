@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,21 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">Window 成员列表</div></div>
@@ -69,21 +52,21 @@ $(function() {
 <p>成员的完整列表，这些成员属于 <a class="el" href="class_window.html">Window</a>,包括所有继承而来的类成员</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_window.html#afc596cc511a849dce3100da62b263f05">AddFrameBuffer</a>(BufferType type)=0</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Create</b>(const WindowProps &amp;props=WindowProps()) (定义于 <a class="el" href="class_window.html">Window</a>)</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_window.html#a08d478a17b15bcf682d6d057460f81f7">Create</a>(const WindowProps &amp;props=WindowProps())</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_window.html#a64a4a74428952dbfd0d5ecbfdf56f604">DrawFunc</a>()=0</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>EventCallbackFn</b> typedef (定义于 <a class="el" href="class_window.html">Window</a>)</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_window.html#afc178159093368739a4e65ed7a59b581">EventCallbackFn</a> typedef</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_window.html#a08cbfbd80938207165ed07120ed6cc23">GetFrameBuffer</a>(int index=0)=0</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_window.html#a35f0d591a21f367314853952e54cdf84">GetHeight</a>() const =0</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_window.html#aba02ea624269e2f0a18e2e21c8c1807d">GetMianFrameBuffer</a>(int index=0)=0</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_window.html#a88bb5f556857ba82c62dd79abacf4c67">GetWidth</a>() const =0</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_window.html#a0dcd7f056cb1534c4fda7ea82dfaf462">GetWindow</a>() const</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>IsVSync</b>() const =0 (定义于 <a class="el" href="class_window.html">Window</a>)</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_window.html#ac4b9a50bd3360575d0f593e678f3b6e9">IsVSync</a>() const =0</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_window.html#af654767b70e208db7fe08f34133bb2c7">OnRenderEnd</a>()=0</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>SetEventCallback</b>(const EventCallbackFn &amp;callback)=0 (定义于 <a class="el" href="class_window.html">Window</a>)</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_window.html#aa806e44b1ad9d9e11f7bf74aceef3357">SetEventCallback</a>(const EventCallbackFn &amp;callback)=0</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_window.html#a747f38cf55fdbc23552b6577ebb7efb1">SetFrameBuffer</a>(int index=0)=0</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>SetFrameBuffer</b>(FrameBuffer *)=0 (定义于 <a class="el" href="class_window.html">Window</a>)</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_window.html#a981cf7002fb02bb3702f6883356a45f9">SetFrameBuffer</a>(FrameBuffer *)=0</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_window.html#a14993a46f3548887496f4a5d374c470a">SetVSync</a>(bool enabled)=0</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~Window</b>() (定义于 <a class="el" href="class_window.html">Window</a>)</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_window.html#a62b4a97b3c2e492f1d9a46092011e2d9">~Window</a>()</td><td class="entry"><a class="el" href="class_window.html">Window</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

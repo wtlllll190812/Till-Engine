@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,67 +28,247 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
 <a href="#pub-static-attribs">静态 Public 属性</a> &#124;
+<a href="#pri-static-attribs">静态 Private 属性</a> &#124;
 <a href="class_debug-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">Debug类 参考</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_debug_8h_source.html">Debug.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 静态 Public 成员函数</h2></td></tr>
-<tr class="memitem:af74e4b59f00db09b7d39625da34f7eef"><td class="memItemLeft" align="right" valign="top"><a id="af74e4b59f00db09b7d39625da34f7eef" name="af74e4b59f00db09b7d39625da34f7eef"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> ()</td></tr>
+<tr class="memitem:af74e4b59f00db09b7d39625da34f7eef"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_debug.html#af74e4b59f00db09b7d39625da34f7eef">Init</a> ()</td></tr>
 <tr class="separator:af74e4b59f00db09b7d39625da34f7eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ac5291fd84802ff1a4601de9218810c"><td class="memItemLeft" align="right" valign="top"><a id="a9ac5291fd84802ff1a4601de9218810c" name="a9ac5291fd84802ff1a4601de9218810c"></a>
-static std::shared_ptr&lt; spdlog::logger &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetEngineLogger</b> ()</td></tr>
+<tr class="memitem:a9ac5291fd84802ff1a4601de9218810c"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; spdlog::logger &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_debug.html#a9ac5291fd84802ff1a4601de9218810c">GetEngineLogger</a> ()</td></tr>
 <tr class="separator:a9ac5291fd84802ff1a4601de9218810c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba43a04a085adda136af3ed7fa2593c9"><td class="memItemLeft" align="right" valign="top"><a id="aba43a04a085adda136af3ed7fa2593c9" name="aba43a04a085adda136af3ed7fa2593c9"></a>
-static std::shared_ptr&lt; spdlog::logger &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetAppLogger</b> ()</td></tr>
+<tr class="memitem:aba43a04a085adda136af3ed7fa2593c9"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; spdlog::logger &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_debug.html#aba43a04a085adda136af3ed7fa2593c9">GetAppLogger</a> ()</td></tr>
 <tr class="separator:aba43a04a085adda136af3ed7fa2593c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 静态 Public 属性</h2></td></tr>
-<tr class="memitem:a63308dbb1f75a54d8899fd6a292ab0e0"><td class="memItemLeft" align="right" valign="top"><a id="a63308dbb1f75a54d8899fd6a292ab0e0" name="a63308dbb1f75a54d8899fd6a292ab0e0"></a>
-static std::stringstream&#160;</td><td class="memItemRight" valign="bottom"><b>appLogOss</b></td></tr>
+<tr class="memitem:a63308dbb1f75a54d8899fd6a292ab0e0"><td class="memItemLeft" align="right" valign="top">static std::stringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_debug.html#a63308dbb1f75a54d8899fd6a292ab0e0">appLogOss</a></td></tr>
 <tr class="separator:a63308dbb1f75a54d8899fd6a292ab0e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静态 Private 属性</h2></td></tr>
+<tr class="memitem:a71413820cd11d47182559fff13f2cc55"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; spdlog::logger &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_debug.html#a71413820cd11d47182559fff13f2cc55">engineLog</a> = spdlog::stdout_color_mt(&quot;Till Engine&quot;)</td></tr>
+<tr class="separator:a71413820cd11d47182559fff13f2cc55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a065d3da5f2b508b8814f6573dbf2ff"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; spdlog::logger &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_debug.html#a2a065d3da5f2b508b8814f6573dbf2ff">appLog</a> = spdlog::stdout_color_mt(&quot;App&quot;)</td></tr>
+<tr class="separator:a2a065d3da5f2b508b8814f6573dbf2ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aba43a04a085adda136af3ed7fa2593c9" name="aba43a04a085adda136af3ed7fa2593c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba43a04a085adda136af3ed7fa2593c9">&#9670;&nbsp;</a></span>GetAppLogger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::shared_ptr&lt; spdlog::logger &gt; &amp; Debug::GetAppLogger </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_debug_aba43a04a085adda136af3ed7fa2593c9_icgraph.png" border="0" usemap="#aclass_debug_aba43a04a085adda136af3ed7fa2593c9_icgraph" alt=""/></div>
+<map name="aclass_debug_aba43a04a085adda136af3ed7fa2593c9_icgraph" id="aclass_debug_aba43a04a085adda136af3ed7fa2593c9_icgraph">
+<area shape="rect" title=" " alt="" coords="633,22,784,49"/>
+<area shape="rect" href="class_application.html#a5378330e10e42fcb9a2269b533759b0f" title="运行应用" alt="" coords="104,22,244,49"/>
+<area shape="rect" href="class_renderer.html#a7ee1958f92e9e88379336297ae4cbc3f" title="进行渲染" alt="" coords="475,22,585,49"/>
+<area shape="rect" href="class_input.html#a5197114da7299198826ff7277ee12bff" title=" " alt="" coords="493,73,567,99"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,22,56,49"/>
+<area shape="rect" href="class_application.html#a091df3ec4695b64249e57a76c93b6612" title="初始化应用" alt="" coords="292,47,427,74"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9ac5291fd84802ff1a4601de9218810c" name="a9ac5291fd84802ff1a4601de9218810c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ac5291fd84802ff1a4601de9218810c">&#9670;&nbsp;</a></span>GetEngineLogger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::shared_ptr&lt; spdlog::logger &gt; &amp; Debug::GetEngineLogger </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_debug_a9ac5291fd84802ff1a4601de9218810c_icgraph.png" border="0" usemap="#aclass_debug_a9ac5291fd84802ff1a4601de9218810c_icgraph" alt=""/></div>
+<map name="aclass_debug_a9ac5291fd84802ff1a4601de9218810c_icgraph" id="aclass_debug_a9ac5291fd84802ff1a4601de9218810c_icgraph">
+<area shape="rect" title=" " alt="" coords="991,208,1157,235"/>
+<area shape="rect" href="class_scene.html#a685199995d80af3cbbf2606dc27c77d8" title="添加新物体" alt="" coords="765,5,928,32"/>
+<area shape="rect" href="class_application.html#a091df3ec4695b64249e57a76c93b6612" title="初始化应用" alt="" coords="292,120,427,147"/>
+<area shape="rect" href="class_game_object.html#a7bd3840ff675f1ee44ddec99fb89bc32" title="反序列化" alt="" coords="762,107,931,133"/>
+<area shape="rect" href="class_editor_layer.html#ac68e82509971314260c282a174f63bb5" title=" " alt="" coords="765,157,928,184"/>
+<area shape="rect" href="class_asset_importer.html#a2b95bafd62ab55bf0c83a4928aee3d91" title=" " alt="" coords="525,183,653,209"/>
+<area shape="rect" href="class_asset_importer.html#a6849837d993ae78b78b65fa7dfe55732" title=" " alt="" coords="757,259,936,285"/>
+<area shape="rect" href="class_scene.html#aec4393448e15e9422ae62681dca0d70f" title="保存场景" alt="" coords="799,309,894,336"/>
+<area shape="rect" href="class_scene.html#a68aaa2ba723de8190353354012658db6" title="读取并初始化场景" alt="" coords="795,360,899,387"/>
+<area shape="rect" href="class_windows_window.html#a18f60bb57db9857b4a2f28b8dc0d8d0e" title="窗口初始化" alt="" coords="751,411,943,437"/>
+<area shape="rect" href="class_application.html#a5378330e10e42fcb9a2269b533759b0f" title="运行应用" alt="" coords="104,120,244,147"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,120,56,147"/>
+<area shape="rect" href="class_game_object.html#a723e616ef6ce1ca7697911c818774d4c" title=" " alt="" coords="501,107,677,133"/>
+<area shape="rect" href="class_renderer.html#ac300e94373098ca8336b3a54b65a6c2c" title="反序列化" alt="" coords="515,233,663,260"/>
+<area shape="rect" href="class_render_system.html#a20496a8f52c4eb755d4bfcaba2e98e1c" title=" " alt="" coords="487,284,690,311"/>
+<area shape="rect" href="class_scene.html#a3b8cec2e32546713915f8c6303c951f1" title=" " alt="" coords="533,335,645,361"/>
+<area shape="rect" href="class_windows_window.html#a9546e57a10dd1b786acb13c65fbddbea" title=" " alt="" coords="475,411,703,437"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af74e4b59f00db09b7d39625da34f7eef" name="af74e4b59f00db09b7d39625da34f7eef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af74e4b59f00db09b7d39625da34f7eef">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Debug::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_debug_af74e4b59f00db09b7d39625da34f7eef_icgraph.png" border="0" usemap="#aclass_debug_af74e4b59f00db09b7d39625da34f7eef_icgraph" alt=""/></div>
+<map name="aclass_debug_af74e4b59f00db09b7d39625da34f7eef_icgraph" id="aclass_debug_af74e4b59f00db09b7d39625da34f7eef_icgraph">
+<area shape="rect" title=" " alt="" coords="212,5,296,32"/>
+<area shape="rect" href="class_application.html#afa8cc05ce6b6092be5ecdfdae44e05f8" title=" " alt="" coords="5,5,164,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a2a065d3da5f2b508b8814f6573dbf2ff" name="a2a065d3da5f2b508b8814f6573dbf2ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a065d3da5f2b508b8814f6573dbf2ff">&#9670;&nbsp;</a></span>appLog</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; spdlog::logger &gt; Debug::appLog = spdlog::stdout_color_mt(&quot;App&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a63308dbb1f75a54d8899fd6a292ab0e0" name="a63308dbb1f75a54d8899fd6a292ab0e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63308dbb1f75a54d8899fd6a292ab0e0">&#9670;&nbsp;</a></span>appLogOss</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::stringstream Debug::appLogOss</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a71413820cd11d47182559fff13f2cc55" name="a71413820cd11d47182559fff13f2cc55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71413820cd11d47182559fff13f2cc55">&#9670;&nbsp;</a></span>engineLog</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; spdlog::logger &gt; Debug::engineLog = spdlog::stdout_color_mt(&quot;Till Engine&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Tools/<a class="el" href="_debug_8h_source.html">Debug.h</a></li>
-<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Tools/Debug.cpp</li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Tools/<a class="el" href="_debug_8cpp.html">Debug.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

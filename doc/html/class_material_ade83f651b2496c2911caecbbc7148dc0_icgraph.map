@@ -1,0 +1,7 @@
+<map id="Material::DrawFunc" name="Material::DrawFunc">
+<area shape="rect" id="node1" title=" " alt="" coords="849,31,984,57"/>
+<area shape="rect" id="node2" href="$class_material.html#a5e1a8c78aa8bd556586fc8aa508182dc" title=" " alt="" coords="696,31,801,57"/>
+<area shape="rect" id="node3" href="$class_render_system.html#a811afc13db3e5f903195598618c7c421" title="渲染阴影" alt="" coords="445,5,648,32"/>
+<area shape="rect" id="node4" href="$class_render_system.html#a744c9a8ba4359b3353a6130f3af51fbb" title="每帧刷新" alt="" coords="240,31,397,57"/>
+<area shape="rect" id="node5" href="$class_windows_window.html#a27cad6c527b8b73dfea5420fa9efeef2" title="窗口渲染函数" alt="" coords="5,31,192,57"/>
+</map>

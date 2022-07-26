@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,19 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
@@ -67,399 +48,39 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">宏定义</a> &#124;
-<a href="#func-members">函数</a> &#124;
-<a href="#var-members">变量</a>  </div>
+<a href="#func-members">函数</a>  </div>
   <div class="headertitle"><div class="title">main.cpp 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_screen_8h_source.html">Screen.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_camera_8h_source.html">Camera.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_game_object_8h_source.html">GameObject.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_transform_8h_source.html">Transform.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_texture_8h_source.html">Texture.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_shader_8h_source.html">Shader.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_light_8h_source.html">Light.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_renderer_8h_source.html">Renderer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_material_8h_source.html">Material.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_t_l_engine_c_g_8h_source.html">TLEngineCG.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_game_loop_8h_source.html">GameLoop.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_render_system_8h_source.html">RenderSystem.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_scene_8h_source.html">Scene.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_debug_8h_source.html">Debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_gui_window_8h_source.html">GuiWindow.h</a>&quot;</code><br />
-<code>#include &lt;glm/glm.hpp&gt;</code><br />
-<code>#include &lt;glm/gtc/matrix_transform.hpp&gt;</code><br />
-<code>#include &lt;glm/gtc/type_ptr.hpp&gt;</code><br />
-<code>#include &quot;<a class="el" href="_windows_window_8h_source.html">WindowsWindow.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_till_pch_8h_source.html">TillPch.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_application_8h_source.html">Application.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_imgui_layer_8h_source.html">ImguiLayer.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="_application_8h_source.html">Application.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_input_8h_source.html">Input.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 main.cpp 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2main_8cpp" alt=""/></div>
 <map name="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2main_8cpp" id="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2main_8cpp">
-<area shape="rect" title=" " alt="" coords="1616,5,1766,61"/>
-<area shape="rect" href="_screen_8h.html" title=" " alt="" coords="411,408,486,435"/>
-<area shape="rect" href="_till_pch_8h.html" title=" " alt="" coords="1826,483,1898,509"/>
-<area shape="rect" title=" " alt="" coords="2044,557,2138,584"/>
-<area shape="rect" title=" " alt="" coords="2277,557,2468,584"/>
-<area shape="rect" title=" " alt="" coords="2492,557,2634,584"/>
-<area shape="rect" href="_debug_8h.html" title=" " alt="" coords="1949,557,2020,584"/>
-<area shape="rect" href="_camera_8h.html" title=" " alt="" coords="1340,259,1418,285"/>
-<area shape="rect" href="_game_object_8h.html" title=" " alt="" coords="1572,184,1679,211"/>
-<area shape="rect" href="_transform_8h.html" title=" " alt="" coords="1722,259,1812,285"/>
-<area shape="rect" href="_texture_8h.html" title=" " alt="" coords="704,408,780,435"/>
-<area shape="rect" href="_shader_8h.html" title=" " alt="" coords="983,408,1058,435"/>
-<area shape="rect" href="_light_8h.html" title=" " alt="" coords="2084,259,2146,285"/>
-<area shape="rect" href="_renderer_8h.html" title=" " alt="" coords="926,184,1011,211"/>
-<area shape="rect" href="_material_8h.html" title=" " alt="" coords="932,259,1010,285"/>
-<area shape="rect" href="_t_l_engine_c_g_8h.html" title=" " alt="" coords="1819,333,1926,360"/>
-<area shape="rect" href="_game_loop_8h.html" title=" " alt="" coords="2135,109,2231,136"/>
-<area shape="rect" href="_render_system_8h.html" title=" " alt="" coords="2256,109,2374,136"/>
-<area shape="rect" href="_scene_8h.html" title=" " alt="" coords="1216,109,1286,136"/>
-<area shape="rect" href="_gui_window_8h.html" title=" " alt="" coords="210,408,308,435"/>
-<area shape="rect" href="_windows_window_8h.html" title=" " alt="" coords="1416,184,1548,211"/>
-<area shape="rect" href="_application_8h.html" title=" " alt="" coords="1597,259,1694,285"/>
-<area shape="rect" href="_imgui_layer_8h.html" title=" " alt="" coords="558,333,654,360"/>
-<area shape="rect" title=" " alt="" coords="396,483,500,509"/>
-<area shape="rect" title=" " alt="" coords="759,483,839,509"/>
-<area shape="rect" href="imgui_8h.html" title=" " alt="" coords="147,557,211,584"/>
-<area shape="rect" href="imgui__impl__glfw_8h.html" title=" " alt="" coords="197,483,321,509"/>
-<area shape="rect" href="imgui__impl__opengl3_8h.html" title=" " alt="" coords="26,483,172,509"/>
-<area shape="rect" title=" " alt="" coords="1117,557,1172,584"/>
-<area shape="rect" title=" " alt="" coords="1776,557,1854,584"/>
-<area shape="rect" title=" " alt="" coords="1522,557,1591,584"/>
-<area shape="rect" title=" " alt="" coords="840,557,912,584"/>
-<area shape="rect" title=" " alt="" coords="1438,557,1494,584"/>
-<area shape="rect" title=" " alt="" coords="1236,557,1306,584"/>
-<area shape="rect" title=" " alt="" coords="1617,557,1674,584"/>
-<area shape="rect" title=" " alt="" coords="1878,557,1925,584"/>
-<area shape="rect" title=" " alt="" coords="1699,557,1752,584"/>
-<area shape="rect" href="_singleton_01_8h.html" title=" " alt="" coords="2162,557,2252,584"/>
-<area shape="rect" title=" " alt="" coords="1928,632,2041,659"/>
-<area shape="rect" href="_component_8h.html" title=" " alt="" coords="1950,333,2048,360"/>
-<area shape="rect" href="_reflection_8h.html" title=" " alt="" coords="1978,408,2068,435"/>
-<area shape="rect" href="_t_lxml_8h.html" title=" " alt="" coords="1360,408,1428,435"/>
-<area shape="rect" title=" " alt="" coords="524,483,634,509"/>
-<area shape="rect" title=" " alt="" coords="1016,483,1081,509"/>
-<area shape="rect" href="_mesh_8h.html" title=" " alt="" coords="810,408,876,435"/>
-<area shape="rect" title=" " alt="" coords="2145,184,2200,211"/>
-<area shape="rect" href="_system_8h.html" title=" " alt="" coords="2296,408,2374,435"/>
-<area shape="rect" href="_window_8h.html" title=" " alt="" coords="1492,333,1570,360"/>
-<area shape="rect" href="_event_base_8h.html" title=" " alt="" coords="1554,408,1649,435"/>
-<area shape="rect" href="_layer_stack_8h.html" title=" " alt="" coords="1696,333,1795,360"/>
+<area shape="rect" title=" " alt="" coords="246,5,396,61"/>
+<area shape="rect" href="_application_8h.html" title=" " alt="" coords="220,109,318,136"/>
+<area shape="rect" href="_input_8h.html" title=" " alt="" coords="426,109,488,136"/>
+<area shape="rect" href="_window_8h.html" title=" " alt="" coords="391,184,470,211"/>
+<area shape="rect" href="_t_l_core_8h.html" title=" " alt="" coords="20,333,94,360"/>
+<area shape="rect" href="_singleton_8h.html" title=" " alt="" coords="32,184,119,211"/>
+<area shape="rect" href="_application_event_8h.html" title=" " alt="" coords="143,184,272,211"/>
+<area shape="rect" title=" " alt="" coords="297,184,366,211"/>
+<area shape="rect" href="_event_base_8h.html" title=" " alt="" coords="160,259,255,285"/>
+<area shape="rect" href="_frame_buffer_8h.html" title=" " alt="" coords="379,259,482,285"/>
+<area shape="rect" title=" " alt="" coords="180,333,235,360"/>
+<area shape="rect" title=" " alt="" coords="18,408,96,435"/>
+<area shape="rect" title=" " alt="" coords="494,184,588,211"/>
 </map>
 </div>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-宏定义</h2></td></tr>
-<tr class="memitem:ad27cc17b25bb93134368d5eb21126eae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad27cc17b25bb93134368d5eb21126eae">BIT</a>(x)&#160;&#160;&#160;(1 &lt;&lt; x)</td></tr>
-<tr class="separator:ad27cc17b25bb93134368d5eb21126eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac26a668e32beeb7eae8b6e4adbe5d1e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac26a668e32beeb7eae8b6e4adbe5d1e1">DATA_PATH</a>&#160;&#160;&#160;&quot;../data/&quot;</td></tr>
-<tr class="separator:ac26a668e32beeb7eae8b6e4adbe5d1e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07d1a5f3eb8d88b203823be9a355410f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a07d1a5f3eb8d88b203823be9a355410f">SHADER_PATH</a>&#160;&#160;&#160;&quot;../shaders/&quot;</td></tr>
-<tr class="separator:a07d1a5f3eb8d88b203823be9a355410f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6852d85bc96a09e605bbf4a2dcfc7a5c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6852d85bc96a09e605bbf4a2dcfc7a5c">IMAGE_PATH</a>&#160;&#160;&#160;&quot;../resource/&quot;</td></tr>
-<tr class="separator:a6852d85bc96a09e605bbf4a2dcfc7a5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 函数</h2></td></tr>
-<tr class="memitem:aa48aaf412b9e33386433680c25b3883c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aa48aaf412b9e33386433680c25b3883c">key_callback</a> (GLFWwindow *window, int key, int scancode, int action, int <a class="el" href="imgui__impl__opengl3__loader_8h.html#a1e71d9c196e4683cc06c4b54d53f7ef5">mode</a>)</td></tr>
-<tr class="separator:aa48aaf412b9e33386433680c25b3883c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4ca2891044ac10a664b8d83ce590f1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af4ca2891044ac10a664b8d83ce590f1f">mouse_callback</a> (GLFWwindow *window, double xpos, double ypos)</td></tr>
-<tr class="separator:af4ca2891044ac10a664b8d83ce590f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06ad2502008f16fbcf01dfaa7f7bc9ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a06ad2502008f16fbcf01dfaa7f7bc9ea">scroll_callback</a> (GLFWwindow *window, double xoffset, double yoffset)</td></tr>
-<tr class="separator:a06ad2502008f16fbcf01dfaa7f7bc9ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f9c9db8e4782d31531eb6b8528fb373"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a7f9c9db8e4782d31531eb6b8528fb373">do_movement</a> ()</td></tr>
-<tr class="separator:a7f9c9db8e4782d31531eb6b8528fb373"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad52569b291dc1e2dda6c6a66945c50f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad52569b291dc1e2dda6c6a66945c50f4">fixedupdate</a> ()</td></tr>
-<tr class="separator:ad52569b291dc1e2dda6c6a66945c50f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e3b6d38df0786ccf7f938d60e386aae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1e3b6d38df0786ccf7f938d60e386aae">Init</a> ()</td></tr>
-<tr class="separator:a1e3b6d38df0786ccf7f938d60e386aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ac1fe7e6bd625ee388cee2dc03a2ebc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3ac1fe7e6bd625ee388cee2dc03a2ebc">smain</a> ()</td></tr>
-<tr class="separator:a3ac1fe7e6bd625ee388cee2dc03a2ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-变量</h2></td></tr>
-<tr class="memitem:a06a8706e3fc2d1d7bae9fe0ef2846752"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_scene.html">Scene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a06a8706e3fc2d1d7bae9fe0ef2846752">currentScene</a></td></tr>
-<tr class="separator:a06a8706e3fc2d1d7bae9fe0ef2846752"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac14b15e54f3c25aa1a766a82f1aeb341"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_game_object.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac14b15e54f3c25aa1a766a82f1aeb341">currentObj</a></td></tr>
-<tr class="separator:ac14b15e54f3c25aa1a766a82f1aeb341"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af95833c961e5bd20dcd54e1d46a03c0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_camera.html">Camera</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af95833c961e5bd20dcd54e1d46a03c0b">camera</a></td></tr>
-<tr class="separator:af95833c961e5bd20dcd54e1d46a03c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca303a1e6cf29fc7a1155c7237197b51"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="class_game_object.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aca303a1e6cf29fc7a1155c7237197b51">cameraObject</a></td></tr>
-<tr class="separator:aca303a1e6cf29fc7a1155c7237197b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a205162c8d635872826fda3abe9f8e295"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="class_game_object.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a205162c8d635872826fda3abe9f8e295">object</a></td></tr>
-<tr class="separator:a205162c8d635872826fda3abe9f8e295"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2367a09754e5f98b72796de75b7a1591"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_loop.html">GameLoop</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2367a09754e5f98b72796de75b7a1591">loop</a> (60)</td></tr>
-<tr class="separator:a2367a09754e5f98b72796de75b7a1591"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a217745c5eebfcdb3e21cbc9bcdc07a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3a217745c5eebfcdb3e21cbc9bcdc07a">keys</a> [1024]</td></tr>
-<tr class="separator:a3a217745c5eebfcdb3e21cbc9bcdc07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85a82635c1e0c0d184050788cba2c656"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#a68c4714e43d8e827d80759f9cb864f3c">GLuint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a85a82635c1e0c0d184050788cba2c656">fbo</a></td></tr>
-<tr class="separator:a85a82635c1e0c0d184050788cba2c656"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e16a74f44432ba28cfc03e1f2fae336"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#a836cf6377099e88abf24c255b5b0ac52">GLfloat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2e16a74f44432ba28cfc03e1f2fae336">lastX</a></td></tr>
-<tr class="separator:a2e16a74f44432ba28cfc03e1f2fae336"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9b48b88a5ab39920f21309262086ef0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#a836cf6377099e88abf24c255b5b0ac52">GLfloat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af9b48b88a5ab39920f21309262086ef0">lastY</a></td></tr>
-<tr class="separator:af9b48b88a5ab39920f21309262086ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac21731ba101e28334c34543121caa841"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac21731ba101e28334c34543121caa841">firstMouse</a> = true</td></tr>
-<tr class="separator:ac21731ba101e28334c34543121caa841"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">宏定义说明</h2>
-<a id="ad27cc17b25bb93134368d5eb21126eae" name="ad27cc17b25bb93134368d5eb21126eae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad27cc17b25bb93134368d5eb21126eae">&#9670;&nbsp;</a></span>BIT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BIT</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(1 &lt;&lt; x)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac26a668e32beeb7eae8b6e4adbe5d1e1" name="ac26a668e32beeb7eae8b6e4adbe5d1e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac26a668e32beeb7eae8b6e4adbe5d1e1">&#9670;&nbsp;</a></span>DATA_PATH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DATA_PATH&#160;&#160;&#160;&quot;../data/&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6852d85bc96a09e605bbf4a2dcfc7a5c" name="a6852d85bc96a09e605bbf4a2dcfc7a5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6852d85bc96a09e605bbf4a2dcfc7a5c">&#9670;&nbsp;</a></span>IMAGE_PATH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IMAGE_PATH&#160;&#160;&#160;&quot;../resource/&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a07d1a5f3eb8d88b203823be9a355410f" name="a07d1a5f3eb8d88b203823be9a355410f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07d1a5f3eb8d88b203823be9a355410f">&#9670;&nbsp;</a></span>SHADER_PATH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SHADER_PATH&#160;&#160;&#160;&quot;../shaders/&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">函数说明</h2>
-<a id="a7f9c9db8e4782d31531eb6b8528fb373" name="a7f9c9db8e4782d31531eb6b8528fb373"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f9c9db8e4782d31531eb6b8528fb373">&#9670;&nbsp;</a></span>do_movement()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> do_movement </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-这是这个函数的调用关系图:</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_a7f9c9db8e4782d31531eb6b8528fb373_icgraph.png" border="0" usemap="#amain_8cpp_a7f9c9db8e4782d31531eb6b8528fb373_icgraph" alt=""/></div>
-<map name="amain_8cpp_a7f9c9db8e4782d31531eb6b8528fb373_icgraph" id="amain_8cpp_a7f9c9db8e4782d31531eb6b8528fb373_icgraph">
-<area shape="rect" title=" " alt="" coords="111,5,213,32"/>
-<area shape="rect" href="main_8cpp.html#a3ac1fe7e6bd625ee388cee2dc03a2ebc" title=" " alt="" coords="5,5,63,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="ad52569b291dc1e2dda6c6a66945c50f4" name="ad52569b291dc1e2dda6c6a66945c50f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad52569b291dc1e2dda6c6a66945c50f4">&#9670;&nbsp;</a></span>fixedupdate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> fixedupdate </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-函数调用图:</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_ad52569b291dc1e2dda6c6a66945c50f4_cgraph.png" border="0" usemap="#amain_8cpp_ad52569b291dc1e2dda6c6a66945c50f4_cgraph" alt=""/></div>
-<map name="amain_8cpp_ad52569b291dc1e2dda6c6a66945c50f4_cgraph" id="amain_8cpp_ad52569b291dc1e2dda6c6a66945c50f4_cgraph">
-<area shape="rect" title=" " alt="" coords="5,831,93,858"/>
-<area shape="rect" href="class_screen.html#a3581d87da7784de9d3eb0ff0b4d44744" title="显示窗口" alt="" coords="163,769,277,795"/>
-<area shape="rect" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="381,761,523,803"/>
-<area shape="rect" href="class_screen.html#a3bef9f197244caaa9c8ba605495b8476" title="渲染Gui" alt="" coords="154,1473,286,1499"/>
-<area shape="rect" href="class_render_system.html#a744c9a8ba4359b3353a6130f3af51fbb" title="每帧刷新" alt="" coords="141,1523,299,1550"/>
-<area shape="rect" href="namespace_im_gui.html#ab73131dc44b1267dac04f0c2bb0af983" title=" " alt="" coords="381,1447,523,1474"/>
-<area shape="rect" href="imgui__impl__glfw_8cpp.html#a206e99434f63c4b8e24e8a4208c11b65" title=" " alt="" coords="361,1650,543,1677"/>
-<area shape="rect" href="imgui__impl__opengl3_8cpp.html#a900e74add4e56e74f97a210eb329aa91" title=" " alt="" coords="347,1877,557,1903"/>
-<area shape="rect" href="imgui__impl__opengl3_8cpp.html#ad215190229f4f300593911aa7b3821de" title=" " alt="" coords="357,2029,547,2071"/>
-<area shape="rect" href="namespace_im_gui.html#ab3f1fc018f903b7ad79fd10663375774" title=" " alt="" coords="389,827,515,854"/>
-<area shape="rect" href="namespace_im_gui.html#ab51a164f547317c16c441f1599e3946d" title=" " alt="" coords="399,1498,505,1525"/>
-<area shape="rect" href="namespace_im_gui.html#a3179e560812f878f3961ce803a5d9302" title=" " alt="" coords="1176,1734,1275,1761"/>
-<area shape="rect" href="imgui__impl__glfw_8cpp.html#a42131482f4e35e879c2d58d5c1c9eb8f" title=" " alt="" coords="895,1759,1113,1786"/>
-<area shape="rect" href="imgui__impl__glfw_8cpp.html#a676d90dabe6acb909f287625118e999d" title=" " alt="" coords="893,1654,1115,1681"/>
-<area shape="rect" href="imgui__impl__glfw_8cpp.html#a5d18d4c51ba5df712307bc84efd3275f" title=" " alt="" coords="613,1549,824,1575"/>
-<area shape="rect" href="imgui__impl__glfw_8cpp.html#a876edf1a44dd8b6358feba912702a860" title=" " alt="" coords="619,1701,818,1743"/>
-<area shape="rect" href="imgui__impl__glfw_8cpp.html#ad0da3a1b2955f768fa933dd4edba33b6" title=" " alt="" coords="605,1818,832,1845"/>
-<area shape="rect" href="struct_im_vector.html#aab5df48e0711a48bd12f3206e08c4108" title=" " alt="" coords="931,878,1077,905"/>
-<area shape="rect" href="struct_im_vector.html#ac371dd62e56ae486b1a5038cf07eee56" title=" " alt="" coords="945,1093,1063,1119"/>
-<area shape="rect" href="imgui__impl__opengl3_8cpp.html#ab27f12289d6fe9fcd412f92af280b398" title=" " alt="" coords="625,1869,812,1911"/>
-<area shape="rect" href="imgui__impl__opengl3_8cpp.html#a68f1fea3ba16697f3febf6797cb5c85b" title=" " alt="" coords="880,1935,1128,1962"/>
-<area shape="rect" href="struct_im_draw_cmd.html#a8ba7df6d136db6e33d850acc9291224f" title=" " alt="" coords="641,2037,796,2063"/>
-<area shape="rect" href="imgui__impl__opengl3_8cpp.html#a328d27e0d40312d064adbc45c0cf240b" title=" " alt="" coords="607,2088,831,2129"/>
-<area shape="rect" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7" title=" " alt="" coords="982,2125,1026,2151"/>
-<area shape="rect" href="struct_im_rect.html#a68996cb6b16a023f0a051981cd5be89e" title=" " alt="" coords="671,827,766,854"/>
-<area shape="rect" href="namespace_im_gui.html#a581e58db0bc930bafa4a5d23093a2b99" title=" " alt="" coords="670,878,767,905"/>
-<area shape="rect" href="namespace_im_gui.html#a6b905269b079f5e07755db52cc6e52df" title=" " alt="" coords="901,929,1107,955"/>
-<area shape="rect" href="imgui__internal_8h.html#a7667efd95147d0422f140917c71a9226" title=" " alt="" coords="973,726,1035,753"/>
-<area shape="rect" href="namespace_im_gui.html#a61ced7f0dd38c604e895400a2e5eeeb2" title=" " alt="" coords="635,1498,803,1525"/>
-<area shape="rect" href="struct_im_draw_data.html#ab6a90612bd22eaff0d42539875e2e5c9" title=" " alt="" coords="653,1046,784,1073"/>
-<area shape="rect" href="namespace_im_gui.html#a17ff60ad1e2669130ac38a04d16eb354" title=" " alt="" coords="648,1097,789,1123"/>
-<area shape="rect" href="struct_im_bit_array.html#ae0cc61bba70a3f2994f28130d9de76f4" title=" " alt="" coords="639,1147,798,1174"/>
-<area shape="rect" href="namespace_im_gui.html#a3fd836d2bd3163537d1c36607e93ed6d" title=" " alt="" coords="618,980,819,1021"/>
-<area shape="rect" href="namespace_im_gui.html#a7f7a9ea28b0557a655c27375eb941a56" title=" " alt="" coords="618,1249,819,1291"/>
-<area shape="rect" href="struct_im_vector.html#a2f88ac70791f2da6d4168d7b29f38f1e" title=" " alt="" coords="661,1315,776,1342"/>
-<area shape="rect" href="namespace_im_gui.html#ab2ff55bf59d3ac2c58306bb9e353a99a" title=" " alt="" coords="623,1367,814,1408"/>
-<area shape="rect" href="namespace_im_gui.html#abc41033d9f60152a360017b292d5e9bc" title=" " alt="" coords="621,1432,817,1473"/>
-<area shape="rect" href="namespace_im_gui.html#aab0d052a1581fddc1cc2d9d981f487c0" title=" " alt="" coords="625,5,812,47"/>
-<area shape="rect" href="namespace_im_gui.html#a8386015888f38f2a33528ccbb34bd49d" title=" " alt="" coords="625,71,812,112"/>
-<area shape="rect" href="struct_im_pool.html#a0129c0e467c287a5a7441f2abe0baf35" title=" " alt="" coords="649,137,788,163"/>
-<area shape="rect" href="namespace_im_gui.html#a8344798d82c6baf9d94f81e445609eb2" title=" " alt="" coords="643,187,794,214"/>
-<area shape="rect" href="imgui__internal_8h.html#a7f9d7828066a9d61b5630adcdf4655d3" title=" " alt="" coords="690,238,747,265"/>
-<area shape="rect" href="struct_im_font.html#a97dafa61cc94e84be396d69b0d42b1ce" title=" " alt="" coords="943,398,1065,425"/>
-<area shape="rect" href="namespace_im_gui.html#a85a245c78a9f7c351636bdad6e60c488" title=" " alt="" coords="652,339,785,366"/>
-<area shape="rect" href="namespace_im_gui.html#aab7d3ffa460af6604421e8c2d8bdef19" title=" " alt="" coords="655,390,782,417"/>
-<area shape="rect" href="struct_im_draw_list_shared_data.html#adc947304370a6d5ee55a44190e923c8d" title=" " alt="" coords="616,441,821,483"/>
-<area shape="rect" href="namespace_im_gui.html#a4f83c0a884e07247a00700d3dd3d01e3" title=" " alt="" coords="643,507,795,534"/>
-<area shape="rect" href="namespace_im_gui.html#ab33717bb71ef5e393ae18656fc6b229d" title=" " alt="" coords="627,558,810,585"/>
-<area shape="rect" href="namespace_im_gui.html#af3cb65f8b45057e34fa7d9447a57eb28" title=" " alt="" coords="610,609,827,651"/>
-<area shape="rect" href="struct_im_rect.html#a2afeb24632fae3848977ff2772036200" title=" " alt="" coords="661,675,776,702"/>
-</map>
-</div>
-<div class="dynheader">
-这是这个函数的调用关系图:</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_ad52569b291dc1e2dda6c6a66945c50f4_icgraph.png" border="0" usemap="#amain_8cpp_ad52569b291dc1e2dda6c6a66945c50f4_icgraph" alt=""/></div>
-<map name="amain_8cpp_ad52569b291dc1e2dda6c6a66945c50f4_icgraph" id="amain_8cpp_ad52569b291dc1e2dda6c6a66945c50f4_icgraph">
-<area shape="rect" title=" " alt="" coords="111,5,199,32"/>
-<area shape="rect" href="main_8cpp.html#a3ac1fe7e6bd625ee388cee2dc03a2ebc" title=" " alt="" coords="5,5,63,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a1e3b6d38df0786ccf7f938d60e386aae" name="a1e3b6d38df0786ccf7f938d60e386aae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e3b6d38df0786ccf7f938d60e386aae">&#9670;&nbsp;</a></span>Init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> Init </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-函数调用图:</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_a1e3b6d38df0786ccf7f938d60e386aae_cgraph.png" border="0" usemap="#amain_8cpp_a1e3b6d38df0786ccf7f938d60e386aae_cgraph" alt=""/></div>
-<map name="amain_8cpp_a1e3b6d38df0786ccf7f938d60e386aae_cgraph" id="amain_8cpp_a1e3b6d38df0786ccf7f938d60e386aae_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,44,32"/>
-<area shape="rect" href="class_scene.html#a8a58a7c1acc53416d58dc0ed6c4fdaeb" title="在场景中寻找对象" alt="" coords="92,5,184,32"/>
-</map>
-</div>
-<div class="dynheader">
-这是这个函数的调用关系图:</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_a1e3b6d38df0786ccf7f938d60e386aae_icgraph.png" border="0" usemap="#amain_8cpp_a1e3b6d38df0786ccf7f938d60e386aae_icgraph" alt=""/></div>
-<map name="amain_8cpp_a1e3b6d38df0786ccf7f938d60e386aae_icgraph" id="amain_8cpp_a1e3b6d38df0786ccf7f938d60e386aae_icgraph">
-<area shape="rect" title=" " alt="" coords="111,5,149,32"/>
-<area shape="rect" href="main_8cpp.html#a3ac1fe7e6bd625ee388cee2dc03a2ebc" title=" " alt="" coords="5,5,63,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="aa48aaf412b9e33386433680c25b3883c" name="aa48aaf412b9e33386433680c25b3883c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa48aaf412b9e33386433680c25b3883c">&#9670;&nbsp;</a></span>key_callback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> key_callback </td>
-          <td>(</td>
-          <td class="paramtype">GLFWwindow *&#160;</td>
-          <td class="paramname"><em>window</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>key</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>scancode</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>action</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>mode</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
 
@@ -479,359 +100,27 @@ main.cpp 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
 <map name="amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
-<area shape="rect" title=" " alt="" coords="5,897,56,923"/>
-<area shape="rect" href="namespace_im_gui.html#a581e58db0bc930bafa4a5d23093a2b99" title=" " alt="" coords="386,491,483,518"/>
-<area shape="rect" href="namespace_im_gui.html#afbccd31113430670b5ab2bf0d6f509bf" title=" " alt="" coords="831,238,1011,265"/>
-<area shape="rect" href="namespace_im_gui.html#ab33717bb71ef5e393ae18656fc6b229d" title=" " alt="" coords="829,1023,1012,1050"/>
-<area shape="rect" href="namespace_im_gui.html#a7bf620af1d66ee7d7b06701894d23e60" title=" " alt="" coords="583,86,745,113"/>
-<area shape="rect" href="namespace_im_gui.html#a5db08f552118a1f946e19b5933dce181" title=" " alt="" coords="144,593,271,619"/>
-<area shape="rect" href="namespace_im_gui.html#a55cb9cfb9865204ac6fb21c965784f78" title=" " alt="" coords="119,86,296,113"/>
-<area shape="rect" href="namespace_im_gui.html#a5479d93794a004c67ceb6d13f37c8254" title=" " alt="" coords="391,137,478,163"/>
-<area shape="rect" href="namespace_im_gui.html#a1e55711a21f97d5dff919d697d3a7201" title=" " alt="" coords="143,643,272,670"/>
-<area shape="rect" href="namespace_im_gui.html#af8d34d563b17c683943a0fa7bf5807bc" title=" " alt="" coords="146,694,269,721"/>
-<area shape="rect" href="namespace_im_gui.html#a38094c568ce398db5a3abb9d3ac92030" title=" " alt="" coords="156,745,259,771"/>
-<area shape="rect" href="namespace_im_gui.html#ab52f9e08698c9d64abb05b98f5355146" title=" " alt="" coords="125,795,290,822"/>
-<area shape="rect" href="namespace_im_gui.html#aacc87878f9d14939bfbbaa2f719e910e" title=" " alt="" coords="142,390,273,417"/>
-<area shape="rect" href="namespace_im_gui.html#a14116e57d81e326adef2a702e65781d4" title=" " alt="" coords="366,187,503,214"/>
-<area shape="rect" href="namespace_im_gui.html#aab3f43009094462cf2a5eb554785949b" title=" " alt="" coords="363,1023,507,1050"/>
-<area shape="rect" href="namespace_im_gui.html#af8de559a88c1442d6df8c1b04c86e997" title=" " alt="" coords="149,137,265,163"/>
-<area shape="rect" href="namespace_im_gui.html#ab92f330c808546b340eb7bdf7e5f7c95" title=" " alt="" coords="124,187,291,214"/>
-<area shape="rect" href="namespace_im_gui.html#a1448a5a4e8c431c15f991e9255c0df95" title=" " alt="" coords="148,846,267,873"/>
-<area shape="rect" href="class_scene.html#a8a58a7c1acc53416d58dc0ed6c4fdaeb" title="在场景中寻找对象" alt="" coords="161,897,253,923"/>
-<area shape="rect" href="class_debug.html#aba43a04a085adda136af3ed7fa2593c9" title=" " alt="" coords="132,947,283,974"/>
-<area shape="rect" href="class_game_object.html#a5ba3b458e6bee6ea5aedd5c8cdeabf18" title="获取组件" alt="" coords="112,998,303,1025"/>
-<area shape="rect" href="class_application.html#aad6341d84e12538d084804cab5dcc8a9" title=" " alt="" coords="124,1049,291,1075"/>
-<area shape="rect" href="namespace_im_gui.html#a3329b04bd4235e90ad9deb00ffb38ae4" title=" " alt="" coords="159,1099,256,1126"/>
-<area shape="rect" href="namespace_im_gui.html#a3179e560812f878f3961ce803a5d9302" title=" " alt="" coords="158,1150,257,1177"/>
-<area shape="rect" href="class_camera.html#ad4af021f577c6326881c3596d76f99e9" title="获取透视矩阵" alt="" coords="130,1201,285,1227"/>
-<area shape="rect" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="359,1244,511,1285"/>
-<area shape="rect" href="class_camera.html#affa333055635aed96518c4c66be9a70c" title="获取观察矩阵" alt="" coords="127,1353,287,1379"/>
-<area shape="rect" href="namespace_im_gui.html#aaa5c0bfac7125ba9850a08b6db2e90c9" title=" " alt="" coords="129,1403,286,1430"/>
-<area shape="rect" href="namespace_im_gui.html#ad8705ac3b718c1b2e84e7b8c34f90249" title=" " alt="" coords="158,1454,257,1481"/>
-<area shape="rect" href="class_application.html#a276388f7090c0a2b1c8b16cf033b969d" title=" " alt="" coords="152,1505,263,1531"/>
-<area shape="rect" href="class_debug.html#af74e4b59f00db09b7d39625da34f7eef" title=" " alt="" coords="165,1555,249,1582"/>
-<area shape="rect" href="namespace_im_gui.html#aa1bae511ca47478998693a9d8c84f2e6" title=" " alt="" coords="147,1606,268,1633"/>
-<area shape="rect" href="class_application.html#aaf09cd6cb412086dc039e28cdb059f0d" title=" " alt="" coords="149,1657,266,1683"/>
-<area shape="rect" href="namespace_im_gui.html#ac8ebacf97bce7f8a5e62fef85755a734" title=" " alt="" coords="104,1707,311,1734"/>
-<area shape="rect" href="class_game_loop.html#a20f1ceaadef4b39b18300530f7af389f" title="设置回调" alt="" coords="105,1758,309,1785"/>
-<area shape="rect" href="class_game_loop.html#a038d7e76b450c82959c3dae6f86f1a61" title="开始游戏循环" alt="" coords="133,1251,282,1278"/>
-<area shape="rect" href="struct_im_draw_list.html#a5f78fe195b2507e5926560f591141ff3" title=" " alt="" coords="575,593,753,635"/>
-<area shape="rect" href="namespace_im_gui.html#ada58e5d3e2efc3cef60f213d771408d8" title=" " alt="" coords="575,659,753,686"/>
-<area shape="rect" href="struct_im_vector.html#a2d80e87e81b1b01143c8d8be93e6fde1" title=" " alt="" coords="609,137,719,163"/>
-<area shape="rect" href="namespace_im_gui.html#a7a435b1565d4884e42a5ee5667f21a1f" title=" " alt="" coords="575,711,753,752"/>
-<area shape="rect" href="namespace_im_gui.html#a1725ff3becdb963b97c16d69d4c9f308" title=" " alt="" coords="575,776,753,817"/>
-<area shape="rect" href="namespace_im_gui.html#a627bb85e7c0ab597360f63719bfb1e55" title=" " alt="" coords="593,973,735,999"/>
-<area shape="rect" href="namespace_im_gui.html#a8cae2f7a08f820a8d5349d1964603b20" title=" " alt="" coords="565,841,763,883"/>
-<area shape="rect" href="imgui_8cpp.html#a07abb80a54115cb5cf9da03351e29533" title=" " alt="" coords="579,907,749,948"/>
-<area shape="rect" href="imgui_8cpp.html#acbe6338daf87dc6ab636f02f1367eb41" title=" " alt="" coords="583,289,745,315"/>
-<area shape="rect" href="imgui_8cpp.html#a0c4618a6985c33c4936f1d9f1c7b26b4" title=" " alt="" coords="817,314,1024,341"/>
-<area shape="rect" href="imgui_8cpp.html#a6eddef51b4880a9f1dca88837f71fc6e" title=" " alt="" coords="578,390,750,417"/>
-<area shape="rect" href="struct_im_draw_list.html#aba9e93d0bf1c3884beb726e96360d2e2" title=" " alt="" coords="559,441,769,467"/>
-<area shape="rect" href="struct_im_draw_list.html#acd7bcb6c4c5043876cfc169a98abc24a" title=" " alt="" coords="577,491,751,518"/>
-<area shape="rect" href="imgui_8cpp.html#a404bde03a9c524d44b822354c6f9ad4a" title=" " alt="" coords="598,542,730,569"/>
+<area shape="rect" title=" " alt="" coords="5,382,56,408"/>
+<area shape="rect" href="class_application.html#a5378330e10e42fcb9a2269b533759b0f" title="运行应用" alt="" coords="104,280,244,307"/>
+<area shape="rect" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="485,421,660,462"/>
+<area shape="rect" href="class_application.html#a091df3ec4695b64249e57a76c93b6612" title="初始化应用" alt="" coords="292,244,427,271"/>
+<area shape="rect" href="class_debug.html#aba43a04a085adda136af3ed7fa2593c9" title=" " alt="" coords="742,16,893,43"/>
+<area shape="rect" href="class_input.html#af80dcfde6dbfe39bf3bc0345c75595ce" title=" " alt="" coords="310,315,409,342"/>
+<area shape="rect" href="class_editor_layer.html#ae6f0a2ebee383c130bd96268b95b1b19" title="获取编辑器摄像机" alt="" coords="475,143,671,170"/>
+<area shape="rect" href="class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="975,194,1142,220"/>
+<area shape="rect" href="class_asset_importer.html#a2b95bafd62ab55bf0c83a4928aee3d91" title=" " alt="" coords="509,194,637,220"/>
+<area shape="rect" href="class_input.html#a5197114da7299198826ff7277ee12bff" title=" " alt="" coords="535,42,610,68"/>
+<area shape="rect" href="class_application.html#a1d31824bbed36791a15243852d18669a" title="处理事件" alt="" coords="501,319,644,346"/>
+<area shape="rect" href="class_application.html#a7c47dfc920cb1be81474b297b8e3b4c7" title=" " alt="" coords="489,370,656,396"/>
+<area shape="rect" href="class_render_system.html#acf71a2b40bd01841db74a4a75befc78b" title="设置当前摄像机" alt="" coords="482,92,663,119"/>
+<area shape="rect" href="class_asset_importer.html#a6849837d993ae78b78b65fa7dfe55732" title=" " alt="" coords="728,143,907,170"/>
+<area shape="rect" href="class_asset_importer.html#a7e9906057d69bd51ffebcc4759b2fc37" title=" " alt="" coords="964,143,1153,170"/>
+<area shape="rect" href="class_asset_importer.html#a6c9eacf9c08d7014f10a277b47873c78" title=" " alt="" coords="1201,143,1392,170"/>
+<area shape="rect" href="class_event_dispatcher.html#aa52657a74c2be46ec503b3ad8fc469d1" title="判断事件类型是否符合" alt="" coords="730,307,905,334"/>
+<area shape="rect" href="class_application.html#a7da658ad03aa7614f3a24ef738b57f32" title="窗口关闭时" alt="" coords="719,358,916,384"/>
+<area shape="rect" href="class_event_base.html#a91f4adadacab79ddf2c64b92057a6cc6" title=" " alt="" coords="972,307,1145,334"/>
 </map>
 </div>
-
-</div>
-</div>
-<a id="af4ca2891044ac10a664b8d83ce590f1f" name="af4ca2891044ac10a664b8d83ce590f1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4ca2891044ac10a664b8d83ce590f1f">&#9670;&nbsp;</a></span>mouse_callback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> mouse_callback </td>
-          <td>(</td>
-          <td class="paramtype">GLFWwindow *&#160;</td>
-          <td class="paramname"><em>window</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>xpos</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>ypos</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a06ad2502008f16fbcf01dfaa7f7bc9ea" name="a06ad2502008f16fbcf01dfaa7f7bc9ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06ad2502008f16fbcf01dfaa7f7bc9ea">&#9670;&nbsp;</a></span>scroll_callback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> scroll_callback </td>
-          <td>(</td>
-          <td class="paramtype">GLFWwindow *&#160;</td>
-          <td class="paramname"><em>window</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>xoffset</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>yoffset</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3ac1fe7e6bd625ee388cee2dc03a2ebc" name="a3ac1fe7e6bd625ee388cee2dc03a2ebc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ac1fe7e6bd625ee388cee2dc03a2ebc">&#9670;&nbsp;</a></span>smain()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int smain </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-函数调用图:</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_a3ac1fe7e6bd625ee388cee2dc03a2ebc_cgraph.png" border="0" usemap="#amain_8cpp_a3ac1fe7e6bd625ee388cee2dc03a2ebc_cgraph" alt=""/></div>
-<map name="amain_8cpp_a3ac1fe7e6bd625ee388cee2dc03a2ebc_cgraph" id="amain_8cpp_a3ac1fe7e6bd625ee388cee2dc03a2ebc_cgraph">
-<area shape="rect" title=" " alt="" coords="5,512,63,539"/>
-<area shape="rect" href="main_8cpp.html#a7f9c9db8e4782d31531eb6b8528fb373" title=" " alt="" coords="161,259,264,285"/>
-<area shape="rect" href="main_8cpp.html#ad52569b291dc1e2dda6c6a66945c50f4" title=" " alt="" coords="169,411,257,437"/>
-<area shape="rect" href="class_game_object.html#a5ba3b458e6bee6ea5aedd5c8cdeabf18" title="获取组件" alt="" coords="117,461,308,488"/>
-<area shape="rect" href="class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="129,512,296,539"/>
-<area shape="rect" href="class_camera.html#ad4af021f577c6326881c3596d76f99e9" title="获取透视矩阵" alt="" coords="364,216,519,243"/>
-<area shape="rect" href="class_camera.html#affa333055635aed96518c4c66be9a70c" title="获取观察矩阵" alt="" coords="133,563,293,589"/>
-<area shape="rect" href="class_debug.html#af74e4b59f00db09b7d39625da34f7eef" title=" " alt="" coords="171,613,255,640"/>
-<area shape="rect" href="main_8cpp.html#a1e3b6d38df0786ccf7f938d60e386aae" title=" " alt="" coords="193,664,232,691"/>
-<area shape="rect" href="class_game_loop.html#ae052f50397336f1b56f990248afc443e" title="设置回调" alt="" coords="119,715,306,757"/>
-<area shape="rect" href="class_game_loop.html#a20f1ceaadef4b39b18300530f7af389f" title="设置回调" alt="" coords="111,781,315,808"/>
-<area shape="rect" href="class_game_loop.html#a038d7e76b450c82959c3dae6f86f1a61" title="开始游戏循环" alt="" coords="367,267,516,293"/>
-<area shape="rect" href="class_screen.html#a3581d87da7784de9d3eb0ff0b4d44744" title="显示窗口" alt="" coords="384,317,499,344"/>
-<area shape="rect" href="class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="603,209,744,250"/>
-<area shape="rect" href="class_screen.html#a3bef9f197244caaa9c8ba605495b8476" title="渲染Gui" alt="" coords="375,531,507,557"/>
-<area shape="rect" href="class_render_system.html#a744c9a8ba4359b3353a6130f3af51fbb" title="每帧刷新" alt="" coords="363,443,520,469"/>
-<area shape="rect" href="namespace_im_gui.html#ab73131dc44b1267dac04f0c2bb0af983" title=" " alt="" coords="603,1033,744,1060"/>
-<area shape="rect" href="imgui__impl__glfw_8cpp.html#a206e99434f63c4b8e24e8a4208c11b65" title=" " alt="" coords="583,275,764,301"/>
-<area shape="rect" href="imgui__impl__opengl3_8cpp.html#a900e74add4e56e74f97a210eb329aa91" title=" " alt="" coords="568,392,779,419"/>
-<area shape="rect" href="imgui__impl__opengl3_8cpp.html#ad215190229f4f300593911aa7b3821de" title=" " alt="" coords="578,523,769,565"/>
-<area shape="rect" href="namespace_im_gui.html#ab3f1fc018f903b7ad79fd10663375774" title=" " alt="" coords="610,983,737,1009"/>
-<area shape="rect" href="namespace_im_gui.html#ab51a164f547317c16c441f1599e3946d" title=" " alt="" coords="621,1095,726,1121"/>
-<area shape="rect" href="namespace_im_gui.html#a3179e560812f878f3961ce803a5d9302" title=" " alt="" coords="1397,199,1496,225"/>
-<area shape="rect" href="imgui__impl__glfw_8cpp.html#a42131482f4e35e879c2d58d5c1c9eb8f" title=" " alt="" coords="1116,72,1335,99"/>
-<area shape="rect" href="imgui__impl__glfw_8cpp.html#a676d90dabe6acb909f287625118e999d" title=" " alt="" coords="1114,224,1337,251"/>
-<area shape="rect" href="imgui__impl__glfw_8cpp.html#a5d18d4c51ba5df712307bc84efd3275f" title=" " alt="" coords="835,5,1045,32"/>
-<area shape="rect" href="imgui__impl__glfw_8cpp.html#a876edf1a44dd8b6358feba912702a860" title=" " alt="" coords="841,107,1039,149"/>
-<area shape="rect" href="imgui__impl__glfw_8cpp.html#ad0da3a1b2955f768fa933dd4edba33b6" title=" " alt="" coords="827,173,1053,200"/>
-<area shape="rect" href="imgui__impl__opengl3_8cpp.html#ab27f12289d6fe9fcd412f92af280b398" title=" " alt="" coords="847,326,1033,367"/>
-<area shape="rect" href="imgui__impl__opengl3_8cpp.html#a68f1fea3ba16697f3febf6797cb5c85b" title=" " alt="" coords="1101,392,1349,419"/>
-<area shape="rect" href="struct_im_draw_cmd.html#a8ba7df6d136db6e33d850acc9291224f" title=" " alt="" coords="863,560,1017,587"/>
-<area shape="rect" href="imgui__impl__opengl3_8cpp.html#a328d27e0d40312d064adbc45c0cf240b" title=" " alt="" coords="828,494,1052,535"/>
-<area shape="rect" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7" title=" " alt="" coords="1203,556,1247,583"/>
-<area shape="rect" href="struct_im_rect.html#a68996cb6b16a023f0a051981cd5be89e" title=" " alt="" coords="893,1041,987,1068"/>
-<area shape="rect" href="namespace_im_gui.html#a581e58db0bc930bafa4a5d23093a2b99" title=" " alt="" coords="891,1092,989,1119"/>
-<area shape="rect" href="namespace_im_gui.html#a61ced7f0dd38c604e895400a2e5eeeb2" title=" " alt="" coords="856,1361,1024,1388"/>
-<area shape="rect" href="struct_im_draw_data.html#ab6a90612bd22eaff0d42539875e2e5c9" title=" " alt="" coords="875,1143,1005,1169"/>
-<area shape="rect" href="namespace_im_gui.html#a17ff60ad1e2669130ac38a04d16eb354" title=" " alt="" coords="869,1193,1011,1220"/>
-<area shape="rect" href="struct_im_bit_array.html#ae0cc61bba70a3f2994f28130d9de76f4" title=" " alt="" coords="861,1244,1019,1271"/>
-<area shape="rect" href="namespace_im_gui.html#a3fd836d2bd3163537d1c36607e93ed6d" title=" " alt="" coords="839,1295,1041,1337"/>
-<area shape="rect" href="namespace_im_gui.html#a7f7a9ea28b0557a655c27375eb941a56" title=" " alt="" coords="839,662,1041,703"/>
-<area shape="rect" href="struct_im_vector.html#a2f88ac70791f2da6d4168d7b29f38f1e" title=" " alt="" coords="883,728,997,755"/>
-<area shape="rect" href="namespace_im_gui.html#ab2ff55bf59d3ac2c58306bb9e353a99a" title=" " alt="" coords="845,779,1035,821"/>
-<area shape="rect" href="namespace_im_gui.html#abc41033d9f60152a360017b292d5e9bc" title=" " alt="" coords="842,845,1038,886"/>
-<area shape="rect" href="namespace_im_gui.html#aab0d052a1581fddc1cc2d9d981f487c0" title=" " alt="" coords="847,910,1033,951"/>
-<area shape="rect" href="namespace_im_gui.html#a8386015888f38f2a33528ccbb34bd49d" title=" " alt="" coords="847,975,1033,1017"/>
-<area shape="rect" href="class_transform.html#af0d0e8f8c55b67c115a5449f225f53e6" title="获取向前方向" alt="" coords="871,1412,1009,1439"/>
-<area shape="rect" href="class_transform.html#a9d87de590be3b413b962ca5a1c90c0ef" title="获取向上方向" alt="" coords="379,1219,503,1245"/>
-<area shape="rect" href="class_transform.html#a7e34c4791358814412983d8606cc4cdf" title="获取向右方向" alt="" coords="604,1324,743,1351"/>
-<area shape="rect" href="class_scene.html#a8a58a7c1acc53416d58dc0ed6c4fdaeb" title="在场景中寻找对象" alt="" coords="395,1269,487,1296"/>
-</map>
-</div>
-
-</div>
-</div>
-<h2 class="groupheader">变量说明</h2>
-<a id="af95833c961e5bd20dcd54e1d46a03c0b" name="af95833c961e5bd20dcd54e1d46a03c0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af95833c961e5bd20dcd54e1d46a03c0b">&#9670;&nbsp;</a></span>camera</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_camera.html">Camera</a>* camera</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aca303a1e6cf29fc7a1155c7237197b51" name="aca303a1e6cf29fc7a1155c7237197b51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca303a1e6cf29fc7a1155c7237197b51">&#9670;&nbsp;</a></span>cameraObject</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">shared_ptr&lt;<a class="el" href="class_game_object.html">GameObject</a>&gt; cameraObject</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac14b15e54f3c25aa1a766a82f1aeb341" name="ac14b15e54f3c25aa1a766a82f1aeb341"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac14b15e54f3c25aa1a766a82f1aeb341">&#9670;&nbsp;</a></span>currentObj</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="class_game_object.html">GameObject</a>&gt; currentObj</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a06a8706e3fc2d1d7bae9fe0ef2846752" name="a06a8706e3fc2d1d7bae9fe0ef2846752"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06a8706e3fc2d1d7bae9fe0ef2846752">&#9670;&nbsp;</a></span>currentScene</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_scene.html">Scene</a>* currentScene</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a85a82635c1e0c0d184050788cba2c656" name="a85a82635c1e0c0d184050788cba2c656"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85a82635c1e0c0d184050788cba2c656">&#9670;&nbsp;</a></span>fbo</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#a68c4714e43d8e827d80759f9cb864f3c">GLuint</a> fbo</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac21731ba101e28334c34543121caa841" name="ac21731ba101e28334c34543121caa841"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac21731ba101e28334c34543121caa841">&#9670;&nbsp;</a></span>firstMouse</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool firstMouse = true</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3a217745c5eebfcdb3e21cbc9bcdc07a" name="a3a217745c5eebfcdb3e21cbc9bcdc07a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a217745c5eebfcdb3e21cbc9bcdc07a">&#9670;&nbsp;</a></span>keys</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool keys[1024]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2e16a74f44432ba28cfc03e1f2fae336" name="a2e16a74f44432ba28cfc03e1f2fae336"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e16a74f44432ba28cfc03e1f2fae336">&#9670;&nbsp;</a></span>lastX</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#a836cf6377099e88abf24c255b5b0ac52">GLfloat</a> lastX</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af9b48b88a5ab39920f21309262086ef0" name="af9b48b88a5ab39920f21309262086ef0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9b48b88a5ab39920f21309262086ef0">&#9670;&nbsp;</a></span>lastY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#a836cf6377099e88abf24c255b5b0ac52">GLfloat</a> lastY</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2367a09754e5f98b72796de75b7a1591" name="a2367a09754e5f98b72796de75b7a1591"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2367a09754e5f98b72796de75b7a1591">&#9670;&nbsp;</a></span>loop</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_game_loop.html">GameLoop</a> loop(60) </td>
-          <td>(</td>
-          <td class="paramtype">60&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a205162c8d635872826fda3abe9f8e295" name="a205162c8d635872826fda3abe9f8e295"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a205162c8d635872826fda3abe9f8e295">&#9670;&nbsp;</a></span>object</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">shared_ptr&lt;<a class="el" href="class_game_object.html">GameObject</a>&gt; object</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>

@@ -1,0 +1,18 @@
+<map id="EditorLayer::EditorLayer" name="EditorLayer::EditorLayer">
+<area shape="rect" id="node1" title=" " alt="" coords="5,340,168,367"/>
+<area shape="rect" id="node2" href="$class_editor_layer.html#ae6f0a2ebee383c130bd96268b95b1b19" title="获取编辑器摄像机" alt="" coords="221,5,417,32"/>
+<area shape="rect" id="node3" href="$class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="236,56,403,83"/>
+<area shape="rect" id="node4" href="$class_input.html#a4094d923afac36af9f05c18f984d107f" title=" " alt="" coords="252,107,387,133"/>
+<area shape="rect" id="node5" href="$class_reflection_manager.html#a2e46547856970f9dfa780291a254ed24" title=" " alt="" coords="239,158,400,199"/>
+<area shape="rect" id="node6" href="$class_reflection_manager.html#a905fe98183914a00ee6ff809f4ef7992" title=" " alt="" coords="242,223,397,265"/>
+<area shape="rect" id="node7" href="$class_input.html#ac707d3d56d521674485677c85c67d9b5" title=" " alt="" coords="241,289,397,316"/>
+<area shape="rect" id="node8" href="$class_input.html#aa96b37ceccba6684125fef6fdb8776e4" title=" " alt="" coords="225,340,413,367"/>
+<area shape="rect" id="node9" href="$class_camera.html#ad4af021f577c6326881c3596d76f99e9" title="获取透视矩阵" alt="" coords="242,391,397,417"/>
+<area shape="rect" id="node10" href="$class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="471,446,623,487"/>
+<area shape="rect" id="node11" href="$class_camera.html#affa333055635aed96518c4c66be9a70c" title="获取观察矩阵" alt="" coords="239,567,399,593"/>
+<area shape="rect" id="node15" href="$class_input.html#ab1780ef990d2434b6f8302613a7547f1" title=" " alt="" coords="259,516,379,543"/>
+<area shape="rect" id="node16" href="$class_imgui_layer.html#a43530d88ce55849d8b9dd2617435cf8a" title=" " alt="" coords="216,617,423,644"/>
+<area shape="rect" id="node12" href="$class_transform.html#af0d0e8f8c55b67c115a5449f225f53e6" title="获取向前方向" alt="" coords="857,592,996,619"/>
+<area shape="rect" id="node13" href="$class_transform.html#a9d87de590be3b413b962ca5a1c90c0ef" title="获取向上方向" alt="" coords="485,592,609,619"/>
+<area shape="rect" id="node14" href="$class_transform.html#a7e34c4791358814412983d8606cc4cdf" title="获取向右方向" alt="" coords="671,643,809,669"/>
+</map>

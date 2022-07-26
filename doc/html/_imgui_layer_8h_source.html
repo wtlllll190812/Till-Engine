@@ -9,9 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,8 +17,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Till_Engine.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TillEngine
+   <div id="projectname">TillEngine<span id="projectnumber">&#160;0.19</span>
    </div>
   </td>
  </tr>
@@ -30,36 +28,19 @@
 </div>
 <!-- end header part -->
 <!-- 制作者 Doxygen 1.9.4 -->
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
-/* @license-end */
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
-</div>
-
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
 <div id="nav-path" class="navpath">
   <ul>
 <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_20710c122024ce30c429f68e332d154a.html">Layer</a></li>  </ul>
@@ -69,11 +50,11 @@ $(function() {
   <div class="headertitle"><div class="title">ImguiLayer.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;Layer.h&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;KeyEvent.h&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;MouseEvent.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;ApplicationEvent.h&quot;</span></div>
+<a href="_imgui_layer_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_layer_8h.html">Layer.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="_key_event_8h.html">KeyEvent.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_mouse_event_8h.html">MouseEvent.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_application_event_8h.html">ApplicationEvent.h</a>&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
@@ -82,36 +63,60 @@ $(function() {
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_imgui_layer.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="class_imgui_layer.html">ImguiLayer</a> :<span class="keyword">public</span> <a class="code hl_class" href="class_layer.html">Layer</a></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_class" href="class_imgui_layer.html">ImguiLayer</a>();</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_class" href="class_imgui_layer.html">~ImguiLayer</a>();</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">void</span> OnAttack()<span class="keyword">override</span>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">void</span> OnDetach()<span class="keyword">override</span>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">void</span> OnEvent(<a class="code hl_class" href="class_event_base.html">EventBase</a>&amp; event)<span class="keyword">override</span>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> RegisterGuiWindow(std::shared_ptr&lt;GuiWindow&gt;);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnUpdate()<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_function" href="class_imgui_layer.html#ad02f617b4d56845f07a999f1251c1097">ImguiLayer</a>();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_function" href="class_imgui_layer.html#ab099f09c4ff88d0a283e68e2e41540d5">~ImguiLayer</a>();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_imgui_layer.html#a1562d5da90335d2f5c7757801d7e9377">OnAttack</a>()<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_imgui_layer.html#a06e8812d7144d1fa6c154d43d7372d97">OnDetach</a>()<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_imgui_layer.html#ade36001fdd1861e19dadc2d32d5e7bd5">OnEvent</a>(<a class="code hl_class" href="class_event_base.html">EventBase</a>&amp; event)<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_imgui_layer.html#a43530d88ce55849d8b9dd2617435cf8a">RegisterGuiWindow</a>(std::shared_ptr&lt;GuiWindow&gt;);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_imgui_layer.html#aa98053a216128343d985192439323544">OnUpdate</a>()<span class="keyword">override</span>;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> RenderStart();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> RenderEnd();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> ImGuiInit();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_imgui_layer.html#a7c94ff83e9809b1a158e890920daed20">RenderStart</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_imgui_layer.html#aadd4f1314d523328cc8a2d40165611e0">RenderEnd</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_imgui_layer.html#ae5d6495ed844751709b98c329692ba9a">ImGuiInit</a>();</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> OnMouseButtonPressedEvent(<a class="code hl_class" href="class_mouse_button_pressed_event.html">MouseButtonPressedEvent</a>&amp; e);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> OnMouseButtonReleasedEvent(<a class="code hl_class" href="class_mouse_button_released_event.html">MouseButtonReleasedEvent</a>&amp; e);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> OnMouseMovedEvent(<a class="code hl_class" href="class_mouse_moved_event.html">MouseMovedEvent</a>&amp; e);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> OnMouseScrolledEvent(<a class="code hl_class" href="class_mouse_scrolled_event.html">MouseScrolledEvent</a>&amp; e);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> OnKeyPressedEvent(<a class="code hl_class" href="class_key_pressed_event.html">KeyPressedEvent</a>&amp; e);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> OnKeyReleasedEvent(<a class="code hl_class" href="class_key_released_event.html">KeyReleasedEvent</a>&amp; e);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> OnKeyTypedEvent(<a class="code hl_class" href="class_key_pressed_event.html">KeyPressedEvent</a>&amp; e);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> OnWindowResizeEvent(<a class="code hl_class" href="class_window_resize_event.html">WindowResizeEvent</a>&amp; e);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_imgui_layer.html#a1d4a95519a5ebc1d7e229c376096b059">OnMouseButtonPressedEvent</a>(<a class="code hl_class" href="class_mouse_button_pressed_event.html">MouseButtonPressedEvent</a>&amp; e);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_imgui_layer.html#a368d0e869c0520ee085f82f9b7389aa1">OnMouseButtonReleasedEvent</a>(<a class="code hl_class" href="class_mouse_button_released_event.html">MouseButtonReleasedEvent</a>&amp; e);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_imgui_layer.html#a2fcfcc4f206dca3f12a0dbca26186aa2">OnMouseMovedEvent</a>(<a class="code hl_class" href="class_mouse_moved_event.html">MouseMovedEvent</a>&amp; e);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_imgui_layer.html#a090711e0e18f621c4c9af4ea44fa443a">OnMouseScrolledEvent</a>(<a class="code hl_class" href="class_mouse_scrolled_event.html">MouseScrolledEvent</a>&amp; e);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_imgui_layer.html#a5fa8dfce443a983133d953af55a377f6">OnKeyPressedEvent</a>(<a class="code hl_class" href="class_key_pressed_event.html">KeyPressedEvent</a>&amp; e);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_imgui_layer.html#ac6e6a5e4ebd45b8012cab448074aa91e">OnKeyReleasedEvent</a>(<a class="code hl_class" href="class_key_released_event.html">KeyReleasedEvent</a>&amp; e);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_imgui_layer.html#ab11e32ee191388e11444da6af20817c0">OnKeyTypedEvent</a>(<a class="code hl_class" href="class_key_pressed_event.html">KeyPressedEvent</a>&amp; e);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_imgui_layer.html#a23c057937f4d3e54a4538ae6feead348">OnWindowResizeEvent</a>(<a class="code hl_class" href="class_window_resize_event.html">WindowResizeEvent</a>&amp; e);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    std::vector&lt;std::shared_ptr&lt;GuiWindow&gt;&gt; uiWindows;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">float</span> mTime = 0;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_imgui_layer.html#a36a760d7ac4b5a422fd4ab9968a29440">   38</a></span>    std::vector&lt;std::shared_ptr&lt;GuiWindow&gt;&gt; <a class="code hl_variable" href="class_imgui_layer.html#a36a760d7ac4b5a422fd4ab9968a29440">uiWindows</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_imgui_layer.html#ab1c2ca0d2f28bd3a0e56f565254112c7">   39</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_imgui_layer.html#ab1c2ca0d2f28bd3a0e56f565254112c7">mTime</a> = 0;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
+<div class="ttc" id="a_application_event_8h_html"><div class="ttname"><a href="_application_event_8h.html">ApplicationEvent.h</a></div></div>
+<div class="ttc" id="a_key_event_8h_html"><div class="ttname"><a href="_key_event_8h.html">KeyEvent.h</a></div></div>
+<div class="ttc" id="a_layer_8h_html"><div class="ttname"><a href="_layer_8h.html">Layer.h</a></div></div>
+<div class="ttc" id="a_mouse_event_8h_html"><div class="ttname"><a href="_mouse_event_8h.html">MouseEvent.h</a></div></div>
 <div class="ttc" id="aclass_event_base_html"><div class="ttname"><a href="class_event_base.html">EventBase</a></div><div class="ttdoc">事件类基类</div><div class="ttdef"><b>Definition:</b> EventBase.h:52</div></div>
 <div class="ttc" id="aclass_gui_window_html"><div class="ttname"><a href="class_gui_window.html">GuiWindow</a></div><div class="ttdef"><b>Definition:</b> GuiWindow.h:5</div></div>
 <div class="ttc" id="aclass_imgui_layer_html"><div class="ttname"><a href="class_imgui_layer.html">ImguiLayer</a></div><div class="ttdef"><b>Definition:</b> ImguiLayer.h:12</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_a06e8812d7144d1fa6c154d43d7372d97"><div class="ttname"><a href="class_imgui_layer.html#a06e8812d7144d1fa6c154d43d7372d97">ImguiLayer::OnDetach</a></div><div class="ttdeci">void OnDetach() override</div><div class="ttdef"><b>Definition:</b> ImguiLayer.cpp:29</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_a090711e0e18f621c4c9af4ea44fa443a"><div class="ttname"><a href="class_imgui_layer.html#a090711e0e18f621c4c9af4ea44fa443a">ImguiLayer::OnMouseScrolledEvent</a></div><div class="ttdeci">virtual bool OnMouseScrolledEvent(MouseScrolledEvent &amp;e)</div><div class="ttdef"><b>Definition:</b> ImguiLayer.cpp:88</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_a1562d5da90335d2f5c7757801d7e9377"><div class="ttname"><a href="class_imgui_layer.html#a1562d5da90335d2f5c7757801d7e9377">ImguiLayer::OnAttack</a></div><div class="ttdeci">void OnAttack() override</div><div class="ttdef"><b>Definition:</b> ImguiLayer.cpp:24</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_a1d4a95519a5ebc1d7e229c376096b059"><div class="ttname"><a href="class_imgui_layer.html#a1d4a95519a5ebc1d7e229c376096b059">ImguiLayer::OnMouseButtonPressedEvent</a></div><div class="ttdeci">virtual bool OnMouseButtonPressedEvent(MouseButtonPressedEvent &amp;e)</div><div class="ttdef"><b>Definition:</b> ImguiLayer.cpp:65</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_a23c057937f4d3e54a4538ae6feead348"><div class="ttname"><a href="class_imgui_layer.html#a23c057937f4d3e54a4538ae6feead348">ImguiLayer::OnWindowResizeEvent</a></div><div class="ttdeci">virtual bool OnWindowResizeEvent(WindowResizeEvent &amp;e)</div><div class="ttdef"><b>Definition:</b> ImguiLayer.cpp:125</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_a2fcfcc4f206dca3f12a0dbca26186aa2"><div class="ttname"><a href="class_imgui_layer.html#a2fcfcc4f206dca3f12a0dbca26186aa2">ImguiLayer::OnMouseMovedEvent</a></div><div class="ttdeci">virtual bool OnMouseMovedEvent(MouseMovedEvent &amp;e)</div><div class="ttdef"><b>Definition:</b> ImguiLayer.cpp:81</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_a368d0e869c0520ee085f82f9b7389aa1"><div class="ttname"><a href="class_imgui_layer.html#a368d0e869c0520ee085f82f9b7389aa1">ImguiLayer::OnMouseButtonReleasedEvent</a></div><div class="ttdeci">virtual bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent &amp;e)</div><div class="ttdef"><b>Definition:</b> ImguiLayer.cpp:73</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_a36a760d7ac4b5a422fd4ab9968a29440"><div class="ttname"><a href="class_imgui_layer.html#a36a760d7ac4b5a422fd4ab9968a29440">ImguiLayer::uiWindows</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; GuiWindow &gt; &gt; uiWindows</div><div class="ttdef"><b>Definition:</b> ImguiLayer.h:38</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_a43530d88ce55849d8b9dd2617435cf8a"><div class="ttname"><a href="class_imgui_layer.html#a43530d88ce55849d8b9dd2617435cf8a">ImguiLayer::RegisterGuiWindow</a></div><div class="ttdeci">void RegisterGuiWindow(std::shared_ptr&lt; GuiWindow &gt;)</div><div class="ttdef"><b>Definition:</b> ImguiLayer.cpp:60</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_a5fa8dfce443a983133d953af55a377f6"><div class="ttname"><a href="class_imgui_layer.html#a5fa8dfce443a983133d953af55a377f6">ImguiLayer::OnKeyPressedEvent</a></div><div class="ttdeci">virtual bool OnKeyPressedEvent(KeyPressedEvent &amp;e)</div><div class="ttdef"><b>Definition:</b> ImguiLayer.cpp:96</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_a7c94ff83e9809b1a158e890920daed20"><div class="ttname"><a href="class_imgui_layer.html#a7c94ff83e9809b1a158e890920daed20">ImguiLayer::RenderStart</a></div><div class="ttdeci">void RenderStart()</div><div class="ttdef"><b>Definition:</b> ImguiLayer.cpp:134</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_aa98053a216128343d985192439323544"><div class="ttname"><a href="class_imgui_layer.html#aa98053a216128343d985192439323544">ImguiLayer::OnUpdate</a></div><div class="ttdeci">virtual void OnUpdate() override</div><div class="ttdef"><b>Definition:</b> ImguiLayer.cpp:36</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_aadd4f1314d523328cc8a2d40165611e0"><div class="ttname"><a href="class_imgui_layer.html#aadd4f1314d523328cc8a2d40165611e0">ImguiLayer::RenderEnd</a></div><div class="ttdeci">void RenderEnd()</div><div class="ttdef"><b>Definition:</b> ImguiLayer.cpp:148</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_ab099f09c4ff88d0a283e68e2e41540d5"><div class="ttname"><a href="class_imgui_layer.html#ab099f09c4ff88d0a283e68e2e41540d5">ImguiLayer::~ImguiLayer</a></div><div class="ttdeci">~ImguiLayer()</div><div class="ttdef"><b>Definition:</b> ImguiLayer.cpp:20</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_ab11e32ee191388e11444da6af20817c0"><div class="ttname"><a href="class_imgui_layer.html#ab11e32ee191388e11444da6af20817c0">ImguiLayer::OnKeyTypedEvent</a></div><div class="ttdeci">virtual bool OnKeyTypedEvent(KeyPressedEvent &amp;e)</div><div class="ttdef"><b>Definition:</b> ImguiLayer.cpp:116</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_ab1c2ca0d2f28bd3a0e56f565254112c7"><div class="ttname"><a href="class_imgui_layer.html#ab1c2ca0d2f28bd3a0e56f565254112c7">ImguiLayer::mTime</a></div><div class="ttdeci">float mTime</div><div class="ttdef"><b>Definition:</b> ImguiLayer.h:39</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_ac6e6a5e4ebd45b8012cab448074aa91e"><div class="ttname"><a href="class_imgui_layer.html#ac6e6a5e4ebd45b8012cab448074aa91e">ImguiLayer::OnKeyReleasedEvent</a></div><div class="ttdeci">virtual bool OnKeyReleasedEvent(KeyReleasedEvent &amp;e)</div><div class="ttdef"><b>Definition:</b> ImguiLayer.cpp:108</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_ad02f617b4d56845f07a999f1251c1097"><div class="ttname"><a href="class_imgui_layer.html#ad02f617b4d56845f07a999f1251c1097">ImguiLayer::ImguiLayer</a></div><div class="ttdeci">ImguiLayer()</div><div class="ttdef"><b>Definition:</b> ImguiLayer.cpp:15</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_ade36001fdd1861e19dadc2d32d5e7bd5"><div class="ttname"><a href="class_imgui_layer.html#ade36001fdd1861e19dadc2d32d5e7bd5">ImguiLayer::OnEvent</a></div><div class="ttdeci">void OnEvent(EventBase &amp;event) override</div><div class="ttdef"><b>Definition:</b> ImguiLayer.cpp:48</div></div>
+<div class="ttc" id="aclass_imgui_layer_html_ae5d6495ed844751709b98c329692ba9a"><div class="ttname"><a href="class_imgui_layer.html#ae5d6495ed844751709b98c329692ba9a">ImguiLayer::ImGuiInit</a></div><div class="ttdeci">static void ImGuiInit()</div><div class="ttdef"><b>Definition:</b> ImguiLayer.cpp:163</div></div>
 <div class="ttc" id="aclass_key_pressed_event_html"><div class="ttname"><a href="class_key_pressed_event.html">KeyPressedEvent</a></div><div class="ttdoc">按键按下事件</div><div class="ttdef"><b>Definition:</b> KeyEvent.h:21</div></div>
 <div class="ttc" id="aclass_key_released_event_html"><div class="ttname"><a href="class_key_released_event.html">KeyReleasedEvent</a></div><div class="ttdoc">按键抬起事件</div><div class="ttdef"><b>Definition:</b> KeyEvent.h:41</div></div>
 <div class="ttc" id="aclass_layer_html"><div class="ttname"><a href="class_layer.html">Layer</a></div><div class="ttdef"><b>Definition:</b> Layer.h:6</div></div>

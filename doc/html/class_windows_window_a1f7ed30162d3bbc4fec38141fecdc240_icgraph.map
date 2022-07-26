@@ -1,4 +1,4 @@
 <map id="WindowsWindow::ShutDown" name="WindowsWindow::ShutDown">
-<area shape="rect" id="node1" title=" " alt="" coords="289,5,477,32"/>
+<area shape="rect" id="node1" title="关闭窗口时调用" alt="" coords="289,5,477,32"/>
 <area shape="rect" id="node2" href="$class_windows_window.html#a1a2b8c5022400764e5362c2b52886a30" title=" " alt="" coords="5,5,241,32"/>
 </map>
