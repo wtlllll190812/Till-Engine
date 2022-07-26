@@ -26,7 +26,6 @@ Application::Application()
 
 Application::~Application()
 {
-	delete mEditorLayer;
 }
 
 inline void Application::PushLayer(Layer *layer)
@@ -43,7 +42,7 @@ void Application::AppInit()
 {
 	Debug::GetEngineLogger()->info("Engine start init");
 	mWindows->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
-	RenderSystem::instance().SetCamera(shared_ptr<Camera>(mEditorLayer->GetEditorCamera()));
+	RenderSystem::instance().SetCamera(mEditorLayer->GetEditorCamera());
 	PushOverlay(mEditorLayer);
 	Input::Init();
 	AssetImporter::Init();

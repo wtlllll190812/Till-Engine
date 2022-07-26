@@ -6,7 +6,7 @@ class Layer
 {
 public:
 	Layer(const std::string& name = "Layer");
-	virtual ~Layer();
+	virtual ~Layer() { OnDetach(); };
 
 	virtual void OnAttack() {}
 	virtual void OnDetach() {}

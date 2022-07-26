@@ -25,6 +25,10 @@ GameObject::GameObject(TiXmlElement* node, Scene* s)
 
 GameObject::~GameObject()
 {
+	for (size_t i = 0; i < components.size(); i++)
+	{
+		delete components[i];
+	}
 }
 
 void GameObject::AddComponent(Component* comp)

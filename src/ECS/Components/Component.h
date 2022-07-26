@@ -19,7 +19,10 @@ public:
 	int guid;
 
 public:
+
 	Component() : gameobject(nullptr), guid(GetHash()) {}
+	virtual ~Component() {}
+
 	const virtual std::string GetName() const = 0;
 
 	/// <summary>

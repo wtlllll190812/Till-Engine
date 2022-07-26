@@ -16,7 +16,7 @@ public:
 	/// <summary>
 	/// 当前摄像机
 	/// </summary>
-	std::shared_ptr<Camera> currentCamera;
+	Camera* currentCamera;
 
 	/// <summary>
 	/// 渲染队列
@@ -55,7 +55,7 @@ public:
 	/// <summary>
 	/// 设置当前摄像机
 	/// </summary>
-	inline void SetCamera(std::shared_ptr<Camera> mainCamera) { currentCamera = mainCamera; };
+	inline void SetCamera(Camera* mainCamera) { currentCamera = mainCamera; };
 private:
 	/// <summary>
 	/// 矩阵UBO

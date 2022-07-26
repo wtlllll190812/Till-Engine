@@ -12,6 +12,7 @@
 
 #include "TLCore.h"
 
+#include "Debug.h"
 ImguiLayer::ImguiLayer()
 	:Layer("ImguiLayer")
 {
@@ -19,6 +20,7 @@ ImguiLayer::ImguiLayer()
 
 ImguiLayer::~ImguiLayer()
 {
+	OnDetach();
 }
 
 void ImguiLayer::OnAttack()
