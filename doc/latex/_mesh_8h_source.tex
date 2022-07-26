@@ -1,0 +1,42 @@
+\hypertarget{_mesh_8h_source}{}\doxysection{Mesh.\+h}
+\label{_mesh_8h_source}\index{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/Engine/Render/Mesh.h@{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/Engine/Render/Mesh.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_vertex}{Vertex}} \{}
+\DoxyCodeLine{7     \textcolor{comment}{// position}}
+\DoxyCodeLine{8     glm::vec3 Position;}
+\DoxyCodeLine{9     \textcolor{comment}{// normal}}
+\DoxyCodeLine{10     glm::vec3 Normal;}
+\DoxyCodeLine{11     \textcolor{comment}{// texCoords}}
+\DoxyCodeLine{12     glm::vec2 TexCoords;}
+\DoxyCodeLine{13     \textcolor{comment}{// tangent}}
+\DoxyCodeLine{14     glm::vec3 Tangent;}
+\DoxyCodeLine{15     \textcolor{comment}{// bitangent}}
+\DoxyCodeLine{16     glm::vec3 Bitangent;}
+\DoxyCodeLine{17 \};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_mesh}{Mesh}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} VAO; }
+\DoxyCodeLine{23     std::vector<Vertex> vertices;}
+\DoxyCodeLine{24     std::vector<unsigned int> indices;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_mesh}{Mesh}}(std::vector<Vertex> vertices, std::vector<unsigned int> indices);}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_mesh}{\string~Mesh}}();}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} Draw();}
+\DoxyCodeLine{30     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GetSize() \{ \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(indices.size()); \}}
+\DoxyCodeLine{31 \textcolor{keyword}{private}:}
+\DoxyCodeLine{32     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} VBO; \textcolor{comment}{//顶点缓冲对象}}
+\DoxyCodeLine{33     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} EBO; }
+\DoxyCodeLine{34 \textcolor{keyword}{private}:}
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} Init();}
+\DoxyCodeLine{36 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,19 @@
+\hypertarget{_singleton_01_8h_source}{}\doxysection{Singleton .h}
+\label{_singleton_01_8h_source}\index{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/Engine/Framework/Singleton .h@{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/Engine/Framework/Singleton .h}}
+\mbox{\hyperlink{_singleton_01_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{4 \textcolor{keyword}{class }\mbox{\hyperlink{class_singleton}{Singleton}}}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6 \textcolor{keyword}{public}:}
+\DoxyCodeLine{7     \textcolor{keyword}{static} T\& \mbox{\hyperlink{class_singleton_a258d9ee54e59cc9d9ea6020a19ae8640}{instance}}()}
+\DoxyCodeLine{8     \{}
+\DoxyCodeLine{9         \textcolor{keyword}{static} T* \mbox{\hyperlink{class_singleton_a258d9ee54e59cc9d9ea6020a19ae8640}{instance}} = \textcolor{keyword}{new} T();}
+\DoxyCodeLine{10         \textcolor{keywordflow}{return} *\mbox{\hyperlink{class_singleton_a258d9ee54e59cc9d9ea6020a19ae8640}{instance}};}
+\DoxyCodeLine{11     \}}
+\DoxyCodeLine{12     \mbox{\hyperlink{class_singleton_a923b995920da9c06590adb170ab2f890}{Singleton}}() \{\}}
+\DoxyCodeLine{13 \};}
+
+\end{DoxyCode}

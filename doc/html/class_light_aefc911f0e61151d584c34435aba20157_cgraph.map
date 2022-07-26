@@ -1,0 +1,4 @@
+<map id="Light::Awake" name="Light::Awake">
+<area shape="rect" id="node1" title="刚添加时" alt="" coords="5,5,103,32"/>
+<area shape="rect" id="node2" href="$class_t_l_engine_c_g.html#a14e19eddf1d2d274db23c8f0e7d5ada4" title="注册光源" alt="" coords="151,5,305,32"/>
+</map>

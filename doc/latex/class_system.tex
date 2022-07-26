@@ -1,0 +1,71 @@
+\hypertarget{class_system}{}\doxysection{System类 参考}
+\label{class_system}\index{System@{System}}
+
+
+类 System 继承关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{class_system__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_system_af0128dd6a6f6ee885ec9861121599f6f}{Update}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_system_adafb6ad7cd3deed9032da2e3b47325b4}{Fixed\+Update}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_system_a451ca910192755adc3ef0226df6314d1}{Register\+Component}} (\mbox{\hyperlink{class_component}{Component}} $\ast$)=0
+\item 
+virtual void \mbox{\hyperlink{class_system_a85d857fb24aefacde3ae2461180befb7}{Remove\+Component}} (\mbox{\hyperlink{class_component}{Component}} $\ast$)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{成员函数说明}
+\mbox{\Hypertarget{class_system_adafb6ad7cd3deed9032da2e3b47325b4}\label{class_system_adafb6ad7cd3deed9032da2e3b47325b4}} 
+\index{System@{System}!FixedUpdate@{FixedUpdate}}
+\index{FixedUpdate@{FixedUpdate}!System@{System}}
+\doxysubsubsection{\texorpdfstring{FixedUpdate()}{FixedUpdate()}}
+{\footnotesize\ttfamily virtual void System\+::\+Fixed\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_render_system_aa111a299b5c035dbe08fa4559c680086}{Render\+System}} 内被实现.
+
+\mbox{\Hypertarget{class_system_a451ca910192755adc3ef0226df6314d1}\label{class_system_a451ca910192755adc3ef0226df6314d1}} 
+\index{System@{System}!RegisterComponent@{RegisterComponent}}
+\index{RegisterComponent@{RegisterComponent}!System@{System}}
+\doxysubsubsection{\texorpdfstring{RegisterComponent()}{RegisterComponent()}}
+{\footnotesize\ttfamily virtual void System\+::\+Register\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_component}{Component}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_render_system_a794ef0a6f643330a8ff07e4e4bea8671}{Render\+System}} 内被实现.
+
+\mbox{\Hypertarget{class_system_a85d857fb24aefacde3ae2461180befb7}\label{class_system_a85d857fb24aefacde3ae2461180befb7}} 
+\index{System@{System}!RemoveComponent@{RemoveComponent}}
+\index{RemoveComponent@{RemoveComponent}!System@{System}}
+\doxysubsubsection{\texorpdfstring{RemoveComponent()}{RemoveComponent()}}
+{\footnotesize\ttfamily virtual void System\+::\+Remove\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_component}{Component}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_render_system_a6668d5e3723f22d6a7e0141989cfe461}{Render\+System}} 内被实现.
+
+\mbox{\Hypertarget{class_system_af0128dd6a6f6ee885ec9861121599f6f}\label{class_system_af0128dd6a6f6ee885ec9861121599f6f}} 
+\index{System@{System}!Update@{Update}}
+\index{Update@{Update}!System@{System}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void System\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_render_system_a744c9a8ba4359b3353a6130f3af51fbb}{Render\+System}} 内被实现.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/\+ECS/\+System/System.\+h\end{DoxyCompactItemize}

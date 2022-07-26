@@ -1,0 +1,4 @@
+<map id="Light::Instantiate" name="Light::Instantiate">
+<area shape="rect" id="node1" title="通过xml实例化" alt="" coords="5,5,124,32"/>
+<area shape="rect" id="node2" href="$class_t_lxml.html#a0144d1a045da012691fa861dde9ad3ee" title="反序列化向量" alt="" coords="172,5,303,32"/>
+</map>

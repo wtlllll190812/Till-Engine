@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TillEngine: D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Render/TLEngineCG.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TillEngine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_700da30f51666cd81523daa4ef5fcfbf.html">Render</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#enum-members">枚举</a>  </div>
+  <div class="headertitle"><div class="title">TLEngineCG.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;glm/glm.hpp&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;queue&gt;</code><br />
+<code>#include &quot;<a class="el" href="_reflection_8h_source.html">Reflection.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+TLEngineCG.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_t_l_engine_c_g_8h__incl.png" border="0" usemap="#a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_render_2_t_l_engine_c_g_8h" alt=""/></div>
+<map name="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_render_2_t_l_engine_c_g_8h" id="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_render_2_t_l_engine_c_g_8h">
+<area shape="rect" title=" " alt="" coords="106,5,305,61"/>
+<area shape="rect" title=" " alt="" coords="5,259,99,285"/>
+<area shape="rect" title=" " alt="" coords="123,259,179,285"/>
+<area shape="rect" title=" " alt="" coords="203,259,261,285"/>
+<area shape="rect" href="_reflection_8h.html" title=" " alt="" coords="800,109,891,136"/>
+<area shape="rect" href="_singleton_01_8h.html" title=" " alt="" coords="1375,259,1465,285"/>
+<area shape="rect" href="_till_pch_8h.html" title=" " alt="" coords="809,184,881,211"/>
+<area shape="rect" title=" " alt="" coords="285,259,339,285"/>
+<area shape="rect" title=" " alt="" coords="364,259,441,285"/>
+<area shape="rect" title=" " alt="" coords="465,259,535,285"/>
+<area shape="rect" title=" " alt="" coords="559,259,750,285"/>
+<area shape="rect" title=" " alt="" coords="775,259,916,285"/>
+<area shape="rect" title=" " alt="" coords="940,259,1012,285"/>
+<area shape="rect" title=" " alt="" coords="1036,259,1105,285"/>
+<area shape="rect" title=" " alt="" coords="1130,259,1177,285"/>
+<area shape="rect" title=" " alt="" coords="1201,259,1255,285"/>
+<area shape="rect" href="_debug_8h.html" title=" " alt="" coords="1279,259,1350,285"/>
+<area shape="rect" title=" " alt="" coords="1258,333,1371,360"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="_t_l_engine_c_g_8h__dep__incl.png" border="0" usemap="#a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_render_2_t_l_engine_c_g_8hdep" alt=""/></div>
+<map name="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_render_2_t_l_engine_c_g_8hdep" id="a_d_1_2_t_l_2_vscode_2_vs_code___c_2_learn__opengl_2src_2_engine_2_render_2_t_l_engine_c_g_8hdep">
+<area shape="rect" title=" " alt="" coords="482,5,681,61"/>
+<area shape="rect" href="_light_8cpp.html" title=" " alt="" coords="5,109,192,165"/>
+<area shape="rect" href="_material_8h.html" title=" " alt="" coords="495,109,667,165"/>
+<area shape="rect" href="_scene_8cpp.html" title=" " alt="" coords="35,317,186,373"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="687,317,838,373"/>
+<area shape="rect" href="_t_l_engine_c_g_8cpp.html" title=" " alt="" coords="800,109,1013,165"/>
+<area shape="rect" href="_renderer_8h.html" title=" " alt="" coords="267,213,464,269"/>
+<area shape="rect" href="_material_8cpp.html" title=" " alt="" coords="488,213,675,269"/>
+<area shape="rect" href="_renderer_8cpp.html" title=" " alt="" coords="452,317,663,373"/>
+<area shape="rect" href="_render_system_8cpp.html" title=" " alt="" coords="210,317,427,373"/>
+</map>
+</div>
+</div>
+<p><a href="_t_l_engine_c_g_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_l_engine_c_g.html">TLEngineCG</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a370b1e606f70a8a7411bb6f11bbb9227"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_l_engine_c_g_8h.html#a370b1e606f70a8a7411bb6f11bbb9227">SetUniformMat4</a>(matName,  shaderName)</td></tr>
+<tr class="separator:a370b1e606f70a8a7411bb6f11bbb9227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e90817222691d1dcd4819c04a9181c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_l_engine_c_g_8h.html#a4e90817222691d1dcd4819c04a9181c8">SetUniformVec3</a>(vecName,  shaderName)</td></tr>
+<tr class="separator:a4e90817222691d1dcd4819c04a9181c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ff158278b8e58f3c9e474493233b687"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_l_engine_c_g_8h.html#a8ff158278b8e58f3c9e474493233b687">SetUniformTex</a>(texName,  <a class="el" href="imgui__impl__opengl3__loader_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a>,  shaderName)</td></tr>
+<tr class="separator:a8ff158278b8e58f3c9e474493233b687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:a03042f324a1ccd5ce42ddd762c351cdd"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_l_engine_c_g_8h.html#a03042f324a1ccd5ce42ddd762c351cdd">RendererQueue</a> { <br />
+&#160;&#160;<a class="el" href="_t_l_engine_c_g_8h.html#a03042f324a1ccd5ce42ddd762c351cddaa9ded1e5ce5d75814730bb4caaf49419">Background</a> = 1000
+, <a class="el" href="_t_l_engine_c_g_8h.html#a03042f324a1ccd5ce42ddd762c351cddad9c6333623e6357515fcbf17be806273">Geometry</a> = 2000
+, <a class="el" href="_t_l_engine_c_g_8h.html#a03042f324a1ccd5ce42ddd762c351cdda359488e90ba16f8dbf2e1b2897b75654">AlphaTest</a> = 2450
+, <a class="el" href="_t_l_engine_c_g_8h.html#a03042f324a1ccd5ce42ddd762c351cdda3d971943089a3388c01fb297a32d9ba7">Transparent</a> = 3000
+, <br />
+&#160;&#160;<a class="el" href="_t_l_engine_c_g_8h.html#a03042f324a1ccd5ce42ddd762c351cdda6b551379c3c0b59326abdaf3b4395bd3">Overlay</a> = 4000
+<br />
+ }</td></tr>
+<tr class="separator:a03042f324a1ccd5ce42ddd762c351cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a370b1e606f70a8a7411bb6f11bbb9227" name="a370b1e606f70a8a7411bb6f11bbb9227"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a370b1e606f70a8a7411bb6f11bbb9227">&#9670;&nbsp;</a></span>SetUniformMat4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SetUniformMat4</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">matName, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">shaderName&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <a class="code hl_typedef" href="imgui__impl__opengl3__loader_8h.html#acebcc1c5663f14ebde1d16831e5fed94">GLint</a> matName##Loc = <a class="code hl_define" href="imgui__impl__opengl3__loader_8h.html#a10106e4be90a66213839645cf12770f9">glGetUniformLocation</a>(shaderName-&gt;Program, #matName); \</div>
+<div class="line">    glUniformMatrix4fv(matName##Loc, 1, <a class="code hl_define" href="imgui__impl__opengl3__loader_8h.html#abca6d43f43fae31f49dcb883b2f301f6">GL_FALSE</a>, glm::value_ptr(matName));</div>
+<div class="ttc" id="aimgui__impl__opengl3__loader_8h_html_a10106e4be90a66213839645cf12770f9"><div class="ttname"><a href="imgui__impl__opengl3__loader_8h.html#a10106e4be90a66213839645cf12770f9">glGetUniformLocation</a></div><div class="ttdeci">#define glGetUniformLocation</div><div class="ttdef"><b>Definition:</b> imgui_impl_opengl3_loader.h:564</div></div>
+<div class="ttc" id="aimgui__impl__opengl3__loader_8h_html_abca6d43f43fae31f49dcb883b2f301f6"><div class="ttname"><a href="imgui__impl__opengl3__loader_8h.html#abca6d43f43fae31f49dcb883b2f301f6">GL_FALSE</a></div><div class="ttdeci">#define GL_FALSE</div><div class="ttdef"><b>Definition:</b> imgui_impl_opengl3_loader.h:143</div></div>
+<div class="ttc" id="aimgui__impl__opengl3__loader_8h_html_acebcc1c5663f14ebde1d16831e5fed94"><div class="ttname"><a href="imgui__impl__opengl3__loader_8h.html#acebcc1c5663f14ebde1d16831e5fed94">GLint</a></div><div class="ttdeci">int GLint</div><div class="ttdef"><b>Definition:</b> imgui_impl_opengl3_loader.h:135</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8ff158278b8e58f3c9e474493233b687" name="a8ff158278b8e58f3c9e474493233b687"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ff158278b8e58f3c9e474493233b687">&#9670;&nbsp;</a></span>SetUniformTex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SetUniformTex</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">texName, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">shaderName&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="imgui__impl__opengl3__loader_8h.html#af15266b67de988f5ddf442bbbdd1b3fc">glActiveTexture</a>(GL_TEXTURE##<a class="code hl_typedef" href="imgui__impl__opengl3__loader_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a>);            \</div>
+<div class="line">    glBindTexture(<a class="code hl_define" href="imgui__impl__opengl3__loader_8h.html#ad4de17abefa73fa2ef53379f73b734be">GL_TEXTURE_2D</a>, texName.texture); \</div>
+<div class="line">    glUniform1i(<a class="code hl_define" href="imgui__impl__opengl3__loader_8h.html#a10106e4be90a66213839645cf12770f9">glGetUniformLocation</a>(shaderName-&gt;Program, #texName), <a class="code hl_typedef" href="imgui__impl__opengl3__loader_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a>);</div>
+<div class="ttc" id="aimgui__impl__opengl3__loader_8h_html_a57f14e05b1900f16a2da82ade47d0c6d"><div class="ttname"><a href="imgui__impl__opengl3__loader_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a></div><div class="ttdeci">GLuint index</div><div class="ttdef"><b>Definition:</b> imgui_impl_opengl3_loader.h:344</div></div>
+<div class="ttc" id="aimgui__impl__opengl3__loader_8h_html_ad4de17abefa73fa2ef53379f73b734be"><div class="ttname"><a href="imgui__impl__opengl3__loader_8h.html#ad4de17abefa73fa2ef53379f73b734be">GL_TEXTURE_2D</a></div><div class="ttdeci">#define GL_TEXTURE_2D</div><div class="ttdef"><b>Definition:</b> imgui_impl_opengl3_loader.h:160</div></div>
+<div class="ttc" id="aimgui__impl__opengl3__loader_8h_html_af15266b67de988f5ddf442bbbdd1b3fc"><div class="ttname"><a href="imgui__impl__opengl3__loader_8h.html#af15266b67de988f5ddf442bbbdd1b3fc">glActiveTexture</a></div><div class="ttdeci">#define glActiveTexture</div><div class="ttdef"><b>Definition:</b> imgui_impl_opengl3_loader.h:523</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4e90817222691d1dcd4819c04a9181c8" name="a4e90817222691d1dcd4819c04a9181c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e90817222691d1dcd4819c04a9181c8">&#9670;&nbsp;</a></span>SetUniformVec3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SetUniformVec3</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">vecName, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">shaderName&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <a class="code hl_typedef" href="imgui__impl__opengl3__loader_8h.html#acebcc1c5663f14ebde1d16831e5fed94">GLint</a> vecName##Loc = <a class="code hl_define" href="imgui__impl__opengl3__loader_8h.html#a10106e4be90a66213839645cf12770f9">glGetUniformLocation</a>(shaderName-&gt;Program, #vecName); \</div>
+<div class="line">    glUniform3f(vecName##Loc, vecName.x, vecName.y, vecName.z);</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="a03042f324a1ccd5ce42ddd762c351cdd" name="a03042f324a1ccd5ce42ddd762c351cdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03042f324a1ccd5ce42ddd762c351cdd">&#9670;&nbsp;</a></span>RendererQueue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="_t_l_engine_c_g_8h.html#a03042f324a1ccd5ce42ddd762c351cdd">RendererQueue</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a03042f324a1ccd5ce42ddd762c351cddaa9ded1e5ce5d75814730bb4caaf49419" name="a03042f324a1ccd5ce42ddd762c351cddaa9ded1e5ce5d75814730bb4caaf49419"></a>Background&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a03042f324a1ccd5ce42ddd762c351cddad9c6333623e6357515fcbf17be806273" name="a03042f324a1ccd5ce42ddd762c351cddad9c6333623e6357515fcbf17be806273"></a>Geometry&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a03042f324a1ccd5ce42ddd762c351cdda359488e90ba16f8dbf2e1b2897b75654" name="a03042f324a1ccd5ce42ddd762c351cdda359488e90ba16f8dbf2e1b2897b75654"></a>AlphaTest&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a03042f324a1ccd5ce42ddd762c351cdda3d971943089a3388c01fb297a32d9ba7" name="a03042f324a1ccd5ce42ddd762c351cdda3d971943089a3388c01fb297a32d9ba7"></a>Transparent&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a03042f324a1ccd5ce42ddd762c351cdda6b551379c3c0b59326abdaf3b4395bd3" name="a03042f324a1ccd5ce42ddd762c351cdda6b551379c3c0b59326abdaf3b4395bd3"></a>Overlay&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

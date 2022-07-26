@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TillEngine: D:/TL/Vscode/VsCode_C/Learn_opengl/src/imgui/imgui_impl_glfw.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TillEngine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c22cfa1b0f87b4cb70b9efd410032809.html">imgui</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">imgui_impl_glfw.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="imgui__impl__glfw_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// dear imgui: Platform Backend for GLFW</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// This needs to be used along with a Renderer (e.g. OpenGL3, Vulkan, WebGPU..)</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// (Info: GLFW is a cross-platform general purpose library for handling windows, inputs, OpenGL/Vulkan graphics context creation, etc.)</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// (Requires: GLFW 3.1+. Prefer GLFW 3.3+ for full feature support.)</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// Implemented features:</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//  [X] Platform: Clipboard support.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//  [X] Platform: Keyboard support. Since 1.87 we are using the io.AddKeyEvent() function. Pass ImGuiKey values to all key functions e.g. ImGui::IsKeyPressed(ImGuiKey_Space). [Legacy GLFW_KEY_* values will also be supported unless IMGUI_DISABLE_OBSOLETE_KEYIO is set]</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//  [X] Platform: Gamepad support. Enable with &#39;io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad&#39;.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//  [x] Platform: Mouse cursor shape and visibility. Disable with &#39;io.ConfigFlags |= ImGuiConfigFlags_NoMouseCursorChange&#39; (note: the resizing cursors requires GLFW 3.4+).</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//  [X] Platform: Multi-viewport support (multiple windows). Enable with &#39;io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable&#39;.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// Issues:</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//  [ ] Platform: Multi-viewport support: ParentViewportID not honored, and so io.ConfigViewportsNoDefaultParent has no effect (minor).</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">// You can use unmodified imgui_impl_* files in your project. See examples/ folder for examples of using this.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">// Prefer including the entire imgui/ repository into your project (either as a copy or as a submodule), and only build the backends you need.</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// If you are new to Dear ImGui, read documentation from the docs/ folder + read the top of imgui.cpp.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// Read online: https://github.com/ocornut/imgui/tree/master/docs</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">// About GLSL version:</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// The &#39;glsl_version&#39; initialization parameter defaults to &quot;#version 150&quot; if NULL.</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">// Only override if your GL version doesn&#39;t handle this GLSL version. Keep NULL if unsure!</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;<a class="code" href="imgui_8h.html">imgui.h</a>&quot;</span>      <span class="comment">// IMGUI_IMPL_API</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">struct </span>GLFWwindow;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">struct </span>GLFWmonitor;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><a class="code hl_define" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> <span class="keywordtype">bool</span>     <a class="code hl_function" href="imgui__impl__glfw_8h.html#a35b4b8d25ee79fe93f872b8c16c4abd6">ImGui_ImplGlfw_InitForOpenGL</a>(GLFWwindow* window, <span class="keywordtype">bool</span> install_callbacks);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><a class="code hl_define" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> <span class="keywordtype">bool</span>     <a class="code hl_function" href="imgui__impl__glfw_8h.html#a010473d444c477776d0088175bcc8ecc">ImGui_ImplGlfw_InitForVulkan</a>(GLFWwindow* window, <span class="keywordtype">bool</span> install_callbacks);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><a class="code hl_define" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> <span class="keywordtype">bool</span>     <a class="code hl_function" href="imgui__impl__glfw_8h.html#a6526c717df4b747fcc46cb06cc205741">ImGui_ImplGlfw_InitForOther</a>(GLFWwindow* window, <span class="keywordtype">bool</span> install_callbacks);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><a class="code hl_define" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> <span class="keywordtype">void</span>     <a class="code hl_function" href="imgui__impl__glfw_8h.html#a51d9e4e0761a6dabf94b0520687c49ba">ImGui_ImplGlfw_Shutdown</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><a class="code hl_define" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> <span class="keywordtype">void</span>     <a class="code hl_function" href="imgui__impl__glfw_8h.html#aba96215db16a58ef37163257b4c9c93a">ImGui_ImplGlfw_NewFrame</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// GLFW callbacks (installer)</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">// - When calling Init with &#39;install_callbacks=true&#39;: ImGui_ImplGlfw_InstallCallbacks() is called. GLFW callbacks will be installed for you. They will chain-call user&#39;s previously installed callbacks, if any.</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">// - When calling Init with &#39;install_callbacks=false&#39;: GLFW callbacks won&#39;t be installed. You will need to call individual function yourself from your own GLFW callbacks.</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><a class="code hl_define" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> <span class="keywordtype">void</span>     <a class="code hl_function" href="imgui__impl__glfw_8h.html#a4115bf90df2f5a3d12e3310a32b59d09">ImGui_ImplGlfw_InstallCallbacks</a>(GLFWwindow* window);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><a class="code hl_define" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> <span class="keywordtype">void</span>     <a class="code hl_function" href="imgui__impl__glfw_8h.html#abc979487cff32bb330b0eb5e0b6d67f6">ImGui_ImplGlfw_RestoreCallbacks</a>(GLFWwindow* window);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">// GLFW callbacks (individual callbacks to call if you didn&#39;t install callbacks)</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><a class="code hl_define" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> <span class="keywordtype">void</span>     <a class="code hl_function" href="imgui__impl__glfw_8h.html#ae978bdae1301b188c5fd24df92394eb3">ImGui_ImplGlfw_WindowFocusCallback</a>(GLFWwindow* window, <span class="keywordtype">int</span> focused);        <span class="comment">// Since 1.84</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><a class="code hl_define" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> <span class="keywordtype">void</span>     <a class="code hl_function" href="imgui__impl__glfw_8h.html#a7e65cb0bd5120e5c5e9a3e204ffa428d">ImGui_ImplGlfw_CursorEnterCallback</a>(GLFWwindow* window, <span class="keywordtype">int</span> entered);        <span class="comment">// Since 1.84</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><a class="code hl_define" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> <span class="keywordtype">void</span>     <a class="code hl_function" href="imgui__impl__glfw_8h.html#aa14f221e92cee5173ab58d7462264d2d">ImGui_ImplGlfw_CursorPosCallback</a>(GLFWwindow* window, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> <a class="code hl_typedef" href="imgui__impl__opengl3__loader_8h.html#a5e247fc24ceb70d83f6ad59149b8910a">y</a>);   <span class="comment">// Since 1.87</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><a class="code hl_define" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> <span class="keywordtype">void</span>     <a class="code hl_function" href="imgui__impl__glfw_8h.html#ab72d9035883720a797bc3cb7e3e8a482">ImGui_ImplGlfw_MouseButtonCallback</a>(GLFWwindow* window, <span class="keywordtype">int</span> button, <span class="keywordtype">int</span> action, <span class="keywordtype">int</span> mods);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><a class="code hl_define" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> <span class="keywordtype">void</span>     <a class="code hl_function" href="imgui__impl__glfw_8h.html#a17f333ee230afe8a9fc86b7fad359458">ImGui_ImplGlfw_ScrollCallback</a>(GLFWwindow* window, <span class="keywordtype">double</span> xoffset, <span class="keywordtype">double</span> yoffset);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><a class="code hl_define" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> <span class="keywordtype">void</span>     <a class="code hl_function" href="imgui__impl__glfw_8h.html#a5843860bf982587ba132faf1471f095d">ImGui_ImplGlfw_KeyCallback</a>(GLFWwindow* window, <span class="keywordtype">int</span> key, <span class="keywordtype">int</span> scancode, <span class="keywordtype">int</span> action, <span class="keywordtype">int</span> mods);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><a class="code hl_define" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> <span class="keywordtype">void</span>     <a class="code hl_function" href="imgui__impl__glfw_8h.html#aa44de756329ce5447b6b15f0362617a0">ImGui_ImplGlfw_CharCallback</a>(GLFWwindow* window, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> c);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><a class="code hl_define" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> <span class="keywordtype">void</span>     <a class="code hl_function" href="imgui__impl__glfw_8h.html#a601d00ad9f4bd80e1f9d0b0ae13fa6af">ImGui_ImplGlfw_MonitorCallback</a>(GLFWmonitor* monitor, <span class="keywordtype">int</span> event);</div>
+<div class="ttc" id="aimgui_8h_html"><div class="ttname"><a href="imgui_8h.html">imgui.h</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a665f6b404eea9a640b1222a87236fe19"><div class="ttname"><a href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a></div><div class="ttdeci">#define IMGUI_IMPL_API</div><div class="ttdef"><b>Definition:</b> imgui.h:81</div></div>
+<div class="ttc" id="aimgui__impl__glfw_8h_html_a010473d444c477776d0088175bcc8ecc"><div class="ttname"><a href="imgui__impl__glfw_8h.html#a010473d444c477776d0088175bcc8ecc">ImGui_ImplGlfw_InitForVulkan</a></div><div class="ttdeci">IMGUI_IMPL_API bool ImGui_ImplGlfw_InitForVulkan(GLFWwindow *window, bool install_callbacks)</div><div class="ttdef"><b>Definition:</b> imgui_impl_glfw.cpp:565</div></div>
+<div class="ttc" id="aimgui__impl__glfw_8h_html_a17f333ee230afe8a9fc86b7fad359458"><div class="ttname"><a href="imgui__impl__glfw_8h.html#a17f333ee230afe8a9fc86b7fad359458">ImGui_ImplGlfw_ScrollCallback</a></div><div class="ttdeci">IMGUI_IMPL_API void ImGui_ImplGlfw_ScrollCallback(GLFWwindow *window, double xoffset, double yoffset)</div><div class="ttdef"><b>Definition:</b> imgui_impl_glfw.cpp:319</div></div>
+<div class="ttc" id="aimgui__impl__glfw_8h_html_a35b4b8d25ee79fe93f872b8c16c4abd6"><div class="ttname"><a href="imgui__impl__glfw_8h.html#a35b4b8d25ee79fe93f872b8c16c4abd6">ImGui_ImplGlfw_InitForOpenGL</a></div><div class="ttdeci">IMGUI_IMPL_API bool ImGui_ImplGlfw_InitForOpenGL(GLFWwindow *window, bool install_callbacks)</div><div class="ttdef"><b>Definition:</b> imgui_impl_glfw.cpp:560</div></div>
+<div class="ttc" id="aimgui__impl__glfw_8h_html_a4115bf90df2f5a3d12e3310a32b59d09"><div class="ttname"><a href="imgui__impl__glfw_8h.html#a4115bf90df2f5a3d12e3310a32b59d09">ImGui_ImplGlfw_InstallCallbacks</a></div><div class="ttdeci">IMGUI_IMPL_API void ImGui_ImplGlfw_InstallCallbacks(GLFWwindow *window)</div><div class="ttdef"><b>Definition:</b> imgui_impl_glfw.cpp:448</div></div>
+<div class="ttc" id="aimgui__impl__glfw_8h_html_a51d9e4e0761a6dabf94b0520687c49ba"><div class="ttname"><a href="imgui__impl__glfw_8h.html#a51d9e4e0761a6dabf94b0520687c49ba">ImGui_ImplGlfw_Shutdown</a></div><div class="ttdeci">IMGUI_IMPL_API void ImGui_ImplGlfw_Shutdown()</div><div class="ttdef"><b>Definition:</b> imgui_impl_glfw.cpp:575</div></div>
+<div class="ttc" id="aimgui__impl__glfw_8h_html_a5843860bf982587ba132faf1471f095d"><div class="ttname"><a href="imgui__impl__glfw_8h.html#a5843860bf982587ba132faf1471f095d">ImGui_ImplGlfw_KeyCallback</a></div><div class="ttdeci">IMGUI_IMPL_API void ImGui_ImplGlfw_KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mods)</div><div class="ttdef"><b>Definition:</b> imgui_impl_glfw.cpp:357</div></div>
+<div class="ttc" id="aimgui__impl__glfw_8h_html_a601d00ad9f4bd80e1f9d0b0ae13fa6af"><div class="ttname"><a href="imgui__impl__glfw_8h.html#a601d00ad9f4bd80e1f9d0b0ae13fa6af">ImGui_ImplGlfw_MonitorCallback</a></div><div class="ttdeci">IMGUI_IMPL_API void ImGui_ImplGlfw_MonitorCallback(GLFWmonitor *monitor, int event)</div><div class="ttdef"><b>Definition:</b> imgui_impl_glfw.cpp:442</div></div>
+<div class="ttc" id="aimgui__impl__glfw_8h_html_a6526c717df4b747fcc46cb06cc205741"><div class="ttname"><a href="imgui__impl__glfw_8h.html#a6526c717df4b747fcc46cb06cc205741">ImGui_ImplGlfw_InitForOther</a></div><div class="ttdeci">IMGUI_IMPL_API bool ImGui_ImplGlfw_InitForOther(GLFWwindow *window, bool install_callbacks)</div><div class="ttdef"><b>Definition:</b> imgui_impl_glfw.cpp:570</div></div>
+<div class="ttc" id="aimgui__impl__glfw_8h_html_a7e65cb0bd5120e5c5e9a3e204ffa428d"><div class="ttname"><a href="imgui__impl__glfw_8h.html#a7e65cb0bd5120e5c5e9a3e204ffa428d">ImGui_ImplGlfw_CursorEnterCallback</a></div><div class="ttdeci">IMGUI_IMPL_API void ImGui_ImplGlfw_CursorEnterCallback(GLFWwindow *window, int entered)</div><div class="ttdef"><b>Definition:</b> imgui_impl_glfw.cpp:412</div></div>
+<div class="ttc" id="aimgui__impl__glfw_8h_html_aa14f221e92cee5173ab58d7462264d2d"><div class="ttname"><a href="imgui__impl__glfw_8h.html#aa14f221e92cee5173ab58d7462264d2d">ImGui_ImplGlfw_CursorPosCallback</a></div><div class="ttdeci">IMGUI_IMPL_API void ImGui_ImplGlfw_CursorPosCallback(GLFWwindow *window, double x, double y)</div><div class="ttdef"><b>Definition:</b> imgui_impl_glfw.cpp:392</div></div>
+<div class="ttc" id="aimgui__impl__glfw_8h_html_aa44de756329ce5447b6b15f0362617a0"><div class="ttname"><a href="imgui__impl__glfw_8h.html#aa44de756329ce5447b6b15f0362617a0">ImGui_ImplGlfw_CharCallback</a></div><div class="ttdeci">IMGUI_IMPL_API void ImGui_ImplGlfw_CharCallback(GLFWwindow *window, unsigned int c)</div><div class="ttdef"><b>Definition:</b> imgui_impl_glfw.cpp:432</div></div>
+<div class="ttc" id="aimgui__impl__glfw_8h_html_ab72d9035883720a797bc3cb7e3e8a482"><div class="ttname"><a href="imgui__impl__glfw_8h.html#ab72d9035883720a797bc3cb7e3e8a482">ImGui_ImplGlfw_MouseButtonCallback</a></div><div class="ttdeci">IMGUI_IMPL_API void ImGui_ImplGlfw_MouseButtonCallback(GLFWwindow *window, int button, int action, int mods)</div><div class="ttdef"><b>Definition:</b> imgui_impl_glfw.cpp:306</div></div>
+<div class="ttc" id="aimgui__impl__glfw_8h_html_aba96215db16a58ef37163257b4c9c93a"><div class="ttname"><a href="imgui__impl__glfw_8h.html#aba96215db16a58ef37163257b4c9c93a">ImGui_ImplGlfw_NewFrame</a></div><div class="ttdeci">IMGUI_IMPL_API void ImGui_ImplGlfw_NewFrame()</div><div class="ttdef"><b>Definition:</b> imgui_impl_glfw.cpp:779</div></div>
+<div class="ttc" id="aimgui__impl__glfw_8h_html_abc979487cff32bb330b0eb5e0b6d67f6"><div class="ttname"><a href="imgui__impl__glfw_8h.html#abc979487cff32bb330b0eb5e0b6d67f6">ImGui_ImplGlfw_RestoreCallbacks</a></div><div class="ttdeci">IMGUI_IMPL_API void ImGui_ImplGlfw_RestoreCallbacks(GLFWwindow *window)</div><div class="ttdef"><b>Definition:</b> imgui_impl_glfw.cpp:465</div></div>
+<div class="ttc" id="aimgui__impl__glfw_8h_html_ae978bdae1301b188c5fd24df92394eb3"><div class="ttname"><a href="imgui__impl__glfw_8h.html#ae978bdae1301b188c5fd24df92394eb3">ImGui_ImplGlfw_WindowFocusCallback</a></div><div class="ttdeci">IMGUI_IMPL_API void ImGui_ImplGlfw_WindowFocusCallback(GLFWwindow *window, int focused)</div><div class="ttdef"><b>Definition:</b> imgui_impl_glfw.cpp:382</div></div>
+<div class="ttc" id="aimgui__impl__opengl3__loader_8h_html_a5e247fc24ceb70d83f6ad59149b8910a"><div class="ttname"><a href="imgui__impl__opengl3__loader_8h.html#a5e247fc24ceb70d83f6ad59149b8910a">y</a></div><div class="ttdeci">GLint y</div><div class="ttdef"><b>Definition:</b> imgui_impl_opengl3_loader.h:175</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

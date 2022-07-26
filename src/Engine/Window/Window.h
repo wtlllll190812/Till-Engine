@@ -29,31 +29,59 @@ public:
 	using EventCallbackFn = std::function<void(EventBase&)>;
 
 	virtual ~Window() {};
-	//渲染一帧
+	
+	/// <summary>
+	/// 窗口渲染函数
+	/// </summary>
 	virtual void DrawFunc() = 0;
-	//渲染结束时
+	
+	/// <summary>
+	/// 每帧渲染结束时调用
+	/// </summary>
 	virtual void OnRenderEnd() = 0;
-
+	
+	/// <summary>
+	/// 获取窗口宽度
+	/// </summary>
 	virtual unsigned int GetWidth() const = 0;
+	
+	/// <summary>
+	/// 获取窗口高度
+	/// </summary>
 	virtual unsigned int GetHeight() const = 0;
 	
-	//获取当前窗口
+	/// <summary>
+	/// 获取当前平台的窗口对象
+	/// </summary>
 	virtual void* GetWindow() const
 	{
 		return nullptr;
 	}
 
-	//获取指定FrameBuffer
+	/// <summary>
+	/// 获取指定FBO
+	/// </summary>
+	/// <param name="index">FBO编号</param>
 	virtual FrameBuffer* GetFrameBuffer(int index = 0) = 0;
-	//设定当前帧缓存
+	/// <summary>
+	/// 设定当前FBO上下文
+	/// </summary>
+	/// <param name="index"></param>
 	virtual void SetFrameBuffer(int index = 0) = 0;
 	virtual void SetFrameBuffer(FrameBuffer*) = 0;
+	/// <summary>
+	/// 获取主FBO
+	/// </summary>
 	virtual FrameBuffer* GetMianFrameBuffer(int index = 0) = 0;
-	//添加帧缓存
+	/// <summary>
+	/// 添加FBO
+	/// </summary>
 	virtual FrameBuffer* AddFrameBuffer(BufferType type) = 0;
 
 	virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
-	//设置垂直同步
+	/// <summary>
+	/// 设定垂直同步
+	/// </summary>
 	virtual void SetVSync(bool enabled) = 0;
 	virtual bool IsVSync() const = 0;
 

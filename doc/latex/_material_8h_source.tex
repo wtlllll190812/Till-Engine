@@ -1,0 +1,33 @@
+\hypertarget{_material_8h_source}{}\doxysection{Material.\+h}
+\label{_material_8h_source}\index{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/Engine/Render/Materials/Material.h@{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/Engine/Render/Materials/Material.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}TLEngineCG.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}TLCore.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_game_object}{GameObject}};}
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_shader}{Shader}};}
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_mesh}{Mesh}};}
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_material}{Material}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14     \mbox{\hyperlink{class_shader}{Shader}}* shader;}
+\DoxyCodeLine{15     std::string matName;}
+\DoxyCodeLine{19     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_material_a6c9d433520daedd36fd172970e86c42a}{renderQueueIndex}} = (int)RendererQueue::Geometry;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_material}{Material}}();}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_material}{\string~Material}}();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} Draw(\mbox{\hyperlink{class_game_object}{GameObject}}*, std::shared\_ptr<Mesh>);}
+\DoxyCodeLine{26     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DrawFunc(\mbox{\hyperlink{class_game_object}{GameObject}}* gObj,std::shared\_ptr<Mesh> mesh) = 0;}
+\DoxyCodeLine{27     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Init(\mbox{\hyperlink{class_game_object}{GameObject}}*, std::shared\_ptr<Mesh> mesh) = 0;}
+\DoxyCodeLine{28 \textcolor{keyword}{private}:}
+\DoxyCodeLine{29     \textcolor{keywordtype}{bool} inited;}
+\DoxyCodeLine{30 \};}
+
+\end{DoxyCode}

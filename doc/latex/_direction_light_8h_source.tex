@@ -1,0 +1,25 @@
+\hypertarget{_direction_light_8h_source}{}\doxysection{Direction\+Light.\+h}
+\label{_direction_light_8h_source}\index{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/ECS/Components/DirectionLight.h@{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/ECS/Components/DirectionLight.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Light.h"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{class_direction_light}{DirectionLight}}:\textcolor{keyword}{public} \mbox{\hyperlink{class_light}{Light}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7 \textcolor{keyword}{public}:}
+\DoxyCodeLine{8     COMPONENTNAME(\mbox{\hyperlink{class_direction_light}{DirectionLight}})}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     \mbox{\hyperlink{class_direction_light}{DirectionLight}}();}
+\DoxyCodeLine{11     \mbox{\hyperlink{class_direction_light}{\string~DirectionLight}}();}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_direction_light_af03a2f9c620db69d426c76fc48e2453d}{GetAtten}}(glm::vec3 objPos)\textcolor{keyword}{const override }\{ \textcolor{keywordflow}{return} 1.0f; \};}
+\DoxyCodeLine{14     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_direction_light_a1722bf9ba1a25621543507f530c9ea89}{GuiDisPlay}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{19     \textcolor{keyword}{virtual} TiXmlElement* \mbox{\hyperlink{class_direction_light_acf7bdc44fa95366871a2e8fe8d1f7c09}{Serialize}}(std::string name = \textcolor{stringliteral}{"{}Default"{}}) \textcolor{keyword}{override};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{24     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_direction_light_acee57f63f803535fa8ff74ae8b4663a8}{DeSerialize}}(TiXmlElement*) \textcolor{keyword}{override};}
+\DoxyCodeLine{25 \};}
+
+\end{DoxyCode}

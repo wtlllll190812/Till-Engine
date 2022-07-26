@@ -20,7 +20,7 @@ Window* Window::Create(const WindowProps& props)
 
 WindowsWindow::WindowsWindow(const WindowProps& props)
 {
-	Init(props);
+	WindowInit(props);
 }
 
 WindowsWindow::~WindowsWindow()
@@ -87,7 +87,7 @@ bool WindowsWindow::IsVSync() const
 	return mData.VSync;
 }
 
-void WindowsWindow::Init(const WindowProps& props)
+void WindowsWindow::WindowInit(const WindowProps& props)
 {
 	Debug::GetEngineLogger()->info("GlfwWindows Init");
 	mData.Title = props.Title;
@@ -101,6 +101,7 @@ void WindowsWindow::Init(const WindowProps& props)
 		//glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);//配置opengl版本
 		//glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);//使用核心模式,使用旧版函数时会出错
 		//glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);//禁止调整窗口大小
+		//glfwWindowHint(GLFW_SAMPLES, 4);
 
 		glfwSetErrorCallback([](int error_code, const char* description)
 			{
@@ -118,6 +119,7 @@ void WindowsWindow::Init(const WindowProps& props)
 	glViewport(0, 0, mData.Width, mData.Height);//前两个参数控制左下角的位置
 	////启用深度测试
 	glEnable(GL_DEPTH_TEST);
+	//glEnable(GL_MULTISAMPLE);
 
 	////初始化GLEW,用于管理opengl的函数指针
 	glewExperimental = GL_TRUE;

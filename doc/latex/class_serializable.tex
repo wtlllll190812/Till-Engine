@@ -1,0 +1,89 @@
+\hypertarget{class_serializable}{}\doxysection{Serializable类 参考}
+\label{class_serializable}\index{Serializable@{Serializable}}
+
+
+可序列化对象接口  
+
+
+
+
+{\ttfamily \#include $<$TLSerialize.\+h$>$}
+
+
+
+类 Serializable 继承关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_serializable__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+virtual Ti\+Xml\+Element $\ast$ \mbox{\hyperlink{class_serializable_ad2b954777bfb26bd486d7aee9675667e}{Serialize}} (std\+::string name=\char`\"{}Default\char`\"{})=0
+\begin{DoxyCompactList}\small\item\em 序列化 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_serializable_a4169f7b98f9816d6b1ebf2dbd3b2d3cb}{De\+Serialize}} (Ti\+Xml\+Element $\ast$)=0
+\begin{DoxyCompactList}\small\item\em 反序列化 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_serializable_ac713a26d2d8e38066e29555199af5580}{Update\+Node}} ()
+\begin{DoxyCompactList}\small\item\em 更新序列化节点 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_serializable_a4be5c5e13129b89d05d7b4a7094d440b}\label{class_serializable_a4be5c5e13129b89d05d7b4a7094d440b}} 
+Ti\+Xml\+Element $\ast$ {\bfseries m\+\_\+node} =nullptr
+\begin{DoxyCompactList}\small\item\em 序列化节点 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+可序列化对象接口 
+
+\doxysubsection{成员函数说明}
+\mbox{\Hypertarget{class_serializable_a4169f7b98f9816d6b1ebf2dbd3b2d3cb}\label{class_serializable_a4169f7b98f9816d6b1ebf2dbd3b2d3cb}} 
+\index{Serializable@{Serializable}!DeSerialize@{DeSerialize}}
+\index{DeSerialize@{DeSerialize}!Serializable@{Serializable}}
+\doxysubsubsection{\texorpdfstring{DeSerialize()}{DeSerialize()}}
+{\footnotesize\ttfamily virtual void Serializable\+::\+De\+Serialize (\begin{DoxyParamCaption}\item[{Ti\+Xml\+Element $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+反序列化 
+
+
+
+在 \mbox{\hyperlink{class_camera_ae62246ee56adb668d0b66219e4a5e35a}{Camera}}, \mbox{\hyperlink{class_direction_light_acee57f63f803535fa8ff74ae8b4663a8}{Direction\+Light}}, \mbox{\hyperlink{class_point_light_ab878efadcb12dee4f3aafb31189386e9}{Point\+Light}}, \mbox{\hyperlink{class_renderer_ac300e94373098ca8336b3a54b65a6c2c}{Renderer}}, \mbox{\hyperlink{class_spot_light_aa7d60f9312634b2708cbd32fdce23957}{Spot\+Light}}, \mbox{\hyperlink{class_transform_abe93692dc6c3083f804c0c44f8e8fcc4}{Transform}} , 以及 \mbox{\hyperlink{class_game_object_a7bd3840ff675f1ee44ddec99fb89bc32}{Game\+Object}} 内被实现.
+
+\mbox{\Hypertarget{class_serializable_ad2b954777bfb26bd486d7aee9675667e}\label{class_serializable_ad2b954777bfb26bd486d7aee9675667e}} 
+\index{Serializable@{Serializable}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!Serializable@{Serializable}}
+\doxysubsubsection{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily virtual Ti\+Xml\+Element $\ast$ Serializable\+::\+Serialize (\begin{DoxyParamCaption}\item[{std\+::string}]{name = {\ttfamily \char`\"{}Default\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+序列化 
+
+
+
+在 \mbox{\hyperlink{class_camera_abc8f353bd41c87389760a400b008c84b}{Camera}}, \mbox{\hyperlink{class_direction_light_acf7bdc44fa95366871a2e8fe8d1f7c09}{Direction\+Light}}, \mbox{\hyperlink{class_point_light_aa1ab02a23e44b18021700a4e27373295}{Point\+Light}}, \mbox{\hyperlink{class_renderer_abaf6583d3608eda85a587073d92b354d}{Renderer}}, \mbox{\hyperlink{class_spot_light_a07e6bcdf50c13272805091893130c575}{Spot\+Light}}, \mbox{\hyperlink{class_transform_ae6c2b74033dd4cd5ca9af6e0a1d25301}{Transform}} , 以及 \mbox{\hyperlink{class_game_object_ac9b6e61cb40bcede4ae0309cc618ad97}{Game\+Object}} 内被实现.
+
+\mbox{\Hypertarget{class_serializable_ac713a26d2d8e38066e29555199af5580}\label{class_serializable_ac713a26d2d8e38066e29555199af5580}} 
+\index{Serializable@{Serializable}!UpdateNode@{UpdateNode}}
+\index{UpdateNode@{UpdateNode}!Serializable@{Serializable}}
+\doxysubsubsection{\texorpdfstring{UpdateNode()}{UpdateNode()}}
+{\footnotesize\ttfamily virtual void Serializable\+::\+Update\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+更新序列化节点 
+
+
+
+被 \mbox{\hyperlink{class_camera_a088b21306b84082425926de5596f910e}{Camera}}, \mbox{\hyperlink{class_renderer_ad4e6fd64f7992b43c9749f029953bb96}{Renderer}}, \mbox{\hyperlink{class_transform_a61265532c475d33a022f1a4238089cff}{Transform}} , 以及 \mbox{\hyperlink{class_game_object_aabef8abf8f97c44cbc06cda376b438e3}{Game\+Object}} 重载.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/\+Engine/\+Framework/\+Tools/TLSerialize.\+h\end{DoxyCompactItemize}

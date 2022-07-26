@@ -2,15 +2,25 @@
 #include "TLSerialize.h"
 
 class GameObject;
+/// <summary>
+/// 组件基类
+/// </summary>
 class Component:public Serializable
 {
 public:
-	const virtual std::string GetName() const = 0;
-
-	GameObject *gameobject;
+	/// <summary>
+	/// 所属物体
+	/// </summary>
+	GameObject* gameobject;
+	
+	/// <summary>
+	/// 全局标识
+	/// </summary>
 	int guid;
 
+public:
 	Component() : gameobject(nullptr), guid(GetHash()) {}
+	const virtual std::string GetName() const = 0;
 
 	/// <summary>
 	/// 刷新时
@@ -32,6 +42,17 @@ public:
 	/// </summary>
 	virtual void GuiDisPlay(){};
 
+	/// <summary>
+	/// 获取组件
+	/// </summary>
+	/// <typeparam name="T">组件类型</typeparam>
+	/// <returns>组件对象</returns>
+	template <class T>
+	T* GetComponent()
+	{
+		return gameobject->GetComponent<T>();
+	}
+	
 	/// <summary>
 	/// 获取哈希值
 	/// </summary>

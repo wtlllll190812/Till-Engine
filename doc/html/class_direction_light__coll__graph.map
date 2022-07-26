@@ -1,0 +1,10 @@
+<map id="DirectionLight" name="DirectionLight">
+<area shape="rect" id="node1" title=" " alt="" coords="5,259,107,285"/>
+<area shape="rect" id="node2" href="$class_light.html" title=" " alt="" coords="49,157,100,184"/>
+<area shape="rect" id="node3" href="$class_component.html" title="组件基类" alt="" coords="181,81,269,108"/>
+<area shape="rect" id="node6" href="$class_transform.html" title=" " alt="" coords="115,208,194,235"/>
+<area shape="rect" id="node8" href="$class_camera.html" title=" " alt="" coords="192,157,259,184"/>
+<area shape="rect" id="node4" href="$class_serializable.html" title="可序列化对象接口" alt="" coords="281,5,370,32"/>
+<area shape="rect" id="node5" href="$class_game_object.html" title=" " alt="" coords="257,348,351,375"/>
+<area shape="rect" id="node7" href="$class_scene.html" title="场景类" alt="" coords="237,259,296,285"/>
+</map>

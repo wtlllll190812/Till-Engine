@@ -1,0 +1,194 @@
+\hypertarget{class_t_lxml}{}\doxysection{TLxml类 参考}
+\label{class_t_lxml}\index{TLxml@{TLxml}}
+
+
+{\ttfamily \#include $<$TLxml.\+h$>$}
+
+\doxysubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_t_lxml_a12c9d793f3e823049dffcb78939d2c74}{TLxml}} (\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std\+::string}}, \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std\+::string}})
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_t_lxml_a068d2989f028c4fdfad1ce5f2910d934}{TLxml}} (\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std\+::string}})
+\begin{DoxyCompactList}\small\item\em 构造非文件节点 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_t_lxml_a9c460ccfa26736b7e045bbcad2c46e2b}{$\sim$\+TLxml}} ()
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{class_t_lxml_ab67ea78fda6ac67733c3f21fb7b0333d}{Add\+Child}} (Ti\+Xml\+Element $\ast$)
+\begin{DoxyCompactList}\small\item\em 添加子节点 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{class_t_lxml_aee8cee8302a7b8bef3002d0f5952df69}{Save}} ()
+\begin{DoxyCompactList}\small\item\em 保存文件 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_t_lxml}{TLxml}} $\ast$ \mbox{\hyperlink{class_t_lxml_a16dbb965e3db5aa71e448118e020203d}{Serialize}} (glm\+::vec3 \&, \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std\+::string}})
+\begin{DoxyCompactList}\small\item\em 序列化向量 \end{DoxyCompactList}\item 
+static glm\+::vec3 \mbox{\hyperlink{class_t_lxml_a0144d1a045da012691fa861dde9ad3ee}{De\+Serialize}} (Ti\+Xml\+Node $\ast$)
+\begin{DoxyCompactList}\small\item\em 反序列化向量 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+Ti\+Xml\+Element $\ast$ \mbox{\hyperlink{class_t_lxml_ad57eba6770cb927cf77fde0eda8870a8}{p\+Root}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std\+::string}} \mbox{\hyperlink{class_t_lxml_addc2cf9e8fb2f001e0d0ca420aeee19a}{path}}
+\item 
+Ti\+Xml\+Document $\ast$ \mbox{\hyperlink{class_t_lxml_a76404153b61d4e26c104a9a646fab453}{p\+Doc}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{构造及析构函数说明}
+\mbox{\Hypertarget{class_t_lxml_a12c9d793f3e823049dffcb78939d2c74}\label{class_t_lxml_a12c9d793f3e823049dffcb78939d2c74}} 
+\index{TLxml@{TLxml}!TLxml@{TLxml}}
+\index{TLxml@{TLxml}!TLxml@{TLxml}}
+\doxysubsubsection{\texorpdfstring{TLxml()}{TLxml()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily TLxml\+::\+TLxml (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std\+::string}}}]{p,  }\item[{\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std\+::string}}}]{n }\end{DoxyParamCaption})}
+
+
+
+构造函数 
+
+路径
+
+根元素名称这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_t_lxml_a12c9d793f3e823049dffcb78939d2c74_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_t_lxml_a068d2989f028c4fdfad1ce5f2910d934}\label{class_t_lxml_a068d2989f028c4fdfad1ce5f2910d934}} 
+\index{TLxml@{TLxml}!TLxml@{TLxml}}
+\index{TLxml@{TLxml}!TLxml@{TLxml}}
+\doxysubsubsection{\texorpdfstring{TLxml()}{TLxml()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily TLxml\+::\+TLxml (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std\+::string}}}]{n }\end{DoxyParamCaption})}
+
+
+
+构造非文件节点 
+
+根元素名称\mbox{\Hypertarget{class_t_lxml_a9c460ccfa26736b7e045bbcad2c46e2b}\label{class_t_lxml_a9c460ccfa26736b7e045bbcad2c46e2b}} 
+\index{TLxml@{TLxml}!````~TLxml@{$\sim$TLxml}}
+\index{````~TLxml@{$\sim$TLxml}!TLxml@{TLxml}}
+\doxysubsubsection{\texorpdfstring{$\sim$TLxml()}{~TLxml()}}
+{\footnotesize\ttfamily TLxml\+::$\sim$\+TLxml (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{成员函数说明}
+\mbox{\Hypertarget{class_t_lxml_ab67ea78fda6ac67733c3f21fb7b0333d}\label{class_t_lxml_ab67ea78fda6ac67733c3f21fb7b0333d}} 
+\index{TLxml@{TLxml}!AddChild@{AddChild}}
+\index{AddChild@{AddChild}!TLxml@{TLxml}}
+\doxysubsubsection{\texorpdfstring{AddChild()}{AddChild()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} TLxml\+::\+Add\+Child (\begin{DoxyParamCaption}\item[{Ti\+Xml\+Element $\ast$}]{child }\end{DoxyParamCaption})}
+
+
+
+添加子节点 
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{class_t_lxml_ab67ea78fda6ac67733c3f21fb7b0333d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_t_lxml_a0144d1a045da012691fa861dde9ad3ee}\label{class_t_lxml_a0144d1a045da012691fa861dde9ad3ee}} 
+\index{TLxml@{TLxml}!DeSerialize@{DeSerialize}}
+\index{DeSerialize@{DeSerialize}!TLxml@{TLxml}}
+\doxysubsubsection{\texorpdfstring{DeSerialize()}{DeSerialize()}}
+{\footnotesize\ttfamily glm\+::vec3 TLxml\+::\+De\+Serialize (\begin{DoxyParamCaption}\item[{Ti\+Xml\+Node $\ast$}]{xml }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+反序列化向量 
+
+向量
+
+\begin{DoxyReturn}{返回}
+节点名
+\end{DoxyReturn}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_t_lxml_a0144d1a045da012691fa861dde9ad3ee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_t_lxml_aee8cee8302a7b8bef3002d0f5952df69}\label{class_t_lxml_aee8cee8302a7b8bef3002d0f5952df69}} 
+\index{TLxml@{TLxml}!Save@{Save}}
+\index{Save@{Save}!TLxml@{TLxml}}
+\doxysubsubsection{\texorpdfstring{Save()}{Save()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} TLxml\+::\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+保存文件 
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_t_lxml_aee8cee8302a7b8bef3002d0f5952df69_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_t_lxml_a16dbb965e3db5aa71e448118e020203d}\label{class_t_lxml_a16dbb965e3db5aa71e448118e020203d}} 
+\index{TLxml@{TLxml}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!TLxml@{TLxml}}
+\doxysubsubsection{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_t_lxml}{TLxml}} $\ast$ TLxml\+::\+Serialize (\begin{DoxyParamCaption}\item[{glm\+::vec3 \&}]{vector,  }\item[{\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std\+::string}}}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+序列化向量 
+
+向量
+
+节点名函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{class_t_lxml_a16dbb965e3db5aa71e448118e020203d_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{class_t_lxml_a16dbb965e3db5aa71e448118e020203d_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{类成员变量说明}
+\mbox{\Hypertarget{class_t_lxml_addc2cf9e8fb2f001e0d0ca420aeee19a}\label{class_t_lxml_addc2cf9e8fb2f001e0d0ca420aeee19a}} 
+\index{TLxml@{TLxml}!path@{path}}
+\index{path@{path}!TLxml@{TLxml}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std\+::string}} TLxml\+::path\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_t_lxml_a76404153b61d4e26c104a9a646fab453}\label{class_t_lxml_a76404153b61d4e26c104a9a646fab453}} 
+\index{TLxml@{TLxml}!pDoc@{pDoc}}
+\index{pDoc@{pDoc}!TLxml@{TLxml}}
+\doxysubsubsection{\texorpdfstring{pDoc}{pDoc}}
+{\footnotesize\ttfamily Ti\+Xml\+Document$\ast$ TLxml\+::p\+Doc\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_t_lxml_ad57eba6770cb927cf77fde0eda8870a8}\label{class_t_lxml_ad57eba6770cb927cf77fde0eda8870a8}} 
+\index{TLxml@{TLxml}!pRoot@{pRoot}}
+\index{pRoot@{pRoot}!TLxml@{TLxml}}
+\doxysubsubsection{\texorpdfstring{pRoot}{pRoot}}
+{\footnotesize\ttfamily Ti\+Xml\+Element$\ast$ TLxml\+::p\+Root}
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/\+Engine/\+Framework/\mbox{\hyperlink{_t_lxml_8h}{TLxml.\+h}}\item 
+D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/\+Engine/\+Framework/\mbox{\hyperlink{_t_lxml_8cpp}{TLxml.\+cpp}}\end{DoxyCompactItemize}

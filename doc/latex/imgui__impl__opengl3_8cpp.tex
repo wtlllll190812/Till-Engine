@@ -1,0 +1,448 @@
+\hypertarget{imgui__impl__opengl3_8cpp}{}\doxysection{D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/imgui/imgui\+\_\+impl\+\_\+opengl3.cpp 文件参考}
+\label{imgui__impl__opengl3_8cpp}\index{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/imgui/imgui\_impl\_opengl3.cpp@{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/imgui/imgui\_impl\_opengl3.cpp}}
+{\ttfamily \#include \char`\"{}imgui.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}imgui\+\_\+impl\+\_\+opengl3.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}imgui\+\_\+impl\+\_\+opengl3\+\_\+loader.\+h\char`\"{}}\newline
+imgui\+\_\+impl\+\_\+opengl3.\+cpp 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_im_gui___impl_open_g_l3___data}{Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{imgui__impl__opengl3_8cpp_a7dcfb597d9879faf16deecf3874e58d4}{IMGL3\+W\+\_\+\+IMPL}}
+\item 
+\#define \mbox{\hyperlink{imgui__impl__opengl3_8cpp_a7ae930dc349a186d20cfd7ec01cb1f1d}{IMGUI\+\_\+\+IMPL\+\_\+\+OPENGL\+\_\+\+USE\+\_\+\+VERTEX\+\_\+\+ARRAY}}
+\item 
+\#define \mbox{\hyperlink{imgui__impl__opengl3_8cpp_a8c5540c255a86aa56282b5db8ef0f218}{IMGUI\+\_\+\+IMPL\+\_\+\+HAS\+\_\+\+POLYGON\+\_\+\+MODE}}
+\item 
+\#define \mbox{\hyperlink{imgui__impl__opengl3_8cpp_a2d9c66e1dfb454fdb91f85037e0591e5}{IMGUI\+\_\+\+IMPL\+\_\+\+OPENGL\+\_\+\+MAY\+\_\+\+HAVE\+\_\+\+VTX\+\_\+\+OFFSET}}
+\item 
+\#define \mbox{\hyperlink{imgui__impl__opengl3_8cpp_ac486fa8f4402470a60eeb8e6a39fb35f}{IMGUI\+\_\+\+IMPL\+\_\+\+OPENGL\+\_\+\+MAY\+\_\+\+HAVE\+\_\+\+BIND\+\_\+\+SAMPLER}}
+\item 
+\#define \mbox{\hyperlink{imgui__impl__opengl3_8cpp_ac99ae99b9e3d14f7e0211285a5f0540c}{IMGUI\+\_\+\+IMPL\+\_\+\+OPENGL\+\_\+\+MAY\+\_\+\+HAVE\+\_\+\+PRIMITIVE\+\_\+\+RESTART}}
+\item 
+\#define \mbox{\hyperlink{imgui__impl__opengl3_8cpp_ab592fd315c7806c1eecd62f53d6e61dc}{IMGUI\+\_\+\+IMPL\+\_\+\+OPENGL\+\_\+\+MAY\+\_\+\+HAVE\+\_\+\+EXTENSIONS}}
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_im_gui___impl_open_g_l3___data}{Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Data}} $\ast$ \mbox{\hyperlink{imgui__impl__opengl3_8cpp_a68f1fea3ba16697f3febf6797cb5c85b}{Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Get\+Backend\+Data}} ()
+\item 
+static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__impl__opengl3_8cpp_ad41c8916247f34edad9088ae0615dbcb}{Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Init\+Platform\+Interface}} ()
+\item 
+static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__impl__opengl3_8cpp_a78abb5eedee7821d75bfecf1c9b06ccb}{Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Shutdown\+Platform\+Interface}} ()
+\item 
+bool \mbox{\hyperlink{imgui__impl__opengl3_8cpp_a0475f257dc97d1daceee89cb4b19744d}{Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Init}} (const char $\ast$glsl\+\_\+version)
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__impl__opengl3_8cpp_acbd53376e6135ad71e7bcd9879278e37}{Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Shutdown}} ()
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__impl__opengl3_8cpp_a900e74add4e56e74f97a210eb329aa91}{Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+New\+Frame}} ()
+\item 
+static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__impl__opengl3_8cpp_a328d27e0d40312d064adbc45c0cf240b}{Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Setup\+Render\+State}} (\mbox{\hyperlink{struct_im_draw_data}{Im\+Draw\+Data}} $\ast$draw\+\_\+data, int fb\+\_\+width, int fb\+\_\+height, \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a68c4714e43d8e827d80759f9cb864f3c}{GLuint}} vertex\+\_\+array\+\_\+object)
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__impl__opengl3_8cpp_ad215190229f4f300593911aa7b3821de}{Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Render\+Draw\+Data}} (\mbox{\hyperlink{struct_im_draw_data}{Im\+Draw\+Data}} $\ast$draw\+\_\+data)
+\item 
+bool \mbox{\hyperlink{imgui__impl__opengl3_8cpp_a3dc4f80532d710de41d4075214eb363e}{Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Create\+Fonts\+Texture}} ()
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__impl__opengl3_8cpp_a539aaad4aa185838297fb13b2409c405}{Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Destroy\+Fonts\+Texture}} ()
+\item 
+static bool \mbox{\hyperlink{imgui__impl__opengl3_8cpp_a11601584c987e4aeae774985e1177d74}{Check\+Shader}} (\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a68c4714e43d8e827d80759f9cb864f3c}{GLuint}} handle, const char $\ast$desc)
+\item 
+static bool \mbox{\hyperlink{imgui__impl__opengl3_8cpp_a22f46b7ed68c385f411c4b2dc25c50e8}{Check\+Program}} (\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a68c4714e43d8e827d80759f9cb864f3c}{GLuint}} handle, const char $\ast$desc)
+\item 
+bool \mbox{\hyperlink{imgui__impl__opengl3_8cpp_ab27f12289d6fe9fcd412f92af280b398}{Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Create\+Device\+Objects}} ()
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__impl__opengl3_8cpp_a605e340c346791d9c9e927add2392d0e}{Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Destroy\+Device\+Objects}} ()
+\item 
+static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__impl__opengl3_8cpp_a539314fdc1e4017ec0ef14783bf496bf}{Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Render\+Window}} (\mbox{\hyperlink{struct_im_gui_viewport}{Im\+Gui\+Viewport}} $\ast$viewport, \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} $\ast$)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_a7dcfb597d9879faf16deecf3874e58d4}\label{imgui__impl__opengl3_8cpp_a7dcfb597d9879faf16deecf3874e58d4}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!IMGL3W\_IMPL@{IMGL3W\_IMPL}}
+\index{IMGL3W\_IMPL@{IMGL3W\_IMPL}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{IMGL3W\_IMPL}{IMGL3W\_IMPL}}
+{\footnotesize\ttfamily \#define IMGL3\+W\+\_\+\+IMPL}
+
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_a8c5540c255a86aa56282b5db8ef0f218}\label{imgui__impl__opengl3_8cpp_a8c5540c255a86aa56282b5db8ef0f218}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!IMGUI\_IMPL\_HAS\_POLYGON\_MODE@{IMGUI\_IMPL\_HAS\_POLYGON\_MODE}}
+\index{IMGUI\_IMPL\_HAS\_POLYGON\_MODE@{IMGUI\_IMPL\_HAS\_POLYGON\_MODE}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{IMGUI\_IMPL\_HAS\_POLYGON\_MODE}{IMGUI\_IMPL\_HAS\_POLYGON\_MODE}}
+{\footnotesize\ttfamily \#define IMGUI\+\_\+\+IMPL\+\_\+\+HAS\+\_\+\+POLYGON\+\_\+\+MODE}
+
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_ac486fa8f4402470a60eeb8e6a39fb35f}\label{imgui__impl__opengl3_8cpp_ac486fa8f4402470a60eeb8e6a39fb35f}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_BIND\_SAMPLER@{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_BIND\_SAMPLER}}
+\index{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_BIND\_SAMPLER@{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_BIND\_SAMPLER}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_BIND\_SAMPLER}{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_BIND\_SAMPLER}}
+{\footnotesize\ttfamily \#define IMGUI\+\_\+\+IMPL\+\_\+\+OPENGL\+\_\+\+MAY\+\_\+\+HAVE\+\_\+\+BIND\+\_\+\+SAMPLER}
+
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_ab592fd315c7806c1eecd62f53d6e61dc}\label{imgui__impl__opengl3_8cpp_ab592fd315c7806c1eecd62f53d6e61dc}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_EXTENSIONS@{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_EXTENSIONS}}
+\index{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_EXTENSIONS@{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_EXTENSIONS}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_EXTENSIONS}{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_EXTENSIONS}}
+{\footnotesize\ttfamily \#define IMGUI\+\_\+\+IMPL\+\_\+\+OPENGL\+\_\+\+MAY\+\_\+\+HAVE\+\_\+\+EXTENSIONS}
+
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_ac99ae99b9e3d14f7e0211285a5f0540c}\label{imgui__impl__opengl3_8cpp_ac99ae99b9e3d14f7e0211285a5f0540c}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_PRIMITIVE\_RESTART@{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_PRIMITIVE\_RESTART}}
+\index{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_PRIMITIVE\_RESTART@{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_PRIMITIVE\_RESTART}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_PRIMITIVE\_RESTART}{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_PRIMITIVE\_RESTART}}
+{\footnotesize\ttfamily \#define IMGUI\+\_\+\+IMPL\+\_\+\+OPENGL\+\_\+\+MAY\+\_\+\+HAVE\+\_\+\+PRIMITIVE\+\_\+\+RESTART}
+
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_a2d9c66e1dfb454fdb91f85037e0591e5}\label{imgui__impl__opengl3_8cpp_a2d9c66e1dfb454fdb91f85037e0591e5}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_VTX\_OFFSET@{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_VTX\_OFFSET}}
+\index{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_VTX\_OFFSET@{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_VTX\_OFFSET}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_VTX\_OFFSET}{IMGUI\_IMPL\_OPENGL\_MAY\_HAVE\_VTX\_OFFSET}}
+{\footnotesize\ttfamily \#define IMGUI\+\_\+\+IMPL\+\_\+\+OPENGL\+\_\+\+MAY\+\_\+\+HAVE\+\_\+\+VTX\+\_\+\+OFFSET}
+
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_a7ae930dc349a186d20cfd7ec01cb1f1d}\label{imgui__impl__opengl3_8cpp_a7ae930dc349a186d20cfd7ec01cb1f1d}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!IMGUI\_IMPL\_OPENGL\_USE\_VERTEX\_ARRAY@{IMGUI\_IMPL\_OPENGL\_USE\_VERTEX\_ARRAY}}
+\index{IMGUI\_IMPL\_OPENGL\_USE\_VERTEX\_ARRAY@{IMGUI\_IMPL\_OPENGL\_USE\_VERTEX\_ARRAY}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{IMGUI\_IMPL\_OPENGL\_USE\_VERTEX\_ARRAY}{IMGUI\_IMPL\_OPENGL\_USE\_VERTEX\_ARRAY}}
+{\footnotesize\ttfamily \#define IMGUI\+\_\+\+IMPL\+\_\+\+OPENGL\+\_\+\+USE\+\_\+\+VERTEX\+\_\+\+ARRAY}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_a22f46b7ed68c385f411c4b2dc25c50e8}\label{imgui__impl__opengl3_8cpp_a22f46b7ed68c385f411c4b2dc25c50e8}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!CheckProgram@{CheckProgram}}
+\index{CheckProgram@{CheckProgram}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{CheckProgram()}{CheckProgram()}}
+{\footnotesize\ttfamily static bool Check\+Program (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a68c4714e43d8e827d80759f9cb864f3c}{GLuint}}}]{handle,  }\item[{const char $\ast$}]{desc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a22f46b7ed68c385f411c4b2dc25c50e8_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a22f46b7ed68c385f411c4b2dc25c50e8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_a11601584c987e4aeae774985e1177d74}\label{imgui__impl__opengl3_8cpp_a11601584c987e4aeae774985e1177d74}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!CheckShader@{CheckShader}}
+\index{CheckShader@{CheckShader}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{CheckShader()}{CheckShader()}}
+{\footnotesize\ttfamily static bool Check\+Shader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a68c4714e43d8e827d80759f9cb864f3c}{GLuint}}}]{handle,  }\item[{const char $\ast$}]{desc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a11601584c987e4aeae774985e1177d74_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a11601584c987e4aeae774985e1177d74_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_ab27f12289d6fe9fcd412f92af280b398}\label{imgui__impl__opengl3_8cpp_ab27f12289d6fe9fcd412f92af280b398}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!ImGui\_ImplOpenGL3\_CreateDeviceObjects@{ImGui\_ImplOpenGL3\_CreateDeviceObjects}}
+\index{ImGui\_ImplOpenGL3\_CreateDeviceObjects@{ImGui\_ImplOpenGL3\_CreateDeviceObjects}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplOpenGL3\_CreateDeviceObjects()}{ImGui\_ImplOpenGL3\_CreateDeviceObjects()}}
+{\footnotesize\ttfamily bool Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Create\+Device\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_ab27f12289d6fe9fcd412f92af280b398_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_ab27f12289d6fe9fcd412f92af280b398_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_a3dc4f80532d710de41d4075214eb363e}\label{imgui__impl__opengl3_8cpp_a3dc4f80532d710de41d4075214eb363e}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!ImGui\_ImplOpenGL3\_CreateFontsTexture@{ImGui\_ImplOpenGL3\_CreateFontsTexture}}
+\index{ImGui\_ImplOpenGL3\_CreateFontsTexture@{ImGui\_ImplOpenGL3\_CreateFontsTexture}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplOpenGL3\_CreateFontsTexture()}{ImGui\_ImplOpenGL3\_CreateFontsTexture()}}
+{\footnotesize\ttfamily bool Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Create\+Fonts\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a3dc4f80532d710de41d4075214eb363e_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a3dc4f80532d710de41d4075214eb363e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_a605e340c346791d9c9e927add2392d0e}\label{imgui__impl__opengl3_8cpp_a605e340c346791d9c9e927add2392d0e}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!ImGui\_ImplOpenGL3\_DestroyDeviceObjects@{ImGui\_ImplOpenGL3\_DestroyDeviceObjects}}
+\index{ImGui\_ImplOpenGL3\_DestroyDeviceObjects@{ImGui\_ImplOpenGL3\_DestroyDeviceObjects}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplOpenGL3\_DestroyDeviceObjects()}{ImGui\_ImplOpenGL3\_DestroyDeviceObjects()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Destroy\+Device\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a605e340c346791d9c9e927add2392d0e_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a605e340c346791d9c9e927add2392d0e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_a539aaad4aa185838297fb13b2409c405}\label{imgui__impl__opengl3_8cpp_a539aaad4aa185838297fb13b2409c405}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!ImGui\_ImplOpenGL3\_DestroyFontsTexture@{ImGui\_ImplOpenGL3\_DestroyFontsTexture}}
+\index{ImGui\_ImplOpenGL3\_DestroyFontsTexture@{ImGui\_ImplOpenGL3\_DestroyFontsTexture}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplOpenGL3\_DestroyFontsTexture()}{ImGui\_ImplOpenGL3\_DestroyFontsTexture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Destroy\+Fonts\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a539aaad4aa185838297fb13b2409c405_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a539aaad4aa185838297fb13b2409c405_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_a68f1fea3ba16697f3febf6797cb5c85b}\label{imgui__impl__opengl3_8cpp_a68f1fea3ba16697f3febf6797cb5c85b}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!ImGui\_ImplOpenGL3\_GetBackendData@{ImGui\_ImplOpenGL3\_GetBackendData}}
+\index{ImGui\_ImplOpenGL3\_GetBackendData@{ImGui\_ImplOpenGL3\_GetBackendData}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplOpenGL3\_GetBackendData()}{ImGui\_ImplOpenGL3\_GetBackendData()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{struct_im_gui___impl_open_g_l3___data}{Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Data}} $\ast$ Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Get\+Backend\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a68f1fea3ba16697f3febf6797cb5c85b_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a68f1fea3ba16697f3febf6797cb5c85b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_a0475f257dc97d1daceee89cb4b19744d}\label{imgui__impl__opengl3_8cpp_a0475f257dc97d1daceee89cb4b19744d}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!ImGui\_ImplOpenGL3\_Init@{ImGui\_ImplOpenGL3\_Init}}
+\index{ImGui\_ImplOpenGL3\_Init@{ImGui\_ImplOpenGL3\_Init}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplOpenGL3\_Init()}{ImGui\_ImplOpenGL3\_Init()}}
+{\footnotesize\ttfamily bool Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Init (\begin{DoxyParamCaption}\item[{const char $\ast$}]{glsl\+\_\+version }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a0475f257dc97d1daceee89cb4b19744d_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a0475f257dc97d1daceee89cb4b19744d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_ad41c8916247f34edad9088ae0615dbcb}\label{imgui__impl__opengl3_8cpp_ad41c8916247f34edad9088ae0615dbcb}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!ImGui\_ImplOpenGL3\_InitPlatformInterface@{ImGui\_ImplOpenGL3\_InitPlatformInterface}}
+\index{ImGui\_ImplOpenGL3\_InitPlatformInterface@{ImGui\_ImplOpenGL3\_InitPlatformInterface}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplOpenGL3\_InitPlatformInterface()}{ImGui\_ImplOpenGL3\_InitPlatformInterface()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Init\+Platform\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_ad41c8916247f34edad9088ae0615dbcb_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_ad41c8916247f34edad9088ae0615dbcb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_a900e74add4e56e74f97a210eb329aa91}\label{imgui__impl__opengl3_8cpp_a900e74add4e56e74f97a210eb329aa91}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!ImGui\_ImplOpenGL3\_NewFrame@{ImGui\_ImplOpenGL3\_NewFrame}}
+\index{ImGui\_ImplOpenGL3\_NewFrame@{ImGui\_ImplOpenGL3\_NewFrame}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplOpenGL3\_NewFrame()}{ImGui\_ImplOpenGL3\_NewFrame()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+New\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a900e74add4e56e74f97a210eb329aa91_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a900e74add4e56e74f97a210eb329aa91_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_ad215190229f4f300593911aa7b3821de}\label{imgui__impl__opengl3_8cpp_ad215190229f4f300593911aa7b3821de}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!ImGui\_ImplOpenGL3\_RenderDrawData@{ImGui\_ImplOpenGL3\_RenderDrawData}}
+\index{ImGui\_ImplOpenGL3\_RenderDrawData@{ImGui\_ImplOpenGL3\_RenderDrawData}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplOpenGL3\_RenderDrawData()}{ImGui\_ImplOpenGL3\_RenderDrawData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Render\+Draw\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_im_draw_data}{Im\+Draw\+Data}} $\ast$}]{draw\+\_\+data }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_ad215190229f4f300593911aa7b3821de_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_ad215190229f4f300593911aa7b3821de_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_a539314fdc1e4017ec0ef14783bf496bf}\label{imgui__impl__opengl3_8cpp_a539314fdc1e4017ec0ef14783bf496bf}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!ImGui\_ImplOpenGL3\_RenderWindow@{ImGui\_ImplOpenGL3\_RenderWindow}}
+\index{ImGui\_ImplOpenGL3\_RenderWindow@{ImGui\_ImplOpenGL3\_RenderWindow}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplOpenGL3\_RenderWindow()}{ImGui\_ImplOpenGL3\_RenderWindow()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Render\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_im_gui_viewport}{Im\+Gui\+Viewport}} $\ast$}]{viewport,  }\item[{\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a539314fdc1e4017ec0ef14783bf496bf_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a539314fdc1e4017ec0ef14783bf496bf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_a328d27e0d40312d064adbc45c0cf240b}\label{imgui__impl__opengl3_8cpp_a328d27e0d40312d064adbc45c0cf240b}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!ImGui\_ImplOpenGL3\_SetupRenderState@{ImGui\_ImplOpenGL3\_SetupRenderState}}
+\index{ImGui\_ImplOpenGL3\_SetupRenderState@{ImGui\_ImplOpenGL3\_SetupRenderState}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplOpenGL3\_SetupRenderState()}{ImGui\_ImplOpenGL3\_SetupRenderState()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Setup\+Render\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_im_draw_data}{Im\+Draw\+Data}} $\ast$}]{draw\+\_\+data,  }\item[{int}]{fb\+\_\+width,  }\item[{int}]{fb\+\_\+height,  }\item[{\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a68c4714e43d8e827d80759f9cb864f3c}{GLuint}}}]{vertex\+\_\+array\+\_\+object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a328d27e0d40312d064adbc45c0cf240b_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a328d27e0d40312d064adbc45c0cf240b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_acbd53376e6135ad71e7bcd9879278e37}\label{imgui__impl__opengl3_8cpp_acbd53376e6135ad71e7bcd9879278e37}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!ImGui\_ImplOpenGL3\_Shutdown@{ImGui\_ImplOpenGL3\_Shutdown}}
+\index{ImGui\_ImplOpenGL3\_Shutdown@{ImGui\_ImplOpenGL3\_Shutdown}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplOpenGL3\_Shutdown()}{ImGui\_ImplOpenGL3\_Shutdown()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Shutdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_acbd53376e6135ad71e7bcd9879278e37_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_acbd53376e6135ad71e7bcd9879278e37_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__impl__opengl3_8cpp_a78abb5eedee7821d75bfecf1c9b06ccb}\label{imgui__impl__opengl3_8cpp_a78abb5eedee7821d75bfecf1c9b06ccb}} 
+\index{imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}!ImGui\_ImplOpenGL3\_ShutdownPlatformInterface@{ImGui\_ImplOpenGL3\_ShutdownPlatformInterface}}
+\index{ImGui\_ImplOpenGL3\_ShutdownPlatformInterface@{ImGui\_ImplOpenGL3\_ShutdownPlatformInterface}!imgui\_impl\_opengl3.cpp@{imgui\_impl\_opengl3.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplOpenGL3\_ShutdownPlatformInterface()}{ImGui\_ImplOpenGL3\_ShutdownPlatformInterface()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Gui\+\_\+\+Impl\+Open\+GL3\+\_\+\+Shutdown\+Platform\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a78abb5eedee7821d75bfecf1c9b06ccb_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__impl__opengl3_8cpp_a78abb5eedee7821d75bfecf1c9b06ccb_icgraph}
+\end{center}
+\end{figure}

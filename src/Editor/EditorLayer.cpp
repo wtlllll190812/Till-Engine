@@ -23,10 +23,10 @@ using namespace std;
 #include "Texture.h"
 EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 {
-	currentScene = s;
+	mCurrentScene = s;
 	editorCamera = shared_ptr<GameObject>(new GameObject());
 	editorCamera->AddComponent(new Camera());
-	Transform* tr = s->camera->gameobject->transform;
+	Transform* tr = s->mainCamera->gameobject->transform;
 	editorCamera->transform->position = tr->position;
 	editorCamera->transform->rotation = tr->rotation;
 
@@ -41,11 +41,11 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				if (ImGui::BeginMenu("Edit"))
 				{
 					if (ImGui::MenuItem("Save")) {
-						currentScene->Save();
+						mCurrentScene->Save();
 						Debug::GetEngineLogger()->info("Save Current Scene");
 					}
 					if (ImGui::MenuItem("Empty GameObject")) {
-						currentScene->AddGameObject(shared_ptr<GameObject>(new GameObject()));
+						mCurrentScene->AddGameObject(shared_ptr<GameObject>(new GameObject()));
 						Debug::GetEngineLogger()->info("Add Empty GameObject");
 					}
 					ImGui::EndMenu();
@@ -95,11 +95,11 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 			if (hierarchy)
 			{
 				ImGui::Begin("Hierarchy", &hierarchy);
-				if (currentScene != nullptr)
+				if (mCurrentScene != nullptr)
 				{
 					if (ImGui::CollapsingHeader("currentScene"))
 					{
-						for (auto &i : currentScene->gameobjects)
+						for (auto &i : mCurrentScene->gameobjects)
 						{
 							if (ImGui::Button(i->name.c_str()))
 							{
@@ -113,7 +113,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				{
 					if (ImGui::MenuItem("Create Empty GameObject"))
 					{
-						currentScene->AddGameObject(shared_ptr<GameObject>(new GameObject()));
+						mCurrentScene->AddGameObject(shared_ptr<GameObject>(new GameObject()));
 						Debug::GetEngineLogger()->info("Add Empty GameObject");
 					}
 					ImGui::EndPopup();
@@ -132,7 +132,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				if (selectedObj != nullptr)
 				{
 					//show Components
-					for (auto i : selectedObj->components)
+					for (auto i : selectedObj->GetComponents())
 					{
 						if (ImGui::CollapsingHeader(i->GetName().c_str()))
 						{
@@ -227,7 +227,7 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				
 				//渲染场景至编辑器
 				auto mainFB = Application::instance().mWindows->GetMianFrameBuffer(); 
-				auto shadowMap=TLEngineCG::shadowBuffer; 
+				auto shadowMap=TLEngineCG::shadowMap; 
 				ImGui::Image((ImTextureID)mainFB->GetColorBuffer()->texture, viewportPanelSize, ImVec2(0, 1), ImVec2(1, 0));
 				mainFB->Resize(viewportPanelSize.x, viewportPanelSize.y);
 				shadowMap->Resize(Application::instance().mWindows->GetWidth(), Application::instance().mWindows->GetHeight());
@@ -357,7 +357,7 @@ void EditorLayer::OnUpdate()
 
 void EditorLayer::SetCurrentScene(Scene* s)
 {
-	currentScene = shared_ptr<Scene>(s);
+	mCurrentScene = shared_ptr<Scene>(s);
 }
 
 Camera* EditorLayer::GetEditorCamera()

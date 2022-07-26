@@ -6,10 +6,16 @@
 
 class Camera;
 class GameObject;
+/// <summary>
+/// 场景类
+/// </summary>
 class Scene
 {
 public:
-	Camera *camera;
+	/// <summary>
+	/// 主摄像机
+	/// </summary>
+	Camera *mainCamera;
 
 	/// <summary>
 	/// 读取并初始化场景

@@ -12,36 +12,64 @@ class Scene;
 class GameLoop;
 class EditorLayer;
 class LayerStack;
+/// <summary>
+/// 引擎主程序
+/// </summary>
 class Application :public Singleton<Application>
 {
 public:
 	bool mRunning = true;
 	std::unique_ptr<Window> mWindows;
-	EditorLayer* editorLayer;
+	EditorLayer* mEditorLayer;
 public:
 	Application();
 	~Application();
 
-	//添加层级
+	/// <summary>
+	/// 添加新层级
+	/// </summary>
 	inline void PushLayer(Layer* layer);
 	inline void PushOverlay(Layer* layer);
-	//获取编辑器层级
-	inline const EditorLayer* GetEditorLayer() { return editorLayer; }
-	//初始化应用
-	void Init();
-	//运行应用
-	void Run();
-	//处理事件
+	
+	/// <summary>
+	/// 获取编辑器层级
+	/// </summary>
+	inline const EditorLayer* GetEditorLayer() { return mEditorLayer; }
+	
+	/// <summary>
+	/// 初始化应用
+	/// </summary>
+	void AppInit();
+	
+	/// <summary>
+	/// 运行应用
+	/// </summary>
+	void AppRun();
+	
+	/// <summary>
+	/// 处理事件
+	/// </summary>
 	void OnEvent(EventBase& e);
 
 private:
-	//层级栈
+	/// <summary>
+	/// 层级栈
+	/// </summary>
 	std::shared_ptr<LayerStack> mLayerStack;
-	//游戏主循环
+	
+	/// <summary>
+	/// 游戏主循环
+	/// </summary>
 	std::shared_ptr<GameLoop> mainLoop;
-	//当前场景
-	std::shared_ptr<Scene> currentScene;
+	
+	/// <summary>
+	/// 当前场景
+	/// </summary>
+	std::shared_ptr<Scene> mCurrentScene;
 
 private:
+	/// <summary>
+	/// 窗口关闭时
+	/// </summary>
 	bool OnWindowsClose(WindowCloseEvent& e);
 };

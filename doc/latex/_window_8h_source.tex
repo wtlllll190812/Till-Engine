@@ -1,0 +1,58 @@
+\hypertarget{_window_8h_source}{}\doxysection{Window.\+h}
+\label{_window_8h_source}\index{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/Engine/Window/Window.h@{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/Engine/Window/Window.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}EventBase.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}FrameBuffer.h"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{8 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_window_props}{WindowProps}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     std::string Title;}
+\DoxyCodeLine{11     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} Width;}
+\DoxyCodeLine{12     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} Height;}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     \mbox{\hyperlink{struct_window_props}{WindowProps}}(\textcolor{keyword}{const} std::string\& title = \textcolor{stringliteral}{"{}Till Engine"{}},}
+\DoxyCodeLine{15         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} width = 1080,}
+\DoxyCodeLine{16         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} height = 720)}
+\DoxyCodeLine{17         :Title(title), Width(width), Height(height)}
+\DoxyCodeLine{18     \{}
+\DoxyCodeLine{19     \}}
+\DoxyCodeLine{20 \};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{class_frame_buffer}{FrameBuffer}};}
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{class_window}{Window}}}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28 \textcolor{keyword}{public}:}
+\DoxyCodeLine{29     \textcolor{keyword}{using }EventCallbackFn = std::function<void(\mbox{\hyperlink{class_event_base}{EventBase}}\&)>;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_window}{\string~Window}}() \{\};}
+\DoxyCodeLine{32     }
+\DoxyCodeLine{36     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_window_a64a4a74428952dbfd0d5ecbfdf56f604}{DrawFunc}}() = 0;}
+\DoxyCodeLine{37     }
+\DoxyCodeLine{41     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_window_af654767b70e208db7fe08f34133bb2c7}{OnRenderEnd}}() = 0;}
+\DoxyCodeLine{42     }
+\DoxyCodeLine{46     \textcolor{keyword}{virtual} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_window_a88bb5f556857ba82c62dd79abacf4c67}{GetWidth}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{47     }
+\DoxyCodeLine{51     \textcolor{keyword}{virtual} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_window_a35f0d591a21f367314853952e54cdf84}{GetHeight}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{52     }
+\DoxyCodeLine{56     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}* \mbox{\hyperlink{class_window_a0dcd7f056cb1534c4fda7ea82dfaf462}{GetWindow}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{57 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{58         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{59     \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{65     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_frame_buffer}{FrameBuffer}}* \mbox{\hyperlink{class_window_a08cbfbd80938207165ed07120ed6cc23}{GetFrameBuffer}}(\textcolor{keywordtype}{int} index = 0) = 0;}
+\DoxyCodeLine{70     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_window_a747f38cf55fdbc23552b6577ebb7efb1}{SetFrameBuffer}}(\textcolor{keywordtype}{int} index = 0) = 0;}
+\DoxyCodeLine{71     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_window_a747f38cf55fdbc23552b6577ebb7efb1}{SetFrameBuffer}}(\mbox{\hyperlink{class_frame_buffer}{FrameBuffer}}*) = 0;}
+\DoxyCodeLine{75     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_frame_buffer}{FrameBuffer}}* \mbox{\hyperlink{class_window_aba02ea624269e2f0a18e2e21c8c1807d}{GetMianFrameBuffer}}(\textcolor{keywordtype}{int} index = 0) = 0;}
+\DoxyCodeLine{79     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_frame_buffer}{FrameBuffer}}* \mbox{\hyperlink{class_window_afc596cc511a849dce3100da62b263f05}{AddFrameBuffer}}(BufferType type) = 0;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetEventCallback(\textcolor{keyword}{const} EventCallbackFn\& callback) = 0;}
+\DoxyCodeLine{85     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_window_a14993a46f3548887496f4a5d374c470a}{SetVSync}}(\textcolor{keywordtype}{bool} enabled) = 0;}
+\DoxyCodeLine{86     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} IsVSync() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \textcolor{comment}{//窗口工厂函数}}
+\DoxyCodeLine{89     \textcolor{keyword}{static} \mbox{\hyperlink{class_window}{Window}}* Create(\textcolor{keyword}{const} \mbox{\hyperlink{struct_window_props}{WindowProps}}\& props = \mbox{\hyperlink{struct_window_props}{WindowProps}}());}
+\DoxyCodeLine{90 \};}
+
+\end{DoxyCode}

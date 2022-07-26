@@ -1,0 +1,4 @@
+<map id="WindowsWindow::SetFrameBuffer" name="WindowsWindow::SetFrameBuffer">
+<area shape="rect" id="node1" title="设定当前FBO上下文" alt="" coords="240,5,459,32"/>
+<area shape="rect" id="node2" href="$class_windows_window.html#a27cad6c527b8b73dfea5420fa9efeef2" title="窗口渲染函数" alt="" coords="5,5,192,32"/>
+</map>

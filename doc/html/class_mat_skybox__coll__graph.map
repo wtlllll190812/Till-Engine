@@ -1,0 +1,5 @@
+<map id="MatSkybox" name="MatSkybox">
+<area shape="rect" id="node1" title=" " alt="" coords="5,171,93,197"/>
+<area shape="rect" id="node2" href="$class_material.html" title=" " alt="" coords="15,95,83,121"/>
+<area shape="rect" id="node3" href="$class_shader.html" title=" " alt="" coords="18,5,81,32"/>
+</map>

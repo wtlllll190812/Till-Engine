@@ -3,6 +3,6 @@
 
 int main()
 {
-	Application::instance().Run();
+	Application::instance().AppRun();
 	return 0;
 }

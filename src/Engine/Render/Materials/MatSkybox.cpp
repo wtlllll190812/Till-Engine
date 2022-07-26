@@ -1,13 +1,17 @@
 #include "MatSkybox.h"
 
-#define GLFW_INCLUDE_NONE
-#include <GLFW/glfw3.h>
-#include <GL/glew.h>
-#include "Shader.h"
-#include "TLEngineCG.h"
-#include "Texture.h"
-#include "glm/glm.hpp"
-#include <glm/gtc/type_ptr.hpp>
+#define GLFW_INCLUDE_NONE		
+#include <GLFW/glfw3.h>			
+#include <GL/glew.h>			
+
+#include "Shader.h"				
+#include "Texture.h"			
+#include "TLEngineCG.h"			
+
+#include "glm/glm.hpp"			
+#include <glm/gtc/type_ptr.hpp> 
+
+
 #include "RenderSystem.h"
 #include "Camera.h"
 MatSkybox::MatSkybox()

@@ -8,11 +8,14 @@
 
 Material::Material()
 {
+	shader = nullptr;
 	inited = false;
 }
 
 Material::~Material()
 {
+	if(shader!=nullptr)
+	delete shader;
 }
 
 void Material::Draw(GameObject* object, shared_ptr<Mesh> mesh)

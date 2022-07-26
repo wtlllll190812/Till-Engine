@@ -1,0 +1,24 @@
+\hypertarget{_debug_8h_source}{}\doxysection{Debug.\+h}
+\label{_debug_8h_source}\index{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/Engine/Framework/Tools/Debug.h@{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/Engine/Framework/Tools/Debug.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}spdlog/spdlog.h"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{class }\mbox{\hyperlink{class_debug}{Debug}}}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6 \textcolor{keyword}{public}:}
+\DoxyCodeLine{7     \textcolor{comment}{//applog的字符串流对象,用于编辑器显示}}
+\DoxyCodeLine{8     \textcolor{keyword}{static} std::stringstream appLogOss;}
+\DoxyCodeLine{9     \textcolor{comment}{//初始化debug系统}}
+\DoxyCodeLine{10     \textcolor{keyword}{static} \textcolor{keywordtype}{void} Init();}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     \textcolor{keyword}{inline} \textcolor{keyword}{static} std::shared\_ptr<spdlog::logger>\& GetEngineLogger() \{ \textcolor{keywordflow}{return} engineLog; \}}
+\DoxyCodeLine{13     \textcolor{keyword}{inline} \textcolor{keyword}{static} std::shared\_ptr<spdlog::logger>\& GetAppLogger() \{ \textcolor{keywordflow}{return} appLog; \}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{private}:}
+\DoxyCodeLine{16     \textcolor{keyword}{static} std::shared\_ptr<spdlog::logger> engineLog;}
+\DoxyCodeLine{17     \textcolor{keyword}{static} std::shared\_ptr<spdlog::logger> appLog;}
+\DoxyCodeLine{18 \};}
+
+\end{DoxyCode}

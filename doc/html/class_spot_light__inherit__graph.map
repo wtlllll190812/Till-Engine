@@ -1,0 +1,6 @@
+<map id="SpotLight" name="SpotLight">
+<area shape="rect" id="node1" title=" " alt="" coords="11,229,89,256"/>
+<area shape="rect" id="node2" href="$class_light.html" title=" " alt="" coords="25,155,75,181"/>
+<area shape="rect" id="node3" href="$class_component.html" title="组件基类" alt="" coords="6,80,94,107"/>
+<area shape="rect" id="node4" href="$class_serializable.html" title="可序列化对象接口" alt="" coords="5,5,95,32"/>
+</map>

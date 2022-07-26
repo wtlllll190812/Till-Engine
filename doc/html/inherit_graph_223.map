@@ -1,0 +1,4 @@
+<map id="类继承关系图" name="类继承关系图">
+<area shape="rect" id="node1" href="$class_window.html" title="窗口基类" alt="" coords="5,5,73,32"/>
+<area shape="rect" id="node2" href="$class_windows_window.html" title="tillwindow在windows平台下的实现" alt="" coords="121,5,243,32"/>
+</map>

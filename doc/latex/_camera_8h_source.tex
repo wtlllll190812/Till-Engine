@@ -1,0 +1,45 @@
+\hypertarget{_camera_8h_source}{}\doxysection{Camera.\+h}
+\label{_camera_8h_source}\index{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/ECS/Components/Camera.h@{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/ECS/Components/Camera.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}Component.h"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{class_camera}{Camera}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7 \textcolor{keyword}{public}:}
+\DoxyCodeLine{8     COMPONENTNAME(\mbox{\hyperlink{class_camera}{Camera}})}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10         \mbox{\hyperlink{class_camera}{Camera}}();}
+\DoxyCodeLine{11     \mbox{\hyperlink{class_camera}{\string~Camera}}();}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{16     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_camera_aff7393c9cfbccd7e369091f00008da93}{fov}} = 120.0f;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{22     glm::mat4 \mbox{\hyperlink{class_camera_affa333055635aed96518c4c66be9a70c}{GetViewMatrix}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{28     glm::mat4 \mbox{\hyperlink{class_camera_ad4af021f577c6326881c3596d76f99e9}{GetProjMatrix}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetAspectRatio(\textcolor{keywordtype}{float} value)}
+\DoxyCodeLine{31     \{}
+\DoxyCodeLine{32         aspectRatio = value;}
+\DoxyCodeLine{33     \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keyword}{inline} \textcolor{keywordtype}{float} GetAspectRatio()}
+\DoxyCodeLine{36     \{}
+\DoxyCodeLine{37         \textcolor{keywordflow}{return} aspectRatio;}
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{43     \textcolor{keyword}{virtual} TiXmlElement* \mbox{\hyperlink{class_camera_abc8f353bd41c87389760a400b008c84b}{Serialize}}(std::string name = \textcolor{stringliteral}{"{}Default"{}}) \textcolor{keyword}{override};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{48     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_camera_ae62246ee56adb668d0b66219e4a5e35a}{DeSerialize}}(TiXmlElement*) \textcolor{keyword}{override};}
+\DoxyCodeLine{49     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_camera_a088b21306b84082425926de5596f910e}{UpdateNode}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{private}:}
+\DoxyCodeLine{52     \textcolor{keywordtype}{float} aspectRatio = 4.0f/3;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{private}:}
+\DoxyCodeLine{55     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} GuiDisPlay() \textcolor{keyword}{override};}
+\DoxyCodeLine{56 \};}
+
+\end{DoxyCode}

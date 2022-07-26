@@ -1,0 +1,5 @@
+<map id="Transform::GetUp" name="Transform::GetUp">
+<area shape="rect" id="node1" title="获取向上方向" alt="" coords="5,5,129,32"/>
+<area shape="rect" id="node2" href="$class_transform.html#af0d0e8f8c55b67c115a5449f225f53e6" title="获取向前方向" alt="" coords="364,5,503,32"/>
+<area shape="rect" id="node3" href="$class_transform.html#a7e34c4791358814412983d8606cc4cdf" title="获取向右方向" alt="" coords="177,31,316,57"/>
+</map>

@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TillEngine: D:/TL/Vscode/VsCode_C/Learn_opengl/src/Editor/EditorLayer.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TillEngine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4bd1ebb85acf5915171c6010ad9053a2.html">Editor</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">EditorLayer.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;ImguiLayer.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;KeyEvent.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;MouseEvent.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">class </span><a class="code hl_class" href="class_scene.html">Scene</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class </span><a class="code hl_class" href="class_game_object.html">GameObject</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_class" href="class_camera.html">Camera</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_editor_layer.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="class_editor_layer.html">EditorLayer</a>:<span class="keyword">public</span> <a class="code hl_class" href="class_imgui_layer.html">ImguiLayer</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="class_editor_layer.html">EditorLayer</a>(std::shared_ptr&lt;Scene&gt; s);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_class" href="class_editor_layer.html">~EditorLayer</a>();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> OnUpdate()<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_editor_layer.html#a4880fce5f9bc2134bbb51def03bbee98">SetCurrentScene</a>(<a class="code hl_class" href="class_scene.html">Scene</a>* s);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_class" href="class_camera.html">Camera</a>* <a class="code hl_function" href="class_editor_layer.html#ae6f0a2ebee383c130bd96268b95b1b19">GetEditorCamera</a>();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_editor_layer.html#a049127382838e3bd031f8ac03ab0e791">OnMouseMovedEvent</a>(<a class="code hl_class" href="class_mouse_moved_event.html">MouseMovedEvent</a>&amp; e)<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_editor_layer.html#a033bc9abb193a1bbc5858f8e7aa2d292">OnMouseScrolledEvent</a>(<a class="code hl_class" href="class_mouse_scrolled_event.html">MouseScrolledEvent</a>&amp; e)<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    std::shared_ptr&lt;Scene&gt; mCurrentScene;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    std::shared_ptr&lt;GameObject&gt; selectedObj;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    std::shared_ptr&lt;GameObject&gt; editorCamera;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="ttc" id="aclass_camera_html"><div class="ttname"><a href="class_camera.html">Camera</a></div><div class="ttdef"><b>Definition:</b> Camera.h:6</div></div>
+<div class="ttc" id="aclass_editor_layer_html"><div class="ttname"><a href="class_editor_layer.html">EditorLayer</a></div><div class="ttdoc">编辑器层级</div><div class="ttdef"><b>Definition:</b> EditorLayer.h:14</div></div>
+<div class="ttc" id="aclass_editor_layer_html_a033bc9abb193a1bbc5858f8e7aa2d292"><div class="ttname"><a href="class_editor_layer.html#a033bc9abb193a1bbc5858f8e7aa2d292">EditorLayer::OnMouseScrolledEvent</a></div><div class="ttdeci">bool OnMouseScrolledEvent(MouseScrolledEvent &amp;e) override</div><div class="ttdoc">鼠标滚轮事件</div><div class="ttdef"><b>Definition:</b> EditorLayer.cpp:373</div></div>
+<div class="ttc" id="aclass_editor_layer_html_a049127382838e3bd031f8ac03ab0e791"><div class="ttname"><a href="class_editor_layer.html#a049127382838e3bd031f8ac03ab0e791">EditorLayer::OnMouseMovedEvent</a></div><div class="ttdeci">bool OnMouseMovedEvent(MouseMovedEvent &amp;e) override</div><div class="ttdoc">鼠标移动事件</div><div class="ttdef"><b>Definition:</b> EditorLayer.cpp:368</div></div>
+<div class="ttc" id="aclass_editor_layer_html_a4880fce5f9bc2134bbb51def03bbee98"><div class="ttname"><a href="class_editor_layer.html#a4880fce5f9bc2134bbb51def03bbee98">EditorLayer::SetCurrentScene</a></div><div class="ttdeci">void SetCurrentScene(Scene *s)</div><div class="ttdoc">设置当前场景</div><div class="ttdef"><b>Definition:</b> EditorLayer.cpp:358</div></div>
+<div class="ttc" id="aclass_editor_layer_html_ae6f0a2ebee383c130bd96268b95b1b19"><div class="ttname"><a href="class_editor_layer.html#ae6f0a2ebee383c130bd96268b95b1b19">EditorLayer::GetEditorCamera</a></div><div class="ttdeci">Camera * GetEditorCamera()</div><div class="ttdoc">获取编辑器摄像机</div><div class="ttdef"><b>Definition:</b> EditorLayer.cpp:363</div></div>
+<div class="ttc" id="aclass_game_object_html"><div class="ttname"><a href="class_game_object.html">GameObject</a></div><div class="ttdef"><b>Definition:</b> GameObject.h:9</div></div>
+<div class="ttc" id="aclass_imgui_layer_html"><div class="ttname"><a href="class_imgui_layer.html">ImguiLayer</a></div><div class="ttdef"><b>Definition:</b> ImguiLayer.h:12</div></div>
+<div class="ttc" id="aclass_mouse_moved_event_html"><div class="ttname"><a href="class_mouse_moved_event.html">MouseMovedEvent</a></div><div class="ttdoc">鼠标移动事件</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:8</div></div>
+<div class="ttc" id="aclass_mouse_scrolled_event_html"><div class="ttname"><a href="class_mouse_scrolled_event.html">MouseScrolledEvent</a></div><div class="ttdoc">鼠标滚轮事件</div><div class="ttdef"><b>Definition:</b> MouseEvent.h:33</div></div>
+<div class="ttc" id="aclass_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdoc">场景类</div><div class="ttdef"><b>Definition:</b> Scene.h:13</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

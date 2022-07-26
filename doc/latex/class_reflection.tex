@@ -1,0 +1,96 @@
+\hypertarget{class_reflection}{}\doxysection{Reflection类 参考}
+\label{class_reflection}\index{Reflection@{Reflection}}
+
+
+{\ttfamily \#include $<$Reflection.\+h$>$}
+
+
+
+类 Reflection 继承关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class_reflection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Reflection 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class_reflection__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_reflection_a5b662859dfd4c5610f4e3adca0f2d112}{Reflection}} ()
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} $\ast$ \mbox{\hyperlink{class_reflection_a5841e2b91cbf2f10677560edbe0f95fa}{get\+Class\+By\+Name}} (\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std\+::string}} class\+Name)
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{class_reflection_a79193872d9edebddc90828ac65cb1cbe}{regist\+Class}} (\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std\+::string}} \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a5c4947d4516dd7cfa3505ce3a648a4ef}{name}}, \mbox{\hyperlink{_reflection_8h_a69a4ec742fe7731cb16b1d34e7cc79a5}{PTRCreate\+Object}} method)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std\+::string}}, \mbox{\hyperlink{_reflection_8h_a69a4ec742fe7731cb16b1d34e7cc79a5}{PTRCreate\+Object}} $>$ \mbox{\hyperlink{class_reflection_a489feb330f058e23de278ed21ba99791}{m\+\_\+class\+Map}}
+\end{DoxyCompactItemize}
+\doxysubsection*{额外继承的成员函数}
+
+
+\doxysubsection{构造及析构函数说明}
+\mbox{\Hypertarget{class_reflection_a5b662859dfd4c5610f4e3adca0f2d112}\label{class_reflection_a5b662859dfd4c5610f4e3adca0f2d112}} 
+\index{Reflection@{Reflection}!Reflection@{Reflection}}
+\index{Reflection@{Reflection}!Reflection@{Reflection}}
+\doxysubsubsection{\texorpdfstring{Reflection()}{Reflection()}}
+{\footnotesize\ttfamily Reflection\+::\+Reflection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{成员函数说明}
+\mbox{\Hypertarget{class_reflection_a5841e2b91cbf2f10677560edbe0f95fa}\label{class_reflection_a5841e2b91cbf2f10677560edbe0f95fa}} 
+\index{Reflection@{Reflection}!getClassByName@{getClassByName}}
+\index{getClassByName@{getClassByName}!Reflection@{Reflection}}
+\doxysubsubsection{\texorpdfstring{getClassByName()}{getClassByName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} $\ast$ Reflection\+::get\+Class\+By\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std\+::string}}}]{class\+Name }\end{DoxyParamCaption})}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_reflection_a5841e2b91cbf2f10677560edbe0f95fa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_reflection_a79193872d9edebddc90828ac65cb1cbe}\label{class_reflection_a79193872d9edebddc90828ac65cb1cbe}} 
+\index{Reflection@{Reflection}!registClass@{registClass}}
+\index{registClass@{registClass}!Reflection@{Reflection}}
+\doxysubsubsection{\texorpdfstring{registClass()}{registClass()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Reflection\+::regist\+Class (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std\+::string}}}]{name,  }\item[{\mbox{\hyperlink{_reflection_8h_a69a4ec742fe7731cb16b1d34e7cc79a5}{PTRCreate\+Object}}}]{method }\end{DoxyParamCaption})}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_reflection_a79193872d9edebddc90828ac65cb1cbe_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{类成员变量说明}
+\mbox{\Hypertarget{class_reflection_a489feb330f058e23de278ed21ba99791}\label{class_reflection_a489feb330f058e23de278ed21ba99791}} 
+\index{Reflection@{Reflection}!m\_classMap@{m\_classMap}}
+\index{m\_classMap@{m\_classMap}!Reflection@{Reflection}}
+\doxysubsubsection{\texorpdfstring{m\_classMap}{m\_classMap}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std\+::string}}, \mbox{\hyperlink{_reflection_8h_a69a4ec742fe7731cb16b1d34e7cc79a5}{PTRCreate\+Object}}$>$ Reflection\+::m\+\_\+class\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/\+Engine/\+Framework/\mbox{\hyperlink{_reflection_8h}{Reflection.\+h}}\item 
+D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/\+Engine/\+Framework/\mbox{\hyperlink{_reflection_8cpp}{Reflection.\+cpp}}\end{DoxyCompactItemize}

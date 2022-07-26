@@ -1,0 +1,18 @@
+<map id="ImGui::LogFinish" name="ImGui::LogFinish">
+<area shape="rect" id="node1" title=" " alt="" coords="5,132,125,159"/>
+<area shape="rect" id="node2" href="$struct_im_gui_text_buffer.html#ad971435d81bc0b957cdb59f5d58eaacd" title=" " alt="" coords="178,5,331,32"/>
+<area shape="rect" id="node4" href="$struct_im_gui_text_buffer.html#a9e4edc9f950bc9e35d5c3b3071dbc0df" title=" " alt="" coords="179,56,330,83"/>
+<area shape="rect" id="node6" href="$struct_im_gui_text_buffer.html#affd606443a661cd0fcce0d381bc8cf98" title=" " alt="" coords="175,107,334,133"/>
+<area shape="rect" id="node7" href="$imgui_8cpp.html#ac4a6194720e9d693bc9d34e97d9465aa" title=" " alt="" coords="209,157,300,184"/>
+<area shape="rect" id="node8" href="$namespace_im_gui.html#aa548475d8f771ab6524d73d900a41198" title=" " alt="" coords="199,208,310,235"/>
+<area shape="rect" id="node16" href="$namespace_im_gui.html#aa4824a1b351c063b4aff9b9f4fb5fd4d" title=" " alt="" coords="173,259,336,285"/>
+<area shape="rect" id="node3" href="$struct_im_vector.html#a5a21f508086337de2f6739701d22f721" title=" " alt="" coords="386,5,493,32"/>
+<area shape="rect" id="node5" href="$struct_im_vector.html#ae2d401b4ec5f1113cdb8edb5a61a38f7" title=" " alt="" coords="384,56,495,83"/>
+<area shape="rect" id="node9" href="$imgui_8cpp.html#a5dea124c81c7ae6affc151441b0f4372" title=" " alt="" coords="401,208,478,235"/>
+<area shape="rect" id="node10" href="$struct_im_gui_text_buffer.html#ac8a6b11834c4cee8113bf6950e66112e" title=" " alt="" coords="543,107,715,133"/>
+<area shape="rect" id="node12" href="$struct_im_gui_text_buffer.html#ac78a076eb21b9c4ec532eb5109c84a64" title=" " alt="" coords="553,157,704,184"/>
+<area shape="rect" id="node13" href="$imgui_8cpp.html#aab6460bf5ebaa4975159cf0cd4324820" title=" " alt="" coords="585,208,673,235"/>
+<area shape="rect" id="node14" href="$struct_im_vector.html#ac371dd62e56ae486b1a5038cf07eee56" title=" " alt="" coords="570,259,687,285"/>
+<area shape="rect" id="node15" href="$struct_im_gui_text_buffer.html#a2811fcd43e0224eb3bd0f3464b634289" title=" " alt="" coords="555,309,702,336"/>
+<area shape="rect" id="node11" href="$imgui_8cpp.html#a2e0022a073d369645a0daab17f823779" title=" " alt="" coords="763,107,883,133"/>
+</map>

@@ -37,7 +37,7 @@ void DefaultMaterial::DrawFunc(GameObject* gObj, std::shared_ptr<Mesh> mesh)
 {
 	renderQueueIndex = (int)RendererQueue::Background;
 
-	unsigned int ShadowTex = TLEngineCG::shadowBuffer->GetDepthBuffer()->texture;
+	unsigned int ShadowTex = TLEngineCG::shadowMap->GetDepthBuffer()->texture;
 	
 	glActiveTexture(GL_TEXTURE3);
 	glBindTexture(GL_TEXTURE_2D, ShadowTex);

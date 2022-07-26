@@ -1,0 +1,10 @@
+<map id="GameObject::GameObject" name="GameObject::GameObject">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,181,133"/>
+<area shape="rect" id="node2" href="$class_game_object.html#af9eceda0f9df6fc8d4c398971bbe231e" title="添加组件" alt="" coords="229,5,421,32"/>
+<area shape="rect" id="node4" href="$class_reflection.html#a5841e2b91cbf2f10677560edbe0f95fa" title=" " alt="" coords="231,56,419,83"/>
+<area shape="rect" id="node5" href="$class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="242,107,409,133"/>
+<area shape="rect" id="node6" href="$class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="253,158,398,199"/>
+<area shape="rect" id="node7" href="$class_transform.html#aa51b7bba4dab4923b2f864d31b462b54" title="通过xml实例化" alt="" coords="252,224,399,251"/>
+<area shape="rect" id="node3" href="$class_component.html#a97db16de1c451add8d2886151d5f0f4a" title="添加时" alt="" coords="469,5,604,32"/>
+<area shape="rect" id="node8" href="$class_t_lxml.html#a0144d1a045da012691fa861dde9ad3ee" title="反序列化向量" alt="" coords="471,224,602,251"/>
+</map>

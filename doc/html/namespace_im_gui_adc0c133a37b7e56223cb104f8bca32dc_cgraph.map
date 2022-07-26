@@ -1,0 +1,16 @@
+<map id="ImGui::DockContextPruneUnusedSettingsNodes" name="ImGui::DockContextPruneUnusedSettingsNodes">
+<area shape="rect" id="node1" title=" " alt="" coords="5,157,223,198"/>
+<area shape="rect" id="node2" href="$struct_im_chunk_stream.html#a10a9b29c856b3f84ce8811ebfaf2cfe8" title=" " alt="" coords="735,72,889,99"/>
+<area shape="rect" id="node3" href="$namespace_im_gui.html#a7644c22d2e315b2b1753fc79a8c187ab" title=" " alt="" coords="271,98,459,139"/>
+<area shape="rect" id="node4" href="$struct_im_chunk_stream.html#a3a99f21ce1867d694104d740ac7ab133" title=" " alt="" coords="514,149,662,190"/>
+<area shape="rect" id="node7" href="$namespace_im_gui.html#a9920e3b99972583f7fed0357b64a3fb2" title=" " alt="" coords="273,47,456,73"/>
+<area shape="rect" id="node8" href="$struct_im_pool.html#ae53033af46a5df28084f1d946c9face3" title=" " alt="" coords="299,265,430,292"/>
+<area shape="rect" id="node11" href="$struct_im_pool.html#a47973a2eac8e4c06ef369ac02d23f4e5" title=" " alt="" coords="281,215,448,241"/>
+<area shape="rect" id="node14" href="$struct_im_pool.html#a62a34bcb3efcaaa3f4402c0c3cc1d600" title=" " alt="" coords="307,316,423,343"/>
+<area shape="rect" id="node5" href="$struct_im_chunk_stream.html#a1a83609aaee47cf8b59a8ae09a04a06b" title=" " alt="" coords="717,140,907,167"/>
+<area shape="rect" id="node6" href="$struct_im_chunk_stream.html#a5c7faa90ac7fa02140a3298dbfdd5cad" title=" " alt="" coords="740,191,884,217"/>
+<area shape="rect" id="node9" href="$struct_im_gui_storage.html#ac86b64f5c69a15de6c6c326963eca64a" title=" " alt="" coords="516,316,660,343"/>
+<area shape="rect" id="node10" href="$imgui_8cpp.html#a866713cd3de010f3ca0d938ecf4aba2d" title=" " alt="" coords="765,271,859,297"/>
+<area shape="rect" id="node12" href="$struct_im_pool.html#a39f9b742304d164c4298031537c1b09c" title=" " alt="" coords="541,265,635,292"/>
+<area shape="rect" id="node13" href="$struct_im_gui_storage.html#a28673fa7839263f3066ccb8e93e748a9" title=" " alt="" coords="507,215,669,241"/>
+</map>

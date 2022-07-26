@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TillEngine: D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Framework/Tools/TLSerialize.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TillEngine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_75ae6d3613b6c2f243b8fb439548ec3f.html">Framework</a></li><li class="navelem"><a class="el" href="dir_dfadc32455ebf8702b3c412ffa801504.html">Tools</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">TLSerialize.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;tinyxml.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;glm/glm.hpp&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_t_l_serialize_file.html">    6</a></span><span class="keyword">class </span><a class="code hl_class" href="class_t_l_serialize_file.html">TLSerializeFile</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_function" href="class_t_l_serialize_file.html#a84b86cdbb9fea5df943b4a4a34293acd">TLSerializeFile</a>(std::string, std::string);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_class" href="class_t_l_serialize_file.html">~TLSerializeFile</a>();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_t_l_serialize_file.html#a86c2393db265dbaa18d7188852f80252">   20</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_t_l_serialize_file.html#a86c2393db265dbaa18d7188852f80252">Save</a>()</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        file.SaveFile(path);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_t_l_serialize_file.html#a0b6871867e3d1d19cbe0368541a0b4b0">   28</a></span>    <span class="keyword">inline</span> TiXmlElement* <a class="code hl_function" href="class_t_l_serialize_file.html#a0b6871867e3d1d19cbe0368541a0b4b0">GetRoot</a>() { <span class="keywordflow">return</span> root; }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    std::string path;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    TiXmlDocument file;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    TiXmlElement* root;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_t_l_serialize.html">   50</a></span><span class="keyword">class </span><a class="code hl_class" href="class_t_l_serialize.html">TLSerialize</a></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">static</span> TiXmlElement* Serialize(glm::vec3&amp; vector, std::string name);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">static</span> glm::vec3 DeSerialize(TiXmlElement* sceneFile);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> UpdateNode(glm::vec3&amp; vector, TiXmlElement* node);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_serializable.html">   61</a></span><span class="keyword">class </span><a class="code hl_class" href="class_serializable.html">Serializable</a></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_serializable.html#a4be5c5e13129b89d05d7b4a7094d440b">   67</a></span>    TiXmlElement* <a class="code hl_variable" href="class_serializable.html#a4be5c5e13129b89d05d7b4a7094d440b">m_node</a>=<span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_serializable.html#ad2b954777bfb26bd486d7aee9675667e">   72</a></span>    <span class="keyword">virtual</span> TiXmlElement* <a class="code hl_function" href="class_serializable.html#ad2b954777bfb26bd486d7aee9675667e">Serialize</a>(std::string name=<span class="stringliteral">&quot;Default&quot;</span>) = 0;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="class_serializable.html#a4169f7b98f9816d6b1ebf2dbd3b2d3cb">   77</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_serializable.html#a4169f7b98f9816d6b1ebf2dbd3b2d3cb">DeSerialize</a>(TiXmlElement*) = 0;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_serializable.html#ac713a26d2d8e38066e29555199af5580">   82</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_serializable.html#ac713a26d2d8e38066e29555199af5580">UpdateNode</a>() {};</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>};</div>
+<div class="ttc" id="aclass_serializable_html"><div class="ttname"><a href="class_serializable.html">Serializable</a></div><div class="ttdoc">可序列化对象接口</div><div class="ttdef"><b>Definition:</b> TLSerialize.h:62</div></div>
+<div class="ttc" id="aclass_serializable_html_a4169f7b98f9816d6b1ebf2dbd3b2d3cb"><div class="ttname"><a href="class_serializable.html#a4169f7b98f9816d6b1ebf2dbd3b2d3cb">Serializable::DeSerialize</a></div><div class="ttdeci">virtual void DeSerialize(TiXmlElement *)=0</div><div class="ttdoc">反序列化</div></div>
+<div class="ttc" id="aclass_serializable_html_a4be5c5e13129b89d05d7b4a7094d440b"><div class="ttname"><a href="class_serializable.html#a4be5c5e13129b89d05d7b4a7094d440b">Serializable::m_node</a></div><div class="ttdeci">TiXmlElement * m_node</div><div class="ttdoc">序列化节点</div><div class="ttdef"><b>Definition:</b> TLSerialize.h:67</div></div>
+<div class="ttc" id="aclass_serializable_html_ac713a26d2d8e38066e29555199af5580"><div class="ttname"><a href="class_serializable.html#ac713a26d2d8e38066e29555199af5580">Serializable::UpdateNode</a></div><div class="ttdeci">virtual void UpdateNode()</div><div class="ttdoc">更新序列化节点</div><div class="ttdef"><b>Definition:</b> TLSerialize.h:82</div></div>
+<div class="ttc" id="aclass_serializable_html_ad2b954777bfb26bd486d7aee9675667e"><div class="ttname"><a href="class_serializable.html#ad2b954777bfb26bd486d7aee9675667e">Serializable::Serialize</a></div><div class="ttdeci">virtual TiXmlElement * Serialize(std::string name=&quot;Default&quot;)=0</div><div class="ttdoc">序列化</div></div>
+<div class="ttc" id="aclass_t_l_serialize_file_html"><div class="ttname"><a href="class_t_l_serialize_file.html">TLSerializeFile</a></div><div class="ttdef"><b>Definition:</b> TLSerialize.h:7</div></div>
+<div class="ttc" id="aclass_t_l_serialize_file_html_a0b6871867e3d1d19cbe0368541a0b4b0"><div class="ttname"><a href="class_t_l_serialize_file.html#a0b6871867e3d1d19cbe0368541a0b4b0">TLSerializeFile::GetRoot</a></div><div class="ttdeci">TiXmlElement * GetRoot()</div><div class="ttdoc">获取根节点</div><div class="ttdef"><b>Definition:</b> TLSerialize.h:28</div></div>
+<div class="ttc" id="aclass_t_l_serialize_file_html_a84b86cdbb9fea5df943b4a4a34293acd"><div class="ttname"><a href="class_t_l_serialize_file.html#a84b86cdbb9fea5df943b4a4a34293acd">TLSerializeFile::TLSerializeFile</a></div><div class="ttdeci">TLSerializeFile(std::string, std::string)</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>Definition:</b> TLSerialize.cpp:6</div></div>
+<div class="ttc" id="aclass_t_l_serialize_file_html_a86c2393db265dbaa18d7188852f80252"><div class="ttname"><a href="class_t_l_serialize_file.html#a86c2393db265dbaa18d7188852f80252">TLSerializeFile::Save</a></div><div class="ttdeci">void Save()</div><div class="ttdoc">保存文件</div><div class="ttdef"><b>Definition:</b> TLSerialize.h:20</div></div>
+<div class="ttc" id="aclass_t_l_serialize_html"><div class="ttname"><a href="class_t_l_serialize.html">TLSerialize</a></div><div class="ttdoc">常用类的序列化支持</div><div class="ttdef"><b>Definition:</b> TLSerialize.h:51</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

@@ -1,0 +1,4 @@
+<map id="Renderer::Awake" name="Renderer::Awake">
+<area shape="rect" id="node1" title="被添加时" alt="" coords="5,5,127,32"/>
+<area shape="rect" id="node2" href="$class_render_system.html#a794ef0a6f643330a8ff07e4e4bea8671" title="注册组件" alt="" coords="175,5,405,32"/>
+</map>

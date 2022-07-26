@@ -9,6 +9,7 @@
 Scene::Scene(std::string p) :path(p), sceneFile(TLSerializeFile(p, "scene"))
 {
 	Debug::GetEngineLogger()->info("Scene Loading");
+	mainCamera = nullptr;
 	for (auto node = sceneFile.GetRoot()->FirstChild(); node != nullptr; node = node->NextSiblingElement())
 	{
 		auto element = node->ToElement();
@@ -41,6 +42,8 @@ std::shared_ptr<GameObject> Scene::Find(std::string name)
 
 void Scene::AddGameObject(std::shared_ptr<GameObject> gObj)
 {
+	Debug::GetEngineLogger()->info("Add new gameObject");
 	gameobjects.push_back(gObj);
 	sceneFile.GetRoot()->LinkEndChild(gObj->Serialize());
+	Debug::GetEngineLogger()->info("Add new gameObject success");
 }

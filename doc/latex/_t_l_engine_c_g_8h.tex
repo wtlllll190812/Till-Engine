@@ -1,0 +1,119 @@
+\hypertarget{_t_l_engine_c_g_8h}{}\doxysection{D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/\+Engine/\+Render/\+TLEngine\+CG.h 文件参考}
+\label{_t_l_engine_c_g_8h}\index{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/Engine/Render/TLEngineCG.h@{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/Engine/Render/TLEngineCG.h}}
+{\ttfamily \#include $<$glm/glm.\+hpp$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include \char`\"{}Reflection.\+h\char`\"{}}\newline
+TLEngine\+CG.\+h 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_l_engine_c_g_8h__incl}
+\end{center}
+\end{figure}
+此图展示该文件直接或间接的被哪些文件引用了\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_t_l_engine_c_g_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_t_l_engine_c_g}{TLEngine\+CG}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_t_l_engine_c_g_8h_a370b1e606f70a8a7411bb6f11bbb9227}{Set\+Uniform\+Mat4}}(mat\+Name,  shader\+Name)
+\item 
+\#define \mbox{\hyperlink{_t_l_engine_c_g_8h_a4e90817222691d1dcd4819c04a9181c8}{Set\+Uniform\+Vec3}}(vec\+Name,  shader\+Name)
+\item 
+\#define \mbox{\hyperlink{_t_l_engine_c_g_8h_a8ff158278b8e58f3c9e474493233b687}{Set\+Uniform\+Tex}}(tex\+Name,  \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}},  shader\+Name)
+\end{DoxyCompactItemize}
+\doxysubsection*{枚举}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cdd}{Renderer\+Queue}} \{ \newline
+\mbox{\hyperlink{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cddaa9ded1e5ce5d75814730bb4caaf49419}{Background}} = 1000
+, \mbox{\hyperlink{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cddad9c6333623e6357515fcbf17be806273}{Geometry}} = 2000
+, \mbox{\hyperlink{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cdda359488e90ba16f8dbf2e1b2897b75654}{Alpha\+Test}} = 2450
+, \mbox{\hyperlink{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cdda3d971943089a3388c01fb297a32d9ba7}{Transparent}} = 3000
+, \newline
+\mbox{\hyperlink{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cdda6b551379c3c0b59326abdaf3b4395bd3}{Overlay}} = 4000
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{_t_l_engine_c_g_8h_a370b1e606f70a8a7411bb6f11bbb9227}\label{_t_l_engine_c_g_8h_a370b1e606f70a8a7411bb6f11bbb9227}} 
+\index{TLEngineCG.h@{TLEngineCG.h}!SetUniformMat4@{SetUniformMat4}}
+\index{SetUniformMat4@{SetUniformMat4}!TLEngineCG.h@{TLEngineCG.h}}
+\doxysubsubsection{\texorpdfstring{SetUniformMat4}{SetUniformMat4}}
+{\footnotesize\ttfamily \#define Set\+Uniform\+Mat4(\begin{DoxyParamCaption}\item[{}]{mat\+Name,  }\item[{}]{shader\+Name }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_acebcc1c5663f14ebde1d16831e5fed94}{GLint}} matName\#\#Loc = \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(shaderName-\/>Program, \#matName); \(\backslash\)}
+\DoxyCodeLine{    glUniformMatrix4fv(matName\#\#Loc, 1, \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_abca6d43f43fae31f49dcb883b2f301f6}{GL\_FALSE}}, glm::value\_ptr(matName));}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_t_l_engine_c_g_8h_a8ff158278b8e58f3c9e474493233b687}\label{_t_l_engine_c_g_8h_a8ff158278b8e58f3c9e474493233b687}} 
+\index{TLEngineCG.h@{TLEngineCG.h}!SetUniformTex@{SetUniformTex}}
+\index{SetUniformTex@{SetUniformTex}!TLEngineCG.h@{TLEngineCG.h}}
+\doxysubsubsection{\texorpdfstring{SetUniformTex}{SetUniformTex}}
+{\footnotesize\ttfamily \#define Set\+Uniform\+Tex(\begin{DoxyParamCaption}\item[{}]{tex\+Name,  }\item[{}]{\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}},  }\item[{}]{shader\+Name }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_af15266b67de988f5ddf442bbbdd1b3fc}{glActiveTexture}}(GL\_TEXTURE\#\#\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}});            \(\backslash\)}
+\DoxyCodeLine{    glBindTexture(\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ad4de17abefa73fa2ef53379f73b734be}{GL\_TEXTURE\_2D}}, texName.texture); \(\backslash\)}
+\DoxyCodeLine{    glUniform1i(\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(shaderName-\/>Program, \#texName), \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}});}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{_t_l_engine_c_g_8h_a4e90817222691d1dcd4819c04a9181c8}\label{_t_l_engine_c_g_8h_a4e90817222691d1dcd4819c04a9181c8}} 
+\index{TLEngineCG.h@{TLEngineCG.h}!SetUniformVec3@{SetUniformVec3}}
+\index{SetUniformVec3@{SetUniformVec3}!TLEngineCG.h@{TLEngineCG.h}}
+\doxysubsubsection{\texorpdfstring{SetUniformVec3}{SetUniformVec3}}
+{\footnotesize\ttfamily \#define Set\+Uniform\+Vec3(\begin{DoxyParamCaption}\item[{}]{vec\+Name,  }\item[{}]{shader\+Name }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_acebcc1c5663f14ebde1d16831e5fed94}{GLint}} vecName\#\#Loc = \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(shaderName-\/>Program, \#vecName); \(\backslash\)}
+\DoxyCodeLine{    glUniform3f(vecName\#\#Loc, vecName.x, vecName.y, vecName.z);}
+
+\end{DoxyCode}
+
+
+\doxysubsection{枚举类型说明}
+\mbox{\Hypertarget{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cdd}\label{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cdd}} 
+\index{TLEngineCG.h@{TLEngineCG.h}!RendererQueue@{RendererQueue}}
+\index{RendererQueue@{RendererQueue}!TLEngineCG.h@{TLEngineCG.h}}
+\doxysubsubsection{\texorpdfstring{RendererQueue}{RendererQueue}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cdd}{Renderer\+Queue}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Background@{Background}!TLEngineCG.h@{TLEngineCG.h}}\index{TLEngineCG.h@{TLEngineCG.h}!Background@{Background}}}\mbox{\Hypertarget{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cddaa9ded1e5ce5d75814730bb4caaf49419}\label{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cddaa9ded1e5ce5d75814730bb4caaf49419}} 
+Background&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Geometry@{Geometry}!TLEngineCG.h@{TLEngineCG.h}}\index{TLEngineCG.h@{TLEngineCG.h}!Geometry@{Geometry}}}\mbox{\Hypertarget{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cddad9c6333623e6357515fcbf17be806273}\label{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cddad9c6333623e6357515fcbf17be806273}} 
+Geometry&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AlphaTest@{AlphaTest}!TLEngineCG.h@{TLEngineCG.h}}\index{TLEngineCG.h@{TLEngineCG.h}!AlphaTest@{AlphaTest}}}\mbox{\Hypertarget{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cdda359488e90ba16f8dbf2e1b2897b75654}\label{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cdda359488e90ba16f8dbf2e1b2897b75654}} 
+Alpha\+Test&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Transparent@{Transparent}!TLEngineCG.h@{TLEngineCG.h}}\index{TLEngineCG.h@{TLEngineCG.h}!Transparent@{Transparent}}}\mbox{\Hypertarget{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cdda3d971943089a3388c01fb297a32d9ba7}\label{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cdda3d971943089a3388c01fb297a32d9ba7}} 
+Transparent&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Overlay@{Overlay}!TLEngineCG.h@{TLEngineCG.h}}\index{TLEngineCG.h@{TLEngineCG.h}!Overlay@{Overlay}}}\mbox{\Hypertarget{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cdda6b551379c3c0b59326abdaf3b4395bd3}\label{_t_l_engine_c_g_8h_a03042f324a1ccd5ce42ddd762c351cdda6b551379c3c0b59326abdaf3b4395bd3}} 
+Overlay&\\
+\hline
+
+\end{DoxyEnumFields}

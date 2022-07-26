@@ -1,0 +1,45 @@
+\hypertarget{_renderer_8h_source}{}\doxysection{Renderer.\+h}
+\label{_renderer_8h_source}\index{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/ECS/Components/Renderer.h@{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/ECS/Components/Renderer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Component.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}Material.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Mesh.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_game_object}{GameObject}};}
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_renderer}{Renderer}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11     COMPONENTNAME(\mbox{\hyperlink{class_renderer}{Renderer}})}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     }
+\DoxyCodeLine{16     std::shared\_ptr<\mbox{\hyperlink{class_mesh}{Mesh}}> \mbox{\hyperlink{class_renderer_a5b848b3dd96fbd601731dc914a05805c}{mesh}};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{21     std::shared\_ptr<\mbox{\hyperlink{class_material}{Material}}> \mbox{\hyperlink{class_renderer_af38cf33954d6725e9897d38d0ca6f700}{material}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \mbox{\hyperlink{class_renderer}{Renderer}}();}
+\DoxyCodeLine{24     \string~\mbox{\hyperlink{class_renderer}{Renderer}}();}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_a7ee1958f92e9e88379336297ae4cbc3f}{Draw}}();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_a1113f64af9ab15b983cdf613ce9d2564}{Awake}}() override;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     virtual \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_aca35d490bc667ec411206930ab520731}{GuiDisPlay}}() override;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keywordtype}{bool} operator>(const \mbox{\hyperlink{class_renderer}{Renderer}}\& r);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{43     virtual TiXmlElement* \mbox{\hyperlink{class_renderer_abaf6583d3608eda85a587073d92b354d}{Serialize}}(std::\textcolor{keywordtype}{string} name = "{}Default"{}) override;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{48     virtual \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_ac300e94373098ca8336b3a54b65a6c2c}{DeSerialize}}(TiXmlElement*) override;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     virtual \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_ad4e6fd64f7992b43c9749f029953bb96}{UpdateNode}}() override;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 private:}
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} ChangeMaterial(std::shared\_ptr<\mbox{\hyperlink{class_material}{Material}}> mat);}
+\DoxyCodeLine{54 private:}
+\DoxyCodeLine{55     std::\textcolor{keywordtype}{string} modelPath;}
+\DoxyCodeLine{56 \};}
+
+\end{DoxyCode}

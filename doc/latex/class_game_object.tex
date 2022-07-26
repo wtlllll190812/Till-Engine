@@ -1,0 +1,193 @@
+\hypertarget{class_game_object}{}\doxysection{Game\+Object类 参考}
+\label{class_game_object}\index{GameObject@{GameObject}}
+
+
+类 Game\+Object 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{class_game_object__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Game\+Object 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{class_game_object__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_object_a723e616ef6ce1ca7697911c818774d4c}\label{class_game_object_a723e616ef6ce1ca7697911c818774d4c}} 
+{\bfseries Game\+Object} (Ti\+Xml\+Element $\ast$, \mbox{\hyperlink{class_scene}{Scene}} $\ast$)
+\item 
+\mbox{\Hypertarget{class_game_object_a1bd14aa169f501f94f1721943d716535}\label{class_game_object_a1bd14aa169f501f94f1721943d716535}} 
+void {\bfseries Update} ()
+\begin{DoxyCompactList}\small\item\em 物体刷新 \end{DoxyCompactList}\item 
+virtual Ti\+Xml\+Element $\ast$ \mbox{\hyperlink{class_game_object_ac9b6e61cb40bcede4ae0309cc618ad97}{Serialize}} (std\+::string \mbox{\hyperlink{class_game_object_af542b33c8de269343e22c5629e6b66c0}{name}}=\char`\"{}Default\char`\"{}) override
+\begin{DoxyCompactList}\small\item\em 序列化 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_game_object_a7bd3840ff675f1ee44ddec99fb89bc32}{De\+Serialize}} (Ti\+Xml\+Element $\ast$) override
+\begin{DoxyCompactList}\small\item\em 反序列化 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_game_object_aabef8abf8f97c44cbc06cda376b438e3}{Update\+Node}} () override
+\begin{DoxyCompactList}\small\item\em 更新序列化节点 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_object_a1f6ffb8c4827da5a8e6a878f2b83fdc8}\label{class_game_object_a1f6ffb8c4827da5a8e6a878f2b83fdc8}} 
+int {\bfseries Get\+Hash} ()
+\begin{DoxyCompactList}\small\item\em 获取hash值 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_object_af9eceda0f9df6fc8d4c398971bbe231e}{Add\+Component}} (\mbox{\hyperlink{class_component}{Component}} $\ast$)
+\begin{DoxyCompactList}\small\item\em 添加组件 \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\T $\ast$ \mbox{\hyperlink{class_game_object_a5ba3b458e6bee6ea5aedd5c8cdeabf18}{Get\+Component}} ()
+\begin{DoxyCompactList}\small\item\em 获取组件 \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{class_game_object_a5216b8316fe1702edd1de4f188696cc3}{Remove\+Component}} ()
+\begin{DoxyCompactList}\small\item\em 移除组件 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_object_a87cd9cdd8c107c2127a16edc24429196}\label{class_game_object_a87cd9cdd8c107c2127a16edc24429196}} 
+std\+::vector$<$ \mbox{\hyperlink{class_component}{Component}} $\ast$ $>$ \& {\bfseries Get\+Components} ()
+\begin{DoxyCompactList}\small\item\em 获取组件引用 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_object_aaca03b85cc541d4719a4d8f7ee6daa01}\label{class_game_object_aaca03b85cc541d4719a4d8f7ee6daa01}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{class_game_object}{Game\+Object}} \&g) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_object_a9edf603be120d5a9221e5c5c962465f8}\label{class_game_object_a9edf603be120d5a9221e5c5c962465f8}} 
+\mbox{\hyperlink{class_transform}{Transform}} $\ast$ {\bfseries transform}
+\begin{DoxyCompactList}\small\item\em 物体的transform \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_object_ad3926c85ad7af4e238cc5e3d6a116030}\label{class_game_object_ad3926c85ad7af4e238cc5e3d6a116030}} 
+\mbox{\hyperlink{class_scene}{Scene}} $\ast$ {\bfseries owner}
+\begin{DoxyCompactList}\small\item\em 所属场景 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_object_af542b33c8de269343e22c5629e6b66c0}\label{class_game_object_af542b33c8de269343e22c5629e6b66c0}} 
+std\+::string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em 物体名称 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_object_a18fb64f3ea41847054e267abd4bfb338}\label{class_game_object_a18fb64f3ea41847054e267abd4bfb338}} 
+int {\bfseries guid}
+\begin{DoxyCompactList}\small\item\em 物体全局唯一标识标识 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{成员函数说明}
+\mbox{\Hypertarget{class_game_object_af9eceda0f9df6fc8d4c398971bbe231e}\label{class_game_object_af9eceda0f9df6fc8d4c398971bbe231e}} 
+\index{GameObject@{GameObject}!AddComponent@{AddComponent}}
+\index{AddComponent@{AddComponent}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{AddComponent()}{AddComponent()}}
+{\footnotesize\ttfamily void Game\+Object\+::\+Add\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_component}{Component}} $\ast$}]{comp }\end{DoxyParamCaption})}
+
+
+
+添加组件 
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_object_af9eceda0f9df6fc8d4c398971bbe231e_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_object_af9eceda0f9df6fc8d4c398971bbe231e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_object_a7bd3840ff675f1ee44ddec99fb89bc32}\label{class_game_object_a7bd3840ff675f1ee44ddec99fb89bc32}} 
+\index{GameObject@{GameObject}!DeSerialize@{DeSerialize}}
+\index{DeSerialize@{DeSerialize}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{DeSerialize()}{DeSerialize()}}
+{\footnotesize\ttfamily void Game\+Object\+::\+De\+Serialize (\begin{DoxyParamCaption}\item[{Ti\+Xml\+Element $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+反序列化 
+
+
+
+实现了 \mbox{\hyperlink{class_serializable_a4169f7b98f9816d6b1ebf2dbd3b2d3cb}{Serializable}}.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_object_a7bd3840ff675f1ee44ddec99fb89bc32_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_object_a5ba3b458e6bee6ea5aedd5c8cdeabf18}\label{class_game_object_a5ba3b458e6bee6ea5aedd5c8cdeabf18}} 
+\index{GameObject@{GameObject}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{GetComponent()}{GetComponent()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T $\ast$ Game\+Object\+::\+Get\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取组件 
+
+
+\begin{DoxyTemplParams}{模板参数}
+{\em T} & 组件类型\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{返回}
+组件对象
+\end{DoxyReturn}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_object_a5ba3b458e6bee6ea5aedd5c8cdeabf18_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_object_a5216b8316fe1702edd1de4f188696cc3}\label{class_game_object_a5216b8316fe1702edd1de4f188696cc3}} 
+\index{GameObject@{GameObject}!RemoveComponent@{RemoveComponent}}
+\index{RemoveComponent@{RemoveComponent}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{RemoveComponent()}{RemoveComponent()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Game\+Object\+::\+Remove\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+移除组件 
+
+
+\begin{DoxyTemplParams}{模板参数}
+{\em T} & 组件类型\\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{class_game_object_ac9b6e61cb40bcede4ae0309cc618ad97}\label{class_game_object_ac9b6e61cb40bcede4ae0309cc618ad97}} 
+\index{GameObject@{GameObject}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily Ti\+Xml\+Element $\ast$ Game\+Object\+::\+Serialize (\begin{DoxyParamCaption}\item[{std\+::string}]{name = {\ttfamily \char`\"{}Default\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+序列化 
+
+
+
+实现了 \mbox{\hyperlink{class_serializable_ad2b954777bfb26bd486d7aee9675667e}{Serializable}}.
+
+\mbox{\Hypertarget{class_game_object_aabef8abf8f97c44cbc06cda376b438e3}\label{class_game_object_aabef8abf8f97c44cbc06cda376b438e3}} 
+\index{GameObject@{GameObject}!UpdateNode@{UpdateNode}}
+\index{UpdateNode@{UpdateNode}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{UpdateNode()}{UpdateNode()}}
+{\footnotesize\ttfamily void Game\+Object\+::\+Update\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新序列化节点 
+
+
+
+重载 \mbox{\hyperlink{class_serializable_ac713a26d2d8e38066e29555199af5580}{Serializable}} .
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/\+ECS/Game\+Object.\+h\item 
+D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/\+ECS/Game\+Object.\+cpp\end{DoxyCompactItemize}

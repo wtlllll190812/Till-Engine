@@ -1,0 +1,242 @@
+\hypertarget{class_screen}{}\doxysection{Screen类 参考}
+\label{class_screen}\index{Screen@{Screen}}
+
+
+{\ttfamily \#include $<$Screen.\+h$>$}
+
+
+
+类 Screen 继承关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_screen__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Screen 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_screen__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_screen_ada20c3556b6abff7882900dc1e1deeaa}{Screen}} (int, int)
+\item 
+\mbox{\hyperlink{class_screen_ae7576476fc6e6a6eaa66389fdc41fe72}{Screen}} ()
+\item 
+\mbox{\hyperlink{class_screen_a4243bc17596af96415b09ac48205676d}{$\sim$\+Screen}} ()
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{class_screen_a3581d87da7784de9d3eb0ff0b4d44744}{Display}} ()
+\begin{DoxyCompactList}\small\item\em 显示窗口 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_screen_a13e244c5bbc5ed99dfd0f2276bc40004}{is\+Closed}} ()
+\begin{DoxyCompactList}\small\item\em 窗口是否关闭 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{class_screen_a60d6dda4026d40bc1801303d708bcb69}{Gui\+Init}} ()
+\begin{DoxyCompactList}\small\item\em imgui初始化 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{class_screen_a3bef9f197244caaa9c8ba605495b8476}{Gui\+Render}} ()
+\begin{DoxyCompactList}\small\item\em 渲染\+Gui \end{DoxyCompactList}\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{class_screen_af1d064071ce7e48d45bc7d8e15cfc050}{Register\+Gui\+Window}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_gui_window}{Gui\+Window}} $>$)
+\begin{DoxyCompactList}\small\item\em 注册窗口 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{class_screen_a2da4b3a4b37151b4f0ac1e9d3c189d10}{Init}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+GLFWwindow $\ast$ \mbox{\hyperlink{class_screen_ae1f5e6a83f5ab140d0902cd22e12bd22}{window}}
+\item 
+int \mbox{\hyperlink{class_screen_a49be8f8ccf7ed7a3151a761495c0ce21}{width}}
+\item 
+int \mbox{\hyperlink{class_screen_adc8ca76195e7b6a58370ef85d9ee1efa}{heigth}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_gui_window}{Gui\+Window}} $>$ $>$ \mbox{\hyperlink{class_screen_a9587a78e3a57cbf6e1d0d076112ce75f}{ui\+Windows}}
+\end{DoxyCompactItemize}
+\doxysubsection*{额外继承的成员函数}
+
+
+\doxysubsection{构造及析构函数说明}
+\mbox{\Hypertarget{class_screen_ada20c3556b6abff7882900dc1e1deeaa}\label{class_screen_ada20c3556b6abff7882900dc1e1deeaa}} 
+\index{Screen@{Screen}!Screen@{Screen}}
+\index{Screen@{Screen}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{Screen()}{Screen()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Screen\+::\+Screen (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_screen_ada20c3556b6abff7882900dc1e1deeaa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_screen_ae7576476fc6e6a6eaa66389fdc41fe72}\label{class_screen_ae7576476fc6e6a6eaa66389fdc41fe72}} 
+\index{Screen@{Screen}!Screen@{Screen}}
+\index{Screen@{Screen}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{Screen()}{Screen()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Screen\+::\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_screen_ae7576476fc6e6a6eaa66389fdc41fe72_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_screen_a4243bc17596af96415b09ac48205676d}\label{class_screen_a4243bc17596af96415b09ac48205676d}} 
+\index{Screen@{Screen}!````~Screen@{$\sim$Screen}}
+\index{````~Screen@{$\sim$Screen}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{$\sim$Screen()}{~Screen()}}
+{\footnotesize\ttfamily Screen\+::$\sim$\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_screen_a4243bc17596af96415b09ac48205676d_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{成员函数说明}
+\mbox{\Hypertarget{class_screen_a3581d87da7784de9d3eb0ff0b4d44744}\label{class_screen_a3581d87da7784de9d3eb0ff0b4d44744}} 
+\index{Screen@{Screen}!Display@{Display}}
+\index{Display@{Display}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{Display()}{Display()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Screen\+::\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+显示窗口 
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{class_screen_a3581d87da7784de9d3eb0ff0b4d44744_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_screen_a3581d87da7784de9d3eb0ff0b4d44744_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_screen_a60d6dda4026d40bc1801303d708bcb69}\label{class_screen_a60d6dda4026d40bc1801303d708bcb69}} 
+\index{Screen@{Screen}!GuiInit@{GuiInit}}
+\index{GuiInit@{GuiInit}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{GuiInit()}{GuiInit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Screen\+::\+Gui\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+imgui初始化 
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_screen_a60d6dda4026d40bc1801303d708bcb69_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_screen_a3bef9f197244caaa9c8ba605495b8476}\label{class_screen_a3bef9f197244caaa9c8ba605495b8476}} 
+\index{Screen@{Screen}!GuiRender@{GuiRender}}
+\index{GuiRender@{GuiRender}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{GuiRender()}{GuiRender()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Screen\+::\+Gui\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+渲染\+Gui 
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_screen_a3bef9f197244caaa9c8ba605495b8476_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_screen_a3bef9f197244caaa9c8ba605495b8476_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_screen_a2da4b3a4b37151b4f0ac1e9d3c189d10}\label{class_screen_a2da4b3a4b37151b4f0ac1e9d3c189d10}} 
+\index{Screen@{Screen}!Init@{Init}}
+\index{Init@{Init}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Screen\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_screen_a13e244c5bbc5ed99dfd0f2276bc40004}\label{class_screen_a13e244c5bbc5ed99dfd0f2276bc40004}} 
+\index{Screen@{Screen}!isClosed@{isClosed}}
+\index{isClosed@{isClosed}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{isClosed()}{isClosed()}}
+{\footnotesize\ttfamily bool Screen\+::is\+Closed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+窗口是否关闭 
+
+\begin{DoxyReturn}{返回}
+是否关闭
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_screen_af1d064071ce7e48d45bc7d8e15cfc050}\label{class_screen_af1d064071ce7e48d45bc7d8e15cfc050}} 
+\index{Screen@{Screen}!RegisterGuiWindow@{RegisterGuiWindow}}
+\index{RegisterGuiWindow@{RegisterGuiWindow}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{RegisterGuiWindow()}{RegisterGuiWindow()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Screen\+::\+Register\+Gui\+Window (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_gui_window}{Gui\+Window}} $>$}]{guiwindows }\end{DoxyParamCaption})}
+
+
+
+注册窗口 
+
+
+
+\doxysubsection{类成员变量说明}
+\mbox{\Hypertarget{class_screen_adc8ca76195e7b6a58370ef85d9ee1efa}\label{class_screen_adc8ca76195e7b6a58370ef85d9ee1efa}} 
+\index{Screen@{Screen}!heigth@{heigth}}
+\index{heigth@{heigth}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{heigth}{heigth}}
+{\footnotesize\ttfamily int Screen\+::heigth}
+
+\mbox{\Hypertarget{class_screen_a9587a78e3a57cbf6e1d0d076112ce75f}\label{class_screen_a9587a78e3a57cbf6e1d0d076112ce75f}} 
+\index{Screen@{Screen}!uiWindows@{uiWindows}}
+\index{uiWindows@{uiWindows}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{uiWindows}{uiWindows}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_gui_window}{Gui\+Window}}$>$ $>$ Screen\+::ui\+Windows\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_screen_a49be8f8ccf7ed7a3151a761495c0ce21}\label{class_screen_a49be8f8ccf7ed7a3151a761495c0ce21}} 
+\index{Screen@{Screen}!width@{width}}
+\index{width@{width}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int Screen\+::width}
+
+\mbox{\Hypertarget{class_screen_ae1f5e6a83f5ab140d0902cd22e12bd22}\label{class_screen_ae1f5e6a83f5ab140d0902cd22e12bd22}} 
+\index{Screen@{Screen}!window@{window}}
+\index{window@{window}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily GLFWwindow$\ast$ Screen\+::window}
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/\+Engine/\+Window/\mbox{\hyperlink{_screen_8h}{Screen.\+h}}\item 
+D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/\+Engine/\+Window/\mbox{\hyperlink{_screen_8cpp}{Screen.\+cpp}}\end{DoxyCompactItemize}

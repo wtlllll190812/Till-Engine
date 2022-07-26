@@ -1,0 +1,13 @@
+<map id="类继承关系图" name="类继承关系图">
+<area shape="rect" id="node1" href="$class_serializable.html" title="可序列化对象接口" alt="" coords="5,132,95,159"/>
+<area shape="rect" id="node2" href="$class_component.html" title="组件基类" alt="" coords="146,107,234,133"/>
+<area shape="rect" id="node11" href="$class_game_object.html" title=" " alt="" coords="143,157,237,184"/>
+<area shape="rect" id="node3" href="$class_behaviour.html" title=" " alt="" coords="285,5,364,32"/>
+<area shape="rect" id="node4" href="$class_camera.html" title=" " alt="" coords="291,56,358,83"/>
+<area shape="rect" id="node5" href="$class_light.html" title=" " alt="" coords="299,107,350,133"/>
+<area shape="rect" id="node9" href="$class_renderer.html" title=" " alt="" coords="287,157,362,184"/>
+<area shape="rect" id="node10" href="$class_transform.html" title=" " alt="" coords="285,208,364,235"/>
+<area shape="rect" id="node6" href="$class_direction_light.html" title=" " alt="" coords="412,56,513,83"/>
+<area shape="rect" id="node7" href="$class_point_light.html" title=" " alt="" coords="423,107,503,133"/>
+<area shape="rect" id="node8" href="$class_spot_light.html" title=" " alt="" coords="424,157,501,184"/>
+</map>

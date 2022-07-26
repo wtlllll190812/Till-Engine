@@ -16,12 +16,35 @@ class Texture;
 class TLEngineCG
 {
 public:
-	static FrameBuffer* shadowBuffer;
+	/// <summary>
+	/// 场景中所有的灯
+	/// </summary>
 	static std::vector<Light*> lights;
+	
+	/// <summary>
+	/// 深度缓冲
+	/// </summary>
+	static FrameBuffer* shadowMap;
+
+	/// <summary>
+	/// 场景主光源
+	/// </summary>
 	static Light* mainLight;
+	
+	/// <summary>
+	/// 用于投射阴影的材质
+	/// </summary>
 	static Material* sadowCaster;
+
+	/// <summary>
+	/// 用于渲染天空盒的材质
+	/// </summary>
 	static Material* skyboxMat;
 public:
+
+	/// <summary>
+	/// 注册光源
+	/// </summary>
 	static void AddLight(Light* l);
 };
 

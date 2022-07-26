@@ -1,0 +1,4 @@
+<map id="Scene::Save" name="Scene::Save">
+<area shape="rect" id="node1" title="保存场景" alt="" coords="5,5,100,32"/>
+<area shape="rect" id="node2" href="$class_t_lxml.html#aee8cee8302a7b8bef3002d0f5952df69" title="保存文件" alt="" coords="148,5,241,32"/>
+</map>

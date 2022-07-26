@@ -1,0 +1,6 @@
+<map id="KeyEvent" name="KeyEvent">
+<area shape="rect" id="node1" title="按键事件基类" alt="" coords="105,80,183,107"/>
+<area shape="rect" id="node3" href="$class_key_pressed_event.html" title="按键按下事件" alt="" coords="5,155,131,181"/>
+<area shape="rect" id="node4" href="$class_key_released_event.html" title="按键抬起事件" alt="" coords="155,155,285,181"/>
+<area shape="rect" id="node2" href="$class_event_base.html" title="事件类基类" alt="" coords="102,5,186,32"/>
+</map>

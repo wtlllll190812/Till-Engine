@@ -1,0 +1,113 @@
+\hypertarget{class_spot_light}{}\doxysection{Spot\+Light类 参考}
+\label{class_spot_light}\index{SpotLight@{SpotLight}}
+
+
+类 Spot\+Light 继承关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=147pt]{class_spot_light__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Spot\+Light 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_spot_light__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+virtual float \mbox{\hyperlink{class_spot_light_a1af534b15d152621436f5a0de5431921}{Get\+Atten}} (glm\+::vec3 obj\+Pos) const override
+\begin{DoxyCompactList}\small\item\em 获取光的衰减值 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_spot_light_a85d6c8499992762688b0ccbab256f791}\label{class_spot_light_a85d6c8499992762688b0ccbab256f791}} 
+float {\bfseries Get\+Cutoff\+Inside} () const
+\item 
+\mbox{\Hypertarget{class_spot_light_a796c7bf7001290c2869341580603b28f}\label{class_spot_light_a796c7bf7001290c2869341580603b28f}} 
+float {\bfseries Get\+Cutoff\+Outside} () const
+\item 
+virtual void \mbox{\hyperlink{class_spot_light_aa85b154fbc8250f3391e6710a796edf6}{Gui\+Dis\+Play}} () override
+\begin{DoxyCompactList}\small\item\em 显示到\+Gui \end{DoxyCompactList}\item 
+virtual Ti\+Xml\+Element $\ast$ \mbox{\hyperlink{class_spot_light_a07e6bcdf50c13272805091893130c575}{Serialize}} (std\+::string name=\char`\"{}Default\char`\"{}) override
+\begin{DoxyCompactList}\small\item\em 序列化 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_spot_light_aa7d60f9312634b2708cbd32fdce23957}{De\+Serialize}} (Ti\+Xml\+Element $\ast$) override
+\begin{DoxyCompactList}\small\item\em 反序列化 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_spot_light_a0daf85d4a4542ea9a0ab8fd42ebde6de}\label{class_spot_light_a0daf85d4a4542ea9a0ab8fd42ebde6de}} 
+float {\bfseries cutoff\+Inside}
+\item 
+\mbox{\Hypertarget{class_spot_light_abca5aa0c324b45a69281d1902756c2a1}\label{class_spot_light_abca5aa0c324b45a69281d1902756c2a1}} 
+float {\bfseries cutoff\+Outside}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{成员函数说明}
+\mbox{\Hypertarget{class_spot_light_aa7d60f9312634b2708cbd32fdce23957}\label{class_spot_light_aa7d60f9312634b2708cbd32fdce23957}} 
+\index{SpotLight@{SpotLight}!DeSerialize@{DeSerialize}}
+\index{DeSerialize@{DeSerialize}!SpotLight@{SpotLight}}
+\doxysubsubsection{\texorpdfstring{DeSerialize()}{DeSerialize()}}
+{\footnotesize\ttfamily void Spot\+Light\+::\+De\+Serialize (\begin{DoxyParamCaption}\item[{Ti\+Xml\+Element $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+反序列化 
+
+
+
+实现了 \mbox{\hyperlink{class_serializable_a4169f7b98f9816d6b1ebf2dbd3b2d3cb}{Serializable}}.
+
+\mbox{\Hypertarget{class_spot_light_a1af534b15d152621436f5a0de5431921}\label{class_spot_light_a1af534b15d152621436f5a0de5431921}} 
+\index{SpotLight@{SpotLight}!GetAtten@{GetAtten}}
+\index{GetAtten@{GetAtten}!SpotLight@{SpotLight}}
+\doxysubsubsection{\texorpdfstring{GetAtten()}{GetAtten()}}
+{\footnotesize\ttfamily virtual float Spot\+Light\+::\+Get\+Atten (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{obj\+Pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+获取光的衰减值 
+
+
+
+实现了 \mbox{\hyperlink{class_light_a40cbc625be6fac010bb2372b3aee1655}{Light}}.
+
+\mbox{\Hypertarget{class_spot_light_aa85b154fbc8250f3391e6710a796edf6}\label{class_spot_light_aa85b154fbc8250f3391e6710a796edf6}} 
+\index{SpotLight@{SpotLight}!GuiDisPlay@{GuiDisPlay}}
+\index{GuiDisPlay@{GuiDisPlay}!SpotLight@{SpotLight}}
+\doxysubsubsection{\texorpdfstring{GuiDisPlay()}{GuiDisPlay()}}
+{\footnotesize\ttfamily void Spot\+Light\+::\+Gui\+Dis\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+显示到\+Gui 
+
+
+
+重载 \mbox{\hyperlink{class_component_a93c3cc9bd70fec54aeb42875ba48dfa3}{Component}} .
+
+\mbox{\Hypertarget{class_spot_light_a07e6bcdf50c13272805091893130c575}\label{class_spot_light_a07e6bcdf50c13272805091893130c575}} 
+\index{SpotLight@{SpotLight}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!SpotLight@{SpotLight}}
+\doxysubsubsection{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily Ti\+Xml\+Element $\ast$ Spot\+Light\+::\+Serialize (\begin{DoxyParamCaption}\item[{std\+::string}]{name = {\ttfamily \char`\"{}Default\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+序列化 
+
+
+
+实现了 \mbox{\hyperlink{class_serializable_ad2b954777bfb26bd486d7aee9675667e}{Serializable}}.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/\+ECS/\+Components/Spot\+Light.\+h\item 
+D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/\+ECS/\+Components/Spot\+Light.\+cpp\end{DoxyCompactItemize}

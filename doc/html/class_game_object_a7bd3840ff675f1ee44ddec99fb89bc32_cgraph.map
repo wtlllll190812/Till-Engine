@@ -1,0 +1,6 @@
+<map id="GameObject::DeSerialize" name="GameObject::DeSerialize">
+<area shape="rect" id="node1" title="反序列化" alt="" coords="5,31,175,57"/>
+<area shape="rect" id="node2" href="$class_game_object.html#af9eceda0f9df6fc8d4c398971bbe231e" title="添加组件" alt="" coords="223,5,415,32"/>
+<area shape="rect" id="node4" href="$class_transform.html#abe93692dc6c3083f804c0c44f8e8fcc4" title="反序列化" alt="" coords="242,56,395,83"/>
+<area shape="rect" id="node3" href="$class_component.html#a97db16de1c451add8d2886151d5f0f4a" title="添加时" alt="" coords="463,5,597,32"/>
+</map>

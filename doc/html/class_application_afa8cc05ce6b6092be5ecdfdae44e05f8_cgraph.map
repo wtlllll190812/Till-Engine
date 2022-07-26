@@ -1,0 +1,10 @@
+<map id="Application::Application" name="Application::Application">
+<area shape="rect" id="node1" title=" " alt="" coords="5,44,164,71"/>
+<area shape="rect" id="node2" href="$class_window.html#a08d478a17b15bcf682d6d057460f81f7" title=" " alt="" coords="226,7,341,33"/>
+<area shape="rect" id="node3" href="$class_application.html#a1d31824bbed36791a15243852d18669a" title=" " alt="" coords="212,81,355,108"/>
+<area shape="rect" id="node4" href="$class_layer_stack.html#abc1ae8816a9b21d405062502c0a98f5b" title=" " alt="" coords="438,5,565,32"/>
+<area shape="rect" id="node5" href="$class_event_dispatcher.html#aa52657a74c2be46ec503b3ad8fc469d1" title="判断事件类型是否符合" alt="" coords="414,56,589,83"/>
+<area shape="rect" id="node7" href="$class_layer_stack.html#a91c8a0dadf6f79e18d8f41e9572a7c7e" title=" " alt="" coords="443,107,560,133"/>
+<area shape="rect" id="node8" href="$class_application.html#a7da658ad03aa7614f3a24ef738b57f32" title=" " alt="" coords="403,157,600,184"/>
+<area shape="rect" id="node6" href="$class_event_base.html#a91f4adadacab79ddf2c64b92057a6cc6" title=" " alt="" coords="648,56,821,83"/>
+</map>

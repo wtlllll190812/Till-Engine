@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TillEngine: D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Window/Screen.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TillEngine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3072bc1f55ed1280fe4fbe6b21c78379.html">Engine</a></li><li class="navelem"><a class="el" href="dir_4681a19507fe33ded8545b89b782904d.html">Window</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Screen.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_screen_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno"><a class="line" href="_screen_8h.html#a088324ad8995e3eb76024e3e79083d48">    2</a></span><span class="preprocessor">#define GLFW_INCLUDE_NONE</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;GLFW/glfw3.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;GL/glew.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="imgui_8h.html">imgui.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="imgui__impl__glfw_8h.html">imgui_impl_glfw.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="imgui__impl__opengl3_8h.html">imgui_impl_opengl3.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_till_pch_8h.html">TillPch.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">class </span><a class="code hl_class" href="class_gui_window.html">GuiWindow</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_screen.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="class_screen.html">Screen</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_singleton.html">Singleton</a>&lt;Screen&gt;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_screen.html#ae1f5e6a83f5ab140d0902cd22e12bd22">   14</a></span>    GLFWwindow* <a class="code hl_variable" href="class_screen.html#ae1f5e6a83f5ab140d0902cd22e12bd22">window</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_screen.html#a49be8f8ccf7ed7a3151a761495c0ce21">   15</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_screen.html#a49be8f8ccf7ed7a3151a761495c0ce21">width</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_screen.html#adc8ca76195e7b6a58370ef85d9ee1efa">   16</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_screen.html#adc8ca76195e7b6a58370ef85d9ee1efa">heigth</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_function" href="class_screen.html#ae7576476fc6e6a6eaa66389fdc41fe72">Screen</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_function" href="class_screen.html#ae7576476fc6e6a6eaa66389fdc41fe72">Screen</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_function" href="class_screen.html#a4243bc17596af96415b09ac48205676d">~Screen</a>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_screen.html#a3581d87da7784de9d3eb0ff0b4d44744">Display</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_screen.html#a13e244c5bbc5ed99dfd0f2276bc40004">isClosed</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_screen.html#a60d6dda4026d40bc1801303d708bcb69">GuiInit</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_screen.html#a3bef9f197244caaa9c8ba605495b8476">GuiRender</a>();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_screen.html#af1d064071ce7e48d45bc7d8e15cfc050">RegisterGuiWindow</a>(std::shared_ptr&lt;GuiWindow&gt;);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_screen.html#a2da4b3a4b37151b4f0ac1e9d3c189d10">Init</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_screen.html#a9587a78e3a57cbf6e1d0d076112ce75f">   51</a></span>    std::vector&lt;std::shared_ptr&lt;GuiWindow&gt;&gt; <a class="code hl_variable" href="class_screen.html#a9587a78e3a57cbf6e1d0d076112ce75f">uiWindows</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
+<div class="ttc" id="a_till_pch_8h_html"><div class="ttname"><a href="_till_pch_8h.html">TillPch.h</a></div></div>
+<div class="ttc" id="aclass_gui_window_html"><div class="ttname"><a href="class_gui_window.html">GuiWindow</a></div><div class="ttdef"><b>Definition:</b> GuiWindow.h:7</div></div>
+<div class="ttc" id="aclass_screen_html"><div class="ttname"><a href="class_screen.html">Screen</a></div><div class="ttdef"><b>Definition:</b> Screen.h:12</div></div>
+<div class="ttc" id="aclass_screen_html_a13e244c5bbc5ed99dfd0f2276bc40004"><div class="ttname"><a href="class_screen.html#a13e244c5bbc5ed99dfd0f2276bc40004">Screen::isClosed</a></div><div class="ttdeci">bool isClosed()</div><div class="ttdoc">窗口是否关闭</div><div class="ttdef"><b>Definition:</b> Screen.cpp:41</div></div>
+<div class="ttc" id="aclass_screen_html_a2da4b3a4b37151b4f0ac1e9d3c189d10"><div class="ttname"><a href="class_screen.html#a2da4b3a4b37151b4f0ac1e9d3c189d10">Screen::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdef"><b>Definition:</b> Screen.cpp:85</div></div>
+<div class="ttc" id="aclass_screen_html_a3581d87da7784de9d3eb0ff0b4d44744"><div class="ttname"><a href="class_screen.html#a3581d87da7784de9d3eb0ff0b4d44744">Screen::Display</a></div><div class="ttdeci">void Display()</div><div class="ttdoc">显示窗口</div><div class="ttdef"><b>Definition:</b> Screen.cpp:29</div></div>
+<div class="ttc" id="aclass_screen_html_a3bef9f197244caaa9c8ba605495b8476"><div class="ttname"><a href="class_screen.html#a3bef9f197244caaa9c8ba605495b8476">Screen::GuiRender</a></div><div class="ttdeci">void GuiRender()</div><div class="ttdoc">渲染Gui</div><div class="ttdef"><b>Definition:</b> Screen.cpp:64</div></div>
+<div class="ttc" id="aclass_screen_html_a4243bc17596af96415b09ac48205676d"><div class="ttname"><a href="class_screen.html#a4243bc17596af96415b09ac48205676d">Screen::~Screen</a></div><div class="ttdeci">~Screen()</div><div class="ttdef"><b>Definition:</b> Screen.cpp:20</div></div>
+<div class="ttc" id="aclass_screen_html_a49be8f8ccf7ed7a3151a761495c0ce21"><div class="ttname"><a href="class_screen.html#a49be8f8ccf7ed7a3151a761495c0ce21">Screen::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition:</b> Screen.h:15</div></div>
+<div class="ttc" id="aclass_screen_html_a60d6dda4026d40bc1801303d708bcb69"><div class="ttname"><a href="class_screen.html#a60d6dda4026d40bc1801303d708bcb69">Screen::GuiInit</a></div><div class="ttdeci">void GuiInit()</div><div class="ttdoc">imgui初始化</div><div class="ttdef"><b>Definition:</b> Screen.cpp:46</div></div>
+<div class="ttc" id="aclass_screen_html_a9587a78e3a57cbf6e1d0d076112ce75f"><div class="ttname"><a href="class_screen.html#a9587a78e3a57cbf6e1d0d076112ce75f">Screen::uiWindows</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; GuiWindow &gt; &gt; uiWindows</div><div class="ttdef"><b>Definition:</b> Screen.h:51</div></div>
+<div class="ttc" id="aclass_screen_html_adc8ca76195e7b6a58370ef85d9ee1efa"><div class="ttname"><a href="class_screen.html#adc8ca76195e7b6a58370ef85d9ee1efa">Screen::heigth</a></div><div class="ttdeci">int heigth</div><div class="ttdef"><b>Definition:</b> Screen.h:16</div></div>
+<div class="ttc" id="aclass_screen_html_ae1f5e6a83f5ab140d0902cd22e12bd22"><div class="ttname"><a href="class_screen.html#ae1f5e6a83f5ab140d0902cd22e12bd22">Screen::window</a></div><div class="ttdeci">GLFWwindow * window</div><div class="ttdef"><b>Definition:</b> Screen.h:14</div></div>
+<div class="ttc" id="aclass_screen_html_ae7576476fc6e6a6eaa66389fdc41fe72"><div class="ttname"><a href="class_screen.html#ae7576476fc6e6a6eaa66389fdc41fe72">Screen::Screen</a></div><div class="ttdeci">Screen()</div><div class="ttdef"><b>Definition:</b> Screen.cpp:12</div></div>
+<div class="ttc" id="aclass_screen_html_af1d064071ce7e48d45bc7d8e15cfc050"><div class="ttname"><a href="class_screen.html#af1d064071ce7e48d45bc7d8e15cfc050">Screen::RegisterGuiWindow</a></div><div class="ttdeci">void RegisterGuiWindow(std::shared_ptr&lt; GuiWindow &gt;)</div><div class="ttdoc">注册窗口</div><div class="ttdef"><b>Definition:</b> Screen.cpp:80</div></div>
+<div class="ttc" id="aclass_singleton_html"><div class="ttname"><a href="class_singleton.html">Singleton</a></div><div class="ttdef"><b>Definition:</b> Singleton .h:5</div></div>
+<div class="ttc" id="aimgui_8h_html"><div class="ttname"><a href="imgui_8h.html">imgui.h</a></div></div>
+<div class="ttc" id="aimgui__impl__glfw_8h_html"><div class="ttname"><a href="imgui__impl__glfw_8h.html">imgui_impl_glfw.h</a></div></div>
+<div class="ttc" id="aimgui__impl__opengl3_8h_html"><div class="ttname"><a href="imgui__impl__opengl3_8h.html">imgui_impl_opengl3.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

@@ -1,0 +1,46 @@
+\hypertarget{_imgui_layer_8h_source}{}\doxysection{Imgui\+Layer.\+h}
+\label{_imgui_layer_8h_source}\index{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/Engine/Layer/ImguiLayer.h@{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/Engine/Layer/ImguiLayer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Layer.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}KeyEvent.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}MouseEvent.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}ApplicationEvent.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_gui_window}{GuiWindow}};}
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_imgui_layer}{ImguiLayer}} :\textcolor{keyword}{public} \mbox{\hyperlink{class_layer}{Layer}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14     \mbox{\hyperlink{class_imgui_layer}{ImguiLayer}}();}
+\DoxyCodeLine{15     \mbox{\hyperlink{class_imgui_layer}{\string~ImguiLayer}}();}
+\DoxyCodeLine{16     \textcolor{keywordtype}{void} OnAttack()\textcolor{keyword}{override};}
+\DoxyCodeLine{17     \textcolor{keywordtype}{void} OnDetach()\textcolor{keyword}{override};}
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} OnEvent(\mbox{\hyperlink{class_event_base}{EventBase}}\& event)\textcolor{keyword}{override};}
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} RegisterGuiWindow(std::shared\_ptr<GuiWindow>);}
+\DoxyCodeLine{20     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} OnUpdate()\textcolor{keyword}{override};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} RenderStart();}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} RenderEnd();}
+\DoxyCodeLine{25     \textcolor{keyword}{static} \textcolor{keywordtype}{void} ImGuiInit();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{private}:}
+\DoxyCodeLine{28     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} OnMouseButtonPressedEvent(\mbox{\hyperlink{class_mouse_button_pressed_event}{MouseButtonPressedEvent}}\& e);}
+\DoxyCodeLine{29     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} OnMouseButtonReleasedEvent(\mbox{\hyperlink{class_mouse_button_released_event}{MouseButtonReleasedEvent}}\& e);}
+\DoxyCodeLine{30     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} OnMouseMovedEvent(\mbox{\hyperlink{class_mouse_moved_event}{MouseMovedEvent}}\& e);}
+\DoxyCodeLine{31     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} OnMouseScrolledEvent(\mbox{\hyperlink{class_mouse_scrolled_event}{MouseScrolledEvent}}\& e);}
+\DoxyCodeLine{32     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} OnKeyPressedEvent(\mbox{\hyperlink{class_key_pressed_event}{KeyPressedEvent}}\& e);}
+\DoxyCodeLine{33     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} OnKeyReleasedEvent(\mbox{\hyperlink{class_key_released_event}{KeyReleasedEvent}}\& e);}
+\DoxyCodeLine{34     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} OnKeyTypedEvent(\mbox{\hyperlink{class_key_pressed_event}{KeyPressedEvent}}\& e);}
+\DoxyCodeLine{35     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} OnWindowResizeEvent(\mbox{\hyperlink{class_window_resize_event}{WindowResizeEvent}}\& e);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{38     std::vector<std::shared\_ptr<GuiWindow>> uiWindows;}
+\DoxyCodeLine{39     \textcolor{keywordtype}{float} mTime = 0;}
+\DoxyCodeLine{40 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,2729 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TillEngine: ImGuiWindow结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TillEngine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="struct_im_gui_window-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">ImGuiWindow结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="imgui__internal_8h_source.html">imgui_internal.h</a>&gt;</code></p>
+<div class="dynheader">
+ImGuiWindow 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_window__coll__graph.png" border="0" usemap="#a_im_gui_window_coll__map" alt="Collaboration graph"/></div>
+<map name="a_im_gui_window_coll__map" id="a_im_gui_window_coll__map">
+<area shape="rect" title=" " alt="" coords="3751,588,3854,615"/>
+<area shape="rect" href="struct_im_gui_viewport_p.html" title=" " alt="" coords="4027,795,4141,821"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="3991,580,4177,607"/>
+<area shape="rect" href="struct_im_gui_dock_node.html" title=" " alt="" coords="4805,387,4921,413"/>
+<area shape="rect" href="struct_im_gui_tab_item.html" title=" " alt="" coords="4033,1151,4135,1177"/>
+<area shape="rect" href="struct_im_gui_window_class.html" title=" " alt="" coords="3422,281,3557,308"/>
+<area shape="rect" href="struct_im_gui_viewport.html" title=" " alt="" coords="1195,940,1301,967"/>
+<area shape="rect" href="struct_im_draw_data.html" title=" " alt="" coords="1481,888,1573,915"/>
+<area shape="rect" href="struct_im_vec2.html" title=" " alt="" coords="20,772,87,799"/>
+<area shape="rect" href="struct_im_draw_vert.html" title=" " alt="" coords="611,633,700,660"/>
+<area shape="rect" href="struct_im_draw_list_shared_data.html" title=" " alt="" coords="887,444,1042,471"/>
+<area shape="rect" href="struct_im_font_atlas.html" title=" " alt="" coords="288,256,380,283"/>
+<area shape="rect" href="struct_im_font_config.html" title=" " alt="" coords="915,224,1014,251"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="444,757,587,784"/>
+<area shape="rect" href="struct_im_gui_window_temp_data.html" title=" " alt="" coords="4323,676,4485,703"/>
+<area shape="rect" href="struct_im_rect.html" title=" " alt="" coords="2097,393,2160,420"/>
+<area shape="rect" href="struct_im_gui_tab_bar.html" title=" " alt="" coords="4615,957,4712,984"/>
+<area shape="rect" href="struct_im_draw_list.html" title=" " alt="" coords="1205,517,1291,544"/>
+<area shape="rect" href="struct_im_draw_cmd.html" title=" " alt="" coords="1481,280,1573,307"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="1441,619,1612,645"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="1704,280,1872,307"/>
+<area shape="rect" href="struct_im_draw_channel.html" title=" " alt="" coords="2073,240,2185,267"/>
+<area shape="rect" href="struct_im_vec4.html" title=" " alt="" coords="20,357,87,384"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="444,341,587,368"/>
+<area shape="rect" href="struct_im_draw_cmd_header.html" title=" " alt="" coords="724,557,857,584"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="885,275,1044,301"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="882,671,1047,697"/>
+<area shape="rect" href="struct_im_font.html" title=" " alt="" coords="624,219,687,245"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="273,307,395,333"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="259,205,409,232"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="248,53,420,80"/>
+<area shape="rect" href="struct_im_font_glyph.html" title=" " alt="" coords="5,16,101,43"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="881,620,1048,647"/>
+<area shape="rect" href="struct_im_draw_list_splitter.html" title=" " alt="" coords="2813,327,2939,353"/>
+<area shape="rect" href="struct_im_gui_old_columns.html" title=" " alt="" coords="3162,392,3289,419"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="2367,240,2555,267"/>
+<area shape="rect" href="struct_im_draw_data_builder.html" title=" " alt="" coords="1896,636,2028,663"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="3417,543,3561,569"/>
+<area shape="rect" href="struct_im_vec1.html" title=" " alt="" coords="4051,647,4117,673"/>
+<area shape="rect" href="struct_im_gui_menu_columns.html" title=" " alt="" coords="4015,845,4153,872"/>
+<area shape="rect" href="struct_im_gui_storage.html" title=" " alt="" coords="3439,332,3540,359"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="3143,273,3308,314"/>
+<area shape="rect" href="struct_im_gui_storage_1_1_im_gui_storage_pair.html" title=" " alt="" coords="2771,276,2981,303"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="3388,644,3591,671"/>
+<area shape="rect" href="struct_im_gui_old_column_data.html" title=" " alt="" coords="2387,443,2534,469"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="2784,443,2968,485"/>
+<area shape="rect" href="struct_im_vec2ih.html" title=" " alt="" coords="3451,593,3527,620"/>
+<area shape="rect" href="struct_im_gui_window_dock_style.html" title=" " alt="" coords="3408,492,3571,519"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="4315,957,4493,984"/>
+<area shape="rect" href="struct_im_gui_text_buffer.html" title=" " alt="" coords="4347,1008,4461,1035"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:acd2909ae3b7079de81d528327cc11dfd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#acd2909ae3b7079de81d528327cc11dfd">ImGuiWindow</a> (<a class="el" href="struct_im_gui_context.html">ImGuiContext</a> *context, const char *<a class="el" href="imgui__impl__opengl3__loader_8h.html#a5c4947d4516dd7cfa3505ce3a648a4ef">name</a>)</td></tr>
+<tr class="separator:acd2909ae3b7079de81d528327cc11dfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e81d730c3a39a71e6b6ca4654451c53"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a8e81d730c3a39a71e6b6ca4654451c53">~ImGuiWindow</a> ()</td></tr>
+<tr class="separator:a8e81d730c3a39a71e6b6ca4654451c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66400a63bc0b54d7d29e08d1b1b1a42b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a66400a63bc0b54d7d29e08d1b1b1a42b">GetID</a> (const char *str, const char *str_end=NULL)</td></tr>
+<tr class="separator:a66400a63bc0b54d7d29e08d1b1b1a42b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae21dffb343cabca9414499b827912a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#aae21dffb343cabca9414499b827912a8">GetID</a> (const <a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> *ptr)</td></tr>
+<tr class="separator:aae21dffb343cabca9414499b827912a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a122c47ded974724a192912883fb8e0e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a122c47ded974724a192912883fb8e0e9">GetID</a> (int n)</td></tr>
+<tr class="separator:a122c47ded974724a192912883fb8e0e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44931b6e73248930490d2c89377a8233"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a44931b6e73248930490d2c89377a8233">GetIDFromRectangle</a> (const <a class="el" href="struct_im_rect.html">ImRect</a> &amp;r_abs)</td></tr>
+<tr class="separator:a44931b6e73248930490d2c89377a8233"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a147da28bf5d167cbe0a363c4a578dea1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_rect.html">ImRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a147da28bf5d167cbe0a363c4a578dea1">Rect</a> () const</td></tr>
+<tr class="separator:a147da28bf5d167cbe0a363c4a578dea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6881ed65e208fb6e015d3ae6bccfc794"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a6881ed65e208fb6e015d3ae6bccfc794">CalcFontSize</a> () const</td></tr>
+<tr class="separator:a6881ed65e208fb6e015d3ae6bccfc794"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1580cc8b5bdf981c6ed2eb22ecd7dbb"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#ad1580cc8b5bdf981c6ed2eb22ecd7dbb">TitleBarHeight</a> () const</td></tr>
+<tr class="separator:ad1580cc8b5bdf981c6ed2eb22ecd7dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06884e1bc80e460e51e1626b5b976196"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_rect.html">ImRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a06884e1bc80e460e51e1626b5b976196">TitleBarRect</a> () const</td></tr>
+<tr class="separator:a06884e1bc80e460e51e1626b5b976196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfb8bdad2e3ea6102589813ae32d0364"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#acfb8bdad2e3ea6102589813ae32d0364">MenuBarHeight</a> () const</td></tr>
+<tr class="separator:acfb8bdad2e3ea6102589813ae32d0364"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59df76c1445aaaf0b43456c83c1a88e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_rect.html">ImRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a59df76c1445aaaf0b43456c83c1a88e5">MenuBarRect</a> () const</td></tr>
+<tr class="separator:a59df76c1445aaaf0b43456c83c1a88e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:ab44252eb7d02d3f38249f5bac605037c"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#ab44252eb7d02d3f38249f5bac605037c">Name</a></td></tr>
+<tr class="separator:ab44252eb7d02d3f38249f5bac605037c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5976b8d78bcc543ad7f23561f5cf0b8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a5976b8d78bcc543ad7f23561f5cf0b8f">ID</a></td></tr>
+<tr class="separator:a5976b8d78bcc543ad7f23561f5cf0b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c29e810a533b9a647cce5d93d45057f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a0b8e067ab4f7a818828c8d89e531addc">ImGuiWindowFlags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a7c29e810a533b9a647cce5d93d45057f">Flags</a></td></tr>
+<tr class="separator:a7c29e810a533b9a647cce5d93d45057f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87d9fe790d93e4b7ce16b7f4fc5febaa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a0b8e067ab4f7a818828c8d89e531addc">ImGuiWindowFlags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a87d9fe790d93e4b7ce16b7f4fc5febaa">FlagsPreviousFrame</a></td></tr>
+<tr class="separator:a87d9fe790d93e4b7ce16b7f4fc5febaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01c4ba585769087e3d725cab977ffc14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_gui_window_class.html">ImGuiWindowClass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a01c4ba585769087e3d725cab977ffc14">WindowClass</a></td></tr>
+<tr class="separator:a01c4ba585769087e3d725cab977ffc14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab48fb3ce73e23f55ba883e368e20c607"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_gui_viewport_p.html">ImGuiViewportP</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#ab48fb3ce73e23f55ba883e368e20c607">Viewport</a></td></tr>
+<tr class="separator:ab48fb3ce73e23f55ba883e368e20c607"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfdcca8b1439fd4746503a8f2076b601"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#abfdcca8b1439fd4746503a8f2076b601">ViewportId</a></td></tr>
+<tr class="separator:abfdcca8b1439fd4746503a8f2076b601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcf2139134ef058ca3b706bdf18daeea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#abcf2139134ef058ca3b706bdf18daeea">ViewportPos</a></td></tr>
+<tr class="separator:abcf2139134ef058ca3b706bdf18daeea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a105cb1da9f7de3b18b7e5d7ae31709b6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a105cb1da9f7de3b18b7e5d7ae31709b6">ViewportAllowPlatformMonitorExtend</a></td></tr>
+<tr class="separator:a105cb1da9f7de3b18b7e5d7ae31709b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1453f685401a44f76256fb54a4aac451"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a1453f685401a44f76256fb54a4aac451">Pos</a></td></tr>
+<tr class="separator:a1453f685401a44f76256fb54a4aac451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a876e7aaf4cd824c8956238fba61387d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a876e7aaf4cd824c8956238fba61387d5">Size</a></td></tr>
+<tr class="separator:a876e7aaf4cd824c8956238fba61387d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3c7eb6b9cd556d56210cbb37caf0c74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#ac3c7eb6b9cd556d56210cbb37caf0c74">SizeFull</a></td></tr>
+<tr class="separator:ac3c7eb6b9cd556d56210cbb37caf0c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bf8fd3127085039448363101cf3531b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a6bf8fd3127085039448363101cf3531b">ContentSize</a></td></tr>
+<tr class="separator:a6bf8fd3127085039448363101cf3531b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaee3ede30f1972506a3b19ae5c424790"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#aaee3ede30f1972506a3b19ae5c424790">ContentSizeIdeal</a></td></tr>
+<tr class="separator:aaee3ede30f1972506a3b19ae5c424790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa87836746dbdb77de62961406624968d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#aa87836746dbdb77de62961406624968d">ContentSizeExplicit</a></td></tr>
+<tr class="separator:aa87836746dbdb77de62961406624968d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a538d3d70ad8f71a4ec58a6a0560b2f02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a538d3d70ad8f71a4ec58a6a0560b2f02">WindowPadding</a></td></tr>
+<tr class="separator:a538d3d70ad8f71a4ec58a6a0560b2f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a871ebbbfdf354600a3833c270d6e6ef4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a871ebbbfdf354600a3833c270d6e6ef4">WindowRounding</a></td></tr>
+<tr class="separator:a871ebbbfdf354600a3833c270d6e6ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad51248766b9a815ce20b0d11e13b42b0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#ad51248766b9a815ce20b0d11e13b42b0">WindowBorderSize</a></td></tr>
+<tr class="separator:ad51248766b9a815ce20b0d11e13b42b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e2593b079e43c3603d999474ea84ab6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a1e2593b079e43c3603d999474ea84ab6">NameBufLen</a></td></tr>
+<tr class="separator:a1e2593b079e43c3603d999474ea84ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a680ac2168da85f59c35de8f0813224d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a680ac2168da85f59c35de8f0813224d6">MoveId</a></td></tr>
+<tr class="separator:a680ac2168da85f59c35de8f0813224d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73181523a27f3fe03eeb701a91d08cf6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a73181523a27f3fe03eeb701a91d08cf6">TabId</a></td></tr>
+<tr class="separator:a73181523a27f3fe03eeb701a91d08cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15e577eef56b4cb52424a989a4a8bc8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a15e577eef56b4cb52424a989a4a8bc8a">ChildId</a></td></tr>
+<tr class="separator:a15e577eef56b4cb52424a989a4a8bc8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf20537560b9454a1e39667b8f9e7ff2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#abf20537560b9454a1e39667b8f9e7ff2">Scroll</a></td></tr>
+<tr class="separator:abf20537560b9454a1e39667b8f9e7ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0289f66106f5a4443fc17f4284e99c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#af0289f66106f5a4443fc17f4284e99c9">ScrollMax</a></td></tr>
+<tr class="separator:af0289f66106f5a4443fc17f4284e99c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77f86bed14712f73d9fb4b8ba2c4d040"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a77f86bed14712f73d9fb4b8ba2c4d040">ScrollTarget</a></td></tr>
+<tr class="separator:a77f86bed14712f73d9fb4b8ba2c4d040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41f1fde48e59626ea1d19d098cd8ad84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a41f1fde48e59626ea1d19d098cd8ad84">ScrollTargetCenterRatio</a></td></tr>
+<tr class="separator:a41f1fde48e59626ea1d19d098cd8ad84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4a1a6f40341140243436c5413a07dcc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#aa4a1a6f40341140243436c5413a07dcc">ScrollTargetEdgeSnapDist</a></td></tr>
+<tr class="separator:aa4a1a6f40341140243436c5413a07dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a040ebb8ac7de890df6cb6bfe048a72d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a040ebb8ac7de890df6cb6bfe048a72d5">ScrollbarSizes</a></td></tr>
+<tr class="separator:a040ebb8ac7de890df6cb6bfe048a72d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aeada04ca67b0522677f5cdf5c6b483"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a5aeada04ca67b0522677f5cdf5c6b483">ScrollbarX</a></td></tr>
+<tr class="separator:a5aeada04ca67b0522677f5cdf5c6b483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae95f526590e0777de9cf26581a7d6702"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#ae95f526590e0777de9cf26581a7d6702">ScrollbarY</a></td></tr>
+<tr class="separator:ae95f526590e0777de9cf26581a7d6702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a9a782b70f178e576e6d5fcabd250dc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a7a9a782b70f178e576e6d5fcabd250dc">ViewportOwned</a></td></tr>
+<tr class="separator:a7a9a782b70f178e576e6d5fcabd250dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42f141fa0eed059176cb4360df1b1eb2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a42f141fa0eed059176cb4360df1b1eb2">Active</a></td></tr>
+<tr class="separator:a42f141fa0eed059176cb4360df1b1eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab346ec3a2f305948af05ec1871610a8f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#ab346ec3a2f305948af05ec1871610a8f">WasActive</a></td></tr>
+<tr class="separator:ab346ec3a2f305948af05ec1871610a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c29e870f485d115e7715e149c4dfc4d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a3c29e870f485d115e7715e149c4dfc4d">WriteAccessed</a></td></tr>
+<tr class="separator:a3c29e870f485d115e7715e149c4dfc4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04e6b533b2401d1c7e78b47e31538e7b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a04e6b533b2401d1c7e78b47e31538e7b">Collapsed</a></td></tr>
+<tr class="separator:a04e6b533b2401d1c7e78b47e31538e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e26d0e446eb5864d7dacd6847ec8309"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a3e26d0e446eb5864d7dacd6847ec8309">WantCollapseToggle</a></td></tr>
+<tr class="separator:a3e26d0e446eb5864d7dacd6847ec8309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac620c64ec2897561f719db266f5e9b05"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#ac620c64ec2897561f719db266f5e9b05">SkipItems</a></td></tr>
+<tr class="separator:ac620c64ec2897561f719db266f5e9b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a158ebb04d20cac09504fdbc4994eb017"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a158ebb04d20cac09504fdbc4994eb017">Appearing</a></td></tr>
+<tr class="separator:a158ebb04d20cac09504fdbc4994eb017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49e0f1e5eff5af0df7da7f4d14aedcce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a49e0f1e5eff5af0df7da7f4d14aedcce">Hidden</a></td></tr>
+<tr class="separator:a49e0f1e5eff5af0df7da7f4d14aedcce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af05c51e26301e3245aa8aac0d64f09ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#af05c51e26301e3245aa8aac0d64f09ab">IsFallbackWindow</a></td></tr>
+<tr class="separator:af05c51e26301e3245aa8aac0d64f09ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae8365074133751022b381d87da969df"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#aae8365074133751022b381d87da969df">IsExplicitChild</a></td></tr>
+<tr class="separator:aae8365074133751022b381d87da969df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebe637a230800210ba67cd8cdd9e71de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#aebe637a230800210ba67cd8cdd9e71de">HasCloseButton</a></td></tr>
+<tr class="separator:aebe637a230800210ba67cd8cdd9e71de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f7c042fc7e8359d4736cab69fff8490"><td class="memItemLeft" align="right" valign="top">signed char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a2f7c042fc7e8359d4736cab69fff8490">ResizeBorderHeld</a></td></tr>
+<tr class="separator:a2f7c042fc7e8359d4736cab69fff8490"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a045526cada44318c4b02ef7e5a80b8af"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a045526cada44318c4b02ef7e5a80b8af">BeginCount</a></td></tr>
+<tr class="separator:a045526cada44318c4b02ef7e5a80b8af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7042ce8e41ae11f0100fee9e25dbf38"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#aa7042ce8e41ae11f0100fee9e25dbf38">BeginOrderWithinParent</a></td></tr>
+<tr class="separator:aa7042ce8e41ae11f0100fee9e25dbf38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6a2e24ba9291d538d1af269133fec72"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#af6a2e24ba9291d538d1af269133fec72">BeginOrderWithinContext</a></td></tr>
+<tr class="separator:af6a2e24ba9291d538d1af269133fec72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64b10337c3a5a87d9c5cd8683206dbea"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a64b10337c3a5a87d9c5cd8683206dbea">FocusOrder</a></td></tr>
+<tr class="separator:a64b10337c3a5a87d9c5cd8683206dbea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a319c5f43fa4ee9c76b8a6e551e0c0869"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a319c5f43fa4ee9c76b8a6e551e0c0869">PopupId</a></td></tr>
+<tr class="separator:a319c5f43fa4ee9c76b8a6e551e0c0869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d4f86b634dd0fc124e216282b5a110c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a33644f626f44716357624c2755a9b9d1">ImS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a6d4f86b634dd0fc124e216282b5a110c">AutoFitFramesX</a></td></tr>
+<tr class="separator:a6d4f86b634dd0fc124e216282b5a110c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a134c07e0db4129ee43fafb1937429839"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a33644f626f44716357624c2755a9b9d1">ImS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a134c07e0db4129ee43fafb1937429839">AutoFitFramesY</a></td></tr>
+<tr class="separator:a134c07e0db4129ee43fafb1937429839"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea6c6eca60515ed1a5afd5d0c1f8601c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a33644f626f44716357624c2755a9b9d1">ImS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#aea6c6eca60515ed1a5afd5d0c1f8601c">AutoFitChildAxises</a></td></tr>
+<tr class="separator:aea6c6eca60515ed1a5afd5d0c1f8601c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3583d20a57fea8c8491f14f2dcda483c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a3583d20a57fea8c8491f14f2dcda483c">AutoFitOnlyGrows</a></td></tr>
+<tr class="separator:a3583d20a57fea8c8491f14f2dcda483c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8219e984ed273d6cfd19fb4b93eff5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a874086389bc27cc9647118d22a806403">ImGuiDir</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#aa8219e984ed273d6cfd19fb4b93eff5e">AutoPosLastDirection</a></td></tr>
+<tr class="separator:aa8219e984ed273d6cfd19fb4b93eff5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1d2d851f229310e1c9bfdaaa792500e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a33644f626f44716357624c2755a9b9d1">ImS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#af1d2d851f229310e1c9bfdaaa792500e">HiddenFramesCanSkipItems</a></td></tr>
+<tr class="separator:af1d2d851f229310e1c9bfdaaa792500e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7756e042598a3fd79830288ef04c3e4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a33644f626f44716357624c2755a9b9d1">ImS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a7756e042598a3fd79830288ef04c3e4c">HiddenFramesCannotSkipItems</a></td></tr>
+<tr class="separator:a7756e042598a3fd79830288ef04c3e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6439e813f1f2b40b81cba70e86b46d41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a33644f626f44716357624c2755a9b9d1">ImS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a6439e813f1f2b40b81cba70e86b46d41">HiddenFramesForRenderOnly</a></td></tr>
+<tr class="separator:a6439e813f1f2b40b81cba70e86b46d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc5fd6454d55972d9995d3e0dfc9c5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a33644f626f44716357624c2755a9b9d1">ImS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a2dc5fd6454d55972d9995d3e0dfc9c5a">DisableInputsFrames</a></td></tr>
+<tr class="separator:a2dc5fd6454d55972d9995d3e0dfc9c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ff69a8bdc9221c9cc7d8ba656013d84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#aef890d6ac872e12c5804d0b3e4f7f103">ImGuiCond</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a8ff69a8bdc9221c9cc7d8ba656013d84">SetWindowPosAllowFlags</a>: 8</td></tr>
+<tr class="separator:a8ff69a8bdc9221c9cc7d8ba656013d84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c9419d95253214cb2a71d6ead1e03d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#aef890d6ac872e12c5804d0b3e4f7f103">ImGuiCond</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a0c9419d95253214cb2a71d6ead1e03d6">SetWindowSizeAllowFlags</a>: 8</td></tr>
+<tr class="separator:a0c9419d95253214cb2a71d6ead1e03d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48384a3767252325e5c71b534adc58a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#aef890d6ac872e12c5804d0b3e4f7f103">ImGuiCond</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a48384a3767252325e5c71b534adc58a9">SetWindowCollapsedAllowFlags</a>: 8</td></tr>
+<tr class="separator:a48384a3767252325e5c71b534adc58a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec0d993ac0fd4fabed0929162ec36380"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#aef890d6ac872e12c5804d0b3e4f7f103">ImGuiCond</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#aec0d993ac0fd4fabed0929162ec36380">SetWindowDockAllowFlags</a>: 8</td></tr>
+<tr class="separator:aec0d993ac0fd4fabed0929162ec36380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6caed47ef8e25a2e7a68a6be72c5716a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a6caed47ef8e25a2e7a68a6be72c5716a">SetWindowPosVal</a></td></tr>
+<tr class="separator:a6caed47ef8e25a2e7a68a6be72c5716a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4de5608bf44728447327d832fa84f0c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a4de5608bf44728447327d832fa84f0c9">SetWindowPosPivot</a></td></tr>
+<tr class="separator:a4de5608bf44728447327d832fa84f0c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a71724c43e37830ed9b38bd34f26917"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vector.html">ImVector</a>&lt; <a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a1a71724c43e37830ed9b38bd34f26917">IDStack</a></td></tr>
+<tr class="separator:a1a71724c43e37830ed9b38bd34f26917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77e144869bf4ec6565893d9f7b7283eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_gui_window_temp_data.html">ImGuiWindowTempData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a77e144869bf4ec6565893d9f7b7283eb">DC</a></td></tr>
+<tr class="separator:a77e144869bf4ec6565893d9f7b7283eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3f0ac7cf4d8edb14a8e920e6831b4d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_rect.html">ImRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#ac3f0ac7cf4d8edb14a8e920e6831b4d8">OuterRectClipped</a></td></tr>
+<tr class="separator:ac3f0ac7cf4d8edb14a8e920e6831b4d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fd27908ebffb5d9509dc9e7f199d67d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_rect.html">ImRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a0fd27908ebffb5d9509dc9e7f199d67d">InnerRect</a></td></tr>
+<tr class="separator:a0fd27908ebffb5d9509dc9e7f199d67d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5986bee1c08ff742a14c57e99ce6e7c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_rect.html">ImRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a5986bee1c08ff742a14c57e99ce6e7c8">InnerClipRect</a></td></tr>
+<tr class="separator:a5986bee1c08ff742a14c57e99ce6e7c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3de436c30b33dac061c09e4334beaa3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_rect.html">ImRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a3de436c30b33dac061c09e4334beaa3b">WorkRect</a></td></tr>
+<tr class="separator:a3de436c30b33dac061c09e4334beaa3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add72d18277b43939929463c062c8975b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_rect.html">ImRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#add72d18277b43939929463c062c8975b">ParentWorkRect</a></td></tr>
+<tr class="separator:add72d18277b43939929463c062c8975b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9950a40b18de2579c4d3deb0ab33f455"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_rect.html">ImRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a9950a40b18de2579c4d3deb0ab33f455">ClipRect</a></td></tr>
+<tr class="separator:a9950a40b18de2579c4d3deb0ab33f455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6a48d6e48a4bf5e35fe60e765e17c68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_rect.html">ImRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#ae6a48d6e48a4bf5e35fe60e765e17c68">ContentRegionRect</a></td></tr>
+<tr class="separator:ae6a48d6e48a4bf5e35fe60e765e17c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad97a90bf66307eaf3d9ad4a5697285d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vec2ih.html">ImVec2ih</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#aad97a90bf66307eaf3d9ad4a5697285d">HitTestHoleSize</a></td></tr>
+<tr class="separator:aad97a90bf66307eaf3d9ad4a5697285d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a656437e7e87dd567069579fb813d6e91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vec2ih.html">ImVec2ih</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a656437e7e87dd567069579fb813d6e91">HitTestHoleOffset</a></td></tr>
+<tr class="separator:a656437e7e87dd567069579fb813d6e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f3c194efabb4fd0a99be45fa5fe26f1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a6f3c194efabb4fd0a99be45fa5fe26f1">LastFrameActive</a></td></tr>
+<tr class="separator:a6f3c194efabb4fd0a99be45fa5fe26f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af714b00960b75a43f68a30399e2d593d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#af714b00960b75a43f68a30399e2d593d">LastFrameJustFocused</a></td></tr>
+<tr class="separator:af714b00960b75a43f68a30399e2d593d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb00ca206e69f5ffa373a0bf42ebf2ef"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#aeb00ca206e69f5ffa373a0bf42ebf2ef">LastTimeActive</a></td></tr>
+<tr class="separator:aeb00ca206e69f5ffa373a0bf42ebf2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e6be361ee0c71a22a1ff68f6dbf09ff"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a5e6be361ee0c71a22a1ff68f6dbf09ff">ItemWidthDefault</a></td></tr>
+<tr class="separator:a5e6be361ee0c71a22a1ff68f6dbf09ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2151ab67f2624bd606883ad346179486"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_gui_storage.html">ImGuiStorage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a2151ab67f2624bd606883ad346179486">StateStorage</a></td></tr>
+<tr class="separator:a2151ab67f2624bd606883ad346179486"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc3a0fa2c0f86108d6c5374617405bba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vector.html">ImVector</a>&lt; <a class="el" href="struct_im_gui_old_columns.html">ImGuiOldColumns</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#adc3a0fa2c0f86108d6c5374617405bba">ColumnsStorage</a></td></tr>
+<tr class="separator:adc3a0fa2c0f86108d6c5374617405bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a566ce9268a466afbbec78532d5cfa3c9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a566ce9268a466afbbec78532d5cfa3c9">FontWindowScale</a></td></tr>
+<tr class="separator:a566ce9268a466afbbec78532d5cfa3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a663522341c2caf8e4afe173333f09623"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a663522341c2caf8e4afe173333f09623">FontDpiScale</a></td></tr>
+<tr class="separator:a663522341c2caf8e4afe173333f09623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a040c6dacad197beb0cd02b8c9ce01d11"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a040c6dacad197beb0cd02b8c9ce01d11">SettingsOffset</a></td></tr>
+<tr class="separator:a040c6dacad197beb0cd02b8c9ce01d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39de4668b09754136c6fd7ab89ab674a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_draw_list.html">ImDrawList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a39de4668b09754136c6fd7ab89ab674a">DrawList</a></td></tr>
+<tr class="separator:a39de4668b09754136c6fd7ab89ab674a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa99947e76fbf897c02ce1de44c202031"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_draw_list.html">ImDrawList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#aa99947e76fbf897c02ce1de44c202031">DrawListInst</a></td></tr>
+<tr class="separator:aa99947e76fbf897c02ce1de44c202031"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f0b37cb12fbeb3efe00d0cd826d5d65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_gui_window.html">ImGuiWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a5f0b37cb12fbeb3efe00d0cd826d5d65">ParentWindow</a></td></tr>
+<tr class="separator:a5f0b37cb12fbeb3efe00d0cd826d5d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa08b777f1426ceea4214ff1161819515"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_gui_window.html">ImGuiWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#aa08b777f1426ceea4214ff1161819515">ParentWindowInBeginStack</a></td></tr>
+<tr class="separator:aa08b777f1426ceea4214ff1161819515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef9281297b0993c8f1b7c1ff7987cb61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_gui_window.html">ImGuiWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#aef9281297b0993c8f1b7c1ff7987cb61">RootWindow</a></td></tr>
+<tr class="separator:aef9281297b0993c8f1b7c1ff7987cb61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b5c4785c370996fbfe7929227ddae53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_gui_window.html">ImGuiWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a5b5c4785c370996fbfe7929227ddae53">RootWindowPopupTree</a></td></tr>
+<tr class="separator:a5b5c4785c370996fbfe7929227ddae53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5566ba3b4c26fa70eb4faaeec7ba488"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_gui_window.html">ImGuiWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#ae5566ba3b4c26fa70eb4faaeec7ba488">RootWindowDockTree</a></td></tr>
+<tr class="separator:ae5566ba3b4c26fa70eb4faaeec7ba488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5d5c6637b63f35edc415162a5674c1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_gui_window.html">ImGuiWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#ae5d5c6637b63f35edc415162a5674c1e">RootWindowForTitleBarHighlight</a></td></tr>
+<tr class="separator:ae5d5c6637b63f35edc415162a5674c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a949a4aa260a21e8a8d2f65ffbe789712"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_gui_window.html">ImGuiWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a949a4aa260a21e8a8d2f65ffbe789712">RootWindowForNav</a></td></tr>
+<tr class="separator:a949a4aa260a21e8a8d2f65ffbe789712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7255735a59782a09b4536e633e5153dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_gui_window.html">ImGuiWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a7255735a59782a09b4536e633e5153dd">NavLastChildNavWindow</a></td></tr>
+<tr class="separator:a7255735a59782a09b4536e633e5153dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ff0db084ee889ee5d0846ce4f3dfe97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a1ff0db084ee889ee5d0846ce4f3dfe97">NavLastIds</a> [<a class="el" href="imgui__internal_8h.html#afb412215b8327dc2c6af2c19fdca64c6a7c54ca28f0db8d5e808af0ec3290b05c">ImGuiNavLayer_COUNT</a>]</td></tr>
+<tr class="separator:a1ff0db084ee889ee5d0846ce4f3dfe97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2115773e21400dc96f7ff6d5a4ce13b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_rect.html">ImRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#ab2115773e21400dc96f7ff6d5a4ce13b">NavRectRel</a> [<a class="el" href="imgui__internal_8h.html#afb412215b8327dc2c6af2c19fdca64c6a7c54ca28f0db8d5e808af0ec3290b05c">ImGuiNavLayer_COUNT</a>]</td></tr>
+<tr class="separator:ab2115773e21400dc96f7ff6d5a4ce13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bb2a4aceef6f9e2b41b965869a5d069"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a9bb2a4aceef6f9e2b41b965869a5d069">MemoryDrawListIdxCapacity</a></td></tr>
+<tr class="separator:a9bb2a4aceef6f9e2b41b965869a5d069"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a139cb0b35e070634619182cf153901c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a139cb0b35e070634619182cf153901c6">MemoryDrawListVtxCapacity</a></td></tr>
+<tr class="separator:a139cb0b35e070634619182cf153901c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af24dffe06ae301fe592ccb3076ce1147"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#af24dffe06ae301fe592ccb3076ce1147">MemoryCompacted</a></td></tr>
+<tr class="separator:af24dffe06ae301fe592ccb3076ce1147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9299b651a502b8409f892ed2c4bd70e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#ad9299b651a502b8409f892ed2c4bd70e">DockIsActive</a>:1</td></tr>
+<tr class="separator:ad9299b651a502b8409f892ed2c4bd70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a223743520af94e9d29ee8d431166f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a0a223743520af94e9d29ee8d431166f8">DockNodeIsVisible</a>:1</td></tr>
+<tr class="separator:a0a223743520af94e9d29ee8d431166f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbf82dd85191e21794a41e12746e77d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#acbf82dd85191e21794a41e12746e77d5">DockTabIsVisible</a>:1</td></tr>
+<tr class="separator:acbf82dd85191e21794a41e12746e77d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5baa3b06f568cc59fb570be6e9b3cf4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#ae5baa3b06f568cc59fb570be6e9b3cf4">DockTabWantClose</a>:1</td></tr>
+<tr class="separator:ae5baa3b06f568cc59fb570be6e9b3cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa49c6345773c2806dc603e0e9bb5b52d"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#aa49c6345773c2806dc603e0e9bb5b52d">DockOrder</a></td></tr>
+<tr class="separator:aa49c6345773c2806dc603e0e9bb5b52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7f37bfe5dc83da2ab299efca5f647bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_gui_window_dock_style.html">ImGuiWindowDockStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#ad7f37bfe5dc83da2ab299efca5f647bf">DockStyle</a></td></tr>
+<tr class="separator:ad7f37bfe5dc83da2ab299efca5f647bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e21696fe6c01a607c3f3861bebf81be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_gui_dock_node.html">ImGuiDockNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a9e21696fe6c01a607c3f3861bebf81be">DockNode</a></td></tr>
+<tr class="separator:a9e21696fe6c01a607c3f3861bebf81be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a344cfb14661c51d51b4cf40c58e6ab18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_gui_dock_node.html">ImGuiDockNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a344cfb14661c51d51b4cf40c58e6ab18">DockNodeAsHost</a></td></tr>
+<tr class="separator:a344cfb14661c51d51b4cf40c58e6ab18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a188bef73f0fd87353ada737d94318a27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a188bef73f0fd87353ada737d94318a27">DockId</a></td></tr>
+<tr class="separator:a188bef73f0fd87353ada737d94318a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad65270d6dbc74e636fe447129ed3391d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__internal_8h.html#a86b8f9e2fd4084fb2112f003070b53fa">ImGuiItemStatusFlags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#ad65270d6dbc74e636fe447129ed3391d">DockTabItemStatusFlags</a></td></tr>
+<tr class="separator:ad65270d6dbc74e636fe447129ed3391d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a511722e7df05d7e24e71f29a9b19edf0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_rect.html">ImRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_window.html#a511722e7df05d7e24e71f29a9b19edf0">DockTabItemRect</a></td></tr>
+<tr class="separator:a511722e7df05d7e24e71f29a9b19edf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="acd2909ae3b7079de81d528327cc11dfd" name="acd2909ae3b7079de81d528327cc11dfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd2909ae3b7079de81d528327cc11dfd">&#9670;&nbsp;</a></span>ImGuiWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ImGuiWindow::ImGuiWindow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_im_gui_context.html">ImGuiContext</a> *&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_window_acd2909ae3b7079de81d528327cc11dfd_cgraph.png" border="0" usemap="#astruct_im_gui_window_acd2909ae3b7079de81d528327cc11dfd_cgraph" alt=""/></div>
+<map name="astruct_im_gui_window_acd2909ae3b7079de81d528327cc11dfd_cgraph" id="astruct_im_gui_window_acd2909ae3b7079de81d528327cc11dfd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,132,196,159"/>
+<area shape="rect" href="struct_im_gui_window.html#a66400a63bc0b54d7d29e08d1b1b1a42b" title=" " alt="" coords="245,56,388,83"/>
+<area shape="rect" href="imgui_8cpp.html#acd1b12694d0365b516bf7373f182eeee" title=" " alt="" coords="477,107,559,133"/>
+<area shape="rect" href="imgui_8cpp.html#a23a8e1005c1db0b1a9ea2f613ed7b2e0" title=" " alt="" coords="279,157,354,184"/>
+<area shape="rect" href="struct_im_vector.html#aab5df48e0711a48bd12f3206e08c4108" title=" " alt="" coords="244,208,389,235"/>
+<area shape="rect" href="struct_im_vector.html#a2d80e87e81b1b01143c8d8be93e6fde1" title=" " alt="" coords="463,5,573,32"/>
+<area shape="rect" href="namespace_im_gui.html#a5487269f4cb9fb809fd3e797411ed2d7" title=" " alt="" coords="437,56,599,83"/>
+<area shape="rect" href="imgui_8cpp.html#a75ccaf7d676b1f567ba888ae42ac3809" title=" " alt="" coords="650,31,761,57"/>
+<area shape="rect" href="struct_im_vector.html#ac371dd62e56ae486b1a5038cf07eee56" title=" " alt="" coords="647,81,764,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8e81d730c3a39a71e6b6ca4654451c53" name="a8e81d730c3a39a71e6b6ca4654451c53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e81d730c3a39a71e6b6ca4654451c53">&#9670;&nbsp;</a></span>~ImGuiWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ImGuiWindow::~ImGuiWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_window_a8e81d730c3a39a71e6b6ca4654451c53_cgraph.png" border="0" usemap="#astruct_im_gui_window_a8e81d730c3a39a71e6b6ca4654451c53_cgraph" alt=""/></div>
+<map name="astruct_im_gui_window_a8e81d730c3a39a71e6b6ca4654451c53_cgraph" id="astruct_im_gui_window_a8e81d730c3a39a71e6b6ca4654451c53_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,204,57"/>
+<area shape="rect" href="struct_im_vector.html#ac1ed34eac753156e87e8a92f78dbbe3f" title=" " alt="" coords="252,5,416,32"/>
+<area shape="rect" href="imgui_8h.html#a3c856832c3fe1da8767a9353da3707e1" title=" " alt="" coords="287,56,381,83"/>
+<area shape="rect" href="namespace_im_gui.html#a269ec695c6e722ec3da85dae37f0675d" title=" " alt="" coords="464,56,583,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a6881ed65e208fb6e015d3ae6bccfc794" name="a6881ed65e208fb6e015d3ae6bccfc794"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6881ed65e208fb6e015d3ae6bccfc794">&#9670;&nbsp;</a></span>CalcFontSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ImGuiWindow::CalcFontSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_window_a6881ed65e208fb6e015d3ae6bccfc794_icgraph.png" border="0" usemap="#astruct_im_gui_window_a6881ed65e208fb6e015d3ae6bccfc794_icgraph" alt=""/></div>
+<map name="astruct_im_gui_window_a6881ed65e208fb6e015d3ae6bccfc794_icgraph" id="astruct_im_gui_window_a6881ed65e208fb6e015d3ae6bccfc794_icgraph">
+<area shape="rect" title=" " alt="" coords="1704,224,1892,251"/>
+<area shape="rect" href="namespace_im_gui.html#aab7d3ffa460af6604421e8c2d8bdef19" title=" " alt="" coords="952,208,1079,235"/>
+<area shape="rect" href="namespace_im_gui.html#a82099721acb65e7d7ada3d818bc9f4e8" title=" " alt="" coords="1179,209,1373,250"/>
+<area shape="rect" href="namespace_im_gui.html#ac0c1591101437b98dcf2eb90bd9f74e7" title=" " alt="" coords="1421,173,1656,200"/>
+<area shape="rect" href="namespace_im_gui.html#a4f83c0a884e07247a00700d3dd3d01e3" title=" " alt="" coords="1200,60,1352,87"/>
+<area shape="rect" href="imgui_8cpp.html#a5c592415f88804e2f907477767d3dda1" title=" " alt="" coords="1473,1151,1604,1177"/>
+<area shape="rect" href="namespace_im_gui.html#a11f2f343dbc9b00ccd9e99ebd59cfe8b" title=" " alt="" coords="1444,325,1633,352"/>
+<area shape="rect" href="namespace_im_gui.html#a45a39b3a2cfa3aa899eecb63bac79d1a" title=" " alt="" coords="1448,123,1629,149"/>
+<area shape="rect" href="namespace_im_gui.html#ab3f1fc018f903b7ad79fd10663375774" title=" " alt="" coords="704,208,831,235"/>
+<area shape="rect" href="class_screen.html#a3bef9f197244caaa9c8ba605495b8476" title="渲染Gui" alt="" coords="465,259,597,285"/>
+<area shape="rect" href="class_imgui_layer.html#aa98053a216128343d985192439323544" title=" " alt="" coords="5,957,156,984"/>
+<area shape="rect" href="namespace_im_gui.html#af66649bc37022bf3cf2496c73af9a499" title=" " alt="" coords="959,56,1072,83"/>
+<area shape="rect" href="namespace_im_gui.html#ac5a59f4f8226fd35786d8973c85b85a9" title=" " alt="" coords="955,5,1075,32"/>
+<area shape="rect" href="namespace_im_gui.html#ae0207d60728f7e6a47dbcd1d7d84e3cb" title=" " alt="" coords="689,5,846,32"/>
+<area shape="rect" href="namespace_im_gui.html#af89af17ecc11653f25fea1e50e195de6" title=" " alt="" coords="701,56,834,83"/>
+<area shape="rect" href="namespace_im_gui.html#a581e58db0bc930bafa4a5d23093a2b99" title=" " alt="" coords="1227,1151,1325,1177"/>
+<area shape="rect" href="namespace_im_gui.html#a5479d93794a004c67ceb6d13f37c8254" title=" " alt="" coords="1233,1748,1319,1775"/>
+<area shape="rect" href="namespace_im_gui.html#a63a223ce2138538300e5b0654d7407a9" title=" " alt="" coords="944,259,1087,285"/>
+<area shape="rect" href="namespace_im_gui.html#a6ecb51142fcb72cd19ff002c3a7d8e25" title=" " alt="" coords="928,593,1103,620"/>
+<area shape="rect" href="namespace_im_gui.html#a89da3a22300e8293257b6cfdf1b83b7a" title=" " alt="" coords="940,644,1091,671"/>
+<area shape="rect" href="namespace_im_gui.html#a6d840f615c198c2342968f733fda11b3" title=" " alt="" coords="683,909,852,936"/>
+<area shape="rect" href="imgui__demo_8cpp.html#aa9e4f5130b74080ea2d97916a91b3b3c" title=" " alt="" coords="434,1563,629,1589"/>
+<area shape="rect" href="namespace_im_gui.html#af95643a0ce4893b9e57c12991922fb18" title=" " alt="" coords="204,1639,380,1665"/>
+<area shape="rect" href="namespace_im_gui.html#a8c9492bbbba890c77f7b3b7a95933879" title=" " alt="" coords="940,695,1091,721"/>
+<area shape="rect" href="namespace_im_gui.html#a4216382dd5ad6c17e183f9f894db2e15" title=" " alt="" coords="919,745,1112,772"/>
+<area shape="rect" href="namespace_im_gui.html#a5f0b65db489a18354649d09d4b9f55dc" title=" " alt="" coords="916,462,1115,503"/>
+<area shape="rect" href="namespace_im_gui.html#a526230d8de99b07ff2b2992c192ce212" title=" " alt="" coords="933,1697,1098,1724"/>
+<area shape="rect" href="namespace_im_gui.html#aacc87878f9d14939bfbbaa2f719e910e" title=" " alt="" coords="702,1664,833,1691"/>
+<area shape="rect" href="namespace_im_gui.html#add238564557f1af2f3de8d0ec02e4a1c" title=" " alt="" coords="428,1613,635,1640"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="506,1664,557,1691"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ae18f1dc3d5298b314080b35f6c20d781" title=" " alt="" coords="434,1715,629,1741"/>
+<area shape="rect" href="struct_example_app_console.html#a0518a09c7e8648dd52c7c06df19ac17a" title=" " alt="" coords="925,1471,1105,1497"/>
+<area shape="rect" href="struct_example_app_log.html#a5ad3a4bdb89171b84aeaff96948a1f77" title=" " alt="" coords="938,1201,1093,1228"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ad0303cf1f675002eb4e68c17a47b3f88" title=" " alt="" coords="693,1348,842,1375"/>
+<area shape="rect" href="struct_im_gui_list_clipper.html#aa102d8c5cde9d8bf8dc5707c1d6fb96e" title=" " alt="" coords="925,527,1105,569"/>
+<area shape="rect" href="namespace_im_gui.html#a601290fe1dbe4c3717eb7e7add3ef11f" title=" " alt="" coords="921,1405,1110,1446"/>
+<area shape="rect" href="namespace_im_gui.html#ac297462e33309d0540fa459bccdc9304" title=" " alt="" coords="927,2052,1103,2079"/>
+<area shape="rect" href="namespace_im_gui.html#af1b39e70cac2e1b9e62dd3c9d154cbd6" title=" " alt="" coords="915,2271,1115,2297"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ac209de20c1f862aa48a3f5f27aee407e" title=" " alt="" coords="929,1100,1102,1127"/>
+<area shape="rect" href="imgui__demo_8cpp.html#af533fd0a774d6bbebe61e474db6f144f" title=" " alt="" coords="924,2321,1107,2348"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a38c9b50749061ff83a0ebf3137c00174" title=" " alt="" coords="918,2153,1113,2180"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4f7b0b016c2ffd33836c3bdcf78ed97b" title=" " alt="" coords="917,2205,1114,2246"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a0729207a285af6ef57ce5a31d1a60348" title=" " alt="" coords="900,1252,1131,1279"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a2f38052447680c83c0028e4f21f0a2e6" title=" " alt="" coords="921,1799,1109,1825"/>
+<area shape="rect" href="imgui__demo_8cpp.html#adfe8516f13b623adbf78b024efd5bb6e" title=" " alt="" coords="932,999,1099,1025"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4dadf5e7b393795666d19af9694037cf" title=" " alt="" coords="925,1521,1106,1548"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4d8ba8c6a1febc3053bd843c150305da" title=" " alt="" coords="910,1748,1121,1775"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a41a6cb36f6ad91f80eba61b0053d17a5" title=" " alt="" coords="910,2103,1121,2129"/>
+<area shape="rect" href="imgui__demo_8cpp.html#aa93cc0d732db176bbffaf106faaa0ca1" title=" " alt="" coords="913,1151,1118,1177"/>
+<area shape="rect" href="namespace_im_gui.html#ab2eb3dec78d054fe3feab1c091ec5de5" title=" " alt="" coords="1196,325,1356,352"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a66400a63bc0b54d7d29e08d1b1b1a42b" name="a66400a63bc0b54d7d29e08d1b1b1a42b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66400a63bc0b54d7d29e08d1b1b1a42b">&#9670;&nbsp;</a></span>GetID() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a> ImGuiWindow::GetID </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str_end</em> = <code>NULL</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_window_a66400a63bc0b54d7d29e08d1b1b1a42b_cgraph.png" border="0" usemap="#astruct_im_gui_window_a66400a63bc0b54d7d29e08d1b1b1a42b_cgraph" alt=""/></div>
+<map name="astruct_im_gui_window_a66400a63bc0b54d7d29e08d1b1b1a42b_cgraph" id="astruct_im_gui_window_a66400a63bc0b54d7d29e08d1b1b1a42b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,148,83"/>
+<area shape="rect" href="struct_im_vector.html#a2d80e87e81b1b01143c8d8be93e6fde1" title=" " alt="" coords="221,5,332,32"/>
+<area shape="rect" href="namespace_im_gui.html#a5487269f4cb9fb809fd3e797411ed2d7" title=" " alt="" coords="196,56,357,83"/>
+<area shape="rect" href="imgui_8cpp.html#acd1b12694d0365b516bf7373f182eeee" title=" " alt="" coords="235,107,318,133"/>
+<area shape="rect" href="imgui_8cpp.html#a75ccaf7d676b1f567ba888ae42ac3809" title=" " alt="" coords="409,31,519,57"/>
+<area shape="rect" href="struct_im_vector.html#ac371dd62e56ae486b1a5038cf07eee56" title=" " alt="" coords="405,81,523,108"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_window_a66400a63bc0b54d7d29e08d1b1b1a42b_icgraph.png" border="0" usemap="#astruct_im_gui_window_a66400a63bc0b54d7d29e08d1b1b1a42b_icgraph" alt=""/></div>
+<map name="astruct_im_gui_window_a66400a63bc0b54d7d29e08d1b1b1a42b_icgraph" id="astruct_im_gui_window_a66400a63bc0b54d7d29e08d1b1b1a42b_icgraph">
+<area shape="rect" title=" " alt="" coords="1275,1144,1417,1171"/>
+<area shape="rect" href="namespace_im_gui.html#ab05ee8e53f29fbb84942a494f2ac3292" title=" " alt="" coords="1050,56,1201,83"/>
+<area shape="rect" href="namespace_im_gui.html#a581e58db0bc930bafa4a5d23093a2b99" title=" " alt="" coords="562,499,659,525"/>
+<area shape="rect" href="namespace_im_gui.html#a5db08f552118a1f946e19b5933dce181" title=" " alt="" coords="45,233,171,260"/>
+<area shape="rect" href="namespace_im_gui.html#af89af17ecc11653f25fea1e50e195de6" title=" " alt="" coords="41,157,175,184"/>
+<area shape="rect" href="namespace_im_gui.html#aa895095bdc7a2907375c555e245575ea" title=" " alt="" coords="39,587,177,613"/>
+<area shape="rect" href="namespace_im_gui.html#a8dc671f87ed281b6445ce6ae4ab25183" title=" " alt="" coords="35,1539,181,1565"/>
+<area shape="rect" href="namespace_im_gui.html#a10e213926d8ca212266bc5fbded1e026" title=" " alt="" coords="41,780,175,807"/>
+<area shape="rect" href="namespace_im_gui.html#a440894c8c00495d5cc01529f4504fca9" title=" " alt="" coords="6,904,210,931"/>
+<area shape="rect" href="namespace_im_gui.html#a6758a456204101a9c4a660da4cfba2c9" title=" " alt="" coords="5,1031,211,1057"/>
+<area shape="rect" href="namespace_im_gui.html#aef8b2c0baa27bd5c68f676aaf14ed946" title=" " alt="" coords="19,1451,197,1493"/>
+<area shape="rect" href="namespace_im_gui.html#a6d840f615c198c2342968f733fda11b3" title=" " alt="" coords="277,1017,447,1044"/>
+<area shape="rect" href="namespace_im_gui.html#aacc87878f9d14939bfbbaa2f719e910e" title=" " alt="" coords="297,419,427,445"/>
+<area shape="rect" href="namespace_im_gui.html#a627bb85e7c0ab597360f63719bfb1e55" title=" " alt="" coords="795,411,937,437"/>
+<area shape="rect" href="namespace_im_gui.html#ab930db04eeff13f78ae76382c52db7eb" title=" " alt="" coords="1056,715,1195,741"/>
+<area shape="rect" href="namespace_im_gui.html#ae479220c66b039874c6e4c9e9b22849f" title=" " alt="" coords="1066,765,1185,792"/>
+<area shape="rect" href="namespace_im_gui.html#a57d73c1d0ef807fef734d91024092027" title=" " alt="" coords="1064,816,1187,843"/>
+<area shape="rect" href="namespace_im_gui.html#ab52f9e08698c9d64abb05b98f5355146" title=" " alt="" coords="1043,867,1208,893"/>
+<area shape="rect" href="namespace_im_gui.html#ae2d7c8f37726810753d71d480f0af7f0" title=" " alt="" coords="1059,941,1191,968"/>
+<area shape="rect" href="namespace_im_gui.html#a4b4e1fb0487e571a4a04fb5b2274189e" title=" " alt="" coords="259,1651,465,1677"/>
+<area shape="rect" href="namespace_im_gui.html#a17d8926e8f44a6d00575b12081c51fe0" title=" " alt="" coords="1061,1043,1189,1069"/>
+<area shape="rect" href="namespace_im_gui.html#a432f468da48b9aadd3c5928f1065939c" title=" " alt="" coords="792,1296,940,1323"/>
+<area shape="rect" href="namespace_im_gui.html#a3329b04bd4235e90ad9deb00ffb38ae4" title=" " alt="" coords="1077,1144,1174,1171"/>
+<area shape="rect" href="namespace_im_gui.html#a426c9b60bf8cd3d887ba50366a2612df" title=" " alt="" coords="513,157,708,184"/>
+<area shape="rect" href="namespace_im_gui.html#ac79ef64e8b9e1db73d8237f6a999da14" title=" " alt="" coords="797,1448,935,1475"/>
+<area shape="rect" href="struct_im_gui_window.html#acd2909ae3b7079de81d528327cc11dfd" title=" " alt="" coords="1030,1296,1221,1323"/>
+<area shape="rect" href="namespace_im_gui.html#a1f61951b9d3a38083bd77b1dbe3ea895" title=" " alt="" coords="1052,1347,1199,1373"/>
+<area shape="rect" href="namespace_im_gui.html#a0e351145d0936e79948094166757712e" title=" " alt="" coords="539,992,682,1019"/>
+<area shape="rect" href="namespace_im_gui.html#a9e1be94ca8c4d48a20b230cdfc9b18c5" title=" " alt="" coords="545,1701,677,1728"/>
+<area shape="rect" href="namespace_im_gui.html#a3811834876930efd5cb08a25d8c022d0" title=" " alt="" coords="1024,1499,1227,1525"/>
+<area shape="rect" href="namespace_im_gui.html#a06fa3c299399f4cd5f4a7311ba1ece54" title=" " alt="" coords="1074,1549,1177,1576"/>
+<area shape="rect" href="namespace_im_gui.html#a27a8533605dc5b8cabf161bf7715bbde" title=" " alt="" coords="1072,1397,1179,1424"/>
+<area shape="rect" href="namespace_im_gui.html#af51b875ef6c3f2e0f430873ee7605669" title=" " alt="" coords="769,579,963,621"/>
+<area shape="rect" href="namespace_im_gui.html#a6b146763845cbad5a4144772279631bc" title=" " alt="" coords="1058,1701,1193,1728"/>
+<area shape="rect" href="namespace_im_gui.html#a4f4924f0f74c0bd4201ca9656202f1f1" title=" " alt="" coords="756,360,976,387"/>
+<area shape="rect" href="namespace_im_gui.html#a3f07fc97615db2b0864ce2aa3d3ee169" title=" " alt="" coords="779,462,953,503"/>
+<area shape="rect" href="namespace_im_gui.html#af98575238bda183a523df19fb447af60" title=" " alt="" coords="548,1853,673,1880"/>
+<area shape="rect" href="namespace_im_gui.html#afdd7faa9a69f75b8d674cdc207441bea" title=" " alt="" coords="1058,1904,1193,1931"/>
+<area shape="rect" href="namespace_im_gui.html#a2519d160c1656bd613cc93fe05ed83c1" title=" " alt="" coords="1043,1955,1207,1981"/>
+<area shape="rect" href="namespace_im_gui.html#ae51bc07bc518779f58def3c0e2d0045c" title=" " alt="" coords="1057,2005,1193,2032"/>
+<area shape="rect" href="namespace_im_gui.html#a4dff507ce8bbe0da9556bb50b1e60d7f" title=" " alt="" coords="1066,2056,1185,2083"/>
+<area shape="rect" href="namespace_im_gui.html#a21f62e092dac9556a15a8edee2f70522" title=" " alt="" coords="1058,2107,1193,2133"/>
+<area shape="rect" href="namespace_im_gui.html#a251cd4acbdad4cef2246d9b573a83ce0" title=" " alt="" coords="1053,2157,1197,2184"/>
+<area shape="rect" href="namespace_im_gui.html#a6ad24ca37a530d43f9d1c727d94e4829" title=" " alt="" coords="1054,2208,1197,2235"/>
+<area shape="rect" href="namespace_im_gui.html#ad2bc397a02d5e4b8a14360d89abc6242" title=" " alt="" coords="799,56,933,83"/>
+<area shape="rect" href="namespace_im_gui.html#a5d0ac25abe189c752495f2f26afea2e6" title=" " alt="" coords="766,5,966,32"/>
+<area shape="rect" href="namespace_im_gui.html#a63a223ce2138538300e5b0654d7407a9" title=" " alt="" coords="291,259,433,285"/>
+<area shape="rect" href="namespace_im_gui.html#a6ecb51142fcb72cd19ff002c3a7d8e25" title=" " alt="" coords="275,587,449,613"/>
+<area shape="rect" href="namespace_im_gui.html#a89da3a22300e8293257b6cfdf1b83b7a" title=" " alt="" coords="287,967,437,993"/>
+<area shape="rect" href="namespace_im_gui.html#a8c9492bbbba890c77f7b3b7a95933879" title=" " alt="" coords="287,499,437,525"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aae21dffb343cabca9414499b827912a8" name="aae21dffb343cabca9414499b827912a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae21dffb343cabca9414499b827912a8">&#9670;&nbsp;</a></span>GetID() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a> ImGuiWindow::GetID </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> *&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_window_aae21dffb343cabca9414499b827912a8_cgraph.png" border="0" usemap="#astruct_im_gui_window_aae21dffb343cabca9414499b827912a8_cgraph" alt=""/></div>
+<map name="astruct_im_gui_window_aae21dffb343cabca9414499b827912a8_cgraph" id="astruct_im_gui_window_aae21dffb343cabca9414499b827912a8_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,148,83"/>
+<area shape="rect" href="struct_im_vector.html#a2d80e87e81b1b01143c8d8be93e6fde1" title=" " alt="" coords="221,5,332,32"/>
+<area shape="rect" href="namespace_im_gui.html#a5487269f4cb9fb809fd3e797411ed2d7" title=" " alt="" coords="196,56,357,83"/>
+<area shape="rect" href="imgui_8cpp.html#af62448836920fc75035d6da0373fc167" title=" " alt="" coords="230,107,323,133"/>
+<area shape="rect" href="imgui_8cpp.html#a75ccaf7d676b1f567ba888ae42ac3809" title=" " alt="" coords="409,31,519,57"/>
+<area shape="rect" href="struct_im_vector.html#ac371dd62e56ae486b1a5038cf07eee56" title=" " alt="" coords="405,81,523,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a122c47ded974724a192912883fb8e0e9" name="a122c47ded974724a192912883fb8e0e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a122c47ded974724a192912883fb8e0e9">&#9670;&nbsp;</a></span>GetID() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a> ImGuiWindow::GetID </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_window_a122c47ded974724a192912883fb8e0e9_cgraph.png" border="0" usemap="#astruct_im_gui_window_a122c47ded974724a192912883fb8e0e9_cgraph" alt=""/></div>
+<map name="astruct_im_gui_window_a122c47ded974724a192912883fb8e0e9_cgraph" id="astruct_im_gui_window_a122c47ded974724a192912883fb8e0e9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,148,83"/>
+<area shape="rect" href="struct_im_vector.html#a2d80e87e81b1b01143c8d8be93e6fde1" title=" " alt="" coords="221,5,332,32"/>
+<area shape="rect" href="namespace_im_gui.html#a5487269f4cb9fb809fd3e797411ed2d7" title=" " alt="" coords="196,56,357,83"/>
+<area shape="rect" href="imgui_8cpp.html#af62448836920fc75035d6da0373fc167" title=" " alt="" coords="230,107,323,133"/>
+<area shape="rect" href="imgui_8cpp.html#a75ccaf7d676b1f567ba888ae42ac3809" title=" " alt="" coords="409,31,519,57"/>
+<area shape="rect" href="struct_im_vector.html#ac371dd62e56ae486b1a5038cf07eee56" title=" " alt="" coords="405,81,523,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a44931b6e73248930490d2c89377a8233" name="a44931b6e73248930490d2c89377a8233"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44931b6e73248930490d2c89377a8233">&#9670;&nbsp;</a></span>GetIDFromRectangle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a> ImGuiWindow::GetIDFromRectangle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_im_rect.html">ImRect</a> &amp;&#160;</td>
+          <td class="paramname"><em>r_abs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_window_a44931b6e73248930490d2c89377a8233_cgraph.png" border="0" usemap="#astruct_im_gui_window_a44931b6e73248930490d2c89377a8233_cgraph" alt=""/></div>
+<map name="astruct_im_gui_window_a44931b6e73248930490d2c89377a8233_cgraph" id="astruct_im_gui_window_a44931b6e73248930490d2c89377a8233_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,236,83"/>
+<area shape="rect" href="struct_im_vector.html#a2d80e87e81b1b01143c8d8be93e6fde1" title=" " alt="" coords="325,5,436,32"/>
+<area shape="rect" href="imgui_8cpp.html#af62448836920fc75035d6da0373fc167" title=" " alt="" coords="334,56,427,83"/>
+<area shape="rect" href="namespace_im_gui.html#a06d8e9fae450c785dc8f61f6e03462a7" title=" " alt="" coords="284,107,477,133"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_window_a44931b6e73248930490d2c89377a8233_icgraph.png" border="0" usemap="#astruct_im_gui_window_a44931b6e73248930490d2c89377a8233_icgraph" alt=""/></div>
+<map name="astruct_im_gui_window_a44931b6e73248930490d2c89377a8233_icgraph" id="astruct_im_gui_window_a44931b6e73248930490d2c89377a8233_icgraph">
+<area shape="rect" title=" " alt="" coords="2627,119,2857,145"/>
+<area shape="rect" href="namespace_im_gui.html#ac2609b0f034d3bcd8d70d26df8694eaa" title=" " alt="" coords="2387,220,2579,247"/>
+<area shape="rect" href="namespace_im_gui.html#ac42384c3181406bbd0f3f4f77a73c7ed" title=" " alt="" coords="1289,93,1475,120"/>
+<area shape="rect" href="namespace_im_gui.html#a7a435b1565d4884e42a5ee5667f21a1f" title=" " alt="" coords="2160,701,2339,742"/>
+<area shape="rect" href="namespace_im_gui.html#ae2d7c8f37726810753d71d480f0af7f0" title=" " alt="" coords="1316,365,1448,392"/>
+<area shape="rect" href="imgui__demo_8cpp.html#af533fd0a774d6bbebe61e474db6f144f" title=" " alt="" coords="241,347,423,373"/>
+<area shape="rect" href="namespace_im_gui.html#a581e58db0bc930bafa4a5d23093a2b99" title=" " alt="" coords="2015,1137,2112,1164"/>
+<area shape="rect" href="namespace_im_gui.html#a63a223ce2138538300e5b0654d7407a9" title=" " alt="" coords="1795,413,1938,440"/>
+<area shape="rect" href="namespace_im_gui.html#a6ecb51142fcb72cd19ff002c3a7d8e25" title=" " alt="" coords="1779,464,1954,491"/>
+<area shape="rect" href="namespace_im_gui.html#a89da3a22300e8293257b6cfdf1b83b7a" title=" " alt="" coords="1791,515,1942,541"/>
+<area shape="rect" href="namespace_im_gui.html#a6d840f615c198c2342968f733fda11b3" title=" " alt="" coords="1541,683,1711,709"/>
+<area shape="rect" href="namespace_im_gui.html#af95643a0ce4893b9e57c12991922fb18" title=" " alt="" coords="5,1324,181,1351"/>
+<area shape="rect" href="imgui__demo_8cpp.html#aa9e4f5130b74080ea2d97916a91b3b3c" title=" " alt="" coords="1285,745,1479,772"/>
+<area shape="rect" href="namespace_im_gui.html#a8c9492bbbba890c77f7b3b7a95933879" title=" " alt="" coords="1791,296,1942,323"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a0729207a285af6ef57ce5a31d1a60348" title=" " alt="" coords="741,835,972,861"/>
+<area shape="rect" href="namespace_im_gui.html#a4216382dd5ad6c17e183f9f894db2e15" title=" " alt="" coords="1770,1872,1963,1899"/>
+<area shape="rect" href="namespace_im_gui.html#a5f0b65db489a18354649d09d4b9f55dc" title=" " alt="" coords="1767,1923,1966,1965"/>
+<area shape="rect" href="namespace_im_gui.html#a526230d8de99b07ff2b2992c192ce212" title=" " alt="" coords="1784,960,1949,987"/>
+<area shape="rect" href="namespace_im_gui.html#aacc87878f9d14939bfbbaa2f719e910e" title=" " alt="" coords="1561,1011,1691,1037"/>
+<area shape="rect" href="namespace_im_gui.html#add238564557f1af2f3de8d0ec02e4a1c" title=" " alt="" coords="1279,1061,1485,1088"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="1357,1112,1407,1139"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ae18f1dc3d5298b314080b35f6c20d781" title=" " alt="" coords="1285,1011,1479,1037"/>
+<area shape="rect" href="struct_example_app_console.html#a0518a09c7e8648dd52c7c06df19ac17a" title=" " alt="" coords="1777,1989,1957,2016"/>
+<area shape="rect" href="struct_example_app_log.html#a5ad3a4bdb89171b84aeaff96948a1f77" title=" " alt="" coords="1789,1163,1944,1189"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ad0303cf1f675002eb4e68c17a47b3f88" title=" " alt="" coords="1551,1197,1701,1224"/>
+<area shape="rect" href="struct_im_gui_list_clipper.html#aa102d8c5cde9d8bf8dc5707c1d6fb96e" title=" " alt="" coords="1777,347,1957,389"/>
+<area shape="rect" href="namespace_im_gui.html#a601290fe1dbe4c3717eb7e7add3ef11f" title=" " alt="" coords="1772,617,1961,658"/>
+<area shape="rect" href="namespace_im_gui.html#ab3f1fc018f903b7ad79fd10663375774" title=" " alt="" coords="1803,784,1930,811"/>
+<area shape="rect" href="namespace_im_gui.html#ac297462e33309d0540fa459bccdc9304" title=" " alt="" coords="244,1248,420,1275"/>
+<area shape="rect" href="namespace_im_gui.html#af1b39e70cac2e1b9e62dd3c9d154cbd6" title=" " alt="" coords="1767,1315,1967,1341"/>
+<area shape="rect" href="namespace_im_gui.html#afe7a28c6eb52fff3cc27d5a698fea4ff" title=" " alt="" coords="1533,1349,1719,1376"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ac209de20c1f862aa48a3f5f27aee407e" title=" " alt="" coords="501,1451,675,1477"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a38c9b50749061ff83a0ebf3137c00174" title=" " alt="" coords="1028,1512,1223,1539"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4f7b0b016c2ffd33836c3bdcf78ed97b" title=" " alt="" coords="233,1553,431,1594"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a2f38052447680c83c0028e4f21f0a2e6" title=" " alt="" coords="494,1619,682,1645"/>
+<area shape="rect" href="imgui__demo_8cpp.html#adfe8516f13b623adbf78b024efd5bb6e" title=" " alt="" coords="1042,1669,1209,1696"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4dadf5e7b393795666d19af9694037cf" title=" " alt="" coords="241,1720,423,1747"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4d8ba8c6a1febc3053bd843c150305da" title=" " alt="" coords="483,1771,693,1797"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a41a6cb36f6ad91f80eba61b0053d17a5" title=" " alt="" coords="1020,1821,1231,1848"/>
+<area shape="rect" href="imgui__demo_8cpp.html#aa93cc0d732db176bbffaf106faaa0ca1" title=" " alt="" coords="229,1956,435,1983"/>
+<area shape="rect" href="namespace_im_gui.html#a5866840f58a4cc09a4fd5f1929a368e5" title=" " alt="" coords="1767,1416,1967,1443"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ab19d813f2403009dd8700e041e10c09d" title=" " alt="" coords="767,683,946,709"/>
+<area shape="rect" href="namespace_im_gui.html#afad90b366b6471e3b13175c0ebeb26c8" title=" " alt="" coords="1560,365,1692,392"/>
+<area shape="rect" href="namespace_im_gui.html#ac3f45e2aa0b1d591cc8a2cdf8b566a45" title=" " alt="" coords="1063,340,1187,367"/>
+<area shape="rect" href="namespace_im_gui.html#a3d5aae9e0a14aa051d5a799abbe97b32" title=" " alt="" coords="787,391,926,417"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ad2af2f6824d59150c468b6d3b82b9d02" title=" " alt="" coords="1044,565,1207,592"/>
+<area shape="rect" href="namespace_im_gui.html#a5afe76ba1c91f07363e40396e7df656e" title=" " alt="" coords="795,325,919,352"/>
+<area shape="rect" href="namespace_im_gui.html#ab2eb3dec78d054fe3feab1c091ec5de5" title=" " alt="" coords="777,144,937,171"/>
+<area shape="rect" href="namespace_im_gui.html#a2a2a98cb9a17b18702be6b954670b388" title=" " alt="" coords="519,464,657,491"/>
+<area shape="rect" href="namespace_im_gui.html#a6d112eeb6d8ffdebbc9d9a8c66babbee" title=" " alt="" coords="500,398,676,439"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acfb8bdad2e3ea6102589813ae32d0364" name="acfb8bdad2e3ea6102589813ae32d0364"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfb8bdad2e3ea6102589813ae32d0364">&#9670;&nbsp;</a></span>MenuBarHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ImGuiWindow::MenuBarHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_window_acfb8bdad2e3ea6102589813ae32d0364_icgraph.png" border="0" usemap="#astruct_im_gui_window_acfb8bdad2e3ea6102589813ae32d0364_icgraph" alt=""/></div>
+<map name="astruct_im_gui_window_acfb8bdad2e3ea6102589813ae32d0364_icgraph" id="astruct_im_gui_window_acfb8bdad2e3ea6102589813ae32d0364_icgraph">
+<area shape="rect" title=" " alt="" coords="2163,987,2361,1014"/>
+<area shape="rect" href="namespace_im_gui.html#a581e58db0bc930bafa4a5d23093a2b99" title=" " alt="" coords="1268,1013,1365,1039"/>
+<area shape="rect" href="namespace_im_gui.html#a8dc671f87ed281b6445ce6ae4ab25183" title=" " alt="" coords="795,759,941,786"/>
+<area shape="rect" href="imgui_8cpp.html#a07abb80a54115cb5cf9da03351e29533" title=" " alt="" coords="1926,841,2097,883"/>
+<area shape="rect" href="imgui_8cpp.html#acbe6338daf87dc6ab636f02f1367eb41" title=" " alt="" coords="1676,1198,1839,1225"/>
+<area shape="rect" href="imgui_8cpp.html#a0c4618a6985c33c4936f1d9f1c7b26b4" title=" " alt="" coords="1908,1046,2115,1073"/>
+<area shape="rect" href="namespace_im_gui.html#abf8364b7d1fe7c512e140ba16ba87c5c" title=" " alt="" coords="1922,1147,2101,1174"/>
+<area shape="rect" href="namespace_im_gui.html#a63a223ce2138538300e5b0654d7407a9" title=" " alt="" coords="1049,607,1192,634"/>
+<area shape="rect" href="struct_example_app_console.html#a0518a09c7e8648dd52c7c06df19ac17a" title=" " alt="" coords="521,513,701,539"/>
+<area shape="rect" href="struct_example_app_log.html#a5ad3a4bdb89171b84aeaff96948a1f77" title=" " alt="" coords="534,361,689,387"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ad0303cf1f675002eb4e68c17a47b3f88" title=" " alt="" coords="270,361,419,387"/>
+<area shape="rect" href="namespace_im_gui.html#af95643a0ce4893b9e57c12991922fb18" title=" " alt="" coords="5,791,181,818"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="319,867,370,894"/>
+<area shape="rect" href="namespace_im_gui.html#af1b39e70cac2e1b9e62dd3c9d154cbd6" title=" " alt="" coords="511,411,711,438"/>
+<area shape="rect" href="namespace_im_gui.html#afe7a28c6eb52fff3cc27d5a698fea4ff" title=" " alt="" coords="252,285,437,311"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ac209de20c1f862aa48a3f5f27aee407e" title=" " alt="" coords="258,614,431,641"/>
+<area shape="rect" href="imgui__demo_8cpp.html#af533fd0a774d6bbebe61e474db6f144f" title=" " alt="" coords="520,766,703,793"/>
+<area shape="rect" href="imgui__demo_8cpp.html#adfe8516f13b623adbf78b024efd5bb6e" title=" " alt="" coords="261,715,428,742"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4dadf5e7b393795666d19af9694037cf" title=" " alt="" coords="521,918,702,945"/>
+<area shape="rect" href="namespace_im_gui.html#a6ecb51142fcb72cd19ff002c3a7d8e25" title=" " alt="" coords="1033,1958,1208,1985"/>
+<area shape="rect" href="namespace_im_gui.html#a89da3a22300e8293257b6cfdf1b83b7a" title=" " alt="" coords="1045,759,1196,786"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ae18f1dc3d5298b314080b35f6c20d781" title=" " alt="" coords="247,1121,442,1147"/>
+<area shape="rect" href="imgui__demo_8cpp.html#aa9e4f5130b74080ea2d97916a91b3b3c" title=" " alt="" coords="247,1306,442,1333"/>
+<area shape="rect" href="namespace_im_gui.html#a6d840f615c198c2342968f733fda11b3" title=" " alt="" coords="783,1689,953,1715"/>
+<area shape="rect" href="namespace_im_gui.html#a8c9492bbbba890c77f7b3b7a95933879" title=" " alt="" coords="1045,1114,1196,1141"/>
+<area shape="rect" href="namespace_im_gui.html#a4216382dd5ad6c17e183f9f894db2e15" title=" " alt="" coords="1024,1165,1217,1191"/>
+<area shape="rect" href="namespace_im_gui.html#a5f0b65db489a18354649d09d4b9f55dc" title=" " alt="" coords="1021,1216,1220,1257"/>
+<area shape="rect" href="namespace_im_gui.html#a526230d8de99b07ff2b2992c192ce212" title=" " alt="" coords="1038,1306,1203,1333"/>
+<area shape="rect" href="namespace_im_gui.html#aacc87878f9d14939bfbbaa2f719e910e" title=" " alt="" coords="803,1306,933,1333"/>
+<area shape="rect" href="namespace_im_gui.html#add238564557f1af2f3de8d0ec02e4a1c" title=" " alt="" coords="508,1382,715,1409"/>
+<area shape="rect" href="struct_im_gui_list_clipper.html#aa102d8c5cde9d8bf8dc5707c1d6fb96e" title=" " alt="" coords="1031,1459,1211,1500"/>
+<area shape="rect" href="namespace_im_gui.html#a601290fe1dbe4c3717eb7e7add3ef11f" title=" " alt="" coords="1026,1524,1215,1565"/>
+<area shape="rect" href="namespace_im_gui.html#ab3f1fc018f903b7ad79fd10663375774" title=" " alt="" coords="1057,1590,1184,1617"/>
+<area shape="rect" href="namespace_im_gui.html#ac297462e33309d0540fa459bccdc9304" title=" " alt="" coords="523,1739,699,1766"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a38c9b50749061ff83a0ebf3137c00174" title=" " alt="" coords="771,1790,965,1817"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4f7b0b016c2ffd33836c3bdcf78ed97b" title=" " alt="" coords="769,1841,967,1883"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a0729207a285af6ef57ce5a31d1a60348" title=" " alt="" coords="229,1903,460,1930"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a2f38052447680c83c0028e4f21f0a2e6" title=" " alt="" coords="774,57,962,83"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4d8ba8c6a1febc3053bd843c150305da" title=" " alt="" coords="239,107,450,134"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a41a6cb36f6ad91f80eba61b0053d17a5" title=" " alt="" coords="763,1067,973,1094"/>
+<area shape="rect" href="imgui__demo_8cpp.html#aa93cc0d732db176bbffaf106faaa0ca1" title=" " alt="" coords="765,158,971,185"/>
+<area shape="rect" href="namespace_im_gui.html#a5866840f58a4cc09a4fd5f1929a368e5" title=" " alt="" coords="511,209,711,235"/>
+<area shape="rect" href="namespace_im_gui.html#a5db08f552118a1f946e19b5933dce181" title=" " alt="" coords="805,595,931,622"/>
+<area shape="rect" href="namespace_im_gui.html#a28046a30716afeb7738a82a5b19044ca" title=" " alt="" coords="796,646,940,673"/>
+<area shape="rect" href="namespace_im_gui.html#a1e55711a21f97d5dff919d697d3a7201" title=" " alt="" coords="547,817,676,843"/>
+<area shape="rect" href="namespace_im_gui.html#a3fedd0a136d52d72d2fd1e3139b4272c" title=" " alt="" coords="1655,827,1860,854"/>
+<area shape="rect" href="namespace_im_gui.html#a0c9e3a1d81ef0a0c530311beb1d88f7f" title=" " alt="" coords="1680,777,1835,803"/>
+<area shape="rect" href="namespace_im_gui.html#aa306c009063e86091ed61d80d4d231f6" title=" " alt="" coords="1415,1199,1605,1240"/>
+<area shape="rect" href="imgui_8cpp.html#ab94af6ce69cc289c81fe0c6cd501ddce" title=" " alt="" coords="1662,980,1853,1021"/>
+<area shape="rect" href="namespace_im_gui.html#af51b875ef6c3f2e0f430873ee7605669" title=" " alt="" coords="1413,1005,1607,1047"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a59df76c1445aaaf0b43456c83c1a88e5" name="a59df76c1445aaaf0b43456c83c1a88e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59df76c1445aaaf0b43456c83c1a88e5">&#9670;&nbsp;</a></span>MenuBarRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_rect.html">ImRect</a> ImGuiWindow::MenuBarRect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_window_a59df76c1445aaaf0b43456c83c1a88e5_icgraph.png" border="0" usemap="#astruct_im_gui_window_a59df76c1445aaaf0b43456c83c1a88e5_icgraph" alt=""/></div>
+<map name="astruct_im_gui_window_a59df76c1445aaaf0b43456c83c1a88e5_icgraph" id="astruct_im_gui_window_a59df76c1445aaaf0b43456c83c1a88e5_icgraph">
+<area shape="rect" title=" " alt="" coords="1855,509,2044,535"/>
+<area shape="rect" href="namespace_im_gui.html#a4852dff802922163fc747e2e0df5b88f" title=" " alt="" coords="987,390,1137,417"/>
+<area shape="rect" href="namespace_im_gui.html#a4f4924f0f74c0bd4201ca9656202f1f1" title=" " alt="" coords="1587,534,1807,561"/>
+<area shape="rect" href="namespace_im_gui.html#a55cb9cfb9865204ac6fb21c965784f78" title=" " alt="" coords="725,390,903,417"/>
+<area shape="rect" href="namespace_im_gui.html#af95643a0ce4893b9e57c12991922fb18" title=" " alt="" coords="216,1201,392,1227"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ac209de20c1f862aa48a3f5f27aee407e" title=" " alt="" coords="727,593,901,619"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ab19d813f2403009dd8700e041e10c09d" title=" " alt="" coords="725,846,903,873"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ae18f1dc3d5298b314080b35f6c20d781" title=" " alt="" coords="717,491,911,518"/>
+<area shape="rect" href="imgui__demo_8cpp.html#aa9e4f5130b74080ea2d97916a91b3b3c" title=" " alt="" coords="717,694,911,721"/>
+<area shape="rect" href="imgui__demo_8cpp.html#adfe8516f13b623adbf78b024efd5bb6e" title=" " alt="" coords="731,542,897,569"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="520,599,571,626"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a41fc5e36f317b1e9f66bdd2d7bca7764" title=" " alt="" coords="441,491,649,518"/>
+<area shape="rect" href="class_gui_window.html#ab0dabe8f7c97d9207e03a30f9d29d1dd" title=" " alt="" coords="5,1201,168,1227"/>
+<area shape="rect" href="class_imgui_layer.html#aa98053a216128343d985192439323544" title=" " alt="" coords="11,1394,162,1421"/>
+<area shape="rect" href="namespace_im_gui.html#a581e58db0bc930bafa4a5d23093a2b99" title=" " alt="" coords="1441,1023,1539,1050"/>
+<area shape="rect" href="namespace_im_gui.html#a63a223ce2138538300e5b0654d7407a9" title=" " alt="" coords="1223,467,1365,494"/>
+<area shape="rect" href="struct_example_app_console.html#a0518a09c7e8648dd52c7c06df19ac17a" title=" " alt="" coords="724,998,904,1025"/>
+<area shape="rect" href="struct_example_app_log.html#a5ad3a4bdb89171b84aeaff96948a1f77" title=" " alt="" coords="737,1125,891,1151"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ad0303cf1f675002eb4e68c17a47b3f88" title=" " alt="" coords="471,1201,620,1227"/>
+<area shape="rect" href="namespace_im_gui.html#af1b39e70cac2e1b9e62dd3c9d154cbd6" title=" " alt="" coords="714,947,914,974"/>
+<area shape="rect" href="namespace_im_gui.html#afe7a28c6eb52fff3cc27d5a698fea4ff" title=" " alt="" coords="453,1417,638,1443"/>
+<area shape="rect" href="imgui__demo_8cpp.html#af533fd0a774d6bbebe61e474db6f144f" title=" " alt="" coords="723,1353,905,1379"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4dadf5e7b393795666d19af9694037cf" title=" " alt="" coords="723,897,905,923"/>
+<area shape="rect" href="namespace_im_gui.html#a6ecb51142fcb72cd19ff002c3a7d8e25" title=" " alt="" coords="1207,1353,1381,1379"/>
+<area shape="rect" href="namespace_im_gui.html#a89da3a22300e8293257b6cfdf1b83b7a" title=" " alt="" coords="1219,1049,1369,1075"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a0729207a285af6ef57ce5a31d1a60348" title=" " alt="" coords="699,1302,929,1329"/>
+<area shape="rect" href="namespace_im_gui.html#a6d840f615c198c2342968f733fda11b3" title=" " alt="" coords="977,745,1147,771"/>
+<area shape="rect" href="namespace_im_gui.html#a8c9492bbbba890c77f7b3b7a95933879" title=" " alt="" coords="1219,1875,1369,1902"/>
+<area shape="rect" href="namespace_im_gui.html#a4216382dd5ad6c17e183f9f894db2e15" title=" " alt="" coords="1197,238,1391,265"/>
+<area shape="rect" href="namespace_im_gui.html#a5f0b65db489a18354649d09d4b9f55dc" title=" " alt="" coords="1195,1927,1393,1968"/>
+<area shape="rect" href="namespace_im_gui.html#a526230d8de99b07ff2b2992c192ce212" title=" " alt="" coords="1211,643,1377,670"/>
+<area shape="rect" href="namespace_im_gui.html#aacc87878f9d14939bfbbaa2f719e910e" title=" " alt="" coords="997,643,1127,670"/>
+<area shape="rect" href="namespace_im_gui.html#add238564557f1af2f3de8d0ec02e4a1c" title=" " alt="" coords="711,745,917,771"/>
+<area shape="rect" href="struct_im_gui_list_clipper.html#aa102d8c5cde9d8bf8dc5707c1d6fb96e" title=" " alt="" coords="1204,1992,1384,2033"/>
+<area shape="rect" href="namespace_im_gui.html#a601290fe1dbe4c3717eb7e7add3ef11f" title=" " alt="" coords="1199,121,1389,163"/>
+<area shape="rect" href="namespace_im_gui.html#ab3f1fc018f903b7ad79fd10663375774" title=" " alt="" coords="241,1538,367,1565"/>
+<area shape="rect" href="namespace_im_gui.html#ac297462e33309d0540fa459bccdc9304" title=" " alt="" coords="457,1555,633,1582"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a38c9b50749061ff83a0ebf3137c00174" title=" " alt="" coords="448,1606,643,1633"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4f7b0b016c2ffd33836c3bdcf78ed97b" title=" " alt="" coords="1195,1657,1393,1699"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a2f38052447680c83c0028e4f21f0a2e6" title=" " alt="" coords="451,1713,639,1739"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4d8ba8c6a1febc3053bd843c150305da" title=" " alt="" coords="440,1767,651,1794"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a41a6cb36f6ad91f80eba61b0053d17a5" title=" " alt="" coords="440,129,651,155"/>
+<area shape="rect" href="imgui__demo_8cpp.html#aa93cc0d732db176bbffaf106faaa0ca1" title=" " alt="" coords="443,238,648,265"/>
+<area shape="rect" href="namespace_im_gui.html#a5866840f58a4cc09a4fd5f1929a368e5" title=" " alt="" coords="714,1505,914,1531"/>
+<area shape="rect" href="namespace_im_gui.html#a5db08f552118a1f946e19b5933dce181" title=" " alt="" coords="999,846,1125,873"/>
+<area shape="rect" href="namespace_im_gui.html#a28046a30716afeb7738a82a5b19044ca" title=" " alt="" coords="990,491,1134,518"/>
+<area shape="rect" href="namespace_im_gui.html#af89af17ecc11653f25fea1e50e195de6" title=" " alt="" coords="995,441,1129,467"/>
+<area shape="rect" href="namespace_im_gui.html#aa895095bdc7a2907375c555e245575ea" title=" " alt="" coords="993,1353,1131,1379"/>
+<area shape="rect" href="namespace_im_gui.html#a8dc671f87ed281b6445ce6ae4ab25183" title=" " alt="" coords="989,1049,1135,1075"/>
+<area shape="rect" href="namespace_im_gui.html#a10e213926d8ca212266bc5fbded1e026" title=" " alt="" coords="995,1099,1129,1126"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a147da28bf5d167cbe0a363c4a578dea1" name="a147da28bf5d167cbe0a363c4a578dea1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a147da28bf5d167cbe0a363c4a578dea1">&#9670;&nbsp;</a></span>Rect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_rect.html">ImRect</a> ImGuiWindow::Rect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_window_a147da28bf5d167cbe0a363c4a578dea1_icgraph.png" border="0" usemap="#astruct_im_gui_window_a147da28bf5d167cbe0a363c4a578dea1_icgraph" alt=""/></div>
+<map name="astruct_im_gui_window_a147da28bf5d167cbe0a363c4a578dea1_icgraph" id="astruct_im_gui_window_a147da28bf5d167cbe0a363c4a578dea1_icgraph">
+<area shape="rect" title=" " alt="" coords="1817,944,1955,971"/>
+<area shape="rect" href="namespace_im_gui.html#a581e58db0bc930bafa4a5d23093a2b99" title=" " alt="" coords="1069,944,1167,971"/>
+<area shape="rect" href="namespace_im_gui.html#a28046a30716afeb7738a82a5b19044ca" title=" " alt="" coords="541,36,685,63"/>
+<area shape="rect" href="namespace_im_gui.html#a8dc671f87ed281b6445ce6ae4ab25183" title=" " alt="" coords="541,131,686,157"/>
+<area shape="rect" href="namespace_im_gui.html#afe7a28c6eb52fff3cc27d5a698fea4ff" title=" " alt="" coords="521,1633,706,1660"/>
+<area shape="rect" href="namespace_im_gui.html#a1725ff3becdb963b97c16d69d4c9f308" title=" " alt="" coords="1295,681,1473,722"/>
+<area shape="rect" href="namespace_im_gui.html#af7de4b5c98ba30dbadce44e1f1066ba8" title=" " alt="" coords="1562,827,1754,869"/>
+<area shape="rect" href="namespace_im_gui.html#a7e5865c9e9ce5c3949e946bb03f6b3c8" title=" " alt="" coords="1559,710,1757,751"/>
+<area shape="rect" href="namespace_im_gui.html#a4b4e1fb0487e571a4a04fb5b2274189e" title=" " alt="" coords="1015,624,1221,651"/>
+<area shape="rect" href="imgui_8cpp.html#a5d19a45099ec790161a49f27c074c938" title=" " alt="" coords="1584,995,1732,1021"/>
+<area shape="rect" href="namespace_im_gui.html#ab0be56f97f06487343342a8d99261409" title=" " alt="" coords="1553,1045,1763,1072"/>
+<area shape="rect" href="namespace_im_gui.html#a4f72273a6c1d8873fe60e9dbbb61ff2c" title=" " alt="" coords="1551,1096,1765,1123"/>
+<area shape="rect" href="namespace_im_gui.html#a92ac596d91c03957e034022b239a881d" title=" " alt="" coords="1547,1198,1769,1239"/>
+<area shape="rect" href="namespace_im_gui.html#a6b080917e0b311340f252f37cdc21736" title=" " alt="" coords="1269,1176,1499,1203"/>
+<area shape="rect" href="namespace_im_gui.html#a4f4924f0f74c0bd4201ca9656202f1f1" title=" " alt="" coords="1274,944,1494,971"/>
+<area shape="rect" href="namespace_im_gui.html#a7f7ebfa3a3ad16e9a7198733e0e31640" title=" " alt="" coords="1555,1989,1761,2030"/>
+<area shape="rect" href="namespace_im_gui.html#a63a223ce2138538300e5b0654d7407a9" title=" " alt="" coords="795,168,938,195"/>
+<area shape="rect" href="namespace_im_gui.html#a6ecb51142fcb72cd19ff002c3a7d8e25" title=" " alt="" coords="779,624,954,651"/>
+<area shape="rect" href="namespace_im_gui.html#a89da3a22300e8293257b6cfdf1b83b7a" title=" " alt="" coords="791,219,942,245"/>
+<area shape="rect" href="namespace_im_gui.html#a6d840f615c198c2342968f733fda11b3" title=" " alt="" coords="529,1147,698,1173"/>
+<area shape="rect" href="imgui__demo_8cpp.html#aa9e4f5130b74080ea2d97916a91b3b3c" title=" " alt="" coords="247,1121,442,1148"/>
+<area shape="rect" href="namespace_im_gui.html#af95643a0ce4893b9e57c12991922fb18" title=" " alt="" coords="5,1380,181,1407"/>
+<area shape="rect" href="namespace_im_gui.html#a8c9492bbbba890c77f7b3b7a95933879" title=" " alt="" coords="791,725,942,752"/>
+<area shape="rect" href="namespace_im_gui.html#a4216382dd5ad6c17e183f9f894db2e15" title=" " alt="" coords="770,776,963,803"/>
+<area shape="rect" href="namespace_im_gui.html#a5f0b65db489a18354649d09d4b9f55dc" title=" " alt="" coords="767,827,966,869"/>
+<area shape="rect" href="namespace_im_gui.html#a526230d8de99b07ff2b2992c192ce212" title=" " alt="" coords="784,117,949,144"/>
+<area shape="rect" href="namespace_im_gui.html#aacc87878f9d14939bfbbaa2f719e910e" title=" " alt="" coords="548,892,679,919"/>
+<area shape="rect" href="namespace_im_gui.html#add238564557f1af2f3de8d0ec02e4a1c" title=" " alt="" coords="241,707,448,733"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="319,892,370,919"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ae18f1dc3d5298b314080b35f6c20d781" title=" " alt="" coords="247,944,442,971"/>
+<area shape="rect" href="struct_example_app_console.html#a0518a09c7e8648dd52c7c06df19ac17a" title=" " alt="" coords="777,1045,957,1072"/>
+<area shape="rect" href="struct_example_app_log.html#a5ad3a4bdb89171b84aeaff96948a1f77" title=" " alt="" coords="789,1481,944,1508"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ad0303cf1f675002eb4e68c17a47b3f88" title=" " alt="" coords="539,1431,688,1457"/>
+<area shape="rect" href="struct_im_gui_list_clipper.html#aa102d8c5cde9d8bf8dc5707c1d6fb96e" title=" " alt="" coords="777,1198,957,1239"/>
+<area shape="rect" href="namespace_im_gui.html#a601290fe1dbe4c3717eb7e7add3ef11f" title=" " alt="" coords="772,1263,961,1305"/>
+<area shape="rect" href="namespace_im_gui.html#ab3f1fc018f903b7ad79fd10663375774" title=" " alt="" coords="803,1329,930,1356"/>
+<area shape="rect" href="namespace_im_gui.html#ac297462e33309d0540fa459bccdc9304" title=" " alt="" coords="525,1481,701,1508"/>
+<area shape="rect" href="namespace_im_gui.html#af1b39e70cac2e1b9e62dd3c9d154cbd6" title=" " alt="" coords="767,1633,967,1660"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ac209de20c1f862aa48a3f5f27aee407e" title=" " alt="" coords="258,1688,431,1715"/>
+<area shape="rect" href="imgui__demo_8cpp.html#af533fd0a774d6bbebe61e474db6f144f" title=" " alt="" coords="253,1745,436,1772"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a38c9b50749061ff83a0ebf3137c00174" title=" " alt="" coords="247,1811,442,1837"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4f7b0b016c2ffd33836c3bdcf78ed97b" title=" " alt="" coords="515,1887,712,1929"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a0729207a285af6ef57ce5a31d1a60348" title=" " alt="" coords="229,271,460,297"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a2f38052447680c83c0028e4f21f0a2e6" title=" " alt="" coords="519,320,707,347"/>
+<area shape="rect" href="imgui__demo_8cpp.html#adfe8516f13b623adbf78b024efd5bb6e" title=" " alt="" coords="261,379,428,405"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4dadf5e7b393795666d19af9694037cf" title=" " alt="" coords="523,421,704,448"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4d8ba8c6a1febc3053bd843c150305da" title=" " alt="" coords="239,505,450,532"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a41a6cb36f6ad91f80eba61b0053d17a5" title=" " alt="" coords="508,523,719,549"/>
+<area shape="rect" href="imgui__demo_8cpp.html#aa93cc0d732db176bbffaf106faaa0ca1" title=" " alt="" coords="242,1045,447,1072"/>
+<area shape="rect" href="namespace_im_gui.html#a5866840f58a4cc09a4fd5f1929a368e5" title=" " alt="" coords="767,1583,967,1609"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad1580cc8b5bdf981c6ed2eb22ecd7dbb" name="ad1580cc8b5bdf981c6ed2eb22ecd7dbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1580cc8b5bdf981c6ed2eb22ecd7dbb">&#9670;&nbsp;</a></span>TitleBarHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ImGuiWindow::TitleBarHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_window_ad1580cc8b5bdf981c6ed2eb22ecd7dbb_icgraph.png" border="0" usemap="#astruct_im_gui_window_ad1580cc8b5bdf981c6ed2eb22ecd7dbb_icgraph" alt=""/></div>
+<map name="astruct_im_gui_window_ad1580cc8b5bdf981c6ed2eb22ecd7dbb_icgraph" id="astruct_im_gui_window_ad1580cc8b5bdf981c6ed2eb22ecd7dbb_icgraph">
+<area shape="rect" title=" " alt="" coords="2177,1241,2368,1268"/>
+<area shape="rect" href="namespace_im_gui.html#a581e58db0bc930bafa4a5d23093a2b99" title=" " alt="" coords="1268,1048,1365,1075"/>
+<area shape="rect" href="imgui_8cpp.html#a07abb80a54115cb5cf9da03351e29533" title=" " alt="" coords="1941,923,2111,965"/>
+<area shape="rect" href="imgui_8cpp.html#acbe6338daf87dc6ab636f02f1367eb41" title=" " alt="" coords="1683,1292,1846,1319"/>
+<area shape="rect" href="imgui_8cpp.html#a0c4618a6985c33c4936f1d9f1c7b26b4" title=" " alt="" coords="1923,1191,2129,1217"/>
+<area shape="rect" href="namespace_im_gui.html#a4f4924f0f74c0bd4201ca9656202f1f1" title=" " alt="" coords="1655,1347,1875,1373"/>
+<area shape="rect" href="namespace_im_gui.html#a6fead8b4ae7bacfe0cbd4f6e64a7a8f6" title=" " alt="" coords="1935,1343,2117,1385"/>
+<area shape="rect" href="namespace_im_gui.html#abf8364b7d1fe7c512e140ba16ba87c5c" title=" " alt="" coords="1937,1409,2115,1436"/>
+<area shape="rect" href="namespace_im_gui.html#a63a223ce2138538300e5b0654d7407a9" title=" " alt="" coords="1049,744,1192,771"/>
+<area shape="rect" href="struct_example_app_console.html#a0518a09c7e8648dd52c7c06df19ac17a" title=" " alt="" coords="521,541,701,568"/>
+<area shape="rect" href="struct_example_app_log.html#a5ad3a4bdb89171b84aeaff96948a1f77" title=" " alt="" coords="534,592,689,619"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ad0303cf1f675002eb4e68c17a47b3f88" title=" " alt="" coords="270,592,419,619"/>
+<area shape="rect" href="namespace_im_gui.html#af95643a0ce4893b9e57c12991922fb18" title=" " alt="" coords="5,643,181,669"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="586,997,637,1024"/>
+<area shape="rect" href="namespace_im_gui.html#af1b39e70cac2e1b9e62dd3c9d154cbd6" title=" " alt="" coords="511,440,711,467"/>
+<area shape="rect" href="namespace_im_gui.html#afe7a28c6eb52fff3cc27d5a698fea4ff" title=" " alt="" coords="252,415,437,441"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ac209de20c1f862aa48a3f5f27aee407e" title=" " alt="" coords="525,643,698,669"/>
+<area shape="rect" href="imgui__demo_8cpp.html#af533fd0a774d6bbebe61e474db6f144f" title=" " alt="" coords="520,693,703,720"/>
+<area shape="rect" href="imgui__demo_8cpp.html#adfe8516f13b623adbf78b024efd5bb6e" title=" " alt="" coords="528,744,695,771"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4dadf5e7b393795666d19af9694037cf" title=" " alt="" coords="521,795,702,821"/>
+<area shape="rect" href="namespace_im_gui.html#a6ecb51142fcb72cd19ff002c3a7d8e25" title=" " alt="" coords="1033,1853,1208,1880"/>
+<area shape="rect" href="namespace_im_gui.html#a89da3a22300e8293257b6cfdf1b83b7a" title=" " alt="" coords="1045,1048,1196,1075"/>
+<area shape="rect" href="namespace_im_gui.html#a6d840f615c198c2342968f733fda11b3" title=" " alt="" coords="783,1099,953,1125"/>
+<area shape="rect" href="imgui__demo_8cpp.html#aa9e4f5130b74080ea2d97916a91b3b3c" title=" " alt="" coords="514,1124,709,1151"/>
+<area shape="rect" href="namespace_im_gui.html#a8c9492bbbba890c77f7b3b7a95933879" title=" " alt="" coords="1045,1200,1196,1227"/>
+<area shape="rect" href="namespace_im_gui.html#a4216382dd5ad6c17e183f9f894db2e15" title=" " alt="" coords="1024,1251,1217,1277"/>
+<area shape="rect" href="namespace_im_gui.html#a5f0b65db489a18354649d09d4b9f55dc" title=" " alt="" coords="1021,1302,1220,1343"/>
+<area shape="rect" href="namespace_im_gui.html#a526230d8de99b07ff2b2992c192ce212" title=" " alt="" coords="1038,1928,1203,1955"/>
+<area shape="rect" href="namespace_im_gui.html#aacc87878f9d14939bfbbaa2f719e910e" title=" " alt="" coords="803,1600,933,1627"/>
+<area shape="rect" href="namespace_im_gui.html#add238564557f1af2f3de8d0ec02e4a1c" title=" " alt="" coords="508,1549,715,1576"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ae18f1dc3d5298b314080b35f6c20d781" title=" " alt="" coords="514,1600,709,1627"/>
+<area shape="rect" href="struct_im_gui_list_clipper.html#aa102d8c5cde9d8bf8dc5707c1d6fb96e" title=" " alt="" coords="1031,1367,1211,1409"/>
+<area shape="rect" href="namespace_im_gui.html#a601290fe1dbe4c3717eb7e7add3ef11f" title=" " alt="" coords="1026,1433,1215,1474"/>
+<area shape="rect" href="namespace_im_gui.html#ab3f1fc018f903b7ad79fd10663375774" title=" " alt="" coords="1057,1499,1184,1525"/>
+<area shape="rect" href="namespace_im_gui.html#ac297462e33309d0540fa459bccdc9304" title=" " alt="" coords="257,1497,433,1524"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a38c9b50749061ff83a0ebf3137c00174" title=" " alt="" coords="247,1711,442,1737"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4f7b0b016c2ffd33836c3bdcf78ed97b" title=" " alt="" coords="769,1803,967,1845"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a0729207a285af6ef57ce5a31d1a60348" title=" " alt="" coords="229,85,460,112"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a2f38052447680c83c0028e4f21f0a2e6" title=" " alt="" coords="774,136,962,163"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4d8ba8c6a1febc3053bd843c150305da" title=" " alt="" coords="239,187,450,213"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a41a6cb36f6ad91f80eba61b0053d17a5" title=" " alt="" coords="763,237,973,264"/>
+<area shape="rect" href="imgui__demo_8cpp.html#aa93cc0d732db176bbffaf106faaa0ca1" title=" " alt="" coords="242,288,447,315"/>
+<area shape="rect" href="namespace_im_gui.html#a5866840f58a4cc09a4fd5f1929a368e5" title=" " alt="" coords="511,339,711,365"/>
+<area shape="rect" href="namespace_im_gui.html#a5db08f552118a1f946e19b5933dce181" title=" " alt="" coords="805,744,931,771"/>
+<area shape="rect" href="namespace_im_gui.html#a28046a30716afeb7738a82a5b19044ca" title=" " alt="" coords="796,693,940,720"/>
+<area shape="rect" href="namespace_im_gui.html#a3fedd0a136d52d72d2fd1e3139b4272c" title=" " alt="" coords="1662,847,1867,873"/>
+<area shape="rect" href="namespace_im_gui.html#a0c9e3a1d81ef0a0c530311beb1d88f7f" title=" " alt="" coords="1687,972,1842,999"/>
+<area shape="rect" href="namespace_im_gui.html#aa306c009063e86091ed61d80d4d231f6" title=" " alt="" coords="1415,1230,1605,1271"/>
+<area shape="rect" href="imgui_8cpp.html#ab94af6ce69cc289c81fe0c6cd501ddce" title=" " alt="" coords="1669,1125,1860,1166"/>
+<area shape="rect" href="namespace_im_gui.html#af51b875ef6c3f2e0f430873ee7605669" title=" " alt="" coords="1413,1125,1607,1166"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a06884e1bc80e460e51e1626b5b976196" name="a06884e1bc80e460e51e1626b5b976196"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06884e1bc80e460e51e1626b5b976196">&#9670;&nbsp;</a></span>TitleBarRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_rect.html">ImRect</a> ImGuiWindow::TitleBarRect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_window_a06884e1bc80e460e51e1626b5b976196_icgraph.png" border="0" usemap="#astruct_im_gui_window_a06884e1bc80e460e51e1626b5b976196_icgraph" alt=""/></div>
+<map name="astruct_im_gui_window_a06884e1bc80e460e51e1626b5b976196_icgraph" id="astruct_im_gui_window_a06884e1bc80e460e51e1626b5b976196_icgraph">
+<area shape="rect" title=" " alt="" coords="1507,1078,1688,1105"/>
+<area shape="rect" href="namespace_im_gui.html#a581e58db0bc930bafa4a5d23093a2b99" title=" " alt="" coords="1314,1078,1411,1105"/>
+<area shape="rect" href="namespace_im_gui.html#af7de4b5c98ba30dbadce44e1f1066ba8" title=" " alt="" coords="1267,510,1459,551"/>
+<area shape="rect" href="namespace_im_gui.html#a6f56217f28aff3a7cea846e6f44eebff" title=" " alt="" coords="1271,1591,1455,1632"/>
+<area shape="rect" href="namespace_im_gui.html#a63a223ce2138538300e5b0654d7407a9" title=" " alt="" coords="1048,420,1191,446"/>
+<area shape="rect" href="struct_example_app_console.html#a0518a09c7e8648dd52c7c06df19ac17a" title=" " alt="" coords="513,1032,693,1058"/>
+<area shape="rect" href="struct_example_app_log.html#a5ad3a4bdb89171b84aeaff96948a1f77" title=" " alt="" coords="526,774,681,801"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ad0303cf1f675002eb4e68c17a47b3f88" title=" " alt="" coords="260,749,409,776"/>
+<area shape="rect" href="namespace_im_gui.html#af95643a0ce4893b9e57c12991922fb18" title=" " alt="" coords="5,749,181,776"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="578,825,629,852"/>
+<area shape="rect" href="namespace_im_gui.html#af1b39e70cac2e1b9e62dd3c9d154cbd6" title=" " alt="" coords="503,496,703,522"/>
+<area shape="rect" href="namespace_im_gui.html#afe7a28c6eb52fff3cc27d5a698fea4ff" title=" " alt="" coords="242,318,427,345"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ac209de20c1f862aa48a3f5f27aee407e" title=" " alt="" coords="517,572,690,598"/>
+<area shape="rect" href="imgui__demo_8cpp.html#af533fd0a774d6bbebe61e474db6f144f" title=" " alt="" coords="512,1082,695,1109"/>
+<area shape="rect" href="imgui__demo_8cpp.html#adfe8516f13b623adbf78b024efd5bb6e" title=" " alt="" coords="520,622,687,649"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4dadf5e7b393795666d19af9694037cf" title=" " alt="" coords="513,673,694,700"/>
+<area shape="rect" href="namespace_im_gui.html#a6ecb51142fcb72cd19ff002c3a7d8e25" title=" " alt="" coords="1032,1028,1207,1054"/>
+<area shape="rect" href="namespace_im_gui.html#a89da3a22300e8293257b6cfdf1b83b7a" title=" " alt="" coords="1044,977,1195,1004"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a0729207a285af6ef57ce5a31d1a60348" title=" " alt="" coords="488,1133,719,1160"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a41a6cb36f6ad91f80eba61b0053d17a5" title=" " alt="" coords="498,1188,709,1214"/>
+<area shape="rect" href="namespace_im_gui.html#a6d840f615c198c2342968f733fda11b3" title=" " alt="" coords="785,1625,954,1652"/>
+<area shape="rect" href="imgui__demo_8cpp.html#aa9e4f5130b74080ea2d97916a91b3b3c" title=" " alt="" coords="506,1500,701,1526"/>
+<area shape="rect" href="namespace_im_gui.html#a8c9492bbbba890c77f7b3b7a95933879" title=" " alt="" coords="1044,1281,1195,1308"/>
+<area shape="rect" href="namespace_im_gui.html#a4216382dd5ad6c17e183f9f894db2e15" title=" " alt="" coords="1023,1332,1216,1358"/>
+<area shape="rect" href="namespace_im_gui.html#a5f0b65db489a18354649d09d4b9f55dc" title=" " alt="" coords="1020,1383,1219,1424"/>
+<area shape="rect" href="namespace_im_gui.html#a526230d8de99b07ff2b2992c192ce212" title=" " alt="" coords="1037,1473,1202,1500"/>
+<area shape="rect" href="namespace_im_gui.html#aacc87878f9d14939bfbbaa2f719e910e" title=" " alt="" coords="804,1500,935,1526"/>
+<area shape="rect" href="namespace_im_gui.html#add238564557f1af2f3de8d0ec02e4a1c" title=" " alt="" coords="500,1449,707,1476"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ae18f1dc3d5298b314080b35f6c20d781" title=" " alt="" coords="506,1550,701,1577"/>
+<area shape="rect" href="struct_im_gui_list_clipper.html#aa102d8c5cde9d8bf8dc5707c1d6fb96e" title=" " alt="" coords="1029,1676,1209,1718"/>
+<area shape="rect" href="namespace_im_gui.html#a601290fe1dbe4c3717eb7e7add3ef11f" title=" " alt="" coords="1025,1742,1214,1783"/>
+<area shape="rect" href="namespace_im_gui.html#ab3f1fc018f903b7ad79fd10663375774" title=" " alt="" coords="1056,1808,1183,1834"/>
+<area shape="rect" href="namespace_im_gui.html#ac297462e33309d0540fa459bccdc9304" title=" " alt="" coords="247,1357,423,1384"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a38c9b50749061ff83a0ebf3137c00174" title=" " alt="" coords="237,1412,432,1438"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4f7b0b016c2ffd33836c3bdcf78ed97b" title=" " alt="" coords="236,1643,433,1684"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a2f38052447680c83c0028e4f21f0a2e6" title=" " alt="" coords="241,90,429,117"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a4d8ba8c6a1febc3053bd843c150305da" title=" " alt="" coords="229,217,440,244"/>
+<area shape="rect" href="imgui__demo_8cpp.html#aa93cc0d732db176bbffaf106faaa0ca1" title=" " alt="" coords="232,166,437,193"/>
+<area shape="rect" href="namespace_im_gui.html#a5866840f58a4cc09a4fd5f1929a368e5" title=" " alt="" coords="503,268,703,294"/>
+<area shape="rect" href="namespace_im_gui.html#a5db08f552118a1f946e19b5933dce181" title=" " alt="" coords="806,673,933,700"/>
+<area shape="rect" href="namespace_im_gui.html#a28046a30716afeb7738a82a5b19044ca" title=" " alt="" coords="797,369,941,396"/>
+<area shape="rect" href="namespace_im_gui.html#af89af17ecc11653f25fea1e50e195de6" title=" " alt="" coords="803,420,936,446"/>
+<area shape="rect" href="namespace_im_gui.html#aa895095bdc7a2907375c555e245575ea" title=" " alt="" coords="800,1246,939,1273"/>
+<area shape="rect" href="namespace_im_gui.html#a8dc671f87ed281b6445ce6ae4ab25183" title=" " alt="" coords="797,1028,942,1054"/>
+<area shape="rect" href="namespace_im_gui.html#a10e213926d8ca212266bc5fbded1e026" title=" " alt="" coords="802,1129,937,1156"/>
+<area shape="rect" href="namespace_im_gui.html#a440894c8c00495d5cc01529f4504fca9" title=" " alt="" coords="767,1078,971,1105"/>
+<area shape="rect" href="namespace_im_gui.html#a6758a456204101a9c4a660da4cfba2c9" title=" " alt="" coords="767,977,972,1004"/>
+<area shape="rect" href="namespace_im_gui.html#aef8b2c0baa27bd5c68f676aaf14ed946" title=" " alt="" coords="780,1180,959,1222"/>
+<area shape="rect" href="imgui_8cpp.html#ad3e7a69262a495be50960b6906f604d6" title=" " alt="" coords="776,14,963,41"/>
+<area shape="rect" href="namespace_im_gui.html#a246c37da45e88a12ade440a0feacb4ee" title=" " alt="" coords="1057,2061,1181,2088"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a42f141fa0eed059176cb4360df1b1eb2" name="a42f141fa0eed059176cb4360df1b1eb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42f141fa0eed059176cb4360df1b1eb2">&#9670;&nbsp;</a></span>Active</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::Active</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a158ebb04d20cac09504fdbc4994eb017" name="a158ebb04d20cac09504fdbc4994eb017"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a158ebb04d20cac09504fdbc4994eb017">&#9670;&nbsp;</a></span>Appearing</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::Appearing</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea6c6eca60515ed1a5afd5d0c1f8601c" name="aea6c6eca60515ed1a5afd5d0c1f8601c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea6c6eca60515ed1a5afd5d0c1f8601c">&#9670;&nbsp;</a></span>AutoFitChildAxises</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a33644f626f44716357624c2755a9b9d1">ImS8</a> ImGuiWindow::AutoFitChildAxises</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6d4f86b634dd0fc124e216282b5a110c" name="a6d4f86b634dd0fc124e216282b5a110c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d4f86b634dd0fc124e216282b5a110c">&#9670;&nbsp;</a></span>AutoFitFramesX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a33644f626f44716357624c2755a9b9d1">ImS8</a> ImGuiWindow::AutoFitFramesX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a134c07e0db4129ee43fafb1937429839" name="a134c07e0db4129ee43fafb1937429839"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a134c07e0db4129ee43fafb1937429839">&#9670;&nbsp;</a></span>AutoFitFramesY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a33644f626f44716357624c2755a9b9d1">ImS8</a> ImGuiWindow::AutoFitFramesY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3583d20a57fea8c8491f14f2dcda483c" name="a3583d20a57fea8c8491f14f2dcda483c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3583d20a57fea8c8491f14f2dcda483c">&#9670;&nbsp;</a></span>AutoFitOnlyGrows</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::AutoFitOnlyGrows</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8219e984ed273d6cfd19fb4b93eff5e" name="aa8219e984ed273d6cfd19fb4b93eff5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8219e984ed273d6cfd19fb4b93eff5e">&#9670;&nbsp;</a></span>AutoPosLastDirection</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a874086389bc27cc9647118d22a806403">ImGuiDir</a> ImGuiWindow::AutoPosLastDirection</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a045526cada44318c4b02ef7e5a80b8af" name="a045526cada44318c4b02ef7e5a80b8af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a045526cada44318c4b02ef7e5a80b8af">&#9670;&nbsp;</a></span>BeginCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short ImGuiWindow::BeginCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af6a2e24ba9291d538d1af269133fec72" name="af6a2e24ba9291d538d1af269133fec72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6a2e24ba9291d538d1af269133fec72">&#9670;&nbsp;</a></span>BeginOrderWithinContext</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short ImGuiWindow::BeginOrderWithinContext</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa7042ce8e41ae11f0100fee9e25dbf38" name="aa7042ce8e41ae11f0100fee9e25dbf38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7042ce8e41ae11f0100fee9e25dbf38">&#9670;&nbsp;</a></span>BeginOrderWithinParent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short ImGuiWindow::BeginOrderWithinParent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a15e577eef56b4cb52424a989a4a8bc8a" name="a15e577eef56b4cb52424a989a4a8bc8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15e577eef56b4cb52424a989a4a8bc8a">&#9670;&nbsp;</a></span>ChildId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a> ImGuiWindow::ChildId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9950a40b18de2579c4d3deb0ab33f455" name="a9950a40b18de2579c4d3deb0ab33f455"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9950a40b18de2579c4d3deb0ab33f455">&#9670;&nbsp;</a></span>ClipRect</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_rect.html">ImRect</a> ImGuiWindow::ClipRect</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a04e6b533b2401d1c7e78b47e31538e7b" name="a04e6b533b2401d1c7e78b47e31538e7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04e6b533b2401d1c7e78b47e31538e7b">&#9670;&nbsp;</a></span>Collapsed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::Collapsed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adc3a0fa2c0f86108d6c5374617405bba" name="adc3a0fa2c0f86108d6c5374617405bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc3a0fa2c0f86108d6c5374617405bba">&#9670;&nbsp;</a></span>ColumnsStorage</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vector.html">ImVector</a>&lt;<a class="el" href="struct_im_gui_old_columns.html">ImGuiOldColumns</a>&gt; ImGuiWindow::ColumnsStorage</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae6a48d6e48a4bf5e35fe60e765e17c68" name="ae6a48d6e48a4bf5e35fe60e765e17c68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6a48d6e48a4bf5e35fe60e765e17c68">&#9670;&nbsp;</a></span>ContentRegionRect</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_rect.html">ImRect</a> ImGuiWindow::ContentRegionRect</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6bf8fd3127085039448363101cf3531b" name="a6bf8fd3127085039448363101cf3531b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bf8fd3127085039448363101cf3531b">&#9670;&nbsp;</a></span>ContentSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vec2.html">ImVec2</a> ImGuiWindow::ContentSize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa87836746dbdb77de62961406624968d" name="aa87836746dbdb77de62961406624968d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa87836746dbdb77de62961406624968d">&#9670;&nbsp;</a></span>ContentSizeExplicit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vec2.html">ImVec2</a> ImGuiWindow::ContentSizeExplicit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaee3ede30f1972506a3b19ae5c424790" name="aaee3ede30f1972506a3b19ae5c424790"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaee3ede30f1972506a3b19ae5c424790">&#9670;&nbsp;</a></span>ContentSizeIdeal</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vec2.html">ImVec2</a> ImGuiWindow::ContentSizeIdeal</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a77e144869bf4ec6565893d9f7b7283eb" name="a77e144869bf4ec6565893d9f7b7283eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77e144869bf4ec6565893d9f7b7283eb">&#9670;&nbsp;</a></span>DC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_gui_window_temp_data.html">ImGuiWindowTempData</a> ImGuiWindow::DC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2dc5fd6454d55972d9995d3e0dfc9c5a" name="a2dc5fd6454d55972d9995d3e0dfc9c5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dc5fd6454d55972d9995d3e0dfc9c5a">&#9670;&nbsp;</a></span>DisableInputsFrames</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a33644f626f44716357624c2755a9b9d1">ImS8</a> ImGuiWindow::DisableInputsFrames</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a188bef73f0fd87353ada737d94318a27" name="a188bef73f0fd87353ada737d94318a27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a188bef73f0fd87353ada737d94318a27">&#9670;&nbsp;</a></span>DockId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a> ImGuiWindow::DockId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad9299b651a502b8409f892ed2c4bd70e" name="ad9299b651a502b8409f892ed2c4bd70e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9299b651a502b8409f892ed2c4bd70e">&#9670;&nbsp;</a></span>DockIsActive</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::DockIsActive</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9e21696fe6c01a607c3f3861bebf81be" name="a9e21696fe6c01a607c3f3861bebf81be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e21696fe6c01a607c3f3861bebf81be">&#9670;&nbsp;</a></span>DockNode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_gui_dock_node.html">ImGuiDockNode</a>* ImGuiWindow::DockNode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a344cfb14661c51d51b4cf40c58e6ab18" name="a344cfb14661c51d51b4cf40c58e6ab18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a344cfb14661c51d51b4cf40c58e6ab18">&#9670;&nbsp;</a></span>DockNodeAsHost</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_gui_dock_node.html">ImGuiDockNode</a>* ImGuiWindow::DockNodeAsHost</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0a223743520af94e9d29ee8d431166f8" name="a0a223743520af94e9d29ee8d431166f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a223743520af94e9d29ee8d431166f8">&#9670;&nbsp;</a></span>DockNodeIsVisible</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::DockNodeIsVisible</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa49c6345773c2806dc603e0e9bb5b52d" name="aa49c6345773c2806dc603e0e9bb5b52d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa49c6345773c2806dc603e0e9bb5b52d">&#9670;&nbsp;</a></span>DockOrder</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short ImGuiWindow::DockOrder</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad7f37bfe5dc83da2ab299efca5f647bf" name="ad7f37bfe5dc83da2ab299efca5f647bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7f37bfe5dc83da2ab299efca5f647bf">&#9670;&nbsp;</a></span>DockStyle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_gui_window_dock_style.html">ImGuiWindowDockStyle</a> ImGuiWindow::DockStyle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acbf82dd85191e21794a41e12746e77d5" name="acbf82dd85191e21794a41e12746e77d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbf82dd85191e21794a41e12746e77d5">&#9670;&nbsp;</a></span>DockTabIsVisible</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::DockTabIsVisible</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a511722e7df05d7e24e71f29a9b19edf0" name="a511722e7df05d7e24e71f29a9b19edf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a511722e7df05d7e24e71f29a9b19edf0">&#9670;&nbsp;</a></span>DockTabItemRect</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_rect.html">ImRect</a> ImGuiWindow::DockTabItemRect</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad65270d6dbc74e636fe447129ed3391d" name="ad65270d6dbc74e636fe447129ed3391d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad65270d6dbc74e636fe447129ed3391d">&#9670;&nbsp;</a></span>DockTabItemStatusFlags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui__internal_8h.html#a86b8f9e2fd4084fb2112f003070b53fa">ImGuiItemStatusFlags</a> ImGuiWindow::DockTabItemStatusFlags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae5baa3b06f568cc59fb570be6e9b3cf4" name="ae5baa3b06f568cc59fb570be6e9b3cf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5baa3b06f568cc59fb570be6e9b3cf4">&#9670;&nbsp;</a></span>DockTabWantClose</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::DockTabWantClose</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a39de4668b09754136c6fd7ab89ab674a" name="a39de4668b09754136c6fd7ab89ab674a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39de4668b09754136c6fd7ab89ab674a">&#9670;&nbsp;</a></span>DrawList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_draw_list.html">ImDrawList</a>* ImGuiWindow::DrawList</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa99947e76fbf897c02ce1de44c202031" name="aa99947e76fbf897c02ce1de44c202031"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa99947e76fbf897c02ce1de44c202031">&#9670;&nbsp;</a></span>DrawListInst</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_draw_list.html">ImDrawList</a> ImGuiWindow::DrawListInst</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7c29e810a533b9a647cce5d93d45057f" name="a7c29e810a533b9a647cce5d93d45057f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c29e810a533b9a647cce5d93d45057f">&#9670;&nbsp;</a></span>Flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a0b8e067ab4f7a818828c8d89e531addc">ImGuiWindowFlags</a> ImGuiWindow::Flags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a87d9fe790d93e4b7ce16b7f4fc5febaa" name="a87d9fe790d93e4b7ce16b7f4fc5febaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87d9fe790d93e4b7ce16b7f4fc5febaa">&#9670;&nbsp;</a></span>FlagsPreviousFrame</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a0b8e067ab4f7a818828c8d89e531addc">ImGuiWindowFlags</a> ImGuiWindow::FlagsPreviousFrame</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a64b10337c3a5a87d9c5cd8683206dbea" name="a64b10337c3a5a87d9c5cd8683206dbea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64b10337c3a5a87d9c5cd8683206dbea">&#9670;&nbsp;</a></span>FocusOrder</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short ImGuiWindow::FocusOrder</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a663522341c2caf8e4afe173333f09623" name="a663522341c2caf8e4afe173333f09623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a663522341c2caf8e4afe173333f09623">&#9670;&nbsp;</a></span>FontDpiScale</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ImGuiWindow::FontDpiScale</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a566ce9268a466afbbec78532d5cfa3c9" name="a566ce9268a466afbbec78532d5cfa3c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a566ce9268a466afbbec78532d5cfa3c9">&#9670;&nbsp;</a></span>FontWindowScale</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ImGuiWindow::FontWindowScale</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aebe637a230800210ba67cd8cdd9e71de" name="aebe637a230800210ba67cd8cdd9e71de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebe637a230800210ba67cd8cdd9e71de">&#9670;&nbsp;</a></span>HasCloseButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::HasCloseButton</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a49e0f1e5eff5af0df7da7f4d14aedcce" name="a49e0f1e5eff5af0df7da7f4d14aedcce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49e0f1e5eff5af0df7da7f4d14aedcce">&#9670;&nbsp;</a></span>Hidden</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::Hidden</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7756e042598a3fd79830288ef04c3e4c" name="a7756e042598a3fd79830288ef04c3e4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7756e042598a3fd79830288ef04c3e4c">&#9670;&nbsp;</a></span>HiddenFramesCannotSkipItems</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a33644f626f44716357624c2755a9b9d1">ImS8</a> ImGuiWindow::HiddenFramesCannotSkipItems</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af1d2d851f229310e1c9bfdaaa792500e" name="af1d2d851f229310e1c9bfdaaa792500e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1d2d851f229310e1c9bfdaaa792500e">&#9670;&nbsp;</a></span>HiddenFramesCanSkipItems</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a33644f626f44716357624c2755a9b9d1">ImS8</a> ImGuiWindow::HiddenFramesCanSkipItems</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6439e813f1f2b40b81cba70e86b46d41" name="a6439e813f1f2b40b81cba70e86b46d41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6439e813f1f2b40b81cba70e86b46d41">&#9670;&nbsp;</a></span>HiddenFramesForRenderOnly</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a33644f626f44716357624c2755a9b9d1">ImS8</a> ImGuiWindow::HiddenFramesForRenderOnly</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a656437e7e87dd567069579fb813d6e91" name="a656437e7e87dd567069579fb813d6e91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a656437e7e87dd567069579fb813d6e91">&#9670;&nbsp;</a></span>HitTestHoleOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vec2ih.html">ImVec2ih</a> ImGuiWindow::HitTestHoleOffset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad97a90bf66307eaf3d9ad4a5697285d" name="aad97a90bf66307eaf3d9ad4a5697285d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad97a90bf66307eaf3d9ad4a5697285d">&#9670;&nbsp;</a></span>HitTestHoleSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vec2ih.html">ImVec2ih</a> ImGuiWindow::HitTestHoleSize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5976b8d78bcc543ad7f23561f5cf0b8f" name="a5976b8d78bcc543ad7f23561f5cf0b8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5976b8d78bcc543ad7f23561f5cf0b8f">&#9670;&nbsp;</a></span>ID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a> ImGuiWindow::ID</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1a71724c43e37830ed9b38bd34f26917" name="a1a71724c43e37830ed9b38bd34f26917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a71724c43e37830ed9b38bd34f26917">&#9670;&nbsp;</a></span>IDStack</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vector.html">ImVector</a>&lt;<a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&gt; ImGuiWindow::IDStack</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5986bee1c08ff742a14c57e99ce6e7c8" name="a5986bee1c08ff742a14c57e99ce6e7c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5986bee1c08ff742a14c57e99ce6e7c8">&#9670;&nbsp;</a></span>InnerClipRect</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_rect.html">ImRect</a> ImGuiWindow::InnerClipRect</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0fd27908ebffb5d9509dc9e7f199d67d" name="a0fd27908ebffb5d9509dc9e7f199d67d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fd27908ebffb5d9509dc9e7f199d67d">&#9670;&nbsp;</a></span>InnerRect</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_rect.html">ImRect</a> ImGuiWindow::InnerRect</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aae8365074133751022b381d87da969df" name="aae8365074133751022b381d87da969df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae8365074133751022b381d87da969df">&#9670;&nbsp;</a></span>IsExplicitChild</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::IsExplicitChild</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af05c51e26301e3245aa8aac0d64f09ab" name="af05c51e26301e3245aa8aac0d64f09ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af05c51e26301e3245aa8aac0d64f09ab">&#9670;&nbsp;</a></span>IsFallbackWindow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::IsFallbackWindow</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5e6be361ee0c71a22a1ff68f6dbf09ff" name="a5e6be361ee0c71a22a1ff68f6dbf09ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e6be361ee0c71a22a1ff68f6dbf09ff">&#9670;&nbsp;</a></span>ItemWidthDefault</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ImGuiWindow::ItemWidthDefault</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6f3c194efabb4fd0a99be45fa5fe26f1" name="a6f3c194efabb4fd0a99be45fa5fe26f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f3c194efabb4fd0a99be45fa5fe26f1">&#9670;&nbsp;</a></span>LastFrameActive</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ImGuiWindow::LastFrameActive</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af714b00960b75a43f68a30399e2d593d" name="af714b00960b75a43f68a30399e2d593d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af714b00960b75a43f68a30399e2d593d">&#9670;&nbsp;</a></span>LastFrameJustFocused</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ImGuiWindow::LastFrameJustFocused</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeb00ca206e69f5ffa373a0bf42ebf2ef" name="aeb00ca206e69f5ffa373a0bf42ebf2ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb00ca206e69f5ffa373a0bf42ebf2ef">&#9670;&nbsp;</a></span>LastTimeActive</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ImGuiWindow::LastTimeActive</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af24dffe06ae301fe592ccb3076ce1147" name="af24dffe06ae301fe592ccb3076ce1147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af24dffe06ae301fe592ccb3076ce1147">&#9670;&nbsp;</a></span>MemoryCompacted</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::MemoryCompacted</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9bb2a4aceef6f9e2b41b965869a5d069" name="a9bb2a4aceef6f9e2b41b965869a5d069"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bb2a4aceef6f9e2b41b965869a5d069">&#9670;&nbsp;</a></span>MemoryDrawListIdxCapacity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ImGuiWindow::MemoryDrawListIdxCapacity</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a139cb0b35e070634619182cf153901c6" name="a139cb0b35e070634619182cf153901c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a139cb0b35e070634619182cf153901c6">&#9670;&nbsp;</a></span>MemoryDrawListVtxCapacity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ImGuiWindow::MemoryDrawListVtxCapacity</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a680ac2168da85f59c35de8f0813224d6" name="a680ac2168da85f59c35de8f0813224d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a680ac2168da85f59c35de8f0813224d6">&#9670;&nbsp;</a></span>MoveId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a> ImGuiWindow::MoveId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab44252eb7d02d3f38249f5bac605037c" name="ab44252eb7d02d3f38249f5bac605037c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab44252eb7d02d3f38249f5bac605037c">&#9670;&nbsp;</a></span>Name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* ImGuiWindow::Name</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1e2593b079e43c3603d999474ea84ab6" name="a1e2593b079e43c3603d999474ea84ab6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e2593b079e43c3603d999474ea84ab6">&#9670;&nbsp;</a></span>NameBufLen</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ImGuiWindow::NameBufLen</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7255735a59782a09b4536e633e5153dd" name="a7255735a59782a09b4536e633e5153dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7255735a59782a09b4536e633e5153dd">&#9670;&nbsp;</a></span>NavLastChildNavWindow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_gui_window.html">ImGuiWindow</a>* ImGuiWindow::NavLastChildNavWindow</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ff0db084ee889ee5d0846ce4f3dfe97" name="a1ff0db084ee889ee5d0846ce4f3dfe97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ff0db084ee889ee5d0846ce4f3dfe97">&#9670;&nbsp;</a></span>NavLastIds</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a> ImGuiWindow::NavLastIds[<a class="el" href="imgui__internal_8h.html#afb412215b8327dc2c6af2c19fdca64c6a7c54ca28f0db8d5e808af0ec3290b05c">ImGuiNavLayer_COUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab2115773e21400dc96f7ff6d5a4ce13b" name="ab2115773e21400dc96f7ff6d5a4ce13b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2115773e21400dc96f7ff6d5a4ce13b">&#9670;&nbsp;</a></span>NavRectRel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_rect.html">ImRect</a> ImGuiWindow::NavRectRel[<a class="el" href="imgui__internal_8h.html#afb412215b8327dc2c6af2c19fdca64c6a7c54ca28f0db8d5e808af0ec3290b05c">ImGuiNavLayer_COUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac3f0ac7cf4d8edb14a8e920e6831b4d8" name="ac3f0ac7cf4d8edb14a8e920e6831b4d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3f0ac7cf4d8edb14a8e920e6831b4d8">&#9670;&nbsp;</a></span>OuterRectClipped</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_rect.html">ImRect</a> ImGuiWindow::OuterRectClipped</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5f0b37cb12fbeb3efe00d0cd826d5d65" name="a5f0b37cb12fbeb3efe00d0cd826d5d65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f0b37cb12fbeb3efe00d0cd826d5d65">&#9670;&nbsp;</a></span>ParentWindow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_gui_window.html">ImGuiWindow</a>* ImGuiWindow::ParentWindow</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa08b777f1426ceea4214ff1161819515" name="aa08b777f1426ceea4214ff1161819515"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa08b777f1426ceea4214ff1161819515">&#9670;&nbsp;</a></span>ParentWindowInBeginStack</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_gui_window.html">ImGuiWindow</a>* ImGuiWindow::ParentWindowInBeginStack</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="add72d18277b43939929463c062c8975b" name="add72d18277b43939929463c062c8975b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add72d18277b43939929463c062c8975b">&#9670;&nbsp;</a></span>ParentWorkRect</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_rect.html">ImRect</a> ImGuiWindow::ParentWorkRect</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a319c5f43fa4ee9c76b8a6e551e0c0869" name="a319c5f43fa4ee9c76b8a6e551e0c0869"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a319c5f43fa4ee9c76b8a6e551e0c0869">&#9670;&nbsp;</a></span>PopupId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a> ImGuiWindow::PopupId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1453f685401a44f76256fb54a4aac451" name="a1453f685401a44f76256fb54a4aac451"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1453f685401a44f76256fb54a4aac451">&#9670;&nbsp;</a></span>Pos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vec2.html">ImVec2</a> ImGuiWindow::Pos</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2f7c042fc7e8359d4736cab69fff8490" name="a2f7c042fc7e8359d4736cab69fff8490"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f7c042fc7e8359d4736cab69fff8490">&#9670;&nbsp;</a></span>ResizeBorderHeld</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">signed char ImGuiWindow::ResizeBorderHeld</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aef9281297b0993c8f1b7c1ff7987cb61" name="aef9281297b0993c8f1b7c1ff7987cb61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef9281297b0993c8f1b7c1ff7987cb61">&#9670;&nbsp;</a></span>RootWindow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_gui_window.html">ImGuiWindow</a>* ImGuiWindow::RootWindow</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae5566ba3b4c26fa70eb4faaeec7ba488" name="ae5566ba3b4c26fa70eb4faaeec7ba488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5566ba3b4c26fa70eb4faaeec7ba488">&#9670;&nbsp;</a></span>RootWindowDockTree</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_gui_window.html">ImGuiWindow</a>* ImGuiWindow::RootWindowDockTree</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a949a4aa260a21e8a8d2f65ffbe789712" name="a949a4aa260a21e8a8d2f65ffbe789712"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a949a4aa260a21e8a8d2f65ffbe789712">&#9670;&nbsp;</a></span>RootWindowForNav</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_gui_window.html">ImGuiWindow</a>* ImGuiWindow::RootWindowForNav</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae5d5c6637b63f35edc415162a5674c1e" name="ae5d5c6637b63f35edc415162a5674c1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5d5c6637b63f35edc415162a5674c1e">&#9670;&nbsp;</a></span>RootWindowForTitleBarHighlight</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_gui_window.html">ImGuiWindow</a>* ImGuiWindow::RootWindowForTitleBarHighlight</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b5c4785c370996fbfe7929227ddae53" name="a5b5c4785c370996fbfe7929227ddae53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b5c4785c370996fbfe7929227ddae53">&#9670;&nbsp;</a></span>RootWindowPopupTree</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_gui_window.html">ImGuiWindow</a>* ImGuiWindow::RootWindowPopupTree</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abf20537560b9454a1e39667b8f9e7ff2" name="abf20537560b9454a1e39667b8f9e7ff2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf20537560b9454a1e39667b8f9e7ff2">&#9670;&nbsp;</a></span>Scroll</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vec2.html">ImVec2</a> ImGuiWindow::Scroll</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a040ebb8ac7de890df6cb6bfe048a72d5" name="a040ebb8ac7de890df6cb6bfe048a72d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a040ebb8ac7de890df6cb6bfe048a72d5">&#9670;&nbsp;</a></span>ScrollbarSizes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vec2.html">ImVec2</a> ImGuiWindow::ScrollbarSizes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5aeada04ca67b0522677f5cdf5c6b483" name="a5aeada04ca67b0522677f5cdf5c6b483"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aeada04ca67b0522677f5cdf5c6b483">&#9670;&nbsp;</a></span>ScrollbarX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::ScrollbarX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae95f526590e0777de9cf26581a7d6702" name="ae95f526590e0777de9cf26581a7d6702"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae95f526590e0777de9cf26581a7d6702">&#9670;&nbsp;</a></span>ScrollbarY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::ScrollbarY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af0289f66106f5a4443fc17f4284e99c9" name="af0289f66106f5a4443fc17f4284e99c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0289f66106f5a4443fc17f4284e99c9">&#9670;&nbsp;</a></span>ScrollMax</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vec2.html">ImVec2</a> ImGuiWindow::ScrollMax</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a77f86bed14712f73d9fb4b8ba2c4d040" name="a77f86bed14712f73d9fb4b8ba2c4d040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77f86bed14712f73d9fb4b8ba2c4d040">&#9670;&nbsp;</a></span>ScrollTarget</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vec2.html">ImVec2</a> ImGuiWindow::ScrollTarget</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a41f1fde48e59626ea1d19d098cd8ad84" name="a41f1fde48e59626ea1d19d098cd8ad84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41f1fde48e59626ea1d19d098cd8ad84">&#9670;&nbsp;</a></span>ScrollTargetCenterRatio</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vec2.html">ImVec2</a> ImGuiWindow::ScrollTargetCenterRatio</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa4a1a6f40341140243436c5413a07dcc" name="aa4a1a6f40341140243436c5413a07dcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4a1a6f40341140243436c5413a07dcc">&#9670;&nbsp;</a></span>ScrollTargetEdgeSnapDist</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vec2.html">ImVec2</a> ImGuiWindow::ScrollTargetEdgeSnapDist</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a040c6dacad197beb0cd02b8c9ce01d11" name="a040c6dacad197beb0cd02b8c9ce01d11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a040c6dacad197beb0cd02b8c9ce01d11">&#9670;&nbsp;</a></span>SettingsOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ImGuiWindow::SettingsOffset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a48384a3767252325e5c71b534adc58a9" name="a48384a3767252325e5c71b534adc58a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48384a3767252325e5c71b534adc58a9">&#9670;&nbsp;</a></span>SetWindowCollapsedAllowFlags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#aef890d6ac872e12c5804d0b3e4f7f103">ImGuiCond</a> ImGuiWindow::SetWindowCollapsedAllowFlags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aec0d993ac0fd4fabed0929162ec36380" name="aec0d993ac0fd4fabed0929162ec36380"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec0d993ac0fd4fabed0929162ec36380">&#9670;&nbsp;</a></span>SetWindowDockAllowFlags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#aef890d6ac872e12c5804d0b3e4f7f103">ImGuiCond</a> ImGuiWindow::SetWindowDockAllowFlags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ff69a8bdc9221c9cc7d8ba656013d84" name="a8ff69a8bdc9221c9cc7d8ba656013d84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ff69a8bdc9221c9cc7d8ba656013d84">&#9670;&nbsp;</a></span>SetWindowPosAllowFlags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#aef890d6ac872e12c5804d0b3e4f7f103">ImGuiCond</a> ImGuiWindow::SetWindowPosAllowFlags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4de5608bf44728447327d832fa84f0c9" name="a4de5608bf44728447327d832fa84f0c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4de5608bf44728447327d832fa84f0c9">&#9670;&nbsp;</a></span>SetWindowPosPivot</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vec2.html">ImVec2</a> ImGuiWindow::SetWindowPosPivot</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6caed47ef8e25a2e7a68a6be72c5716a" name="a6caed47ef8e25a2e7a68a6be72c5716a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6caed47ef8e25a2e7a68a6be72c5716a">&#9670;&nbsp;</a></span>SetWindowPosVal</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vec2.html">ImVec2</a> ImGuiWindow::SetWindowPosVal</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c9419d95253214cb2a71d6ead1e03d6" name="a0c9419d95253214cb2a71d6ead1e03d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c9419d95253214cb2a71d6ead1e03d6">&#9670;&nbsp;</a></span>SetWindowSizeAllowFlags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#aef890d6ac872e12c5804d0b3e4f7f103">ImGuiCond</a> ImGuiWindow::SetWindowSizeAllowFlags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a876e7aaf4cd824c8956238fba61387d5" name="a876e7aaf4cd824c8956238fba61387d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a876e7aaf4cd824c8956238fba61387d5">&#9670;&nbsp;</a></span>Size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vec2.html">ImVec2</a> ImGuiWindow::Size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac3c7eb6b9cd556d56210cbb37caf0c74" name="ac3c7eb6b9cd556d56210cbb37caf0c74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3c7eb6b9cd556d56210cbb37caf0c74">&#9670;&nbsp;</a></span>SizeFull</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vec2.html">ImVec2</a> ImGuiWindow::SizeFull</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac620c64ec2897561f719db266f5e9b05" name="ac620c64ec2897561f719db266f5e9b05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac620c64ec2897561f719db266f5e9b05">&#9670;&nbsp;</a></span>SkipItems</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::SkipItems</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2151ab67f2624bd606883ad346179486" name="a2151ab67f2624bd606883ad346179486"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2151ab67f2624bd606883ad346179486">&#9670;&nbsp;</a></span>StateStorage</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_gui_storage.html">ImGuiStorage</a> ImGuiWindow::StateStorage</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a73181523a27f3fe03eeb701a91d08cf6" name="a73181523a27f3fe03eeb701a91d08cf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73181523a27f3fe03eeb701a91d08cf6">&#9670;&nbsp;</a></span>TabId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a> ImGuiWindow::TabId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab48fb3ce73e23f55ba883e368e20c607" name="ab48fb3ce73e23f55ba883e368e20c607"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab48fb3ce73e23f55ba883e368e20c607">&#9670;&nbsp;</a></span>Viewport</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_gui_viewport_p.html">ImGuiViewportP</a>* ImGuiWindow::Viewport</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a105cb1da9f7de3b18b7e5d7ae31709b6" name="a105cb1da9f7de3b18b7e5d7ae31709b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a105cb1da9f7de3b18b7e5d7ae31709b6">&#9670;&nbsp;</a></span>ViewportAllowPlatformMonitorExtend</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ImGuiWindow::ViewportAllowPlatformMonitorExtend</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abfdcca8b1439fd4746503a8f2076b601" name="abfdcca8b1439fd4746503a8f2076b601"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfdcca8b1439fd4746503a8f2076b601">&#9670;&nbsp;</a></span>ViewportId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a> ImGuiWindow::ViewportId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7a9a782b70f178e576e6d5fcabd250dc" name="a7a9a782b70f178e576e6d5fcabd250dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a9a782b70f178e576e6d5fcabd250dc">&#9670;&nbsp;</a></span>ViewportOwned</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::ViewportOwned</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abcf2139134ef058ca3b706bdf18daeea" name="abcf2139134ef058ca3b706bdf18daeea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcf2139134ef058ca3b706bdf18daeea">&#9670;&nbsp;</a></span>ViewportPos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vec2.html">ImVec2</a> ImGuiWindow::ViewportPos</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3e26d0e446eb5864d7dacd6847ec8309" name="a3e26d0e446eb5864d7dacd6847ec8309"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e26d0e446eb5864d7dacd6847ec8309">&#9670;&nbsp;</a></span>WantCollapseToggle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::WantCollapseToggle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab346ec3a2f305948af05ec1871610a8f" name="ab346ec3a2f305948af05ec1871610a8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab346ec3a2f305948af05ec1871610a8f">&#9670;&nbsp;</a></span>WasActive</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::WasActive</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad51248766b9a815ce20b0d11e13b42b0" name="ad51248766b9a815ce20b0d11e13b42b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad51248766b9a815ce20b0d11e13b42b0">&#9670;&nbsp;</a></span>WindowBorderSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ImGuiWindow::WindowBorderSize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a01c4ba585769087e3d725cab977ffc14" name="a01c4ba585769087e3d725cab977ffc14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01c4ba585769087e3d725cab977ffc14">&#9670;&nbsp;</a></span>WindowClass</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_gui_window_class.html">ImGuiWindowClass</a> ImGuiWindow::WindowClass</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a538d3d70ad8f71a4ec58a6a0560b2f02" name="a538d3d70ad8f71a4ec58a6a0560b2f02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a538d3d70ad8f71a4ec58a6a0560b2f02">&#9670;&nbsp;</a></span>WindowPadding</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vec2.html">ImVec2</a> ImGuiWindow::WindowPadding</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a871ebbbfdf354600a3833c270d6e6ef4" name="a871ebbbfdf354600a3833c270d6e6ef4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a871ebbbfdf354600a3833c270d6e6ef4">&#9670;&nbsp;</a></span>WindowRounding</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ImGuiWindow::WindowRounding</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3de436c30b33dac061c09e4334beaa3b" name="a3de436c30b33dac061c09e4334beaa3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3de436c30b33dac061c09e4334beaa3b">&#9670;&nbsp;</a></span>WorkRect</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_rect.html">ImRect</a> ImGuiWindow::WorkRect</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3c29e870f485d115e7715e149c4dfc4d" name="a3c29e870f485d115e7715e149c4dfc4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c29e870f485d115e7715e149c4dfc4d">&#9670;&nbsp;</a></span>WriteAccessed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiWindow::WriteAccessed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/imgui/<a class="el" href="imgui__internal_8h_source.html">imgui_internal.h</a></li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/imgui/<a class="el" href="imgui_8cpp.html">imgui.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

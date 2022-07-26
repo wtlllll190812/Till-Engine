@@ -27,11 +27,26 @@ public:
 	/// </summary>
 	inline TiXmlElement* GetRoot() { return root; }
 private:
+
+	/// <summary>
+	/// 文件路径
+	/// </summary>
 	std::string path;
+	
+	/// <summary>
+	/// 文件对象
+	/// </summary>
 	TiXmlDocument file;
+	
+	/// <summary>
+	/// 文件根节点
+	/// </summary>
 	TiXmlElement* root;
 };
 
+/// <summary>
+/// 常用类的序列化支持
+/// </summary>
 class TLSerialize
 {
 public:
@@ -46,9 +61,23 @@ public:
 class Serializable
 {
 public:
-	TiXmlElement* m_node;
+	/// <summary>
+	/// 序列化节点
+	/// </summary>
+	TiXmlElement* m_node=nullptr;
 public:
+	/// <summary>
+	/// 序列化
+	/// </summary>
 	virtual TiXmlElement* Serialize(std::string name="Default") = 0;
+	
+	/// <summary>
+	/// 反序列化
+	/// </summary>
 	virtual void DeSerialize(TiXmlElement*) = 0;
+	
+	/// <summary>
+	/// 更新序列化节点
+	/// </summary>
 	virtual void UpdateNode() {};
 };

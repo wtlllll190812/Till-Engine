@@ -1,0 +1,52 @@
+<map id="smain" name="smain">
+<area shape="rect" id="node1" title=" " alt="" coords="5,512,63,539"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a7f9c9db8e4782d31531eb6b8528fb373" title=" " alt="" coords="161,259,264,285"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#ad52569b291dc1e2dda6c6a66945c50f4" title=" " alt="" coords="169,411,257,437"/>
+<area shape="rect" id="node38" href="$class_game_object.html#a5ba3b458e6bee6ea5aedd5c8cdeabf18" title="获取组件" alt="" coords="117,461,308,488"/>
+<area shape="rect" id="node39" href="$class_debug.html#a9ac5291fd84802ff1a4601de9218810c" title=" " alt="" coords="129,512,296,539"/>
+<area shape="rect" id="node40" href="$class_camera.html#ad4af021f577c6326881c3596d76f99e9" title="获取透视矩阵" alt="" coords="364,216,519,243"/>
+<area shape="rect" id="node41" href="$class_camera.html#affa333055635aed96518c4c66be9a70c" title="获取观察矩阵" alt="" coords="133,563,293,589"/>
+<area shape="rect" id="node45" href="$class_debug.html#af74e4b59f00db09b7d39625da34f7eef" title=" " alt="" coords="171,613,255,640"/>
+<area shape="rect" id="node46" href="$main_8cpp.html#a1e3b6d38df0786ccf7f938d60e386aae" title=" " alt="" coords="193,664,232,691"/>
+<area shape="rect" id="node48" href="$class_game_loop.html#ae052f50397336f1b56f990248afc443e" title="设置回调" alt="" coords="119,715,306,757"/>
+<area shape="rect" id="node49" href="$class_game_loop.html#a20f1ceaadef4b39b18300530f7af389f" title="设置回调" alt="" coords="111,781,315,808"/>
+<area shape="rect" id="node50" href="$class_game_loop.html#a038d7e76b450c82959c3dae6f86f1a61" title="开始游戏循环" alt="" coords="367,267,516,293"/>
+<area shape="rect" id="node4" href="$class_screen.html#a3581d87da7784de9d3eb0ff0b4d44744" title="显示窗口" alt="" coords="384,317,499,344"/>
+<area shape="rect" id="node5" href="$class_singleton.html#a258d9ee54e59cc9d9ea6020a19ae8640" title=" " alt="" coords="603,209,744,250"/>
+<area shape="rect" id="node6" href="$class_screen.html#a3bef9f197244caaa9c8ba605495b8476" title="渲染Gui" alt="" coords="375,531,507,557"/>
+<area shape="rect" id="node37" href="$class_render_system.html#a744c9a8ba4359b3353a6130f3af51fbb" title="每帧刷新" alt="" coords="363,443,520,469"/>
+<area shape="rect" id="node7" href="$namespace_im_gui.html#ab73131dc44b1267dac04f0c2bb0af983" title=" " alt="" coords="603,1033,744,1060"/>
+<area shape="rect" id="node8" href="$imgui__impl__glfw_8cpp.html#a206e99434f63c4b8e24e8a4208c11b65" title=" " alt="" coords="583,275,764,301"/>
+<area shape="rect" id="node15" href="$imgui__impl__opengl3_8cpp.html#a900e74add4e56e74f97a210eb329aa91" title=" " alt="" coords="568,392,779,419"/>
+<area shape="rect" id="node18" href="$imgui__impl__opengl3_8cpp.html#ad215190229f4f300593911aa7b3821de" title=" " alt="" coords="578,523,769,565"/>
+<area shape="rect" id="node22" href="$namespace_im_gui.html#ab3f1fc018f903b7ad79fd10663375774" title=" " alt="" coords="610,983,737,1009"/>
+<area shape="rect" id="node36" href="$namespace_im_gui.html#ab51a164f547317c16c441f1599e3946d" title=" " alt="" coords="621,1095,726,1121"/>
+<area shape="rect" id="node9" href="$namespace_im_gui.html#a3179e560812f878f3961ce803a5d9302" title=" " alt="" coords="1397,199,1496,225"/>
+<area shape="rect" id="node10" href="$imgui__impl__glfw_8cpp.html#a42131482f4e35e879c2d58d5c1c9eb8f" title=" " alt="" coords="1116,72,1335,99"/>
+<area shape="rect" id="node11" href="$imgui__impl__glfw_8cpp.html#a676d90dabe6acb909f287625118e999d" title=" " alt="" coords="1114,224,1337,251"/>
+<area shape="rect" id="node12" href="$imgui__impl__glfw_8cpp.html#a5d18d4c51ba5df712307bc84efd3275f" title=" " alt="" coords="835,5,1045,32"/>
+<area shape="rect" id="node13" href="$imgui__impl__glfw_8cpp.html#a876edf1a44dd8b6358feba912702a860" title=" " alt="" coords="841,107,1039,149"/>
+<area shape="rect" id="node14" href="$imgui__impl__glfw_8cpp.html#ad0da3a1b2955f768fa933dd4edba33b6" title=" " alt="" coords="827,173,1053,200"/>
+<area shape="rect" id="node16" href="$imgui__impl__opengl3_8cpp.html#ab27f12289d6fe9fcd412f92af280b398" title=" " alt="" coords="847,326,1033,367"/>
+<area shape="rect" id="node17" href="$imgui__impl__opengl3_8cpp.html#a68f1fea3ba16697f3febf6797cb5c85b" title=" " alt="" coords="1101,392,1349,419"/>
+<area shape="rect" id="node19" href="$struct_im_draw_cmd.html#a8ba7df6d136db6e33d850acc9291224f" title=" " alt="" coords="863,560,1017,587"/>
+<area shape="rect" id="node20" href="$imgui__impl__opengl3_8cpp.html#a328d27e0d40312d064adbc45c0cf240b" title=" " alt="" coords="828,494,1052,535"/>
+<area shape="rect" id="node21" href="$imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7" title=" " alt="" coords="1203,556,1247,583"/>
+<area shape="rect" id="node23" href="$struct_im_rect.html#a68996cb6b16a023f0a051981cd5be89e" title=" " alt="" coords="893,1041,987,1068"/>
+<area shape="rect" id="node24" href="$namespace_im_gui.html#a581e58db0bc930bafa4a5d23093a2b99" title=" " alt="" coords="891,1092,989,1119"/>
+<area shape="rect" id="node25" href="$namespace_im_gui.html#a61ced7f0dd38c604e895400a2e5eeeb2" title=" " alt="" coords="856,1361,1024,1388"/>
+<area shape="rect" id="node26" href="$struct_im_draw_data.html#ab6a90612bd22eaff0d42539875e2e5c9" title=" " alt="" coords="875,1143,1005,1169"/>
+<area shape="rect" id="node27" href="$namespace_im_gui.html#a17ff60ad1e2669130ac38a04d16eb354" title=" " alt="" coords="869,1193,1011,1220"/>
+<area shape="rect" id="node28" href="$struct_im_bit_array.html#ae0cc61bba70a3f2994f28130d9de76f4" title=" " alt="" coords="861,1244,1019,1271"/>
+<area shape="rect" id="node29" href="$namespace_im_gui.html#a3fd836d2bd3163537d1c36607e93ed6d" title=" " alt="" coords="839,1295,1041,1337"/>
+<area shape="rect" id="node30" href="$namespace_im_gui.html#a7f7a9ea28b0557a655c27375eb941a56" title=" " alt="" coords="839,662,1041,703"/>
+<area shape="rect" id="node31" href="$struct_im_vector.html#a2f88ac70791f2da6d4168d7b29f38f1e" title=" " alt="" coords="883,728,997,755"/>
+<area shape="rect" id="node32" href="$namespace_im_gui.html#ab2ff55bf59d3ac2c58306bb9e353a99a" title=" " alt="" coords="845,779,1035,821"/>
+<area shape="rect" id="node33" href="$namespace_im_gui.html#abc41033d9f60152a360017b292d5e9bc" title=" " alt="" coords="842,845,1038,886"/>
+<area shape="rect" id="node34" href="$namespace_im_gui.html#aab0d052a1581fddc1cc2d9d981f487c0" title=" " alt="" coords="847,910,1033,951"/>
+<area shape="rect" id="node35" href="$namespace_im_gui.html#a8386015888f38f2a33528ccbb34bd49d" title=" " alt="" coords="847,975,1033,1017"/>
+<area shape="rect" id="node42" href="$class_transform.html#af0d0e8f8c55b67c115a5449f225f53e6" title="获取向前方向" alt="" coords="871,1412,1009,1439"/>
+<area shape="rect" id="node43" href="$class_transform.html#a9d87de590be3b413b962ca5a1c90c0ef" title="获取向上方向" alt="" coords="379,1219,503,1245"/>
+<area shape="rect" id="node44" href="$class_transform.html#a7e34c4791358814412983d8606cc4cdf" title="获取向右方向" alt="" coords="604,1324,743,1351"/>
+<area shape="rect" id="node47" href="$class_scene.html#a8a58a7c1acc53416d58dc0ed6c4fdaeb" title="在场景中寻找对象" alt="" coords="395,1269,487,1296"/>
+</map>

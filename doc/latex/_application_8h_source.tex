@@ -1,0 +1,51 @@
+\hypertarget{_application_8h_source}{}\doxysection{Application.\+h}
+\label{_application_8h_source}\index{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/App/Application.h@{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/App/Application.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Window.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}Singleton.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}TLCore.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}ApplicationEvent.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_imgui_layer}{ImguiLayer}};}
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_layer}{Layer}};}
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_game_object}{GameObject}};}
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_scene}{Scene}};}
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_game_loop}{GameLoop}};}
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_editor_layer}{EditorLayer}};}
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_layer_stack}{LayerStack}};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_application}{Application}} :\textcolor{keyword}{public} \mbox{\hyperlink{class_singleton}{Singleton}}<Application>}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{21     \textcolor{keywordtype}{bool} mRunning = \textcolor{keyword}{true};}
+\DoxyCodeLine{22     std::unique\_ptr<Window> mWindows;}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_editor_layer}{EditorLayer}}* mEditorLayer;}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_application}{Application}}();}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_application}{\string~Application}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{31     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_application_a02c5d9350d2c795a104af0ecfe9c37f8}{PushLayer}}(\mbox{\hyperlink{class_layer}{Layer}}* layer);}
+\DoxyCodeLine{32     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} PushOverlay(\mbox{\hyperlink{class_layer}{Layer}}* layer);}
+\DoxyCodeLine{33     }
+\DoxyCodeLine{37     \textcolor{keyword}{inline} \textcolor{keyword}{const} \mbox{\hyperlink{class_editor_layer}{EditorLayer}}* \mbox{\hyperlink{class_application_af9640e390c14e762d1476f36925f83e5}{GetEditorLayer}}() \{ \textcolor{keywordflow}{return} mEditorLayer; \}}
+\DoxyCodeLine{38     }
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_application_a091df3ec4695b64249e57a76c93b6612}{AppInit}}();}
+\DoxyCodeLine{43     }
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_application_a5378330e10e42fcb9a2269b533759b0f}{AppRun}}();}
+\DoxyCodeLine{48     }
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_application_a1d31824bbed36791a15243852d18669a}{OnEvent}}(\mbox{\hyperlink{class_event_base}{EventBase}}\& e);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{private}:}
+\DoxyCodeLine{58     std::shared\_ptr<LayerStack> mLayerStack;}
+\DoxyCodeLine{59     }
+\DoxyCodeLine{63     std::shared\_ptr<GameLoop> mainLoop;}
+\DoxyCodeLine{64     }
+\DoxyCodeLine{68     std::shared\_ptr<Scene> mCurrentScene;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{keyword}{private}:}
+\DoxyCodeLine{74     \textcolor{keywordtype}{bool} OnWindowsClose(\mbox{\hyperlink{class_window_close_event}{WindowCloseEvent}}\& e);}
+\DoxyCodeLine{75 \};}
+
+\end{DoxyCode}

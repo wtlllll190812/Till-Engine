@@ -8,13 +8,25 @@ class Component;
 class GameObject:public Serializable
 {
 public:
+	/// <summary>
+	/// 物体的transform
+	/// </summary>
 	Transform *transform;
-	Scene *owner;	  //所属场景
-	std::string name; //物体名称
-	int guid;		  //物体标识
-	std::vector<Component*> components; //临时,之后改为私有
 
+	/// <summary>
+	/// 所属场景
+	/// </summary>
+	Scene *owner;	  
 
+	/// <summary>
+	/// 物体名称
+	/// </summary>
+	std::string name; 
+
+	/// <summary>
+	/// 物体全局唯一标识标识
+	/// </summary>
+	int guid;		  
 public:
 	GameObject();
 	GameObject(TiXmlElement*, Scene *);
@@ -29,7 +41,15 @@ public:
 	/// 序列化
 	/// </summary>
 	virtual TiXmlElement* Serialize(std::string name = "Default") override;
+
+	/// <summary>
+	/// 反序列化
+	/// </summary>
 	virtual void DeSerialize(TiXmlElement*) override;
+	
+	/// <summary>
+	/// 更新序列化节点
+	/// </summary>
 	virtual void UpdateNode() override;
 
 	/// <summary>
@@ -81,8 +101,19 @@ public:
 		std::cout << "Component is not exist" << std::endl;
 	}
 
+	/// <summary>
+	/// 获取组件引用
+	/// </summary>
+	inline std::vector<Component*>& GetComponents() { return components; }
+
 	bool operator==(const GameObject &g) const
 	{
 		return g.guid == this->guid;
 	}
+
+private:
+	/// <summary>
+	/// 持有组件
+	/// </summary>
+	std::vector<Component*> components; 
 };

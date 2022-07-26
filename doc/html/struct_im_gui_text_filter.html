@@ -1,0 +1,474 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TillEngine: ImGuiTextFilter结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TillEngine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="struct_im_gui_text_filter-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">ImGuiTextFilter结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="imgui_8h_source.html">imgui.h</a>&gt;</code></p>
+<div class="dynheader">
+ImGuiTextFilter 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_text_filter__coll__graph.png" border="0" usemap="#a_im_gui_text_filter_coll__map" alt="Collaboration graph"/></div>
+<map name="a_im_gui_text_filter_coll__map" id="a_im_gui_text_filter_coll__map">
+<area shape="rect" title=" " alt="" coords="39,213,149,240"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="7,109,181,151"/>
+<area shape="rect" href="struct_im_gui_text_filter_1_1_im_gui_text_range.html" title=" " alt="" coords="5,5,183,47"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_text_filter_1_1_im_gui_text_range.html">ImGuiTextRange</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a0a61ee76f0b4f3c354791734b06e3140"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a43829975e84e45d1149597467a14bbf5">IMGUI_API</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_text_filter.html#a0a61ee76f0b4f3c354791734b06e3140">ImGuiTextFilter</a> (const char *default_filter=&quot;&quot;)</td></tr>
+<tr class="separator:a0a61ee76f0b4f3c354791734b06e3140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab93ad5985019ff9d3781606551fc26cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a43829975e84e45d1149597467a14bbf5">IMGUI_API</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_text_filter.html#ab93ad5985019ff9d3781606551fc26cc">Draw</a> (const char *label=&quot;Filter (inc,-exc)&quot;, float <a class="el" href="imgui__impl__opengl3__loader_8h.html#a6879d830f164725df67adeeabca3ea47">width</a>=0.0f)</td></tr>
+<tr class="separator:ab93ad5985019ff9d3781606551fc26cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88d73ff8b81fbbd0a129b1bf3498d8aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a43829975e84e45d1149597467a14bbf5">IMGUI_API</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_text_filter.html#a88d73ff8b81fbbd0a129b1bf3498d8aa">PassFilter</a> (const char *text, const char *text_end=NULL) const</td></tr>
+<tr class="separator:a88d73ff8b81fbbd0a129b1bf3498d8aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef362baafaa9dfa62d11bc6101c0f4c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a43829975e84e45d1149597467a14bbf5">IMGUI_API</a> <a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_text_filter.html#aef362baafaa9dfa62d11bc6101c0f4c1">Build</a> ()</td></tr>
+<tr class="separator:aef362baafaa9dfa62d11bc6101c0f4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9043c1f0c33d29e6fc9b75ae81f9705a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_text_filter.html#a9043c1f0c33d29e6fc9b75ae81f9705a">Clear</a> ()</td></tr>
+<tr class="separator:a9043c1f0c33d29e6fc9b75ae81f9705a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a493158f2ab8f45fcf303c3f953be9b88"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_text_filter.html#a493158f2ab8f45fcf303c3f953be9b88">IsActive</a> () const</td></tr>
+<tr class="separator:a493158f2ab8f45fcf303c3f953be9b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:ad070acb1038199dd4e8f5d010c5cb5ba"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_text_filter.html#ad070acb1038199dd4e8f5d010c5cb5ba">InputBuf</a> [256]</td></tr>
+<tr class="separator:ad070acb1038199dd4e8f5d010c5cb5ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39ed87cfdf3cb0cdb8389b017bb00067"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_im_vector.html">ImVector</a>&lt; <a class="el" href="struct_im_gui_text_filter_1_1_im_gui_text_range.html">ImGuiTextRange</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_text_filter.html#a39ed87cfdf3cb0cdb8389b017bb00067">Filters</a></td></tr>
+<tr class="separator:a39ed87cfdf3cb0cdb8389b017bb00067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac31839c319fe4211c21fc143b7249f86"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_text_filter.html#ac31839c319fe4211c21fc143b7249f86">CountGrep</a></td></tr>
+<tr class="separator:ac31839c319fe4211c21fc143b7249f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a0a61ee76f0b4f3c354791734b06e3140" name="a0a61ee76f0b4f3c354791734b06e3140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a61ee76f0b4f3c354791734b06e3140">&#9670;&nbsp;</a></span>ImGuiTextFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ImGuiTextFilter::ImGuiTextFilter </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>default_filter</em> = <code>&quot;&quot;</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_text_filter_a0a61ee76f0b4f3c354791734b06e3140_cgraph.png" border="0" usemap="#astruct_im_gui_text_filter_a0a61ee76f0b4f3c354791734b06e3140_cgraph" alt=""/></div>
+<map name="astruct_im_gui_text_filter_a0a61ee76f0b4f3c354791734b06e3140_cgraph" id="astruct_im_gui_text_filter_a0a61ee76f0b4f3c354791734b06e3140_cgraph">
+<area shape="rect" title=" " alt="" coords="5,89,183,131"/>
+<area shape="rect" href="struct_im_gui_text_filter.html#aef362baafaa9dfa62d11bc6101c0f4c1" title=" " alt="" coords="231,71,377,98"/>
+<area shape="rect" href="imgui_8cpp.html#aebf0117d9d0fb0f2731a94d64173b41a" title=" " alt="" coords="263,122,345,149"/>
+<area shape="rect" href="struct_im_gui_text_filter_1_1_im_gui_text_range.html#a1861f25905e1f19f979998faf5349b5a" title=" " alt="" coords="425,5,603,47"/>
+<area shape="rect" href="imgui__internal_8h.html#ac22c577d0d6591a9d948ab5590663359" title=" " alt="" coords="457,71,571,98"/>
+<area shape="rect" href="struct_im_gui_text_filter_1_1_im_gui_text_range.html#ace58f9b4795033f695344a0e660ee2af" title=" " alt="" coords="425,123,603,164"/>
+<area shape="rect" href="struct_im_gui_text_filter_1_1_im_gui_text_range.html#a39c1ebebef36566bfec95d2cc4fccc4c" title=" " alt="" coords="651,64,828,105"/>
+<area shape="rect" href="struct_im_vector.html#aab5df48e0711a48bd12f3206e08c4108" title=" " alt="" coords="667,130,812,157"/>
+<area shape="rect" href="struct_im_vector.html#ac371dd62e56ae486b1a5038cf07eee56" title=" " alt="" coords="681,181,798,207"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aef362baafaa9dfa62d11bc6101c0f4c1" name="aef362baafaa9dfa62d11bc6101c0f4c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef362baafaa9dfa62d11bc6101c0f4c1">&#9670;&nbsp;</a></span>Build()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> ImGuiTextFilter::Build </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_text_filter_aef362baafaa9dfa62d11bc6101c0f4c1_cgraph.png" border="0" usemap="#astruct_im_gui_text_filter_aef362baafaa9dfa62d11bc6101c0f4c1_cgraph" alt=""/></div>
+<map name="astruct_im_gui_text_filter_aef362baafaa9dfa62d11bc6101c0f4c1_cgraph" id="astruct_im_gui_text_filter_aef362baafaa9dfa62d11bc6101c0f4c1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,71,152,98"/>
+<area shape="rect" href="struct_im_gui_text_filter_1_1_im_gui_text_range.html#a1861f25905e1f19f979998faf5349b5a" title=" " alt="" coords="200,5,377,47"/>
+<area shape="rect" href="imgui__internal_8h.html#ac22c577d0d6591a9d948ab5590663359" title=" " alt="" coords="231,71,346,98"/>
+<area shape="rect" href="struct_im_gui_text_filter_1_1_im_gui_text_range.html#ace58f9b4795033f695344a0e660ee2af" title=" " alt="" coords="200,123,377,164"/>
+<area shape="rect" href="struct_im_gui_text_filter_1_1_im_gui_text_range.html#a39c1ebebef36566bfec95d2cc4fccc4c" title=" " alt="" coords="425,64,603,105"/>
+<area shape="rect" href="struct_im_vector.html#aab5df48e0711a48bd12f3206e08c4108" title=" " alt="" coords="441,130,587,157"/>
+<area shape="rect" href="struct_im_vector.html#ac371dd62e56ae486b1a5038cf07eee56" title=" " alt="" coords="455,181,573,207"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_text_filter_aef362baafaa9dfa62d11bc6101c0f4c1_icgraph.png" border="0" usemap="#astruct_im_gui_text_filter_aef362baafaa9dfa62d11bc6101c0f4c1_icgraph" alt=""/></div>
+<map name="astruct_im_gui_text_filter_aef362baafaa9dfa62d11bc6101c0f4c1_icgraph" id="astruct_im_gui_text_filter_aef362baafaa9dfa62d11bc6101c0f4c1_icgraph">
+<area shape="rect" title=" " alt="" coords="1116,111,1263,137"/>
+<area shape="rect" href="struct_im_gui_text_filter.html#ab93ad5985019ff9d3781606551fc26cc" title=" " alt="" coords="906,81,1053,108"/>
+<area shape="rect" href="struct_im_gui_text_filter.html#a0a61ee76f0b4f3c354791734b06e3140" title=" " alt="" coords="891,133,1068,174"/>
+<area shape="rect" href="struct_example_app_console.html#a0518a09c7e8648dd52c7c06df19ac17a" title=" " alt="" coords="663,5,843,32"/>
+<area shape="rect" href="struct_example_app_log.html#a5ad3a4bdb89171b84aeaff96948a1f77" title=" " alt="" coords="675,56,830,83"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ad2af2f6824d59150c468b6d3b82b9d02" title=" " alt="" coords="671,107,834,133"/>
+<area shape="rect" href="namespace_im_gui.html#ab2eb3dec78d054fe3feab1c091ec5de5" title=" " alt="" coords="447,157,607,184"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a8e5624314ae6402dd0ddf2a62aa91473" title=" " alt="" coords="440,5,615,32"/>
+<area shape="rect" href="namespace_im_gui.html#af95643a0ce4893b9e57c12991922fb18" title=" " alt="" coords="216,81,392,108"/>
+<area shape="rect" href="class_gui_window.html#ab0dabe8f7c97d9207e03a30f9d29d1dd" title=" " alt="" coords="5,56,168,83"/>
+<area shape="rect" href="class_imgui_layer.html#aa98053a216128343d985192439323544" title=" " alt="" coords="11,107,162,133"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ad0303cf1f675002eb4e68c17a47b3f88" title=" " alt="" coords="453,56,602,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9043c1f0c33d29e6fc9b75ae81f9705a" name="a9043c1f0c33d29e6fc9b75ae81f9705a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9043c1f0c33d29e6fc9b75ae81f9705a">&#9670;&nbsp;</a></span>Clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> ImGuiTextFilter::Clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab93ad5985019ff9d3781606551fc26cc" name="ab93ad5985019ff9d3781606551fc26cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab93ad5985019ff9d3781606551fc26cc">&#9670;&nbsp;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiTextFilter::Draw </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>label</em> = <code>&quot;Filter&#160;(inc,-exc)&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>width</em> = <code>0.0f</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_text_filter_ab93ad5985019ff9d3781606551fc26cc_cgraph.png" border="0" usemap="#astruct_im_gui_text_filter_ab93ad5985019ff9d3781606551fc26cc_cgraph" alt=""/></div>
+<map name="astruct_im_gui_text_filter_ab93ad5985019ff9d3781606551fc26cc_cgraph" id="astruct_im_gui_text_filter_ab93ad5985019ff9d3781606551fc26cc_cgraph">
+<area shape="rect" title=" " alt="" coords="5,707,152,734"/>
+<area shape="rect" href="struct_im_gui_text_filter.html#aef362baafaa9dfa62d11bc6101c0f4c1" title=" " alt="" coords="212,130,359,157"/>
+<area shape="rect" href="namespace_im_gui.html#aa72b5760a3a206729723a587ac7c8519" title=" " alt="" coords="227,707,344,734"/>
+<area shape="rect" href="namespace_im_gui.html#a1291228607bee5a703df6553f27cbbb9" title=" " alt="" coords="200,758,371,785"/>
+<area shape="rect" href="struct_im_gui_text_filter_1_1_im_gui_text_range.html#a1861f25905e1f19f979998faf5349b5a" title=" " alt="" coords="419,155,596,196"/>
+<area shape="rect" href="imgui__internal_8h.html#ac22c577d0d6591a9d948ab5590663359" title=" " alt="" coords="450,38,565,65"/>
+<area shape="rect" href="struct_im_gui_text_filter_1_1_im_gui_text_range.html#ace58f9b4795033f695344a0e660ee2af" title=" " alt="" coords="419,89,596,131"/>
+<area shape="rect" href="struct_im_gui_text_filter_1_1_im_gui_text_range.html#a39c1ebebef36566bfec95d2cc4fccc4c" title=" " alt="" coords="653,5,830,47"/>
+<area shape="rect" href="struct_im_vector.html#aab5df48e0711a48bd12f3206e08c4108" title=" " alt="" coords="669,71,814,98"/>
+<area shape="rect" href="struct_im_vector.html#ac371dd62e56ae486b1a5038cf07eee56" title=" " alt="" coords="915,173,1032,199"/>
+<area shape="rect" href="namespace_im_gui.html#af89af17ecc11653f25fea1e50e195de6" title=" " alt="" coords="441,1175,574,1202"/>
+<area shape="rect" href="struct_im_draw_list.html#aa21e5a1c6e00239581f97d344fc0db61" title=" " alt="" coords="671,594,812,621"/>
+<area shape="rect" href="struct_im_draw_list.html#a6b16ab764160b0251d2e7b3bd08c1ffc" title=" " alt="" coords="654,645,829,671"/>
+<area shape="rect" href="struct_im_draw_list.html#ac5221bd86b3429f6d5b6e6ffe454942d" title=" " alt="" coords="670,719,813,746"/>
+<area shape="rect" href="namespace_im_gui.html#a63a223ce2138538300e5b0654d7407a9" title=" " alt="" coords="670,922,813,949"/>
+<area shape="rect" href="namespace_im_gui.html#ade4c08e7e7ad7bbfa4835248f5f3a7c6" title=" " alt="" coords="900,821,1047,847"/>
+<area shape="rect" href="namespace_im_gui.html#a17ff60ad1e2669130ac38a04d16eb354" title=" " alt="" coords="1108,795,1249,822"/>
+<area shape="rect" href="imgui__internal_8h.html#a51a84b6be21807818b857a8565d97912" title=" " alt="" coords="941,897,1006,923"/>
+<area shape="rect" href="imgui__internal_8h.html#a7667efd95147d0422f140917c71a9226" title=" " alt="" coords="943,1074,1004,1101"/>
+<area shape="rect" href="namespace_im_gui.html#a42407e196b7ed2a8755bff28aae9805f" title=" " alt="" coords="675,543,807,570"/>
+<area shape="rect" href="namespace_im_gui.html#acaef0497f7982dd98bf215e50129cd9b" title=" " alt="" coords="671,1125,812,1151"/>
+<area shape="rect" href="namespace_im_gui.html#ab3b3ba92ebd8bca4a552dd93321a1994" title=" " alt="" coords="667,973,816,999"/>
+<area shape="rect" href="namespace_im_gui.html#a848b9db6cc4a186751c0ecebcaadc33b" title=" " alt="" coords="671,1530,812,1557"/>
+<area shape="rect" href="struct_im_gui_input_text_state.html#aa834c6b6c9f3d589b55eb22ca9a01c3e" title=" " alt="" coords="671,1581,811,1623"/>
+<area shape="rect" href="struct_im_rect.html#ac02d5cf6ce0358aea9ed9df43d368f3f" title=" " alt="" coords="681,1175,801,1202"/>
+<area shape="rect" href="imgui__internal_8h.html#a7f9d7828066a9d61b5630adcdf4655d3" title=" " alt="" coords="1150,1357,1207,1383"/>
+<area shape="rect" href="struct_im_gui_input_text_state.html#a78a05f36dbfd38b9026a4980a15a6a3e" title=" " alt="" coords="671,1647,811,1688"/>
+<area shape="rect" href="struct_im_gui_input_text_state.html#a0924f1eead76c7d58090aa603cea4301" title=" " alt="" coords="903,1379,1043,1420"/>
+<area shape="rect" href="namespace_im_gui.html#a8b0fb07113251301ff897b8578a53f34" title=" " alt="" coords="687,1763,796,1790"/>
+<area shape="rect" href="namespace_im_gui.html#ac452417b5004ca16a814a72cff153526" title=" " alt="" coords="887,1738,1060,1765"/>
+<area shape="rect" href="struct_im_vector.html#aa53e48a5272f4bad1099368769514ff1" title=" " alt="" coords="682,1814,801,1841"/>
+<area shape="rect" href="namespace_im_gui.html#af8de559a88c1442d6df8c1b04c86e997" title=" " alt="" coords="683,1023,799,1050"/>
+<area shape="rect" href="namespace_im_gui.html#a05fc97fc64f28a55486087f503d9a622" title=" " alt="" coords="680,1226,803,1253"/>
+<area shape="rect" href="struct_im_rect.html#ae459d9c50003058cfb34519a571aaf33" title=" " alt="" coords="914,1265,1033,1291"/>
+<area shape="rect" href="struct_im_font.html#ac6a773b73c6406fd8f08c4c93213a501" title=" " alt="" coords="677,1865,806,1891"/>
+<area shape="rect" href="struct_im_rect.html#a59d9751bc7be6745dddf5b83b9155669" title=" " alt="" coords="687,1915,795,1942"/>
+<area shape="rect" href="struct_im_font.html#adffcff4e4e2d17455410bd4ba76b42e4" title=" " alt="" coords="658,1966,825,1993"/>
+<area shape="rect" href="namespace_im_gui.html#a11837daee819fd90e17d80ab1eef1f99" title=" " alt="" coords="659,2017,823,2043"/>
+<area shape="rect" href="namespace_im_gui.html#a0de2d9bd347d9866511eb8d014e62556" title=" " alt="" coords="672,2067,811,2094"/>
+<area shape="rect" href="struct_im_gui_window.html#a66400a63bc0b54d7d29e08d1b1b1a42b" title=" " alt="" coords="902,2143,1045,2170"/>
+<area shape="rect" href="namespace_im_gui.html#a93881467b5800a52508dda7ce32cf875" title=" " alt="" coords="657,2219,826,2246"/>
+<area shape="rect" href="namespace_im_gui.html#ab34c0d5c63908a7ff50923151730f76a" title=" " alt="" coords="665,223,817,250"/>
+<area shape="rect" href="namespace_im_gui.html#a426c9b60bf8cd3d887ba50366a2612df" title=" " alt="" coords="644,2169,839,2195"/>
+<area shape="rect" href="struct_im_gui_input_text_state.html#ab17832413ff121a5663319c06bbb989a" title=" " alt="" coords="671,275,811,316"/>
+<area shape="rect" href="imgui__internal_8h.html#a6e61ede308bfd68c7434e17905a29fc8" title=" " alt="" coords="705,341,778,367"/>
+<area shape="rect" href="imgui_8cpp.html#a3888bc9d38a15ef8e06b6cceb2a187f5" title=" " alt="" coords="700,391,783,418"/>
+<area shape="rect" href="imgui_8cpp.html#aebf0117d9d0fb0f2731a94d64173b41a" title=" " alt="" coords="701,442,782,469"/>
+<area shape="rect" href="imgui__internal_8h.html#a026ee5118396c67803e2c0e072cbf9eb" title=" " alt="" coords="707,493,775,519"/>
+<area shape="rect" href="imgui_8cpp.html#a036b9dd7f0942fd34e385cc115f36631" title=" " alt="" coords="903,1445,1044,1471"/>
+<area shape="rect" href="imgui_8cpp.html#ac2561e31f0de066ef0bb5bfbb541c8ae" title=" " alt="" coords="650,1479,833,1506"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_text_filter_ab93ad5985019ff9d3781606551fc26cc_icgraph.png" border="0" usemap="#astruct_im_gui_text_filter_ab93ad5985019ff9d3781606551fc26cc_icgraph" alt=""/></div>
+<map name="astruct_im_gui_text_filter_ab93ad5985019ff9d3781606551fc26cc_icgraph" id="astruct_im_gui_text_filter_ab93ad5985019ff9d3781606551fc26cc_icgraph">
+<area shape="rect" title=" " alt="" coords="891,81,1037,108"/>
+<area shape="rect" href="struct_example_app_console.html#a0518a09c7e8648dd52c7c06df19ac17a" title=" " alt="" coords="663,5,843,32"/>
+<area shape="rect" href="struct_example_app_log.html#a5ad3a4bdb89171b84aeaff96948a1f77" title=" " alt="" coords="675,56,830,83"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ad2af2f6824d59150c468b6d3b82b9d02" title=" " alt="" coords="446,107,609,133"/>
+<area shape="rect" href="namespace_im_gui.html#ab2eb3dec78d054fe3feab1c091ec5de5" title=" " alt="" coords="673,157,833,184"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a8e5624314ae6402dd0ddf2a62aa91473" title=" " alt="" coords="440,5,615,32"/>
+<area shape="rect" href="namespace_im_gui.html#af95643a0ce4893b9e57c12991922fb18" title=" " alt="" coords="216,81,392,108"/>
+<area shape="rect" href="class_gui_window.html#ab0dabe8f7c97d9207e03a30f9d29d1dd" title=" " alt="" coords="5,56,168,83"/>
+<area shape="rect" href="class_imgui_layer.html#aa98053a216128343d985192439323544" title=" " alt="" coords="11,107,162,133"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ad0303cf1f675002eb4e68c17a47b3f88" title=" " alt="" coords="453,56,602,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a493158f2ab8f45fcf303c3f953be9b88" name="a493158f2ab8f45fcf303c3f953be9b88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a493158f2ab8f45fcf303c3f953be9b88">&#9670;&nbsp;</a></span>IsActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiTextFilter::IsActive </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_text_filter_a493158f2ab8f45fcf303c3f953be9b88_icgraph.png" border="0" usemap="#astruct_im_gui_text_filter_a493158f2ab8f45fcf303c3f953be9b88_icgraph" alt=""/></div>
+<map name="astruct_im_gui_text_filter_a493158f2ab8f45fcf303c3f953be9b88_icgraph" id="astruct_im_gui_text_filter_a493158f2ab8f45fcf303c3f953be9b88_icgraph">
+<area shape="rect" title=" " alt="" coords="840,31,1003,57"/>
+<area shape="rect" href="struct_example_app_log.html#a5ad3a4bdb89171b84aeaff96948a1f77" title=" " alt="" coords="637,31,792,57"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ad0303cf1f675002eb4e68c17a47b3f88" title=" " alt="" coords="440,31,589,57"/>
+<area shape="rect" href="namespace_im_gui.html#af95643a0ce4893b9e57c12991922fb18" title=" " alt="" coords="216,31,392,57"/>
+<area shape="rect" href="class_gui_window.html#ab0dabe8f7c97d9207e03a30f9d29d1dd" title=" " alt="" coords="5,5,168,32"/>
+<area shape="rect" href="class_imgui_layer.html#aa98053a216128343d985192439323544" title=" " alt="" coords="11,56,162,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a88d73ff8b81fbbd0a129b1bf3498d8aa" name="a88d73ff8b81fbbd0a129b1bf3498d8aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88d73ff8b81fbbd0a129b1bf3498d8aa">&#9670;&nbsp;</a></span>PassFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGuiTextFilter::PassFilter </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text_end</em> = <code>NULL</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_text_filter_a88d73ff8b81fbbd0a129b1bf3498d8aa_cgraph.png" border="0" usemap="#astruct_im_gui_text_filter_a88d73ff8b81fbbd0a129b1bf3498d8aa_cgraph" alt=""/></div>
+<map name="astruct_im_gui_text_filter_a88d73ff8b81fbbd0a129b1bf3498d8aa_cgraph" id="astruct_im_gui_text_filter_a88d73ff8b81fbbd0a129b1bf3498d8aa_cgraph">
+<area shape="rect" title=" " alt="" coords="5,42,183,69"/>
+<area shape="rect" href="struct_im_gui_text_filter_1_1_im_gui_text_range.html#a1861f25905e1f19f979998faf5349b5a" title=" " alt="" coords="231,5,408,47"/>
+<area shape="rect" href="imgui_8cpp.html#ad64e94d097f802bbb8049007604785ee" title=" " alt="" coords="284,71,355,98"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_text_filter_a88d73ff8b81fbbd0a129b1bf3498d8aa_icgraph.png" border="0" usemap="#astruct_im_gui_text_filter_a88d73ff8b81fbbd0a129b1bf3498d8aa_icgraph" alt=""/></div>
+<map name="astruct_im_gui_text_filter_a88d73ff8b81fbbd0a129b1bf3498d8aa_icgraph" id="astruct_im_gui_text_filter_a88d73ff8b81fbbd0a129b1bf3498d8aa_icgraph">
+<area shape="rect" title=" " alt="" coords="891,81,1068,108"/>
+<area shape="rect" href="struct_example_app_console.html#a0518a09c7e8648dd52c7c06df19ac17a" title=" " alt="" coords="663,5,843,32"/>
+<area shape="rect" href="struct_example_app_log.html#a5ad3a4bdb89171b84aeaff96948a1f77" title=" " alt="" coords="675,56,830,83"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ad2af2f6824d59150c468b6d3b82b9d02" title=" " alt="" coords="446,107,609,133"/>
+<area shape="rect" href="namespace_im_gui.html#ab2eb3dec78d054fe3feab1c091ec5de5" title=" " alt="" coords="673,157,833,184"/>
+<area shape="rect" href="imgui__demo_8cpp.html#a8e5624314ae6402dd0ddf2a62aa91473" title=" " alt="" coords="440,5,615,32"/>
+<area shape="rect" href="namespace_im_gui.html#af95643a0ce4893b9e57c12991922fb18" title=" " alt="" coords="216,81,392,108"/>
+<area shape="rect" href="class_gui_window.html#ab0dabe8f7c97d9207e03a30f9d29d1dd" title=" " alt="" coords="5,56,168,83"/>
+<area shape="rect" href="class_imgui_layer.html#aa98053a216128343d985192439323544" title=" " alt="" coords="11,107,162,133"/>
+<area shape="rect" href="imgui__demo_8cpp.html#ad0303cf1f675002eb4e68c17a47b3f88" title=" " alt="" coords="453,56,602,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ac31839c319fe4211c21fc143b7249f86" name="ac31839c319fe4211c21fc143b7249f86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac31839c319fe4211c21fc143b7249f86">&#9670;&nbsp;</a></span>CountGrep</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ImGuiTextFilter::CountGrep</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a39ed87cfdf3cb0cdb8389b017bb00067" name="a39ed87cfdf3cb0cdb8389b017bb00067"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39ed87cfdf3cb0cdb8389b017bb00067">&#9670;&nbsp;</a></span>Filters</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_im_vector.html">ImVector</a>&lt;<a class="el" href="struct_im_gui_text_filter_1_1_im_gui_text_range.html">ImGuiTextRange</a>&gt; ImGuiTextFilter::Filters</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad070acb1038199dd4e8f5d010c5cb5ba" name="ad070acb1038199dd4e8f5d010c5cb5ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad070acb1038199dd4e8f5d010c5cb5ba">&#9670;&nbsp;</a></span>InputBuf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char ImGuiTextFilter::InputBuf[256]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/imgui/<a class="el" href="imgui_8h_source.html">imgui.h</a></li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/imgui/<a class="el" href="imgui_8cpp.html">imgui.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

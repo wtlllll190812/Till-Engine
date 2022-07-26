@@ -1,0 +1,290 @@
+\hypertarget{main_8cpp}{}\doxysection{D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/main.cpp 文件参考}
+\label{main_8cpp}\index{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/main.cpp@{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/main.cpp}}
+{\ttfamily \#include \char`\"{}Screen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Camera.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Game\+Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Transform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Texture.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Shader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Light.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Renderer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Material.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}TLEngine\+CG.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Game\+Loop.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Render\+System.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Scene.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gui\+Window.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$glm/glm.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtc/matrix\+\_\+transform.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtc/type\+\_\+ptr.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}Windows\+Window.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Till\+Pch.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Application.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Imgui\+Layer.\+h\char`\"{}}\newline
+main.\+cpp 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_ad27cc17b25bb93134368d5eb21126eae}{BIT}}(x)~(1 $<$$<$ x)
+\item 
+\#define \mbox{\hyperlink{main_8cpp_ac26a668e32beeb7eae8b6e4adbe5d1e1}{DATA\+\_\+\+PATH}}~\char`\"{}../data/\char`\"{}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a07d1a5f3eb8d88b203823be9a355410f}{SHADER\+\_\+\+PATH}}~\char`\"{}../shaders/\char`\"{}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a6852d85bc96a09e605bbf4a2dcfc7a5c}{IMAGE\+\_\+\+PATH}}~\char`\"{}../resource/\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{main_8cpp_aa48aaf412b9e33386433680c25b3883c}{key\+\_\+callback}} (GLFWwindow $\ast$window, int key, int scancode, int action, int \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a1e71d9c196e4683cc06c4b54d53f7ef5}{mode}})
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{main_8cpp_af4ca2891044ac10a664b8d83ce590f1f}{mouse\+\_\+callback}} (GLFWwindow $\ast$window, double xpos, double ypos)
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{main_8cpp_a06ad2502008f16fbcf01dfaa7f7bc9ea}{scroll\+\_\+callback}} (GLFWwindow $\ast$window, double xoffset, double yoffset)
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{main_8cpp_a7f9c9db8e4782d31531eb6b8528fb373}{do\+\_\+movement}} ()
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{main_8cpp_ad52569b291dc1e2dda6c6a66945c50f4}{fixedupdate}} ()
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{main_8cpp_a1e3b6d38df0786ccf7f938d60e386aae}{Init}} ()
+\item 
+int \mbox{\hyperlink{main_8cpp_a3ac1fe7e6bd625ee388cee2dc03a2ebc}{smain}} ()
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scene}{Scene}} $\ast$ \mbox{\hyperlink{main_8cpp_a06a8706e3fc2d1d7bae9fe0ef2846752}{current\+Scene}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $>$ \mbox{\hyperlink{main_8cpp_ac14b15e54f3c25aa1a766a82f1aeb341}{current\+Obj}}
+\item 
+\mbox{\hyperlink{class_camera}{Camera}} $\ast$ \mbox{\hyperlink{main_8cpp_af95833c961e5bd20dcd54e1d46a03c0b}{camera}}
+\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $>$ \mbox{\hyperlink{main_8cpp_aca303a1e6cf29fc7a1155c7237197b51}{camera\+Object}}
+\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $>$ \mbox{\hyperlink{main_8cpp_a205162c8d635872826fda3abe9f8e295}{object}}
+\item 
+\mbox{\hyperlink{class_game_loop}{Game\+Loop}} \mbox{\hyperlink{main_8cpp_a2367a09754e5f98b72796de75b7a1591}{loop}} (60)
+\item 
+bool \mbox{\hyperlink{main_8cpp_a3a217745c5eebfcdb3e21cbc9bcdc07a}{keys}} \mbox{[}1024\mbox{]}
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a68c4714e43d8e827d80759f9cb864f3c}{GLuint}} \mbox{\hyperlink{main_8cpp_a85a82635c1e0c0d184050788cba2c656}{fbo}}
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a836cf6377099e88abf24c255b5b0ac52}{GLfloat}} \mbox{\hyperlink{main_8cpp_a2e16a74f44432ba28cfc03e1f2fae336}{lastX}}
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a836cf6377099e88abf24c255b5b0ac52}{GLfloat}} \mbox{\hyperlink{main_8cpp_af9b48b88a5ab39920f21309262086ef0}{lastY}}
+\item 
+bool \mbox{\hyperlink{main_8cpp_ac21731ba101e28334c34543121caa841}{first\+Mouse}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{main_8cpp_ad27cc17b25bb93134368d5eb21126eae}\label{main_8cpp_ad27cc17b25bb93134368d5eb21126eae}} 
+\index{main.cpp@{main.cpp}!BIT@{BIT}}
+\index{BIT@{BIT}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{BIT}{BIT}}
+{\footnotesize\ttfamily \#define BIT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(1 $<$$<$ x)}
+
+\mbox{\Hypertarget{main_8cpp_ac26a668e32beeb7eae8b6e4adbe5d1e1}\label{main_8cpp_ac26a668e32beeb7eae8b6e4adbe5d1e1}} 
+\index{main.cpp@{main.cpp}!DATA\_PATH@{DATA\_PATH}}
+\index{DATA\_PATH@{DATA\_PATH}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{DATA\_PATH}{DATA\_PATH}}
+{\footnotesize\ttfamily \#define DATA\+\_\+\+PATH~\char`\"{}../data/\char`\"{}}
+
+\mbox{\Hypertarget{main_8cpp_a6852d85bc96a09e605bbf4a2dcfc7a5c}\label{main_8cpp_a6852d85bc96a09e605bbf4a2dcfc7a5c}} 
+\index{main.cpp@{main.cpp}!IMAGE\_PATH@{IMAGE\_PATH}}
+\index{IMAGE\_PATH@{IMAGE\_PATH}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{IMAGE\_PATH}{IMAGE\_PATH}}
+{\footnotesize\ttfamily \#define IMAGE\+\_\+\+PATH~\char`\"{}../resource/\char`\"{}}
+
+\mbox{\Hypertarget{main_8cpp_a07d1a5f3eb8d88b203823be9a355410f}\label{main_8cpp_a07d1a5f3eb8d88b203823be9a355410f}} 
+\index{main.cpp@{main.cpp}!SHADER\_PATH@{SHADER\_PATH}}
+\index{SHADER\_PATH@{SHADER\_PATH}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SHADER\_PATH}{SHADER\_PATH}}
+{\footnotesize\ttfamily \#define SHADER\+\_\+\+PATH~\char`\"{}../shaders/\char`\"{}}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{main_8cpp_a7f9c9db8e4782d31531eb6b8528fb373}\label{main_8cpp_a7f9c9db8e4782d31531eb6b8528fb373}} 
+\index{main.cpp@{main.cpp}!do\_movement@{do\_movement}}
+\index{do\_movement@{do\_movement}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{do\_movement()}{do\_movement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} do\+\_\+movement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{main_8cpp_a7f9c9db8e4782d31531eb6b8528fb373_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_ad52569b291dc1e2dda6c6a66945c50f4}\label{main_8cpp_ad52569b291dc1e2dda6c6a66945c50f4}} 
+\index{main.cpp@{main.cpp}!fixedupdate@{fixedupdate}}
+\index{fixedupdate@{fixedupdate}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{fixedupdate()}{fixedupdate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} fixedupdate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{main_8cpp_ad52569b291dc1e2dda6c6a66945c50f4_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{main_8cpp_ad52569b291dc1e2dda6c6a66945c50f4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_a1e3b6d38df0786ccf7f938d60e386aae}\label{main_8cpp_a1e3b6d38df0786ccf7f938d60e386aae}} 
+\index{main.cpp@{main.cpp}!Init@{Init}}
+\index{Init@{Init}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{main_8cpp_a1e3b6d38df0786ccf7f938d60e386aae_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{main_8cpp_a1e3b6d38df0786ccf7f938d60e386aae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_aa48aaf412b9e33386433680c25b3883c}\label{main_8cpp_aa48aaf412b9e33386433680c25b3883c}} 
+\index{main.cpp@{main.cpp}!key\_callback@{key\_callback}}
+\index{key\_callback@{key\_callback}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{key\_callback()}{key\_callback()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} key\+\_\+callback (\begin{DoxyParamCaption}\item[{GLFWwindow $\ast$}]{window,  }\item[{int}]{key,  }\item[{int}]{scancode,  }\item[{int}]{action,  }\item[{int}]{mode }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_af4ca2891044ac10a664b8d83ce590f1f}\label{main_8cpp_af4ca2891044ac10a664b8d83ce590f1f}} 
+\index{main.cpp@{main.cpp}!mouse\_callback@{mouse\_callback}}
+\index{mouse\_callback@{mouse\_callback}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{mouse\_callback()}{mouse\_callback()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} mouse\+\_\+callback (\begin{DoxyParamCaption}\item[{GLFWwindow $\ast$}]{window,  }\item[{double}]{xpos,  }\item[{double}]{ypos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a06ad2502008f16fbcf01dfaa7f7bc9ea}\label{main_8cpp_a06ad2502008f16fbcf01dfaa7f7bc9ea}} 
+\index{main.cpp@{main.cpp}!scroll\_callback@{scroll\_callback}}
+\index{scroll\_callback@{scroll\_callback}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{scroll\_callback()}{scroll\_callback()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} scroll\+\_\+callback (\begin{DoxyParamCaption}\item[{GLFWwindow $\ast$}]{window,  }\item[{double}]{xoffset,  }\item[{double}]{yoffset }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a3ac1fe7e6bd625ee388cee2dc03a2ebc}\label{main_8cpp_a3ac1fe7e6bd625ee388cee2dc03a2ebc}} 
+\index{main.cpp@{main.cpp}!smain@{smain}}
+\index{smain@{smain}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{smain()}{smain()}}
+{\footnotesize\ttfamily int smain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp_a3ac1fe7e6bd625ee388cee2dc03a2ebc_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{main_8cpp_af95833c961e5bd20dcd54e1d46a03c0b}\label{main_8cpp_af95833c961e5bd20dcd54e1d46a03c0b}} 
+\index{main.cpp@{main.cpp}!camera@{camera}}
+\index{camera@{camera}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{camera}{camera}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_camera}{Camera}}$\ast$ camera}
+
+\mbox{\Hypertarget{main_8cpp_aca303a1e6cf29fc7a1155c7237197b51}\label{main_8cpp_aca303a1e6cf29fc7a1155c7237197b51}} 
+\index{main.cpp@{main.cpp}!cameraObject@{cameraObject}}
+\index{cameraObject@{cameraObject}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{cameraObject}{cameraObject}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$\mbox{\hyperlink{class_game_object}{Game\+Object}}$>$ camera\+Object}
+
+\mbox{\Hypertarget{main_8cpp_ac14b15e54f3c25aa1a766a82f1aeb341}\label{main_8cpp_ac14b15e54f3c25aa1a766a82f1aeb341}} 
+\index{main.cpp@{main.cpp}!currentObj@{currentObj}}
+\index{currentObj@{currentObj}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{currentObj}{currentObj}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_game_object}{Game\+Object}}$>$ current\+Obj}
+
+\mbox{\Hypertarget{main_8cpp_a06a8706e3fc2d1d7bae9fe0ef2846752}\label{main_8cpp_a06a8706e3fc2d1d7bae9fe0ef2846752}} 
+\index{main.cpp@{main.cpp}!currentScene@{currentScene}}
+\index{currentScene@{currentScene}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{currentScene}{currentScene}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_scene}{Scene}}$\ast$ current\+Scene}
+
+\mbox{\Hypertarget{main_8cpp_a85a82635c1e0c0d184050788cba2c656}\label{main_8cpp_a85a82635c1e0c0d184050788cba2c656}} 
+\index{main.cpp@{main.cpp}!fbo@{fbo}}
+\index{fbo@{fbo}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{fbo}{fbo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a68c4714e43d8e827d80759f9cb864f3c}{GLuint}} fbo}
+
+\mbox{\Hypertarget{main_8cpp_ac21731ba101e28334c34543121caa841}\label{main_8cpp_ac21731ba101e28334c34543121caa841}} 
+\index{main.cpp@{main.cpp}!firstMouse@{firstMouse}}
+\index{firstMouse@{firstMouse}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{firstMouse}{firstMouse}}
+{\footnotesize\ttfamily bool first\+Mouse = true}
+
+\mbox{\Hypertarget{main_8cpp_a3a217745c5eebfcdb3e21cbc9bcdc07a}\label{main_8cpp_a3a217745c5eebfcdb3e21cbc9bcdc07a}} 
+\index{main.cpp@{main.cpp}!keys@{keys}}
+\index{keys@{keys}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{keys}{keys}}
+{\footnotesize\ttfamily bool keys\mbox{[}1024\mbox{]}}
+
+\mbox{\Hypertarget{main_8cpp_a2e16a74f44432ba28cfc03e1f2fae336}\label{main_8cpp_a2e16a74f44432ba28cfc03e1f2fae336}} 
+\index{main.cpp@{main.cpp}!lastX@{lastX}}
+\index{lastX@{lastX}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{lastX}{lastX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a836cf6377099e88abf24c255b5b0ac52}{GLfloat}} lastX}
+
+\mbox{\Hypertarget{main_8cpp_af9b48b88a5ab39920f21309262086ef0}\label{main_8cpp_af9b48b88a5ab39920f21309262086ef0}} 
+\index{main.cpp@{main.cpp}!lastY@{lastY}}
+\index{lastY@{lastY}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{lastY}{lastY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a836cf6377099e88abf24c255b5b0ac52}{GLfloat}} lastY}
+
+\mbox{\Hypertarget{main_8cpp_a2367a09754e5f98b72796de75b7a1591}\label{main_8cpp_a2367a09754e5f98b72796de75b7a1591}} 
+\index{main.cpp@{main.cpp}!loop@{loop}}
+\index{loop@{loop}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{loop}{loop}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_loop}{Game\+Loop}} loop(60) (\begin{DoxyParamCaption}\item[{60}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a205162c8d635872826fda3abe9f8e295}\label{main_8cpp_a205162c8d635872826fda3abe9f8e295}} 
+\index{main.cpp@{main.cpp}!object@{object}}
+\index{object@{object}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{object}{object}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$\mbox{\hyperlink{class_game_object}{Game\+Object}}$>$ object}
+

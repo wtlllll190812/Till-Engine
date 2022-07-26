@@ -1,0 +1,6 @@
+<map id="Camera::GetViewMatrix" name="Camera::GetViewMatrix">
+<area shape="rect" id="node1" title="获取观察矩阵" alt="" coords="5,5,165,32"/>
+<area shape="rect" id="node2" href="$class_transform.html#af0d0e8f8c55b67c115a5449f225f53e6" title="获取向前方向" alt="" coords="572,31,711,57"/>
+<area shape="rect" id="node3" href="$class_transform.html#a9d87de590be3b413b962ca5a1c90c0ef" title="获取向上方向" alt="" coords="213,31,337,57"/>
+<area shape="rect" id="node4" href="$class_transform.html#a7e34c4791358814412983d8606cc4cdf" title="获取向右方向" alt="" coords="385,81,524,108"/>
+</map>

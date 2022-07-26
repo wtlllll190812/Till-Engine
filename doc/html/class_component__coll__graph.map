@@ -1,0 +1,8 @@
+<map id="Component" name="Component">
+<area shape="rect" id="node1" title="组件基类" alt="" coords="139,81,227,108"/>
+<area shape="rect" id="node4" href="$class_transform.html" title=" " alt="" coords="5,208,84,235"/>
+<area shape="rect" id="node6" href="$class_camera.html" title=" " alt="" coords="110,157,177,184"/>
+<area shape="rect" id="node2" href="$class_serializable.html" title="可序列化对象接口" alt="" coords="224,5,313,32"/>
+<area shape="rect" id="node3" href="$class_game_object.html" title=" " alt="" coords="147,348,241,375"/>
+<area shape="rect" id="node5" href="$class_scene.html" title="场景类" alt="" coords="127,259,186,285"/>
+</map>

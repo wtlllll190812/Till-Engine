@@ -1,0 +1,5 @@
+<map id="类继承关系图" name="类继承关系图">
+<area shape="rect" id="node1" href="$class_singleton.html" title=" " alt="" coords="5,5,192,32"/>
+<area shape="rect" id="node2" href="$class_render_system.html" title="渲染系统" alt="" coords="240,31,348,57"/>
+<area shape="rect" id="node3" href="$class_system.html" title=" " alt="" coords="65,56,132,83"/>
+</map>

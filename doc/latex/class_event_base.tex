@@ -1,0 +1,52 @@
+\hypertarget{class_event_base}{}\doxysection{Event\+Base类 参考}
+\label{class_event_base}\index{EventBase@{EventBase}}
+
+
+事件类基类  
+
+
+
+
+{\ttfamily \#include $<$Event\+Base.\+h$>$}
+
+
+
+类 Event\+Base 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_event_base__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_event_base_ab7a6851ea02a379b45a8f266ea995851}\label{class_event_base_ab7a6851ea02a379b45a8f266ea995851}} 
+virtual const char $\ast$ {\bfseries Get\+Name} () const =0
+\item 
+\mbox{\Hypertarget{class_event_base_a91f4adadacab79ddf2c64b92057a6cc6}\label{class_event_base_a91f4adadacab79ddf2c64b92057a6cc6}} 
+virtual Event\+Type {\bfseries Get\+Event\+Type} () const =0
+\item 
+\mbox{\Hypertarget{class_event_base_a71727f1eb26629c5662f7adae144c58f}\label{class_event_base_a71727f1eb26629c5662f7adae144c58f}} 
+virtual int {\bfseries Get\+Category\+Flags} () const =0
+\item 
+\mbox{\Hypertarget{class_event_base_a8f4357f5f6c5525b3c7b8b33c4fec86d}\label{class_event_base_a8f4357f5f6c5525b3c7b8b33c4fec86d}} 
+virtual std\+::string {\bfseries To\+String} () const
+\item 
+\mbox{\Hypertarget{class_event_base_a9b1afd36cc9f9b406718e4546efed6fc}\label{class_event_base_a9b1afd36cc9f9b406718e4546efed6fc}} 
+bool {\bfseries Is\+In\+Category} (Event\+Category category)
+\begin{DoxyCompactList}\small\item\em 是否属于该类型 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_event_base_adb10e34cf68958ecd4da3edab78dd488}\label{class_event_base_adb10e34cf68958ecd4da3edab78dd488}} 
+bool {\bfseries m\+Handled} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+事件类基类 
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/\+Engine/\+Framework/\+Events/Event\+Base.\+h\end{DoxyCompactItemize}

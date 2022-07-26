@@ -1,0 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TillEngine: Window类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TillEngine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="class_window-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">Window类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+类 Window 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_window__inherit__graph.png" border="0" usemap="#a_window_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_window_inherit__map" id="a_window_inherit__map">
+<area shape="rect" title=" " alt="" coords="32,5,100,32"/>
+<area shape="rect" href="class_windows_window.html" title=" " alt="" coords="5,80,127,107"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:afc178159093368739a4e65ed7a59b581"><td class="memItemLeft" align="right" valign="top"><a id="afc178159093368739a4e65ed7a59b581" name="afc178159093368739a4e65ed7a59b581"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>EventCallbackFn</b> = std::function&lt; void(<a class="el" href="class_event_base.html">EventBase</a> &amp;)&gt;</td></tr>
+<tr class="separator:afc178159093368739a4e65ed7a59b581"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a64a4a74428952dbfd0d5ecbfdf56f604"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a64a4a74428952dbfd0d5ecbfdf56f604">DrawFunc</a> ()=0</td></tr>
+<tr class="memdesc:a64a4a74428952dbfd0d5ecbfdf56f604"><td class="mdescLeft">&#160;</td><td class="mdescRight">窗口渲染函数  <a href="class_window.html#a64a4a74428952dbfd0d5ecbfdf56f604">更多...</a><br /></td></tr>
+<tr class="separator:a64a4a74428952dbfd0d5ecbfdf56f604"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af654767b70e208db7fe08f34133bb2c7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#af654767b70e208db7fe08f34133bb2c7">OnRenderEnd</a> ()=0</td></tr>
+<tr class="memdesc:af654767b70e208db7fe08f34133bb2c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">每帧渲染结束时调用  <a href="class_window.html#af654767b70e208db7fe08f34133bb2c7">更多...</a><br /></td></tr>
+<tr class="separator:af654767b70e208db7fe08f34133bb2c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88bb5f556857ba82c62dd79abacf4c67"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a88bb5f556857ba82c62dd79abacf4c67">GetWidth</a> () const =0</td></tr>
+<tr class="memdesc:a88bb5f556857ba82c62dd79abacf4c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取窗口宽度  <a href="class_window.html#a88bb5f556857ba82c62dd79abacf4c67">更多...</a><br /></td></tr>
+<tr class="separator:a88bb5f556857ba82c62dd79abacf4c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35f0d591a21f367314853952e54cdf84"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a35f0d591a21f367314853952e54cdf84">GetHeight</a> () const =0</td></tr>
+<tr class="memdesc:a35f0d591a21f367314853952e54cdf84"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取窗口高度  <a href="class_window.html#a35f0d591a21f367314853952e54cdf84">更多...</a><br /></td></tr>
+<tr class="separator:a35f0d591a21f367314853952e54cdf84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dcd7f056cb1534c4fda7ea82dfaf462"><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a0dcd7f056cb1534c4fda7ea82dfaf462">GetWindow</a> () const</td></tr>
+<tr class="memdesc:a0dcd7f056cb1534c4fda7ea82dfaf462"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前平台的窗口对象  <a href="class_window.html#a0dcd7f056cb1534c4fda7ea82dfaf462">更多...</a><br /></td></tr>
+<tr class="separator:a0dcd7f056cb1534c4fda7ea82dfaf462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08cbfbd80938207165ed07120ed6cc23"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_frame_buffer.html">FrameBuffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a08cbfbd80938207165ed07120ed6cc23">GetFrameBuffer</a> (int index=0)=0</td></tr>
+<tr class="memdesc:a08cbfbd80938207165ed07120ed6cc23"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定FBO  <a href="class_window.html#a08cbfbd80938207165ed07120ed6cc23">更多...</a><br /></td></tr>
+<tr class="separator:a08cbfbd80938207165ed07120ed6cc23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a747f38cf55fdbc23552b6577ebb7efb1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a747f38cf55fdbc23552b6577ebb7efb1">SetFrameBuffer</a> (int index=0)=0</td></tr>
+<tr class="memdesc:a747f38cf55fdbc23552b6577ebb7efb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">设定当前FBO上下文  <a href="class_window.html#a747f38cf55fdbc23552b6577ebb7efb1">更多...</a><br /></td></tr>
+<tr class="separator:a747f38cf55fdbc23552b6577ebb7efb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a981cf7002fb02bb3702f6883356a45f9"><td class="memItemLeft" align="right" valign="top"><a id="a981cf7002fb02bb3702f6883356a45f9" name="a981cf7002fb02bb3702f6883356a45f9"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetFrameBuffer</b> (<a class="el" href="class_frame_buffer.html">FrameBuffer</a> *)=0</td></tr>
+<tr class="separator:a981cf7002fb02bb3702f6883356a45f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba02ea624269e2f0a18e2e21c8c1807d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_frame_buffer.html">FrameBuffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#aba02ea624269e2f0a18e2e21c8c1807d">GetMianFrameBuffer</a> (int index=0)=0</td></tr>
+<tr class="memdesc:aba02ea624269e2f0a18e2e21c8c1807d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取主FBO  <a href="class_window.html#aba02ea624269e2f0a18e2e21c8c1807d">更多...</a><br /></td></tr>
+<tr class="separator:aba02ea624269e2f0a18e2e21c8c1807d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc596cc511a849dce3100da62b263f05"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_frame_buffer.html">FrameBuffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#afc596cc511a849dce3100da62b263f05">AddFrameBuffer</a> (BufferType type)=0</td></tr>
+<tr class="memdesc:afc596cc511a849dce3100da62b263f05"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加FBO  <a href="class_window.html#afc596cc511a849dce3100da62b263f05">更多...</a><br /></td></tr>
+<tr class="separator:afc596cc511a849dce3100da62b263f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa806e44b1ad9d9e11f7bf74aceef3357"><td class="memItemLeft" align="right" valign="top"><a id="aa806e44b1ad9d9e11f7bf74aceef3357" name="aa806e44b1ad9d9e11f7bf74aceef3357"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetEventCallback</b> (const EventCallbackFn &amp;callback)=0</td></tr>
+<tr class="separator:aa806e44b1ad9d9e11f7bf74aceef3357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14993a46f3548887496f4a5d374c470a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a14993a46f3548887496f4a5d374c470a">SetVSync</a> (bool enabled)=0</td></tr>
+<tr class="memdesc:a14993a46f3548887496f4a5d374c470a"><td class="mdescLeft">&#160;</td><td class="mdescRight">设定垂直同步  <a href="class_window.html#a14993a46f3548887496f4a5d374c470a">更多...</a><br /></td></tr>
+<tr class="separator:a14993a46f3548887496f4a5d374c470a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4b9a50bd3360575d0f593e678f3b6e9"><td class="memItemLeft" align="right" valign="top"><a id="ac4b9a50bd3360575d0f593e678f3b6e9" name="ac4b9a50bd3360575d0f593e678f3b6e9"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsVSync</b> () const =0</td></tr>
+<tr class="separator:ac4b9a50bd3360575d0f593e678f3b6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a08d478a17b15bcf682d6d057460f81f7"><td class="memItemLeft" align="right" valign="top"><a id="a08d478a17b15bcf682d6d057460f81f7" name="a08d478a17b15bcf682d6d057460f81f7"></a>
+static <a class="el" href="class_window.html">Window</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>Create</b> (const <a class="el" href="struct_window_props.html">WindowProps</a> &amp;props=<a class="el" href="struct_window_props.html">WindowProps</a>())</td></tr>
+<tr class="separator:a08d478a17b15bcf682d6d057460f81f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="afc596cc511a849dce3100da62b263f05" name="afc596cc511a849dce3100da62b263f05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc596cc511a849dce3100da62b263f05">&#9670;&nbsp;</a></span>AddFrameBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_frame_buffer.html">FrameBuffer</a> * Window::AddFrameBuffer </td>
+          <td>(</td>
+          <td class="paramtype">BufferType&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>添加FBO </p>
+
+<p>在 <a class="el" href="class_windows_window.html#af89257b48d6fa8d8cb71ec1815551d19">WindowsWindow</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a64a4a74428952dbfd0d5ecbfdf56f604" name="a64a4a74428952dbfd0d5ecbfdf56f604"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64a4a74428952dbfd0d5ecbfdf56f604">&#9670;&nbsp;</a></span>DrawFunc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Window::DrawFunc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>窗口渲染函数 </p>
+
+<p>在 <a class="el" href="class_windows_window.html#a27cad6c527b8b73dfea5420fa9efeef2">WindowsWindow</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a08cbfbd80938207165ed07120ed6cc23" name="a08cbfbd80938207165ed07120ed6cc23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08cbfbd80938207165ed07120ed6cc23">&#9670;&nbsp;</a></span>GetFrameBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_frame_buffer.html">FrameBuffer</a> * Window::GetFrameBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取指定FBO </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>FBO编号</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在 <a class="el" href="class_windows_window.html#accb632f44700cfaef9688e3649a74b30">WindowsWindow</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a35f0d591a21f367314853952e54cdf84" name="a35f0d591a21f367314853952e54cdf84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35f0d591a21f367314853952e54cdf84">&#9670;&nbsp;</a></span>GetHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual unsigned int Window::GetHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取窗口高度 </p>
+
+<p>在 <a class="el" href="class_windows_window.html#a686ae2f91f8d01fc79e14efb283c8df1">WindowsWindow</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="aba02ea624269e2f0a18e2e21c8c1807d" name="aba02ea624269e2f0a18e2e21c8c1807d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba02ea624269e2f0a18e2e21c8c1807d">&#9670;&nbsp;</a></span>GetMianFrameBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_frame_buffer.html">FrameBuffer</a> * Window::GetMianFrameBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取主FBO </p>
+
+<p>在 <a class="el" href="class_windows_window.html#aa53b808e9996854304e815ff929d123e">WindowsWindow</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a88bb5f556857ba82c62dd79abacf4c67" name="a88bb5f556857ba82c62dd79abacf4c67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88bb5f556857ba82c62dd79abacf4c67">&#9670;&nbsp;</a></span>GetWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual unsigned int Window::GetWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取窗口宽度 </p>
+
+<p>在 <a class="el" href="class_windows_window.html#ac906871efb10dc561d47903603e39088">WindowsWindow</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a0dcd7f056cb1534c4fda7ea82dfaf462" name="a0dcd7f056cb1534c4fda7ea82dfaf462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dcd7f056cb1534c4fda7ea82dfaf462">&#9670;&nbsp;</a></span>GetWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void * Window::GetWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取当前平台的窗口对象 </p>
+
+<p>被 <a class="el" href="class_windows_window.html#a38fa94de0b3ce9b800317f6a6e06c6ed">WindowsWindow</a> 重载.</p>
+
+</div>
+</div>
+<a id="af654767b70e208db7fe08f34133bb2c7" name="af654767b70e208db7fe08f34133bb2c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af654767b70e208db7fe08f34133bb2c7">&#9670;&nbsp;</a></span>OnRenderEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Window::OnRenderEnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>每帧渲染结束时调用 </p>
+
+<p>在 <a class="el" href="class_windows_window.html#a5e1c514b38869b443941c670d6a3107e">WindowsWindow</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a747f38cf55fdbc23552b6577ebb7efb1" name="a747f38cf55fdbc23552b6577ebb7efb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a747f38cf55fdbc23552b6577ebb7efb1">&#9670;&nbsp;</a></span>SetFrameBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Window::SetFrameBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设定当前FBO上下文 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在 <a class="el" href="class_windows_window.html#ae033c187fcc058e81b9ddb59ff60c970">WindowsWindow</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a14993a46f3548887496f4a5d374c470a" name="a14993a46f3548887496f4a5d374c470a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14993a46f3548887496f4a5d374c470a">&#9670;&nbsp;</a></span>SetVSync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Window::SetVSync </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enabled</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设定垂直同步 </p>
+
+<p>在 <a class="el" href="class_windows_window.html#a883ecb4b5fe42225cb05c137711757e2">WindowsWindow</a> 内被实现.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Engine/Window/<a class="el" href="_window_8h_source.html">Window.h</a></li>
+<li>D:/TL/Vscode/VsCode_C/Learn_opengl/src/Plateform/WindowsWindow.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

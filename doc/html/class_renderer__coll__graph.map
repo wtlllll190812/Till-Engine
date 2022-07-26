@@ -1,0 +1,9 @@
+<map id="Renderer" name="Renderer">
+<area shape="rect" id="node1" title=" " alt="" coords="5,157,80,184"/>
+<area shape="rect" id="node2" href="$class_component.html" title="组件基类" alt="" coords="144,81,232,108"/>
+<area shape="rect" id="node5" href="$class_transform.html" title=" " alt="" coords="59,208,138,235"/>
+<area shape="rect" id="node7" href="$class_camera.html" title=" " alt="" coords="155,157,221,184"/>
+<area shape="rect" id="node3" href="$class_serializable.html" title="可序列化对象接口" alt="" coords="243,5,333,32"/>
+<area shape="rect" id="node4" href="$class_game_object.html" title=" " alt="" coords="201,348,295,375"/>
+<area shape="rect" id="node6" href="$class_scene.html" title="场景类" alt="" coords="181,259,240,285"/>
+</map>

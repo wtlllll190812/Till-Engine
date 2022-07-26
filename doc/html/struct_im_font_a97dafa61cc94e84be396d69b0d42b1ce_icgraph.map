@@ -1,0 +1,52 @@
+<map id="ImFont::IsLoaded" name="ImFont::IsLoaded">
+<area shape="rect" id="node1" title=" " alt="" coords="2363,122,2485,149"/>
+<area shape="rect" id="node2" href="$imgui__draw_8cpp.html#a2f785bd6dd330af7a832589fa24f303a" title=" " alt="" coords="2096,57,2315,83"/>
+<area shape="rect" id="node9" href="$namespace_im_gui.html#ab3f1fc018f903b7ad79fd10663375774" title=" " alt="" coords="1899,122,2025,149"/>
+<area shape="rect" id="node14" href="$namespace_im_gui.html#a4f83c0a884e07247a00700d3dd3d01e3" title=" " alt="" coords="2129,198,2281,225"/>
+<area shape="rect" id="node3" href="$imgui__draw_8cpp.html#a4c276d0224ef420d570c9485c4c76a19" title=" " alt="" coords="1876,33,2048,75"/>
+<area shape="rect" id="node4" href="$struct_im_font_atlas.html#a81e39e30dffa4dd7e458a53297451e27" title=" " alt="" coords="1685,17,1814,43"/>
+<area shape="rect" id="node5" href="$struct_im_font_atlas.html#aeff1a1044a1ab68d8f27bb2819cd9f44" title=" " alt="" coords="1437,5,1623,47"/>
+<area shape="rect" id="node6" href="$struct_im_font_atlas.html#a8abb0c4e67ebb38249d4df71218c4eec" title=" " alt="" coords="1204,5,1389,47"/>
+<area shape="rect" id="node7" href="$imgui__impl__opengl3_8cpp.html#a3dc4f80532d710de41d4075214eb363e" title=" " alt="" coords="969,5,1156,47"/>
+<area shape="rect" id="node8" href="$imgui__impl__opengl3_8cpp.html#ab27f12289d6fe9fcd412f92af280b398" title=" " alt="" coords="727,5,913,47"/>
+<area shape="rect" id="node10" href="$class_screen.html#a3bef9f197244caaa9c8ba605495b8476" title="渲染Gui" alt="" coords="1683,122,1815,149"/>
+<area shape="rect" id="node13" href="$class_imgui_layer.html#aa98053a216128343d985192439323544" title=" " alt="" coords="11,173,162,199"/>
+<area shape="rect" id="node11" href="$main_8cpp.html#ad52569b291dc1e2dda6c6a66945c50f4" title=" " alt="" coords="1486,122,1574,149"/>
+<area shape="rect" id="node12" href="$main_8cpp.html#a3ac1fe7e6bd625ee388cee2dc03a2ebc" title=" " alt="" coords="1268,122,1325,149"/>
+<area shape="rect" id="node15" href="$namespace_im_gui.html#af66649bc37022bf3cf2496c73af9a499" title=" " alt="" coords="1905,255,2019,282"/>
+<area shape="rect" id="node50" href="$namespace_im_gui.html#ac5a59f4f8226fd35786d8973c85b85a9" title=" " alt="" coords="1902,205,2022,231"/>
+<area shape="rect" id="node16" href="$namespace_im_gui.html#ae0207d60728f7e6a47dbcd1d7d84e3cb" title=" " alt="" coords="1671,211,1828,238"/>
+<area shape="rect" id="node22" href="$namespace_im_gui.html#af89af17ecc11653f25fea1e50e195de6" title=" " alt="" coords="1683,451,1816,478"/>
+<area shape="rect" id="node17" href="$namespace_im_gui.html#acab51ec2b39577845309f24535381038" title=" " alt="" coords="1454,211,1606,238"/>
+<area shape="rect" id="node18" href="$namespace_im_gui.html#afe7a28c6eb52fff3cc27d5a698fea4ff" title=" " alt="" coords="1204,223,1389,250"/>
+<area shape="rect" id="node21" href="$namespace_im_gui.html#ab2eb3dec78d054fe3feab1c091ec5de5" title=" " alt="" coords="983,274,1143,301"/>
+<area shape="rect" id="node19" href="$namespace_im_gui.html#af95643a0ce4893b9e57c12991922fb18" title=" " alt="" coords="216,325,392,351"/>
+<area shape="rect" id="node20" href="$class_gui_window.html#ab0dabe8f7c97d9207e03a30f9d29d1dd" title=" " alt="" coords="5,325,168,351"/>
+<area shape="rect" id="node23" href="$namespace_im_gui.html#aa72b5760a3a206729723a587ac7c8519" title=" " alt="" coords="1471,477,1589,503"/>
+<area shape="rect" id="node44" href="$namespace_im_gui.html#a0470693929ed9930cbf5b737577c2414" title=" " alt="" coords="1447,426,1613,453"/>
+<area shape="rect" id="node45" href="$namespace_im_gui.html#aee5a5127f494966ad16e578714e8fac2" title=" " alt="" coords="1447,721,1613,747"/>
+<area shape="rect" id="node46" href="$namespace_im_gui.html#ae85def71d2fcf5409035b583b315964e" title=" " alt="" coords="1455,1159,1605,1186"/>
+<area shape="rect" id="node24" href="$namespace_im_gui.html#ac3f45e2aa0b1d591cc8a2cdf8b566a45" title=" " alt="" coords="1235,553,1359,579"/>
+<area shape="rect" id="node27" href="$imgui__demo_8cpp.html#af533fd0a774d6bbebe61e474db6f144f" title=" " alt="" coords="464,873,647,899"/>
+<area shape="rect" id="node31" href="$imgui__demo_8cpp.html#ab19d813f2403009dd8700e041e10c09d" title=" " alt="" coords="973,477,1152,503"/>
+<area shape="rect" id="node33" href="$struct_im_gui_text_filter.html#ab93ad5985019ff9d3781606551fc26cc" title=" " alt="" coords="1223,325,1370,351"/>
+<area shape="rect" id="node34" href="$struct_example_app_console.html#a0518a09c7e8648dd52c7c06df19ac17a" title=" " alt="" coords="973,223,1153,250"/>
+<area shape="rect" id="node37" href="$imgui__demo_8cpp.html#ad2af2f6824d59150c468b6d3b82b9d02" title=" " alt="" coords="981,375,1144,402"/>
+<area shape="rect" id="node38" href="$namespace_im_gui.html#afdb54540b7480872fbb746f64344b374" title=" " alt="" coords="998,923,1127,950"/>
+<area shape="rect" id="node43" href="$imgui__demo_8cpp.html#a1de6150f52a967e73750eb642ec025fe" title=" " alt="" coords="469,1126,641,1153"/>
+<area shape="rect" id="node25" href="$namespace_im_gui.html#a5afe76ba1c91f07363e40396e7df656e" title=" " alt="" coords="1001,695,1125,722"/>
+<area shape="rect" id="node28" href="$namespace_im_gui.html#a3d5aae9e0a14aa051d5a799abbe97b32" title=" " alt="" coords="993,578,1132,605"/>
+<area shape="rect" id="node32" href="$imgui__demo_8cpp.html#a0729207a285af6ef57ce5a31d1a60348" title=" " alt="" coords="440,451,671,478"/>
+<area shape="rect" id="node26" href="$struct_my_document.html#aa51e0b8e6c95b7109a507603599c05d9" title=" " alt="" coords="719,695,921,722"/>
+<area shape="rect" id="node29" href="$namespace_im_gui.html#a2a2a98cb9a17b18702be6b954670b388" title=" " alt="" coords="751,645,889,671"/>
+<area shape="rect" id="node30" href="$namespace_im_gui.html#a6d112eeb6d8ffdebbc9d9a8c66babbee" title=" " alt="" coords="732,528,908,569"/>
+<area shape="rect" id="node36" href="$struct_example_app_log.html#a5ad3a4bdb89171b84aeaff96948a1f77" title=" " alt="" coords="985,325,1140,351"/>
+<area shape="rect" id="node35" href="$imgui__demo_8cpp.html#a8e5624314ae6402dd0ddf2a62aa91473" title=" " alt="" coords="468,223,643,250"/>
+<area shape="rect" id="node39" href="$namespace_im_gui.html#ad941c3cfa561ca35b674fd5802bcf870" title=" " alt="" coords="754,898,886,925"/>
+<area shape="rect" id="node40" href="$namespace_im_gui.html#a36b86c9d7226f18c316400c83a904454" title=" " alt="" coords="759,949,881,975"/>
+<area shape="rect" id="node41" href="$namespace_im_gui.html#a36fc45a3c41a63ea9a983cc851752505" title=" " alt="" coords="767,1050,873,1077"/>
+<area shape="rect" id="node42" href="$namespace_im_gui.html#afb17f0092027c09183df498834abace9" title=" " alt="" coords="751,999,889,1026"/>
+<area shape="rect" id="node47" href="$namespace_im_gui.html#a392fed3e7db2a75abf217bf84c6abce9" title=" " alt="" coords="982,1253,1143,1279"/>
+<area shape="rect" id="node48" href="$namespace_im_gui.html#a17d8926e8f44a6d00575b12081c51fe0" title=" " alt="" coords="756,1253,884,1279"/>
+<area shape="rect" id="node49" href="$namespace_im_gui.html#afdd7faa9a69f75b8d674cdc207441bea" title=" " alt="" coords="753,1202,887,1229"/>
+</map>

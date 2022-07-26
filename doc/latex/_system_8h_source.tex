@@ -1,0 +1,18 @@
+\hypertarget{_system_8h_source}{}\doxysection{System.\+h}
+\label{_system_8h_source}\index{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/ECS/System/System.h@{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/ECS/System/System.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Singleton.h"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{class }\mbox{\hyperlink{class_component}{Component}};}
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{class_system}{System}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7 \textcolor{keyword}{public}:}
+\DoxyCodeLine{8     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Update() = 0;}
+\DoxyCodeLine{9     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} FixedUpdate() = 0;}
+\DoxyCodeLine{10     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RegisterComponent(\mbox{\hyperlink{class_component}{Component}}*) = 0;}
+\DoxyCodeLine{11     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} RemoveComponent(\mbox{\hyperlink{class_component}{Component}}*) = 0;}
+\DoxyCodeLine{12 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,988 @@
+\hypertarget{imgui__draw_8cpp}{}\doxysection{D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/imgui/imgui\+\_\+draw.cpp 文件参考}
+\label{imgui__draw_8cpp}\index{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/imgui/imgui\_draw.cpp@{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/imgui/imgui\_draw.cpp}}
+{\ttfamily \#include \char`\"{}imgui.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}imgui\+\_\+internal.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}imstb\+\_\+rectpack.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}imstb\+\_\+truetype.\+h\char`\"{}}\newline
+imgui\+\_\+draw.\+cpp 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_im_font_build_src_data}{Im\+Font\+Build\+Src\+Data}}
+\item 
+struct \mbox{\hyperlink{struct_im_font_build_dst_data}{Im\+Font\+Build\+Dst\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_adf4d73301961430d50d7edd96f92ce38}{IMGUI\+\_\+\+DEFINE\+\_\+\+MATH\+\_\+\+OPERATORS}}
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_aebe589aefd15ba7289a47168e31b5e45}{STBRP\+\_\+\+STATIC}}
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_a9592e63d0df8b6f0712e8da3aea5db23}{STBRP\+\_\+\+ASSERT}}(x)~do \{ \mbox{\hyperlink{imgui_8h_acb09e7dc42e8e3cefb0ecaa197978920}{IM\+\_\+\+ASSERT}}(x); \} while (0)
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_a152aa757fb023d39f16dd537e66b60f0}{STBRP\+\_\+\+SORT}}~\mbox{\hyperlink{imgui__internal_8h_a75cd0ec18686a171e74b1726b5ddf893}{Im\+Qsort}}
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_a0791e69f0dcd58efa795dd50eb8c6cd0}{STB\+\_\+\+RECT\+\_\+\+PACK\+\_\+\+IMPLEMENTATION}}
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_a8f6734fe0cb6d6aa09e494602afa96be}{STBTT\+\_\+malloc}}(x,  u)~((\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}})(u), \mbox{\hyperlink{imgui_8h_a40113fb128e7035c8d4aaeeed565e7aa}{IM\+\_\+\+ALLOC}}(x))
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_a357d3564409e68f1b694e06f7beeca7e}{STBTT\+\_\+free}}(x,  u)~((\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}})(u), \mbox{\hyperlink{imgui_8h_ac24040f4c2d54ba3216c829703498ebb}{IM\+\_\+\+FREE}}(x))
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_a1123d905f512c19c8d796a6d294a3a84}{STBTT\+\_\+assert}}(x)~do \{ \mbox{\hyperlink{imgui_8h_acb09e7dc42e8e3cefb0ecaa197978920}{IM\+\_\+\+ASSERT}}(x); \} while(0)
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_ab937f3c3c6d0c2c126c50bb32e379f02}{STBTT\+\_\+fmod}}(x,  \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}})~\mbox{\hyperlink{imgui__internal_8h_ab31c49c24dd5d51dd629a56b5d11a85e}{Im\+Fmod}}(x,\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}})
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_ace1fcbebd394a5bed76bc9b97dbe8d5a}{STBTT\+\_\+sqrt}}(x)~\mbox{\hyperlink{imgui__internal_8h_af45b12e2af4037adec57b0a9488b45c2}{Im\+Sqrt}}(x)
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_a20c159e8e6985b92a96497881709659a}{STBTT\+\_\+pow}}(x,  \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}})~\mbox{\hyperlink{imgui__internal_8h_ac2fe696c26f9f32753d9fa0e3e3ab1c7}{Im\+Pow}}(x,\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}})
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_a2b639a5c1ed39bb9e223a78b743f3769}{STBTT\+\_\+fabs}}(x)~\mbox{\hyperlink{imgui__internal_8h_aa886f20aead1a15ce961ac6fa361b044}{Im\+Fabs}}(x)
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_a37ec4d14918346d3451d4f44f24d4710}{STBTT\+\_\+ifloor}}(x)~((int)\mbox{\hyperlink{imgui__internal_8h_a5f206270c3245e920367308e7f4f02a0}{Im\+Floor\+Signed}}(x))
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_a284a26aeebf87bc1688d38b3b16c7248}{STBTT\+\_\+iceil}}(x)~((int)\mbox{\hyperlink{imgui__internal_8h_a09170e101a72d70544ae6edfe495ee8f}{Im\+Ceil}}(x))
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_adb252cc9576591994fdf2f89baddc630}{STBTT\+\_\+\+STATIC}}
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_afaa2f2d0d9d6726cfae6da070e736347}{STB\+\_\+\+TRUETYPE\+\_\+\+IMPLEMENTATION}}
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_a36c70a3a9dfec20d02bbb18e00a42ee1}{Im\+Draw\+Cmd\+\_\+\+Header\+Size}}~(\mbox{\hyperlink{imgui_8h_a303f3de82ef5bc71ef6fd91d5f46d26e}{IM\+\_\+\+OFFSETOF}}(\mbox{\hyperlink{struct_im_draw_cmd}{Im\+Draw\+Cmd}}, Vtx\+Offset) + sizeof(unsigned int))
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_ac140465795cda6fa747579fc0b1b29d0}{Im\+Draw\+Cmd\+\_\+\+Header\+Compare}}(CMD\+\_\+\+LHS,  CMD\+\_\+\+RHS)~(memcmp(CMD\+\_\+\+LHS, CMD\+\_\+\+RHS, \mbox{\hyperlink{imgui__draw_8cpp_a36c70a3a9dfec20d02bbb18e00a42ee1}{Im\+Draw\+Cmd\+\_\+\+Header\+Size}}))
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_a13d0eca12c1e2df442519a1a80d8cdaa}{Im\+Draw\+Cmd\+\_\+\+Header\+Copy}}(CMD\+\_\+\+DST,  CMD\+\_\+\+SRC)~(memcpy(CMD\+\_\+\+DST, CMD\+\_\+\+SRC, \mbox{\hyperlink{imgui__draw_8cpp_a36c70a3a9dfec20d02bbb18e00a42ee1}{Im\+Draw\+Cmd\+\_\+\+Header\+Size}}))
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_acbac18638b9456aa07cd48452f074eeb}{Im\+Draw\+Cmd\+\_\+\+Are\+Sequential\+Idx\+Offset}}(CMD\+\_\+0,  CMD\+\_\+1)~(CMD\+\_\+0-\/$>$Idx\+Offset + CMD\+\_\+0-\/$>$Elem\+Count == CMD\+\_\+1-\/$>$Idx\+Offset)
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_aa595f4d7f5dca6ca04e5b1648e84f0d6}{IM\+\_\+\+NORMALIZE2\+F\+\_\+\+OVER\+\_\+\+ZERO}}(VX,  VY)~\{ float d2 = VX$\ast$VX + VY$\ast$VY; if (d2 $>$ 0.\+0f) \{ float inv\+\_\+len = \mbox{\hyperlink{imgui__internal_8h_ad5c9410a0f3bf413fd98ab90655905fa}{Im\+Rsqrt}}(d2); VX $\ast$= inv\+\_\+len; VY $\ast$= inv\+\_\+len; \} \} (\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}})0
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_ae801e54afba24c14221f81e1564615ef}{IM\+\_\+\+FIXNORMAL2\+F\+\_\+\+MAX\+\_\+\+INVLEN2}}~100.\+0f
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_a4df703825e073b91ea24956d6021ee59}{IM\+\_\+\+FIXNORMAL2F}}(VX,  VY)~\{ float d2 = VX$\ast$VX + VY$\ast$VY; if (d2 $>$ 0.\+000001f) \{ float inv\+\_\+len2 = 1.\+0f / d2; if (inv\+\_\+len2 $>$ \mbox{\hyperlink{imgui__draw_8cpp_ae801e54afba24c14221f81e1564615ef}{IM\+\_\+\+FIXNORMAL2\+F\+\_\+\+MAX\+\_\+\+INVLEN2}}) inv\+\_\+len2 = \mbox{\hyperlink{imgui__draw_8cpp_ae801e54afba24c14221f81e1564615ef}{IM\+\_\+\+FIXNORMAL2\+F\+\_\+\+MAX\+\_\+\+INVLEN2}}; VX $\ast$= inv\+\_\+len2; VY $\ast$= inv\+\_\+len2; \} \} (\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}})0
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_a8abf98f5e58a4b3dbbdf35bb1d5ee872}{stb\+\_\+\+\_\+in2}}(x)~((i\mbox{[}x\mbox{]} $<$$<$ 8) + i\mbox{[}(x)+1\mbox{]})
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_acdc23c4b28788003d2841185775661ff}{stb\+\_\+\+\_\+in3}}(x)~((i\mbox{[}x\mbox{]} $<$$<$ 16) + \mbox{\hyperlink{imgui__draw_8cpp_a8abf98f5e58a4b3dbbdf35bb1d5ee872}{stb\+\_\+\+\_\+in2}}((x)+1))
+\item 
+\#define \mbox{\hyperlink{imgui__draw_8cpp_a26702caa0fd7846cb92e8ba4d80446c3}{stb\+\_\+\+\_\+in4}}(x)~((i\mbox{[}x\mbox{]} $<$$<$ 24) + \mbox{\hyperlink{imgui__draw_8cpp_acdc23c4b28788003d2841185775661ff}{stb\+\_\+\+\_\+in3}}((x)+1))
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \mbox{\hyperlink{imgui__draw_8cpp_a313bb9d47244a5d27a5aeb4cd74f94a3}{Im\+Bezier\+Cubic\+Calc}} (const \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \&p1, const \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \&p2, const \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \&p3, const \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \&p4, float t)
+\item 
+\mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \mbox{\hyperlink{imgui__draw_8cpp_a9b3ec0353c3a10709ad21985942613da}{Im\+Bezier\+Quadratic\+Calc}} (const \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \&p1, const \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \&p2, const \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \&p3, float t)
+\item 
+static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__draw_8cpp_aa24ae0f6a91ae4f8e72ae1baa9296bd1}{Path\+Bezier\+Cubic\+Curve\+To\+Casteljau}} (\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} $>$ $\ast$path, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, float tess\+\_\+tol, int \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a2b536fca24f51d6a849aed325793e661}{level}})
+\item 
+static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__draw_8cpp_aee43e89d334baa328c6a456379edaccd}{Path\+Bezier\+Quadratic\+Curve\+To\+Casteljau}} (\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} $>$ $\ast$path, float x1, float y1, float x2, float y2, float x3, float y3, float tess\+\_\+tol, int \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a2b536fca24f51d6a849aed325793e661}{level}})
+\item 
+\mbox{\hyperlink{imgui__draw_8cpp_aef0f30b37b1337d420dbd4facfdbc328}{IM\+\_\+\+STATIC\+\_\+\+ASSERT}} (\mbox{\hyperlink{imgui_8h_af42aea565fd5eb55fdb4c85c24e3c582a061f928851785c7eff16663e7fcc02a6}{Im\+Draw\+Flags\+\_\+\+Round\+Corners\+Top\+Left}}==(1$<$$<$ 4))
+\item 
+static \mbox{\hyperlink{imgui_8h_af2ef7e1341558a1d39aa244c1257780a}{Im\+Draw\+Flags}} \mbox{\hyperlink{imgui__draw_8cpp_abc26563004ba48126f2e8b70ea0067af}{Fix\+Rect\+Corner\+Flags}} (\mbox{\hyperlink{imgui_8h_af2ef7e1341558a1d39aa244c1257780a}{Im\+Draw\+Flags}} flags)
+\item 
+static unsigned int \mbox{\hyperlink{imgui__draw_8cpp_a5a5301def23b33e2156ac79a8b65c69b}{stb\+\_\+decompress\+\_\+length}} (const unsigned char $\ast$input)
+\item 
+static unsigned int \mbox{\hyperlink{imgui__draw_8cpp_a23f899d930c93d351569ee83cf920570}{stb\+\_\+decompress}} (unsigned char $\ast$output, const unsigned char $\ast$input, unsigned int \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a011fc24f10426c01349e94a4edd4b0d5}{length}})
+\item 
+static const char $\ast$ \mbox{\hyperlink{imgui__draw_8cpp_a98e6aacbe39a5d2a5fa9d08e362e49ef}{Get\+Default\+Compressed\+Font\+Data\+TTFBase85}} ()
+\item 
+static unsigned int \mbox{\hyperlink{imgui__draw_8cpp_a7e56fa5a582707008d3a598b8d6e81fd}{Decode85\+Byte}} (char c)
+\item 
+static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__draw_8cpp_a992fe244c130e7ec5a8aa7bc0889f9aa}{Decode85}} (const unsigned char $\ast$src, unsigned char $\ast$dst)
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__draw_8cpp_a8d5f3a053aae34ac7b93e39cb9096d06}{Im\+Font\+Atlas\+Build\+Multiply\+Calc\+Lookup\+Table}} (unsigned char out\+\_\+table\mbox{[}256\mbox{]}, float in\+\_\+brighten\+\_\+factor)
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__draw_8cpp_a8dc3feae771599949b33712b520e9060}{Im\+Font\+Atlas\+Build\+Multiply\+Rect\+Alpha8}} (const unsigned char table\mbox{[}256\mbox{]}, unsigned char $\ast$\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_aa6f05cf9167efe04d7c20e5d34561086}{pixels}}, int x, int \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}, int w, int h, int \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_adec60f1216ca1b900f8d776c5b6190e0}{stride}})
+\item 
+static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__draw_8cpp_a4fc5013fcaedd05f22060e0c97f18c83}{Unpack\+Bit\+Vector\+To\+Flat\+Index\+List}} (const \mbox{\hyperlink{struct_im_bit_vector}{Im\+Bit\+Vector}} $\ast$in, \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ int $>$ $\ast$out)
+\item 
+static bool \mbox{\hyperlink{imgui__draw_8cpp_a2f785bd6dd330af7a832589fa24f303a}{Im\+Font\+Atlas\+Build\+With\+Stb\+Truetype}} (\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$atlas)
+\item 
+const \mbox{\hyperlink{struct_im_font_builder_i_o}{Im\+Font\+Builder\+IO}} $\ast$ \mbox{\hyperlink{imgui__draw_8cpp_a4c276d0224ef420d570c9485c4c76a19}{Im\+Font\+Atlas\+Get\+Builder\+For\+Stb\+Truetype}} ()
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__draw_8cpp_a4bea0932904c84de73237df3f1f76bdd}{Im\+Font\+Atlas\+Build\+Setup\+Font}} (\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$atlas, \mbox{\hyperlink{struct_im_font}{Im\+Font}} $\ast$font, \mbox{\hyperlink{struct_im_font_config}{Im\+Font\+Config}} $\ast$font\+\_\+config, float ascent, float descent)
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__draw_8cpp_add0fcd1708ca3540688d8277fc01bf3f}{Im\+Font\+Atlas\+Build\+Pack\+Custom\+Rects}} (\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$atlas, \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} $\ast$stbrp\+\_\+context\+\_\+opaque)
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__draw_8cpp_acc7928ba77e5e06a342720ccf0a95ece}{Im\+Font\+Atlas\+Build\+Render8bpp\+Rect\+From\+String}} (\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$atlas, int x, int \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}, int w, int h, const char $\ast$in\+\_\+str, char in\+\_\+marker\+\_\+char, unsigned char in\+\_\+marker\+\_\+pixel\+\_\+value)
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__draw_8cpp_a66ac51ad223da84c7167d4c9f4cfb2fb}{Im\+Font\+Atlas\+Build\+Render32bpp\+Rect\+From\+String}} (\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$atlas, int x, int \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}, int w, int h, const char $\ast$in\+\_\+str, char in\+\_\+marker\+\_\+char, unsigned int in\+\_\+marker\+\_\+pixel\+\_\+value)
+\item 
+static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__draw_8cpp_a5c1e7dc4dbb8ef1787cc953b6156fb28}{Im\+Font\+Atlas\+Build\+Render\+Default\+Tex\+Data}} (\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$atlas)
+\item 
+static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__draw_8cpp_ab634607914fd0dc9ed27d1dc65505adc}{Im\+Font\+Atlas\+Build\+Render\+Lines\+Tex\+Data}} (\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$atlas)
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__draw_8cpp_ac050ff181df43cec0b63d834b6039c3f}{Im\+Font\+Atlas\+Build\+Init}} (\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$atlas)
+\item 
+\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__draw_8cpp_adbf0ee92b3ac86e30b9e81f552d15d37}{Im\+Font\+Atlas\+Build\+Finish}} (\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$atlas)
+\item 
+static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__draw_8cpp_ab5814a547146d0bc2c09e3b421abec63}{Unpack\+Accumulative\+Offsets\+Into\+Ranges}} (int base\+\_\+codepoint, const short $\ast$accumulative\+\_\+offsets, int accumulative\+\_\+offsets\+\_\+count, \mbox{\hyperlink{imgui_8h_a1ecb49ee827c39a982f1e1467910d020}{Im\+Wchar}} $\ast$out\+\_\+ranges)
+\item 
+static \mbox{\hyperlink{imgui_8h_a1ecb49ee827c39a982f1e1467910d020}{Im\+Wchar}} \mbox{\hyperlink{imgui__draw_8cpp_abbf9333048e69bc2c78377c540592f98}{Find\+First\+Existing\+Glyph}} (\mbox{\hyperlink{struct_im_font}{Im\+Font}} $\ast$font, const \mbox{\hyperlink{imgui_8h_a1ecb49ee827c39a982f1e1467910d020}{Im\+Wchar}} $\ast$candidate\+\_\+chars, int candidate\+\_\+chars\+\_\+count)
+\item 
+static float \mbox{\hyperlink{imgui__draw_8cpp_ae358747474c006135921182132a578a6}{Im\+Acos01}} (float x)
+\item 
+static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__draw_8cpp_a7369890717be8d014dc7a437dcdfb282}{stb\+\_\+\+\_\+match}} (const unsigned char $\ast$\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_abd87654504355b4c1bb002dcb1d4d16a}{data}}, unsigned int \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a011fc24f10426c01349e94a4edd4b0d5}{length}})
+\item 
+static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} \mbox{\hyperlink{imgui__draw_8cpp_a1e4edfcb0eca0c2f9b67338817342cc4}{stb\+\_\+\+\_\+lit}} (const unsigned char $\ast$\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_abd87654504355b4c1bb002dcb1d4d16a}{data}}, unsigned int \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a011fc24f10426c01349e94a4edd4b0d5}{length}})
+\item 
+static const unsigned char $\ast$ \mbox{\hyperlink{imgui__draw_8cpp_a7e482ab813b31838bc410914b3293a17}{stb\+\_\+decompress\+\_\+token}} (const unsigned char $\ast$i)
+\item 
+static unsigned int \mbox{\hyperlink{imgui__draw_8cpp_a13802610d242126f44f88bc9392e3bbc}{stb\+\_\+adler32}} (unsigned int adler32, unsigned char $\ast$\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, unsigned int buflen)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{imgui__draw_8cpp_adf518fea7357febbb14eeecb692a8d95}{FONT\+\_\+\+ATLAS\+\_\+\+DEFAULT\+\_\+\+TEX\+\_\+\+DATA\+\_\+W}} = 122
+\item 
+const int \mbox{\hyperlink{imgui__draw_8cpp_a2c96fc3febbe9f4f6c042a2f975a5b1d}{FONT\+\_\+\+ATLAS\+\_\+\+DEFAULT\+\_\+\+TEX\+\_\+\+DATA\+\_\+H}} = 27
+\item 
+static const char \mbox{\hyperlink{imgui__draw_8cpp_a8fb14a4f88c1553e29260d6f43aada4b}{FONT\+\_\+\+ATLAS\+\_\+\+DEFAULT\+\_\+\+TEX\+\_\+\+DATA\+\_\+\+PIXELS}} \mbox{[}\mbox{\hyperlink{imgui__draw_8cpp_adf518fea7357febbb14eeecb692a8d95}{FONT\+\_\+\+ATLAS\+\_\+\+DEFAULT\+\_\+\+TEX\+\_\+\+DATA\+\_\+W}} $\ast$\mbox{\hyperlink{imgui__draw_8cpp_a2c96fc3febbe9f4f6c042a2f975a5b1d}{FONT\+\_\+\+ATLAS\+\_\+\+DEFAULT\+\_\+\+TEX\+\_\+\+DATA\+\_\+H}}+1\mbox{]}
+\item 
+static const \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \mbox{\hyperlink{imgui__draw_8cpp_a082105b7beb5c000f2db90529edf2f50}{FONT\+\_\+\+ATLAS\+\_\+\+DEFAULT\+\_\+\+TEX\+\_\+\+CURSOR\+\_\+\+DATA}} \mbox{[}\mbox{\hyperlink{imgui_8h_a2eb1181cc1d7872a061df8731141dde9a4c24ccc8f37a57d6341da1cfd3b337a5}{Im\+Gui\+Mouse\+Cursor\+\_\+\+COUNT}}\mbox{]}\mbox{[}3\mbox{]}
+\item 
+static unsigned char $\ast$ \mbox{\hyperlink{imgui__draw_8cpp_a6d45e455062888f4f84c022dcb80575f}{stb\+\_\+\+\_\+barrier\+\_\+out\+\_\+e}}
+\item 
+static unsigned char $\ast$ \mbox{\hyperlink{imgui__draw_8cpp_a78b497778dec25807f8ba5facab4732a}{stb\+\_\+\+\_\+barrier\+\_\+out\+\_\+b}}
+\item 
+static const unsigned char $\ast$ \mbox{\hyperlink{imgui__draw_8cpp_abdae0f70193ebadc01bddcd66dfcf743}{stb\+\_\+\+\_\+barrier\+\_\+in\+\_\+b}}
+\item 
+static unsigned char $\ast$ \mbox{\hyperlink{imgui__draw_8cpp_a41c1b5025a92d93a30f72ba8f78c9910}{stb\+\_\+\+\_\+dout}}
+\item 
+static const char \mbox{\hyperlink{imgui__draw_8cpp_a7fcb9c29f786e1904c10a70f1385690a}{proggy\+\_\+clean\+\_\+ttf\+\_\+compressed\+\_\+data\+\_\+base85}} \mbox{[}11980+1\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{imgui__draw_8cpp_a4df703825e073b91ea24956d6021ee59}\label{imgui__draw_8cpp_a4df703825e073b91ea24956d6021ee59}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!IM\_FIXNORMAL2F@{IM\_FIXNORMAL2F}}
+\index{IM\_FIXNORMAL2F@{IM\_FIXNORMAL2F}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{IM\_FIXNORMAL2F}{IM\_FIXNORMAL2F}}
+{\footnotesize\ttfamily \#define IM\+\_\+\+FIXNORMAL2F(\begin{DoxyParamCaption}\item[{}]{VX,  }\item[{}]{VY }\end{DoxyParamCaption})~\{ float d2 = VX$\ast$VX + VY$\ast$VY; if (d2 $>$ 0.\+000001f) \{ float inv\+\_\+len2 = 1.\+0f / d2; if (inv\+\_\+len2 $>$ \mbox{\hyperlink{imgui__draw_8cpp_ae801e54afba24c14221f81e1564615ef}{IM\+\_\+\+FIXNORMAL2\+F\+\_\+\+MAX\+\_\+\+INVLEN2}}) inv\+\_\+len2 = \mbox{\hyperlink{imgui__draw_8cpp_ae801e54afba24c14221f81e1564615ef}{IM\+\_\+\+FIXNORMAL2\+F\+\_\+\+MAX\+\_\+\+INVLEN2}}; VX $\ast$= inv\+\_\+len2; VY $\ast$= inv\+\_\+len2; \} \} (\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}})0}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_ae801e54afba24c14221f81e1564615ef}\label{imgui__draw_8cpp_ae801e54afba24c14221f81e1564615ef}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!IM\_FIXNORMAL2F\_MAX\_INVLEN2@{IM\_FIXNORMAL2F\_MAX\_INVLEN2}}
+\index{IM\_FIXNORMAL2F\_MAX\_INVLEN2@{IM\_FIXNORMAL2F\_MAX\_INVLEN2}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{IM\_FIXNORMAL2F\_MAX\_INVLEN2}{IM\_FIXNORMAL2F\_MAX\_INVLEN2}}
+{\footnotesize\ttfamily \#define IM\+\_\+\+FIXNORMAL2\+F\+\_\+\+MAX\+\_\+\+INVLEN2~100.\+0f}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_aa595f4d7f5dca6ca04e5b1648e84f0d6}\label{imgui__draw_8cpp_aa595f4d7f5dca6ca04e5b1648e84f0d6}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!IM\_NORMALIZE2F\_OVER\_ZERO@{IM\_NORMALIZE2F\_OVER\_ZERO}}
+\index{IM\_NORMALIZE2F\_OVER\_ZERO@{IM\_NORMALIZE2F\_OVER\_ZERO}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{IM\_NORMALIZE2F\_OVER\_ZERO}{IM\_NORMALIZE2F\_OVER\_ZERO}}
+{\footnotesize\ttfamily \#define IM\+\_\+\+NORMALIZE2\+F\+\_\+\+OVER\+\_\+\+ZERO(\begin{DoxyParamCaption}\item[{}]{VX,  }\item[{}]{VY }\end{DoxyParamCaption})~\{ float d2 = VX$\ast$VX + VY$\ast$VY; if (d2 $>$ 0.\+0f) \{ float inv\+\_\+len = \mbox{\hyperlink{imgui__internal_8h_ad5c9410a0f3bf413fd98ab90655905fa}{Im\+Rsqrt}}(d2); VX $\ast$= inv\+\_\+len; VY $\ast$= inv\+\_\+len; \} \} (\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}})0}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_acbac18638b9456aa07cd48452f074eeb}\label{imgui__draw_8cpp_acbac18638b9456aa07cd48452f074eeb}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImDrawCmd\_AreSequentialIdxOffset@{ImDrawCmd\_AreSequentialIdxOffset}}
+\index{ImDrawCmd\_AreSequentialIdxOffset@{ImDrawCmd\_AreSequentialIdxOffset}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImDrawCmd\_AreSequentialIdxOffset}{ImDrawCmd\_AreSequentialIdxOffset}}
+{\footnotesize\ttfamily \#define Im\+Draw\+Cmd\+\_\+\+Are\+Sequential\+Idx\+Offset(\begin{DoxyParamCaption}\item[{}]{CMD\+\_\+0,  }\item[{}]{CMD\+\_\+1 }\end{DoxyParamCaption})~(CMD\+\_\+0-\/$>$Idx\+Offset + CMD\+\_\+0-\/$>$Elem\+Count == CMD\+\_\+1-\/$>$Idx\+Offset)}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_ac140465795cda6fa747579fc0b1b29d0}\label{imgui__draw_8cpp_ac140465795cda6fa747579fc0b1b29d0}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImDrawCmd\_HeaderCompare@{ImDrawCmd\_HeaderCompare}}
+\index{ImDrawCmd\_HeaderCompare@{ImDrawCmd\_HeaderCompare}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImDrawCmd\_HeaderCompare}{ImDrawCmd\_HeaderCompare}}
+{\footnotesize\ttfamily \#define Im\+Draw\+Cmd\+\_\+\+Header\+Compare(\begin{DoxyParamCaption}\item[{}]{CMD\+\_\+\+LHS,  }\item[{}]{CMD\+\_\+\+RHS }\end{DoxyParamCaption})~(memcmp(CMD\+\_\+\+LHS, CMD\+\_\+\+RHS, \mbox{\hyperlink{imgui__draw_8cpp_a36c70a3a9dfec20d02bbb18e00a42ee1}{Im\+Draw\+Cmd\+\_\+\+Header\+Size}}))}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a13d0eca12c1e2df442519a1a80d8cdaa}\label{imgui__draw_8cpp_a13d0eca12c1e2df442519a1a80d8cdaa}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImDrawCmd\_HeaderCopy@{ImDrawCmd\_HeaderCopy}}
+\index{ImDrawCmd\_HeaderCopy@{ImDrawCmd\_HeaderCopy}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImDrawCmd\_HeaderCopy}{ImDrawCmd\_HeaderCopy}}
+{\footnotesize\ttfamily \#define Im\+Draw\+Cmd\+\_\+\+Header\+Copy(\begin{DoxyParamCaption}\item[{}]{CMD\+\_\+\+DST,  }\item[{}]{CMD\+\_\+\+SRC }\end{DoxyParamCaption})~(memcpy(CMD\+\_\+\+DST, CMD\+\_\+\+SRC, \mbox{\hyperlink{imgui__draw_8cpp_a36c70a3a9dfec20d02bbb18e00a42ee1}{Im\+Draw\+Cmd\+\_\+\+Header\+Size}}))}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a36c70a3a9dfec20d02bbb18e00a42ee1}\label{imgui__draw_8cpp_a36c70a3a9dfec20d02bbb18e00a42ee1}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImDrawCmd\_HeaderSize@{ImDrawCmd\_HeaderSize}}
+\index{ImDrawCmd\_HeaderSize@{ImDrawCmd\_HeaderSize}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImDrawCmd\_HeaderSize}{ImDrawCmd\_HeaderSize}}
+{\footnotesize\ttfamily \#define Im\+Draw\+Cmd\+\_\+\+Header\+Size~(\mbox{\hyperlink{imgui_8h_a303f3de82ef5bc71ef6fd91d5f46d26e}{IM\+\_\+\+OFFSETOF}}(\mbox{\hyperlink{struct_im_draw_cmd}{Im\+Draw\+Cmd}}, Vtx\+Offset) + sizeof(unsigned int))}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_adf4d73301961430d50d7edd96f92ce38}\label{imgui__draw_8cpp_adf4d73301961430d50d7edd96f92ce38}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!IMGUI\_DEFINE\_MATH\_OPERATORS@{IMGUI\_DEFINE\_MATH\_OPERATORS}}
+\index{IMGUI\_DEFINE\_MATH\_OPERATORS@{IMGUI\_DEFINE\_MATH\_OPERATORS}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{IMGUI\_DEFINE\_MATH\_OPERATORS}{IMGUI\_DEFINE\_MATH\_OPERATORS}}
+{\footnotesize\ttfamily \#define IMGUI\+\_\+\+DEFINE\+\_\+\+MATH\+\_\+\+OPERATORS}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a8abf98f5e58a4b3dbbdf35bb1d5ee872}\label{imgui__draw_8cpp_a8abf98f5e58a4b3dbbdf35bb1d5ee872}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!stb\_\_in2@{stb\_\_in2}}
+\index{stb\_\_in2@{stb\_\_in2}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{stb\_\_in2}{stb\_\_in2}}
+{\footnotesize\ttfamily \#define stb\+\_\+\+\_\+in2(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((i\mbox{[}x\mbox{]} $<$$<$ 8) + i\mbox{[}(x)+1\mbox{]})}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_acdc23c4b28788003d2841185775661ff}\label{imgui__draw_8cpp_acdc23c4b28788003d2841185775661ff}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!stb\_\_in3@{stb\_\_in3}}
+\index{stb\_\_in3@{stb\_\_in3}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{stb\_\_in3}{stb\_\_in3}}
+{\footnotesize\ttfamily \#define stb\+\_\+\+\_\+in3(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((i\mbox{[}x\mbox{]} $<$$<$ 16) + \mbox{\hyperlink{imgui__draw_8cpp_a8abf98f5e58a4b3dbbdf35bb1d5ee872}{stb\+\_\+\+\_\+in2}}((x)+1))}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a26702caa0fd7846cb92e8ba4d80446c3}\label{imgui__draw_8cpp_a26702caa0fd7846cb92e8ba4d80446c3}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!stb\_\_in4@{stb\_\_in4}}
+\index{stb\_\_in4@{stb\_\_in4}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{stb\_\_in4}{stb\_\_in4}}
+{\footnotesize\ttfamily \#define stb\+\_\+\+\_\+in4(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((i\mbox{[}x\mbox{]} $<$$<$ 24) + \mbox{\hyperlink{imgui__draw_8cpp_acdc23c4b28788003d2841185775661ff}{stb\+\_\+\+\_\+in3}}((x)+1))}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a0791e69f0dcd58efa795dd50eb8c6cd0}\label{imgui__draw_8cpp_a0791e69f0dcd58efa795dd50eb8c6cd0}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!STB\_RECT\_PACK\_IMPLEMENTATION@{STB\_RECT\_PACK\_IMPLEMENTATION}}
+\index{STB\_RECT\_PACK\_IMPLEMENTATION@{STB\_RECT\_PACK\_IMPLEMENTATION}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_RECT\_PACK\_IMPLEMENTATION}{STB\_RECT\_PACK\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \#define STB\+\_\+\+RECT\+\_\+\+PACK\+\_\+\+IMPLEMENTATION}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_afaa2f2d0d9d6726cfae6da070e736347}\label{imgui__draw_8cpp_afaa2f2d0d9d6726cfae6da070e736347}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!STB\_TRUETYPE\_IMPLEMENTATION@{STB\_TRUETYPE\_IMPLEMENTATION}}
+\index{STB\_TRUETYPE\_IMPLEMENTATION@{STB\_TRUETYPE\_IMPLEMENTATION}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_TRUETYPE\_IMPLEMENTATION}{STB\_TRUETYPE\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \#define STB\+\_\+\+TRUETYPE\+\_\+\+IMPLEMENTATION}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a9592e63d0df8b6f0712e8da3aea5db23}\label{imgui__draw_8cpp_a9592e63d0df8b6f0712e8da3aea5db23}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!STBRP\_ASSERT@{STBRP\_ASSERT}}
+\index{STBRP\_ASSERT@{STBRP\_ASSERT}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{STBRP\_ASSERT}{STBRP\_ASSERT}}
+{\footnotesize\ttfamily \#define STBRP\+\_\+\+ASSERT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~do \{ \mbox{\hyperlink{imgui_8h_acb09e7dc42e8e3cefb0ecaa197978920}{IM\+\_\+\+ASSERT}}(x); \} while (0)}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a152aa757fb023d39f16dd537e66b60f0}\label{imgui__draw_8cpp_a152aa757fb023d39f16dd537e66b60f0}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!STBRP\_SORT@{STBRP\_SORT}}
+\index{STBRP\_SORT@{STBRP\_SORT}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{STBRP\_SORT}{STBRP\_SORT}}
+{\footnotesize\ttfamily \#define STBRP\+\_\+\+SORT~\mbox{\hyperlink{imgui__internal_8h_a75cd0ec18686a171e74b1726b5ddf893}{Im\+Qsort}}}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_aebe589aefd15ba7289a47168e31b5e45}\label{imgui__draw_8cpp_aebe589aefd15ba7289a47168e31b5e45}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!STBRP\_STATIC@{STBRP\_STATIC}}
+\index{STBRP\_STATIC@{STBRP\_STATIC}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{STBRP\_STATIC}{STBRP\_STATIC}}
+{\footnotesize\ttfamily \#define STBRP\+\_\+\+STATIC}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a1123d905f512c19c8d796a6d294a3a84}\label{imgui__draw_8cpp_a1123d905f512c19c8d796a6d294a3a84}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!STBTT\_assert@{STBTT\_assert}}
+\index{STBTT\_assert@{STBTT\_assert}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{STBTT\_assert}{STBTT\_assert}}
+{\footnotesize\ttfamily \#define STBTT\+\_\+assert(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~do \{ \mbox{\hyperlink{imgui_8h_acb09e7dc42e8e3cefb0ecaa197978920}{IM\+\_\+\+ASSERT}}(x); \} while(0)}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a2b639a5c1ed39bb9e223a78b743f3769}\label{imgui__draw_8cpp_a2b639a5c1ed39bb9e223a78b743f3769}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!STBTT\_fabs@{STBTT\_fabs}}
+\index{STBTT\_fabs@{STBTT\_fabs}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{STBTT\_fabs}{STBTT\_fabs}}
+{\footnotesize\ttfamily \#define STBTT\+\_\+fabs(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\mbox{\hyperlink{imgui__internal_8h_aa886f20aead1a15ce961ac6fa361b044}{Im\+Fabs}}(x)}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_ab937f3c3c6d0c2c126c50bb32e379f02}\label{imgui__draw_8cpp_ab937f3c3c6d0c2c126c50bb32e379f02}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!STBTT\_fmod@{STBTT\_fmod}}
+\index{STBTT\_fmod@{STBTT\_fmod}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{STBTT\_fmod}{STBTT\_fmod}}
+{\footnotesize\ttfamily \#define STBTT\+\_\+fmod(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}} }\end{DoxyParamCaption})~\mbox{\hyperlink{imgui__internal_8h_ab31c49c24dd5d51dd629a56b5d11a85e}{Im\+Fmod}}(x,\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}})}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a357d3564409e68f1b694e06f7beeca7e}\label{imgui__draw_8cpp_a357d3564409e68f1b694e06f7beeca7e}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!STBTT\_free@{STBTT\_free}}
+\index{STBTT\_free@{STBTT\_free}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{STBTT\_free}{STBTT\_free}}
+{\footnotesize\ttfamily \#define STBTT\+\_\+free(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{u }\end{DoxyParamCaption})~((\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}})(u), \mbox{\hyperlink{imgui_8h_ac24040f4c2d54ba3216c829703498ebb}{IM\+\_\+\+FREE}}(x))}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a284a26aeebf87bc1688d38b3b16c7248}\label{imgui__draw_8cpp_a284a26aeebf87bc1688d38b3b16c7248}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!STBTT\_iceil@{STBTT\_iceil}}
+\index{STBTT\_iceil@{STBTT\_iceil}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{STBTT\_iceil}{STBTT\_iceil}}
+{\footnotesize\ttfamily \#define STBTT\+\_\+iceil(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((int)\mbox{\hyperlink{imgui__internal_8h_a09170e101a72d70544ae6edfe495ee8f}{Im\+Ceil}}(x))}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a37ec4d14918346d3451d4f44f24d4710}\label{imgui__draw_8cpp_a37ec4d14918346d3451d4f44f24d4710}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!STBTT\_ifloor@{STBTT\_ifloor}}
+\index{STBTT\_ifloor@{STBTT\_ifloor}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{STBTT\_ifloor}{STBTT\_ifloor}}
+{\footnotesize\ttfamily \#define STBTT\+\_\+ifloor(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((int)\mbox{\hyperlink{imgui__internal_8h_a5f206270c3245e920367308e7f4f02a0}{Im\+Floor\+Signed}}(x))}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a8f6734fe0cb6d6aa09e494602afa96be}\label{imgui__draw_8cpp_a8f6734fe0cb6d6aa09e494602afa96be}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!STBTT\_malloc@{STBTT\_malloc}}
+\index{STBTT\_malloc@{STBTT\_malloc}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{STBTT\_malloc}{STBTT\_malloc}}
+{\footnotesize\ttfamily \#define STBTT\+\_\+malloc(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{u }\end{DoxyParamCaption})~((\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}})(u), \mbox{\hyperlink{imgui_8h_a40113fb128e7035c8d4aaeeed565e7aa}{IM\+\_\+\+ALLOC}}(x))}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a20c159e8e6985b92a96497881709659a}\label{imgui__draw_8cpp_a20c159e8e6985b92a96497881709659a}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!STBTT\_pow@{STBTT\_pow}}
+\index{STBTT\_pow@{STBTT\_pow}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{STBTT\_pow}{STBTT\_pow}}
+{\footnotesize\ttfamily \#define STBTT\+\_\+pow(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}} }\end{DoxyParamCaption})~\mbox{\hyperlink{imgui__internal_8h_ac2fe696c26f9f32753d9fa0e3e3ab1c7}{Im\+Pow}}(x,\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}})}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_ace1fcbebd394a5bed76bc9b97dbe8d5a}\label{imgui__draw_8cpp_ace1fcbebd394a5bed76bc9b97dbe8d5a}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!STBTT\_sqrt@{STBTT\_sqrt}}
+\index{STBTT\_sqrt@{STBTT\_sqrt}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{STBTT\_sqrt}{STBTT\_sqrt}}
+{\footnotesize\ttfamily \#define STBTT\+\_\+sqrt(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\mbox{\hyperlink{imgui__internal_8h_af45b12e2af4037adec57b0a9488b45c2}{Im\+Sqrt}}(x)}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_adb252cc9576591994fdf2f89baddc630}\label{imgui__draw_8cpp_adb252cc9576591994fdf2f89baddc630}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!STBTT\_STATIC@{STBTT\_STATIC}}
+\index{STBTT\_STATIC@{STBTT\_STATIC}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{STBTT\_STATIC}{STBTT\_STATIC}}
+{\footnotesize\ttfamily \#define STBTT\+\_\+\+STATIC}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{imgui__draw_8cpp_a992fe244c130e7ec5a8aa7bc0889f9aa}\label{imgui__draw_8cpp_a992fe244c130e7ec5a8aa7bc0889f9aa}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!Decode85@{Decode85}}
+\index{Decode85@{Decode85}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{Decode85()}{Decode85()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Decode85 (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{src,  }\item[{unsigned char $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{imgui__draw_8cpp_a992fe244c130e7ec5a8aa7bc0889f9aa_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a992fe244c130e7ec5a8aa7bc0889f9aa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_a7e56fa5a582707008d3a598b8d6e81fd}\label{imgui__draw_8cpp_a7e56fa5a582707008d3a598b8d6e81fd}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!Decode85Byte@{Decode85Byte}}
+\index{Decode85Byte@{Decode85Byte}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{Decode85Byte()}{Decode85Byte()}}
+{\footnotesize\ttfamily static unsigned int Decode85\+Byte (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a7e56fa5a582707008d3a598b8d6e81fd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_abbf9333048e69bc2c78377c540592f98}\label{imgui__draw_8cpp_abbf9333048e69bc2c78377c540592f98}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!FindFirstExistingGlyph@{FindFirstExistingGlyph}}
+\index{FindFirstExistingGlyph@{FindFirstExistingGlyph}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{FindFirstExistingGlyph()}{FindFirstExistingGlyph()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{imgui_8h_a1ecb49ee827c39a982f1e1467910d020}{Im\+Wchar}} Find\+First\+Existing\+Glyph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_im_font}{Im\+Font}} $\ast$}]{font,  }\item[{const \mbox{\hyperlink{imgui_8h_a1ecb49ee827c39a982f1e1467910d020}{Im\+Wchar}} $\ast$}]{candidate\+\_\+chars,  }\item[{int}]{candidate\+\_\+chars\+\_\+count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_abbf9333048e69bc2c78377c540592f98_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_abbf9333048e69bc2c78377c540592f98_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_abc26563004ba48126f2e8b70ea0067af}\label{imgui__draw_8cpp_abc26563004ba48126f2e8b70ea0067af}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!FixRectCornerFlags@{FixRectCornerFlags}}
+\index{FixRectCornerFlags@{FixRectCornerFlags}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{FixRectCornerFlags()}{FixRectCornerFlags()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{imgui_8h_af2ef7e1341558a1d39aa244c1257780a}{Im\+Draw\+Flags}} Fix\+Rect\+Corner\+Flags (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{imgui_8h_af2ef7e1341558a1d39aa244c1257780a}{Im\+Draw\+Flags}}}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{imgui__draw_8cpp_abc26563004ba48126f2e8b70ea0067af_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_a98e6aacbe39a5d2a5fa9d08e362e49ef}\label{imgui__draw_8cpp_a98e6aacbe39a5d2a5fa9d08e362e49ef}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!GetDefaultCompressedFontDataTTFBase85@{GetDefaultCompressedFontDataTTFBase85}}
+\index{GetDefaultCompressedFontDataTTFBase85@{GetDefaultCompressedFontDataTTFBase85}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{GetDefaultCompressedFontDataTTFBase85()}{GetDefaultCompressedFontDataTTFBase85()}}
+{\footnotesize\ttfamily static const char $\ast$ Get\+Default\+Compressed\+Font\+Data\+TTFBase85 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a98e6aacbe39a5d2a5fa9d08e362e49ef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_aef0f30b37b1337d420dbd4facfdbc328}\label{imgui__draw_8cpp_aef0f30b37b1337d420dbd4facfdbc328}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!IM\_STATIC\_ASSERT@{IM\_STATIC\_ASSERT}}
+\index{IM\_STATIC\_ASSERT@{IM\_STATIC\_ASSERT}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{IM\_STATIC\_ASSERT()}{IM\_STATIC\_ASSERT()}}
+{\footnotesize\ttfamily IM\+\_\+\+STATIC\+\_\+\+ASSERT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{imgui_8h_af42aea565fd5eb55fdb4c85c24e3c582a061f928851785c7eff16663e7fcc02a6}{Im\+Draw\+Flags\+\_\+\+Round\+Corners\+Top\+Left}}}]{ = {\ttfamily =(1$<$$<$~4)} }\end{DoxyParamCaption})}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_aef0f30b37b1337d420dbd4facfdbc328_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_ae358747474c006135921182132a578a6}\label{imgui__draw_8cpp_ae358747474c006135921182132a578a6}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImAcos01@{ImAcos01}}
+\index{ImAcos01@{ImAcos01}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImAcos01()}{ImAcos01()}}
+{\footnotesize\ttfamily static float Im\+Acos01 (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_ae358747474c006135921182132a578a6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_a313bb9d47244a5d27a5aeb4cd74f94a3}\label{imgui__draw_8cpp_a313bb9d47244a5d27a5aeb4cd74f94a3}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImBezierCubicCalc@{ImBezierCubicCalc}}
+\index{ImBezierCubicCalc@{ImBezierCubicCalc}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImBezierCubicCalc()}{ImBezierCubicCalc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} Im\+Bezier\+Cubic\+Calc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \&}]{p1,  }\item[{const \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \&}]{p2,  }\item[{const \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \&}]{p3,  }\item[{const \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \&}]{p4,  }\item[{float}]{t }\end{DoxyParamCaption})}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a313bb9d47244a5d27a5aeb4cd74f94a3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_a9b3ec0353c3a10709ad21985942613da}\label{imgui__draw_8cpp_a9b3ec0353c3a10709ad21985942613da}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImBezierQuadraticCalc@{ImBezierQuadraticCalc}}
+\index{ImBezierQuadraticCalc@{ImBezierQuadraticCalc}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImBezierQuadraticCalc()}{ImBezierQuadraticCalc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} Im\+Bezier\+Quadratic\+Calc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \&}]{p1,  }\item[{const \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \&}]{p2,  }\item[{const \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} \&}]{p3,  }\item[{float}]{t }\end{DoxyParamCaption})}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a9b3ec0353c3a10709ad21985942613da_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_adbf0ee92b3ac86e30b9e81f552d15d37}\label{imgui__draw_8cpp_adbf0ee92b3ac86e30b9e81f552d15d37}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImFontAtlasBuildFinish@{ImFontAtlasBuildFinish}}
+\index{ImFontAtlasBuildFinish@{ImFontAtlasBuildFinish}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImFontAtlasBuildFinish()}{ImFontAtlasBuildFinish()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Font\+Atlas\+Build\+Finish (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$}]{atlas }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_adbf0ee92b3ac86e30b9e81f552d15d37_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_adbf0ee92b3ac86e30b9e81f552d15d37_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_ac050ff181df43cec0b63d834b6039c3f}\label{imgui__draw_8cpp_ac050ff181df43cec0b63d834b6039c3f}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImFontAtlasBuildInit@{ImFontAtlasBuildInit}}
+\index{ImFontAtlasBuildInit@{ImFontAtlasBuildInit}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImFontAtlasBuildInit()}{ImFontAtlasBuildInit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Font\+Atlas\+Build\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$}]{atlas }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_ac050ff181df43cec0b63d834b6039c3f_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_ac050ff181df43cec0b63d834b6039c3f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_a8d5f3a053aae34ac7b93e39cb9096d06}\label{imgui__draw_8cpp_a8d5f3a053aae34ac7b93e39cb9096d06}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImFontAtlasBuildMultiplyCalcLookupTable@{ImFontAtlasBuildMultiplyCalcLookupTable}}
+\index{ImFontAtlasBuildMultiplyCalcLookupTable@{ImFontAtlasBuildMultiplyCalcLookupTable}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImFontAtlasBuildMultiplyCalcLookupTable()}{ImFontAtlasBuildMultiplyCalcLookupTable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Font\+Atlas\+Build\+Multiply\+Calc\+Lookup\+Table (\begin{DoxyParamCaption}\item[{unsigned char}]{out\+\_\+table\mbox{[}256\mbox{]},  }\item[{float}]{in\+\_\+brighten\+\_\+factor }\end{DoxyParamCaption})}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a8d5f3a053aae34ac7b93e39cb9096d06_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_a8dc3feae771599949b33712b520e9060}\label{imgui__draw_8cpp_a8dc3feae771599949b33712b520e9060}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImFontAtlasBuildMultiplyRectAlpha8@{ImFontAtlasBuildMultiplyRectAlpha8}}
+\index{ImFontAtlasBuildMultiplyRectAlpha8@{ImFontAtlasBuildMultiplyRectAlpha8}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImFontAtlasBuildMultiplyRectAlpha8()}{ImFontAtlasBuildMultiplyRectAlpha8()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Font\+Atlas\+Build\+Multiply\+Rect\+Alpha8 (\begin{DoxyParamCaption}\item[{const unsigned char}]{table\mbox{[}256\mbox{]},  }\item[{unsigned char $\ast$}]{pixels,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h,  }\item[{int}]{stride }\end{DoxyParamCaption})}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a8dc3feae771599949b33712b520e9060_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_add0fcd1708ca3540688d8277fc01bf3f}\label{imgui__draw_8cpp_add0fcd1708ca3540688d8277fc01bf3f}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImFontAtlasBuildPackCustomRects@{ImFontAtlasBuildPackCustomRects}}
+\index{ImFontAtlasBuildPackCustomRects@{ImFontAtlasBuildPackCustomRects}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImFontAtlasBuildPackCustomRects()}{ImFontAtlasBuildPackCustomRects()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Font\+Atlas\+Build\+Pack\+Custom\+Rects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$}]{atlas,  }\item[{\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} $\ast$}]{stbrp\+\_\+context\+\_\+opaque }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_add0fcd1708ca3540688d8277fc01bf3f_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_add0fcd1708ca3540688d8277fc01bf3f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_a66ac51ad223da84c7167d4c9f4cfb2fb}\label{imgui__draw_8cpp_a66ac51ad223da84c7167d4c9f4cfb2fb}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImFontAtlasBuildRender32bppRectFromString@{ImFontAtlasBuildRender32bppRectFromString}}
+\index{ImFontAtlasBuildRender32bppRectFromString@{ImFontAtlasBuildRender32bppRectFromString}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImFontAtlasBuildRender32bppRectFromString()}{ImFontAtlasBuildRender32bppRectFromString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Font\+Atlas\+Build\+Render32bpp\+Rect\+From\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$}]{atlas,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h,  }\item[{const char $\ast$}]{in\+\_\+str,  }\item[{char}]{in\+\_\+marker\+\_\+char,  }\item[{unsigned int}]{in\+\_\+marker\+\_\+pixel\+\_\+value }\end{DoxyParamCaption})}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a66ac51ad223da84c7167d4c9f4cfb2fb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_acc7928ba77e5e06a342720ccf0a95ece}\label{imgui__draw_8cpp_acc7928ba77e5e06a342720ccf0a95ece}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImFontAtlasBuildRender8bppRectFromString@{ImFontAtlasBuildRender8bppRectFromString}}
+\index{ImFontAtlasBuildRender8bppRectFromString@{ImFontAtlasBuildRender8bppRectFromString}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImFontAtlasBuildRender8bppRectFromString()}{ImFontAtlasBuildRender8bppRectFromString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Font\+Atlas\+Build\+Render8bpp\+Rect\+From\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$}]{atlas,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h,  }\item[{const char $\ast$}]{in\+\_\+str,  }\item[{char}]{in\+\_\+marker\+\_\+char,  }\item[{unsigned char}]{in\+\_\+marker\+\_\+pixel\+\_\+value }\end{DoxyParamCaption})}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_acc7928ba77e5e06a342720ccf0a95ece_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_a5c1e7dc4dbb8ef1787cc953b6156fb28}\label{imgui__draw_8cpp_a5c1e7dc4dbb8ef1787cc953b6156fb28}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImFontAtlasBuildRenderDefaultTexData@{ImFontAtlasBuildRenderDefaultTexData}}
+\index{ImFontAtlasBuildRenderDefaultTexData@{ImFontAtlasBuildRenderDefaultTexData}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImFontAtlasBuildRenderDefaultTexData()}{ImFontAtlasBuildRenderDefaultTexData()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Font\+Atlas\+Build\+Render\+Default\+Tex\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$}]{atlas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a5c1e7dc4dbb8ef1787cc953b6156fb28_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a5c1e7dc4dbb8ef1787cc953b6156fb28_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_ab634607914fd0dc9ed27d1dc65505adc}\label{imgui__draw_8cpp_ab634607914fd0dc9ed27d1dc65505adc}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImFontAtlasBuildRenderLinesTexData@{ImFontAtlasBuildRenderLinesTexData}}
+\index{ImFontAtlasBuildRenderLinesTexData@{ImFontAtlasBuildRenderLinesTexData}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImFontAtlasBuildRenderLinesTexData()}{ImFontAtlasBuildRenderLinesTexData()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Font\+Atlas\+Build\+Render\+Lines\+Tex\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$}]{atlas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_ab634607914fd0dc9ed27d1dc65505adc_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_ab634607914fd0dc9ed27d1dc65505adc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_a4bea0932904c84de73237df3f1f76bdd}\label{imgui__draw_8cpp_a4bea0932904c84de73237df3f1f76bdd}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImFontAtlasBuildSetupFont@{ImFontAtlasBuildSetupFont}}
+\index{ImFontAtlasBuildSetupFont@{ImFontAtlasBuildSetupFont}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImFontAtlasBuildSetupFont()}{ImFontAtlasBuildSetupFont()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Im\+Font\+Atlas\+Build\+Setup\+Font (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$}]{atlas,  }\item[{\mbox{\hyperlink{struct_im_font}{Im\+Font}} $\ast$}]{font,  }\item[{\mbox{\hyperlink{struct_im_font_config}{Im\+Font\+Config}} $\ast$}]{font\+\_\+config,  }\item[{float}]{ascent,  }\item[{float}]{descent }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a4bea0932904c84de73237df3f1f76bdd_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a4bea0932904c84de73237df3f1f76bdd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_a2f785bd6dd330af7a832589fa24f303a}\label{imgui__draw_8cpp_a2f785bd6dd330af7a832589fa24f303a}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImFontAtlasBuildWithStbTruetype@{ImFontAtlasBuildWithStbTruetype}}
+\index{ImFontAtlasBuildWithStbTruetype@{ImFontAtlasBuildWithStbTruetype}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImFontAtlasBuildWithStbTruetype()}{ImFontAtlasBuildWithStbTruetype()}}
+{\footnotesize\ttfamily static bool Im\+Font\+Atlas\+Build\+With\+Stb\+Truetype (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_im_font_atlas}{Im\+Font\+Atlas}} $\ast$}]{atlas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{imgui__draw_8cpp_a2f785bd6dd330af7a832589fa24f303a_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a2f785bd6dd330af7a832589fa24f303a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_a4c276d0224ef420d570c9485c4c76a19}\label{imgui__draw_8cpp_a4c276d0224ef420d570c9485c4c76a19}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!ImFontAtlasGetBuilderForStbTruetype@{ImFontAtlasGetBuilderForStbTruetype}}
+\index{ImFontAtlasGetBuilderForStbTruetype@{ImFontAtlasGetBuilderForStbTruetype}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{ImFontAtlasGetBuilderForStbTruetype()}{ImFontAtlasGetBuilderForStbTruetype()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_im_font_builder_i_o}{Im\+Font\+Builder\+IO}} $\ast$ Im\+Font\+Atlas\+Get\+Builder\+For\+Stb\+Truetype (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{imgui__draw_8cpp_a4c276d0224ef420d570c9485c4c76a19_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a4c276d0224ef420d570c9485c4c76a19_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_aa24ae0f6a91ae4f8e72ae1baa9296bd1}\label{imgui__draw_8cpp_aa24ae0f6a91ae4f8e72ae1baa9296bd1}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!PathBezierCubicCurveToCasteljau@{PathBezierCubicCurveToCasteljau}}
+\index{PathBezierCubicCurveToCasteljau@{PathBezierCubicCurveToCasteljau}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{PathBezierCubicCurveToCasteljau()}{PathBezierCubicCurveToCasteljau()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Path\+Bezier\+Cubic\+Curve\+To\+Casteljau (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} $>$ $\ast$}]{path,  }\item[{float}]{x1,  }\item[{float}]{y1,  }\item[{float}]{x2,  }\item[{float}]{y2,  }\item[{float}]{x3,  }\item[{float}]{y3,  }\item[{float}]{x4,  }\item[{float}]{y4,  }\item[{float}]{tess\+\_\+tol,  }\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_aa24ae0f6a91ae4f8e72ae1baa9296bd1_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_aa24ae0f6a91ae4f8e72ae1baa9296bd1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_aee43e89d334baa328c6a456379edaccd}\label{imgui__draw_8cpp_aee43e89d334baa328c6a456379edaccd}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!PathBezierQuadraticCurveToCasteljau@{PathBezierQuadraticCurveToCasteljau}}
+\index{PathBezierQuadraticCurveToCasteljau@{PathBezierQuadraticCurveToCasteljau}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{PathBezierQuadraticCurveToCasteljau()}{PathBezierQuadraticCurveToCasteljau()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Path\+Bezier\+Quadratic\+Curve\+To\+Casteljau (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} $>$ $\ast$}]{path,  }\item[{float}]{x1,  }\item[{float}]{y1,  }\item[{float}]{x2,  }\item[{float}]{y2,  }\item[{float}]{x3,  }\item[{float}]{y3,  }\item[{float}]{tess\+\_\+tol,  }\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_aee43e89d334baa328c6a456379edaccd_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_aee43e89d334baa328c6a456379edaccd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_a1e4edfcb0eca0c2f9b67338817342cc4}\label{imgui__draw_8cpp_a1e4edfcb0eca0c2f9b67338817342cc4}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!stb\_\_lit@{stb\_\_lit}}
+\index{stb\_\_lit@{stb\_\_lit}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{stb\_\_lit()}{stb\_\_lit()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} stb\+\_\+\+\_\+lit (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{data,  }\item[{unsigned int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a1e4edfcb0eca0c2f9b67338817342cc4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_a7369890717be8d014dc7a437dcdfb282}\label{imgui__draw_8cpp_a7369890717be8d014dc7a437dcdfb282}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!stb\_\_match@{stb\_\_match}}
+\index{stb\_\_match@{stb\_\_match}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{stb\_\_match()}{stb\_\_match()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} stb\+\_\+\+\_\+match (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{data,  }\item[{unsigned int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a7369890717be8d014dc7a437dcdfb282_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_a13802610d242126f44f88bc9392e3bbc}\label{imgui__draw_8cpp_a13802610d242126f44f88bc9392e3bbc}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!stb\_adler32@{stb\_adler32}}
+\index{stb\_adler32@{stb\_adler32}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{stb\_adler32()}{stb\_adler32()}}
+{\footnotesize\ttfamily static unsigned int stb\+\_\+adler32 (\begin{DoxyParamCaption}\item[{unsigned int}]{adler32,  }\item[{unsigned char $\ast$}]{buffer,  }\item[{unsigned int}]{buflen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a13802610d242126f44f88bc9392e3bbc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_a23f899d930c93d351569ee83cf920570}\label{imgui__draw_8cpp_a23f899d930c93d351569ee83cf920570}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!stb\_decompress@{stb\_decompress}}
+\index{stb\_decompress@{stb\_decompress}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{stb\_decompress()}{stb\_decompress()}}
+{\footnotesize\ttfamily static unsigned int stb\+\_\+decompress (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{output,  }\item[{const unsigned char $\ast$}]{input,  }\item[{unsigned int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a23f899d930c93d351569ee83cf920570_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a23f899d930c93d351569ee83cf920570_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_a5a5301def23b33e2156ac79a8b65c69b}\label{imgui__draw_8cpp_a5a5301def23b33e2156ac79a8b65c69b}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!stb\_decompress\_length@{stb\_decompress\_length}}
+\index{stb\_decompress\_length@{stb\_decompress\_length}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{stb\_decompress\_length()}{stb\_decompress\_length()}}
+{\footnotesize\ttfamily static unsigned int stb\+\_\+decompress\+\_\+length (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a5a5301def23b33e2156ac79a8b65c69b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_a7e482ab813b31838bc410914b3293a17}\label{imgui__draw_8cpp_a7e482ab813b31838bc410914b3293a17}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!stb\_decompress\_token@{stb\_decompress\_token}}
+\index{stb\_decompress\_token@{stb\_decompress\_token}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{stb\_decompress\_token()}{stb\_decompress\_token()}}
+{\footnotesize\ttfamily static const unsigned char $\ast$ stb\+\_\+decompress\+\_\+token (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{imgui__draw_8cpp_a7e482ab813b31838bc410914b3293a17_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a7e482ab813b31838bc410914b3293a17_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_ab5814a547146d0bc2c09e3b421abec63}\label{imgui__draw_8cpp_ab5814a547146d0bc2c09e3b421abec63}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!UnpackAccumulativeOffsetsIntoRanges@{UnpackAccumulativeOffsetsIntoRanges}}
+\index{UnpackAccumulativeOffsetsIntoRanges@{UnpackAccumulativeOffsetsIntoRanges}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{UnpackAccumulativeOffsetsIntoRanges()}{UnpackAccumulativeOffsetsIntoRanges()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Unpack\+Accumulative\+Offsets\+Into\+Ranges (\begin{DoxyParamCaption}\item[{int}]{base\+\_\+codepoint,  }\item[{const short $\ast$}]{accumulative\+\_\+offsets,  }\item[{int}]{accumulative\+\_\+offsets\+\_\+count,  }\item[{\mbox{\hyperlink{imgui_8h_a1ecb49ee827c39a982f1e1467910d020}{Im\+Wchar}} $\ast$}]{out\+\_\+ranges }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_ab5814a547146d0bc2c09e3b421abec63_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{imgui__draw_8cpp_a4fc5013fcaedd05f22060e0c97f18c83}\label{imgui__draw_8cpp_a4fc5013fcaedd05f22060e0c97f18c83}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!UnpackBitVectorToFlatIndexList@{UnpackBitVectorToFlatIndexList}}
+\index{UnpackBitVectorToFlatIndexList@{UnpackBitVectorToFlatIndexList}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{UnpackBitVectorToFlatIndexList()}{UnpackBitVectorToFlatIndexList()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac668e7cffd9e2e9cfee428b9b2f34fa7}{void}} Unpack\+Bit\+Vector\+To\+Flat\+Index\+List (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_im_bit_vector}{Im\+Bit\+Vector}} $\ast$}]{in,  }\item[{\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ int $>$ $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a4fc5013fcaedd05f22060e0c97f18c83_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imgui__draw_8cpp_a4fc5013fcaedd05f22060e0c97f18c83_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{imgui__draw_8cpp_a082105b7beb5c000f2db90529edf2f50}\label{imgui__draw_8cpp_a082105b7beb5c000f2db90529edf2f50}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!FONT\_ATLAS\_DEFAULT\_TEX\_CURSOR\_DATA@{FONT\_ATLAS\_DEFAULT\_TEX\_CURSOR\_DATA}}
+\index{FONT\_ATLAS\_DEFAULT\_TEX\_CURSOR\_DATA@{FONT\_ATLAS\_DEFAULT\_TEX\_CURSOR\_DATA}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{FONT\_ATLAS\_DEFAULT\_TEX\_CURSOR\_DATA}{FONT\_ATLAS\_DEFAULT\_TEX\_CURSOR\_DATA}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_im_vec2}{Im\+Vec2}} FONT\+\_\+\+ATLAS\+\_\+\+DEFAULT\+\_\+\+TEX\+\_\+\+CURSOR\+\_\+\+DATA\mbox{[}\mbox{\hyperlink{imgui_8h_a2eb1181cc1d7872a061df8731141dde9a4c24ccc8f37a57d6341da1cfd3b337a5}{Im\+Gui\+Mouse\+Cursor\+\_\+\+COUNT}}\mbox{]}\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \{ \mbox{\hyperlink{struct_im_vec2}{ImVec2}}( 0,3), \mbox{\hyperlink{struct_im_vec2}{ImVec2}}(12,19), \mbox{\hyperlink{struct_im_vec2}{ImVec2}}( 0, 0) \}, }
+\DoxyCodeLine{    \{ \mbox{\hyperlink{struct_im_vec2}{ImVec2}}(13,0), \mbox{\hyperlink{struct_im_vec2}{ImVec2}}( 7,16), \mbox{\hyperlink{struct_im_vec2}{ImVec2}}( 1, 8) \}, }
+\DoxyCodeLine{    \{ \mbox{\hyperlink{struct_im_vec2}{ImVec2}}(31,0), \mbox{\hyperlink{struct_im_vec2}{ImVec2}}(23,23), \mbox{\hyperlink{struct_im_vec2}{ImVec2}}(11,11) \}, }
+\DoxyCodeLine{    \{ \mbox{\hyperlink{struct_im_vec2}{ImVec2}}(21,0), \mbox{\hyperlink{struct_im_vec2}{ImVec2}}( 9,23), \mbox{\hyperlink{struct_im_vec2}{ImVec2}}( 4,11) \}, }
+\DoxyCodeLine{    \{ \mbox{\hyperlink{struct_im_vec2}{ImVec2}}(55,18),\mbox{\hyperlink{struct_im_vec2}{ImVec2}}(23, 9), \mbox{\hyperlink{struct_im_vec2}{ImVec2}}(11, 4) \}, }
+\DoxyCodeLine{    \{ \mbox{\hyperlink{struct_im_vec2}{ImVec2}}(73,0), \mbox{\hyperlink{struct_im_vec2}{ImVec2}}(17,17), \mbox{\hyperlink{struct_im_vec2}{ImVec2}}( 8, 8) \}, }
+\DoxyCodeLine{    \{ \mbox{\hyperlink{struct_im_vec2}{ImVec2}}(55,0), \mbox{\hyperlink{struct_im_vec2}{ImVec2}}(17,17), \mbox{\hyperlink{struct_im_vec2}{ImVec2}}( 8, 8) \}, }
+\DoxyCodeLine{    \{ \mbox{\hyperlink{struct_im_vec2}{ImVec2}}(91,0), \mbox{\hyperlink{struct_im_vec2}{ImVec2}}(17,22), \mbox{\hyperlink{struct_im_vec2}{ImVec2}}( 5, 0) \}, }
+\DoxyCodeLine{    \{ \mbox{\hyperlink{struct_im_vec2}{ImVec2}}(109,0),\mbox{\hyperlink{struct_im_vec2}{ImVec2}}(13,15), \mbox{\hyperlink{struct_im_vec2}{ImVec2}}( 6, 7) \}, }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{imgui__draw_8cpp_a2c96fc3febbe9f4f6c042a2f975a5b1d}\label{imgui__draw_8cpp_a2c96fc3febbe9f4f6c042a2f975a5b1d}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!FONT\_ATLAS\_DEFAULT\_TEX\_DATA\_H@{FONT\_ATLAS\_DEFAULT\_TEX\_DATA\_H}}
+\index{FONT\_ATLAS\_DEFAULT\_TEX\_DATA\_H@{FONT\_ATLAS\_DEFAULT\_TEX\_DATA\_H}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{FONT\_ATLAS\_DEFAULT\_TEX\_DATA\_H}{FONT\_ATLAS\_DEFAULT\_TEX\_DATA\_H}}
+{\footnotesize\ttfamily const int FONT\+\_\+\+ATLAS\+\_\+\+DEFAULT\+\_\+\+TEX\+\_\+\+DATA\+\_\+H = 27}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a8fb14a4f88c1553e29260d6f43aada4b}\label{imgui__draw_8cpp_a8fb14a4f88c1553e29260d6f43aada4b}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!FONT\_ATLAS\_DEFAULT\_TEX\_DATA\_PIXELS@{FONT\_ATLAS\_DEFAULT\_TEX\_DATA\_PIXELS}}
+\index{FONT\_ATLAS\_DEFAULT\_TEX\_DATA\_PIXELS@{FONT\_ATLAS\_DEFAULT\_TEX\_DATA\_PIXELS}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{FONT\_ATLAS\_DEFAULT\_TEX\_DATA\_PIXELS}{FONT\_ATLAS\_DEFAULT\_TEX\_DATA\_PIXELS}}
+{\footnotesize\ttfamily const char FONT\+\_\+\+ATLAS\+\_\+\+DEFAULT\+\_\+\+TEX\+\_\+\+DATA\+\_\+\+PIXELS\mbox{[}\mbox{\hyperlink{imgui__draw_8cpp_adf518fea7357febbb14eeecb692a8d95}{FONT\+\_\+\+ATLAS\+\_\+\+DEFAULT\+\_\+\+TEX\+\_\+\+DATA\+\_\+W}} $\ast$\mbox{\hyperlink{imgui__draw_8cpp_a2c96fc3febbe9f4f6c042a2f975a5b1d}{FONT\+\_\+\+ATLAS\+\_\+\+DEFAULT\+\_\+\+TEX\+\_\+\+DATA\+\_\+H}}+1\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 初始值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}..-\/         -\/XXXXXXX-\/    X    -\/           X           -\/XXXXXXX          -\/          XXXXXXX-\/     XX          -\/ XX       XX "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}..-\/         -\/X.....X-\/   X.X   -\/          X.X          -\/X.....X          -\/          X.....X-\/    X..X         -\/X..X     X..X"{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}-\/-\/-\/         -\/XXX.XXX-\/  X...X  -\/         X...X         -\/X....X           -\/           X....X-\/    X..X         -\/X...X   X...X"{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}X           -\/  X.X  -\/ X.....X -\/        X.....X        -\/X...X            -\/            X...X-\/    X..X         -\/ X...X X...X "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}XX          -\/  X.X  -\/X.......X-\/       X.......X       -\/X..X.X           -\/           X.X..X-\/    X..X         -\/  X...X...X  "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}X.X         -\/  X.X  -\/XXXX.XXXX-\/       XXXX.XXXX       -\/X.X X.X          -\/          X.X X.X-\/    X..XXX       -\/   X.....X   "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}X..X        -\/  X.X  -\/   X.X   -\/          X.X          -\/XX   X.X         -\/         X.X   XX-\/    X..X..XXX    -\/    X...X    "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}X...X       -\/  X.X  -\/   X.X   -\/    XX    X.X    XX    -\/      X.X        -\/        X.X      -\/    X..X..X..XX  -\/     X.X     "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}X....X      -\/  X.X  -\/   X.X   -\/   X.X    X.X    X.X   -\/       X.X       -\/       X.X       -\/    X..X..X..X.X -\/    X...X    "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}X.....X     -\/  X.X  -\/   X.X   -\/  X..X    X.X    X..X  -\/        X.X      -\/      X.X        -\/XXX X..X..X..X..X-\/   X.....X   "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}X......X    -\/  X.X  -\/   X.X   -\/ X...XXXXXX.XXXXXX...X -\/         X.X   XX-\/XX   X.X         -\/X..XX........X..X-\/  X...X...X  "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}X.......X   -\/  X.X  -\/   X.X   -\/X.....................X-\/          X.X X.X-\/X.X X.X          -\/X...X...........X-\/ X...X X...X "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}X........X  -\/  X.X  -\/   X.X   -\/ X...XXXXXX.XXXXXX...X -\/           X.X..X-\/X..X.X           -\/ X..............X-\/X...X   X...X"{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}X.........X -\/XXX.XXX-\/   X.X   -\/  X..X    X.X    X..X  -\/            X...X-\/X...X            -\/  X.............X-\/X..X     X..X"{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}X..........X-\/X.....X-\/   X.X   -\/   X.X    X.X    X.X   -\/           X....X-\/X....X           -\/  X.............X-\/ XX       XX "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}X......XXXXX-\/XXXXXXX-\/   X.X   -\/    XX    X.X    XX    -\/          X.....X-\/X.....X          -\/   X............X-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}X...X..X    -\/-\/-\/-\/-\/-\/-\/-\/-\/   X.X   -\/          X.X          -\/          XXXXXXX-\/XXXXXXX          -\/   X...........X -\/             "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}X..X X..X   -\/       -\/XXXX.XXXX-\/       XXXX.XXXX       -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/    X..........X -\/             "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}X.X  X..X   -\/       -\/X.......X-\/       X.......X       -\/    XX           XX    -\/           -\/    X..........X -\/             "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}XX    X..X  -\/       -\/ X.....X -\/        X.....X        -\/   X.X           X.X   -\/           -\/     X........X  -\/             "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}      X..X  -\/       -\/  X...X  -\/         X...X         -\/  X..X           X..X  -\/           -\/     X........X  -\/             "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}       XX   -\/       -\/   X.X   -\/          X.X          -\/ X...XXXXXXXXXXXXX...X -\/           -\/     XXXXXXXXXX  -\/             "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/       -\/    X    -\/           X           -\/X.....................X-\/           -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/             "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}                    -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ X...XXXXXXXXXXXXX...X -\/                                           "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}                                                      -\/  X..X           X..X  -\/                                           "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}                                                      -\/   X.X           X.X   -\/                                           "{}}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}                                                      -\/    XX           XX    -\/                                           "{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{imgui__draw_8cpp_adf518fea7357febbb14eeecb692a8d95}\label{imgui__draw_8cpp_adf518fea7357febbb14eeecb692a8d95}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!FONT\_ATLAS\_DEFAULT\_TEX\_DATA\_W@{FONT\_ATLAS\_DEFAULT\_TEX\_DATA\_W}}
+\index{FONT\_ATLAS\_DEFAULT\_TEX\_DATA\_W@{FONT\_ATLAS\_DEFAULT\_TEX\_DATA\_W}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{FONT\_ATLAS\_DEFAULT\_TEX\_DATA\_W}{FONT\_ATLAS\_DEFAULT\_TEX\_DATA\_W}}
+{\footnotesize\ttfamily const int FONT\+\_\+\+ATLAS\+\_\+\+DEFAULT\+\_\+\+TEX\+\_\+\+DATA\+\_\+W = 122}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a7fcb9c29f786e1904c10a70f1385690a}\label{imgui__draw_8cpp_a7fcb9c29f786e1904c10a70f1385690a}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!proggy\_clean\_ttf\_compressed\_data\_base85@{proggy\_clean\_ttf\_compressed\_data\_base85}}
+\index{proggy\_clean\_ttf\_compressed\_data\_base85@{proggy\_clean\_ttf\_compressed\_data\_base85}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{proggy\_clean\_ttf\_compressed\_data\_base85}{proggy\_clean\_ttf\_compressed\_data\_base85}}
+{\footnotesize\ttfamily const char proggy\+\_\+clean\+\_\+ttf\+\_\+compressed\+\_\+data\+\_\+base85\mbox{[}11980+1\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_abdae0f70193ebadc01bddcd66dfcf743}\label{imgui__draw_8cpp_abdae0f70193ebadc01bddcd66dfcf743}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!stb\_\_barrier\_in\_b@{stb\_\_barrier\_in\_b}}
+\index{stb\_\_barrier\_in\_b@{stb\_\_barrier\_in\_b}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{stb\_\_barrier\_in\_b}{stb\_\_barrier\_in\_b}}
+{\footnotesize\ttfamily const unsigned char$\ast$ stb\+\_\+\+\_\+barrier\+\_\+in\+\_\+b\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a78b497778dec25807f8ba5facab4732a}\label{imgui__draw_8cpp_a78b497778dec25807f8ba5facab4732a}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!stb\_\_barrier\_out\_b@{stb\_\_barrier\_out\_b}}
+\index{stb\_\_barrier\_out\_b@{stb\_\_barrier\_out\_b}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{stb\_\_barrier\_out\_b}{stb\_\_barrier\_out\_b}}
+{\footnotesize\ttfamily unsigned char $\ast$ stb\+\_\+\+\_\+barrier\+\_\+out\+\_\+b\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a6d45e455062888f4f84c022dcb80575f}\label{imgui__draw_8cpp_a6d45e455062888f4f84c022dcb80575f}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!stb\_\_barrier\_out\_e@{stb\_\_barrier\_out\_e}}
+\index{stb\_\_barrier\_out\_e@{stb\_\_barrier\_out\_e}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{stb\_\_barrier\_out\_e}{stb\_\_barrier\_out\_e}}
+{\footnotesize\ttfamily unsigned char$\ast$ stb\+\_\+\+\_\+barrier\+\_\+out\+\_\+e\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{imgui__draw_8cpp_a41c1b5025a92d93a30f72ba8f78c9910}\label{imgui__draw_8cpp_a41c1b5025a92d93a30f72ba8f78c9910}} 
+\index{imgui\_draw.cpp@{imgui\_draw.cpp}!stb\_\_dout@{stb\_\_dout}}
+\index{stb\_\_dout@{stb\_\_dout}!imgui\_draw.cpp@{imgui\_draw.cpp}}
+\doxysubsubsection{\texorpdfstring{stb\_\_dout}{stb\_\_dout}}
+{\footnotesize\ttfamily unsigned char$\ast$ stb\+\_\+\+\_\+dout\hspace{0.3cm}{\ttfamily [static]}}
+

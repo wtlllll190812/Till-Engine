@@ -1,0 +1,4 @@
+<map id="EventDispatcher" name="EventDispatcher">
+<area shape="rect" id="node1" title="事件调度类" alt="" coords="5,95,121,121"/>
+<area shape="rect" id="node2" href="$class_event_base.html" title="事件类基类" alt="" coords="21,5,105,32"/>
+</map>

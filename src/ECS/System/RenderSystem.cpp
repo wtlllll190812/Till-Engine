@@ -1,18 +1,20 @@
-#include"RenderSystem.h"
-#include"Renderer.h"
-#include"Camera.h"
+#include "RenderSystem.h"
+
 #include <glm/gtc/type_ptr.hpp>
 #include "TLEngineCG.h"
+
+#include "Renderer.h"
+#include "Camera.h"
 #include "Light.h"
 #include "GameObject.h"
 #include "Transform.h"
+
 #include "Debug.h"
 #include "Application.h"
 #include "Window.h"
 #include "Material.h"
-
-
 #include "AssetImporter.h"
+
 typedef std::priority_queue <Renderer*, std::vector<Renderer*>> renderPriorityQueue;
 renderPriorityQueue RenderSystem::renderQueue = renderPriorityQueue();
 std::shared_ptr<Mesh> skybox;
@@ -32,11 +34,14 @@ void RenderSystem::Update()
 {
 	renderPriorityQueue queue = renderQueue;
 
-	RenderShadow(queue);
 	SetData();
-
+	//渲染阴影贴图
+	RenderShadow(queue);
+	//渲染天空盒
+	TLEngineCG::skyboxMat->Draw(nullptr, skybox);
+	
+	//渲染队列中其他物体
 	queue = renderQueue;
-	TLEngineCG::skyboxMat->Draw(nullptr,skybox);
 	while (!queue.empty())
 	{
 		if (queue.top() != nullptr)
@@ -63,7 +68,7 @@ void RenderSystem::SetData()
 void RenderSystem::RenderShadow(renderPriorityQueue queue)
 {
 	auto& window = Application::instance().mWindows;
-	window->SetFrameBuffer(TLEngineCG::shadowBuffer);
+	window->SetFrameBuffer(TLEngineCG::shadowMap);
 	glCullFace(GL_FRONT);
 	while (!queue.empty())
 	{

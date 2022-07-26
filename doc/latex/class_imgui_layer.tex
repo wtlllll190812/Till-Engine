@@ -1,0 +1,108 @@
+\hypertarget{class_imgui_layer}{}\doxysection{Imgui\+Layer类 参考}
+\label{class_imgui_layer}\index{ImguiLayer@{ImguiLayer}}
+
+
+类 Imgui\+Layer 继承关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_imgui_layer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Imgui\+Layer 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=144pt]{class_imgui_layer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_imgui_layer_a1562d5da90335d2f5c7757801d7e9377}{On\+Attack}} () override
+\item 
+void \mbox{\hyperlink{class_imgui_layer_a06e8812d7144d1fa6c154d43d7372d97}{On\+Detach}} () override
+\item 
+void \mbox{\hyperlink{class_imgui_layer_ade36001fdd1861e19dadc2d32d5e7bd5}{On\+Event}} (\mbox{\hyperlink{class_event_base}{Event\+Base}} \&event) override
+\item 
+\mbox{\Hypertarget{class_imgui_layer_a43530d88ce55849d8b9dd2617435cf8a}\label{class_imgui_layer_a43530d88ce55849d8b9dd2617435cf8a}} 
+void {\bfseries Register\+Gui\+Window} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_gui_window}{Gui\+Window}} $>$)
+\item 
+virtual void \mbox{\hyperlink{class_imgui_layer_aa98053a216128343d985192439323544}{On\+Update}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_imgui_layer_a7c94ff83e9809b1a158e890920daed20}\label{class_imgui_layer_a7c94ff83e9809b1a158e890920daed20}} 
+void {\bfseries Render\+Start} ()
+\item 
+\mbox{\Hypertarget{class_imgui_layer_aadd4f1314d523328cc8a2d40165611e0}\label{class_imgui_layer_aadd4f1314d523328cc8a2d40165611e0}} 
+void {\bfseries Render\+End} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{静态 Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_imgui_layer_ae5d6495ed844751709b98c329692ba9a}\label{class_imgui_layer_ae5d6495ed844751709b98c329692ba9a}} 
+static void {\bfseries Im\+Gui\+Init} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_imgui_layer_a36a760d7ac4b5a422fd4ab9968a29440}\label{class_imgui_layer_a36a760d7ac4b5a422fd4ab9968a29440}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_gui_window}{Gui\+Window}} $>$ $>$ {\bfseries ui\+Windows}
+\item 
+\mbox{\Hypertarget{class_imgui_layer_ab1c2ca0d2f28bd3a0e56f565254112c7}\label{class_imgui_layer_ab1c2ca0d2f28bd3a0e56f565254112c7}} 
+float {\bfseries m\+Time} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{成员函数说明}
+\mbox{\Hypertarget{class_imgui_layer_a1562d5da90335d2f5c7757801d7e9377}\label{class_imgui_layer_a1562d5da90335d2f5c7757801d7e9377}} 
+\index{ImguiLayer@{ImguiLayer}!OnAttack@{OnAttack}}
+\index{OnAttack@{OnAttack}!ImguiLayer@{ImguiLayer}}
+\doxysubsubsection{\texorpdfstring{OnAttack()}{OnAttack()}}
+{\footnotesize\ttfamily void Imgui\+Layer\+::\+On\+Attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+重载 \mbox{\hyperlink{class_layer}{Layer}} .
+
+\mbox{\Hypertarget{class_imgui_layer_a06e8812d7144d1fa6c154d43d7372d97}\label{class_imgui_layer_a06e8812d7144d1fa6c154d43d7372d97}} 
+\index{ImguiLayer@{ImguiLayer}!OnDetach@{OnDetach}}
+\index{OnDetach@{OnDetach}!ImguiLayer@{ImguiLayer}}
+\doxysubsubsection{\texorpdfstring{OnDetach()}{OnDetach()}}
+{\footnotesize\ttfamily void Imgui\+Layer\+::\+On\+Detach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+重载 \mbox{\hyperlink{class_layer}{Layer}} .
+
+\mbox{\Hypertarget{class_imgui_layer_ade36001fdd1861e19dadc2d32d5e7bd5}\label{class_imgui_layer_ade36001fdd1861e19dadc2d32d5e7bd5}} 
+\index{ImguiLayer@{ImguiLayer}!OnEvent@{OnEvent}}
+\index{OnEvent@{OnEvent}!ImguiLayer@{ImguiLayer}}
+\doxysubsubsection{\texorpdfstring{OnEvent()}{OnEvent()}}
+{\footnotesize\ttfamily void Imgui\+Layer\+::\+On\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_event_base}{Event\+Base}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+重载 \mbox{\hyperlink{class_layer}{Layer}} .
+
+\mbox{\Hypertarget{class_imgui_layer_aa98053a216128343d985192439323544}\label{class_imgui_layer_aa98053a216128343d985192439323544}} 
+\index{ImguiLayer@{ImguiLayer}!OnUpdate@{OnUpdate}}
+\index{OnUpdate@{OnUpdate}!ImguiLayer@{ImguiLayer}}
+\doxysubsubsection{\texorpdfstring{OnUpdate()}{OnUpdate()}}
+{\footnotesize\ttfamily void Imgui\+Layer\+::\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+重载 \mbox{\hyperlink{class_layer}{Layer}} .
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/\+Engine/\+Layer/Imgui\+Layer.\+h\item 
+D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/\+Engine/\+Layer/Imgui\+Layer.\+cpp\end{DoxyCompactItemize}

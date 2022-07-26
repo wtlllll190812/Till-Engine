@@ -1,0 +1,22 @@
+\hypertarget{_mat_skybox_8h_source}{}\doxysection{Mat\+Skybox.\+h}
+\label{_mat_skybox_8h_source}\index{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/Engine/Render/Materials/MatSkybox.h@{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/Engine/Render/Materials/MatSkybox.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Material.h"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{class }\mbox{\hyperlink{class_texture}{Texture}};}
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{class_mat_skybox}{MatSkybox}} :\textcolor{keyword}{public} \mbox{\hyperlink{class_material}{Material}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7 \textcolor{keyword}{public}:}
+\DoxyCodeLine{8     \mbox{\hyperlink{class_mat_skybox}{MatSkybox}}();}
+\DoxyCodeLine{9     \mbox{\hyperlink{class_mat_skybox}{\string~MatSkybox}}();}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} DrawFunc(\mbox{\hyperlink{class_game_object}{GameObject}}* gObj, std::shared\_ptr<Mesh> mesh) \textcolor{keyword}{override};}
+\DoxyCodeLine{12     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Init(\mbox{\hyperlink{class_game_object}{GameObject}}*, std::shared\_ptr<Mesh> mesh) \textcolor{keyword}{override};}
+\DoxyCodeLine{13 \textcolor{keyword}{private}:}
+\DoxyCodeLine{14     \mbox{\hyperlink{class_texture}{Texture}}* skybox;}
+\DoxyCodeLine{15 \};}
+\DoxyCodeLine{16 }
+
+\end{DoxyCode}

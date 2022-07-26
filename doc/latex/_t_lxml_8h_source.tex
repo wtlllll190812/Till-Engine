@@ -1,0 +1,38 @@
+\hypertarget{_t_lxml_8h_source}{}\doxysection{TLxml.\+h}
+\label{_t_lxml_8h_source}\index{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/Engine/Framework/TLxml.h@{D:/TL/Vscode/VsCode\_C/Learn\_opengl/src/Engine/Framework/TLxml.h}}
+\mbox{\hyperlink{_t_lxml_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <tinyxml.h>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_t_lxml}{TLxml}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8 \textcolor{keyword}{public}:}
+\DoxyCodeLine{9     TiXmlElement* \mbox{\hyperlink{class_t_lxml_ad57eba6770cb927cf77fde0eda8870a8}{pRoot}};}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{16     \mbox{\hyperlink{class_t_lxml_a12c9d793f3e823049dffcb78939d2c74}{TLxml}}(\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std::string}}, \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std::string}});}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_t_lxml_a12c9d793f3e823049dffcb78939d2c74}{TLxml}}(\mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std::string}});}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_t_lxml_a9c460ccfa26736b7e045bbcad2c46e2b}{\string~TLxml}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_t_lxml_ab67ea78fda6ac67733c3f21fb7b0333d}{AddChild}}(TiXmlElement*);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_t_lxml_aee8cee8302a7b8bef3002d0f5952df69}{Save}}() \{ \mbox{\hyperlink{class_t_lxml_a76404153b61d4e26c104a9a646fab453}{pDoc}}-\/>SaveFile(\mbox{\hyperlink{class_t_lxml_addc2cf9e8fb2f001e0d0ca420aeee19a}{path}}); \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{39     \textcolor{keyword}{static} \mbox{\hyperlink{class_t_lxml}{TLxml}}* \mbox{\hyperlink{class_t_lxml_a16dbb965e3db5aa71e448118e020203d}{Serialize}}(glm::vec3\&, \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std::string}});}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{46     \textcolor{keyword}{static} glm::vec3 \mbox{\hyperlink{class_t_lxml_a0144d1a045da012691fa861dde9ad3ee}{DeSerialize}}(TiXmlNode*);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keyword}{private}:}
+\DoxyCodeLine{49     \mbox{\hyperlink{imgui__impl__opengl3__loader_8h_ac83513893df92266f79a515488701770}{std::string}} \mbox{\hyperlink{class_t_lxml_addc2cf9e8fb2f001e0d0ca420aeee19a}{path}};}
+\DoxyCodeLine{50     TiXmlDocument* \mbox{\hyperlink{class_t_lxml_a76404153b61d4e26c104a9a646fab453}{pDoc}};}
+\DoxyCodeLine{51 \};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{56 \textcolor{keyword}{class }\mbox{\hyperlink{class_serializable}{Serializable}}}
+\DoxyCodeLine{57 \{}
+\DoxyCodeLine{58     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_t_lxml}{TLxml}}* \mbox{\hyperlink{class_serializable_a96f29a890f637c15dedc6f286768e1f7}{Serialize}}() = 0;}
+\DoxyCodeLine{59     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serializable_a2e53ba9c33bac4ac76277d9533779b1d}{DeSerialize}}(TiXmlNode*) = 0;}
+\DoxyCodeLine{60 \};}
+
+\end{DoxyCode}

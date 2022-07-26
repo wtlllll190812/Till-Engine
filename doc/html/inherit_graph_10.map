@@ -1,0 +1,7 @@
+<map id="类继承关系图" name="类继承关系图">
+<area shape="rect" id="node1" href="$class_material.html" title=" " alt="" coords="5,81,73,108"/>
+<area shape="rect" id="node2" href="$class_default_material.html" title=" " alt="" coords="131,5,239,32"/>
+<area shape="rect" id="node3" href="$class_light_material.html" title=" " alt="" coords="137,56,233,83"/>
+<area shape="rect" id="node4" href="$class_mat_shadow_caster.html" title=" " alt="" coords="121,107,249,133"/>
+<area shape="rect" id="node5" href="$class_mat_skybox.html" title=" " alt="" coords="141,157,229,184"/>
+</map>

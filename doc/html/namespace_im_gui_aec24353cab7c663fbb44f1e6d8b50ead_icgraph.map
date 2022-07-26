@@ -1,0 +1,11 @@
+<map id="ImGui::DestroyPlatformWindows" name="ImGui::DestroyPlatformWindows">
+<area shape="rect" id="node1" title=" " alt="" coords="731,78,941,105"/>
+<area shape="rect" id="node2" href="$imgui__impl__glfw_8cpp.html#af87dcbdd956ea3eb7ff27761f1a2f53a" title=" " alt="" coords="459,5,683,47"/>
+<area shape="rect" id="node6" href="$imgui__impl__opengl3_8cpp.html#a78abb5eedee7821d75bfecf1c9b06ccb" title=" " alt="" coords="467,71,674,112"/>
+<area shape="rect" id="node8" href="$namespace_im_gui.html#aeba34069558d4fbcf734a9c92ce3b773" title=" " alt="" coords="510,137,631,163"/>
+<area shape="rect" id="node3" href="$imgui__impl__glfw_8cpp.html#a983c2903ccb938fea5ecdd4d53e54704" title=" " alt="" coords="219,27,395,54"/>
+<area shape="rect" id="node4" href="$class_imgui_layer.html#a06e8812d7144d1fa6c154d43d7372d97" title=" " alt="" coords="5,53,156,79"/>
+<area shape="rect" id="node5" href="$class_screen.html#a4243bc17596af96415b09ac48205676d" title=" " alt="" coords="21,103,141,130"/>
+<area shape="rect" id="node7" href="$imgui__impl__opengl3_8cpp.html#acbd53376e6135ad71e7bcd9879278e37" title=" " alt="" coords="204,78,411,105"/>
+<area shape="rect" id="node9" href="$namespace_im_gui.html#ab9132deece575023170cd8e681d0581d" title=" " alt="" coords="230,129,385,155"/>
+</map>

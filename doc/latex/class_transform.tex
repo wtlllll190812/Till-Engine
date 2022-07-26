@@ -1,0 +1,202 @@
+\hypertarget{class_transform}{}\doxysection{Transform类 参考}
+\label{class_transform}\index{Transform@{Transform}}
+
+
+类 Transform 继承关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=147pt]{class_transform__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Transform 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_transform__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_transform_a27f544c53dcb706fbf6c82f851fcbf3b}\label{class_transform_a27f544c53dcb706fbf6c82f851fcbf3b}} 
+{\bfseries Transform} (glm\+::vec3, \mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$)
+\item 
+\mbox{\Hypertarget{class_transform_af0d0e8f8c55b67c115a5449f225f53e6}\label{class_transform_af0d0e8f8c55b67c115a5449f225f53e6}} 
+glm\+::vec3 {\bfseries Get\+Front} ()
+\begin{DoxyCompactList}\small\item\em 获取向前方向 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_transform_a7e34c4791358814412983d8606cc4cdf}\label{class_transform_a7e34c4791358814412983d8606cc4cdf}} 
+glm\+::vec3 {\bfseries Get\+Right} ()
+\begin{DoxyCompactList}\small\item\em 获取向右方向 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_transform_a9d87de590be3b413b962ca5a1c90c0ef}\label{class_transform_a9d87de590be3b413b962ca5a1c90c0ef}} 
+glm\+::vec3 {\bfseries Get\+Up} ()
+\begin{DoxyCompactList}\small\item\em 获取向上方向 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_transform_a8ffa079dae0fe2046c6b6595df394bf1}\label{class_transform_a8ffa079dae0fe2046c6b6595df394bf1}} 
+void {\bfseries Translate} (float)
+\begin{DoxyCompactList}\small\item\em 向前移动 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_a2fe8799ec430bdc5f8fdf25c55084bae}{Translate}} (glm\+::vec3, float)
+\begin{DoxyCompactList}\small\item\em 向某个方向移动 \end{DoxyCompactList}\item 
+glm\+::mat4 \mbox{\hyperlink{class_transform_aac5b8a016ec8ecb9eae51e636322a7dd}{Get\+Model\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em 获取model矩阵 \end{DoxyCompactList}\item 
+virtual Ti\+Xml\+Element $\ast$ \mbox{\hyperlink{class_transform_ae6c2b74033dd4cd5ca9af6e0a1d25301}{Serialize}} (std\+::string name=\char`\"{}Default\char`\"{}) override
+\begin{DoxyCompactList}\small\item\em 序列化 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_transform_abe93692dc6c3083f804c0c44f8e8fcc4}{De\+Serialize}} (Ti\+Xml\+Element $\ast$) override
+\begin{DoxyCompactList}\small\item\em 反序列化 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_transform_a61265532c475d33a022f1a4238089cff}{Update\+Node}} () override
+\begin{DoxyCompactList}\small\item\em 更新序列化节点 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_transform_a295a782dcb0a07ecc5049d98e888e9c4}{Gui\+Dis\+Play}} () override
+\begin{DoxyCompactList}\small\item\em 显示到\+Gui \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_transform_a1ab4c76d50f592954fa71b021395e24c}\label{class_transform_a1ab4c76d50f592954fa71b021395e24c}} 
+void {\bfseries Decompose} (glm\+::mat4 new\+Model)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_transform_aa357f8eb780f4ef195027d1c636baa36}\label{class_transform_aa357f8eb780f4ef195027d1c636baa36}} 
+glm\+::vec3 {\bfseries position}
+\item 
+\mbox{\Hypertarget{class_transform_aefd4a6bf41e01cf5898fd57430d93dea}\label{class_transform_aefd4a6bf41e01cf5898fd57430d93dea}} 
+glm\+::vec3 {\bfseries rotation}
+\item 
+\mbox{\Hypertarget{class_transform_acf6ab53778448fd2f2d8a367c14e7f95}\label{class_transform_acf6ab53778448fd2f2d8a367c14e7f95}} 
+glm\+::vec3 {\bfseries scale}
+\end{DoxyCompactItemize}
+\doxysubsection*{静态 Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_transform_ac824152f5fdac81efa0ae40990ca6d3a}\label{class_transform_ac824152f5fdac81efa0ae40990ca6d3a}} 
+static const glm\+::vec3 {\bfseries forward} = glm\+::vec3(0.\+0f, 0.\+0f, -\/1.\+0f)
+\begin{DoxyCompactList}\small\item\em 向各个方向的单位向量 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_transform_ae5f3e1e0cc9cb2060a1ba556da124f3e}\label{class_transform_ae5f3e1e0cc9cb2060a1ba556da124f3e}} 
+static const glm\+::vec3 {\bfseries back} = glm\+::vec3(0.\+0f, 0.\+0f, 1.\+0f)
+\item 
+\mbox{\Hypertarget{class_transform_ae16ecff75f14e1f6c2856ebc5578c0db}\label{class_transform_ae16ecff75f14e1f6c2856ebc5578c0db}} 
+static const glm\+::vec3 {\bfseries left} = glm\+::vec3(-\/1.\+0f, 0.\+0f, 0.\+0f)
+\item 
+\mbox{\Hypertarget{class_transform_af7ee58650da32c47e270c686e2299715}\label{class_transform_af7ee58650da32c47e270c686e2299715}} 
+static const glm\+::vec3 {\bfseries right} = glm\+::vec3(1.\+0f, 0.\+0f, 0.\+0f)
+\item 
+\mbox{\Hypertarget{class_transform_ae1c8231cb029171d4d62c0159dfe72aa}\label{class_transform_ae1c8231cb029171d4d62c0159dfe72aa}} 
+static const glm\+::vec3 {\bfseries up} = glm\+::vec3(0.\+0f, 1.\+0f, 0.\+0f)
+\item 
+\mbox{\Hypertarget{class_transform_a2151a4b609fc2324563c09dfde0a83a4}\label{class_transform_a2151a4b609fc2324563c09dfde0a83a4}} 
+static const glm\+::vec3 {\bfseries down} = glm\+::vec3(0.\+0f, -\/1.\+0f, 0.\+0f)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{成员函数说明}
+\mbox{\Hypertarget{class_transform_abe93692dc6c3083f804c0c44f8e8fcc4}\label{class_transform_abe93692dc6c3083f804c0c44f8e8fcc4}} 
+\index{Transform@{Transform}!DeSerialize@{DeSerialize}}
+\index{DeSerialize@{DeSerialize}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{DeSerialize()}{DeSerialize()}}
+{\footnotesize\ttfamily void Transform\+::\+De\+Serialize (\begin{DoxyParamCaption}\item[{Ti\+Xml\+Element $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+反序列化 
+
+
+
+实现了 \mbox{\hyperlink{class_serializable_a4169f7b98f9816d6b1ebf2dbd3b2d3cb}{Serializable}}.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transform_abe93692dc6c3083f804c0c44f8e8fcc4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_transform_aac5b8a016ec8ecb9eae51e636322a7dd}\label{class_transform_aac5b8a016ec8ecb9eae51e636322a7dd}} 
+\index{Transform@{Transform}!GetModelMatrix@{GetModelMatrix}}
+\index{GetModelMatrix@{GetModelMatrix}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{GetModelMatrix()}{GetModelMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 Transform\+::\+Get\+Model\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+获取model矩阵 
+
+\begin{DoxyReturn}{返回}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_transform_a295a782dcb0a07ecc5049d98e888e9c4}\label{class_transform_a295a782dcb0a07ecc5049d98e888e9c4}} 
+\index{Transform@{Transform}!GuiDisPlay@{GuiDisPlay}}
+\index{GuiDisPlay@{GuiDisPlay}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{GuiDisPlay()}{GuiDisPlay()}}
+{\footnotesize\ttfamily void Transform\+::\+Gui\+Dis\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+显示到\+Gui 
+
+
+
+重载 \mbox{\hyperlink{class_component_a93c3cc9bd70fec54aeb42875ba48dfa3}{Component}} .
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{class_transform_a295a782dcb0a07ecc5049d98e888e9c4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_transform_ae6c2b74033dd4cd5ca9af6e0a1d25301}\label{class_transform_ae6c2b74033dd4cd5ca9af6e0a1d25301}} 
+\index{Transform@{Transform}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily Ti\+Xml\+Element $\ast$ Transform\+::\+Serialize (\begin{DoxyParamCaption}\item[{std\+::string}]{name = {\ttfamily \char`\"{}Default\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+序列化 
+
+
+
+实现了 \mbox{\hyperlink{class_serializable_ad2b954777bfb26bd486d7aee9675667e}{Serializable}}.
+
+\mbox{\Hypertarget{class_transform_a2fe8799ec430bdc5f8fdf25c55084bae}\label{class_transform_a2fe8799ec430bdc5f8fdf25c55084bae}} 
+\index{Transform@{Transform}!Translate@{Translate}}
+\index{Translate@{Translate}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{Translate()}{Translate()}}
+{\footnotesize\ttfamily void Transform\+::\+Translate (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{direct,  }\item[{float}]{dis }\end{DoxyParamCaption})}
+
+
+
+向某个方向移动 
+
+移动方向
+
+位移大小\mbox{\Hypertarget{class_transform_a61265532c475d33a022f1a4238089cff}\label{class_transform_a61265532c475d33a022f1a4238089cff}} 
+\index{Transform@{Transform}!UpdateNode@{UpdateNode}}
+\index{UpdateNode@{UpdateNode}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{UpdateNode()}{UpdateNode()}}
+{\footnotesize\ttfamily void Transform\+::\+Update\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新序列化节点 
+
+
+
+重载 \mbox{\hyperlink{class_serializable_ac713a26d2d8e38066e29555199af5580}{Serializable}} .
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{class_transform_a61265532c475d33a022f1a4238089cff_icgraph}
+\end{center}
+\end{figure}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/\+ECS/\+Components/Transform.\+h\item 
+D\+:/\+TL/\+Vscode/\+Vs\+Code\+\_\+\+C/\+Learn\+\_\+opengl/src/\+ECS/\+Components/Transform.\+cpp\end{DoxyCompactItemize}

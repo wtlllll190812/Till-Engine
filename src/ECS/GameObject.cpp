@@ -64,7 +64,7 @@ void GameObject::DeSerialize(TiXmlElement* node)
 			comp->DeSerialize(n);
 			if (strcmp(n->Value(), "Camera") == 0)
 			{
-				owner->camera = (Camera*)comp;
+				owner->mainCamera = (Camera*)comp;
 			}
 			AddComponent(comp);
 		}

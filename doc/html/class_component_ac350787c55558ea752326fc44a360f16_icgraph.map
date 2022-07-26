@@ -1,0 +1,6 @@
+<map id="Component::GetName" name="Component::GetName">
+<area shape="rect" id="node1" title=" " alt="" coords="185,56,336,83"/>
+<area shape="rect" id="node2" href="$class_camera.html#af5dedc615c68f285bd6f07e0858cf672" title="序列化" alt="" coords="9,5,134,32"/>
+<area shape="rect" id="node3" href="$class_light.html#a688669aaff17e4addca81839db0fde11" title="序列化" alt="" coords="17,56,125,83"/>
+<area shape="rect" id="node4" href="$class_renderer.html#a01be5abd2431430f995b10c241f6476d" title="序列化为xml" alt="" coords="5,107,137,133"/>
+</map>

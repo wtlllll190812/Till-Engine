@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TillEngine: D:/TL/Vscode/VsCode_C/Learn_opengl/src/ECS/System/RenderSystem.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TillEngine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'搜索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b1a122bf62c958266ec5bf64d14fde5a.html">ECS</a></li><li class="navelem"><a class="el" href="dir_3a0ad7289f82990986345da35b146158.html">System</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">RenderSystem.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;System.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;UniformBuffer.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">class </span><a class="code hl_class" href="class_component.html">Component</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class </span><a class="code hl_class" href="class_renderer.html">Renderer</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_class" href="class_camera.html">Camera</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_render_system.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="class_render_system.html">RenderSystem</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_system.html">System</a>, <span class="keyword">public</span> <a class="code hl_class" href="class_singleton.html">Singleton</a>&lt;RenderSystem&gt;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_render_system.html#ab9d175e0d1e547569acde2bfd6dc210f">   19</a></span>    std::shared_ptr&lt;Camera&gt; <a class="code hl_variable" href="class_render_system.html#ab9d175e0d1e547569acde2bfd6dc210f">currentCamera</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_render_system.html#ad9da530f350b176618655d7e6bb17151">   24</a></span>    <span class="keyword">static</span> std::priority_queue&lt;Renderer*, std::vector&lt;Renderer*&gt;&gt; <a class="code hl_variable" href="class_render_system.html#ad9da530f350b176618655d7e6bb17151">renderQueue</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_class" href="class_render_system.html">RenderSystem</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_class" href="class_render_system.html">~RenderSystem</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_render_system.html#a744c9a8ba4359b3353a6130f3af51fbb">Update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_render_system.html#aa111a299b5c035dbe08fa4559c680086">FixedUpdate</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_render_system.html#a794ef0a6f643330a8ff07e4e4bea8671">RegisterComponent</a>(<a class="code hl_class" href="class_component.html">Component</a>*) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_render_system.html#a6668d5e3723f22d6a7e0141989cfe461">RemoveComponent</a>(<a class="code hl_class" href="class_component.html">Component</a>*) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_render_system.html#aa8bf74fc6dd8dc22739dbeafd667e6a6">Clear</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_render_system.html#acf71a2b40bd01841db74a4a75befc78b">   58</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_render_system.html#acf71a2b40bd01841db74a4a75befc78b">SetCamera</a>(std::shared_ptr&lt;Camera&gt; mainCamera) { <a class="code hl_variable" href="class_render_system.html#ab9d175e0d1e547569acde2bfd6dc210f">currentCamera</a> = mainCamera; };</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_class" href="class_uniform_buffer.html">UniformBuffer</a> maticesUB;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_class" href="class_uniform_buffer.html">UniformBuffer</a> mainLightUB;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">void</span> SetData();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">void</span> RenderShadow(std::priority_queue &lt;<a class="code hl_class" href="class_renderer.html">Renderer</a>*, std::vector&lt;Renderer*&gt;&gt;);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>};</div>
+<div class="ttc" id="aclass_camera_html"><div class="ttname"><a href="class_camera.html">Camera</a></div><div class="ttdef"><b>Definition:</b> Camera.h:6</div></div>
+<div class="ttc" id="aclass_component_html"><div class="ttname"><a href="class_component.html">Component</a></div><div class="ttdoc">组件基类</div><div class="ttdef"><b>Definition:</b> Component.h:9</div></div>
+<div class="ttc" id="aclass_render_system_html"><div class="ttname"><a href="class_render_system.html">RenderSystem</a></div><div class="ttdoc">渲染系统</div><div class="ttdef"><b>Definition:</b> RenderSystem.h:14</div></div>
+<div class="ttc" id="aclass_render_system_html_a6668d5e3723f22d6a7e0141989cfe461"><div class="ttname"><a href="class_render_system.html#a6668d5e3723f22d6a7e0141989cfe461">RenderSystem::RemoveComponent</a></div><div class="ttdeci">virtual void RemoveComponent(Component *) override</div><div class="ttdoc">移除组件</div><div class="ttdef"><b>Definition:</b> RenderSystem.cpp:94</div></div>
+<div class="ttc" id="aclass_render_system_html_a744c9a8ba4359b3353a6130f3af51fbb"><div class="ttname"><a href="class_render_system.html#a744c9a8ba4359b3353a6130f3af51fbb">RenderSystem::Update</a></div><div class="ttdeci">virtual void Update() override</div><div class="ttdoc">每帧刷新</div><div class="ttdef"><b>Definition:</b> RenderSystem.cpp:33</div></div>
+<div class="ttc" id="aclass_render_system_html_a794ef0a6f643330a8ff07e4e4bea8671"><div class="ttname"><a href="class_render_system.html#a794ef0a6f643330a8ff07e4e4bea8671">RenderSystem::RegisterComponent</a></div><div class="ttdeci">virtual void RegisterComponent(Component *) override</div><div class="ttdoc">注册组件</div><div class="ttdef"><b>Definition:</b> RenderSystem.cpp:89</div></div>
+<div class="ttc" id="aclass_render_system_html_aa111a299b5c035dbe08fa4559c680086"><div class="ttname"><a href="class_render_system.html#aa111a299b5c035dbe08fa4559c680086">RenderSystem::FixedUpdate</a></div><div class="ttdeci">virtual void FixedUpdate() override</div><div class="ttdoc">固定时间刷新</div><div class="ttdef"><b>Definition:</b> RenderSystem.cpp:85</div></div>
+<div class="ttc" id="aclass_render_system_html_aa8bf74fc6dd8dc22739dbeafd667e6a6"><div class="ttname"><a href="class_render_system.html#aa8bf74fc6dd8dc22739dbeafd667e6a6">RenderSystem::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">清空</div><div class="ttdef"><b>Definition:</b> RenderSystem.cpp:98</div></div>
+<div class="ttc" id="aclass_render_system_html_ab9d175e0d1e547569acde2bfd6dc210f"><div class="ttname"><a href="class_render_system.html#ab9d175e0d1e547569acde2bfd6dc210f">RenderSystem::currentCamera</a></div><div class="ttdeci">std::shared_ptr&lt; Camera &gt; currentCamera</div><div class="ttdoc">当前摄像机</div><div class="ttdef"><b>Definition:</b> RenderSystem.h:19</div></div>
+<div class="ttc" id="aclass_render_system_html_acf71a2b40bd01841db74a4a75befc78b"><div class="ttname"><a href="class_render_system.html#acf71a2b40bd01841db74a4a75befc78b">RenderSystem::SetCamera</a></div><div class="ttdeci">void SetCamera(std::shared_ptr&lt; Camera &gt; mainCamera)</div><div class="ttdoc">设置当前摄像机</div><div class="ttdef"><b>Definition:</b> RenderSystem.h:58</div></div>
+<div class="ttc" id="aclass_render_system_html_ad9da530f350b176618655d7e6bb17151"><div class="ttname"><a href="class_render_system.html#ad9da530f350b176618655d7e6bb17151">RenderSystem::renderQueue</a></div><div class="ttdeci">static std::priority_queue&lt; Renderer *, std::vector&lt; Renderer * &gt; &gt; renderQueue</div><div class="ttdoc">渲染队列</div><div class="ttdef"><b>Definition:</b> RenderSystem.h:24</div></div>
+<div class="ttc" id="aclass_renderer_html"><div class="ttname"><a href="class_renderer.html">Renderer</a></div><div class="ttdef"><b>Definition:</b> Renderer.h:9</div></div>
+<div class="ttc" id="aclass_singleton_html"><div class="ttname"><a href="class_singleton.html">Singleton</a></div><div class="ttdef"><b>Definition:</b> Singleton.h:5</div></div>
+<div class="ttc" id="aclass_system_html"><div class="ttname"><a href="class_system.html">System</a></div><div class="ttdef"><b>Definition:</b> System.h:6</div></div>
+<div class="ttc" id="aclass_uniform_buffer_html"><div class="ttname"><a href="class_uniform_buffer.html">UniformBuffer</a></div><div class="ttdoc">UBO缓存</div><div class="ttdef"><b>Definition:</b> UniformBuffer.h:10</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>
