@@ -237,10 +237,25 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				
 				//渲染场景至编辑器
 				auto mainFB = Application::instance().mWindows->GetMianFrameBuffer(); 
-				auto shadowMap=TLEngineCG::shadowMap; 
-				ImGui::Image((ImTextureID)mainFB->GetColorBuffer()->texture, viewportPanelSize, ImVec2(0, 1), ImVec2(1, 0));
-				mainFB->Resize(viewportPanelSize.x, viewportPanelSize.y);
-				shadowMap->Resize(Application::instance().mWindows->GetWidth(), Application::instance().mWindows->GetHeight());
+				auto shadowMap=TLEngineCG::shadowMap;
+
+				static float test1 = 0;
+				static float test2 = 0;
+				static float test3 = 0;
+				static float test4 = 0;
+				
+				int w = Application::instance().mWindows->GetWidth();
+				int h = Application::instance().mWindows->GetHeight();
+
+				test1 = (viewportMinRegion.x) / w;
+				test2 = (viewportMinRegion.y) / h;
+				test3 = (w-viewportMaxRegion.x)/ w;
+				test4 = (h-viewportMaxRegion.y)/ h;
+				Debug::GetEngineLogger()->info("x{0} y{1}", viewportMaxRegion.x, viewportMaxRegion.y);
+
+				ImGui::Image((ImTextureID)mainFB->GetColorBuffer()->texture, viewportPanelSize, ImVec2(test1, 1 - test2), ImVec2(1 - test3, test4));
+				mainFB->Resize(w, h);
+				shadowMap->Resize(w, h);
 				//渲染gizmos
 				if (selectedObj)
 				{
