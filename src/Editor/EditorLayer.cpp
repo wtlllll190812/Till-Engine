@@ -149,22 +149,30 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 							i->GuiDisPlay();
 						}
 					}
-					static bool listOpen = false;
-
-					//add component button
-					if (listOpen||ImGui::Button("Add Component", ImVec2(160, 30)))
+					if (ImGui::BeginPopupContextItem("Components")) // <-- use last item id as popup id
 					{
-						listOpen = true;
+						vector<const char*> components;
 						auto start = ReflectionManager::instance().GetMemberStartByTag(ReflectionTag::Component);
-						int count= ReflectionManager::instance().GetMemberCountByTag(ReflectionTag::Component);
+						int count = ReflectionManager::instance().GetMemberCountByTag(ReflectionTag::Component);
 						for (int k = 0; k != count; k++, start++)
 						{
-							if (ImGui::Button(start->second.c_str(), ImVec2(140, 20)))
-							{
-								selectedObj->AddComponent((Component*)ReflectionManager::instance().CreateClassByName(start->second));
-								listOpen = false;
-							}
+							components.push_back(start->second.c_str());
 						}
+						static ImGuiTextFilter filter;
+						filter.Draw();
+						for (int i = 0; i < components.size(); i++)
+							if (filter.PassFilter(components[i]))
+								if (ImGui::Button(components[i], ImVec2(140, 20)))
+									selectedObj->AddComponent((Component*)ReflectionManager::instance().CreateClassByName(components[i]));
+
+						ImGui::EndPopup();
+					}
+
+					ImGui::Indent();
+					//add component button
+					if (ImGui::Button("Add Component", ImVec2(160, 30)))
+					{
+						ImGui::OpenPopup("Components");
 					}
 				}				
 				ImGui::End();
@@ -239,31 +247,25 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				auto mainFB = Application::instance().mWindows->GetMianFrameBuffer(); 
 				auto shadowMap=TLEngineCG::shadowMap;
 
-				static float test1 = 0;
+				static float uvx = 0;
 				static float test2 = 0;
-				static float test3 = 0;
-				static float test4 = 0;
 				
-				int w = Application::instance().mWindows->GetWidth();
-				int h = Application::instance().mWindows->GetHeight();
+				int width = Application::instance().mWindows->GetWidth();
+				int height = Application::instance().mWindows->GetHeight();
 
-				test1 = (viewportMinRegion.x) / w;
-				test2 = (viewportMinRegion.y) / h;
-				test3 = (w-viewportMaxRegion.x)/ w;
-				test4 = (h-viewportMaxRegion.y)/ h;
-				Debug::GetEngineLogger()->info("x{0} y{1}", viewportMaxRegion.x, viewportMaxRegion.y);
-
-				ImGui::Image((ImTextureID)mainFB->GetColorBuffer()->texture, viewportPanelSize, ImVec2(test1, 1 - test2), ImVec2(1 - test3, test4));
-				mainFB->Resize(w, h);
-				shadowMap->Resize(w, h);
+				ImGui::Image((ImTextureID)mainFB->GetColorBuffer()->texture, viewportPanelSize,ImVec2(0,1),ImVec2(viewportPanelSize.x/width,(height-viewportPanelSize.y)/height));
+				
+				mainFB->Resize(width, height);
+				shadowMap->Resize(width, height);
+				
 				//渲染gizmos
 				if (selectedObj)
 				{
 					ImGuizmo::SetOrthographic(false);
 					ImGuizmo::SetDrawlist();
 
-					//设置gizmos大小
-					ImGuizmo::SetRect(m_ViewportBounds0.x, m_ViewportBounds0.y, viewportPanelSize.x, viewportPanelSize.y);
+					//设置gizmos范围
+					ImGuizmo::SetRect(m_ViewportBounds0.x, m_ViewportBounds0.y, width, height);
 
 					const glm::mat4& cameraProjection = GetEditorCamera()->GetProjMatrix();
 					glm::mat4 cameraView = GetEditorCamera()->GetViewMatrix();
