@@ -247,9 +247,6 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 				auto mainFB = Application::instance().mWindows->GetMianFrameBuffer(); 
 				auto shadowMap=TLEngineCG::shadowMap;
 
-				static float uvx = 0;
-				static float test2 = 0;
-				
 				int width = Application::instance().mWindows->GetWidth();
 				int height = Application::instance().mWindows->GetHeight();
 

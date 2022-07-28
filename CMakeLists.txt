@@ -3,8 +3,8 @@ option(GROUP_BY_EXPLORER ON)    # 文件分组是否和资源管理器对应
 
 
 #vcpkg配置,改为自己的vcpkg位置
-set(VCPKG_ROOT "D:/TL/Vscode/vcpkg-master/scripts/buildsystems/vcpkg.cmake")
-set(CMAKE_TOOLCHAIN_FILE ${VCPKG_ROOT})
+# set(VCPKG_ROOT "D:/TL/Vscode/vcpkg-master/scripts/buildsystems/vcpkg.cmake")
+# set(CMAKE_TOOLCHAIN_FILE ${VCPKG_ROOT})
 
 #设定工程名
 set(Proj_Name Till_Engine)
@@ -13,9 +13,10 @@ PROJECT (${Proj_Name})
 
 #转移文件夹
 file(COPY ${PROJECT_SOURCE_DIR}/resource/ DESTINATION  resource FOLLOW_SYMLINK_CHAIN)
-# file(COPY ${PROJECT_SOURCE_DIR}/shaders/ DESTINATION shaders FOLLOW_SYMLINK_CHAIN)
-# file(COPY ${PROJECT_SOURCE_DIR}/data/ DESTINATION data FOLLOW_SYMLINK_CHAIN)
+file(COPY ${PROJECT_SOURCE_DIR}/shaders/ DESTINATION shaders FOLLOW_SYMLINK_CHAIN)
+file(COPY ${PROJECT_SOURCE_DIR}/data/ DESTINATION data FOLLOW_SYMLINK_CHAIN)
 file(COPY src/imgui.ini DESTINATION src)
+file(COPY third_party/libs/assimp-vc143-mt.dll DESTINATION src/Debug)
 
 #源文件和头文件
 file(GLOB_RECURSE SRC_DIR_LIST "src/*.cpp" "src/*.h")

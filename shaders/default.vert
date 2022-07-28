@@ -34,6 +34,6 @@ void main()
     gl_Position = projection * view *  model * vec4(position, 1.0f);
     defaultOut.TexCoords=texCoords;
     defaultOut.FragPos = vec3(model * vec4(position, 1.0f));
-    defaultOut.Normal = mat3(transpose(inverse(model))) * normal;//生成正规矩阵(法向量直接乘以模型矩阵缩放变换会导致法向量的变形)
+    defaultOut.Normal = normalMatrix * normal;//生成正规矩阵(法向量直接乘以模型矩阵缩放变换会导致法向量的变形)
     defaultOut.FragPosLightSpace = lightSpaceMat * vec4(defaultOut.FragPos, 1.0);
 } 
