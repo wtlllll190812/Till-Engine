@@ -11,7 +11,7 @@ cmake ../ -G "Visual Studio 17 2022" -DCMAKE_TOOLCHAIN_FILE="D:/TL/Vscode/vcpkg-
 
 将DCMAKE_TOOLCHAIN_FILE后的路径替换为你的vcpkg安装路径
 ## What the engine looks like now:
-![image](https://user-images.githubusercontent.com/80517003/178116747-012a1120-b276-4d58-a6fc-df3edc8079e7.png)
+![image](https://user-images.githubusercontent.com/80517003/181452801-d4eb8f98-aff8-4e8a-9198-f4aba6eaff88.png)
 
 ## Dependencies
 1. imgui-Docing
