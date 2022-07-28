@@ -159,10 +159,10 @@ EditorLayer::EditorLayer(std::shared_ptr<Scene> s)
 							components.push_back(start->second.c_str());
 						}
 						static ImGuiTextFilter filter;
-						filter.Draw();
+						filter.Draw("search");
 						for (int i = 0; i < components.size(); i++)
 							if (filter.PassFilter(components[i]))
-								if (ImGui::Button(components[i], ImVec2(140, 20)))
+								if (ImGui::Button(components[i], ImVec2(140, 28)))
 									selectedObj->AddComponent((Component*)ReflectionManager::instance().CreateClassByName(components[i]));
 
 						ImGui::EndPopup();

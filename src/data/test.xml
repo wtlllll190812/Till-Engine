@@ -9,13 +9,14 @@
     </GameObject>
     <GameObject name="light" guid="338550489">
         <Transform guid="-2106164455">
-            <position x="4.725458" y="15.570433" z="6.100000" />
-            <rotation x="-89.800003" y="-45.200001" z="80.199997" />
-            <scale x="0.999998" y="0.999999" z="0.999997" />
+            <position x="3.114829" y="10.592287" z="12.399646" />
+            <rotation x="49.200001" y="1.600000" z="47.799999" />
+            <scale x="0.300000" y="0.300000" z="0.300000" />
         </Transform>
         <PointLight guid="-416323080" intensity="0.100000">
             <color x="0.900000" y="0.900000" z="0.900000" />
         </PointLight>
+        <Renderer guid="-108561232" modelPath="Cylinder" materialName="LightMaterial" />
     </GameObject>
     <GameObject name="object" guid="334550489">
         <Transform guid="-2108764455">
