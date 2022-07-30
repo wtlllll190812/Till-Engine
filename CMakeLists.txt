@@ -39,7 +39,7 @@ INCLUDE_DIRECTORIES(src/ECS/Components  src/ECS/System)
 INCLUDE_DIRECTORIES(src/Engine/Framework src/Engine/Framework/Assets src/Engine/Framework/Tools src/Engine/Framework/Events)
 INCLUDE_DIRECTORIES(src/Engine/Window src/Engine/Window/GuiWindow)
 INCLUDE_DIRECTORIES(src/Engine/Render src/Engine/Render/Materials src/Engine/Render/Buffer)
-INCLUDE_DIRECTORIES(src/Engine/Layer)
+INCLUDE_DIRECTORIES(src/Engine/Layer src/Engine/Render/RenderPipline)
 INCLUDE_DIRECTORIES(third_party third_party/imgui)
 
 #指定库搜索目录

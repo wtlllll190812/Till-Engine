@@ -1,12 +1,16 @@
 #pragma once
 #include "System.h"
-#include <queue>
 #include "UniformBuffer.h"
+#include "LayerStack.h"
+#include <queue>
 #include <memory>
+#include <vector>
 
 class Component;
 class Renderer;
 class Camera;
+class PostProcessLayer;
+class Mesh;
 /// <summary>
 /// 渲染系统
 /// </summary>
@@ -57,6 +61,8 @@ public:
 	/// </summary>
 	inline void SetCamera(Camera* mainCamera) { currentCamera = mainCamera; };
 private:
+	Mesh* quadMesh;
+
 	/// <summary>
 	/// 矩阵UBO
 	/// </summary>
@@ -67,6 +73,10 @@ private:
 	/// </summary>
 	UniformBuffer mainLightUB;
 
+	/// <summary>
+	/// 后处理层级
+	/// </summary>
+	LayerStack postprocessLayers;
 private:
 	/// <summary>
 	/// 配置渲染数据
