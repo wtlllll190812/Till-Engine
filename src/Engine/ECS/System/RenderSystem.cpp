@@ -17,20 +17,14 @@
 #include "PostprocessLayer.h"
 #include "Mesh.h"
 
-float quadVertices[] = { // vertex attributes for a quad that fills the entire screen in Normalized Device Coordinates.
-		// positions   // texCoords
-		-1.0f,  1.0f,  0.0f, 1.0f,
-		-1.0f, -1.0f,  0.0f, 0.0f,
-		 1.0f, -1.0f,  1.0f, 0.0f,
 
-		-1.0f,  1.0f,  0.0f, 1.0f,
-		 1.0f, -1.0f,  1.0f, 0.0f,
-		 1.0f,  1.0f,  1.0f, 1.0f
-};
 
 typedef std::priority_queue <Renderer*, std::vector<Renderer*>> renderPriorityQueue;
 renderPriorityQueue RenderSystem::renderQueue = renderPriorityQueue();
 std::shared_ptr<Mesh> skybox;
+
+unsigned int VAO;
+unsigned int VBO;
 
 RenderSystem::RenderSystem()
 {
@@ -39,7 +33,7 @@ RenderSystem::RenderSystem()
 	mainLightUB.BufferInit(sizeof(glm::vec3) * 3);
 	skybox = AssetImporter::GetMeshByName("Cube");
 	currentCamera = nullptr;
-	quadMesh = new Mesh(quadVertices);
+	quadMesh = new Mesh;
 	postprocessLayers.PushLayer(new PostprocessLayer(window->GetMianFrameBuffer()));
 }
 
@@ -69,15 +63,13 @@ void RenderSystem::Update()
 			queue.pop();
 		}
 	}
-	glDisable(GL_DEPTH_TEST);
 	//postprocessing
-	glBindFramebuffer(GL_FRAMEBUFFER, 0); 
+	glDisable(GL_DEPTH_TEST);
 	for (auto layer : postprocessLayers)
 	{
-		layer->OnUpdate();
 		glBindVertexArray(quadMesh->VAO);
+		layer->OnUpdate();
 		glDrawArrays(GL_TRIANGLES, 0, 6);
-		glBindVertexArray(0);
 	}
 	glDisable(GL_FRAMEBUFFER_SRGB);
 }

@@ -25,7 +25,7 @@ public:
 
 public:
 	Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices);
-	Mesh(float vertices[]);
+	Mesh();
 	~Mesh();
 	void Draw();
 	unsigned int GetSize() { return static_cast<unsigned int>(indices.size()); }

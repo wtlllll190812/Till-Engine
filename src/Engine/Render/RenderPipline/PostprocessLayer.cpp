@@ -3,6 +3,12 @@
 #include "TLCore.h"
 #include "Debug.h"
 
+#define GLFW_INCLUDE_NONE
+#include <GLFW/glfw3.h>
+#include <GL/glew.h>
+#include "Application.h"
+#include "Texture.h"
+
 PostprocessLayer::PostprocessLayer(FrameBuffer* _buffer):buffer(_buffer)
 {
 	shader = new Shader(SHADER_PATH"postprocess.vert", SHADER_PATH"postprocess.frag");
@@ -15,6 +21,9 @@ PostprocessLayer::~PostprocessLayer()
 
 void PostprocessLayer::OnAttack()
 {
+	shader->Use();
+	glUniform1i(glGetUniformLocation(shader->Program, "screenTexture"), 4);
+	
 }
 
 void PostprocessLayer::OnDetach()
@@ -24,6 +33,8 @@ void PostprocessLayer::OnDetach()
 void PostprocessLayer::OnUpdate()
 {
 	shader->Use();
+	glActiveTexture(GL_TEXTURE4);
+	glBindTexture(GL_TEXTURE_2D, Application::instance().mWindows->GetMianFrameBuffer()->GetColorBuffer()->texture);
 	/*if (!inited)
 	{
 		Init(object, mesh);
