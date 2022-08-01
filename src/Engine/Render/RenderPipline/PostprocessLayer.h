@@ -1,12 +1,12 @@
 #pragma once 
-#include "Material.h"
 #include "Layer.h"
 
 class FrameBuffer;
+class Shader;
 class PostprocessLayer :public Layer
 {
 public:
-	PostprocessLayer();
+	PostprocessLayer(FrameBuffer*);
 	~PostprocessLayer();
 
 	virtual void OnAttack()override;

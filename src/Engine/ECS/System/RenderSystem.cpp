@@ -34,11 +34,13 @@ std::shared_ptr<Mesh> skybox;
 
 RenderSystem::RenderSystem()
 {
+	auto& window = Application::instance().mWindows;
 	maticesUB.BufferInit(sizeof(glm::mat4) * 2);
 	mainLightUB.BufferInit(sizeof(glm::vec3) * 3);
 	skybox = AssetImporter::GetMeshByName("Cube");
 	currentCamera = nullptr;
 	quadMesh = new Mesh(quadVertices);
+	postprocessLayers.PushLayer(new PostprocessLayer(window->GetMianFrameBuffer()));
 }
 
 RenderSystem::~RenderSystem()
@@ -67,13 +69,14 @@ void RenderSystem::Update()
 			queue.pop();
 		}
 	}
-
+	glDisable(GL_DEPTH_TEST);
 	//postprocessing
+	glBindFramebuffer(GL_FRAMEBUFFER, 0); 
 	for (auto layer : postprocessLayers)
 	{
-		glBindVertexArray(quadMesh->VAO);
 		layer->OnUpdate();
-		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+		glBindVertexArray(quadMesh->VAO);
+		glDrawArrays(GL_TRIANGLES, 0, 6);
 		glBindVertexArray(0);
 	}
 	glDisable(GL_FRAMEBUFFER_SRGB);

@@ -1,13 +1,16 @@
 #include "PostprocessLayer.h"
 #include "Shader.h"
+#include "TLCore.h"
+#include "Debug.h"
 
-PostprocessLayer::PostprocessLayer()
+PostprocessLayer::PostprocessLayer(FrameBuffer* _buffer):buffer(_buffer)
 {
-	shader = new Shader("","");
+	shader = new Shader(SHADER_PATH"postprocess.vert", SHADER_PATH"postprocess.frag");
 }
 
 PostprocessLayer::~PostprocessLayer()
 {
+	delete shader;
 }
 
 void PostprocessLayer::OnAttack()
@@ -20,6 +23,7 @@ void PostprocessLayer::OnDetach()
 
 void PostprocessLayer::OnUpdate()
 {
+	shader->Use();
 	/*if (!inited)
 	{
 		Init(object, mesh);
