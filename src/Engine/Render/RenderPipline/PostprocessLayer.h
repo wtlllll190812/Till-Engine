@@ -1,8 +1,10 @@
 #pragma once 
 #include "Layer.h"
+#include <memory>
 
 class FrameBuffer;
 class Shader;
+class Mesh;
 class PostprocessLayer :public Layer
 {
 public:
@@ -19,5 +21,5 @@ private:
 	FrameBuffer* buffer;
 	Shader* shader;
 	static float quadVertices[];
+	static std::shared_ptr<Mesh> quadMesh;
 };
-

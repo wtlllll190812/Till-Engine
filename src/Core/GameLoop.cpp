@@ -1,7 +1,5 @@
 #include "GameLoop.h"
 #include "TLTime.h"
-#define GLFW_INCLUDE_NONE
-#include <GLFW/glfw3.h>
 #include "Application.h"
 
 using namespace std;
@@ -46,7 +44,7 @@ void GameLoop::StartLoop()
 		Awake();
 	while (Application::instance().mRunning)
 	{
-		TLTime::unscaledDeltaTime = glfwGetTime() - TLTime::unscaledTime; //(double)clock() / CLOCKS_PER_SEC;
+		TLTime::unscaledDeltaTime = Application::instance().mWindows->GetTime() - TLTime::unscaledTime;
 		TLTime::deltaTime = TLTime::unscaledDeltaTime * TLTime::timeScale;
 		TLTime::unscaledTime += TLTime::unscaledDeltaTime;
 		TLTime::time += TLTime::deltaTime;

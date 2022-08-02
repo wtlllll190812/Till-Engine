@@ -17,14 +17,9 @@
 #include "PostprocessLayer.h"
 #include "Mesh.h"
 
-
-
 typedef std::priority_queue <Renderer*, std::vector<Renderer*>> renderPriorityQueue;
 renderPriorityQueue RenderSystem::renderQueue = renderPriorityQueue();
 std::shared_ptr<Mesh> skybox;
-
-unsigned int VAO;
-unsigned int VBO;
 
 RenderSystem::RenderSystem()
 {
@@ -33,18 +28,17 @@ RenderSystem::RenderSystem()
 	mainLightUB.BufferInit(sizeof(glm::vec3) * 3);
 	skybox = AssetImporter::GetMeshByName("Cube");
 	currentCamera = nullptr;
-	quadMesh = new Mesh;
 	postprocessLayers.PushLayer(new PostprocessLayer(window->GetMianFrameBuffer()));
 }
 
 RenderSystem::~RenderSystem()
 {
-	delete quadMesh;
 }
 
 void RenderSystem::Update()
 {
-	glEnable(GL_FRAMEBUFFER_SRGB);
+	auto& window = Application::instance().mWindows;
+	window->SetSRGB(true);
 	renderPriorityQueue queue = renderQueue;
 
 	SetData();
@@ -64,14 +58,12 @@ void RenderSystem::Update()
 		}
 	}
 	//postprocessing
-	glDisable(GL_DEPTH_TEST);
+	window->SetDepthTest(false);
 	for (auto layer : postprocessLayers)
 	{
-		glBindVertexArray(quadMesh->VAO);
 		layer->OnUpdate();
-		glDrawArrays(GL_TRIANGLES, 0, 6);
 	}
-	glDisable(GL_FRAMEBUFFER_SRGB);
+	window->SetSRGB(false);
 }
 
 void RenderSystem::SetData()
@@ -91,7 +83,7 @@ void RenderSystem::RenderShadow(renderPriorityQueue queue)
 {
 	auto& window = Application::instance().mWindows;
 	window->SetFrameBuffer(TLEngineCG::shadowMap);
-	glCullFace(GL_FRONT);
+	window->SetCullFace(CullMode::front);
 	while (!queue.empty())
 	{
 		if (queue.top() != nullptr)
@@ -100,7 +92,7 @@ void RenderSystem::RenderShadow(renderPriorityQueue queue)
 			queue.pop();
 		}
 	}
-	glCullFace(GL_BACK);
+	window->SetCullFace(CullMode::back);
 	window->SetFrameBuffer(window->GetMianFrameBuffer());
 }
 

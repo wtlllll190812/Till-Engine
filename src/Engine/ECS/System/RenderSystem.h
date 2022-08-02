@@ -61,7 +61,6 @@ public:
 	/// </summary>
 	inline void SetCamera(Camera* mainCamera) { currentCamera = mainCamera; };
 private:
-	Mesh* quadMesh;
 
 	/// <summary>
 	/// 矩阵UBO

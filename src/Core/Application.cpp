@@ -40,7 +40,7 @@ void Application::AppInit()
 {
 	Debug::GetEngineLogger()->info("Engine start init");
 	AssetImporter::Init();
-	Input::Init();
+	Input::Init(mWindows);
 
 	mWindows->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
 	mCurrentScene = shared_ptr<Scene>(new Scene(DATA_PATH "test.xml"));

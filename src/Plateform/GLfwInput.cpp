@@ -2,7 +2,6 @@
 #include "WindowsWindow.h"
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
-#include "Application.h"
 #include "Debug.h"
 
 GLFWwindow *window;
@@ -17,17 +16,16 @@ bool Input::GetKeyDown(const int key)
 	return keyBuf[key] == 2;
 }
 
-void Input::Init()
+void Input::Init(std::unique_ptr<Window>& mainWindow)
 {
 	memset(keyBuf, -1, sizeof(keyBuf));
 	memset(mouseBuf, -1, sizeof(mouseBuf));
+	window = static_cast<GLFWwindow*>(mainWindow->GetWindow());
 	Debug::GetAppLogger()->info(" Input::Init");
 }
 
 void Input::Update()
 {
-	if (window == nullptr)
-		window = static_cast<GLFWwindow *>(Application::instance().mWindows->GetWindow());
 	for (int i = 0; i < 512; i++)
 	{
 		if (keyBuf[i] >= 0)
@@ -103,8 +101,6 @@ bool Input::GetMouseButton(const int key)
 
 glm::vec2 Input::MousePos()
 {
-	if (window == nullptr)
-		window = static_cast<GLFWwindow *>(Application::instance().mWindows->GetWindow());
 	double xpos, ypos;
 	glfwGetCursorPos(window, &xpos, &ypos);
 

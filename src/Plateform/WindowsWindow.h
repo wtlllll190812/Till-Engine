@@ -63,6 +63,13 @@ public:
 	void SetFrameBuffer(int index = 0)override;
 	void SetFrameBuffer(FrameBuffer*)override;
 
+	virtual void SetDepthTest(bool isOn)override;
+	virtual void SetDepthFunc(DepthTestFunc func)override;
+	virtual void SetDepthWrite(bool isOn)override;
+	virtual void SetCullFace(CullMode mode)override;
+	virtual void SetSRGB(bool isOn)override;
+	virtual float GetTime()override;
+
 	/// <summary>
 	/// 设定垂直同步
 	/// </summary>

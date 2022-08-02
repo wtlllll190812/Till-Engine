@@ -74,6 +74,78 @@ void WindowsWindow::SetFrameBuffer(FrameBuffer* buffer)
 	glBindFramebuffer(GL_FRAMEBUFFER, buffer->GetFBO());
 }
 
+void WindowsWindow::SetDepthTest(bool isOn)
+{
+	isOn ? glEnable(GL_DEPTH_TEST) : glDisable(GL_DEPTH_TEST);
+}
+
+void WindowsWindow::SetDepthFunc(DepthTestFunc func)
+{
+	switch (func)
+	{
+	case DepthTestFunc::always:
+		glDepthFunc(GL_ALWAYS);
+		break;
+	case DepthTestFunc::never:
+		glDepthFunc(GL_NEVER);
+		break;
+	case DepthTestFunc::less:
+		glDepthFunc(GL_LESS);
+		break;
+	case DepthTestFunc::greater:
+		glDepthFunc(GL_GREATER);
+		break;
+	case DepthTestFunc::equal:
+		glDepthFunc(GL_EQUAL);
+		break;
+	case DepthTestFunc::lEqual:
+		glDepthFunc(GL_LEQUAL);
+		break;
+	case DepthTestFunc::gEqual:
+		glDepthFunc(GL_GREATER);
+		break;
+	case DepthTestFunc::notEqual:
+		glDepthFunc(GL_NOTEQUAL);
+		break;
+	default:
+		break;
+	}
+}
+
+void WindowsWindow::SetDepthWrite(bool isOn)
+{
+	isOn ? glDepthMask(GL_TRUE):glDepthMask(GL_FALSE);
+}
+
+void WindowsWindow::SetCullFace(CullMode mode)
+{
+	switch (mode)
+	{
+	case CullMode::front:
+		glCullFace(GL_FRONT);
+		break;
+	case CullMode::back:
+		glCullFace(GL_BACK);
+		break;
+	case CullMode::both:
+		glCullFace(GL_FRONT_AND_BACK);
+		break;
+	default:
+		Debug::GetEngineLogger()->error("Cull mode not exist");
+		break;
+	}
+}
+
+void WindowsWindow::SetSRGB(bool isOn)
+{
+	isOn ? glEnable(GL_FRAMEBUFFER_SRGB) : glDisable(GL_FRAMEBUFFER_SRGB);
+}
+
+float WindowsWindow::GetTime()
+{
+	return glfwGetTime();
+}
+
 void WindowsWindow::SetVSync(bool enabled)
 {
 	if (enabled)
