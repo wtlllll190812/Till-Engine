@@ -4,11 +4,12 @@
 #include <functional>
 #include <string>
 #include "TLCore.h"
+#include "OnGui.h"
 
 class GameObject;
 class Shader;
 class Mesh;
-class Material
+class Material:public IGuiDisplay
 {
 public:
 	Shader* shader;
@@ -25,6 +26,9 @@ public:
 	void Draw(GameObject*, std::shared_ptr<Mesh>);
 	virtual void DrawFunc(GameObject* gObj,std::shared_ptr<Mesh> mesh) = 0;
 	virtual void Init(GameObject*, std::shared_ptr<Mesh> mesh) = 0;
+
+	// 通过 IGuiDisplay 继承
+	virtual void GuiDisPlay() override;
 private:
 	bool inited;
 };

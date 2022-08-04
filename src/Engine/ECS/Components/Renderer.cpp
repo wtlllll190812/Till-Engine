@@ -66,7 +66,7 @@ void Renderer::GuiDisPlay()
 		ChangeMaterial(std::static_pointer_cast<Material>(ReflectionManager::instance().GetInstanceByName(matList[currentMat])));
 		UpdateNode();
 	}
-
+	material->GuiDisPlay();
 	int premesh = currentMesh;
 	ImGui::Combo("Mesh", &currentMesh, &meshList[0], meshList.size());
 	if (premesh != currentMesh)

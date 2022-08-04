@@ -33,3 +33,7 @@ void Material::Draw(GameObject* object, shared_ptr<Mesh> mesh)
 	glCullFace(GL_BACK);
 	glBindVertexArray(0);
 }
+
+void Material::GuiDisPlay()
+{
+}

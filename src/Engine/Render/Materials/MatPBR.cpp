@@ -32,9 +32,11 @@ void MatPBR::DrawFunc(GameObject* gObj, std::shared_ptr<Mesh> mesh)
 
 	glm::mat4 lightSpaceMat = TLEngineCG::lights[0]->GetOrthoMatrix() * TLEngineCG::lights[0]->GetViewMatrix();
 	glm::mat4 model = gObj->transform->GetModelMatrix();
-	glm::vec3 albedo(0.18f, 0.2f, 0.23f);
 
-	//glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
+	glUniform1f(glGetUniformLocation(shader->Program, "metallic"), metallic);
+	glUniform1f(glGetUniformLocation(shader->Program, "roughness"), roughness);
+	glUniform1f(glGetUniformLocation(shader->Program, "ao"), ao);
+
 	SetUniformMat4(lightSpaceMat, shader);
 	SetUniformMat4(model, shader);
 	SetUniformVec3(albedo, shader);
@@ -48,4 +50,12 @@ void MatPBR::Init(GameObject*, std::shared_ptr<Mesh> mesh)
 	glUniformBlockBinding(shader->Program, mat, 0);
 	mat = glGetUniformBlockIndex(shader->Program, "LightData");
 	glUniformBlockBinding(shader->Program, mat, 1);
+}
+
+void MatPBR::GuiDisPlay()
+{
+	ImGui::ColorEdit3("albedo", glm::value_ptr(albedo));
+	ImGui::DragFloat("metallic", &metallic,0.001,0,1);
+	ImGui::DragFloat("roughness", &roughness, 0.001, 0, 1);
+	ImGui::DragFloat("ao", &ao, 0.001, 0, 1);
 }

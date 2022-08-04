@@ -1,11 +1,12 @@
 #pragma once
 #include "TLSerialize.h"
+#include "OnGui.h"
 
 class GameObject;
 /// <summary>
 /// 组件基类
 /// </summary>
-class Component:public Serializable
+class Component:public Serializable,public IGuiDisplay
 {
 public:
 	/// <summary>
